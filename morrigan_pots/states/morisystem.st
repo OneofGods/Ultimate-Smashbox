@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ;==============================================================================================
 ;=======================================<COMMON STATES>========================================
 ;==============================================================================================
@@ -27,12 +27,12 @@ value = 2
 
 [State 0, Anim]
 type = changeanim
-trigger1 = anim != ifelse(map(darkforce) > 0, 1, 0)
+trigger1 = anim != (map(darkforce) > 0)
 trigger1 = anim != 2
 trigger1 = anim != 5
 trigger2 = anim = 2 && !animtime
 trigger3 = anim = 5 && !animtime
-value = ifelse(map(darkforce) > 0, 1, 0)
+value = (map(darkforce) > 0)
 
 [State 0, Dead]
 type = selfstate
@@ -242,7 +242,7 @@ value = 0
 [State 40, Sound]
 type = playsnd
 trigger1 = !animtime
-value = 0, ifelse(map(jumptype) = [2, 3], 41, 40)
+value = 0, ((map(jumptype) = [2, 3]) * 41 + (map(jumptype) != [2, 3]) * 40)
 
 [State 40, Dust]
 type = helper
@@ -1295,11 +1295,11 @@ time = 1
 [State Check Parried Helper]
 type = null
 trigger1 = !time
-trigger1 = 1 || map(parry_helper_ID) := 0
+trigger1 = 1 || varset(parry_helper_ID = 0)
 trigger1 = gethitvar(ID)
 trigger1 = playerIDexist(gethitvar(ID))
 trigger1 = playerID(gethitvar(ID)), ishelper
-trigger1 = 1 || map(parry_helper_ID) := gethitvar(ID)
+trigger1 = 1 || varset(parry_helper_ID = gethitvar(ID))
 
 [State Freeze Parried Helper]
 redirectID = map(parry_helper_ID)
@@ -1391,11 +1391,11 @@ time = 1
 [State Check Parried Helper]
 type = null
 trigger1 = !time
-trigger1 = 1 || map(parry_helper_ID) := 0
+trigger1 = 1 || varset(parry_helper_ID = 0)
 trigger1 = gethitvar(ID)
 trigger1 = playerIDexist(gethitvar(ID))
 trigger1 = playerID(gethitvar(ID)), ishelper
-trigger1 = 1 || map(parry_helper_ID) := gethitvar(ID)
+trigger1 = 1 || varset(parry_helper_ID = gethitvar(ID))
 
 [State Freeze Parried Helper]
 redirectID = map(parry_helper_ID)
@@ -1480,11 +1480,11 @@ time = 1
 [State Check Parried Helper]
 type = null
 trigger1 = !time
-trigger1 = 1 || map(parry_helper_ID) := 0
+trigger1 = 1 || varset(parry_helper_ID = 0)
 trigger1 = gethitvar(ID)
 trigger1 = playerIDexist(gethitvar(ID))
 trigger1 = playerID(gethitvar(ID)), ishelper
-trigger1 = 1 || map(parry_helper_ID) := gethitvar(ID)
+trigger1 = 1 || varset(parry_helper_ID = gethitvar(ID))
 
 [State Freeze Parried Helper]
 redirectID = map(parry_helper_ID)
@@ -2086,7 +2086,7 @@ value = -min((guardpoints - 1), 300)
 [State 750, End]
 type = changestate
 trigger1 = time >= 15
-value = ifelse(map(strength) = 1, 2910, 2900)
+value = ((map(strength) = 1) * 2910 + (map(strength) != 1) * 2900)
 
 
 ;===================<DARK FORCE>===================
@@ -3092,7 +3092,7 @@ type = S
 type = changestate
 trigger1 = roundno = 1
 trigger1 = numenemy = 1 && !numpartner
-trigger1 = enemy, authorname = "Andrés Borghi" || enemy, authorname = "Andres Borghi"
+trigger1 = enemy, authorname = "Andrï¿½s Borghi" || enemy, authorname = "Andres Borghi"
 trigger1 = enemy, name = "Viuda Negra" || enemy, name = "Ananzi"
 value = 360
 
@@ -3386,15 +3386,15 @@ trigger1 = numenemy
 trigger1 = p2, time > 0
 trigger1 = p2movetype != H || p2stateno = p2, const(statedizzy)
 trigger1 = map(jugglereset) || map(wallbounce)
-trigger1 = 1 || map(jugglereset) := 0
-trigger1 = 1 || map(wallbounce) := 0
+trigger1 = 1 || varset(jugglereset = 0)
+trigger1 = 1 || varset(wallbounce = 0)
 ignorehitpause = 1
 
 [State -2, Dark Force]
 type = mapadd
 trigger1 = map(darkforce) > 0
 map = "darkforce"
-value = ifelse(map(darkforce) = 1, -2, -1)
+value = ((map(darkforce) = 1) * -2 + (map(darkforce) != 1) * -1)
 ignorehitpause = 1
 
 [State -2, Dark Force End]
@@ -3437,10 +3437,10 @@ ignorehitpause = 1
 
 [State -2, Throw in Front]
 type = null
-trigger1 = 1 || map(grabbehind) := 0
+trigger1 = 1 || varset(grabbehind = 0)
 trigger1 = p2dist x < 0
 trigger1 = p2dist x < ifelse((facing = p2, facing), -(p2, const(size.ground.front)), -(p2, const(size.ground.back)))
-trigger1 = map(grabbehind) := 1
+trigger1 = varset(grabbehind = 1)
 ignorehitpause = 1
 
 [State -2, Unthrowable Flag]
@@ -3484,8 +3484,8 @@ type = null
 trigger1 = p2movetype != H
 trigger1 = p2, dizzy = 0
 trigger1 = p2stateno != p2, const(statedizzy)
-trigger1 = 1 || map(combototal) := 0
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combototal = 0)
+trigger1 = 1 || varset(combocheck = 0)
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Attack Connected Flag]
@@ -3500,7 +3500,7 @@ ignorehitpause = 1
 type = mapset
 trigger1 = 1
 map = "damagescaling"
-value = ifelse(map(combototal) <= 0, 1, ifelse(map(combototal) >= 9, 0.1, 1 - 0.1 * map(combototal)))
+value = (map(combototal) <= 0) * 1 + (map(combototal) > 0) * (map(combototal) < 9) * (1 - 0.1 * map(combototal)) + (map(combototal) >= 9) * 0.1
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Chain Combos]
@@ -3520,7 +3520,7 @@ type = mapset
 trigger1 = map(darkforce)
 map = "damagescaling"
 ;value = 0.67 * map(damagescaling)
-value = 0.75 * ifelse(map(combototal) * 2 <= 0, 1, ifelse(map(combototal) * 2 >= 9, 0.1, 1 - 0.1 * map(combototal) * 2))
+value = 0.75 * ((map(combototal) * 2 <= 0) * 1 + (map(combototal) * 2 > 0) * (map(combototal) * 2 < 9) * (1 - 0.1 * map(combototal) * 2) + (map(combototal) * 2 >= 9) * 0.1)
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Minimum Super Damage]
@@ -3529,23 +3529,23 @@ triggerall = stateno = [3000, 4999]
 ;Level 3
 trigger1 = map(superlevel) = 3
 trigger1 = map(damagescaling) < 0.5
-trigger1 = 1 || map(damagescaling) := 0.5
+trigger1 = 1 || varset(damagescaling = 0.5)
 ;Level 2
 trigger2 = map(superlevel) = 2
 trigger2 = map(damagescaling) < 0.4
-trigger2 = 1 || map(damagescaling) := 0.4
+trigger2 = 1 || varset(damagescaling = 0.4)
 ;Other
 trigger3 = stateno = [3000, 4999]
 trigger3 = map(damagescaling) < 0.3
-trigger3 = 1 || map(damagescaling) := 0.3
+trigger3 = 1 || varset(damagescaling = 0.3)
 ignorehitpause = 1
 
 [State -2, Meter Scaling]
 type = null
 trigger1 = map(darkforce) > 0
-trigger1 = 1 || map(meterscaling) := 0
+trigger1 = 1 || varset(meterscaling = 0)
 trigger2 = map(darkforce) <= 0
-trigger2 = 1 || map(meterscaling) := map(damagescaling)
+trigger2 = 1 || varset(meterscaling = map(damagescaling))
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Override Fall Defense Bonus]
@@ -3562,13 +3562,13 @@ type = mapset
 trigger1 = numenemy
 trigger1 = p2, receiveddamage >= (p2, lifemax * 0.50)
 map = "damagescaling"
-value = map(damagescaling) * ifelse(p2, receiveddamage >= (p2, lifemax * 0.85), 0.75, ifelse(p2, receiveddamage >= (p2, lifemax * 0.70), 0.90, 0.95))
+value = map(damagescaling) * ((p2, receiveddamage >= (p2, lifemax * 0.85)) * 0.75 + (p2, receiveddamage < (p2, lifemax * 0.85)) * (p2, receiveddamage >= (p2, lifemax * 0.70)) * 0.90 + (p2, receiveddamage < (p2, lifemax * 0.70)) * 0.95)
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Root Multiplier]
 type = attackmulset
 trigger1 = 1
-value = map(damagescaling); * ifelse(map(counterhit_buffer), 1.2, 1)
+value = map(damagescaling); * ((map(counterhit_buffer)) * 1.2 + (!map(counterhit_buffer)) * 1)
 ignorehitpause = 1
 
 [State -2, Drop Target]
@@ -3763,7 +3763,7 @@ ignorehitpause = 1
 [State -3, NoWalk after Parry]
 type = assertspecial
 trigger1 = map(parry_nowalk) > 0
-trigger1 = 1 || map(parry_nowalk) := (map(parry_nowalk) - 1)
+trigger1 = 1 || varset(parry_nowalk = (map(parry_nowalk) - 1))
 flag = nowalk
 
 [State -3, ProjContact Reset]
@@ -3933,7 +3933,7 @@ trigger1 = hitdefattr != SCA, AA
 trigger1 = target, gethitvar(frame)
 trigger1 = target, stateowner, ID = ID
 trigger1 = time <= 0 && target, time <= 0
-trigger1 = map(normalcancel) := 0 || map(specialcancel) := 0 || map(supercancel) := 0 || map(hypercancel) := 0
+trigger1 = varset(normalcancel = 0) || varset(specialcancel = 0) || varset(supercancel = 0) || varset(hypercancel = 0)
 ignorehitpause = 1
 
 [State -3, Super Cancel Flag Reset]
@@ -4150,7 +4150,7 @@ trigger8 = stateno = 1311 || stateno = 1341
 trigger8 = time <= 1
 helpertype = normal
 stateno = 8600
-ID = 8600 + 0 * (map(superfinish) := 900)
+ID = 8600 + 0 * (varset(superfinish = 900))
 name = "Super Finish"
 postype = left
 pos = 160, -120
@@ -4167,20 +4167,20 @@ triggerall = !numhelper(8600)
 triggerall = p2, gethitvar(playerno) = playerno
 trigger1 = movecontact = [1, 4]
 trigger1 = stateno = [3000, 4999]
-trigger1 = map(superfinish) := stateno
+trigger1 = varset(superfinish = stateno)
 trigger2 = numhelper(3005)
 trigger2 = helper(3005), map(projcontact)
-trigger2 = map(superfinish) := 3000
+trigger2 = varset(superfinish = 3000)
 trigger3 = numhelper(3055)
 trigger3 = helper(3055), map(projcontact)
-trigger3 = map(superfinish) := 3050
+trigger3 = varset(superfinish = 3050)
 trigger4 = stateno = 3300 && map(projcontact)
-trigger4 = map(superfinish) := 3300
+trigger4 = varset(superfinish = 3300)
 trigger5 = numhelper(3305)
 trigger5 = helper(3305), map(projcontact)
-trigger5 = map(superfinish) := 3300
+trigger5 = varset(superfinish = 3300)
 trigger6 = stateno = 4110
-trigger6 = map(superfinish) := 4100
+trigger6 = varset(superfinish = 4100)
 helpertype = normal
 stateno = 8600
 ID = 8600
@@ -4285,8 +4285,8 @@ trigger1 = ishelper
 trigger1 = pausetime = 0
 trigger1 = !map(combocheck)
 trigger1 = movecontact && numtarget
-trigger1 = root, map(combocheck) := 1
-trigger1 = map(combocheck) := 1
+trigger1 = root, varset(combocheck = 1)
+trigger1 = varset(combocheck = 1)
 ignorehitpause = 1
 
 [State -4, Damage Scaling - Helper Multiplier]

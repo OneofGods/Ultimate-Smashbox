@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ;==============================================================================================
 ;=======================================< COMMAND FILE >=======================================
 ;==============================================================================================
@@ -474,7 +474,7 @@ value = 720
 triggerall = !AIlevel
 triggerall = map(cmd_ax)
 triggerall = roundstate = 2 && statetype != A
-trigger1 = ifelse(map(cmd_reverse), command = "/$B", command = "/$F")
+trigger1 = (map(cmd_reverse) && command = "/$B") || (!map(cmd_reverse) && command = "/$F")
 trigger1 = ctrl || stateno = [100, 101]
 
 [State -1, Back Roll]
@@ -483,7 +483,7 @@ value = 725
 triggerall = !AIlevel
 triggerall = map(cmd_ax)
 triggerall = roundstate = 2 && statetype != A
-trigger1 = ifelse(map(cmd_reverse), command = "/$F", command = "/$B")
+trigger1 = (map(cmd_reverse) && command = "/$F") || (!map(cmd_reverse) && command = "/$B")
 trigger1 = ctrl || stateno = [100, 101]
 
 [State -1, Dodge]
@@ -969,7 +969,7 @@ trigger1 = ctrl
 
 [State -1, Air Dash]
 type = changestate
-value = ifelse(map(cmd_air44), 105, 100)
+value = 100 + map(cmd_air44) * 5
 triggerall = !AIlevel
 triggerall = map(cmd_air66) || map(cmd_air44)
 triggerall = roundstate = 2 && statetype = A
@@ -978,7 +978,7 @@ trigger1 = stateno != [100, 105]
 
 [State -1, Dash]
 type = changestate
-value = ifelse(map(cmd_44), 105, 100)
+value = 100 + map(cmd_44) * 5
 triggerall = !AIlevel
 triggerall = map(cmd_66) || map(cmd_44)
 triggerall = roundstate = 2 && statetype = S
@@ -1084,15 +1084,15 @@ ignorehitpause = 1
 type = null
 triggerall = AIlevel
 triggerall = numenemy
-triggerall = 1 || map(ai_p2accely) := (p2, vel y - map(ai_p2vely))
-triggerall = 1 || map(ai_p2vely) := p2, vel y
+triggerall = 1 || varset(ai_p2accely = (p2, vel y - map(ai_p2vely)))
+triggerall = 1 || varset(ai_p2vely = p2, vel y)
 trigger1 = p2, ctrl || p2movetype = H; || (p2movetype = A && p2, movecontact = 0 && p2, movereversed = 0)
-trigger1 = 1 || map(ai_punishwindow) := 0
+trigger1 = 1 || varset(ai_punishwindow = 0)
 trigger2 = p2, vel y = 0
-trigger2 = 1 || map(ai_punishwindow) := -(p2, animtime)
+trigger2 = 1 || varset(ai_punishwindow = -(p2, animtime))
 trigger3 = p2, vel y != 0
 trigger3 = map(ai_p2accely) != 0
-trigger3 = 1 || map(ai_punishwindow) := (-(p2, vel y) + (((p2, vel y) ** 2 - 2 * map(ai_p2accely) * (p2, pos y)) ** 0.5)) / map(ai_p2accely)
+trigger3 = 1 || varset(ai_punishwindow = (-(p2, vel y) + (((p2, vel y) ** 2 - 2 * map(ai_p2accely) * (p2, pos y)) ** 0.5)) / map(ai_p2accely))
 ignorehitpause = 1
 
 [State -1, AI Attack Window]
@@ -2045,7 +2045,7 @@ triggerall = p2movetype != A && !inguarddist
 triggerall = p2bodydist x >= 80
 trigger1 = ctrl
 trigger1 = stateno != [100, 106]
-trigger1 = random < ifelse(map(projflag), 100, 33)
+trigger1 = random < (33 + map(projflag) * 67)
 trigger2 = ctrl
 trigger2 = stateno != [100, 106]
 trigger2 = p2stateno = p2, const(statedizzy) || p2stateno = p2, const(stateguardbreakhit) || p2stateno = p2, const(stateguardbreakrecover)

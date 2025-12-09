@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ;============================================================================================
 ;=====================================<NORMAL STATES>========================================
 ;============================================================================================
@@ -21,7 +21,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -51,7 +51,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 200, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = S, NA
 damage = 30, 0
 dizzypoints = 50 * !map(darkforce)
@@ -62,9 +62,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
+sparkno = -1 + 0 * (varset(sparkno = 8010))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 20) * (map(sparkx.max) := 65), map(sparky) := -82
+sparkxy = -10 + 0 * (varset(sparkx.min = 20)) * (varset(sparkx.max = 65)), varset(sparky = -82)
 hitsound = s2, 1
 hitsound.channel = 2
 guardsound = s2, 0
@@ -118,7 +118,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -148,7 +148,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 201, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = S, NA
 damage = 30, 0
 dizzypoints = 50 * !map(darkforce)
@@ -159,9 +159,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
+sparkno = -1 + 0 * (varset(sparkno = 8010))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 20) * (map(sparkx.max) := 65), map(sparky) := -74
+sparkxy = -10 + 0 * (varset(sparkx.min = 20)) * (varset(sparkx.max = 65)), varset(sparky = -74)
 hitsound = s2, 1
 hitsound.channel = 2
 guardsound = s2, 0
@@ -215,7 +215,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -245,7 +245,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 210, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = S, NA
 damage = 70, 0
 dizzypoints = 100 * !map(darkforce)
@@ -256,9 +256,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8011)
+sparkno = -1 + 0 * (varset(sparkno = 8011))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 70) * (map(sparkx.max) := 115), map(sparky) := -54
+sparkxy = -10 + 0 * (varset(sparkx.min = 70)) * (varset(sparkx.max = 115)), varset(sparky = -54)
 hitsound = s2, 2
 hitsound.channel = 2
 guardsound = s2, 0
@@ -322,7 +322,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -352,7 +352,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 211, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = S, NA
 damage = 80, 0
 dizzypoints = 100 * !map(darkforce)
@@ -363,9 +363,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8021)
+sparkno = -1 + 0 * (varset(sparkno = 8021))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 50) * (map(sparkx.max) := 110), map(sparky) := -62
+sparkxy = -10 + 0 * (varset(sparkx.min = 50)) * (varset(sparkx.max = 110)), varset(sparky = -62)
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
@@ -439,7 +439,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -469,7 +469,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 220, Hit]
 type = hitdef
 trigger1 = animelem = 5
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = S, NA
 damage = 100, 0
 dizzypoints = 200 * !map(darkforce)
@@ -480,9 +480,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8022)
+sparkno = -1 + 0 * (varset(sparkno = 8022))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 70) * (map(sparkx.max) := 130), map(sparky) := -48
+sparkxy = -10 + 0 * (varset(sparkx.min = 70)) * (varset(sparkx.max = 130)), varset(sparky = -48)
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -546,7 +546,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -576,7 +576,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 221, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = S, NA
 damage = 90, 0
 dizzypoints = 200 * !map(darkforce)
@@ -587,9 +587,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8022)
+sparkno = -1 + 0 * (varset(sparkno = 8022))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 60), map(sparky) := -36
+sparkxy = -10 + 0 * (varset(sparkx.min = 40)) * (varset(sparkx.max = 60)), varset(sparky = -36)
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -619,7 +619,7 @@ forcestand = 1
 type = hitdef
 trigger1 = animelem = 3
 trigger1 = !movecontact && !movereversed
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = S, NA
 damage = 90, 0
 dizzypoints = 200 * !map(darkforce)
@@ -630,9 +630,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8022)
+sparkno = -1 + 0 * (varset(sparkno = 8022))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 60), map(sparky) := -62
+sparkxy = -10 + 0 * (varset(sparkx.min = 40)) * (varset(sparkx.max = 60)), varset(sparky = -62)
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -706,7 +706,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -736,7 +736,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 230, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = S, NA
 damage = 30, 0
 dizzypoints = 50 * !map(darkforce)
@@ -747,9 +747,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
+sparkno = -1 + 0 * (varset(sparkno = 8010))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 35) * (map(sparkx.max) := 70), map(sparky) := -32
+sparkxy = -10 + 0 * (varset(sparkx.min = 35)) * (varset(sparkx.max = 70)), varset(sparky = -32)
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -803,7 +803,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -833,7 +833,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 240, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = S, NA
 damage = 70, 0
 dizzypoints = 100 * !map(darkforce)
@@ -844,9 +844,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8011)
+sparkno = -1 + 0 * (varset(sparkno = 8011))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 110), map(sparky) := -53
+sparkxy = -10 + 0 * (varset(sparkx.min = 60)) * (varset(sparkx.max = 110)), varset(sparky = -53)
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -875,7 +875,7 @@ forcenofall = !map(darkforce)
 type = hitdef
 trigger1 = animelem = 4
 trigger1 = prevstateno = 710
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = S, NA
 damage = 70, 0
 dizzypoints = 100 * !map(darkforce)
@@ -886,9 +886,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8011)
+sparkno = -1 + 0 * (varset(sparkno = 8011))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 110), map(sparky) := -53
+sparkxy = -10 + 0 * (varset(sparkx.min = 60)) * (varset(sparkx.max = 110)), varset(sparky = -53)
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -953,7 +953,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -983,7 +983,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 250, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = S, NA
 damage = 90, 0
 dizzypoints = 200 * !map(darkforce)
@@ -994,9 +994,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8022)
+sparkno = -1 + 0 * (varset(sparkno = 8022))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 120), map(sparky) := -70
+sparkxy = -10 + 0 * (varset(sparkx.min = 60)) * (varset(sparkx.max = 120)), varset(sparky = -70)
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1099,7 +1099,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -1166,7 +1166,7 @@ ownpal = 1
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 3 || animelem = 4
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = A, NA
 damage = 30, 0
 dizzypoints = 50 * !map(darkforce)
@@ -1177,9 +1177,9 @@ guardflag = HA
 hitflag = HAF
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (map(sparkno) := 8012)
+sparkno = -1 + 0 * (varset(sparkno = 8012))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 45) * (map(sparkx.max) := 115), map(sparky) := ifelse((animelem = 3), -96, -72)
+sparkxy = -10 + 0 * (varset(sparkx.min = 45)) * (varset(sparkx.max = 115)), varset(sparky = ((animelem = 3) * -96 + (animelem != 3) * -72))
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1210,7 +1210,7 @@ forcenofall = !map(darkforce)
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 5
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = A, NA
 damage = 30, 0
 dizzypoints = 50 * !map(darkforce)
@@ -1221,9 +1221,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (map(sparkno) := 8012)
+sparkno = -1 + 0 * (varset(sparkno = 8012))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 45) * (map(sparkx.max) := 100), map(sparky) := -48
+sparkxy = -10 + 0 * (varset(sparkx.min = 45)) * (varset(sparkx.max = 100)), varset(sparky = -48)
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1254,7 +1254,7 @@ forcenofall = !map(darkforce)
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 6
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = A, NA
 damage = 30, 0
 dizzypoints = 50 * !map(darkforce)
@@ -1265,9 +1265,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8012)
+sparkno = -1 + 0 * (varset(sparkno = 8012))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 45) * (map(sparkx.max) := 100), map(sparky) := -24
+sparkxy = -10 + 0 * (varset(sparkx.min = 45)) * (varset(sparkx.max = 100)), varset(sparky = -24)
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1367,7 +1367,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -1397,7 +1397,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 400, Hit]
 type = hitdef
 trigger1 = animelem = 2 || animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = C, NA
 damage = 20, 0
 dizzypoints = 25 * !map(darkforce)
@@ -1408,9 +1408,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
+sparkno = -1 + 0 * (varset(sparkno = 8010))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 70), map(sparky) := -36
+sparkxy = -10 + 0 * (varset(sparkx.min = 30)) * (varset(sparkx.max = 70)), varset(sparky = -36)
 hitsound = s2, 1
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1465,7 +1465,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -1495,7 +1495,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 410, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = C, NA
 damage = 60, 0
 dizzypoints = 100 * !map(darkforce)
@@ -1506,9 +1506,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8021)
+sparkno = -1 + 0 * (varset(sparkno = 8021))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 75), map(sparky) := -29
+sparkxy = -10 + 0 * (varset(sparkx.min = 40)) * (varset(sparkx.max = 75)), varset(sparky = -29)
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1573,7 +1573,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -1603,7 +1603,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 420, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = C, NA
 damage = 100, 0
 dizzypoints = 200 * !map(darkforce)
@@ -1614,9 +1614,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8022)
+sparkno = -1 + 0 * (varset(sparkno = 8022))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 130), map(sparky) := -32
+sparkxy = -10 + 0 * (varset(sparkx.min = 60)) * (varset(sparkx.max = 130)), varset(sparky = -32)
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1671,7 +1671,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -1701,7 +1701,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 425, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = C, NA
 damage = 90, 0
 dizzypoints = 200 * !map(darkforce)
@@ -1712,9 +1712,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8022)
+sparkno = -1 + 0 * (varset(sparkno = 8022))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 50) * (map(sparkx.max) := 90), map(sparky) := -120
+sparkxy = -10 + 0 * (varset(sparkx.min = 50)) * (varset(sparkx.max = 90)), varset(sparky = -120)
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1803,7 +1803,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -1833,7 +1833,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 430, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = C, NA
 damage = 30, 0
 dizzypoints = 50 * !map(darkforce)
@@ -1844,9 +1844,9 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
+sparkno = -1 + 0 * (varset(sparkno = 8010))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 35) * (map(sparkx.max) := 85), map(sparky) := -16
+sparkxy = -10 + 0 * (varset(sparkx.min = 35)) * (varset(sparkx.max = 85)), varset(sparky = -16)
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1901,7 +1901,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -1931,7 +1931,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 431, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = C, NA
 damage = 30, 0
 dizzypoints = 50 * !map(darkforce)
@@ -1942,9 +1942,9 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
+sparkno = -1 + 0 * (varset(sparkno = 8010))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 35) * (map(sparkx.max) := 85), map(sparky) := -4
+sparkxy = -10 + 0 * (varset(sparkx.min = 35)) * (varset(sparkx.max = 85)), varset(sparky = -4)
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2009,7 +2009,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -2039,7 +2039,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 440, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = S, NA
 damage = 70, 0
 dizzypoints = 100 * !map(darkforce)
@@ -2050,7 +2050,7 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8011)
+sparkno = -1 + 0 * (varset(sparkno = 8011))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
 sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 85), map(sparky) := -32
 hitsound = s2, 5
@@ -2117,7 +2117,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -2147,7 +2147,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 445, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = S, NA
 damage = 70, 0
 dizzypoints = 100 * !map(darkforce)
@@ -2158,7 +2158,7 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8011)
+sparkno = -1 + 0 * (varset(sparkno = 8011))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
 sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 90), map(sparky) := -14
 hitsound = s2, 5
@@ -2225,7 +2225,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -2255,7 +2255,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 450, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = C, NA
 damage = 80, 0
 dizzypoints = 200 * !map(darkforce)
@@ -2266,7 +2266,7 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8012)
+sparkno = -1 + 0 * (varset(sparkno = 8012))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
 sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 120), map(sparky) := -30
 hitsound = s2, 6
@@ -2323,7 +2323,7 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -2353,7 +2353,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 600, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = A, NA
 damage = 40, 0
 dizzypoints = 50 * !map(darkforce)
@@ -2439,7 +2439,7 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -2477,7 +2477,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 610, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = A, NA
 damage = 70, 0
 dizzypoints = 100 * !map(darkforce)
@@ -2488,7 +2488,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8021)
+sparkno = -1 + 0 * (varset(sparkno = 8021))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
 sparkxy = -10 + 0 * (map(sparkx.min) := 35) * (map(sparkx.max) := 75), map(sparky) := -48
 hitsound = s2, 8
@@ -2563,7 +2563,7 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -2593,7 +2593,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 620, Hit]
 type = hitdef
 trigger1 = animelem = 6
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = A, NA
 damage = 90, 0
 dizzypoints = 200 * !map(darkforce)
@@ -2604,7 +2604,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8012)
+sparkno = -1 + 0 * (varset(sparkno = 8012))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
 sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 85), map(sparky) := -66
 hitsound = s2, 3
@@ -2679,7 +2679,7 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -2709,7 +2709,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 630, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = A, NA
 damage = 40, 0
 dizzypoints = 50 * !map(darkforce)
@@ -2720,7 +2720,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
+sparkno = -1 + 0 * (varset(sparkno = 8010))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
 sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 65), map(sparky) := -42
 hitsound = s2, 4
@@ -2795,7 +2795,7 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -2825,7 +2825,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 631, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = A, NA
 damage = 40, 0
 dizzypoints = 50 * !map(darkforce)
@@ -2836,7 +2836,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
+sparkno = -1 + 0 * (varset(sparkno = 8010))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
 sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 65), map(sparky) := -62
 hitsound = s2, 4
@@ -2911,7 +2911,7 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -2941,7 +2941,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 640, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = A, NA
 damage = 70, 0
 dizzypoints = 100 * !map(darkforce)
@@ -2952,7 +2952,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8011)
+sparkno = -1 + 0 * (varset(sparkno = 8011))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
 sparkxy = -10 + 0 * (map(sparkx.min) := -25) * (map(sparkx.max) := 75), map(sparky) := -42
 hitsound = s2, 5
@@ -3027,7 +3027,7 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 
@@ -3057,7 +3057,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 650, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 attr = A, NA
 damage = 90, 0
 dizzypoints = 200 * !map(darkforce)
@@ -3068,7 +3068,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8012)
+sparkno = -1 + 0 * (varset(sparkno = 8012))
 guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
 sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 75), map(sparky) := -54
 hitsound = s2, 6
@@ -3143,7 +3143,7 @@ poweradd = 0
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = 1
 

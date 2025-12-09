@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ;==============================================================================================
 ;=======================================<HELPER STATES>========================================
 ;==============================================================================================
@@ -43,9 +43,9 @@ type = null
 trigger1 = movecontact = 1
 trigger1 = p2, gethitvar(frame)
 trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
-trigger1 = 1 || map(projcontact) := 1
+trigger1 = 1 || varset(projcontact = 1)
 trigger1 = root, stateno = 1000
-trigger1 = root, map(projcontact) := 1
+trigger1 = root, varset(projcontact = 1)
 ignorehitpause = 1
 
 [State 1005, Time Var]
@@ -56,7 +56,7 @@ var(1) = 1
 [State 1005, Vel]
 type = velset
 trigger1 = 1
-x = ifelse(map(strength) = 2, 5.67, ifelse(map(strength) = 1, 4.72, 3.77))
+x = (map(strength) = 2) * 5.67 + (map(strength) = 1) * 4.72 + (map(strength) != 1 && map(strength) != 2) * 3.77
 y = 0
 
 [State 1005, Trans]
@@ -103,7 +103,7 @@ ignorehitpause = 1
 [State 1005, Hit]
 type = hitdef
 trigger1 = 1
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 priority = 4, Hit
 attr = S, SP
 damage = 70, 18
@@ -113,9 +113,9 @@ animtype = Hard
 hitflag = MAF
 guardflag = MA
 pausetime = 0, 12
-sparkno = -1 + 0 * (map(sparkno) := 8013)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -30) * (map(sparkx.max) := 20), map(sparky) := 0
+sparkno = -1 + 0 * (varset(sparkno = 8013))
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
+sparkxy = -10 + 0 * (varset(sparkx.min = -30)) * (varset(sparkx.max = 20)), varset(sparky = 0)
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -158,9 +158,9 @@ ignorehitpause = 1
 [State 1005, End]
 type = changestate
 trigger1 = root, map(darkforce) <= 0
-trigger1 = var(1) >= ifelse(map(strength) = 2, 80, ifelse(map(strength) = 1, 65, 50))
+trigger1 = var(1) >= ((map(strength) = 2) * 80 + (map(strength) = 1) * 65 + (map(strength) != 1 && map(strength) != 2) * 50)
 trigger2 = root, map(darkforce) > 0
-trigger2 = var(1) >= ifelse(map(strength) = 2, 160, ifelse(map(strength) = 1, 130, 100))
+trigger2 = var(1) >= ((map(strength) = 2) * 160 + (map(strength) = 1) * 130 + (map(strength) != 1 && map(strength) != 2) * 100)
 trigger3 = frontedgedist < -20
 trigger4 = backedgedist < -20
 trigger4 = root, map(darkforce) <= 0
@@ -323,15 +323,15 @@ type = null
 trigger1 = movecontact = 1
 trigger1 = p2, gethitvar(frame)
 trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
-trigger1 = 1 || map(projcontact) := 1
+trigger1 = 1 || varset(projcontact = 1)
 trigger1 = root, stateno = 1050
-trigger1 = root, map(projcontact) := 1
+trigger1 = root, varset(projcontact = 1)
 ignorehitpause = 1
 
 [State 1055, Vel]
 type = velset
 trigger1 = 1
-x = ifelse(map(strength) = 2, 4.6, ifelse(map(strength) = 1, 3.83, 2.88))
+x = (map(strength) = 2) * 4.6 + (map(strength) = 1) * 3.83 + (map(strength) != 1 && map(strength) != 2) * 2.88
 y = 4.8
 
 [State 1055, Trans]
@@ -378,7 +378,7 @@ ignorehitpause = 1
 [State 1055, Hit]
 type = hitdef
 trigger1 = 1
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 priority = 4, Hit
 attr = A, SP
 damage = 70, 18
@@ -388,9 +388,9 @@ animtype = Hard
 hitflag = MAFD
 guardflag = MA
 pausetime = 0, 12
-sparkno = -1 + 0 * (map(sparkno) := 8013)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -30) * (map(sparkx.max) := 10), map(sparky) := 10
+sparkno = -1 + 0 * (varset(sparkno = 8013))
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
+sparkxy = -10 + 0 * (varset(sparkx.min = -30)) * (varset(sparkx.max = 10)), varset(sparky = 10)
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -479,9 +479,9 @@ type = null
 trigger1 = movecontact = 1
 trigger1 = p2, gethitvar(frame)
 trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
-trigger1 = 1 || map(projcontact) := 1
+trigger1 = 1 || varset(projcontact = 1)
 trigger1 = root, stateno = 1010
-trigger1 = root, map(projcontact) := 1
+trigger1 = root, varset(projcontact = 1)
 ignorehitpause = 1
 
 [State 1015, Time Var]
@@ -604,7 +604,7 @@ ignorehitpause = 1
 [State 1015, Hit]
 type = hitdef
 trigger1 = 1
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 2)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 2))
 priority = 4, Hit
 attr = S, SP
 damage = 90, 23
@@ -614,9 +614,9 @@ animtype = Hard
 hitflag = MAF
 guardflag = MA
 pausetime = 0, 12
-sparkno = -1 + 0 * (map(sparkno) := 8013)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -30) * (map(sparkx.max) := 20), map(sparky) := 0
+sparkno = -1 + 0 * (varset(sparkno = 8013))
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
+sparkxy = -10 + 0 * (varset(sparkx.min = -30)) * (varset(sparkx.max = 20)), varset(sparky = 0)
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -691,9 +691,9 @@ type = null
 trigger1 = movecontact = 1
 trigger1 = p2, gethitvar(frame)
 trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
-trigger1 = 1 || map(projcontact) := 1
+trigger1 = 1 || varset(projcontact = 1)
 trigger1 = root, stateno = 1060
-trigger1 = root, map(projcontact) := 1
+trigger1 = root, varset(projcontact = 1)
 ignorehitpause = 1
 
 [State 1065, Time Var]
@@ -817,7 +817,7 @@ ignorehitpause = 1
 [State 1065, Hit]
 type = hitdef
 trigger1 = 1
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 2)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 2))
 priority = 4, Hit
 attr = A, SP
 damage = 90, 23
@@ -827,9 +827,9 @@ animtype = Hard
 hitflag = MAFD
 guardflag = MA
 pausetime = 0, 12
-sparkno = -1 + 0 * (map(sparkno) := 8013)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -30) * (map(sparkx.max) := 20), map(sparky) := 0
+sparkno = -1 + 0 * (varset(sparkno = 8013))
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
+sparkxy = -10 + 0 * (varset(sparkx.min = -30)) * (varset(sparkx.max = 20)), varset(sparky = 0)
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -929,9 +929,9 @@ type = null
 trigger1 = movecontact = 1
 trigger1 = p2, gethitvar(frame)
 trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
-trigger1 = 1 || map(projcontact) := 1
+trigger1 = 1 || varset(projcontact = 1)
 trigger1 = root, stateno = 3000
-trigger1 = root, map(projcontact) := 1
+trigger1 = root, varset(projcontact = 1)
 ignorehitpause = 1
 
 [State 3005, Time Var]
@@ -943,7 +943,7 @@ var(1) = 1
 type = velset
 trigger1 = 1
 ;x = 6.70
-x = ifelse(map(strength) = 2, 6.70, ifelse(map(strength) = 1, 5.58, 4.47))
+x = (map(strength) = 2) * 6.70 + (map(strength) = 1) * 5.58 + (map(strength) != 1 && map(strength) != 2) * 4.47
 
 [State 3005, Trans]
 type = trans
@@ -994,7 +994,7 @@ value = 1
 [State 3005, Hit]
 type = hitdef
 trigger1 = time >= ifelse(numtarget, 6, 0)
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := (2 + var(2)))
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = (2 + var(2))))
 priority = 4, Hit
 attr = S, HP
 damage = 67, 17
@@ -1006,9 +1006,9 @@ fall.animtype = Back
 hitflag = MAF
 guardflag = M
 pausetime = 0, 12
-sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -30) * (map(sparkx.max) := 20), map(sparky) := 0
+sparkno = -1 + 0 * (varset(sparkno = 8014))
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
+sparkxy = -10 + 0 * (varset(sparkx.min = -30)) * (varset(sparkx.max = 20)), varset(sparky = 0)
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -1227,9 +1227,9 @@ type = null
 trigger1 = movecontact = 1
 trigger1 = p2, gethitvar(frame)
 trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
-trigger1 = 1 || map(projcontact) := 1
+trigger1 = 1 || varset(projcontact = 1)
 trigger1 = root, stateno = 3050
-trigger1 = root, map(projcontact) := 1
+trigger1 = root, varset(projcontact = 1)
 ignorehitpause = 1
 
 [State 3055, Vel]
@@ -1237,8 +1237,8 @@ type = velset
 trigger1 = 1
 ;x = 5.83
 ;y = 2.33
-x = ifelse(map(strength) = 2, 5.84, ifelse(map(strength) = 1, 5.26, 4.47))
-y = ifelse(map(strength) = 2, 2.42, ifelse(map(strength) = 1, 3.52, 4.47))
+x = (map(strength) = 2) * 5.84 + (map(strength) = 1) * 5.26 + (map(strength) != 1 && map(strength) != 2) * 4.47
+y = (map(strength) = 2) * 2.42 + (map(strength) = 1) * 3.52 + (map(strength) != 1 && map(strength) != 2) * 4.47
 
 [State 3055, Trans]
 type = trans
@@ -1296,7 +1296,7 @@ value = 1
 [State 3055, Hit]
 type = hitdef
 trigger1 = time >= ifelse(numtarget, 6, 0)
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := (2 + var(2)))
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = (2 + var(2))))
 priority = 4, Hit
 attr = A, HP
 damage = 60, 15
@@ -1308,9 +1308,9 @@ fall.animtype = Back
 hitflag = MAFD
 guardflag = M
 pausetime = 0, 12
-sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -30) * (map(sparkx.max) := 10), map(sparky) := 10
+sparkno = -1 + 0 * (varset(sparkno = 8014))
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
+sparkxy = -10 + 0 * (varset(sparkx.min = -30)) * (varset(sparkx.max = 10)), varset(sparky = 10)
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -1419,9 +1419,9 @@ type = null
 trigger1 = movecontact = 1
 trigger1 = p2, gethitvar(frame)
 trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
-trigger1 = 1 || map(projcontact) := 1
+trigger1 = 1 || varset(projcontact = 1)
 trigger1 = root, stateno = 3300
-trigger1 = root, map(projcontact) := 1
+trigger1 = root, varset(projcontact = 1)
 ignorehitpause = 1
 
 [State 3305, Fade]
@@ -1523,7 +1523,7 @@ ignorehitpause = 1
 type = hitdef
 trigger1 = !movecontact && !movereversed
 trigger1 = time >= 18
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 30)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 30))
 priority = 4, Hit
 attr = S, HP
 damage = 10, 2
@@ -1535,9 +1535,9 @@ hitflag = MAF
 guardflag = MA
 pausetime = 0, 12
 guard.pausetime = 0, 12
-sparkno = -1 + 0 * (map(sparkno) := 8024)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -20) * (map(sparkx.max) := 0), map(sparky) := 0
+sparkno = -1 + 0 * (varset(sparkno = 8024))
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
+sparkxy = -10 + 0 * (varset(sparkx.min = -20)) * (varset(sparkx.max = 0)), varset(sparky = 0)
 hitsound = -1; root
 guardsound = -1; root
 ground.type = High
@@ -1696,17 +1696,17 @@ trigger1 = facing = (root, facing)
 
 [State 4015, Spark Properties]
 type = null
-trigger1 = 1 || map(sparkno) := root, map(sparkno)
-trigger1 = 1 || map(guard.sparkno) := root, map(guard.sparkno)
-trigger1 = 1 || map(sparkx.min) := root, map(sparkx.min)
-trigger1 = 1 || map(sparkx.max) := root, map(sparkx.max)
-trigger1 = 1 || map(sparky) := (0.5 * root, map(sparky))
+trigger1 = 1 || varset(sparkno = root, map(sparkno))
+trigger1 = 1 || varset(guard.sparkno = root, map(guard.sparkno))
+trigger1 = 1 || varset(sparkx.min = root, map(sparkx.min))
+trigger1 = 1 || varset(sparkx.max = root, map(sparkx.max))
+trigger1 = 1 || varset(sparky = (0.5 * root, map(sparky)))
 
 [State 4015, Hit High Ground]
 type = hitdef
 trigger1 = anim = 4010
 trigger1 = animelem = 8 || animelem = 14 || animelem = 19 || animelem = 36 || animelem = 37
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 99))
 ID = 4010
 attr = S, HA
 damage = 0, 0
@@ -1742,7 +1742,7 @@ p2facing = ifelse(p2, facing = facing && random < 666, 1, -1)
 type = hitdef
 trigger1 = anim = 4010
 trigger1 = animelem = 11 || animelem = 28 || animelem = 38 || animelem = 39
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 99))
 ID = 4010
 attr = S, HA
 damage = 0, 0
@@ -1777,7 +1777,7 @@ p2facing = ifelse(p2, facing = facing && random < 666, 1, -1)
 [State 4015, Hit Up Ground]
 type = hitdef
 trigger1 = anim = 4010 && animelem = 42
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 99))
 ID = 4010
 attr = S, HA
 damage = 0, 0
@@ -1818,7 +1818,7 @@ p2facing = -1
 type = hitdef
 trigger1 = anim = 4011
 trigger1 = animelem = 4 || animelem = 9 || animelem = 15 || animelem = 20 || animelem = 25
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 99))
 ID = 4010
 attr = A, HA
 damage = 0, 0
@@ -1859,7 +1859,7 @@ p2facing = ifelse(p2, facing = facing && random < 666, 1, -1)
 [State 4015, Hit Final]
 type = hitdef
 trigger1 = anim = 4011 && animelem = 32
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 99))
 ID = 4010
 attr = A, HA
 damage = 0, 0
@@ -2058,16 +2058,16 @@ ownpal = 1
 
 [State 4065, Spark Properties]
 type = null
-trigger1 = 1 || map(sparkno) := root, map(sparkno)
-trigger1 = 1 || map(guard.sparkno) := root, map(guard.sparkno)
-trigger1 = 1 || map(sparkx.min) := root, map(sparkx.min)
-trigger1 = 1 || map(sparkx.max) := root, map(sparkx.max)
-trigger1 = 1 || map(sparky) := (0.5 * root, map(sparky))
+trigger1 = 1 || varset(sparkno = root, map(sparkno))
+trigger1 = 1 || varset(guard.sparkno = root, map(guard.sparkno))
+trigger1 = 1 || varset(sparkx.min = root, map(sparkx.min))
+trigger1 = 1 || varset(sparkx.max = root, map(sparkx.max))
+trigger1 = 1 || varset(sparky = (0.5 * root, map(sparky)))
 
 [State 4065, Hit High]
 type = hitdef
 trigger1 = animelem = 7 || animelem = 13 || animelem = 20 || animelem = 22
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 99))
 ID = 4060
 attr = S, HA
 damage = 0, 0
@@ -2110,7 +2110,7 @@ p2facing = ifelse(p2, facing = facing && random < 666, 1, -1)
 [State 4065, Hit Low]
 type = hitdef
 trigger1 = animelem = 3 || animelem = 10 || animelem = 17 || animelem = 21 || animelem = 23
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 99))
 ID = 4060
 attr = S, HA
 damage = 0, 0
@@ -2153,7 +2153,7 @@ p2facing = ifelse(p2, facing = facing && random < 666, 1, -1)
 [State 4065, Hit Final]
 type = hitdef
 trigger1 = animelem = 30
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 99))
 ID = 4060
 attr = A, HA
 damage = 0, 0
@@ -2246,9 +2246,9 @@ type = null
 trigger1 = movecontact = 1
 trigger1 = p2, gethitvar(frame)
 trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
-trigger1 = 1 || map(projcontact) := 1
+trigger1 = 1 || varset(projcontact = 1)
 trigger1 = root, stateno = 4100
-trigger1 = root, map(projcontact) := 1
+trigger1 = root, varset(projcontact = 1)
 ignorehitpause = 1
 
 [State 4105, Vel]
@@ -2299,15 +2299,15 @@ type = hitdef
 trigger1 = numenemy
 trigger1 = !(root, map(unthrowable))
 trigger1 = p2bodydist x = [-(const(size.ground.front) + const(size.ground.back) + p2, const(size.ground.front) + p2, const(size.ground.back)), 0]
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = 1))
 ID = 4105
 attr = S, HT
 hitflag = M
 priority = 1, Miss
 getpower = 0, 0
 givepower = 0, 0
-sparkno = -1 + 0 * (map(sparkno) := -1)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := -1)
+sparkno = -1 + 0 * (varset(sparkno = -1))
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = -1))
 sparkxy = -10, 0
 hitsound = s2, 800
 hitsound.channel = 2
@@ -3241,25 +3241,25 @@ trigger2 = facing != root, facing
 type = null
 triggerall = root, stateno = 5120
 trigger1 = var(0) = 1
-trigger1 = (fvar(1) := (fvar(1) - 1.47)) + (fvar(2) := (fvar(2) - 1.16))
+trigger1 = varfset(fvar(1) = (fvar(1) - 1.47)) + varfset(fvar(2) = (fvar(2) - 1.16))
 trigger2 = var(0) = 2
-trigger2 = (fvar(1) := (fvar(1) + 5)) + (fvar(2) := (fvar(2) - 6.33))
+trigger2 = varfset(fvar(1) = (fvar(1) + 5)) + varfset(fvar(2) = (fvar(2) - 6.33))
 trigger3 = var(0) = 3
-trigger3 = (fvar(1) := (fvar(1) + 0.4)) + (fvar(2) := (fvar(2) - 0.5))
+trigger3 = varfset(fvar(1) = (fvar(1) + 0.4)) + varfset(fvar(2) = (fvar(2) - 0.5))
 trigger4 = var(0) = 4
-trigger4 = (fvar(1) := (fvar(1) - 0.6)) + (fvar(2) := (fvar(2) - 0.73))
+trigger4 = varfset(fvar(1) = (fvar(1) - 0.6)) + varfset(fvar(2) = (fvar(2) - 0.73))
 
 [State 6105, Retreat Binding]
 type = null
 triggerall = root, stateno = 5230
 trigger1 = var(0) = 1
-trigger1 = (fvar(1) := (fvar(1) + 1.0)) + (fvar(2) := (fvar(2) - 1.5))
+trigger1 = varfset(fvar(1) = (fvar(1) + 1.0)) + varfset(fvar(2) = (fvar(2) - 1.5))
 trigger2 = var(0) = 2
-trigger2 = (fvar(1) := (fvar(1) + 0.5)) + (fvar(2) := (fvar(2) - 5.5))
+trigger2 = varfset(fvar(1) = (fvar(1) + 0.5)) + varfset(fvar(2) = (fvar(2) - 5.5))
 trigger3 = var(0) = 3
-trigger3 = (fvar(1) := (fvar(1) - 1.0)) + (fvar(2) := (fvar(2) - 2.2))
+trigger3 = varfset(fvar(1) = (fvar(1) - 1.0)) + varfset(fvar(2) = (fvar(2) - 2.2))
 trigger4 = var(0) = 4
-trigger4 = (fvar(1) := (fvar(1) - 2.5)) + (fvar(2) := (fvar(2) - 2.0))
+trigger4 = varfset(fvar(1) = (fvar(1) - 2.5)) + varfset(fvar(2) = (fvar(2) - 2.0))
 
 [State 6105, Var X]
 type = varset
@@ -3992,7 +3992,7 @@ anim = 9999
 [State 8150, Timer]
 type = null
 trigger1 = time
-trigger1 = map(timer) := (map(timer) - 1)
+trigger1 = varset(timer = (map(timer) - 1))
 
 [State 8150, End]
 type = destroyself

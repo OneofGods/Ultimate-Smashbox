@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ;==============================================================================================
 ;======================================<DARK FORCE STATES>=====================================
 ;==============================================================================================
@@ -181,18 +181,18 @@ ignorehitpause = 1
 
 [State 775, Juggle Properties]
 type = null
-trigger1 = 1 || map(juggle_start) := 0
-trigger1 = 1 || map(juggle_increase) := 0
-trigger1 = 1 || map(juggle_limit) := (root, map(juggle_limit) + 1)
+trigger1 = 1 || varset(juggle_start = 0)
+trigger1 = 1 || varset(juggle_increase = 0)
+trigger1 = 1 || varset(juggle_limit = (root, map(juggle_limit) + 1))
 ignorehitpause = 1
 
 [State 775, Spark Properties]
 type = null
-trigger1 = 1 || map(sparkno) := root, map(sparkno)
-trigger1 = 1 || map(guard.sparkno) := root, map(guard.sparkno)
-trigger1 = 1 || map(sparkx.min) := root, map(sparkx.min)
-trigger1 = 1 || map(sparkx.max) := root, map(sparkx.max)
-trigger1 = 1 || map(sparky) := root, map(sparky)
+trigger1 = 1 || varset(sparkno = root, map(sparkno))
+trigger1 = 1 || varset(guard.sparkno = root, map(guard.sparkno))
+trigger1 = 1 || varset(sparkx.min = root, map(sparkx.min))
+trigger1 = 1 || varset(sparkx.max = root, map(sparkx.max))
+trigger1 = 1 || varset(sparky = root, map(sparky))
 ignorehitpause = 1
 
 [State 775, Hit]
@@ -237,7 +237,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8011)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8011))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, -54
 hitsound = -1
@@ -392,7 +392,7 @@ priority = 4, Hit
 pausetime = 10, 10
 sparkno = ifelse(root, map(cfg_sparks), -1, 2)
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -32
+sparkxy = -10 + 0 * (varset(sparkx.min = 30)) * (varset(sparkx.max = 90)), varset(sparky = -32)
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -421,7 +421,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8011)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8011))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, -53
 hitsound = -1
@@ -482,7 +482,7 @@ guardflag = HA
 hitflag = HAF
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8012)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8012))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, ifelse((root, animelem = 3), -96, -72)
 hitsound = -1
@@ -512,7 +512,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8012)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8012))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, -48
 hitsound = -1
@@ -543,7 +543,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8012)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8012))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, -24
 hitsound = -1
@@ -731,7 +731,7 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8011)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8011))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, ifelse((root, anim = 440), -14, -31)
 hitsound = -1
@@ -763,9 +763,9 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8012)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8012))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -30
+sparkxy = -10 + 0 * (varset(sparkx.min = 30)) * (varset(sparkx.max = 90)), varset(sparky = -30)
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -861,7 +861,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8012)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8012))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, -66
 hitsound = -1
@@ -921,7 +921,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8011)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8011))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, -47
 hitsound = -1
@@ -952,7 +952,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8012)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8012))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, -54
 hitsound = -1
@@ -983,7 +983,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8023)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8023))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, ifelse((root, animelem = 2), -35, -60)
 hitsound = -1
@@ -1025,7 +1025,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8023)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8023))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, -100
 hitsound = -1
@@ -1151,7 +1151,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8023)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8023))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, -60
 hitsound = -1
@@ -1279,9 +1279,9 @@ hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (map(sparkno) := 8023)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -10) * (map(sparkx.max) := 10), map(sparky) := 0
+sparkno = -1 + 0 * (varset(sparkno = 8023))
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
+sparkxy = -10 + 0 * (varset(sparkx.min = -10)) * (varset(sparkx.max = 10)), varset(sparky = 0)
 envshake.time = 12; special
 envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -2, 2)
@@ -1336,9 +1336,9 @@ hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (map(sparkno) := 8023)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -10) * (map(sparkx.max) := 10), map(sparky) := 0
+sparkno = -1 + 0 * (varset(sparkno = 8023))
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
+sparkxy = -10 + 0 * (varset(sparkx.min = -10)) * (varset(sparkx.max = 10)), varset(sparky = 0)
 envshake.time = 12; special
 envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -2, 2)
@@ -1355,7 +1355,7 @@ hitflag = MAFD
 guardflag = M
 priority = 4, Hit
 pausetime = 3, 4
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8024)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8024))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, ifelse((root, animelem = 2), -35, -60)
 hitsound = -1
@@ -1399,7 +1399,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = ifelse((root, animelem = 11), 12, 4), ifelse((root, animelem = 11), 12, 4)
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8024)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8024))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, -100
 hitsound = -1
@@ -1442,7 +1442,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (map(sparkno) := 8024)
+sparkno = ifelse(root, map(cfg_sparks), -1, 2) + 0 * (varset(sparkno = 8024))
 guard.sparkno = ifelse(root, map(cfg_sparks), -1, 40)
 sparkxy = -10, -43
 hitsound = -1

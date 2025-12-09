@@ -19,35 +19,35 @@ type = null;NO-NO-NO-NO-NO-NO-NO-NO-NO-NO-NO-NO-NO-NO-NO-NO-NO-NO-NO-NO-NO-NO-NO
 ;1 - Custom sparks type Geese
 ;2 - Custom sparks type Nakoruru
 
-trigger1 = pi || map(cfg_sparks) := 2
+trigger1 = pi || varset(cfg_sparks = 2)
 
 
 
 ;--------------------------------------- SUPER PAUSES -----------------------------------------
 ;Set the number below to 1 for custom effects, or 0 to use your screenpack's effects
 
-trigger1 = pi || map(cfg_superfx) := 1
+trigger1 = pi || varset(cfg_superfx = 1)
 
 
 
 ;-------------------------------------- BLOOD EFFECTS -----------------------------------------
 ;Set the number below to 1 to enable blood particle effects, or 0 to disable them
 
-trigger1 = pi || map(cfg_blood) := 1
+trigger1 = pi || varset(cfg_blood = 1)
 
 
 
 ;-------------------------------------- VICTORY CAMERA ----------------------------------------
 ;Set the number below to 1 to zoom in on the character during win poses
 
-trigger1 = pi || map(cfg_winzoom) := 1
+trigger1 = pi || varset(cfg_winzoom = 1)
 
 
 
 ;-------------------------------------- VICTORY MUSIC -----------------------------------------
 ;Set the number below to 1 to play a character-specific music during the victory screen
 
-trigger1 = pi || map(cfg_victorybgm) := 1
+trigger1 = pi || varset(cfg_victorybgm = 1)
 
 
 

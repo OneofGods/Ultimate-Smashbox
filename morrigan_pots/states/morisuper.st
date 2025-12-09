@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ;==============================================================================================
 ;========================================<SUPER STATES>========================================
 ;==============================================================================================
@@ -13,7 +13,7 @@ movetype = A
 anim = 3000
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (map(superlevel) := 1)
+poweradd = -1000 + 0 * (varset(superlevel = 1))
 sprpriority = 2
 facep2 = 1
 
@@ -21,7 +21,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -46,16 +46,16 @@ ignorehitpause = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || varset(cmd_erase_motion_super = 1)
+trigger1 = 1 || varset(cmd_erase_completed = 1)
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || varset(supercancelflag = (prevstateno = [1000, 2999] && map(supercancel)))
+trigger1 = 1 || varset(hypercancelflag = (prevstateno = [3000, 4999] && map(hypercancel)))
 ignorehitpause = 1
 persistent = 0
 
@@ -64,7 +64,7 @@ type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
 trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = 1 || varset(juggle_count = 0)
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
@@ -202,7 +202,7 @@ movetype = A
 anim = 3050
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (map(superlevel) := 1)
+poweradd = -1000 + 0 * (varset(superlevel = 1))
 sprpriority = 2
 facep2 = p2dist x <= -const(size.ground.back)
 
@@ -210,7 +210,7 @@ facep2 = p2dist x <= -const(size.ground.back)
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -235,16 +235,16 @@ ignorehitpause = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || varset(cmd_erase_motion_super = 1)
+trigger1 = 1 || varset(cmd_erase_completed = 1)
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || varset(supercancelflag = (prevstateno = [1000, 2999] && map(supercancel)))
+trigger1 = 1 || varset(hypercancelflag = (prevstateno = [3000, 4999] && map(hypercancel)))
 ignorehitpause = 1
 persistent = 0
 
@@ -253,7 +253,7 @@ type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
 trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = 1 || varset(juggle_count = 0)
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
@@ -463,7 +463,7 @@ movetype = A
 anim = 3100
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (map(superlevel) := 1)
+poweradd = -1000 + 0 * (varset(superlevel = 1))
 facep2 = 1
 sprpriority = 2
 
@@ -471,7 +471,7 @@ sprpriority = 2
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -496,16 +496,16 @@ ignorehitpause = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || varset(cmd_erase_motion_super = 1)
+trigger1 = 1 || varset(cmd_erase_completed = 1)
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || varset(supercancelflag = (prevstateno = [1000, 2999] && map(supercancel)))
+trigger1 = 1 || varset(hypercancelflag = (prevstateno = [3000, 4999] && map(hypercancel)))
 ignorehitpause = 1
 persistent = 0
 
@@ -514,7 +514,7 @@ type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
 trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = 1 || varset(juggle_count = 0)
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
@@ -628,7 +628,7 @@ persistent = 0
 type = hitdef
 trigger1 = anim = 3100
 trigger1 = animelem = 2 || animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := (3 + hitcount))
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = (3 + hitcount)))
 attr = S, HA
 damage = 30, 8
 dizzypoints = 0
@@ -637,9 +637,9 @@ hitflag = MAFD
 guardflag = M
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (map(sparkno) := 8024)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 25) * (map(sparkx.max) := 50), map(sparky) := ifelse((animelem = 2), -35, -60)
+sparkno = -1 + 0 * (varset(sparkno = 8024))
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
+sparkxy = -10 + 0 * (varset(sparkx.min = 25)) * (varset(sparkx.max = 50)), varset(sparky = ((animelem = 2) * -35 + (animelem != 2) * -60))
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -676,7 +676,7 @@ yaccel = 0.4850
 type = hitdef
 trigger1 = anim = 3100
 trigger1 = animelem = 4 || animelem = 6 || animelem = 8 || animelem = 9 || animelem = 10 || animelem = 11
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := (3 + hitcount))
+air.juggle = 0 * (varset(juggle_start = 1) || varset(juggle_increase = 1) || varset(juggle_limit = (3 + hitcount)))
 attr = A, HA
 damage = 30, 8
 dizzypoints = 0
@@ -685,9 +685,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = ifelse((animelem = 11), 12, 4), ifelse((animelem = 11), 12, 4)
-sparkno = -1 + 0 * (map(sparkno) := 8024)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 0) * (map(sparkx.max) := 50), map(sparky) := -100
+sparkno = -1 + 0 * (varset(sparkno = 8024))
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
+sparkxy = -10 + 0 * (varset(sparkx.min = 0)) * (varset(sparkx.max = 50)), varset(sparky = -100)
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -760,7 +760,7 @@ movetype = A
 anim = 3300
 ctrl = 0
 velset = 0, 0
-poweradd = -2000 + 0 * (map(superlevel) := 2)
+poweradd = -2000 + 0 * (varset(superlevel = 2))
 facep2 = 1
 sprpriority = 2
 
@@ -768,7 +768,7 @@ sprpriority = 2
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -776,16 +776,16 @@ value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 299
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || varset(cmd_erase_motion_super = 1)
+trigger1 = 1 || varset(cmd_erase_completed = 1)
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || varset(supercancelflag = (prevstateno = [1000, 2999] && map(supercancel)))
+trigger1 = 1 || varset(hypercancelflag = (prevstateno = [3000, 4999] && map(hypercancel)))
 ignorehitpause = 1
 persistent = 0
 
@@ -794,7 +794,7 @@ type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
 trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = 1 || varset(juggle_count = 0)
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
@@ -950,7 +950,7 @@ movetype = A
 anim = 3400
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (map(superlevel) := 1)
+poweradd = -1000 + 0 * (varset(superlevel = 1))
 sprpriority = 2
 facep2 = 0
 
@@ -958,7 +958,7 @@ facep2 = 0
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -966,16 +966,16 @@ value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 299
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || varset(cmd_erase_motion_super = 1)
+trigger1 = 1 || varset(cmd_erase_completed = 1)
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || varset(supercancelflag = (prevstateno = [1000, 2999] && map(supercancel)))
+trigger1 = 1 || varset(hypercancelflag = (prevstateno = [3000, 4999] && map(hypercancel)))
 ignorehitpause = 1
 persistent = 0
 
@@ -984,7 +984,7 @@ type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
 trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = 1 || varset(juggle_count = 0)
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
@@ -1215,8 +1215,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 6, 12
-sparkno = -1 + 0 * (map(sparkno) := 8024)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
+sparkno = -1 + 0 * (varset(sparkno = 8024))
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (map(sparkx.min) := 20) * (map(sparkx.max) := 75), map(sparky) := -43
 hitsound = s2, 9
 hitsound.channel = 2
@@ -1310,7 +1310,7 @@ sprpriority = 2
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -1318,16 +1318,16 @@ value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 299
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || varset(cmd_erase_motion_super = 1)
+trigger1 = 1 || varset(cmd_erase_completed = 1)
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || varset(supercancelflag = (prevstateno = [1000, 2999] && map(supercancel)))
+trigger1 = 1 || varset(hypercancelflag = (prevstateno = [3000, 4999] && map(hypercancel)))
 ignorehitpause = 1
 persistent = 0
 
@@ -1336,7 +1336,7 @@ type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
 trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = 1 || varset(juggle_count = 0)
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
@@ -1417,7 +1417,7 @@ guardflag = M
 priority = 4, Hit
 pausetime = 12, 12
 sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (map(sparkx.min) := 15) * (map(sparkx.max) := 30), map(sparky) := -60
 hitsound = s2, 3
 hitsound.channel = 2
@@ -1678,7 +1678,7 @@ guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
 sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
 hitsound = s2, ifelse((animelem = 8 || animelem = 14), 2, ifelse((animelem = 19), 3, 6))
 hitsound.channel = 2
@@ -1720,7 +1720,7 @@ guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
 sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
 hitsound = s2, ifelse((animelem = 11), 5, 6)
 hitsound.channel = 2
@@ -1761,7 +1761,7 @@ guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
 sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
 hitsound = s2, 3
 hitsound.channel = 2
@@ -1809,7 +1809,7 @@ guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
 sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
 hitsound = s2, ifelse((animelem = 4), 5, ifelse((animelem = 9 || animelem = 20), 3, 6))
 hitsound.channel = 2
@@ -1856,7 +1856,7 @@ guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
 sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
 hitsound = s2, 3
 hitsound.channel = 2
@@ -2125,7 +2125,7 @@ movetype = A
 anim = 4050
 ctrl = 0
 velset = 0, 0
-poweradd = -2000 + 0 * (map(superlevel) := 2)
+poweradd = -2000 + 0 * (varset(superlevel = 2))
 facep2 = 0
 sprpriority = 2
 
@@ -2133,7 +2133,7 @@ sprpriority = 2
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -2141,16 +2141,16 @@ value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 299
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || varset(cmd_erase_motion_super = 1)
+trigger1 = 1 || varset(cmd_erase_completed = 1)
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || varset(supercancelflag = (prevstateno = [1000, 2999] && map(supercancel)))
+trigger1 = 1 || varset(hypercancelflag = (prevstateno = [3000, 4999] && map(hypercancel)))
 ignorehitpause = 1
 persistent = 0
 
@@ -2159,7 +2159,7 @@ type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
 trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = 1 || varset(juggle_count = 0)
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
@@ -2241,7 +2241,7 @@ guardflag = M
 priority = 4, Hit
 pausetime = 12, 12
 sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (map(sparkx.min) := 15) * (map(sparkx.max) := 30), map(sparky) := -60
 hitsound = s2, 3
 hitsound.channel = 2
@@ -2442,7 +2442,7 @@ guardflag = M
 priority = 4, Hit
 pausetime = 4, 4
 sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
 hitsound = s2, ifelse((animelem = 7), 3, 6)
 hitsound.channel = 2
@@ -2489,7 +2489,7 @@ guardflag = M
 priority = 4, Hit
 pausetime = 4, 4
 sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
 hitsound = s2, ifelse((animelem = 10 || animelem = 17), 3, 6)
 hitsound.channel = 2
@@ -2536,7 +2536,7 @@ guardflag = M
 priority = 4, Hit
 pausetime = 12, 12
 sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
+guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
 hitsound = s2, 6
 hitsound.channel = 2
@@ -2639,7 +2639,7 @@ facep2 = 1
 type = mapadd
 trigger1 = !time
 trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || varset(combocheck = 0)
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -2647,16 +2647,16 @@ value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 299
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || varset(cmd_erase_motion_super = 1)
+trigger1 = 1 || varset(cmd_erase_completed = 1)
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || varset(supercancelflag = (prevstateno = [1000, 2999] && map(supercancel)))
+trigger1 = 1 || varset(hypercancelflag = (prevstateno = [3000, 4999] && map(hypercancel)))
 ignorehitpause = 1
 persistent = 0
 
@@ -2665,7 +2665,7 @@ type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
 trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = 1 || varset(juggle_count = 0)
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
