@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 ;====================<DEFINITION>====================
 [Info]
 name          = "Morrigan Aensland"
@@ -25,7 +25,7 @@ st5     = states/morisuper.st
 st6     = states/morihelper.st
 st7     = states/moridarkforce.st
 st8     = states/inputs.zss
-; st9     = CONFIG.txt
+st9     = CONFIG.txt
 stcommon= common1.cns
 sprite  = morisprite.sff
 anim    = morianim.air

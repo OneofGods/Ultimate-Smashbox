@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; 
 ;==============================================================================================
 ;=======================================<COMMON STATES>========================================
 ;==============================================================================================
@@ -27,12 +27,12 @@ value = 2
 
 [State 0, Anim]
 type = changeanim
-trigger1 = anim != ifelse(map(darkforce) > 0, 1, 0)
+trigger1 = anim != 0
 trigger1 = anim != 2
 trigger1 = anim != 5
 trigger2 = anim = 2 && !animtime
 trigger3 = anim = 5 && !animtime
-value = ifelse(map(darkforce) > 0, 1, 0)
+value = 0
 
 [State 0, Dead]
 type = selfstate
@@ -42,7 +42,7 @@ ctrl = 0
 
 [State 0, Not Myself]
 type = selfstate
-trigger1 = incustomstate
+trigger1 = stateno != [0,199]
 trigger1 = time > 0
 value = 5040
 
@@ -205,44 +205,38 @@ trigger1 = AIlevel
 sysvar(1) = ifelse(p2bodydist x < 30, 0, ifelse((life - p2life) > 200 && p2movetype != H && random < 333, -1, 1))
 
 [State 40, High Jump]
-type = mapset
+type = varset
 trigger1 = !time
-map = "jumptype"
-value = 0
+var(10) = 0
 
 [State 40, High Jump]
-type = mapset
+type = varset
 trigger1 = !time
 trigger1 = !AIlevel
-trigger1 = map(cmd_highjump)
-map = "jumptype"
-value = 3
+var(11) = 3
 
 [State 40, High Jump]
-type = mapset
+type = varset
 trigger1 = !time
 trigger1 = AIlevel
 trigger1 = p2bodydist x > 80 && p2statetype != L
 trigger1 = random < 333
-map = "jumptype"
-value = 3
+var(12) = 3
 
 [State 40, Jump Cancel]
-type = mapset
+type = varset
 trigger1 = prevstateno = 425
-map = "jumptype"
-value = 3
+var(13) = 3
 
 [State 40, Jump Cancel]
-type = mapset
+type = varset
 trigger1 = prevstateno = 425
-map = "juggle_count"
-value = 0
+var(14) = 0
 
 [State 40, Sound]
 type = playsnd
 trigger1 = !animtime
-value = 0, ifelse(map(jumptype) = [2, 3], 41, 40)
+value = 0, 40
 
 [State 40, Dust]
 type = helper
@@ -262,7 +256,7 @@ y = const(velocity.jump.y)
 
 [State 40, Vel Long]
 type = velset
-trigger1 = !animtime && map(jumptype) = 3
+trigger1 = !animtime && var(12) = 3
 x = ifelse(!sysvar(1), const(velocity.jump.neu.x), ifelse(sysvar(1) = 1, const(velocity.runjump.fwd.x), const(velocity.runjump.back.x)))
 y = ifelse(!sysvar(1), const(velocity.runjump.y), const(velocity.jump.y))
 
@@ -337,7 +331,7 @@ y = 0
 [State 52, Disable Trip Guard]; this is a bit different between Mugen and Ikemen
 type = assertspecial
 trigger1 = !time
-trigger1 = prevstateno != [5000, 5999] && prevmovetype != H
+trigger1 = prevstateno != [5000, 5999]
 trigger1 = prevstateno != 50 && prevstateno != 51 && prevstateno != [120, 155]
 trigger1 = prevstateno != 703; air parry
 flag = nostandguard
@@ -349,12 +343,11 @@ type = changestate
 triggerall = !time
 triggerall = ctrl
 triggerall = inguarddist
-triggerall = isasserted(nostandguard) = 0
-triggerall = isasserted(nocrouchguard) = 0
+triggerall = 1
 trigger1 = !AIlevel
 trigger1 = command = "holdback"
 trigger2 = AIlevel
-trigger2 = random < (1000 * (AIlevelF / 8.0))
+trigger2 = random < 500
 value = 120
 
 [State 52, No Walk]
@@ -662,7 +655,7 @@ flag3 = noairguard
 [State 120, AI Tranquilizer]
 type = assertspecial
 trigger1 = AIlevel
-flag = nohardcodedkeys
+flag = noshadow
 
 [State 120, Type]
 type = statetypeset
@@ -695,7 +688,7 @@ triggerall = statetype = S
 trigger1 = !AIlevel
 trigger1 = command = "holddown"
 trigger2 = AIlevel
-trigger2 = !map(ai_blockhigh)
+trigger2 = random < 500
 statetype = C
 physics = C
 
@@ -705,7 +698,7 @@ triggerall = statetype = C
 trigger1 = !AIlevel
 trigger1 = command != "holddown"
 trigger2 = AIlevel
-trigger2 = map(ai_blockhigh)
+trigger2 = random > 500
 statetype = S
 physics = S
 
@@ -730,7 +723,7 @@ trigger3 = !AIlevel
 trigger3 = p2dist x < 0
 trigger3 = command != "holdfwd" || command = "holdback"
 trigger4 = AIlevel && numenemy
-trigger4 = p2, hitdefattr = SCA, AT
+trigger4 = animelem = 5
 value = 140
 
 [State 120, No Walking]
@@ -758,7 +751,7 @@ flag2 = nocrouchguard
 [State 130, AI Tranquilizer]
 type = assertspecial
 trigger1 = AIlevel
-flag = nohardcodedkeys
+flag = noshadow
 
 [State 130, Anim]
 type = changeanim
@@ -769,7 +762,7 @@ value = 130
 type = changestate
 trigger1 = AIlevel
 trigger1 = numenemy
-trigger1 = time >= 120 || p2, time >= 60
+trigger1 = time >= 60
 trigger1 = random < 17
 value = 40
 
@@ -796,7 +789,7 @@ type = changestate
 trigger1 = !AIlevel
 trigger1 = command = "holddown"
 trigger2 = AIlevel
-trigger2 = !map(ai_blockhigh)
+trigger2 = random < 500
 value = 131
 
 [State 130, Stop Guarding]
@@ -809,7 +802,7 @@ trigger3 = !AIlevel
 trigger3 = p2dist x < 0
 trigger3 = command != "holdfwd" || command = "holdback"
 trigger4 = AIlevel && numenemy
-trigger4 = p2, hitdefattr = SCA, AT
+trigger4 = animelem = 5
 value = 140
 
 [State 130, No Walking]
@@ -837,7 +830,7 @@ flag2 = nocrouchguard
 [State 131, AI Tranquilizer]
 type = assertspecial
 trigger1 = AIlevel
-flag = nohardcodedkeys
+flag = noshadow
 
 [State 131, Anim]
 type = changeanim
@@ -849,14 +842,14 @@ type = changestate
 trigger1 = !AIlevel
 trigger1 = command != "holddown"
 trigger2 = AIlevel
-trigger2 = map(ai_blockhigh)
+trigger2 = random > 500
 value = 130
 
 [State 131, AI fix]
 type = changestate
 trigger1 = AIlevel
 trigger1 = numenemy
-trigger1 = time >= 120 || p2, time >= 60
+trigger1 = time >= 60
 trigger1 = random < 17
 value = 40
 
@@ -870,7 +863,7 @@ trigger3 = !AIlevel
 trigger3 = p2dist x < 0
 trigger3 = command != "holdfwd" || command = "holdback"
 trigger4 = AIlevel && numenemy
-trigger4 = p2, hitdefattr = SCA, AT
+trigger4 = animelem = 5
 value = 140
 
 
@@ -887,7 +880,7 @@ flag = noairguard
 [State 132, AI Tranquilizer]
 type = assertspecial
 trigger1 = AIlevel
-flag = nohardcodedkeys
+flag = noshadow
 
 [State 132, Anim]
 type = changeanim
@@ -960,7 +953,7 @@ triggerall = statetype = S
 trigger1 = !AIlevel
 trigger1 = command = "holddown"
 trigger2 = AIlevel
-trigger2 = !map(ai_blockhigh)
+trigger2 = random < 500
 statetype = C
 physics = C
 
@@ -970,7 +963,7 @@ triggerall = statetype = C
 trigger1 = !AIlevel
 trigger1 = command != "holddown"
 trigger2 = AIlevel
-trigger2 = map(ai_blockhigh)
+trigger2 = random > 500
 statetype = S
 physics = S
 
@@ -1014,7 +1007,7 @@ value = 150
 [State 150, End]
 type = changestate
 trigger1 = hitshakeover
-value = ifelse((!AIlevel && command = "holddown") || (AIlevel && !map(ai_blockhigh)), 153, 151)
+value = ifelse((!AIlevel && command = "holddown") || (AIlevel && random < 500), 153, 151)
 
 [State 150, High to Low]
 type = statetypeset
@@ -1022,7 +1015,7 @@ triggerall = statetype = S
 trigger1 = !AIlevel
 trigger1 = command = "holddown"
 trigger2 = AIlevel
-trigger2 = !map(ai_blockhigh)
+trigger2 = random < 500
 statetype = C
 physics = C
 
@@ -1032,7 +1025,7 @@ triggerall = statetype = C
 trigger1 = !AIlevel
 trigger1 = command != "holddown"
 trigger2 = AIlevel
-trigger2 = map(ai_blockhigh)
+trigger2 = random > 500
 statetype = S
 physics = S
 
@@ -1072,7 +1065,7 @@ triggerall = statetype = S
 trigger1 = !AIlevel
 trigger1 = command = "holddown"
 trigger2 = AIlevel
-trigger2 = !map(ai_blockhigh)
+trigger2 = random < 500
 statetype = C
 physics = C
 
@@ -1082,7 +1075,7 @@ triggerall = statetype = C
 trigger1 = !AIlevel
 trigger1 = command != "holddown"
 trigger2 = AIlevel
-trigger2 = map(ai_blockhigh)
+trigger2 = random > 500
 statetype = S
 physics = S
 
@@ -1113,7 +1106,7 @@ value = 151
 [State 152, End]
 type = changestate
 trigger1 = hitshakeover
-value = ifelse((!AIlevel && command = "holddown") || (AIlevel && !map(ai_blockhigh)), 153, 151)
+value = ifelse((!AIlevel && command = "holddown") || (AIlevel && random < 500), 153, 151)
 
 [State 152, High to Low]
 type = statetypeset
@@ -1121,7 +1114,7 @@ triggerall = statetype = S
 trigger1 = !AIlevel
 trigger1 = command = "holddown"
 trigger2 = AIlevel
-trigger2 = !map(ai_blockhigh)
+trigger2 = random < 500
 statetype = C
 physics = C
 
@@ -1131,7 +1124,7 @@ triggerall = statetype = C
 trigger1 = !AIlevel
 trigger1 = command != "holddown"
 trigger2 = AIlevel
-trigger2 = map(ai_blockhigh)
+trigger2 = random > 500
 statetype = S
 physics = S
 
@@ -1171,7 +1164,7 @@ triggerall = statetype = S
 trigger1 = !AIlevel
 trigger1 = command = "holddown"
 trigger2 = AIlevel
-trigger2 = !map(ai_blockhigh)
+trigger2 = random < 500
 statetype = C
 physics = C
 
@@ -1181,7 +1174,7 @@ triggerall = statetype = C
 trigger1 = !AIlevel
 trigger1 = command != "holddown"
 trigger2 = AIlevel
-trigger2 = map(ai_blockhigh)
+trigger2 = random > 500
 statetype = S
 physics = S
 
@@ -1295,25 +1288,25 @@ time = 1
 [State Check Parried Helper]
 type = null
 trigger1 = !time
-trigger1 = 1 || map(parry_helper_ID) := 0
-trigger1 = gethitvar(ID)
-trigger1 = playerIDexist(gethitvar(ID))
-trigger1 = playerID(gethitvar(ID)), ishelper
-trigger1 = 1 || map(parry_helper_ID) := gethitvar(ID)
+trigger1 = 1
+trigger1 = 1
+trigger1 = 1
+trigger1 = 1
+trigger1 = 1
 
 [State Freeze Parried Helper]
-redirectID = map(parry_helper_ID)
+redirectID = 1
 type = posadd
-trigger1 = playerIDexist(map(parry_helper_ID))
-trigger1 = playerID(map(parry_helper_ID)), movetype = A
-trigger1 = playerID(map(parry_helper_ID)), hitpausetime = 0
-x = -1 * playerID(map(parry_helper_ID)), vel x
-y = -1 * playerID(map(parry_helper_ID)), vel y
+trigger1 = playerIDexist(1)
+trigger1 = playerID(1), movetype = A
+trigger1 = playerID(1), hitpausetime = 0
+x = -1 * playerID(1), vel x
+y = -1 * playerID(1), vel y
 
 [State 700, Consecutive Parries]
 type = posadd
 trigger1 = !time
-trigger1 = map(parry_nowalk) > 0
+trigger1 = 1
 x = -8
 
 [State 700, Freeze]
@@ -1322,10 +1315,9 @@ trigger1 = 1
 value = 1
 
 [State 700, No walking]
-type = mapset
+type = varset
 trigger1 = 1
-map = "parry_nowalk"
-value = 4
+var(20) = 4
 
 [State 700, Sound]
 type = playsnd
@@ -1391,20 +1383,20 @@ time = 1
 [State Check Parried Helper]
 type = null
 trigger1 = !time
-trigger1 = 1 || map(parry_helper_ID) := 0
-trigger1 = gethitvar(ID)
-trigger1 = playerIDexist(gethitvar(ID))
-trigger1 = playerID(gethitvar(ID)), ishelper
-trigger1 = 1 || map(parry_helper_ID) := gethitvar(ID)
+trigger1 = 1
+trigger1 = 1
+trigger1 = 1
+trigger1 = 1
+trigger1 = 1
 
 [State Freeze Parried Helper]
-redirectID = map(parry_helper_ID)
+redirectID = 1
 type = posadd
-trigger1 = playerIDexist(map(parry_helper_ID))
-trigger1 = playerID(map(parry_helper_ID)), movetype = A
-trigger1 = playerID(map(parry_helper_ID)), hitpausetime = 0
-x = -1 * playerID(map(parry_helper_ID)), vel x
-y = -1 * playerID(map(parry_helper_ID)), vel y
+trigger1 = playerIDexist(1)
+trigger1 = playerID(1), movetype = A
+trigger1 = playerID(1), hitpausetime = 0
+x = -1 * playerID(1), vel x
+y = -1 * playerID(1), vel y
 
 [State 701, Freeze]
 type = posfreeze
@@ -1412,10 +1404,9 @@ trigger1 = 1
 value = 1
 
 [State 701, No walking]
-type = mapset
+type = varset
 trigger1 = 1
-map = "parry_nowalk"
-value = 4
+var(21) = 4
 
 [State 701, Sound]
 type = playsnd
@@ -1480,20 +1471,20 @@ time = 1
 [State Check Parried Helper]
 type = null
 trigger1 = !time
-trigger1 = 1 || map(parry_helper_ID) := 0
-trigger1 = gethitvar(ID)
-trigger1 = playerIDexist(gethitvar(ID))
-trigger1 = playerID(gethitvar(ID)), ishelper
-trigger1 = 1 || map(parry_helper_ID) := gethitvar(ID)
+trigger1 = 1
+trigger1 = 1
+trigger1 = 1
+trigger1 = 1
+trigger1 = 1
 
 [State Freeze Parried Helper]
-redirectID = map(parry_helper_ID)
+redirectID = 1
 type = posadd
-trigger1 = playerIDexist(map(parry_helper_ID))
-trigger1 = playerID(map(parry_helper_ID)), movetype = A
-trigger1 = playerID(map(parry_helper_ID)), hitpausetime = 0
-x = -1 * playerID(map(parry_helper_ID)), vel x
-y = -1 * playerID(map(parry_helper_ID)), vel y
+trigger1 = playerIDexist(1)
+trigger1 = playerID(1), movetype = A
+trigger1 = playerID(1), hitpausetime = 0
+x = -1 * playerID(1), vel x
+y = -1 * playerID(1), vel y
 
 [State 702, Freeze]
 type = posfreeze
@@ -1657,7 +1648,7 @@ value = 9999
 type = reversaldef
 trigger1 = !var(0)
 trigger1 = anim = 705 || anim = 707
-trigger1 = root, hitbyattr(SCA, AA, AP)
+trigger1 = 1
 reversal.attr = SCA, AA
 p1stateno = 706
 pausetime = 0, 15
@@ -1668,7 +1659,7 @@ numhits = 0
 type = reversaldef
 trigger1 = !var(0)
 trigger1 = anim = 706
-trigger1 = root, hitbyattr(SC, AA, AP); no air
+trigger1 = 1; no air
 reversal.attr = SC, AA
 p1stateno = 706
 pausetime = 0, 15
@@ -1720,8 +1711,8 @@ ctrl = 0
 sprpriority = -1
 
 [State Erase Inputs]
-type = mapset
-map = "cmd_erase_completed"
+type = varset
+var(23) = 1
 trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
@@ -1764,18 +1755,18 @@ trigger1 = AIlevel
 trigger1 = time = [15, 25]
 trigger1 = !inguarddist
 trigger1 = p2dist y >= -60
-trigger1 = abs(map(truebodydistx)) < 80
-value = ifelse(abs(map(truebodydistx)) < 30, 221, 240)
+trigger1 = abs(p2bodydist x) < 80
+value = ifelse(abs(p2bodydist x) < 30, 221, 240)
 
 [State 710, AI Guard]
-type = assertinput
+type = null
 trigger1 = AIlevel
 trigger1 = animtime = [-10, -1]
 trigger1 = facing = 1
 flag = L
 
 [State 710, AI Guard]
-type = assertinput
+type = null
 trigger1 = AIlevel
 trigger1 = animtime = [-10, -1]
 trigger1 = facing = -1
@@ -1800,8 +1791,8 @@ ctrl = 0
 sprpriority = 1
 
 [State Erase Inputs]
-type = mapset
-map = "cmd_erase_completed"
+type = varset
+var(23) = 1
 trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
@@ -1858,8 +1849,8 @@ ctrl = 0
 sprpriority = 1
 
 [State Erase Inputs]
-type = mapset
-map = "cmd_erase_completed"
+type = varset
+var(23) = 1
 trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
@@ -1915,8 +1906,8 @@ ctrl = 0
 velset = 0, 0
 
 [State Erase Inputs]
-type = mapset
-map = "cmd_erase_completed"
+type = varset
+var(23) = 1
 trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
@@ -1984,7 +1975,7 @@ trigger3 = AIlevel
 trigger3 = inguarddist || p2bodydist x <= 120
 trigger4 = AIlevel
 trigger4 = p2movetype = A
-trigger4 = p2stateno = [3000, 4999] || (p2, vel x * p2, facing * facing) < -1
+trigger4 = animelem = 10
 value = 741
 
 
@@ -2029,19 +2020,17 @@ sprpriority = 2
 facep2 = 1
 
 [State 750, Strength]
-type = mapset
+type = varset
 trigger1 = !time
 trigger1 = !AIlevel
-map = "strength"
-value = ifelse((command = "counter_a" + command = "counter_b" + command = "counter_c") >= 2, 1, 0)
+var(24) = 1
 ignorehitpause = 1
 
 [State 750, Strength AI]
-type = mapset
+type = varset
 trigger1 = !time
 trigger1 = AIlevel
-map = "strength"
-value = ifelse((p2statetype = A), 0, ifelse((p2statetype = C), 1, ifelse(random < 500, 0, 1)))
+var(25) = 1
 ignorehitpause = 1
 
 [State 750, Sound]
@@ -2079,14 +2068,14 @@ p2defmul = 1
 darken = 0
 
 [State 750, Guard Points]
-type = guardpointsadd
+type = varset
 trigger1 = !time
-value = -min((guardpoints - 1), 300)
+var(26) = 300
 
 [State 750, End]
 type = changestate
 trigger1 = time >= 15
-value = ifelse(map(strength) = 1, 2910, 2900)
+value = 2900
 
 
 ;===================<DARK FORCE>===================
@@ -2132,10 +2121,9 @@ pausemovetime = 9999
 supermovetime = 9999
 
 [State 770, Var]
-type = mapset
+type = varset
 trigger1 = 1
-map = "darkforce"
-value = 300
+var(27) = 300
 
 [State 770, illusion]
 type = helper
@@ -2167,10 +2155,9 @@ ctrl = 0
 velset = 0, 0
 
 [State 771, Var]
-type = mapset
-trigger1 = map(darkforce)
-map = "darkforce"
-value = 0
+type = varset
+trigger1 = var(27) > 0
+var(27) = 0
 
 [State 771, End]
 type = changestate
@@ -2200,8 +2187,8 @@ y = 0
 type = assertspecial
 trigger1 = 1
 flag = nokosnd
-flag2 = nomakedust
-flag3 = sizepushonly; because anim has no Clsn2
+flag2 = NoFG
+flag3 = noFG
 
 [State 5950, KO Snd]
 type = stopsnd
@@ -2255,7 +2242,7 @@ redirectID = p2, ID
 type = poweradd
 trigger1 = time = 1
 trigger1 = numenemy
-value = min(ceil(p2, powermax / 9.0), 334)
+value = 334
 
 [State 195, Sound]
 type = playsnd
@@ -2471,7 +2458,7 @@ flag = intro
 [State 191, Wait]
 type = assertspecial
 trigger1 = roundstate = 0
-flag = animfreeze
+flag = noshadow
 
 [State 191, hole]
 type = helper
@@ -2521,7 +2508,7 @@ flag = intro
 [State 192, Wait]
 type = assertspecial
 trigger1 = roundstate = 0
-flag = animfreeze
+flag = noshadow
 
 [State 192, Sound]
 type = playsnd
@@ -3061,22 +3048,22 @@ dest = 1, palno
 type = null
 ;Purple
 trigger1 = palno = 2 || palno = 3 || palno = 5 || palno = 9
-trigger1 = 1 || map(palfx1_r) := 128 || map(palfx1_g) := 0 || map(palfx1_b) := 256
+trigger1 = 1
 ;Magenta
 trigger2 = palno = 4
-trigger2 = 1 || map(palfx1_r) := 256 || map(palfx1_g) := 0 || map(palfx1_b) := 128
+trigger2 = 1
 ;Red
 trigger3 = palno = 6
-trigger3 = 1 || map(palfx1_r) := 256 || map(palfx1_g) := 64 || map(palfx1_b) := 0
+trigger3 = 1
 ;Yellow
 trigger4 = palno = 8
-trigger4 = 1 || map(palfx1_r) := 192 || map(palfx1_g) := 128 || map(palfx1_b) := 0
+trigger4 = 1
 ;Blue
 trigger5 = palno = 10
-trigger5 = 1 || map(palfx1_r) := 0 || map(palfx1_g) := 128 || map(palfx1_b) := 256
+trigger5 = 1
 ;Green (Default)
 trigger6 = 1
-trigger6 = 1 || map(palfx1_r) := 96 || map(palfx1_g) := 192 || map(palfx1_b) := 0
+trigger6 = 1
 
 [State 5900, End]
 type = changestate
@@ -3092,7 +3079,7 @@ type = S
 type = changestate
 trigger1 = roundno = 1
 trigger1 = numenemy = 1 && !numpartner
-trigger1 = enemy, authorname = "Andrés Borghi" || enemy, authorname = "Andres Borghi"
+trigger1 = enemy, authorname = "Andrs Borghi" || enemy, authorname = "Andres Borghi"
 trigger1 = enemy, name = "Viuda Negra" || enemy, name = "Ananzi"
 value = 360
 
@@ -3117,7 +3104,7 @@ value = 5050
 [State 5200, Accel]
 type = veladd
 trigger1 = time > 0
-y = max(0.35, gethitvar(yaccel))
+y = 0.35
 
 [State 5200, End]
 type = selfstate
@@ -3315,7 +3302,7 @@ triggerall = !time
 trigger1 = !AIlevel
 trigger1 = command = "holdfwd"
 trigger2 = AIlevel
-trigger2 = !(p2, ctrl) && random < 500
+trigger2 = random < 500
 x = 6.39
 
 [State 5230, Vel]
@@ -3383,41 +3370,38 @@ value = 5110
 [State -2, Reset Combo Limits]
 type = null
 trigger1 = numenemy
-trigger1 = p2, time > 0
-trigger1 = p2movetype != H || p2stateno = p2, const(statedizzy)
-trigger1 = map(jugglereset) || map(wallbounce)
-trigger1 = 1 || map(jugglereset) := 0
-trigger1 = 1 || map(wallbounce) := 0
+trigger1 = time > 0
+trigger1 = 1
+trigger1 = 1
+trigger1 = 1
+trigger1 = 1
 ignorehitpause = 1
 
 [State -2, Dark Force]
-type = mapadd
-trigger1 = map(darkforce) > 0
-map = "darkforce"
-value = ifelse(map(darkforce) = 1, -2, -1)
+type = varadd
+trigger1 = var(27) > 0
+var(27) = -1
 ignorehitpause = 1
 
 [State -2, Dark Force End]
-type = mapset
-triggerall = map(darkforce)
+type = varset
+triggerall = var(27) > 0
 trigger1 = standby
 trigger2 = roundstate != 2
-map = "darkforce"
-value = 0
+var(27) = 0
 ignorehitpause = 1
 
 [State -2, Dark Force Disables Tagging Out]
-type = mapset
-triggerall = map(_iksys_tagSwitchCooldown) < 6
-trigger1 = map(darkforce) > 0
+type = varset
+triggerall = var(28) < 6
+trigger1 = var(27) > 0
 trigger2 = stateno = [770, 771]
-map = "_iksys_tagSwitchCooldown"
-value = 6
+var(28) = 6
 ignorehitpause = 1
 
 [State -2, Dark Force BG]
 type = bgpalfx
-trigger1 = stateno = 770 || map(darkforce) > 0
+trigger1 = stateno = 770 || var(27) > 0
 time = 1
 ;color = 0
 ;mul = 192 + ceil(cos(gametime / 20.0) * 64), 64 + ceil(cos(gametime / 20.0) * 16), 0
@@ -3429,41 +3413,39 @@ ignorehitpause = 1
 [State -2, Dark Force Warning]
 type = palfx
 triggerall = !(gametime % 2)
-trigger1 = map(darkforce) = [1, 60]
-trigger2 = map(darkforce) = -1 && stateno != 771
+trigger1 = var(27) = [1, 60]
+trigger2 = var(27) = -1 && stateno != 771
 time = 1
 add = 96, 96, 96
 ignorehitpause = 1
 
 [State -2, Throw in Front]
 type = null
-trigger1 = 1 || map(grabbehind) := 0
+trigger1 = 1 || var(29) := 0
 trigger1 = p2dist x < 0
-trigger1 = p2dist x < ifelse((facing = p2, facing), -(p2, const(size.ground.front)), -(p2, const(size.ground.back)))
-trigger1 = map(grabbehind) := 1
+trigger1 = p2dist x < ifelse((facing = p2,facing), -p2, const(size.ground.front), -p2, const(size.ground.back))
+trigger1 = var(29) := 1
 ignorehitpause = 1
 
 [State -2, Unthrowable Flag]
-type = mapadd
-trigger1 = map(unthrowable) > 0
+type = varadd
+trigger1 = var(30) > 0
 trigger1 = numenemy
 trigger1 = p2stateno != 52 || p2, ctrl || p2, time >= 6
-map = "unthrowable"
-value = -1
+var(30) = -1
 ignorehitpause = 1
 
 [State -2, Unthrowable Flag - Jump Start]
-type = mapset
+type = varset
 trigger1 = numenemy
 trigger1 = p2stateno = 40
 trigger1 = p2movetype = I
 trigger1 = p2, time < 10
-map = "unthrowable"
-value = 1
+var(30) = 1
 ignorehitpause = 1
 
 [State -2, Unthrowable Flag - Hurt]
-type = mapset
+type = varset
 triggerall = p2, ctrl = 0
 triggerall = p2, anim != 5300
 triggerall = p2stateno != p2, const(statedizzy)
@@ -3475,8 +3457,7 @@ trigger4 = p2statetype != A
 trigger5 = p2movetype = H
 trigger5 = p2statetype = A
 trigger5 = p2, hitfall = 0
-map = "unthrowable"
-value = 3
+var(30) = 3
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Reset]
@@ -3484,68 +3465,63 @@ type = null
 trigger1 = p2movetype != H
 trigger1 = p2, dizzy = 0
 trigger1 = p2stateno != p2, const(statedizzy)
-trigger1 = 1 || map(combototal) := 0
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = 1 || var(31) := 0
+trigger1 = 1 || var(32) := 0
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Attack Connected Flag]
-type = mapset
+type = varset
 trigger1 = movecontact = 1
 trigger1 = hitcount <= 1
-map = "combocheck"
-value = 1
+var(32) = 1
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Base Formula]
-type = mapset
+type = varset
 trigger1 = 1
-map = "damagescaling"
-value = ifelse(map(combototal) <= 0, 1, ifelse(map(combototal) >= 9, 0.1, 1 - 0.1 * map(combototal)))
+var(33) = ifelse(var(31) <= 0, 1, ifelse(var(31) >= 9, 0.1, 1 - 0.1 * var(31)))
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Chain Combos]
-type = mapset
+type = varset
 trigger1 = numtarget
 trigger1 = p2movetype = H
 trigger1 = stateno = [200, 699]
 trigger1 = prevstateno = [200, 699]
 trigger1 = ifelse((stateno = 200 || stateno = 201 || stateno = 400), (prevstateno != 200 && prevstateno != 201 && prevstateno != 230 && prevstateno != 400), 1)
 trigger1 = ifelse((stateno = 230 || stateno = 430), prevstateno != 230, 1)
-map = "damagescaling"
-value = 0.75 * map(damagescaling)
+var(33) = 0.75 * var(33)
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Dark Force]
-type = mapset
-trigger1 = map(darkforce)
-map = "damagescaling"
-;value = 0.67 * map(damagescaling)
-value = 0.75 * ifelse(map(combototal) * 2 <= 0, 1, ifelse(map(combototal) * 2 >= 9, 0.1, 1 - 0.1 * map(combototal) * 2))
+type = varset
+trigger1 = var(27)
+var(33) = 0.75 * ifelse(var(31) * 2 <= 0, 1, ifelse(var(31) * 2 >= 9, 0.1, 1 - 0.1 * var(31) * 2))
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Minimum Super Damage]
 type = null
 triggerall = stateno = [3000, 4999]
 ;Level 3
-trigger1 = map(superlevel) = 3
-trigger1 = map(damagescaling) < 0.5
-trigger1 = 1 || map(damagescaling) := 0.5
+trigger1 = var(34) = 3
+trigger1 = var(33) < 0.5
+trigger1 = 1 || var(33) := 0.5
 ;Level 2
-trigger2 = map(superlevel) = 2
-trigger2 = map(damagescaling) < 0.4
-trigger2 = 1 || map(damagescaling) := 0.4
+trigger2 = var(34) = 2
+trigger2 = var(33) < 0.4
+trigger2 = 1 || var(33) := 0.4
 ;Other
 trigger3 = stateno = [3000, 4999]
-trigger3 = map(damagescaling) < 0.3
-trigger3 = 1 || map(damagescaling) := 0.3
+trigger3 = var(33) < 0.3
+trigger3 = 1 || var(33) := 0.3
 ignorehitpause = 1
 
 [State -2, Meter Scaling]
 type = null
-trigger1 = map(darkforce) > 0
-trigger1 = 1 || map(meterscaling) := 0
-trigger2 = map(darkforce) <= 0
-trigger2 = 1 || map(meterscaling) := map(damagescaling)
+trigger1 = var(27) > 0
+trigger1 = 1 || var(35) := 0
+trigger2 = var(27) <= 0
+trigger2 = 1 || var(35) := var(33)
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Override Fall Defense Bonus]
@@ -3558,17 +3534,16 @@ flag = nofalldefenceup
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Long Combo Guts]
-type = mapset
+type = varset
 trigger1 = numenemy
 trigger1 = p2, receiveddamage >= (p2, lifemax * 0.50)
-map = "damagescaling"
-value = map(damagescaling) * ifelse(p2, receiveddamage >= (p2, lifemax * 0.85), 0.75, ifelse(p2, receiveddamage >= (p2, lifemax * 0.70), 0.90, 0.95))
+var(33) = var(33) * ifelse(p2, receiveddamage >= (p2, lifemax * 0.85), 0.75, ifelse(p2, receiveddamage >= (p2, lifemax * 0.70), 0.90, 0.95))
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Root Multiplier]
 type = attackmulset
 trigger1 = 1
-value = map(damagescaling); * ifelse(map(counterhit_buffer), 1.2, 1)
+value = var(33); * ifelse(var(36), 1.2, 1)
 ignorehitpause = 1
 
 [State -2, Drop Target]
@@ -3655,16 +3630,15 @@ value = 1
 
 [State -2, Midnight Bliss Voice]
 type = playsnd
-trigger1 = map(blissvoice) = 1
+trigger1 = var(37) = 1
 value = 5000, 2
 channel = 0
 freqmul = 1.50
 
 [State -2, Midnight Bliss Voice]
-type = mapset
-map = "blissvoice"
+type = varset
 trigger1 = anim != 9020
-value = 0
+var(37) = 0
 
 [State -2, Midnight Bliss Scale Fix]
 type = angledraw
@@ -3688,7 +3662,7 @@ scale = 1.20, 1
 type = helper
 triggerall = roundstate = 2
 triggerall = !numhelper(705)
-triggerall = !map(darkforce)
+triggerall = !var(27)
 triggerall = (movetype = I && ctrl) || stateno = [700, 702] || stateno = 5120
 trigger1 = !AIlevel
 trigger1 = command != "rlsdir"
@@ -3701,12 +3675,12 @@ trigger2 = (p2dist x >= 0 && command = "F") || (p2dist x < 0 && command = "B")
 trigger3 = AIlevel
 trigger3 = inguarddist
 trigger3 = stateno != [700, 702]
-trigger3 = p2bodydist x < map(ai_p2fireball_distx)
+trigger3 = p2bodydist x < var(38)
 trigger3 = random < (ifelse(life < 100 || guardpoints < 200, 100, 50) * (AIlevelF / 8.0))
 trigger4 = AIlevel
 trigger4 = inguarddist
 trigger4 = stateno != [700, 702]
-trigger4 = map(ai_p2fireball_eta) = [1, 8]
+trigger4 = var(39) = [1, 8]
 trigger4 = random < 200 * (AIlevelF / 8.0)
 trigger5 = AIlevel
 trigger5 = stateno = [700, 702]
@@ -3762,13 +3736,13 @@ ignorehitpause = 1
 
 [State -3, NoWalk after Parry]
 type = assertspecial
-trigger1 = map(parry_nowalk) > 0
-trigger1 = 1 || map(parry_nowalk) := (map(parry_nowalk) - 1)
+trigger1 = 1
+trigger1 = 1 || var(40) := (var(40) - 1)
 flag = nowalk
 
 [State -3, ProjContact Reset]
-type = mapset
-triggerall = map(projcontact)
+type = varset
+triggerall = var(41)
 trigger1 = stateno != 1000 && stateno != 1010 && stateno != 1050 && stateno != 1060
 trigger1 = stateno != 3000 && stateno != 3050 && stateno != 3300 && stateno != 4100
 trigger2 = stateno = 1000 && animelemtime(4) < 0
@@ -3779,26 +3753,23 @@ trigger6 = stateno = 3000 && animelemtime(4) < 0
 trigger7 = stateno = 3050 && animelemtime(4) < 0
 trigger8 = stateno = 3300 && time <= 8
 trigger9 = stateno = 4100 && time <= 8
-map = "projcontact"
-value = 0
+var(41) = 0
 
 [State -3, ProjContact Timer]
-type = mapadd
-trigger1 = map(projcontact)
-map = "projcontact"
-value = 1
+type = varadd
+trigger1 = var(41)
+var(41) = 1
 
 [State -3, Projectile Flag]
-type = mapset
+type = varset
 trigger1 = 1
-map = "projflag"
-value = 0
+var(42) = 0
 ignorehitpause = 1
 
 [State -3, Projectile Flag]
-type = mapset
-triggerall = map(darkforce) <= 0
-triggerall = map(projflag) != 1
+type = varset
+triggerall = var(27) <= 0
+triggerall = var(42) != 1
 trigger1 = stateno != 1000 && numhelper(1005)
 trigger1 = helper(1005), stateno = 1005
 trigger2 = stateno != 1010 && numhelper(1015)
@@ -3815,20 +3786,18 @@ trigger7 = stateno != 3300 && numhelper(3305)
 trigger7 = helper(3305), stateno = 3305
 trigger8 = stateno != 4100 && numhelper(4105)
 trigger8 = helper(4105), stateno = 4105
-map = "projflag"
-value = 1
+var(42) = 1
 ignorehitpause = 1
 
 [State -3, Special Cancel Reset]
-type = mapset
+type = varset
 trigger1 = movetype = H
 trigger2 = movereversed != [1, 2]
-map = "specialcancel"
-value = 0
+var(43) = 0
 ignorehitpause = 1
 
 [State -3, Special Cancel Check]
-type = mapset
+type = varset
 triggerall = stateno = [200, 699]
 trigger1 = !AIlevel
 trigger1 = time <= 2
@@ -3861,8 +3830,7 @@ trigger15 = stateno = 631
 trigger15 = (movecontact || movereversed) && animelemtime(4) < 0 && prevstateno != [200, 699]
 trigger16 = stateno = 640
 trigger16 = (movecontact || movereversed) && animelemtime(5) < 0 && prevstateno != [200, 699]
-map = "specialcancel"
-value = 1
+var(43) = 1
 ignorehitpause = 1
 
 [State -3, Super Cancel Reset]
