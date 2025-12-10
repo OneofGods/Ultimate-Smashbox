@@ -39,7 +39,7 @@ type = mapset
 trigger1 = AIlevel
 trigger1 = time <= 0
 map = "strength"
-value = ifelse((p2movetype = H || random < 500), 2, ifelse(random < 500, 1, 0))
+value = ((p2movetype = H || random < 500) * 2 + (random < 500 && !(p2movetype = H || random < 500)) * 1 + (!(p2movetype = H || random < 500) && !(random < 500)) * 0)
 ignorehitpause = 1
 
 [State 1000, Erase Inputs]
@@ -233,7 +233,7 @@ type = mapset
 trigger1 = AIlevel
 trigger1 = time <= 0
 map = "strength"
-value = ifelse((p2movetype = H || random < 500), 2, ifelse(random < 500, 1, 0))
+value = ((p2movetype = H || random < 500) * 2 + (random < 500 && !(p2movetype = H || random < 500)) * 1 + (!(p2movetype = H || random < 500) && !(random < 500)) * 0)
 ignorehitpause = 1
 
 [State 1050, Erase Inputs]
@@ -513,7 +513,7 @@ type = mapset
 trigger1 = AIlevel
 trigger1 = time <= 0
 map = "strength"
-value = ifelse(random < 500, 2, ifelse(random < 666, 1, 0))
+value = ((random < 500) * 2 + (random < 666 && !(random < 500)) * 1 + (!(random < 500) && !(random < 666)) * 0)
 ignorehitpause = 1
 
 [State 1100, Erase Inputs]
@@ -653,11 +653,11 @@ guard.ctrltime = 1 + 16
 guard.slidetime = 16
 guard.velocity = -10.52 * !numhelper(775)
 guard.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !map(darkforce), ifelse(moveguarded, 25, 50) * !map(darkforce)
+getpower = ((movehit) * 25 + !(movehit) * 100) * !map(darkforce), ((moveguarded) * 25 + !(moveguarded) * 50) * !map(darkforce)
 givepower = 40, 40
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = (((gametime % 2)) * -2 + !((gametime % 2)) * 2)
 envshake.mul = 0.667
 fall = 1
 fall.recover = 1
@@ -699,11 +699,11 @@ guard.ctrltime = 1 + 16
 guard.slidetime = 16
 guard.velocity = -10.52 * !numhelper(775)
 guard.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !map(darkforce), ifelse(moveguarded, 25, 50) * !map(darkforce)
+getpower = ((movehit) * 25 + !(movehit) * 100) * !map(darkforce), ((moveguarded) * 25 + !(moveguarded) * 50) * !map(darkforce)
 givepower = 40, 40
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = (((gametime % 2)) * -2 + !((gametime % 2)) * 2)
 envshake.mul = 0.667
 fall = 1
 fall.recover = 1
@@ -941,7 +941,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = (((gametime % 2)) * -2 + !((gametime % 2)) * 2)
 envshake.mul = 0.667
 fall = 1
 fall.recover = 1
@@ -986,7 +986,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = (((gametime % 2)) * -2 + !((gametime % 2)) * 2)
 envshake.mul = 0.667
 fall = 1
 fall.recover = 1
@@ -1160,11 +1160,11 @@ guard.ctrltime = 1 + 16
 guard.slidetime = 16
 guard.velocity = -10.52 * !numhelper(775)
 guard.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !map(darkforce), ifelse(moveguarded, 25, 50) * !map(darkforce)
+getpower = ((movehit) * 25 + !(movehit) * 100) * !map(darkforce), ((moveguarded) * 25 + !(moveguarded) * 50) * !map(darkforce)
 givepower = 40, 40
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = (((gametime % 2)) * -2 + !((gametime % 2)) * 2)
 envshake.mul = 0.667
 fall = 0
 air.fall = 1
@@ -1330,20 +1330,20 @@ guardsound.channel = 2
 ground.type = Low
 ground.hittime = 1 + 18; + 2 * map(counterhit_buffer)
 ground.slidetime = 18
-ground.velocity = ifelse(animelemtime(21) > 0, -4.49, 0), 0
+ground.velocity = ((animelemtime(21) > 0) * -4.49 + !(animelemtime(21) > 0) * 0), 0
 air.type = Low
 air.velocity = -3.5, -7
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
-guard.velocity = ifelse(animelemtime(21) > 0, -4.49, 0)
+guard.velocity = ((animelemtime(21) > 0) * -4.49 + !(animelemtime(21) > 0) * 0)
 guard.cornerpush.veloff = 0
 getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = (((gametime % 2)) * -2 + !((gametime % 2)) * 2)
 envshake.mul = 0.667
 fall = 0
 air.fall = 1
@@ -1419,7 +1419,7 @@ type = mapset
 trigger1 = AIlevel
 trigger1 = time <= 0
 map = "strength"
-value = ifelse(p2bodydist x <= (25 * const(size.xscale)), 2, ifelse(p2bodydist x <= (30 * const(size.xscale)), 1, 0))
+value = ((p2bodydist x <= (25 * const(size.xscale))) * 2 + (p2bodydist x <= (30 * const(size.xscale)) && !(p2bodydist x <= (25 * const(size.xscale)))) * 1 + (!(p2bodydist x <= (25 * const(size.xscale))) && !(p2bodydist x <= (30 * const(size.xscale)))) * 0)
 ignorehitpause = 1
 
 [State 1300, Erase Inputs]
@@ -1434,7 +1434,7 @@ persistent = 0
 [State 1300, Pos]
 type = posadd
 trigger1 = animelem = 3 || animelem = 4
-x = ifelse((animelem = 3), 25, 15) * const(size.xscale)
+x = (((animelem = 3)) * 25 + !((animelem = 3)) * 15) * const(size.xscale)
 
 [State 1300, No proximity block]
 type = attackdist
@@ -2037,7 +2037,7 @@ ownpal = 1
 [State 1330, Pos]
 type = posadd
 trigger1 = animelem = 3 || animelem = 4
-x = ifelse((animelem = 3), 25, 15) * const(size.xscale)
+x = (((animelem = 3)) * 25 + !((animelem = 3)) * 15) * const(size.xscale)
 
 [State 1330, No proximity block]
 type = attackdist
@@ -2215,7 +2215,7 @@ priority = 4, Hit
 damage = 20, 5
 redlife = 20, 5
 dizzypoints = 0
-getpower = ifelse(movehit, 25, 100) * !map(darkforce), ifelse(moveguarded, 25, 50) * !map(darkforce)
+getpower = ((movehit) * 25 + !(movehit) * 100) * !map(darkforce), ((moveguarded) * 25 + !(moveguarded) * 50) * !map(darkforce)
 givepower = 40, 40
 pausetime = 10, 10
 guard.pausetime = 10, 10
@@ -2257,7 +2257,7 @@ guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (varset(sparkx.min = -10)) * (varset(sparkx.max = 10)), varset(sparky = 0)
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = (((gametime % 2)) * -2 + !((gametime % 2)) * 2)
 envshake.mul = 0.667
 
 [State 1900, Lock On]
@@ -2547,7 +2547,7 @@ guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (varset(sparkx.min = -10)) * (varset(sparkx.max = 10)), varset(sparky = 0)
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = (((gametime % 2)) * -2 + !((gametime % 2)) * 2)
 envshake.mul = 0.667
 
 [State 1930, Lock On]
@@ -2601,7 +2601,7 @@ ignorehitpause = 1
 [State 2900, Sound]
 type = playsnd
 trigger1 = animelem = 2
-value = 3, ifelse(random < 500, 0, 2)
+value = 3, ((random < 500) * 0 + (random >= 500) * 2)
 channel = 0
 
 [State 2900, Sound]
@@ -2654,7 +2654,7 @@ sparkno = -1 + 0 * (varset(sparkno = 8013))
 guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (varset(sparkx.min = 60)) * (varset(sparkx.max = 110)), varset(sparky = -62)
 envshake.time = 10
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = (((gametime % 2)) * -2 + !((gametime % 2)) * 2)
 envshake.freq = 180
 kill = 0
 
@@ -2691,7 +2691,7 @@ ignorehitpause = 1
 [State 2910, Sound]
 type = playsnd
 trigger1 = animelem = 3
-value = 3, ifelse(random < 500, 0, 2)
+value = 3, ((random < 500) * 0 + (random >= 500) * 2)
 channel = 0
 
 [State 2910, Sound]
@@ -2744,7 +2744,7 @@ sparkno = -1 + 0 * (varset(sparkno = 8013))
 guard.sparkno = -1 + 0 * (varset(guard.sparkno = 8001))
 sparkxy = -10 + 0 * (varset(sparkx.min = 65)) * (varset(sparkx.max = 130)), varset(sparky = -32)
 envshake.time = 10
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = (((gametime % 2)) * -2 + !((gametime % 2)) * 2)
 envshake.freq = 180
 kill = 0
 

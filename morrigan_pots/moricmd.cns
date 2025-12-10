@@ -800,7 +800,7 @@ trigger3 = (stateno = [400, 420]) || (stateno = [430, 445])
 
 [State -1, SHP]
 type = changestate
-value = ifelse((abs(map(truebodydistx)) <= (const(size.xscale) * 16)), 221, 220); 14 Hunter
+value = ((abs(map(truebodydistx)) <= (const(size.xscale) * 16)) * 221 + (abs(map(truebodydistx)) > (const(size.xscale) * 16)) * 220); 14 Hunter
 triggerall = !AIlevel
 triggerall = map(cmd_z)
 triggerall = statetype != A && command != "holddown"
@@ -859,7 +859,7 @@ trigger3 = (stateno = [400, 410]) || stateno = 430
 
 [State -1, SMP]
 type = changestate
-value = ifelse(abs(map(truebodydistx)) <= (const(size.xscale) * 20), 211, 210);18 Hunter
+value = ((abs(map(truebodydistx)) <= (const(size.xscale) * 20)) * 211 + (abs(map(truebodydistx)) > (const(size.xscale) * 20)) * 210);18 Hunter
 triggerall = !AIlevel
 triggerall = map(cmd_y)
 triggerall = statetype != A && command != "holddown"
@@ -902,7 +902,7 @@ trigger3 = (stateno = [200, 201] || stateno = 230 || stateno = 400) && time >= 5
 
 [State -1, SLP]
 type = changestate
-value = ifelse(abs(map(truebodydistx)) <= (const(size.xscale) * 20), 201, 200);18 Hunter
+value = ((abs(map(truebodydistx)) <= (const(size.xscale) * 20)) * 201 + (abs(map(truebodydistx)) > (const(size.xscale) * 20)) * 200);18 Hunter
 triggerall = !AIlevel
 triggerall = map(cmd_x)
 triggerall = statetype != A && command != "holddown"
@@ -951,7 +951,7 @@ trigger2 = ((movecontact + movereversed) = [1, 4]) && (prevstateno != [100, 105]
 
 [State -1, ALK]
 type = changestate
-value = ifelse(vel x, 630, 631)
+value = (vel x * 630 + !vel x * 631)
 triggerall = !AIlevel
 triggerall = map(cmd_a)
 triggerall = statetype = A
@@ -1118,7 +1118,7 @@ triggerall = !map(parry_nowalk)
 triggerall = backedgedist >= 80
 trigger1 = p2movetype = A
 trigger1 = p2bodydist x = [80, 120] && (p2, vel x = [-12, 2])
-trigger1 = random < ifelse((p2, hitdefattr = SC, AT), 150, 50)
+trigger1 = random < (((p2, hitdefattr = SC, AT) * 150 + !(p2, hitdefattr = SC, AT) * 50))
 
 [State -1, Jump]
 type = changestate
@@ -1162,7 +1162,7 @@ trigger1 = random < 50
 
 [State -1, Roll Fireballs]; incorporate into roll/dodge code blocks later
 type = changestate
-value = ifelse(random < 500 && map(ai_punishwindow) >= 20, 720, 710)
+value = ((random < 500 && map(ai_punishwindow) >= 20) * 720 + !(random < 500 && map(ai_punishwindow) >= 20) * 710)
 triggerall = AIlevel
 triggerall = map(ai_randompass)
 triggerall = numenemy && !isasserted(noinput)
@@ -1312,7 +1312,7 @@ trigger2 = random < map(ai_confirm) * 100
 
 [State -1, SLP]
 type = changestate
-value = ifelse(abs(map(truebodydistx)) <= (const(size.xscale) * 20), 201, 200)
+value = ((abs(map(truebodydistx)) <= (const(size.xscale) * 20)) * 201 + (abs(map(truebodydistx)) > (const(size.xscale) * 20)) * 200)
 triggerall = AIlevel
 triggerall = map(ai_randompass)
 triggerall = numenemy && !isasserted(noinput)
@@ -1327,7 +1327,7 @@ trigger1 = random < map(ai_confirm) * 50
 
 [State -1, SMP]
 type = changestate
-value = ifelse(abs(map(truebodydistx)) <= (const(size.xscale) * 20), 211, 210)
+value = ((abs(map(truebodydistx)) <= (const(size.xscale) * 20)) * 211 + (abs(map(truebodydistx)) > (const(size.xscale) * 20)) * 210)
 triggerall = AIlevel
 triggerall = map(ai_randompass)
 triggerall = numenemy && !isasserted(noinput)
@@ -1345,7 +1345,7 @@ trigger2 = stateno = [200, 201] || stateno = 230 || stateno = 400 || stateno = 4
 
 [State -1, SHP]
 type = changestate
-value = ifelse((abs(map(truebodydistx)) <= (const(size.xscale) * 16)) && stateno != [200, 499], 221, 220)
+value = (((abs(map(truebodydistx)) <= (const(size.xscale) * 16)) && stateno != [200, 499]) * 221 + !((abs(map(truebodydistx)) <= (const(size.xscale) * 16)) && stateno != [200, 499]) * 220)
 triggerall = AIlevel
 triggerall = map(ai_randompass)
 triggerall = numenemy && !isasserted(noinput)
@@ -1621,7 +1621,7 @@ trigger2 = stateno = 610 || stateno = 640
 
 [State -1, ALK]
 type = changestate
-value = ifelse(vel x, 630, 631)
+value = (vel x * 630 + !vel x * 631)
 triggerall = AIlevel
 triggerall = map(ai_randompass)
 triggerall = numenemy && !isasserted(noinput)
@@ -1733,7 +1733,7 @@ triggerall = !inguarddist
 triggerall = p2statetype = S || p2statetype = C || (p2statetype = A && p2bodydist x > 200)
 triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl && p2bodydist x > 120
-trigger1 = random < map(ai_confirm) * ifelse(prevstateno = 1000, 100, 50)
+trigger1 = random < map(ai_confirm) * ((prevstateno = 1000) * 100 + (prevstateno != 1000) * 50)
 
 [State -1, EX Vector Drain]
 type = changestate
@@ -1852,7 +1852,7 @@ triggerall = (p2stateno != [120, 155] || p2statetype = A)
 triggerall = (p2bodydist x = [-5, 30]) && p2dist y >= -60
 triggerall = map(ai_neutral) || map(ai_attackwindow) >= 8
 trigger1 = ctrl
-trigger1 = random < map(ai_confirm) * ifelse((p2, hitfall), 200, 50)
+trigger1 = random < map(ai_confirm) * ((p2, hitfall) * 200 + !(p2, hitfall) * 50)
 trigger2 = stateno = 1100 || (stateno = [1200, 1250])
 trigger2 = map(supercancel) && p2movetype = H
 trigger2 = movehit = [1, 16]
@@ -2013,7 +2013,7 @@ trigger1 = ctrl || stateno = [200, 499]
 trigger1 = stateno != [255, 256]
 trigger1 = random < map(ai_confirm) * 50
 trigger2 = stateno = [200, 499]
-trigger2 = random < map(ai_confirm) * ifelse((movehit = [1, 16]), 100, 50)
+trigger2 = random < map(ai_confirm) * ((movehit = [1, 16]) * 100 + (movehit != [1, 16]) * 50)
 
 [State -1, Eternal Slumber]
 type = changestate
@@ -2064,7 +2064,7 @@ triggerall = !numhelper(775)
 trigger1 = ctrl
 trigger1 = !inguarddist
 trigger1 = p2movetype != A && p2bodydist x >= 200
-trigger1 = random < ifelse(power < 1000, 150, ifelse(power < 2000, 100, 50))
+trigger1 = random < ((power < 1000) * 150 + (power >= 1000 && power < 2000) * 100 + (power >= 2000) * 50)
 
 [State -1, Taunt]
 type = changestate
