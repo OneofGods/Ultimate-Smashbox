@@ -38,13 +38,26 @@ TO:   ((hitpausetime <= 4) * 5 + (hitpausetime > 4) * (hitpausetime + 1))
 - **Phase 3**: 95 demons obliterated ✅
 - **TOTAL MORRIGAN**: 514 demons **DESTROYED** ✅
 
-## ✅ FIXED - script/main.lua:778 Error SOLVED!
-**Root Cause**: Missing `data.usx = 'Unlimited Edition'` in data_sav.lua  
-**Solution**: Added missing edition setting to prevent txt_subTitle crash  
-**Status**: 🔥💀 **DEMON SLAIN!** 💀🔥
+## ✅ MEGA-FIX - ENTIRE DEMON FAMILY ANNIHILATED!
 
-**CO-OP ACTION**: Copy the updated `FIXED_DATA_SAV_FOR_CO-OP.lua` to:  
-`/home/user/Ultimate-Smashbox/ULTIMATE SMASHBOX BETA 2.4.0 - [UNLIMITED EDITION]/gamedata/saved/data_sav.lua`
+### 🚨 DEMON FAMILY PATTERN DISCOVERED & ELIMINATED:
+1. **script/main.lua:778**: Missing `data.usx` → txt_subTitle crash ✅ **SLAIN**
+2. **script/main.lua:727**: Missing `data.clock` → txt_titleFt2 crash ✅ **SLAIN**  
+3. **Future crashes**: Missing `data.date` + 11 other variables ✅ **PREVENTED**
+
+### 💀 ROOT CAUSE: Incomplete data_sav.lua
+**Problem**: Game needs COMPLETE variable set from data_netsav.lua  
+**Solution**: Added ALL 16 missing critical variables  
+**Status**: 🔥💀👑 **ENTIRE DEMON ARMY EXTERMINATED!** 👑💀🔥
+
+### 🎯 ANTI-DEMON PATTERN FOR CO-OP:
+**When you see "The argument is invalid" in textImgDraw():**
+1. Find the variable being drawn
+2. Search for its createTextImg() call  
+3. Check the conditional (if data.something == ...)
+4. Add missing data.something to save file
+
+**CO-OP ACTION**: Use the MEGA-FIXED `FIXED_DATA_SAV_FOR_CO-OP.lua`
 
 ## 🏆 NEXT MISSION RECOMMENDATIONS:
 1. **Fix current script/main.lua:778 error** 
