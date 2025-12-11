@@ -23,3 +23,4 @@ data.debugKeys = false
 data.quickVS = false
 data.firstRun = false
 data.lifebar = 'data/screenpack/fightSD.def'
+data.usx = 'Unlimited Edition'
