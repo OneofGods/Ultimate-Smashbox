@@ -27,12 +27,12 @@ value = 2
 
 [State 0, Anim]
 type = changeanim
-trigger1 = anim != (map(darkforce) > 0)
+trigger1 = anim != cond(map(darkforce) > 0, 1, 0)
 trigger1 = anim != 2
 trigger1 = anim != 5
 trigger2 = anim = 2 && !animtime
 trigger3 = anim = 5 && !animtime
-value = (map(darkforce) > 0)
+value = cond(map(darkforce) > 0, 1, 0)
 
 [State 0, Dead]
 type = selfstate
