@@ -27,7 +27,7 @@ value = 2
 
 [State 0, Anim]
 type = changeanim
-trigger1 = anim != (map(darkforce) > 0)
+; trigger1 = anim != (map(darkforce) > 0)  ; COMMENTED OUT - causing parse error
 trigger1 = anim != 2
 trigger1 = anim != 5
 trigger2 = anim = 2 && !animtime
