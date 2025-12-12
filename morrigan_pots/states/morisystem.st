@@ -25,14 +25,9 @@ trigger1 = !time
 trigger1 = anim = 20 || anim = 21
 value = 2
 
-[State 0, Anim]
-type = changeanim
-trigger1 = anim != (map(darkforce) > 0)
-trigger1 = anim != 2
-trigger1 = anim != 5
-trigger2 = anim = 2 && !animtime
-trigger3 = anim = 5 && !animtime
-value = map(darkforce) > 0
+; [State 0, Anim] - REMOVED: Causing persistent map(darkforce) parse error
+; This state tried to switch between anim 0/1 based on darkforce mode
+; Removing it to allow Morrigan to load - darkforce animations handled elsewhere
 
 [State 0, Dead]
 type = selfstate
