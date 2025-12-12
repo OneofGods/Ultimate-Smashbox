@@ -25,12 +25,6 @@ trigger1 = !time
 trigger1 = anim = 20 || anim = 21
 value = 2
 
-[State 0, Init Darkforce Map]
-type = mapset
-trigger1 = !time
-map = "darkforce"
-value = 0
-
 [State 0, Anim]
 type = changeanim
 trigger1 = anim != (map(darkforce) > 0)
@@ -3385,6 +3379,13 @@ value = 5110
 ;===========================================<STATE -2>=============================================
 ;==================================================================================================
 [Statedef -2]
+
+[State -2, Init Darkforce]
+type = mapset
+trigger1 = roundstate = 0
+map = "darkforce"
+value = 0
+ignorehitpause = 1
 
 [State -2, Reset Combo Limits]
 type = null
