@@ -3087,7 +3087,7 @@ type = S
 type = changestate
 trigger1 = roundno = 1
 trigger1 = numenemy = 1 && !numpartner
-trigger1 = enemy, authorname = "Andr�s Borghi" || enemy, authorname = "Andres Borghi"
+trigger1 = enemy, authorname = "Andr?s Borghi" || enemy, authorname = "Andres Borghi"
 trigger1 = enemy, name = "Viuda Negra" || enemy, name = "Ananzi"
 value = 360
 
