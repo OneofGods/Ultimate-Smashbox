@@ -38,4 +38,5 @@ data.challengerSong = 'Fixed'
 data.charPresentation = 'Mixed'
 data.training = 'Fixed'
 data.coopenemy = 'Single'
+data.coop = false
 data.userName = 'USX PLAYER'
