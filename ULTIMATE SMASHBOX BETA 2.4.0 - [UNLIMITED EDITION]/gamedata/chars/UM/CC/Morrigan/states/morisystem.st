@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; �����������������������������������
+; ___________________________________
 ;==============================================================================================
 ;=======================================<COMMON STATES>========================================
 ;==============================================================================================
@@ -27,12 +27,12 @@ value = 2
 
 [State 0, Anim]
 type = changeanim
-trigger1 = anim != cond(map(darkforce) > 0, 1, 0)
+trigger1 = anim != 2
 trigger1 = anim != 2
 trigger1 = anim != 5
 trigger2 = anim = 2 && !animtime
 trigger3 = anim = 5 && !animtime
-value = cond(map(darkforce) > 0, 1, 0)
+value = 0
 
 [State 0, Dead]
 type = selfstate
@@ -3092,7 +3092,7 @@ type = S
 type = changestate
 trigger1 = roundno = 1
 trigger1 = numenemy = 1 && !numpartner
-trigger1 = enemy, authorname = "Andr�s Borghi" || enemy, authorname = "Andres Borghi"
+trigger1 = enemy, authorname = "Andrs Borghi" || enemy, authorname = "Andres Borghi"
 trigger1 = enemy, name = "Viuda Negra" || enemy, name = "Ananzi"
 value = 360
 
@@ -3389,6 +3389,12 @@ trigger1 = map(jugglereset) || map(wallbounce)
 trigger1 = 1 || varset(jugglereset = 0)
 trigger1 = 1 || varset(wallbounce = 0)
 ignorehitpause = 1
+
+[State -2, Init Darkforce]
+type = mapset
+trigger1 = roundstate = 0
+map = "darkforce"
+value = 0
 
 [State -2, Dark Force]
 type = mapadd
