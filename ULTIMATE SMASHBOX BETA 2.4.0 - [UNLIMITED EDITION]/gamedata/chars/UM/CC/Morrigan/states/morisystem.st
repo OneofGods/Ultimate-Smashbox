@@ -42,7 +42,7 @@ ctrl = 0
 
 [State 0, Not Myself]
 type = selfstate
-trigger1 = incustomstate
+trigger1 = stateno != [0,199]
 trigger1 = time > 0
 value = 5040
 
@@ -205,13 +205,13 @@ trigger1 = AIlevel
 sysvar(1) = (p2bodydist x < 30) * 0 + (p2bodydist x >= 30 && (life - p2life) > 200 && p2movetype != H && random < 333) * -1 + (p2bodydist x >= 30 && !((life - p2life) > 200 && p2movetype != H && random < 333)) * 1
 
 [State 40, High Jump]
-type = mapset
+type = varset
 trigger1 = !time
 map = "jumptype"
 value = 0
 
 [State 40, High Jump]
-type = mapset
+type = varset
 trigger1 = !time
 trigger1 = !AIlevel
 trigger1 = map(cmd_highjump)
@@ -219,7 +219,7 @@ map = "jumptype"
 value = 3
 
 [State 40, High Jump]
-type = mapset
+type = varset
 trigger1 = !time
 trigger1 = AIlevel
 trigger1 = p2bodydist x > 80 && p2statetype != L
@@ -228,13 +228,13 @@ map = "jumptype"
 value = 3
 
 [State 40, Jump Cancel]
-type = mapset
+type = varset
 trigger1 = prevstateno = 425
 map = "jumptype"
 value = 3
 
 [State 40, Jump Cancel]
-type = mapset
+type = varset
 trigger1 = prevstateno = 425
 map = "juggle_count"
 value = 0
@@ -1322,7 +1322,7 @@ trigger1 = 1
 value = 1
 
 [State 700, No walking]
-type = mapset
+type = varset
 trigger1 = 1
 map = "parry_nowalk"
 value = 4
@@ -1412,7 +1412,7 @@ trigger1 = 1
 value = 1
 
 [State 701, No walking]
-type = mapset
+type = varset
 trigger1 = 1
 map = "parry_nowalk"
 value = 4
@@ -1720,7 +1720,7 @@ ctrl = 0
 sprpriority = -1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1800,7 +1800,7 @@ ctrl = 0
 sprpriority = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1858,7 +1858,7 @@ ctrl = 0
 sprpriority = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1915,7 +1915,7 @@ ctrl = 0
 velset = 0, 0
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -2029,7 +2029,7 @@ sprpriority = 2
 facep2 = 1
 
 [State 750, Strength]
-type = mapset
+type = varset
 trigger1 = !time
 trigger1 = !AIlevel
 map = "strength"
@@ -2037,7 +2037,7 @@ value = (((command = "counter_a" + command = "counter_b" + command = "counter_c"
 ignorehitpause = 1
 
 [State 750, Strength AI]
-type = mapset
+type = varset
 trigger1 = !time
 trigger1 = AIlevel
 map = "strength"
@@ -2132,7 +2132,7 @@ pausemovetime = 9999
 supermovetime = 9999
 
 [State 770, Var]
-type = mapset
+type = varset
 trigger1 = 1
 map = "darkforce"
 value = 300
@@ -2167,7 +2167,7 @@ ctrl = 0
 velset = 0, 0
 
 [State 771, Var]
-type = mapset
+type = varset
 trigger1 = map(darkforce)
 map = "darkforce"
 value = 0
@@ -3391,7 +3391,7 @@ trigger1 = 1 || varset(wallbounce = 0)
 ignorehitpause = 1
 
 [State -2, Init Darkforce]
-type = mapset
+type = varset
 trigger1 = roundstate = 0
 map = "darkforce"
 value = 0
@@ -3404,7 +3404,7 @@ value = ((map(darkforce) = 1) * -2 + (map(darkforce) != 1) * -1)
 ignorehitpause = 1
 
 [State -2, Dark Force End]
-type = mapset
+type = varset
 triggerall = map(darkforce)
 trigger1 = standby
 trigger2 = roundstate != 2
@@ -3413,7 +3413,7 @@ value = 0
 ignorehitpause = 1
 
 [State -2, Dark Force Disables Tagging Out]
-type = mapset
+type = varset
 triggerall = map(_iksys_tagSwitchCooldown) < 6
 trigger1 = map(darkforce) > 0
 trigger2 = stateno = [770, 771]
@@ -3459,7 +3459,7 @@ value = -1
 ignorehitpause = 1
 
 [State -2, Unthrowable Flag - Jump Start]
-type = mapset
+type = varset
 trigger1 = numenemy
 trigger1 = p2stateno = 40
 trigger1 = p2movetype = I
@@ -3469,7 +3469,7 @@ value = 1
 ignorehitpause = 1
 
 [State -2, Unthrowable Flag - Hurt]
-type = mapset
+type = varset
 triggerall = p2, ctrl = 0
 triggerall = p2, anim != 5300
 triggerall = p2stateno != p2, const(statedizzy)
@@ -3495,7 +3495,7 @@ trigger1 = 1 || varset(combocheck = 0)
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Attack Connected Flag]
-type = mapset
+type = varset
 trigger1 = movecontact = 1
 trigger1 = hitcount <= 1
 map = "combocheck"
@@ -3503,14 +3503,14 @@ value = 1
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Base Formula]
-type = mapset
+type = varset
 trigger1 = 1
 map = "damagescaling"
 value = (map(combototal) <= 0) * 1 + (map(combototal) > 0) * (map(combototal) < 9) * (1 - 0.1 * map(combototal)) + (map(combototal) >= 9) * 0.1
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Chain Combos]
-type = mapset
+type = varset
 trigger1 = numtarget
 trigger1 = p2movetype = H
 trigger1 = stateno = [200, 699]
@@ -3522,7 +3522,7 @@ value = 0.75 * map(damagescaling)
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Dark Force]
-type = mapset
+type = varset
 trigger1 = map(darkforce)
 map = "damagescaling"
 ;value = 0.67 * map(damagescaling)
@@ -3564,7 +3564,7 @@ flag = nofalldefenceup
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Long Combo Guts]
-type = mapset
+type = varset
 trigger1 = numenemy
 trigger1 = p2, receiveddamage >= (p2, lifemax * 0.50)
 map = "damagescaling"
@@ -3622,7 +3622,7 @@ type = playsnd
 triggerall = alive
 triggerall = time = 1
 triggerall = movetype = H
-triggerall = incustomstate
+triggerall = !incustomstate
 trigger1 = anim = [5000, 5002]
 trigger2 = anim = [5010, 5012]
 trigger3 = anim = [5020, 5022]
@@ -3667,7 +3667,7 @@ channel = 0
 freqmul = 1.50
 
 [State -2, Midnight Bliss Voice]
-type = mapset
+type = varset
 map = "blissvoice"
 trigger1 = anim != 9020
 value = 0
@@ -3773,7 +3773,7 @@ trigger1 = 1 || varset(parry_nowalk = (map(parry_nowalk) - 1))
 flag = nowalk
 
 [State -3, ProjContact Reset]
-type = mapset
+type = varset
 triggerall = map(projcontact)
 trigger1 = stateno != 1000 && stateno != 1010 && stateno != 1050 && stateno != 1060
 trigger1 = stateno != 3000 && stateno != 3050 && stateno != 3300 && stateno != 4100
@@ -3795,14 +3795,14 @@ map = "projcontact"
 value = 1
 
 [State -3, Projectile Flag]
-type = mapset
+type = varset
 trigger1 = 1
 map = "projflag"
 value = 0
 ignorehitpause = 1
 
 [State -3, Projectile Flag]
-type = mapset
+type = varset
 triggerall = map(darkforce) <= 0
 triggerall = map(projflag) != 1
 trigger1 = stateno != 1000 && numhelper(1005)
@@ -3826,7 +3826,7 @@ value = 1
 ignorehitpause = 1
 
 [State -3, Special Cancel Reset]
-type = mapset
+type = varset
 trigger1 = movetype = H
 trigger2 = movereversed != [1, 2]
 map = "specialcancel"
@@ -3834,7 +3834,7 @@ value = 0
 ignorehitpause = 1
 
 [State -3, Special Cancel Check]
-type = mapset
+type = varset
 triggerall = stateno = [200, 699]
 trigger1 = !AIlevel
 trigger1 = time <= 2
@@ -3872,7 +3872,7 @@ value = 1
 ignorehitpause = 1
 
 [State -3, Super Cancel Reset]
-type = mapset
+type = varset
 trigger1 = movetype = H
 trigger2 = movereversed != [1, 2]
 map = "supercancel"
@@ -3880,7 +3880,7 @@ value = 0
 ignorehitpause = 1
 
 [State -3, Super Cancel Check]
-type = mapset
+type = varset
 triggerall = stateno = [200, 2999]
 trigger1 = map(specialcancel)
 trigger2 = stateno = 220
@@ -3907,7 +3907,7 @@ value = 1
 ignorehitpause = 1
 
 [State -3, Hyper Cancel Reset]
-type = mapset
+type = varset
 trigger1 = movetype = H
 trigger2 = movereversed != [1, 2]
 map = "hypercancel"
@@ -3915,7 +3915,7 @@ value = 0
 ignorehitpause = 1
 
 [State -3, Hyper Cancel Check]
-type = mapset
+type = varset
 triggerall = stateno = [3000, 4999]
 trigger1 = stateno = 3000
 trigger1 = animelemtime(5) = [1, 24] && map(projcontact) = [1, 12]
@@ -3943,7 +3943,7 @@ trigger1 = varset(normalcancel = 0) || varset(specialcancel = 0) || varset(super
 ignorehitpause = 1
 
 [State -3, Super Cancel Flag Reset]
-type = mapset
+type = varset
 trigger1 = map(supercancelflag)
 trigger1 = (stateno != [3000, 4999]) || movetype = H
 map = "supercancel_flag"
@@ -3951,7 +3951,7 @@ value = 0
 ignorehitpause = 1
 
 [State -3, Hyper Cancel Flag Reset]
-type = mapset
+type = varset
 trigger1 = map(hypercancelflag)
 trigger1 = (stateno != [3000, 4999]) || movetype = H
 map = "hypercancel_flag"
@@ -4119,7 +4119,7 @@ trigger1 = stateno = [3000, 4999]
 value = 320
 
 [State -3, Jump Reset]
-type = mapset
+type = varset
 trigger1 = map(jumptype)
 trigger1 = stateno != 40
 trigger1 = statetype != A || movetype = H
@@ -4127,7 +4127,7 @@ map = "jumptype"
 value = 0
 
 [State -3, Reset Super Finish Var]
-type = mapset
+type = varset
 trigger1 = map(superfinish)
 trigger1 = roundstate = [0, 2]
 map = "superfinish"
@@ -4199,13 +4199,13 @@ pausemovetime = 999
 supermovetime = 999
 
 [State -3, Victory Camera]
-type = mapset
+type = varset
 trigger1 = roundstate != 4
 map = "victorycam"
 value = 0
 
 [State -3, Victory Camera]
-type = mapset
+type = varset
 trigger1 = map(cfg_winzoom)
 trigger1 = map(zoom_allowed)
 trigger1 = alive && !standby
@@ -4229,7 +4229,7 @@ camerabound = 0
 pos = pos x * camerazoom, 0
 
 [State -3, Victory BGM]
-type = mapset
+type = varset
 map = "victorybgm"
 trigger1 = map(victorybgm) != 0
 trigger1 = motifstate(victoryscreen) = 0
