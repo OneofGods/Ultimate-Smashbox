@@ -26,7 +26,7 @@ map = "combototal"
 value = 1
 
 [State 1000, Strength]
-type = mapset
+type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -35,7 +35,7 @@ ignorehitpause = 1
 persistent = 0
 
 [State 1000, Strength AI]
-type = mapset
+type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -220,7 +220,7 @@ map = "combototal"
 value = 1
 
 [State 1050, Strength]
-type = mapset
+type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -229,7 +229,7 @@ ignorehitpause = 1
 persistent = 0
 
 [State 1050, Strength AI]
-type = mapset
+type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -500,7 +500,7 @@ map = "combototal"
 value = 1
 
 [State 1100, Strength]
-type = mapset
+type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -509,7 +509,7 @@ ignorehitpause = 1
 persistent = 0
 
 [State 1100, Strength AI]
-type = mapset
+type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -1045,7 +1045,7 @@ map = "combototal"
 value = 1
 
 [State 1200, Strength]
-type = mapset
+type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -1054,7 +1054,7 @@ ignorehitpause = 1
 persistent = 0
 
 [State 1200, Strength AI]
-type = mapset
+type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -1406,7 +1406,7 @@ map = "combototal"
 value = 1
 
 [State 1300, Strength]
-type = mapset
+type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -1415,7 +1415,7 @@ ignorehitpause = 1
 persistent = 0
 
 [State 1300, Strength AI]
-type = mapset
+type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -2000,7 +2000,7 @@ map = "combototal"
 value = 1
 
 [State 1330, Strength]
-type = mapset
+type = varset
 trigger1 = time <= 0
 map = "strength"
 value = 3; ex

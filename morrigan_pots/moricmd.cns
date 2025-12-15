@@ -1002,14 +1002,14 @@ trigger2 = map(specialcancel)
 ;=========================================< A.I. SYSTEM >==========================================
 
 [State -1, AI Combo Window - Reset]
-type = mapset
+type = varset
 map = "ai_combowindow"
 trigger1 = 1
 value = 0
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Ground]
-type = mapset
+type = varset
 map = "ai_combowindow"
 trigger1 = AIlevel
 trigger1 = numenemy
@@ -1020,7 +1020,7 @@ value = p2, gethitvar(hitshaketime) + p2, gethitvar(hittime) + 1
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Air]
-type = mapset
+type = varset
 map = "ai_combowindow"
 trigger1 = AIlevel
 trigger1 = numenemy
@@ -1034,7 +1034,7 @@ value = (-(p2, vel y) + (((p2, vel y) ** 2 - 2 * 0.4850 * (p2, pos y)) ** 0.5)) 
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Air]
-type = mapset
+type = varset
 map = "ai_combowindow"
 trigger1 = AIlevel
 trigger1 = numenemy
@@ -1048,7 +1048,7 @@ value = (p2, gethitvar(hitshaketime)) + ((-(p2, gethitvar(yvel)) ** 2 + (((p2, g
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Down]
-type = mapset
+type = varset
 map = "ai_combowindow"
 trigger1 = AIlevel
 trigger1 = numenemy
@@ -1060,7 +1060,7 @@ value = 60
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Dizzy]
-type = mapset
+type = varset
 map = "ai_combowindow"
 triggerall = AIlevel
 triggerall = numenemy
@@ -1071,7 +1071,7 @@ value = 60
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Dizzy]
-type = mapset
+type = varset
 map = "ai_combowindow"
 trigger1 = AIlevel
 trigger1 = numenemy
@@ -1096,7 +1096,7 @@ trigger3 = 1 || map(ai_punishwindow) := (-(p2, vel y) + (((p2, vel y) ** 2 - 2 *
 ignorehitpause = 1
 
 [State -1, AI Attack Window]
-type = mapset
+type = varset
 map = "ai_attackwindow"
 trigger1 = AIlevel
 value = floor(max(map(ai_combowindow), map(ai_punishwindow)) + ((random % 9) / AIlevelF))

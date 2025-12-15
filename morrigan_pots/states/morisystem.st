@@ -3834,7 +3834,7 @@ var(43) = 1
 ignorehitpause = 1
 
 [State -3, Super Cancel Reset]
-type = mapset
+type = varset
 trigger1 = movetype = H
 trigger2 = movereversed != [1, 2]
 map = "supercancel"
@@ -3842,7 +3842,7 @@ value = 0
 ignorehitpause = 1
 
 [State -3, Super Cancel Check]
-type = mapset
+type = varset
 triggerall = stateno = [200, 2999]
 trigger1 = map(specialcancel)
 trigger2 = stateno = 220
@@ -3869,7 +3869,7 @@ value = 1
 ignorehitpause = 1
 
 [State -3, Hyper Cancel Reset]
-type = mapset
+type = varset
 trigger1 = movetype = H
 trigger2 = movereversed != [1, 2]
 map = "hypercancel"
@@ -3877,7 +3877,7 @@ value = 0
 ignorehitpause = 1
 
 [State -3, Hyper Cancel Check]
-type = mapset
+type = varset
 triggerall = stateno = [3000, 4999]
 trigger1 = stateno = 3000
 trigger1 = animelemtime(5) = [1, 24] && map(projcontact) = [1, 12]
@@ -3905,7 +3905,7 @@ trigger1 = map(normalcancel) := 0 || map(specialcancel) := 0 || map(supercancel)
 ignorehitpause = 1
 
 [State -3, Super Cancel Flag Reset]
-type = mapset
+type = varset
 trigger1 = map(supercancelflag)
 trigger1 = (stateno != [3000, 4999]) || movetype = H
 map = "supercancel_flag"
@@ -3913,7 +3913,7 @@ value = 0
 ignorehitpause = 1
 
 [State -3, Hyper Cancel Flag Reset]
-type = mapset
+type = varset
 trigger1 = map(hypercancelflag)
 trigger1 = (stateno != [3000, 4999]) || movetype = H
 map = "hypercancel_flag"
@@ -4081,7 +4081,7 @@ trigger1 = stateno = [3000, 4999]
 value = 320
 
 [State -3, Jump Reset]
-type = mapset
+type = varset
 trigger1 = map(jumptype)
 trigger1 = stateno != 40
 trigger1 = statetype != A || movetype = H
@@ -4089,7 +4089,7 @@ map = "jumptype"
 value = 0
 
 [State -3, Reset Super Finish Var]
-type = mapset
+type = varset
 trigger1 = map(superfinish)
 trigger1 = roundstate = [0, 2]
 map = "superfinish"
@@ -4161,13 +4161,13 @@ pausemovetime = 999
 supermovetime = 999
 
 [State -3, Victory Camera]
-type = mapset
+type = varset
 trigger1 = roundstate != 4
 map = "victorycam"
 value = 0
 
 [State -3, Victory Camera]
-type = mapset
+type = varset
 trigger1 = map(cfg_winzoom)
 trigger1 = map(zoom_allowed)
 trigger1 = alive && !standby
@@ -4191,7 +4191,7 @@ camerabound = 0
 pos = pos x * camerazoom, 0
 
 [State -3, Victory BGM]
-type = mapset
+type = varset
 map = "victorybgm"
 trigger1 = map(victorybgm) != 0
 trigger1 = motifstate(victoryscreen) = 0

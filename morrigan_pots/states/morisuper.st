@@ -26,7 +26,7 @@ map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
 [State 3000, Strength]
-type = mapset
+type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -35,7 +35,7 @@ ignorehitpause = 1
 persistent = 0
 
 [State 3000, Button AI]
-type = mapset
+type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -215,7 +215,7 @@ map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
 [State 3050, Strength]
-type = mapset
+type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -224,7 +224,7 @@ ignorehitpause = 1
 persistent = 0
 
 [State 3050, Button AI]
-type = mapset
+type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -476,7 +476,7 @@ map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
 [State 3100, Strength]
-type = mapset
+type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
 map = "strength"
@@ -485,7 +485,7 @@ ignorehitpause = 1
 persistent = 0
 
 [State 3100, Button AI]
-type = mapset
+type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
 map = "strength"

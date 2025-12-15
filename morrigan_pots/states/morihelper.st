@@ -31,7 +31,7 @@ value = SCA, NP, SP, HP
 ignorehitpause = 1
 
 [State 1005, Strength]
-type = mapset
+type = varset
 trigger1 = !time
 map = "strength"
 value = root, map(strength)
@@ -311,7 +311,7 @@ value = SCA, NP, SP, HP
 ignorehitpause = 1
 
 [State 1055, Strength]
-type = mapset
+type = varset
 trigger1 = !time
 map = "strength"
 value = root, map(strength)
@@ -882,14 +882,14 @@ velset = 0, 0
 sprpriority = 3
 
 [State 3005, Strength]
-type = mapset
+type = varset
 trigger1 = !time
 trigger1 = !prevstateno
 map = "strength"
 value = root, map(strength)
 
 [State 3005, Strength]
-type = mapset
+type = varset
 trigger1 = !time
 trigger1 = !prevstateno
 map = "strength"
@@ -1187,7 +1187,7 @@ velset = 0, 0
 sprpriority = 3
 
 [State 3055, Strength]
-type = mapset
+type = varset
 trigger1 = !time
 trigger1 = !prevstateno
 map = "strength"
@@ -1431,7 +1431,7 @@ trans = addalpha
 alpha = 32 * (time + 1), 256 - (32 * (time + 1))
 
 [State 3305, SprPriority Var]
-type = mapset
+type = varset
 trigger1 = !time
 map = "layering"
 value = ifelse(random < 667, 3, -1)
@@ -1449,7 +1449,7 @@ x = 0
 y = 0
 
 [State 3305, Decide Angle]
-type = mapset
+type = varset
 map = "direction"
 triggerall = root, AIlevel = 0
 trigger1 = !time
@@ -1458,7 +1458,7 @@ trigger2 = root, stateno = 3300
 value = ifelse(root, command = "holdup", -1, ifelse(root, command = "holddown", 1, 0))
 
 [State 3305, Decide Angle]
-type = mapset
+type = varset
 map = "direction"
 triggerall = root, AIlevel > 0
 trigger1 = !time
@@ -2434,13 +2434,13 @@ trigger1 = 1
 scale = gamewidth / 320.0, gamewidth / 320.0
 
 [State 4190, Pos Var]
-type = mapset
+type = varset
 trigger1 = !time
 map = "posx"
 value = -160
 
 [State 4190, Pos Var]
-type = mapset
+type = varset
 trigger1 = anim = 4190 && animelemtime(2) >= 0
 trigger1 = anim = 4191 && animelemtime(2) < 0
 map = "posx"
