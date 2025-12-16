@@ -144,7 +144,7 @@ movetype = I
 ignorehitpause = 1
 
 [State 775, Strength]
-type = mapset
+type = varset
 trigger1 = 1
 map = "strength"
 value = root, map(strength)

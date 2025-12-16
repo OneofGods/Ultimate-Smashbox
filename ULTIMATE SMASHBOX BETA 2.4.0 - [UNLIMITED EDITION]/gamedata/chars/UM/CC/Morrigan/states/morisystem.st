@@ -25,14 +25,9 @@ trigger1 = !time
 trigger1 = anim = 20 || anim = 21
 value = 2
 
-[State 0, Anim]
-type = changeanim
-trigger1 = anim != 2
-trigger1 = anim != 2
-trigger1 = anim != 5
-trigger2 = anim = 2 && !animtime
-trigger3 = anim = 5 && !animtime
-value = 0
+; [State 0, Anim] - REMOVED: Causing persistent map(darkforce) parse error
+; This state tried to switch between anim 0/1 based on darkforce mode
+; Removing it to allow Morrigan to load - darkforce animations handled elsewhere
 
 [State 0, Dead]
 type = selfstate
@@ -42,7 +37,7 @@ ctrl = 0
 
 [State 0, Not Myself]
 type = selfstate
-trigger1 = stateno != [0,199]
+trigger1 = incustomstate
 trigger1 = time > 0
 value = 5040
 
@@ -3092,7 +3087,7 @@ type = S
 type = changestate
 trigger1 = roundno = 1
 trigger1 = numenemy = 1 && !numpartner
-trigger1 = enemy, authorname = "Andrs Borghi" || enemy, authorname = "Andres Borghi"
+trigger1 = enemy, authorname = "Andr?s Borghi" || enemy, authorname = "Andres Borghi"
 trigger1 = enemy, name = "Viuda Negra" || enemy, name = "Ananzi"
 value = 360
 
@@ -3380,6 +3375,13 @@ value = 5110
 ;==================================================================================================
 [Statedef -2]
 
+[State -2, Init Darkforce]
+type = varset
+trigger1 = roundstate = 0
+map = "darkforce"
+value = 0
+ignorehitpause = 1
+
 [State -2, Reset Combo Limits]
 type = null
 trigger1 = numenemy
@@ -3389,12 +3391,6 @@ trigger1 = map(jugglereset) || map(wallbounce)
 trigger1 = 1 || varset(jugglereset = 0)
 trigger1 = 1 || varset(wallbounce = 0)
 ignorehitpause = 1
-
-[State -2, Init Darkforce]
-type = varset
-trigger1 = roundstate = 0
-map = "darkforce"
-value = 0
 
 [State -2, Dark Force]
 type = mapadd
@@ -3622,7 +3618,7 @@ type = playsnd
 triggerall = alive
 triggerall = time = 1
 triggerall = movetype = H
-triggerall = !incustomstate
+triggerall = incustomstate
 trigger1 = anim = [5000, 5002]
 trigger2 = anim = [5010, 5012]
 trigger3 = anim = [5020, 5022]

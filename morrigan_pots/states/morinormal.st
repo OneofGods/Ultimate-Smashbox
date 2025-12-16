@@ -26,7 +26,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -123,7 +123,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -220,7 +220,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -327,7 +327,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -444,7 +444,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -551,7 +551,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -711,7 +711,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -808,7 +808,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -958,7 +958,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1023,7 +1023,7 @@ forcenofall = !map(darkforce)
 forcestand = 1
 
 [State 250, SparkXY]
-type = mapset
+type = varset
 trigger1 = animelem = 5
 trigger1 = map(sparkx.min) := 50
 trigger1 = map(sparkx.max) := 110
@@ -1104,7 +1104,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1372,7 +1372,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1470,7 +1470,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1578,7 +1578,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1676,7 +1676,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1808,7 +1808,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1906,7 +1906,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -2014,7 +2014,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -2122,7 +2122,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -2230,7 +2230,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -2328,7 +2328,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -2444,7 +2444,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -2568,7 +2568,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -2684,7 +2684,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -2800,7 +2800,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -2916,7 +2916,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -3032,7 +3032,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -3148,7 +3148,7 @@ map = "combototal"
 value = 1
 
 [State Erase Inputs]
-type = mapset
+type = varset
 map = "cmd_erase_completed"
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -3157,27 +3157,27 @@ ignorehitpause = 1
 persistent = 0
 
 [State 800, Strength]
-type = mapset
+type = varset
 trigger1 = !time
 trigger1 = !AIlevel
 map = "strength"
 value = (map(cmd_kk))
 
 [State 800, Strength AI]
-type = mapset
+type = varset
 trigger1 = !time
 trigger1 = AIlevel
 map = "strength"
 value = (stagebackedgedist < stagefrontedgedist)
 
 [State 800, Tech Hit]
-type = mapset
+type = varset
 trigger1 = 1
 map = "techhit_timer"
 value = 0
 
 [State 800, Tech Hit]
-type = mapset
+type = varset
 trigger1 = numenemy
 trigger1 = p2statetype = S
 trigger1 = p2stateno = [0, 999] && p2stateno != [100, 119] && p2stateno != [200, 799] && p2, anim != 5300
@@ -3185,7 +3185,7 @@ map = "techhit_timer"
 value = 7
 
 [State 800, Tech Hit Facing]
-type = mapset
+type = varset
 trigger1 = !time
 map = "techhit_facing"
 value = facing
