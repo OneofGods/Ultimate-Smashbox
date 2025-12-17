@@ -3421,10 +3421,10 @@ ignorehitpause = 1
 
 [State -2, Throw in Front]
 type = null
-trigger1 = 1 || var(29) := 0
+trigger1 = 1 || var(29) = 0
 trigger1 = p2dist x < 0
 trigger1 = p2dist x < ifelse((facing = p2,facing), -p2, const(size.ground.front), -p2, const(size.ground.back))
-trigger1 = var(29) := 1
+trigger1 = var(29) = 1
 ignorehitpause = 1
 
 [State -2, Unthrowable Flag]
@@ -3465,8 +3465,8 @@ type = null
 trigger1 = p2movetype != H
 trigger1 = p2, dizzy = 0
 trigger1 = p2stateno != p2, const(statedizzy)
-trigger1 = 1 || var(31) := 0
-trigger1 = 1 || var(32) := 0
+trigger1 = 1 || var(31) = 0
+trigger1 = 1 || var(32) = 0
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Attack Connected Flag]
@@ -3505,23 +3505,23 @@ triggerall = stateno = [3000, 4999]
 ;Level 3
 trigger1 = var(34) = 3
 trigger1 = var(33) < 0.5
-trigger1 = 1 || var(33) := 0.5
+trigger1 = 1 || var(33) = 0.5
 ;Level 2
 trigger2 = var(34) = 2
 trigger2 = var(33) < 0.4
-trigger2 = 1 || var(33) := 0.4
+trigger2 = 1 || var(33) = 0.4
 ;Other
 trigger3 = stateno = [3000, 4999]
 trigger3 = var(33) < 0.3
-trigger3 = 1 || var(33) := 0.3
+trigger3 = 1 || var(33) = 0.3
 ignorehitpause = 1
 
 [State -2, Meter Scaling]
 type = null
 trigger1 = var(27) > 0
-trigger1 = 1 || var(35) := 0
+trigger1 = 1 || var(35) = 0
 trigger2 = var(27) <= 0
-trigger2 = 1 || var(35) := var(33)
+trigger2 = 1 || var(35) = var(33)
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Override Fall Defense Bonus]
@@ -3737,7 +3737,7 @@ ignorehitpause = 1
 [State -3, NoWalk after Parry]
 type = assertspecial
 trigger1 = 1
-trigger1 = 1 || var(40) := (var(40) - 1)
+trigger1 = 1 || var(40) = (var(40) - 1)
 flag = nowalk
 
 [State -3, ProjContact Reset]
@@ -3844,17 +3844,17 @@ ignorehitpause = 1
 [State -3, Super Cancel Check]
 type = varset
 triggerall = stateno = [200, 2999]
-trigger1 = map(specialcancel)
+trigger1 = var(54)
 trigger2 = stateno = 220
 trigger2 = (movecontact || movereversed) && animelemtime(7) < 0 && prevstateno != [200, 699]
 trigger3 = stateno = 1000
-trigger3 = animelemtime(5) = [1, 12] && map(projcontact) = [1, 12]
+trigger3 = animelemtime(5) = [1, 12] && var(52) = [1, 12]
 trigger4 = stateno = 1010
-trigger4 = animelemtime(5) = [1, 12] && map(projcontact) = [1, 12]
+trigger4 = animelemtime(5) = [1, 12] && var(52) = [1, 12]
 trigger5 = stateno = 1050
-trigger5 = animelemtime(6) = [1, 12] && map(projcontact) = [1, 12]
+trigger5 = animelemtime(6) = [1, 12] && var(52) = [1, 12]
 trigger6 = stateno = 1060
-trigger6 = animelemtime(6) = [1, 12] && map(projcontact) = [1, 12]
+trigger6 = animelemtime(6) = [1, 12] && var(52) = [1, 12]
 trigger7 = stateno = 1100
 trigger7 = anim = 1100 && animelemtime(4) < 0
 trigger7 = (movecontact + movereversed) = [1, 12]
@@ -3880,13 +3880,13 @@ ignorehitpause = 1
 type = varset
 triggerall = stateno = [3000, 4999]
 trigger1 = stateno = 3000
-trigger1 = animelemtime(5) = [1, 24] && map(projcontact) = [1, 12]
+trigger1 = animelemtime(5) = [1, 24] && var(52) = [1, 12]
 trigger2 = stateno = 3050
-trigger2 = animelemtime(6) = [1, 24] && map(projcontact) = [1, 12]
+trigger2 = animelemtime(6) = [1, 24] && var(52) = [1, 12]
 trigger3 = stateno = 3100
 trigger3 = (movecontact + movereversed) = [1, 12]
 trigger4 = stateno = 3300
-trigger4 = map(projcontact) = [1, 12]
+trigger4 = var(52) = [1, 12]
 trigger5 = stateno = 3401
 trigger5 = (movecontact + movereversed) = [1, 12]
 map = "hypercancel"
@@ -3901,12 +3901,12 @@ trigger1 = hitdefattr != SCA, AA
 trigger1 = target, gethitvar(frame)
 trigger1 = target, stateowner, ID = ID
 trigger1 = time <= 0 && target, time <= 0
-trigger1 = map(normalcancel) := 0 || map(specialcancel) := 0 || map(supercancel) := 0 || map(hypercancel) := 0
+trigger1 = var(53) = 0 || var(54) = 0 || var(55) = 0 || var(56) = 0
 ignorehitpause = 1
 
 [State -3, Super Cancel Flag Reset]
 type = varset
-trigger1 = map(supercancelflag)
+trigger1 = var(57)
 trigger1 = (stateno != [3000, 4999]) || movetype = H
 map = "supercancel_flag"
 value = 0
@@ -3914,7 +3914,7 @@ ignorehitpause = 1
 
 [State -3, Hyper Cancel Flag Reset]
 type = varset
-trigger1 = map(hypercancelflag)
+trigger1 = var(58)
 trigger1 = (stateno != [3000, 4999]) || movetype = H
 map = "hypercancel_flag"
 value = 0
@@ -3943,7 +3943,7 @@ random = 40, 4
 vel = 0, (-0.80 - (random / 5000.0)) * ifelse(statetype = C, 0.66, 1.00)
 scale = 0.50 * const(size.xscale), 0.50 * const(size.yscale)
 palfx.time = -1
-palfx.hue = -256 + 4 * (ceil(map(sparkle_timer)) % 128); randomRange(-256, 256)
+palfx.hue = -256 + 4 * (ceil(var(66)) % 128); randomRange(-256, 256)
 ownpal = 1
 
 [State -3, Sparkles Front]
@@ -3963,7 +3963,7 @@ random = 52, 4
 vel = 0, (-1.00 - (random / 4000.0)) * ifelse(statetype = C, 0.66, 1.00)
 scale = 0.50 * const(size.xscale), 0.50 * const(size.yscale)
 palfx.time = -1
-palfx.hue = -256 + 4 * (ceil(map(sparkle_timer)) % 128); randomRange(-256, 256)
+palfx.hue = -256 + 4 * (ceil(var(66)) % 128); randomRange(-256, 256)
 ownpal = 1
 
 [State -3, Sparkles Parasite Roll]
@@ -3985,7 +3985,7 @@ angle = 45
 interpolation.time = 30
 interpolation.angle = 0
 palfx.time = -1
-palfx.hue = -256 + 4 * (ceil(map(sparkle_timer)) % 128); randomRange(-256, 256)
+palfx.hue = -256 + 4 * (ceil(var(66)) % 128); randomRange(-256, 256)
 ownpal = 1
 ignorehitpause = 1
 
@@ -4003,7 +4003,7 @@ facing = -1
 [State -3, Movement Afterimage]
 type = afterimage
 triggerall = time = 1
-trigger1 = stateno = 50 && map(jumptype) = 3
+trigger1 = stateno = 50 && var(51) = 3
 trigger2 = stateno = [710, 725]
 time = 2
 timegap = 1
@@ -4069,7 +4069,7 @@ trans = add1
 [State -3, Afterimage Persist]
 type = afterimagetime
 trigger1 = stateno = 50 || stateno = [600, 699]
-trigger1 = map(jumptype) = 3 && vel y < -1
+trigger1 = var(51) = 3 && vel y < -1
 trigger2 = stateno = [710, 725]
 trigger3 = stateno = [3000, 4999]
 time = 2
@@ -4082,7 +4082,7 @@ value = 320
 
 [State -3, Jump Reset]
 type = varset
-trigger1 = map(jumptype)
+trigger1 = var(51)
 trigger1 = stateno != 40
 trigger1 = statetype != A || movetype = H
 map = "jumptype"
@@ -4090,7 +4090,7 @@ value = 0
 
 [State -3, Reset Super Finish Var]
 type = varset
-trigger1 = map(superfinish)
+trigger1 = var(59)
 trigger1 = roundstate = [0, 2]
 map = "superfinish"
 value = 0
@@ -4099,17 +4099,17 @@ value = 0
 type = helper
 triggerall = winKO
 triggerall = roundstate = 3
-triggerall = map(darkforce) && !numhelper(8600)
+triggerall = var(50) && !numhelper(8600)
 triggerall = p2, gethitvar(playerno) = playerno
 trigger1 = movecontact = [1, 4]
 trigger2 = numhelper(1005)
-trigger2 = helper(1005), map(projcontact)
+trigger2 = helper(1005), var(52)
 trigger3 = numhelper(1015)
-trigger3 = helper(1015), map(projcontact)
+trigger3 = helper(1015), var(52)
 trigger4 = numhelper(1055)
-trigger4 = helper(1055), map(projcontact)
+trigger4 = helper(1055), var(52)
 trigger5 = numhelper(1065)
-trigger5 = helper(1065), map(projcontact)
+trigger5 = helper(1065), var(52)
 trigger6 = stateno = 810
 trigger6 = animelemtime(6) = [0, 1]
 trigger7 = stateno = 820
@@ -4118,7 +4118,7 @@ trigger8 = stateno = 1311 || stateno = 1341
 trigger8 = time <= 1
 helpertype = normal
 stateno = 8600
-ID = 8600 + 0 * (map(superfinish) := 900)
+ID = 8600 + 0 * (var(59) = 900)
 name = "Super Finish"
 postype = left
 pos = 160, -120
@@ -4135,20 +4135,20 @@ triggerall = !numhelper(8600)
 triggerall = p2, gethitvar(playerno) = playerno
 trigger1 = movecontact = [1, 4]
 trigger1 = stateno = [3000, 4999]
-trigger1 = map(superfinish) := stateno
+trigger1 = var(59) = stateno
 trigger2 = numhelper(3005)
-trigger2 = helper(3005), map(projcontact)
-trigger2 = map(superfinish) := 3000
+trigger2 = helper(3005), var(52)
+trigger2 = var(59) = 3000
 trigger3 = numhelper(3055)
-trigger3 = helper(3055), map(projcontact)
-trigger3 = map(superfinish) := 3050
-trigger4 = stateno = 3300 && map(projcontact)
-trigger4 = map(superfinish) := 3300
+trigger3 = helper(3055), var(52)
+trigger3 = var(59) = 3050
+trigger4 = stateno = 3300 && var(52)
+trigger4 = var(59) = 3300
 trigger5 = numhelper(3305)
-trigger5 = helper(3305), map(projcontact)
-trigger5 = map(superfinish) := 3300
+trigger5 = helper(3305), var(52)
+trigger5 = var(59) = 3300
 trigger6 = stateno = 4110
-trigger6 = map(superfinish) := 4100
+trigger6 = var(59) = 4100
 helpertype = normal
 stateno = 8600
 ID = 8600
@@ -4168,8 +4168,8 @@ value = 0
 
 [State -3, Victory Camera]
 type = varset
-trigger1 = map(cfg_winzoom)
-trigger1 = map(zoom_allowed)
+trigger1 = var(63)
+trigger1 = var(64)
 trigger1 = alive && !standby
 trigger1 = winKO
 trigger1 = stateno > 180
@@ -4183,7 +4183,7 @@ value = 1
 
 [State -3, Victory Camera]
 type = zoom
-trigger1 = map(victorycam)
+trigger1 = var(60)
 scale = 1.0 / camerazoom
 lag = 0.92
 stagebound = 1
@@ -4193,14 +4193,14 @@ pos = pos x * camerazoom, 0
 [State -3, Victory BGM]
 type = varset
 map = "victorybgm"
-trigger1 = map(victorybgm) != 0
+trigger1 = var(61) != 0
 trigger1 = motifstate(victoryscreen) = 0
 value = 0
 
 [State -3, Victory BGM]
 type = mapadd
 map = "victorybgm"
-trigger1 = map(cfg_victorybgm)
+trigger1 = var(62)
 trigger1 = motifstate(victoryscreen)
 trigger1 = teamleader = playerno
 trigger1 = matchover
@@ -4210,14 +4210,14 @@ value = 1
 
 [State -3, Victory BGM];Assertspecial nomusic does not work here
 type = playbgm
-trigger1 = map(cfg_victorybgm)
-trigger1 = map(victorybgm) = [1, 5]
+trigger1 = var(62)
+trigger1 = var(61) = [1, 5]
 bgm = ""
 
 [State -3, Victory BGM]
 type = playbgm
-trigger1 = map(cfg_victorybgm)
-trigger1 = map(victorybgm) = 6
+trigger1 = var(62)
+trigger1 = var(61) = 6
 bgm = "moriwin.mp3"
 loop = 0
 volume = 100
@@ -4251,14 +4251,14 @@ value = 5040
 type = null
 trigger1 = ishelper
 trigger1 = pausetime = 0
-trigger1 = !map(combocheck)
+trigger1 = !var(65)
 trigger1 = movecontact && numtarget
-trigger1 = root, map(combocheck) := 1
-trigger1 = map(combocheck) := 1
+trigger1 = root, var(65) = 1
+trigger1 = var(65) = 1
 ignorehitpause = 1
 
 [State -4, Damage Scaling - Helper Multiplier]
 type = attackmulset
 trigger1 = ishelper
-value = root, map(damagescaling)
+value = root, var(67)
 ignorehitpause = 1

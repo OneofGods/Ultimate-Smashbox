@@ -13,15 +13,15 @@ movetype = A
 anim = 3000
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (map(superlevel) := 1)
+poweradd = -1000 + 0 * (var(124) = 1)
 sprpriority = 2
 facep2 = 1
 
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -30,7 +30,7 @@ type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
 map = "strength"
-value = ifelse(map(cmd_strength_z), 2, ifelse(map(cmd_strength_y), 1, 0))
+value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
 ignorehitpause = 1
 persistent = 0
 
@@ -46,16 +46,16 @@ ignorehitpause = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || var(89) = 1
+trigger1 = 1 || var(87) = 1
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
+trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 
@@ -63,8 +63,8 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = var(57) || var(58)
+trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
@@ -77,7 +77,7 @@ channel = 0
 
 [State 3000, Super Pause FX]
 type = helper
-trigger1 = map(cfg_superfx)
+trigger1 = var(65)
 trigger1 = time = 3
 helpertype = normal
 stateno = 8500
@@ -95,11 +95,11 @@ type = superpause
 trigger1 = time = 3
 time = 41
 movetime = 41
-anim = ifelse(map(cfg_superfx), -1, 100)
+anim = ifelse(var(65), -1, 100)
 pos = ceil(-68 * const(size.xscale)), ceil(-63 * const(size.yscale))
 sound = s0, 8500
 p2defmul = 1
-darken = !map(cfg_superfx)
+darken = !var(65)
 
 [State 3000, NHB]
 type = nothitby
@@ -202,15 +202,15 @@ movetype = A
 anim = 3050
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (map(superlevel) := 1)
+poweradd = -1000 + 0 * (var(124) = 1)
 sprpriority = 2
 facep2 = p2dist x <= -const(size.ground.back)
 
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -219,7 +219,7 @@ type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
 map = "strength"
-value = ifelse(map(cmd_strength_z), 2, ifelse(map(cmd_strength_y), 1, 0))
+value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
 ignorehitpause = 1
 persistent = 0
 
@@ -235,16 +235,16 @@ ignorehitpause = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || var(89) = 1
+trigger1 = 1 || var(87) = 1
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
+trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 
@@ -252,8 +252,8 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = var(57) || var(58)
+trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
@@ -266,7 +266,7 @@ channel = 0
 
 [State 3050, Super Pause FX]
 type = helper
-trigger1 = map(cfg_superfx)
+trigger1 = var(65)
 trigger1 = time = 3
 helpertype = normal
 stateno = 8500
@@ -284,11 +284,11 @@ type = superpause
 trigger1 = time = 3
 time = 41
 movetime = 41
-anim = ifelse(map(cfg_superfx), -1, 100)
+anim = ifelse(var(65), -1, 100)
 pos = ceil(-13 * const(size.xscale)), ceil(-85 * const(size.yscale))
 sound = s0, 8500
 p2defmul = 1
-darken = !map(cfg_superfx)
+darken = !var(65)
 
 [State 3050, NHB]
 type = nothitby
@@ -463,15 +463,15 @@ movetype = A
 anim = 3100
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (map(superlevel) := 1)
+poweradd = -1000 + 0 * (var(124) = 1)
 facep2 = 1
 sprpriority = 2
 
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -480,7 +480,7 @@ type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
 map = "strength"
-value = ifelse(map(cmd_strength_c), 2, ifelse(map(cmd_strength_b), 1, 0))
+value = ifelse(var(99), 2, ifelse(var(98), 1, 0))
 ignorehitpause = 1
 persistent = 0
 
@@ -496,16 +496,16 @@ ignorehitpause = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || var(89) = 1
+trigger1 = 1 || var(87) = 1
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
+trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 
@@ -513,8 +513,8 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = var(57) || var(58)
+trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
@@ -527,7 +527,7 @@ channel = 0
 
 [State 3100, Super Pause FX]
 type = helper
-trigger1 = map(cfg_superfx)
+trigger1 = var(65)
 trigger1 = time = 3
 helpertype = normal
 stateno = 8500
@@ -545,11 +545,11 @@ type = superpause
 trigger1 = time = 3
 time = 41
 movetime = 41
-anim = ifelse(map(cfg_superfx), -1, 100)
+anim = ifelse(var(65), -1, 100)
 pos = ceil(-25 * const(size.xscale)), ceil(-35 * const(size.yscale))
 sound = s0, 8500
 p2defmul = 1
-darken = !map(cfg_superfx)
+darken = !var(65)
 
 [State 3100, NHB]
 type = nothitby
@@ -582,7 +582,7 @@ y = 0.67
 type = velset
 trigger1 = anim = 3100
 trigger1 = animelemtime(8) = 1
-x = ifelse(map(strength) = 2, 10.2, ifelse(map(strength) = 1, 7.65, 5.10))
+x = ifelse(var(123) = 2, 10.2, ifelse(var(123) = 1, 7.65, 5.10))
 y = -11.76
 
 [State 3100, Vel]
@@ -628,7 +628,7 @@ persistent = 0
 type = hitdef
 trigger1 = anim = 3100
 trigger1 = animelem = 2 || animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := (3 + hitcount))
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (3 + hitcount))
 attr = S, HA
 damage = 30, 8
 dizzypoints = 0
@@ -637,9 +637,9 @@ hitflag = MAFD
 guardflag = M
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (map(sparkno) := 8024)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 25) * (map(sparkx.max) := 50), map(sparky) := ifelse((animelem = 2), -35, -60)
+sparkno = -1 + 0 * (var(121) = 8024)
+guard.sparkno = -1 + 0 * (var(131) = 8001)
+sparkxy = -10 + 0 * (var(132) = 25) * (var(133) = 50), var(122) = ifelse((animelem = 2), -35, -60)
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -676,7 +676,7 @@ yaccel = 0.4850
 type = hitdef
 trigger1 = anim = 3100
 trigger1 = animelem = 4 || animelem = 6 || animelem = 8 || animelem = 9 || animelem = 10 || animelem = 11
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := (3 + hitcount))
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (3 + hitcount))
 attr = A, HA
 damage = 30, 8
 dizzypoints = 0
@@ -685,9 +685,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = ifelse((animelem = 11), 12, 4), ifelse((animelem = 11), 12, 4)
-sparkno = -1 + 0 * (map(sparkno) := 8024)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 0) * (map(sparkx.max) := 50), map(sparky) := -100
+sparkno = -1 + 0 * (var(121) = 8024)
+guard.sparkno = -1 + 0 * (var(131) = 8001)
+sparkxy = -10 + 0 * (var(132) = 0) * (var(133) = 50), var(122) = -100
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -760,15 +760,15 @@ movetype = A
 anim = 3300
 ctrl = 0
 velset = 0, 0
-poweradd = -2000 + 0 * (map(superlevel) := 2)
+poweradd = -2000 + 0 * (var(124) = 2)
 facep2 = 1
 sprpriority = 2
 
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -776,16 +776,16 @@ value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 299
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || var(89) = 1
+trigger1 = 1 || var(87) = 1
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
+trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 
@@ -793,8 +793,8 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = var(57) || var(58)
+trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
@@ -807,7 +807,7 @@ channel = 0
 
 [State 3300, Super Pause FX]
 type = helper
-trigger1 = map(cfg_superfx)
+trigger1 = var(65)
 trigger1 = time = 3
 helpertype = normal
 stateno = 8510
@@ -825,11 +825,11 @@ type = superpause
 trigger1 = time = 3
 time = 43
 movetime = 43
-anim = ifelse(map(cfg_superfx), -1, 101)
+anim = ifelse(var(65), -1, 101)
 pos = ceil(-43 * const(size.xscale)), ceil(-68 * const(size.yscale))
 sound = s0, 8510
 p2defmul = 1
-darken = !map(cfg_superfx)
+darken = !var(65)
 
 [State 3300, NHB]
 type = nothitby
@@ -950,15 +950,15 @@ movetype = A
 anim = 3400
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (map(superlevel) := 1)
+poweradd = -1000 + 0 * (var(124) = 1)
 sprpriority = 2
 facep2 = 0
 
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -966,16 +966,16 @@ value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 299
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || var(89) = 1
+trigger1 = 1 || var(87) = 1
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
+trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 
@@ -983,15 +983,15 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = var(57) || var(58)
+trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
 
 [State 3400, Super Pause FX]
 type = helper
-trigger1 = map(cfg_superfx)
+trigger1 = var(65)
 trigger1 = time = 3
 helpertype = normal
 stateno = 8500
@@ -1009,11 +1009,11 @@ type = superpause
 trigger1 = time = 3
 time = 41
 movetime = 41
-anim = ifelse(map(cfg_superfx), -1, 100)
+anim = ifelse(var(65), -1, 100)
 pos = ceil(-39 * const(size.xscale)), ceil(-70 * const(size.yscale))
 sound = s0, 8500
 p2defmul = 1
-darken = !map(cfg_superfx)
+darken = !var(65)
 
 [State 3400, NHB]
 type = nothitby
@@ -1205,7 +1205,7 @@ ownpal = 1
 type = hitdef
 trigger1 = anim = 3402
 trigger1 = !((movecontact + movereversed) % 3)
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 13)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 13)
 attr = A, HA
 damage = ifelse((movecontact || movereversed), 10, 120), ifelse((movecontact || movereversed), 3, 30)
 dizzypoints = 0
@@ -1215,9 +1215,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 6, 12
-sparkno = -1 + 0 * (map(sparkno) := 8024)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 20) * (map(sparkx.max) := 75), map(sparky) := -43
+sparkno = -1 + 0 * (var(121) = 8024)
+guard.sparkno = -1 + 0 * (var(131) = 8001)
+sparkxy = -10 + 0 * (var(132) = 20) * (var(133) = 75), var(122) = -43
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1302,15 +1302,15 @@ movetype = A
 anim = 4000
 ctrl = 0
 velset = 0, 0
-poweradd = -3000 + 0 * (map(superlevel) := 3)
+poweradd = -3000 + 0 * (var(124) = 3)
 facep2 = 1
 sprpriority = 2
 
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -1318,16 +1318,16 @@ value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 299
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || var(89) = 1
+trigger1 = 1 || var(87) = 1
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
+trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 
@@ -1335,8 +1335,8 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = var(57) || var(58)
+trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
@@ -1349,7 +1349,7 @@ channel = 0
 
 [State 4000, Super Pause FX]
 type = helper
-trigger1 = map(cfg_superfx)
+trigger1 = var(65)
 trigger1 = time = 3
 helpertype = normal
 stateno = 8520
@@ -1367,11 +1367,11 @@ type = superpause
 trigger1 = time = 3
 time = 45
 movetime = 45
-anim = ifelse(map(cfg_superfx), -1, 102)
+anim = ifelse(var(65), -1, 102)
 pos = ceil(20 * const(size.xscale)), ceil(-73 * const(size.yscale))
 sound = s0, 8520
 p2defmul = 1
-darken = !map(cfg_superfx)
+darken = !var(65)
 
 [State 4000, NHB]
 type = nothitby
@@ -1406,7 +1406,7 @@ edge = 20, 0
 [State 4000, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 ID = 4000
 attr = S, HA
 damage = 0, 0
@@ -1416,9 +1416,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 12, 12
-sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 15) * (map(sparkx.max) := 30), map(sparky) := -60
+sparkno = -1 + 0 * (var(121) = 8014)
+guard.sparkno = -1 + 0 * (var(131) = 8001)
+sparkxy = -10 + 0 * (var(132) = 15) * (var(133) = 30), var(122) = -60
 hitsound = s2, 3
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1667,7 +1667,7 @@ stopongethit = 1
 type = hitdef
 trigger1 = anim = 4010
 trigger1 = animelem = 8 || animelem = 14 || animelem = 19 || animelem = 36 || animelem = 37
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = S, HA
 damage = 25, 6
@@ -1677,9 +1677,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
-sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
+sparkno = -1 + 0 * (var(121) = 8014)
+guard.sparkno = -1 + 0 * (var(131) = 8001)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
 hitsound = s2, ifelse((animelem = 8 || animelem = 14), 2, ifelse((animelem = 19), 3, 6))
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1709,7 +1709,7 @@ yaccel = 0.4850
 type = hitdef
 trigger1 = anim = 4010
 trigger1 = animelem = 11 || animelem = 28 || animelem = 38 || animelem = 39
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = S, HA
 damage = 25, 6
@@ -1719,9 +1719,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
-sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
+sparkno = -1 + 0 * (var(121) = 8014)
+guard.sparkno = -1 + 0 * (var(131) = 8001)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
 hitsound = s2, ifelse((animelem = 11), 5, 6)
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1750,7 +1750,7 @@ yaccel = 0.4850
 [State 4010, Hit Up Ground]
 type = hitdef
 trigger1 = anim = 4010 && animelem = 48
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = S, HA
 damage = 25, 6
@@ -1760,9 +1760,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
-sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
+sparkno = -1 + 0 * (var(121) = 8014)
+guard.sparkno = -1 + 0 * (var(131) = 8001)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
 hitsound = s2, 3
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1797,7 +1797,7 @@ forcestand = 1
 type = hitdef
 trigger1 = anim = 4011
 trigger1 = animelem = 4 || animelem = 9 || animelem = 15 || animelem = 20 || animelem = 25
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = A, HA
 damage = 25, 6
@@ -1808,9 +1808,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
-sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
+sparkno = -1 + 0 * (var(121) = 8014)
+guard.sparkno = -1 + 0 * (var(131) = 8001)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
 hitsound = s2, ifelse((animelem = 4), 5, ifelse((animelem = 9 || animelem = 20), 3, 6))
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1845,7 +1845,7 @@ forcestand = 1
 [State 4010, Hit Final]
 type = hitdef
 trigger1 = anim = 4011 && animelem = 32
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = A, HA
 damage = 45, 11
@@ -1855,9 +1855,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
-sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
+sparkno = -1 + 0 * (var(121) = 8014)
+guard.sparkno = -1 + 0 * (var(131) = 8001)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
 hitsound = s2, 3
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2125,15 +2125,15 @@ movetype = A
 anim = 4050
 ctrl = 0
 velset = 0, 0
-poweradd = -2000 + 0 * (map(superlevel) := 2)
+poweradd = -2000 + 0 * (var(124) = 2)
 facep2 = 0
 sprpriority = 2
 
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -2141,16 +2141,16 @@ value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 299
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || var(89) = 1
+trigger1 = 1 || var(87) = 1
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
+trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 
@@ -2158,8 +2158,8 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = var(57) || var(58)
+trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
@@ -2172,7 +2172,7 @@ channel = 0
 
 [State 4050, Super Pause FX]
 type = helper
-trigger1 = map(cfg_superfx)
+trigger1 = var(65)
 trigger1 = time = 3
 helpertype = normal
 stateno = 8510
@@ -2190,11 +2190,11 @@ type = superpause
 trigger1 = time = 3
 time = 43
 movetime = 43
-anim = ifelse(map(cfg_superfx), -1, 101)
+anim = ifelse(var(65), -1, 101)
 pos = ceil(20 * const(size.xscale)), ceil(-73 * const(size.yscale))
 sound = s0, 8510
 p2defmul = 1
-darken = !map(cfg_superfx)
+darken = !var(65)
 
 [State 4050, NHB]
 type = nothitby
@@ -2230,7 +2230,7 @@ edge = 20, 0
 type = hitdef
 trigger1 = animelem = 3
 trigger1 = !movecontact && !movereversed
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 ID = 4050
 attr = A, HA
 damage = 0, 0
@@ -2240,9 +2240,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 12, 12
-sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 15) * (map(sparkx.max) := 30), map(sparky) := -60
+sparkno = -1 + 0 * (var(121) = 8014)
+guard.sparkno = -1 + 0 * (var(131) = 8001)
+sparkxy = -10 + 0 * (var(132) = 15) * (var(133) = 30), var(122) = -60
 hitsound = s2, 3
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2429,7 +2429,7 @@ stopongethit = 1
 [State 4060, Hit High]
 type = hitdef
 trigger1 = animelem = 7 || animelem = 13 || animelem = 20 || animelem = 22
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4060
 attr = S, HA
 damage = 30, 8
@@ -2441,9 +2441,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
+sparkno = -1 + 0 * (var(121) = 8014)
+guard.sparkno = -1 + 0 * (var(131) = 8001)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
 hitsound = s2, ifelse((animelem = 7), 3, 6)
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2476,7 +2476,7 @@ yaccel = 0.4850
 [State 4060, Hit Low]
 type = hitdef
 trigger1 = animelem = 3 || animelem = 10 || animelem = 17 || animelem = 21 || animelem = 23
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4060
 attr = S, HA
 damage = 30, 8
@@ -2488,9 +2488,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
+sparkno = -1 + 0 * (var(121) = 8014)
+guard.sparkno = -1 + 0 * (var(131) = 8001)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
 hitsound = s2, ifelse((animelem = 10 || animelem = 17), 3, 6)
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2523,7 +2523,7 @@ yaccel = 0.4850
 [State 4060, Hit Final]
 type = hitdef
 trigger1 = animelem = 30
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4060
 attr = A, HA
 damage = 30, 8
@@ -2535,9 +2535,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 12, 12
-sparkno = -1 + 0 * (map(sparkno) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), map(sparky) := -60
+sparkno = -1 + 0 * (var(121) = 8014)
+guard.sparkno = -1 + 0 * (var(131) = 8001)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2631,15 +2631,15 @@ movetype = A
 anim = 4100
 ctrl = 0
 velset = 0, 0
-poweradd = -3000 + 0 * (map(superlevel) := 3)
+poweradd = -3000 + 0 * (var(124) = 3)
 sprpriority = 2
 facep2 = 1
 
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
@@ -2647,16 +2647,16 @@ value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 299
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || map(cmd_erase_motion_super) := 1
-trigger1 = 1 || map(cmd_erase_completed) := 1
+trigger1 = 1 || var(89) = 1
+trigger1 = 1 || var(87) = 1
 ignorehitpause = 1
 persistent = 0
 
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || map(supercancelflag) := (prevstateno = [1000, 2999] && map(supercancel))
-trigger1 = 1 || map(hypercancelflag) := (prevstateno = [3000, 4999] && map(hypercancel))
+trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
+trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 
@@ -2664,15 +2664,15 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = map(supercancelflag) || map(hypercancelflag)
-trigger1 = 1 || map(juggle_count) := 0
+trigger1 = var(57) || var(58)
+trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
 
 [State 4100, Super Pause FX]
 type = helper
-trigger1 = map(cfg_superfx)
+trigger1 = var(65)
 trigger1 = time = 3
 helpertype = normal
 stateno = 8520
@@ -2690,11 +2690,11 @@ type = superpause
 trigger1 = time = 3
 time = 45
 movetime = 45
-anim = ifelse(map(cfg_superfx), -1, 102)
+anim = ifelse(var(65), -1, 102)
 pos = ceil(-22 * const(size.xscale)), ceil(-82 * const(size.yscale))
 sound = s0, 8520
 p2defmul = 1
-darken = !map(cfg_superfx)
+darken = !var(65)
 
 [State 4100, NHB]
 type = nothitby
@@ -3040,7 +3040,7 @@ type = targetlifeadd
 triggerall = numtarget(4105)
 trigger1 = animelem = 3 || animelem = 5 || animelem = 7 || animelem = 9
 trigger2 = animelem = 11 || animelem = 13 || animelem = 15 || animelem = 17
-value = floor(-25 * map(damagescaling))
+value = floor(-25 * var(67))
 dizzy = 0
 kill = animelem = 17
 
@@ -3049,14 +3049,14 @@ type = targetdizzypointsadd
 trigger1 = numtarget(4105)
 trigger1 = animelem = 17
 ID = 4105
-value = floor(-600 * map(damagescaling))
+value = floor(-600 * var(67))
 
 ;[State 4107, Damage]
 ;type = targetpoweradd
 ;trigger1 = numtarget(4105)
 ;trigger1 = animelem = 17
 ;ID = 4105
-;value = floor(-1000 * map(damagescaling))
+;value = floor(-1000 * var(67))
 
 [State 4107, givepower]
 type = targetpoweradd

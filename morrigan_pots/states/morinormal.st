@@ -20,8 +20,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -51,10 +51,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 200, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 30, 0
-dizzypoints = 50 * !map(darkforce)
+dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -62,16 +62,16 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 20) * (map(sparkx.max) := 65), map(sparky) := -82
+sparkno = -1 + 0 * (var(121) = 8010)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 20) * (var(133) = 65), var(122) = -82
 hitsound = s2, 1
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
 ground.slidetime = ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12)
-ground.hittime = 1 + ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12); + 2 * map(counterhit_buffer)
+ground.hittime = 1 + ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12); + 2 * var(105)
 ground.velocity = ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), -7.51, -4.49) * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
@@ -81,13 +81,13 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !map(darkforce), 25 * !map(darkforce)
+getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
@@ -117,8 +117,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -148,10 +148,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 201, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 30, 0
-dizzypoints = 50 * !map(darkforce)
+dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -159,16 +159,16 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 20) * (map(sparkx.max) := 65), map(sparky) := -74
+sparkno = -1 + 0 * (var(121) = 8010)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 20) * (var(133) = 65), var(122) = -74
 hitsound = s2, 1
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
 ground.slidetime = ifelse((prevstateno = 201 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12)
-ground.hittime = 1 + ifelse((prevstateno = 201 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12); + 2 * map(counterhit_buffer)
+ground.hittime = 1 + ifelse((prevstateno = 201 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12); + 2 * var(105)
 ground.velocity = ifelse((prevstateno = 201 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), -7.51, -4.49) * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
@@ -178,13 +178,13 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !map(darkforce), 25 * !map(darkforce)
+getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
@@ -214,8 +214,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -245,10 +245,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 210, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !map(darkforce)
+dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -256,16 +256,16 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8011)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 70) * (map(sparkx.max) := 115), map(sparky) := -54
+sparkno = -1 + 0 * (var(121) = 8011)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 70) * (var(133) = 115), var(122) = -54
 hitsound = s2, 2
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * map(counterhit_buffer); + 3 * map(counterhit_buffer)
+ground.hittime = 1 + 15; + 3 * var(105); + 3 * var(105)
 ground.velocity = -7.51 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -275,13 +275,13 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !map(darkforce), ifelse(moveguarded, 25, 50) * !map(darkforce)
+getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 210, Anim]
 type = changeanim
@@ -321,8 +321,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -352,10 +352,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 211, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 80, 0
-dizzypoints = 100 * !map(darkforce)
+dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -363,16 +363,16 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8021)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 50) * (map(sparkx.max) := 110), map(sparky) := -62
+sparkno = -1 + 0 * (var(121) = 8021)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 50) * (var(133) = 110), var(122) = -62
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * map(counterhit_buffer); + 3 * map(counterhit_buffer)
+ground.hittime = 1 + 15; + 3 * var(105); + 3 * var(105)
 ground.velocity = -7.51 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -382,13 +382,13 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !map(darkforce), ifelse(moveguarded, 25, 50) * !map(darkforce)
+getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 211, Anim]
 type = changeanim
@@ -438,8 +438,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -469,10 +469,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 220, Hit]
 type = hitdef
 trigger1 = animelem = 5
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 100, 0
-dizzypoints = 200 * !map(darkforce)
+dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -480,15 +480,15 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8022)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 70) * (map(sparkx.max) := 130), map(sparky) := -48
+sparkno = -1 + 0 * (var(121) = 8022)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 70) * (var(133) = 130), var(122) = -48
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.hittime = 1 + 18; + 4 * map(counterhit_buffer)
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -10.52 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
@@ -499,13 +499,13 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !map(darkforce), ifelse(moveguarded, 25, 100) * !map(darkforce)
+getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 220, Anim]
 type = changeanim
@@ -545,8 +545,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -576,10 +576,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 221, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 90, 0
-dizzypoints = 200 * !map(darkforce)
+dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -587,15 +587,15 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8022)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 60), map(sparky) := -36
+sparkno = -1 + 0 * (var(121) = 8022)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 40) * (var(133) = 60), var(122) = -36
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.hittime = 1 + 18; + 4 * map(counterhit_buffer)
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -10.52 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
@@ -606,23 +606,23 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !map(darkforce), ifelse(moveguarded, 25, 100) * !map(darkforce)
+getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 forcestand = 1
 
 [State 221, Hit]
 type = hitdef
 trigger1 = animelem = 3
 trigger1 = !movecontact && !movereversed
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 90, 0
-dizzypoints = 200 * !map(darkforce)
+dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -630,15 +630,15 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8022)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 60), map(sparky) := -62
+sparkno = -1 + 0 * (var(121) = 8022)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 40) * (var(133) = 60), var(122) = -62
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.hittime = 1 + 18; + 4 * map(counterhit_buffer)
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -10.52 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
@@ -649,13 +649,13 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !map(darkforce), ifelse(moveguarded, 25, 100) * !map(darkforce)
+getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 221, Anim]
 type = changeanim
@@ -705,8 +705,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -736,10 +736,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 230, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 30, 0
-dizzypoints = 50 * !map(darkforce)
+dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -747,16 +747,16 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 35) * (map(sparkx.max) := 70), map(sparky) := -32
+sparkno = -1 + 0 * (var(121) = 8010)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 35) * (var(133) = 70), var(122) = -32
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
 ground.slidetime = ifelse(prevstateno = 230, 15, 12)
-ground.hittime = 1 + ifelse(prevstateno = 230, 15, 12); + 2 * map(counterhit_buffer)
+ground.hittime = 1 + ifelse(prevstateno = 230, 15, 12); + 2 * var(105)
 ground.velocity = ifelse(prevstateno = 230, -7.51, -4.49) * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
@@ -766,13 +766,13 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !map(darkforce), 25 * !map(darkforce)
+getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
@@ -802,8 +802,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -833,10 +833,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 240, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !map(darkforce)
+dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -844,16 +844,16 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8011)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 110), map(sparky) := -53
+sparkno = -1 + 0 * (var(121) = 8011)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 60) * (var(133) = 110), var(122) = -53
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * map(counterhit_buffer)
+ground.hittime = 1 + 15; + 3 * var(105)
 ground.velocity = -7.51 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -863,22 +863,22 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !map(darkforce), ifelse(moveguarded, 25, 50) * !map(darkforce)
+getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 240, Hit]
 type = hitdef
 trigger1 = animelem = 4
 trigger1 = prevstateno = 710
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !map(darkforce)
+dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -886,16 +886,16 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8011)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 110), map(sparky) := -53
+sparkno = -1 + 0 * (var(121) = 8011)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 60) * (var(133) = 110), var(122) = -53
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * map(counterhit_buffer)
+ground.hittime = 1 + 15; + 3 * var(105)
 ground.velocity = -5.30 * !numhelper(775), -5.25
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -906,7 +906,7 @@ air.velocity = -5.30 * !numhelper(775), -5.30; sidestep
 air.cornerpush.veloff = 0
 guard.cornerpush.veloff = 0
 guard.velocity = -10.52 * !numhelper(775)
-getpower = ifelse(movehit, 25, 100) * !map(darkforce), ifelse(moveguarded, 25, 50) * !map(darkforce)
+getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -952,8 +952,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -983,10 +983,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 250, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 90, 0
-dizzypoints = 200 * !map(darkforce)
+dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -994,15 +994,15 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8022)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 120), map(sparky) := -70
+sparkno = -1 + 0 * (var(121) = 8022)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 60) * (var(133) = 120), var(122) = -70
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
-ground.hittime = 1 + 18; + 4 * map(counterhit_buffer)
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -10.52 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
@@ -1013,20 +1013,20 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !map(darkforce), ifelse(moveguarded, 25, 100) * !map(darkforce)
+getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 forcestand = 1
 
 [State 250, SparkXY]
 type = varset
 trigger1 = animelem = 5
-trigger1 = map(sparkx.min) := 50
-trigger1 = map(sparkx.max) := 110
+trigger1 = var(132) = 50
+trigger1 = var(133) = 110
 map = "sparky"
 value = -110
 
@@ -1098,8 +1098,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -1166,10 +1166,10 @@ ownpal = 1
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 3 || animelem = 4
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 30, 0
-dizzypoints = 50 * !map(darkforce)
+dizzypoints = 50 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -1177,15 +1177,15 @@ guardflag = HA
 hitflag = HAF
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (map(sparkno) := 8012)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 45) * (map(sparkx.max) := 115), map(sparky) := ifelse((animelem = 3), -96, -72)
+sparkno = -1 + 0 * (var(121) = 8012)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 45) * (var(133) = 115), var(122) = ifelse((animelem = 3), -96, -72)
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
-ground.hittime = 1 + 18; + 4 * map(counterhit_buffer)
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -4.49 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
@@ -1196,7 +1196,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !map(darkforce), ifelse(moveguarded, 25, 100) * !map(darkforce)
+getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -1205,15 +1205,15 @@ airguard.velocity = -6.00 * !numhelper(775), -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 5
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 30, 0
-dizzypoints = 50 * !map(darkforce)
+dizzypoints = 50 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -1221,15 +1221,15 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (map(sparkno) := 8012)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 45) * (map(sparkx.max) := 100), map(sparky) := -48
+sparkno = -1 + 0 * (var(121) = 8012)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 45) * (var(133) = 100), var(122) = -48
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
-ground.hittime = 1 + 18; + 4 * map(counterhit_buffer)
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -4.49 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
@@ -1240,7 +1240,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !map(darkforce), ifelse(moveguarded, 25, 100) * !map(darkforce)
+getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -1249,15 +1249,15 @@ airguard.velocity = -6.00 * !numhelper(775), -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 6
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 30, 0
-dizzypoints = 50 * !map(darkforce)
+dizzypoints = 50 * !var(50)
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -1265,15 +1265,15 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8012)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 45) * (map(sparkx.max) := 100), map(sparky) := -24
+sparkno = -1 + 0 * (var(121) = 8012)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 45) * (var(133) = 100), var(122) = -24
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.hittime = 1 + 18; + 4 * map(counterhit_buffer)
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -10.52 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
@@ -1287,14 +1287,14 @@ air.fall = 1
 fall.recover = 1
 fall.recovertime = 120
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !map(darkforce), ifelse(moveguarded, 25, 100) * !map(darkforce)
+getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 airguard.ctrltime = 1 + 16
 airguard.velocity = -6.00 * !numhelper(775), -1.00
 airguard.cornerpush.veloff = 0
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
@@ -1366,8 +1366,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -1397,10 +1397,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 400, Hit]
 type = hitdef
 trigger1 = animelem = 2 || animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 20, 0
-dizzypoints = 25 * !map(darkforce)
+dizzypoints = 25 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -1408,16 +1408,16 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 70), map(sparky) := -36
+sparkno = -1 + 0 * (var(121) = 8010)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 70), var(122) = -36
 hitsound = s2, 1
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12)
-ground.hittime = 1 + ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12); + 2 * map(counterhit_buffer)
+ground.hittime = 1 + ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12); + 2 * var(105)
 ground.velocity = ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), -7.51, -4.49) * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
@@ -1428,13 +1428,13 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -2, -2
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !map(darkforce), 25 * !map(darkforce)
+getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
@@ -1464,8 +1464,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -1495,10 +1495,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 410, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 60, 0
-dizzypoints = 100 * !map(darkforce)
+dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -1506,16 +1506,16 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8021)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 75), map(sparky) := -29
+sparkno = -1 + 0 * (var(121) = 8021)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 40) * (var(133) = 75), var(122) = -29
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * map(counterhit_buffer)
+ground.hittime = 1 + 15; + 3 * var(105)
 ground.velocity = -7.51 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -1526,13 +1526,13 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -3, -3
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !map(darkforce), ifelse(moveguarded, 25, 50) * !map(darkforce)
+getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 410, Anim]
 type = changeanim
@@ -1572,8 +1572,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -1603,10 +1603,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 420, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 100, 0
-dizzypoints = 200 * !map(darkforce)
+dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -1614,15 +1614,15 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8022)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 130), map(sparky) := -32
+sparkno = -1 + 0 * (var(121) = 8022)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 60) * (var(133) = 130), var(122) = -32
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.hittime = 1 + 18; + 4 * map(counterhit_buffer)
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -10.52 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
@@ -1634,13 +1634,13 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -4, -4
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !map(darkforce), ifelse(moveguarded, 25, 100) * !map(darkforce)
+getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
@@ -1670,8 +1670,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -1701,10 +1701,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 425, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 90, 0
-dizzypoints = 200 * !map(darkforce)
+dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Up
@@ -1712,15 +1712,15 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8022)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 50) * (map(sparkx.max) := 90), map(sparky) := -120
+sparkno = -1 + 0 * (var(121) = 8022)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 50) * (var(133) = 90), var(122) = -120
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.hittime = 1 + 18; + 4 * map(counterhit_buffer)
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -1 * !numhelper(775), -9
 ground.cornerpush.veloff = 0
@@ -1732,7 +1732,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -1 * !numhelper(775), -9
 air.cornerpush.veloff = 0
-getpower = ifelse(p2movetype = H, 72, 216) * !map(darkforce), 36 * !map(darkforce)
+getpower = ifelse(p2movetype = H, 72, 216) * !var(50), 36 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -1802,8 +1802,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -1833,10 +1833,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 430, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 30, 0
-dizzypoints = 50 * !map(darkforce)
+dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -1844,16 +1844,16 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 35) * (map(sparkx.max) := 85), map(sparky) := -16
+sparkno = -1 + 0 * (var(121) = 8010)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 35) * (var(133) = 85), var(122) = -16
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = ifelse(prevstateno = 230, 15, 12)
-ground.hittime = 1 + ifelse(prevstateno = 230, 15, 12); + 2 * map(counterhit_buffer)
+ground.hittime = 1 + ifelse(prevstateno = 230, 15, 12); + 2 * var(105)
 ground.velocity = ifelse(prevstateno = 230, -7.51, -4.49) * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
@@ -1864,13 +1864,13 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -2, -2
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !map(darkforce), 25 * !map(darkforce)
+getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
@@ -1900,8 +1900,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -1931,10 +1931,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 431, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 30, 0
-dizzypoints = 50 * !map(darkforce)
+dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -1942,16 +1942,16 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 35) * (map(sparkx.max) := 85), map(sparky) := -4
+sparkno = -1 + 0 * (var(121) = 8010)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 35) * (var(133) = 85), var(122) = -4
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = ifelse(prevstateno = 230, 15, 12)
-ground.hittime = 1 + ifelse(prevstateno = 230, 15, 12); + 2 * map(counterhit_buffer)
+ground.hittime = 1 + ifelse(prevstateno = 230, 15, 12); + 2 * var(105)
 ground.velocity = ifelse(prevstateno = 230, -7.51, -4.49) * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
@@ -1962,13 +1962,13 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -2, -2
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !map(darkforce), 25 * !map(darkforce)
+getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 431, Anim]
 type = changeanim
@@ -2008,8 +2008,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -2039,10 +2039,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 440, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !map(darkforce)
+dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -2050,16 +2050,16 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8011)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 85), map(sparky) := -32
+sparkno = -1 + 0 * (var(121) = 8011)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 40) * (var(133) = 85), var(122) = -32
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * map(counterhit_buffer)
+ground.hittime = 1 + 15; + 3 * var(105)
 ground.velocity = -7.51 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -2070,13 +2070,13 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -3, -3
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !map(darkforce), ifelse(moveguarded, 25, 50) * !map(darkforce)
+getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 440, Anim]
 type = changeanim
@@ -2116,8 +2116,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -2147,10 +2147,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 445, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !map(darkforce)
+dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -2158,16 +2158,16 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8011)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 90), map(sparky) := -14
+sparkno = -1 + 0 * (var(121) = 8011)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 40) * (var(133) = 90), var(122) = -14
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * map(counterhit_buffer)
+ground.hittime = 1 + 15; + 3 * var(105)
 ground.velocity = -7.51 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -2178,13 +2178,13 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -3, -3
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !map(darkforce), ifelse(moveguarded, 25, 50) * !map(darkforce)
+getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 445, Anim]
 type = changeanim
@@ -2224,8 +2224,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -2255,10 +2255,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 450, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 80, 0
-dizzypoints = 200 * !map(darkforce)
+dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -2266,15 +2266,15 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8012)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 120), map(sparky) := -30
+sparkno = -1 + 0 * (var(121) = 8012)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 60) * (var(133) = 120), var(122) = -30
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Trip
-ground.hittime = 1 + 18; + 4 * map(counterhit_buffer)
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -1.0, -8.0
 air.type = Trip
@@ -2287,11 +2287,11 @@ guard.slidetime = 16
 guard.velocity = -10.52 * !numhelper(775)
 guard.cornerpush.veloff = 0
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !map(darkforce), ifelse(moveguarded, 25, 100) * !map(darkforce)
+getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
 givepower = 40, 40
 yaccel = 0.695
 fall = 1
-fall.recover = !map(counterhit_buffer)
+fall.recover = !var(105)
 fall.recovertime = 120
 
 [State Idle]
@@ -2322,8 +2322,8 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -2353,10 +2353,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 600, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 40, 0
-dizzypoints = 50 * !map(darkforce)
+dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -2364,9 +2364,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8020)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 80), map(sparky) := -43
+sparkno = -1 + 0 * (var(121) = 8020)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 80), var(122) = -43
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2385,7 +2385,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !map(darkforce), 25 * !map(darkforce)
+getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -2394,7 +2394,7 @@ airguard.velocity = -6.00 * !numhelper(775), -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 600, Anim]
 type = changeanim
@@ -2438,8 +2438,8 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -2477,10 +2477,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 610, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 70, 0
-dizzypoints = 100 * !map(darkforce)
+dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -2488,9 +2488,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8021)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 35) * (map(sparkx.max) := 75), map(sparky) := -48
+sparkno = -1 + 0 * (var(121) = 8021)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 35) * (var(133) = 75), var(122) = -48
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2509,7 +2509,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !map(darkforce), ifelse(moveguarded, 25, 50) * !map(darkforce)
+getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -2518,7 +2518,7 @@ airguard.velocity = -6.00 * !numhelper(775), -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 610, Anim]
 type = changeanim
@@ -2562,8 +2562,8 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -2593,10 +2593,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 620, Hit]
 type = hitdef
 trigger1 = animelem = 6
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 90, 0
-dizzypoints = 200 * !map(darkforce)
+dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -2604,9 +2604,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8012)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 85), map(sparky) := -66
+sparkno = -1 + 0 * (var(121) = 8012)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 85), var(122) = -66
 hitsound = s2, 3
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2625,7 +2625,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !map(darkforce), ifelse(moveguarded, 25, 100) * !map(darkforce)
+getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -2634,7 +2634,7 @@ airguard.velocity = -6.00 * !numhelper(775), -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 620, Anim]
 type = changeanim
@@ -2678,8 +2678,8 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -2709,10 +2709,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 630, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 40, 0
-dizzypoints = 50 * !map(darkforce)
+dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -2720,9 +2720,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 65), map(sparky) := -42
+sparkno = -1 + 0 * (var(121) = 8010)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 65), var(122) = -42
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2741,7 +2741,7 @@ air.type = High
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !map(darkforce), 25 * !map(darkforce)
+getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -2750,7 +2750,7 @@ airguard.velocity = -6.00 * !numhelper(775), -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 630, Anim]
 type = changeanim
@@ -2794,8 +2794,8 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -2825,10 +2825,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 631, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 40, 0
-dizzypoints = 50 * !map(darkforce)
+dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -2836,9 +2836,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 65), map(sparky) := -62
+sparkno = -1 + 0 * (var(121) = 8010)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 65), var(122) = -62
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2857,7 +2857,7 @@ air.type = High
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !map(darkforce), 25 * !map(darkforce)
+getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -2866,7 +2866,7 @@ airguard.velocity = -6.00 * !numhelper(775), -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 631, Anim]
 type = changeanim
@@ -2910,8 +2910,8 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -2941,10 +2941,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 640, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 70, 0
-dizzypoints = 100 * !map(darkforce)
+dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -2952,9 +2952,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8011)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := -25) * (map(sparkx.max) := 75), map(sparky) := -42
+sparkno = -1 + 0 * (var(121) = 8011)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = -25) * (var(133) = 75), var(122) = -42
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2973,7 +2973,7 @@ air.type = High
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !map(darkforce), ifelse(moveguarded, 25, 50) * !map(darkforce)
+getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -2982,7 +2982,7 @@ airguard.velocity = -6.00 * !numhelper(775), -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 640, Anim]
 type = changeanim
@@ -3026,8 +3026,8 @@ velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -3057,10 +3057,10 @@ freqmul = 0.95 + (random / 10000.0)
 [State 650, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (map(juggle_start) := 1 || map(juggle_increase) := 1 || map(juggle_limit) := 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 90, 0
-dizzypoints = 200 * !map(darkforce)
+dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -3068,9 +3068,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (map(sparkno) := 8012)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 75), map(sparky) := -54
+sparkno = -1 + 0 * (var(121) = 8012)
+guard.sparkno = -1 + 0 * (var(131) = 8000)
+sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 75), var(122) = -54
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
@@ -3089,7 +3089,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !map(darkforce), ifelse(moveguarded, 25, 100) * !map(darkforce)
+getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -3098,7 +3098,7 @@ airguard.velocity = -6.00 * !numhelper(775), -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !map(darkforce)
+forcenofall = !var(50)
 
 [State 650, Anim]
 type = changeanim
@@ -3142,8 +3142,8 @@ poweradd = 0
 [State Damage Scaling - Add]
 type = mapadd
 trigger1 = !time
-trigger1 = map(combocheck)
-trigger1 = 1 || map(combocheck) := 0
+trigger1 = var(65)
+trigger1 = 1 || var(65) = 0
 map = "combototal"
 value = 1
 
@@ -3161,7 +3161,7 @@ type = varset
 trigger1 = !time
 trigger1 = !AIlevel
 map = "strength"
-value = ifelse(map(cmd_kk), 1, 0)
+value = ifelse(var(90), 1, 0)
 
 [State 800, Strength AI]
 type = varset
@@ -3198,19 +3198,19 @@ value = 0
 [State 800, Hit]
 type = hitdef
 trigger1 = animelem = 2
-trigger1 = !map(unthrowable) && !map(grabbehind)
-trigger1 = map(truebodydistx) <= ceil(32 * const(size.xscale))
+trigger1 = !var(130) && !var(108)
+trigger1 = var(129) <= ceil(32 * const(size.xscale))
 ID = 800
 attr = S, NT
 hitflag = M
 priority = 1, Miss
-sparkno = -1 + 0 * (map(sparkno) := 0)
+sparkno = -1 + 0 * (var(121) = 0)
 hitsound = s2, 800
 hitsound.channel = 2
 p1facing = 1
 p2facing = 1
-p1stateno = ifelse(map(strength), 810, 820)
-p2stateno = ifelse(map(strength), 815, 825)
+p1stateno = ifelse(var(123), 810, 820)
+p2stateno = ifelse(var(123), 815, 825)
 guard.dist = 0
 animtype = Back
 fall = 1
@@ -3259,14 +3259,14 @@ sprpriority = 2
 [State Tech Hit]
 type = mapadd
 trigger1 = time
-trigger1 = map(techhit_timer) > 0
+trigger1 = var(127) > 0
 map = "techhit_timer"
 value = -1
 
 [State Tech Hit]
 type = changestate
 triggerall = numtarget
-triggerall = map(techhit_timer)
+triggerall = var(127)
 triggerall = target, command != "holdup" && target, command != "holddown"
 trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z")) >= 2
 trigger2 = target, command = "holdfwd" || target, command = "holdback"
@@ -3362,14 +3362,14 @@ value = 1
 [State 810, Damage]
 type = targetlifeadd
 trigger1 = animelem = 6
-value = floor(-110 * map(damagescaling))
+value = floor(-110 * var(67))
 dizzy = 0
 
 [State 810, Stun Damage]
 type = targetdizzypointsadd
 trigger1 = numtarget
 trigger1 = animelem = 6
-value = floor(-140 * map(damagescaling)) * !map(darkforce)
+value = floor(-140 * var(67)) * !var(50)
 
 [State 810, Give Power]
 type = targetpoweradd
@@ -3379,8 +3379,8 @@ value = 40; givepower
 [State 810, Get Power]
 type = poweradd
 trigger1 = animelem = 6
-trigger1 = !map(darkforce)
-value = 100 * map(meterscaling); getpower
+trigger1 = !var(50)
+value = 100 * var(114); getpower
 
 [State 810, Throw]
 type = targetstate
@@ -3396,7 +3396,7 @@ value = 5, 2
 
 [State 810, Dust]
 type = helper
-trigger1 = map(cfg_sparks)
+trigger1 = var(64)
 trigger1 = numtarget
 trigger1 = animelem = 6
 helpertype = normal
@@ -3409,7 +3409,7 @@ ownpal = 1
 
 [State 810, Dust]
 type = explod
-trigger1 = !map(cfg_sparks)
+trigger1 = !var(64)
 trigger1 = numtarget
 trigger1 = animelem = 6
 anim = F 62
@@ -3544,14 +3544,14 @@ sprpriority = 2
 [State Tech Hit]
 type = mapadd
 trigger1 = time
-trigger1 = map(techhit_timer) > 0
+trigger1 = var(127) > 0
 map = "techhit_timer"
 value = -1
 
 [State Tech Hit]
 type = changestate
 triggerall = numtarget
-triggerall = map(techhit_timer)
+triggerall = var(127)
 triggerall = target, command != "holdup" && target, command != "holddown"
 trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z")) >= 2
 trigger2 = target, command = "holdfwd" || target, command = "holdback"
@@ -3650,7 +3650,7 @@ value = 1
 [State 820, Damage]
 type = targetlifeadd
 trigger1 = animelem = 8
-value = floor(-120 * map(damagescaling))
+value = floor(-120 * var(67))
 dizzy = 0
 kill = 0
 
@@ -3658,7 +3658,7 @@ kill = 0
 type = targetdizzypointsadd
 trigger1 = numtarget
 trigger1 = animelem = 8
-value = floor(-120 * map(damagescaling)) * !map(darkforce)
+value = floor(-120 * var(67)) * !var(50)
 
 [State 820, Give Power]
 type = targetpoweradd
@@ -3668,8 +3668,8 @@ value = 40; givepower
 [State 820, Get Power]
 type = poweradd
 trigger1 = animelem = 8
-trigger1 = !map(darkforce)
-value = 100 * map(meterscaling); getpower
+trigger1 = !var(50)
+value = 100 * var(114); getpower
 
 [State 820, Throw]
 type = targetstate
@@ -3891,7 +3891,7 @@ sprpriority = 0
 [State 890, Tech Hit Facing]
 type = turn
 trigger1 = !time
-trigger1 = facing != map(techhit_facing)
+trigger1 = facing != var(126)
 
 [State 890, Bind]
 type = targetbind
