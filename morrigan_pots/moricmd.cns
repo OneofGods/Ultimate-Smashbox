@@ -1003,14 +1003,12 @@ trigger2 = var(54)
 
 [State -1, AI Combo Window - Reset]
 type = varset
-map = "ai_combowindow"
 trigger1 = 1
 value = 0
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Ground]
 type = varset
-map = "ai_combowindow"
 trigger1 = AIlevel
 trigger1 = numenemy
 trigger1 = p2movetype = H
@@ -1021,7 +1019,6 @@ ignorehitpause = 1
 
 [State -1, AI Combo Window - Air]
 type = varset
-map = "ai_combowindow"
 trigger1 = AIlevel
 trigger1 = numenemy
 trigger1 = p2, hitshakeover = 1
@@ -1035,7 +1032,6 @@ ignorehitpause = 1
 
 [State -1, AI Combo Window - Air]
 type = varset
-map = "ai_combowindow"
 trigger1 = AIlevel
 trigger1 = numenemy
 trigger1 = p2, hitshakeover = 0
@@ -1049,7 +1045,6 @@ ignorehitpause = 1
 
 [State -1, AI Combo Window - Down]
 type = varset
-map = "ai_combowindow"
 trigger1 = AIlevel
 trigger1 = numenemy
 trigger1 = p2movetype = H
@@ -1061,7 +1056,6 @@ ignorehitpause = 1
 
 [State -1, AI Combo Window - Dizzy]
 type = varset
-map = "ai_combowindow"
 triggerall = AIlevel
 triggerall = numenemy
 trigger1 = p2, anim = 5300
@@ -1072,7 +1066,6 @@ ignorehitpause = 1
 
 [State -1, AI Combo Window - Dizzy]
 type = varset
-map = "ai_combowindow"
 trigger1 = AIlevel
 trigger1 = numenemy
 trigger1 = p2, dizzy || p2, dizzypoints <= 0
@@ -1097,7 +1090,6 @@ ignorehitpause = 1
 
 [State -1, AI Attack Window]
 type = varset
-map = "ai_attackwindow"
 trigger1 = AIlevel
 value = floor(max(var(52), var(62)) + ((random % 9) / AIlevelF))
 ignorehitpause = 1

@@ -22,14 +22,12 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = 1
 
 [State 1000, Strength]
 type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
 ignorehitpause = 1
 persistent = 0
@@ -38,7 +36,6 @@ persistent = 0
 type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = ifelse((p2movetype = H || random < 500), 2, ifelse(random < 500, 1, 0))
 ignorehitpause = 1
 
@@ -119,7 +116,6 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = 1
 
 [State 1010, Erase Inputs]
@@ -216,14 +212,12 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = 1
 
 [State 1050, Strength]
 type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
 ignorehitpause = 1
 persistent = 0
@@ -232,7 +226,6 @@ persistent = 0
 type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = ifelse((p2movetype = H || random < 500), 2, ifelse(random < 500, 1, 0))
 ignorehitpause = 1
 
@@ -376,7 +369,6 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = 1
 
 [State 1060, Erase Inputs]
@@ -496,14 +488,12 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = 1
 
 [State 1100, Strength]
 type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
 ignorehitpause = 1
 persistent = 0
@@ -512,7 +502,6 @@ persistent = 0
 type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = ifelse(random < 500, 2, ifelse(random < 666, 1, 0))
 ignorehitpause = 1
 
@@ -800,7 +789,6 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = 1
 
 [State 1110, Erase Inputs]
@@ -1041,14 +1029,12 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = 1
 
 [State 1200, Strength]
 type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = ifelse(var(99), 2, ifelse(var(98), 1, 0))
 ignorehitpause = 1
 persistent = 0
@@ -1057,7 +1043,6 @@ persistent = 0
 type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = ifelse(var(52) >= 17, 2, ifelse(var(52) >= 15, 1, 0))
 ignorehitpause = 1
 
@@ -1224,7 +1209,6 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = 1
 
 [State 1250, Erase Inputs]
@@ -1402,14 +1386,12 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = 1
 
 [State 1300, Strength]
 type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
 ignorehitpause = 1
 persistent = 0
@@ -1418,7 +1400,6 @@ persistent = 0
 type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = ifelse(p2bodydist x <= (25 * const(size.xscale)), 2, ifelse(p2bodydist x <= (30 * const(size.xscale)), 1, 0))
 ignorehitpause = 1
 
@@ -1996,13 +1977,11 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = 1
 
 [State 1330, Strength]
 type = varset
 trigger1 = time <= 0
-map = "strength"
 value = 3; ex
 ignorehitpause = 1
 persistent = 0
@@ -2104,7 +2083,6 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = 1
 
 [State 1900, Erase Inputs]
@@ -2376,7 +2354,6 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = 1
 
 [State 1930, Erase Inputs]

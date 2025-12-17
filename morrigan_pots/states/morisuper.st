@@ -22,14 +22,12 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
 [State 3000, Strength]
 type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
 ignorehitpause = 1
 persistent = 0
@@ -38,7 +36,6 @@ persistent = 0
 type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = 2
 ignorehitpause = 1
 
@@ -211,14 +208,12 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
 [State 3050, Strength]
 type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
 ignorehitpause = 1
 persistent = 0
@@ -227,7 +222,6 @@ persistent = 0
 type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = 2
 ignorehitpause = 1
 
@@ -472,14 +466,12 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
 [State 3100, Strength]
 type = varset
 trigger1 = !AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = ifelse(var(99), 2, ifelse(var(98), 1, 0))
 ignorehitpause = 1
 persistent = 0
@@ -488,7 +480,6 @@ persistent = 0
 type = varset
 trigger1 = AIlevel
 trigger1 = time <= 0
-map = "strength"
 value = 2
 ignorehitpause = 1
 
@@ -769,7 +760,6 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
 [State 3300, Erase Inputs]
@@ -959,7 +949,6 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
 [State 3400, Erase Inputs]
@@ -1311,7 +1300,6 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
 [State 4000, Erase Inputs]
@@ -2134,7 +2122,6 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
 [State 4050, Erase Inputs]
@@ -2640,7 +2627,6 @@ type = mapadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-map = "combototal"
 value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
 
 [State 4100, Erase Inputs]

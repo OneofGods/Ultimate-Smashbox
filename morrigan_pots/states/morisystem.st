@@ -3591,7 +3591,7 @@ type = playsnd
 triggerall = alive
 triggerall = time = 1
 triggerall = movetype = H
-triggerall = incustomstate
+triggerall = stateno >= 1000
 trigger1 = anim = [5000, 5002]
 trigger2 = anim = [5010, 5012]
 trigger3 = anim = [5020, 5022]
@@ -3623,7 +3623,6 @@ channel = 0
 
 [State -2, Midnight Bliss Voice]
 type = mapadd
-map = "blissvoice"
 trigger1 = anim = 9020
 trigger1 = animelemtime(6) >= 0
 value = 1
@@ -3837,7 +3836,6 @@ ignorehitpause = 1
 type = varset
 trigger1 = movetype = H
 trigger2 = movereversed != [1, 2]
-map = "supercancel"
 value = 0
 ignorehitpause = 1
 
@@ -3864,7 +3862,6 @@ trigger9 = stateno = 1205
 trigger9 = (movecontact + movereversed) = [1, 12]
 trigger10 = stateno = 1251
 trigger10 = (movecontact + movereversed) = [1, 12]
-map = "supercancel"
 value = 1
 ignorehitpause = 1
 
@@ -3872,7 +3869,6 @@ ignorehitpause = 1
 type = varset
 trigger1 = movetype = H
 trigger2 = movereversed != [1, 2]
-map = "hypercancel"
 value = 0
 ignorehitpause = 1
 
@@ -3889,7 +3885,6 @@ trigger4 = stateno = 3300
 trigger4 = var(52) = [1, 12]
 trigger5 = stateno = 3401
 trigger5 = (movecontact + movereversed) = [1, 12]
-map = "hypercancel"
 value = 1
 ignorehitpause = 1
 
@@ -3908,7 +3903,6 @@ ignorehitpause = 1
 type = varset
 trigger1 = var(57)
 trigger1 = (stateno != [3000, 4999]) || movetype = H
-map = "supercancel_flag"
 value = 0
 ignorehitpause = 1
 
@@ -3916,14 +3910,12 @@ ignorehitpause = 1
 type = varset
 trigger1 = var(58)
 trigger1 = (stateno != [3000, 4999]) || movetype = H
-map = "hypercancel_flag"
 value = 0
 ignorehitpause = 1
 
 [State -3, Sparkle Timer]
 type = mapadd
 trigger1 = 1
-map = "sparkle_timer"
 value = 1.0 + (random / 1000.0)
 
 [State -3, Sparkles Back]
@@ -4085,14 +4077,12 @@ type = varset
 trigger1 = var(51)
 trigger1 = stateno != 40
 trigger1 = statetype != A || movetype = H
-map = "jumptype"
 value = 0
 
 [State -3, Reset Super Finish Var]
 type = varset
 trigger1 = var(59)
 trigger1 = roundstate = [0, 2]
-map = "superfinish"
 value = 0
 
 [State -3, Dark Force Finish]
@@ -4163,7 +4153,6 @@ supermovetime = 999
 [State -3, Victory Camera]
 type = varset
 trigger1 = roundstate != 4
-map = "victorycam"
 value = 0
 
 [State -3, Victory Camera]
@@ -4177,8 +4166,7 @@ trigger1 = roundstate = 4
 trigger1 = camerazoom <= 1
 trigger1 = screenpos y = [0, gameheight]
 trigger1 = numenemy
-trigger1 = p2, incustomstate = 0
-map = "victorycam"
+trigger1 = p2, stateno < 1000
 value = 1
 
 [State -3, Victory Camera]
@@ -4192,14 +4180,12 @@ pos = pos x * camerazoom, 0
 
 [State -3, Victory BGM]
 type = varset
-map = "victorybgm"
 trigger1 = var(61) != 0
 trigger1 = motifstate(victoryscreen) = 0
 value = 0
 
 [State -3, Victory BGM]
 type = mapadd
-map = "victorybgm"
 trigger1 = var(62)
 trigger1 = motifstate(victoryscreen)
 trigger1 = teamleader = playerno
@@ -4237,7 +4223,7 @@ type = selfstate
 trigger1 = numenemy
 trigger1 = movetype != A
 trigger1 = p2, time >= 300
-trigger1 = p2, incustomstate
+trigger1 = p2, stateno >= 1000
 trigger1 = p2, stateowner, playerno = playerno
 value = 5040
 
