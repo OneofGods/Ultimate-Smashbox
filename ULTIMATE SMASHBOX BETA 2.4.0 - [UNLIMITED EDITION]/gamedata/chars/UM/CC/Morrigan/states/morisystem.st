@@ -3423,7 +3423,7 @@ ignorehitpause = 1
 type = null
 trigger1 = 1 || var(29) = 0
 trigger1 = p2dist x < 0
-trigger1 = p2dist x < ifelse((facing = p2,facing), -p2, const(size.ground.front), -p2, const(size.ground.back))
+trigger1 = p2dist x < 40
 trigger1 = var(29) = 1
 ignorehitpause = 1
 
