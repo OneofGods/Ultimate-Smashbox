@@ -1050,7 +1050,7 @@ trigger1 = numenemy
 trigger1 = p2movetype = H
 trigger1 = p2statetype = L
 trigger1 = p2stateno != 5120
-trigger1 = p2, time < 30
+trigger1 = 1
 value = 60
 ignorehitpause = 1
 
@@ -1079,7 +1079,7 @@ triggerall = AIlevel
 triggerall = numenemy
 triggerall = 1 || var(55) = (p2, vel y - var(61))
 triggerall = 1 || var(61) = p2, vel y
-trigger1 = p2, ctrl || p2movetype = H; || (p2movetype = A && p2, movecontact = 0 && p2, movereversed = 0)
+trigger1 = p2movetype = H; || (p2movetype = A && p2, movecontact = 0 && p2, movereversed = 0)
 trigger1 = 1 || var(62) = 0
 trigger2 = p2, vel y = 0
 trigger2 = 1 || var(62) = -(p2, animtime)
@@ -1180,7 +1180,7 @@ trigger1 = stateno != [120, 155]
 trigger1 = statetype != A || p2statetype = A || p2movetype != A
 trigger1 = p2, hitdefattr != SCA, AT && p2stateno != var(59)
 trigger1 = life > 10 || p2stateno = [200, 799]
-trigger1 = p2, time < 90 || random < 30
+trigger1 = 1 || random < 30
 trigger1 = isasserted(nostandguard) = 0 || statetype != S
 trigger1 = isasserted(nocrouchguard) = 0 || statetype != C
 trigger1 = isasserted(noairguard) = 0 || statetype != A
@@ -2018,7 +2018,7 @@ triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 3000 && !var(50)
 triggerall = !var(120)
 triggerall = p2statetype = S || p2statetype = C
-triggerall = !(p2, ctrl)
+triggerall = 1
 triggerall = p2bodydist x <= 25 && p2dist y >= -40
 triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl
@@ -2070,6 +2070,6 @@ triggerall = p2, lifemax != 0; Avoid division by 0
 triggerall = (1.0 * p2life / p2, lifemax) < (0.5 * life / lifemax)
 triggerall = prevstateno != [170, 199]
 trigger1 = ctrl
-trigger1 = p2bodydist x >= 140 && !(p2, ctrl)
+trigger1 = p2bodydist x >= 140 && 1
 trigger1 = p2movetype = H && p2, hitfall
 trigger1 = random < 50
