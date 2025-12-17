@@ -590,7 +590,7 @@ ignorehitpause {
 # TODO: Restore fireball potential in Dark Force?
 
 # +1, Variable Height
-ignorehitpause if !ishelper && !incustomstate {
+ignorehitpause if !ishelper && stateno != [200,399] {
 	if statetype = A && movetype != H && p2statetype != A {
 		# Several compromises made to keep compatibility with Mugen characters
 		let vh_box_top = 78; #VS
@@ -629,7 +629,7 @@ ignorehitpause if map(exflash) > 0 && pausetime = 0 { # PalFX does not update wh
 
 # Fake Hit Sparks
 # Placed here because you can't use functions in CNS
-if incustomstate = 0 && pausetime = 0 {
+if stateno = [0,199] && pausetime = 0 {
 	# Throw
 	if stateno = 820 && animelem = 8 {
 		let spark_no = 8021;
@@ -675,7 +675,7 @@ ignorehitpause if p2movetype = H && p2statetype = A {
 	&& p2, gethitvar(fall.recover)
 	&& p2, gethitvar(isbound) = 0
 	&& p2, alive && p2, dizzy = 0
-	&& p2, incustomstate = 0 # Fall recovery in custom states is best handled inside each state
+	&& p2stateno = [0,199] # Fall recovery in custom states is best handled inside each state
 	&& p2, vel y > 0
 	&& p2, pos y >= p2, const(movement.air.gethit.groundrecover.ground.threshold) {
 		# Reset time when near ground
@@ -857,9 +857,9 @@ ignorehitpause {
 		let p1ref = ifelse(p2dist x < 0, clsnvar(size, 0, back), clsnvar(size, 0, front));
 		# P2 Reference Point
 		if p2dist x >= 0 {
-			let p2ref = ifelse(p2, facing = facing, -p2, clsnvar(size, 0, back), p2, clsnvar(size, 0, front));
+			let p2ref = ifelse(p2, facing = facing, 30, 30);
 		} else {
-			let p2ref = ifelse(p2, facing = facing, -p2, clsnvar(size, 0, front), p2, clsnvar(size, 0, back));
+			let p2ref = ifelse(p2, facing = facing, 30, 30);
 		}
 		# Calculate
 		if abs(p2dist x) <= abs($p1ref + $p2ref) {
@@ -926,7 +926,7 @@ ignorehitpause if p2movetype = H && p2, time <= 0 {
 	if p2, gethitvar(playerno) = playerno
 	&& p2, gethitvar(facing) = 0
 	&& p2, hitshakeover = 0 &&	p2statetype != L
-	&& p2, hitoverridden = 0 && p2, incustomstate = 0 {
+	&& p2, hitoverridden = 0 && p2stateno = [0,199] {
 		if (p2, facing = facing && p2, p2dist x < p2, const(size.ground.front)) ||
 		(p2, facing != facing && p2, p2dist x < -(p2, const(size.ground.back))) {
 			turn{redirectID: p2, ID}
@@ -951,7 +951,7 @@ ignorehitpause if p2movetype = H {
 	if p2, time = 1 {
 		if p2, gethitvar(playerno) = playerno
 		&& (p2stateno = 5035 || p2stateno = 5050)
-		&& p2, incustomstate = 0 {
+		&& p2stateno = [0,199] {
 			if p2, vel y = [(map(p2_yaccelfix) + 1.9 * p2, gethitvar(yaccel)), (map(p2_yaccelfix) + 3.1 * p2, gethitvar(yaccel))] {
 				velset{y: map(p2_yaccelfix) + p2, gethitvar(yaccel); redirectID: p2, ID}
 			}
