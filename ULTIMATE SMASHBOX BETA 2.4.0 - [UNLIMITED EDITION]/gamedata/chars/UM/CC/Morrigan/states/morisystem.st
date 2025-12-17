@@ -3431,7 +3431,7 @@ ignorehitpause = 1
 type = varadd
 trigger1 = var(30) > 0
 trigger1 = numenemy
-trigger1 = p2stateno != 52 || p2, ctrl || p2, time >= 6
+trigger1 = p2stateno != 52
 var(30) = -1
 ignorehitpause = 1
 
@@ -3440,13 +3440,13 @@ type = varset
 trigger1 = numenemy
 trigger1 = p2stateno = 40
 trigger1 = p2movetype = I
-trigger1 = p2, time < 10
+trigger1 = 1
 var(30) = 1
 ignorehitpause = 1
 
 [State -2, Unthrowable Flag - Hurt]
 type = varset
-triggerall = p2, ctrl = 0
+triggerall = 1
 triggerall = p2, anim != 5300
 triggerall = p2stateno != p2, const(statedizzy)
 trigger1 = p2stateno = [150, 155]
@@ -4222,7 +4222,7 @@ redirectID = p2, ID
 type = selfstate
 trigger1 = numenemy
 trigger1 = movetype != A
-trigger1 = p2, time >= 300
+trigger1 = 1
 trigger1 = p2, stateno >= 1000
 trigger1 = p2, stateowner, playerno = playerno
 value = 5040
