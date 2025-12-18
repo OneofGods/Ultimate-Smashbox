@@ -3555,7 +3555,6 @@ type = playsnd
 triggerall = alive
 triggerall = time <= 1
 triggerall = movetype = H
-triggerall = !hitoverridden
 triggerall = stateno != [120, 155]
 triggerall = gethitvar(damage) = (0, life)
 trigger1 = gethitvar(animtype) = 0 && random < 250
