@@ -3423,7 +3423,7 @@ ignorehitpause = 1
 type = null
 trigger1 = 1 || var(29) = 0
 trigger1 = p2dist x < 0
-trigger1 = p2dist x < ifelse((facing = p2,facing), -p2, const(size.ground.front), -p2, const(size.ground.back))
+trigger1 = p2dist x < 40
 trigger1 = var(29) = 1
 ignorehitpause = 1
 
@@ -3447,8 +3447,8 @@ ignorehitpause = 1
 [State -2, Unthrowable Flag - Hurt]
 type = varset
 triggerall = 1
-triggerall = p2, anim != 5300
-triggerall = p2stateno != p2, const(statedizzy)
+triggerall = 1
+triggerall = p2stateno != 5900
 trigger1 = p2stateno = [150, 155]
 trigger2 = p2stateno = 5120; Just in case
 trigger3 = p2stateno = 5201
@@ -3464,7 +3464,7 @@ ignorehitpause = 1
 type = null
 trigger1 = p2movetype != H
 trigger1 = p2, dizzy = 0
-trigger1 = p2stateno != p2, const(statedizzy)
+trigger1 = p2stateno != 5900
 trigger1 = 1 || var(31) = 0
 trigger1 = 1 || var(32) = 0
 ignorehitpause = 1

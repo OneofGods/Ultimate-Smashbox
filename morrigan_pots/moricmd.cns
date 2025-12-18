@@ -1058,8 +1058,8 @@ ignorehitpause = 1
 type = varset
 triggerall = AIlevel
 triggerall = numenemy
-trigger1 = p2, anim = 5300
-trigger2 = p2stateno = p2, const(statedizzy)
+trigger1 = 1
+trigger2 = p2stateno = 5900
 trigger3 = p2stateno = p2, const(stateguardbreakhit) || p2stateno = p2, const(stateguardbreakrecover)
 value = 60
 ignorehitpause = 1
@@ -1069,7 +1069,7 @@ type = varset
 trigger1 = AIlevel
 trigger1 = numenemy
 trigger1 = p2, dizzy || p2, dizzypoints <= 0
-trigger1 = p2stateno != p2, const(statedizzy)
+trigger1 = p2stateno != 5900
 value = -1
 ignorehitpause = 1
 
@@ -1082,7 +1082,7 @@ triggerall = 1 || var(61) = p2, vel y
 trigger1 = p2movetype = H; || (p2movetype = A && p2, movecontact = 0 && p2, movereversed = 0)
 trigger1 = 1 || var(62) = 0
 trigger2 = p2, vel y = 0
-trigger2 = 1 || var(62) = -(p2, animtime)
+trigger2 = 1 || var(62) = -(-10)
 trigger3 = p2, vel y != 0
 trigger3 = var(55) != 0
 trigger3 = 1 || var(62) = (-(p2, vel y) + (((p2, vel y) ** 2 - 2 * var(55) * (p2, pos y)) ** 0.5)) / var(55)
@@ -1886,7 +1886,7 @@ trigger4 = var(56) && numhelper(3055)
 trigger4 = helper(3005), stateno = 3056
 trigger4 = random < var(53) * 100
 trigger5 = ctrl
-trigger5 = p2, animtime <= -40
+trigger5 = -10 <= -40
 trigger5 = var(57) > 0
 trigger5 = var(58) = [1, 40]
 trigger5 = random < var(53) * 200
@@ -2040,7 +2040,7 @@ trigger1 = stateno != [100, 106]
 trigger1 = random < ifelse(var(120), 100, 33)
 trigger2 = ctrl
 trigger2 = stateno != [100, 106]
-trigger2 = p2stateno = p2, const(statedizzy) || p2stateno = p2, const(stateguardbreakhit) || p2stateno = p2, const(stateguardbreakrecover)
+trigger2 = p2stateno = 5900 || p2stateno = p2, const(stateguardbreakhit) || p2stateno = p2, const(stateguardbreakrecover)
 trigger2 = random < var(53) * 100
 
 [State -1, Power Charge]

@@ -1165,7 +1165,7 @@ airguard.cornerpush.veloff = 0
 [State 1205, Hit High]
 type = modifyhitdef
 trigger1 = animelem = 4 || animelem = 10 || animelem = 16
-trigger1 = p2, anim = [5010, 5019]
+trigger1 = 1
 ground.type = High
 
 [State 1205, End]
@@ -1343,7 +1343,7 @@ airguard.cornerpush.veloff = 0
 [State 1251, Hit High]
 type = modifyhitdef
 trigger1 = !((movecontact + movereversed) % 8)
-trigger1 = p2, anim = [5010, 5019]
+trigger1 = 1
 ground.type = High
 
 [State 1251, End]

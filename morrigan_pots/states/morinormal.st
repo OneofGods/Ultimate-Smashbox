@@ -3122,7 +3122,7 @@ value = 0
 type = varset
 trigger1 = numenemy
 trigger1 = p2statetype = S
-trigger1 = p2stateno = [0, 999] && p2stateno != [100, 119] && p2stateno != [200, 799] && p2, anim != 5300
+trigger1 = p2stateno = [0, 999] && p2stateno != [100, 119] && p2stateno != [200, 799]
 value = 7
 
 [State 800, Tech Hit Facing]
