@@ -3525,7 +3525,7 @@ ignorehitpause = 1
 type = assertspecial
 trigger1 = numenemy
 trigger1 = p2movetype = H
-flag = nofalldefenceup
+flag = noshadow
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Long Combo Guts]
