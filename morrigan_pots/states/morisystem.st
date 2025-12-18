@@ -2238,7 +2238,6 @@ sprpriority = 1
 ctrl = 0
 
 [State 195, Give power]
-redirectID = p2, ID
 type = poweradd
 trigger1 = time = 1
 trigger1 = numenemy
@@ -3456,14 +3455,12 @@ trigger4 = p2movetype = H
 trigger4 = p2statetype != A
 trigger5 = p2movetype = H
 trigger5 = p2statetype = A
-trigger5 = p2, hitfall = 0
 var(30) = 3
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Reset]
 type = null
 trigger1 = p2movetype != H
-trigger1 = p2, dizzy = 0
 trigger1 = p2stateno != 5900
 trigger1 = 1 || var(31) = 0
 trigger1 = 1 || var(32) = 0
@@ -3525,19 +3522,16 @@ trigger2 = 1 || var(35) = var(33)
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Override Fall Defense Bonus]
-redirectID = p2, ID
 type = assertspecial
 trigger1 = numenemy
 trigger1 = p2movetype = H
-trigger1 = p2, gethitvar(playerno) = playerno
 flag = nofalldefenceup
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Long Combo Guts]
 type = varset
 trigger1 = numenemy
-trigger1 = p2, receiveddamage >= (p2, lifemax * 0.50)
-var(33) = var(33) * ifelse(p2, receiveddamage >= (p2, lifemax * 0.85), 0.75, ifelse(p2, receiveddamage >= (p2, lifemax * 0.70), 0.90, 0.95))
+var(33) = var(33) * 0.90
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Root Multiplier]
@@ -4090,7 +4084,6 @@ type = helper
 triggerall = winKO
 triggerall = roundstate = 3
 triggerall = var(50) && !numhelper(8600)
-triggerall = p2, gethitvar(playerno) = playerno
 trigger1 = movecontact = [1, 4]
 trigger2 = numhelper(1005)
 trigger2 = helper(1005), var(52)
@@ -4122,7 +4115,6 @@ type = helper
 triggerall = winHyper
 triggerall = roundstate = 3
 triggerall = !numhelper(8600)
-triggerall = p2, gethitvar(playerno) = playerno
 trigger1 = movecontact = [1, 4]
 trigger1 = stateno = [3000, 4999]
 trigger1 = var(59) = stateno
@@ -4166,7 +4158,6 @@ trigger1 = roundstate = 4
 trigger1 = camerazoom <= 1
 trigger1 = screenpos y = [0, gameheight]
 trigger1 = numenemy
-trigger1 = p2, stateno < 1000
 value = 1
 
 [State -3, Victory Camera]
@@ -4218,13 +4209,10 @@ trigger2 = !selfanimexist(anim)
 value = 5040
 
 [State -3, Antifreeze]
-redirectID = p2, ID
 type = selfstate
 trigger1 = numenemy
 trigger1 = movetype != A
 trigger1 = 1
-trigger1 = p2, stateno >= 1000
-trigger1 = p2, stateowner, playerno = playerno
 value = 5040
 
 

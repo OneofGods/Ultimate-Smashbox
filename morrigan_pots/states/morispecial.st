@@ -2148,7 +2148,7 @@ trigger1 = numenemy
 trigger1 = animelemtime(2) = 1
 trigger1 = p2movetype = H
 trigger1 = p2statetype = A || p2statetype = L
-x = p2, vel x * (p2, facing) * facing
+x = 0
 
 [State 1900, Vel]
 type = velset
@@ -2437,7 +2437,7 @@ trigger1 = numenemy
 trigger1 = animelemtime(2) = 1
 trigger1 = p2movetype = H
 trigger1 = p2statetype = A || p2statetype = L
-x = p2, vel x * (p2, facing) * facing
+x = 0
 
 [State 1930, Vel]
 type = velset

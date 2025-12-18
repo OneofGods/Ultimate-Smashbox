@@ -1065,7 +1065,7 @@ postype = p1
 size.xscale = 0.5 * const(size.xscale)
 size.yscale = 0.5 * const(size.yscale)
 ownpal = 1
-supermovetime = cond(numenemy, (p2, pausetime), 60)
+supermovetime = 60
 
 [State 3400, Jet]
 type = helper
@@ -1078,7 +1078,7 @@ postype = p1
 ownpal = 1
 size.xscale = 0.5
 size.yscale = 0.5
-supermovetime = cond(numenemy, (p2, pausetime), 60)
+supermovetime = 60
 
 [State 3400, Particles]
 type = explod

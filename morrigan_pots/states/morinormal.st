@@ -3880,8 +3880,6 @@ y = 0
 [State 890, Vel Corner]
 type = velset
 trigger1 = numenemy
-trigger1 = p2, vel x < 0
-trigger1 = p2, backedgedist <= 0
 x = -2.562
 y = 0
 

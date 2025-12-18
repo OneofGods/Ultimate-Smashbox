@@ -642,8 +642,6 @@ triggerall = roundstate = 2 && statetype != A
 triggerall = command = "holdup"
 triggerall = var(91) || var(90)
 triggerall = numenemy
-triggerall = p2, alive && p2stateno != 5120
-triggerall = p2, hitfall || p2statetype = L
 trigger1 = ctrl || stateno = 40 || stateno = 52
 trigger1 = prevstateno != 425;jump cancel
 
@@ -702,8 +700,6 @@ triggerall = roundstate = 2 && statetype != A
 triggerall = command = "holdup"
 triggerall = var(79) || var(83) || var(84) || var(102) || var(103) || var(104)
 triggerall = numenemy
-triggerall = p2, alive && p2stateno != 5120
-triggerall = p2, hitfall || p2statetype = L
 trigger1 = ctrl || stateno = 40 || stateno = 52
 trigger1 = prevstateno != 425;jump cancel
 
@@ -1013,34 +1009,23 @@ trigger1 = AIlevel
 trigger1 = numenemy
 trigger1 = p2movetype = H
 trigger1 = p2statetype = S || p2statetype = C
-trigger1 = p2, gethitvar(hitshaketime) > 0 || p2, gethitvar(hittime) > 0
-value = p2, gethitvar(hitshaketime) + p2, gethitvar(hittime) + 1
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Air]
 type = varset
 trigger1 = AIlevel
 trigger1 = numenemy
-trigger1 = p2, hitshakeover = 1
 trigger1 = p2movetype = H
 trigger1 = p2statetype = A
 trigger1 = p2stateno != [5200, 5219]
-trigger1 = p2, hitfall
-trigger1 = p2, dizzy = 0
-value = (-(p2, vel y) + (((p2, vel y) ** 2 - 2 * 0.4850 * (p2, pos y)) ** 0.5)) / 0.4850
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Air]
 type = varset
 trigger1 = AIlevel
 trigger1 = numenemy
-trigger1 = p2, hitshakeover = 0
 trigger1 = p2movetype = H
 trigger1 = p2statetype = A
-trigger1 = p2, hitfall
-trigger1 = p2, dizzy = 0
-trigger1 = p2, gethitvar(yaccel) != 0
-value = (p2, gethitvar(hitshaketime)) + ((-(p2, gethitvar(yvel)) ** 2 + (((p2, gethitvar(yvel)) - 2 * (p2, gethitvar(yaccel)) * (p2, pos y)) ** 0.5)) / (p2, gethitvar(yaccel)))
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Down]
@@ -1060,7 +1045,6 @@ triggerall = AIlevel
 triggerall = numenemy
 trigger1 = 1
 trigger2 = p2stateno = 5900
-trigger3 = p2stateno = p2, const(stateguardbreakhit) || p2stateno = p2, const(stateguardbreakrecover)
 value = 60
 ignorehitpause = 1
 
@@ -1068,7 +1052,6 @@ ignorehitpause = 1
 type = varset
 trigger1 = AIlevel
 trigger1 = numenemy
-trigger1 = p2, dizzy || p2, dizzypoints <= 0
 trigger1 = p2stateno != 5900
 value = -1
 ignorehitpause = 1
@@ -1077,15 +1060,9 @@ ignorehitpause = 1
 type = null
 triggerall = AIlevel
 triggerall = numenemy
-triggerall = 1 || var(55) = (p2, vel y - var(61))
-triggerall = 1 || var(61) = p2, vel y
-trigger1 = p2movetype = H; || (p2movetype = A && p2, movecontact = 0 && p2, movereversed = 0)
 trigger1 = 1 || var(62) = 0
-trigger2 = p2, vel y = 0
 trigger2 = 1 || var(62) = -(-10)
-trigger3 = p2, vel y != 0
 trigger3 = var(55) != 0
-trigger3 = 1 || var(62) = (-(p2, vel y) + (((p2, vel y) ** 2 - 2 * var(55) * (p2, pos y)) ** 0.5)) / var(55)
 ignorehitpause = 1
 
 [State -1, AI Attack Window]
@@ -1109,8 +1086,6 @@ triggerall = ctrl && (stateno != [100, 106])
 triggerall = !var(118)
 triggerall = backedgedist >= 80
 trigger1 = p2movetype = A
-trigger1 = p2bodydist x = [80, 120] && (p2, vel x = [-12, 2])
-trigger1 = random < ifelse((p2, hitdefattr = SC, AT), 150, 50)
 
 [State -1, Jump]
 type = changestate
@@ -1121,7 +1096,6 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ctrl
 trigger1 = p2movetype = A
-trigger1 = p2, hitdefattr = SC, AT || (p2stateno = var(59) && p2statetype != A)
 
 [State -1, Forward Roll]
 type = changestate
@@ -1133,9 +1107,6 @@ triggerall = roundstate = 2 && statetype != A
 triggerall = !var(118)
 trigger1 = ctrl
 trigger1 = p2movetype = A
-trigger1 = p2, vel y <= 0 && p2bodydist x = [-5, 40]
-trigger1 = p2, stagefrontedgedist < p2, stagebackedgedist
-trigger1 = !(p2, hitdefattr = SC, AT || p2stateno = var(59))
 trigger1 = random < 50
 
 [State -1, Dodge]
@@ -1148,8 +1119,6 @@ triggerall = roundstate = 2 && statetype != A
 triggerall = !var(118)
 trigger1 = ctrl
 trigger1 = p2movetype = A
-trigger1 = p2, vel y <= 0 && p2bodydist x = [30, 80]
-trigger1 = !(p2, hitdefattr = SC, AT || p2stateno = var(59))
 trigger1 = random < 50
 
 [State -1, Roll Fireballs]; incorporate into roll/dodge code blocks later
@@ -1164,7 +1133,6 @@ trigger1 = inguarddist
 trigger1 = numenemy = 1
 trigger1 = var(56) || p2bodydist x >= 150
 trigger1 = var(58) = [1, 16]
-trigger1 = !(p2, hitdefattr = SCA, AT)
 trigger1 = random < 100
 
 [State -1, Guard]
@@ -1178,7 +1146,6 @@ triggerall = inguarddist
 trigger1 = ctrl
 trigger1 = stateno != [120, 155]
 trigger1 = statetype != A || p2statetype = A || p2movetype != A
-trigger1 = p2, hitdefattr != SCA, AT && p2stateno != var(59)
 trigger1 = life > 10 || p2stateno = [200, 799]
 trigger1 = 1 || random < 30
 trigger1 = isasserted(nostandguard) = 0 || statetype != S
@@ -1242,11 +1209,8 @@ triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = A
-triggerall = p2movetype = H && p2, hitfall
 triggerall = p2dist y >= -120
-triggerall = p2, vel y >= 0
 trigger1 = ctrl
-trigger1 = p2, alive
 trigger1 = random < var(53) * 200
 
 [State -1, EX Pursuit]
@@ -1259,11 +1223,8 @@ triggerall = statetype != A && roundstate = 2
 triggerall = power >= 500
 triggerall = power != [3000, 3499] && (power >= 1500 || random < 500)
 triggerall = p2statetype = A
-triggerall = p2movetype = H && p2, hitfall
 triggerall = p2dist y >= -120
-triggerall = p2, vel y >= 0
 trigger1 = ctrl
-trigger1 = p2, alive
 trigger1 = random < var(53) * 50
 
 [State -1, Vector Drain]
@@ -1311,9 +1272,7 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = A
-triggerall = (p2bodydist x = [-5, 25]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 4
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 
@@ -1326,9 +1285,7 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [-5, 50]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 6
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1344,7 +1301,6 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = p2bodydist x <= 75 && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 9
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1361,9 +1317,7 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [-5, 25]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 5
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1379,9 +1333,7 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = p2bodydist x = [30, 50] && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 7
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1399,7 +1351,6 @@ triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = C
 triggerall = p2movetype != A
 triggerall = (p2bodydist x = [50, 75]) && (p2dist y = [-50, 60])
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 triggerall = var(54) || var(50) >= 9
 trigger1 = ctrl
 trigger1 = random < var(53) * 20
@@ -1417,9 +1368,7 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = p2bodydist x = [60, 75] && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 7
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 
@@ -1432,7 +1381,6 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [-5, 20]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 4
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1449,7 +1397,6 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [-5, 40]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 5
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1485,7 +1432,6 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = p2bodydist x = [40, 60] && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 7
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1502,7 +1448,6 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [-5, 20]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 4
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1519,7 +1464,6 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [40, 64]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 6
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1533,7 +1477,6 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [30, 50]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 5
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1550,7 +1493,6 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = p2bodydist x = [45, 70] && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 9
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1573,7 +1515,6 @@ triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = (p2bodydist x = [-5, 25]) && p2dist y = [-50, 60] && !(p2, hitfall)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 
@@ -1587,7 +1528,6 @@ triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = (p2bodydist x = [-5, 50]) && p2dist y = [-50, 60] && !(p2, hitfall)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1604,7 +1544,6 @@ triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = (p2bodydist x = [-5, 75]) && p2dist y = [-50, 60] && !(p2, hitfall)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1621,7 +1560,6 @@ triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = (p2bodydist x = [-5, 25]) && p2dist y = [-50, 60] && !(p2, hitfall)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1638,7 +1576,6 @@ triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = (p2bodydist x = [-50, 50]) && p2dist y = [-50, 60] && !(p2, hitfall)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1655,7 +1592,6 @@ triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = (p2bodydist x = [-5, 75]) && p2dist y = [-50, 60] && !(p2, hitfall)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1672,8 +1608,6 @@ triggerall = !var(60)
 triggerall = roundstate = 2 && statetype != A
 triggerall = p2movetype = H || p2movetype = A
 triggerall = p2statetype = A
-triggerall = (p2stateno != [120, 155] || p2statetype = A) && !(p2, hitfall)
-triggerall = (p2bodydist x = [-5, 55]) && (p2dist y >= -180) && (p2, vel y > -1) && (p2, vel x > -2)
 trigger1 = ctrl
 trigger1 = random < var(53) * 200
 
@@ -1723,7 +1657,6 @@ triggerall = roundstate = 2 && statetype != A
 triggerall = !var(120)
 triggerall = !inguarddist
 triggerall = p2statetype = S || p2statetype = C || (p2statetype = A && p2bodydist x > 200)
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl && p2bodydist x > 120
 trigger1 = random < var(53) * ifelse(prevstateno = 1000, 100, 50)
 
@@ -1759,10 +1692,8 @@ triggerall = power >= 500
 triggerall = power != [3000, 3499] && (power >= 1500 || random < 500)
 triggerall = p2movetype = H || p2movetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = p2, hitfall = 0
 triggerall = var(56)
 triggerall = p2stateno != [120, 155]
-triggerall = p2bodydist x = [-5, 40] && (p2dist y >= -50) && (p2, vel y > -1) && (p2, vel x > -2)
 triggerall = var(54) || var(50) >= 4
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1807,7 +1738,6 @@ triggerall = !inguarddist
 triggerall = p2stateno != [120, 155]
 trigger1 = ctrl && p2dist x < 0
 trigger1 = random < var(53) * 25
-trigger2 = ctrl && p2dist y < -50 && (p2, vel y <= -4)
 trigger2 = random < var(53) * 25
 
 [State -1, EX Soul Fist]
@@ -1823,7 +1753,6 @@ triggerall = !var(120) || var(50) > 0
 triggerall = power != [3000, 3499] && (power >= 1500 || random < 500)
 triggerall = !inguarddist
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = p2stateno != [120, 155] && (p2, vel y <= -4)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger1 = prevstateno = 1000
@@ -1844,7 +1773,6 @@ triggerall = (p2stateno != [120, 155] || p2statetype = A)
 triggerall = (p2bodydist x = [-5, 30]) && p2dist y >= -60
 triggerall = var(54) || var(50) >= 8
 trigger1 = ctrl
-trigger1 = random < var(53) * ifelse((p2, hitfall), 200, 50)
 trigger2 = stateno = 1100 || (stateno = [1200, 1250])
 trigger2 = var(55) && p2movetype = H
 trigger2 = movehit = [1, 16]
@@ -1863,8 +1791,6 @@ triggerall = !var(60)
 triggerall = p2statetype = S || p2statetype = A
 triggerall = var(56)
 triggerall = (p2stateno != [120, 155] || p2statetype = A)
-triggerall = (p2, pos y <= -80) && (p2, vel y <= -5)
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 triggerall = var(54) || var(50) >= 32
 trigger1 = ctrl
 trigger1 = p2movetype = A
@@ -1906,7 +1832,6 @@ triggerall = var(109) < 2 || stateno = [1000, 4999]
 triggerall = p2statetype = S || p2statetype = C || (p2statetype = L && p2stateno != 5120)
 triggerall = var(56)
 triggerall = (p2stateno != [120, 155] || p2statetype = A) || p2life <= 40
-triggerall = (p2bodydist x = [-5, 180]) && p2dist y >= -20 && (p2, vel y > -3)
 triggerall = var(54) || var(50) >= 9
 trigger1 = ctrl
 trigger1 = p2dist x = [p2dist y * 0.8, p2dist y * 1.2]
@@ -1945,8 +1870,6 @@ triggerall = var(109) < 2 || stateno = [1000, 4999]
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
 triggerall = var(56)
 triggerall = (p2stateno != [120, 155] || p2statetype = A) || p2life <= 40
-triggerall = (p2bodydist x = [-5, 120]) && p2dist y > -60 && (p2, vel y > -2)
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 triggerall = var(54) || var(50) >= 9
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1974,11 +1897,9 @@ triggerall = var(109) < 2 || stateno = [1000, 4999]
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
 triggerall = var(56)
 triggerall = p2stateno != [120, 155]
-triggerall = p2bodydist x >= 10 && p2dist y >= -120 && p2, vel y >= -6
 triggerall = var(54) || var(50) >= 40
 trigger1 = ctrl
 trigger1 = p2bodydist x >= 140
-trigger1 = p2life <= 30 || p2, guardpoints <= 40
 trigger1 = random < var(53) * 200
 trigger2 = stateno = 3000
 trigger2 = var(56) && p2movetype = H
@@ -1999,7 +1920,6 @@ triggerall = var(109) < 1 || stateno = [1000, 4999]
 triggerall = p2statetype = S || p2statetype = C
 triggerall = var(56)
 triggerall = (p2stateno != [120, 155] || p2statetype = A)
-triggerall = (p2bodydist x = [-5, 90]) && (p2dist y >= -120) && (p2, vel y = [-2, 2]) && (p2, vel x > -3)
 triggerall = var(54) || var(50) >= 4
 trigger1 = ctrl || stateno = [200, 499]
 trigger1 = stateno != [255, 256]
@@ -2020,7 +1940,6 @@ triggerall = !var(120)
 triggerall = p2statetype = S || p2statetype = C
 triggerall = 1
 triggerall = p2bodydist x <= 25 && p2dist y >= -40
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl
 trigger1 = p2stateno = [120, 132]
 trigger1 = random < var(53) * 100
@@ -2040,7 +1959,6 @@ trigger1 = stateno != [100, 106]
 trigger1 = random < ifelse(var(120), 100, 33)
 trigger2 = ctrl
 trigger2 = stateno != [100, 106]
-trigger2 = p2stateno = 5900 || p2stateno = p2, const(stateguardbreakhit) || p2stateno = p2, const(stateguardbreakrecover)
 trigger2 = random < var(53) * 100
 
 [State -1, Power Charge]
@@ -2066,10 +1984,7 @@ triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = statetype != A
 triggerall = life >= 0.5 * lifemax
-triggerall = p2, lifemax != 0; Avoid division by 0
-triggerall = (1.0 * p2life / p2, lifemax) < (0.5 * life / lifemax)
 triggerall = prevstateno != [170, 199]
 trigger1 = ctrl
 trigger1 = p2bodydist x >= 140 && 1
-trigger1 = p2movetype = H && p2, hitfall
 trigger1 = random < 50
