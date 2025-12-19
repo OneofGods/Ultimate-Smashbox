@@ -2410,13 +2410,13 @@ trigger1 = anim = 4191 && animelemtime(2) < 0
 value = 0
 
 [State 4190, Pos Var]
-type = mapadd
+type = varadd
 trigger1 = anim = 4190
 trigger1 = animelemtime(2) < 0
 value = 5.33
 
 [State 4190, Pos Var]
-type = mapadd
+type = varadd
 trigger1 = anim = 4191
 trigger1 = animelemtime(2) >= 0
 value = -5.33

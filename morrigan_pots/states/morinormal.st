@@ -18,7 +18,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -113,7 +113,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -208,7 +208,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -313,7 +313,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -428,7 +428,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -533,7 +533,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -691,7 +691,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -786,7 +786,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -934,7 +934,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1077,7 +1077,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1343,7 +1343,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1439,7 +1439,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1545,7 +1545,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1641,7 +1641,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1771,7 +1771,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1867,7 +1867,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1973,7 +1973,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2079,7 +2079,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2185,7 +2185,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2281,7 +2281,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2395,7 +2395,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2517,7 +2517,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2631,7 +2631,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2745,7 +2745,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2859,7 +2859,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2973,7 +2973,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -3087,7 +3087,7 @@ facep2 = 1
 poweradd = 0
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -3197,7 +3197,7 @@ velset = 0, 0
 sprpriority = 2
 
 [State Tech Hit]
-type = mapadd
+type = varadd
 trigger1 = time
 trigger1 = var(127) > 0
 value = -1
@@ -3481,7 +3481,7 @@ velset = 0, 0
 sprpriority = 2
 
 [State Tech Hit]
-type = mapadd
+type = varadd
 trigger1 = time
 trigger1 = var(127) > 0
 value = -1

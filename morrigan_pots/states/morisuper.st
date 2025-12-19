@@ -18,7 +18,7 @@ sprpriority = 2
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -204,7 +204,7 @@ sprpriority = 2
 facep2 = p2dist x <= -const(size.ground.back)
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -462,7 +462,7 @@ facep2 = 1
 sprpriority = 2
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -756,7 +756,7 @@ facep2 = 1
 sprpriority = 2
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -945,7 +945,7 @@ sprpriority = 2
 facep2 = 0
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1296,7 +1296,7 @@ facep2 = 1
 sprpriority = 2
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2118,7 +2118,7 @@ facep2 = 0
 sprpriority = 2
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2623,7 +2623,7 @@ sprpriority = 2
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0

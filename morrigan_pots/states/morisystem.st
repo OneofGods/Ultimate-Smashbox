@@ -3613,7 +3613,7 @@ lowpriority = 1
 channel = 0
 
 [State -2, Midnight Bliss Voice]
-type = mapadd
+type = varadd
 trigger1 = anim = 9020
 trigger1 = animelemtime(6) >= 0
 value = 1
@@ -3905,7 +3905,7 @@ value = 0
 ignorehitpause = 1
 
 [State -3, Sparkle Timer]
-type = mapadd
+type = varadd
 trigger1 = 1
 value = 1.0 + (random / 1000.0)
 
@@ -4173,7 +4173,7 @@ trigger1 = motifstate(victoryscreen) = 0
 value = 0
 
 [State -3, Victory BGM]
-type = mapadd
+type = varadd
 trigger1 = var(62)
 trigger1 = motifstate(victoryscreen)
 trigger1 = teamleader = playerno
