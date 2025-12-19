@@ -1421,7 +1421,6 @@ y = 0
 
 [State 3305, Decide Angle]
 type = varset
-triggerall = root, AIlevel = 0
 trigger1 = !time
 trigger2 = time < 16
 trigger2 = root, stateno = 3300
@@ -1429,7 +1428,6 @@ value = ifelse(root, command = "holdup", -1, ifelse(root, command = "holddown", 
 
 [State 3305, Decide Angle]
 type = varset
-triggerall = root, AIlevel > 0
 trigger1 = !time
 trigger2 = time < 16
 trigger2 = root, stateno = 3300

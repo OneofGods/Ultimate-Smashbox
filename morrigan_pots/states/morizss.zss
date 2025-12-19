@@ -641,7 +641,6 @@ if incustomstate = 0 && pausetime = 0 {
 
 # +1, Debug text
 ignorehitpause if !ishelper {
-	if !AIlevel {
 		displaytoclipboard{
 			text: "Damage = %.1f%% Juggle = %d Unthrowable = %d";
 			params: attack, ceil(map(juggle_count)), ceil(map(unthrowable));
@@ -749,11 +748,10 @@ ignorehitpause if roundstate = 2 && movetype = A && numtarget {
 }
 
 # AI
-ignorehitpause if AIlevel {
 
 	# AI Fall Recovery and Throw Escape
 	if !isasserted(noinput) && (inCustomState || hitFall) {
-		if random < (250 * AIlevelF / 8.0) {
+		if random < (250 ) {
 			if random < 500 {
 				assertInput{flag: x; flag2: y; flag3: z}
 			} else {
@@ -1028,7 +1026,6 @@ if stateno = const(StateTagEnteringScreen) {
 
 # -3, Allow win pose selection
 # This workaround is currently necessary in Ikemen because holding a button skips the win screen
-if !AIlevel && roundstate = [3, 4] {
 	if (inputtime(a) > 0 || inputtime(b) > 0 || inputtime(c) > 0 || inputtime(x) > 0 || inputtime(y) > 0 || inputtime(z) > 0 || inputtime(s) > 0) &&
 		inputtime(a) != 1 && inputtime(b) != 1 && inputtime(c) != 1 && inputtime(x) != 1 && inputtime(y) != 1 && inputtime(z) != 1 && inputtime(s) != 1 {
 		assertspecial{flag: postroundinput; flag2: roundnotskip}
@@ -1048,11 +1045,10 @@ if pausetime = 0 && p2, pausetime > 0 {
 }
 
 # AI
-ignorehitpause if AIlevel && alive && !standby && roundstate = 2 {
 
 	# AI acting frequency by difficulty
 	# This map minimizes the calls for RNG
-	mapset{map: "ai_randompass"; value: random < (1000 * (AIlevelF / 8.0))}
+	mapset{map: "ai_randompass"; value: random < (1000 )}
 
 	# AI confirmation
 	# This reduces the number of missed opportunities without making the AI too hard
@@ -1097,7 +1093,7 @@ ignorehitpause if AIlevel && alive && !standby && roundstate = 2 {
 	}
 
 	# AI Spacing
-	if AIlevelF >= 6 && !inGuardDist && stateType = S && ctrl {
+	if !inGuardDist && stateType = S && ctrl {
 		# Set spacing
 		# Unique to each char
 		if p2MoveType = H || p2, dizzy {
@@ -1357,17 +1353,16 @@ ignorehitpause {
 }
 
 # AI
-ignorehitpause if AIlevel && !ishelper {
 
 	# AI block high
 	# Also stand up to parry fireballs
 	if p2stateno != map(ai_p2standinglow)
 	&& (p2statetype = A || p2, hitdefattr = A, AA, AP || p2stateno = map(ai_p2overhead) || (p2, hitdefattr != SCA, AA, AT, AP && map(ai_p2fireball_eta) = [1, 20])) {
-		if random < (100 * (AIlevelF / 8.0)) {
+		if random < (100 ) {
 			mapset{map: "ai_blockhigh"; value: 1}
 		}
 	} else {
-		if random < (200 * (AIlevelF / 8.0)) {
+		if random < (200 ) {
 			mapset{map: "ai_blockhigh"; value: 0}
 		}
 	}

@@ -26,7 +26,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -121,7 +120,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -216,7 +214,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -321,7 +318,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -436,7 +432,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -541,7 +536,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -699,7 +693,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -794,7 +787,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -942,7 +934,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1085,7 +1076,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1351,7 +1341,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1447,7 +1436,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1553,7 +1541,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1649,7 +1636,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1737,9 +1723,7 @@ type = changestate
 value = 40
 triggerall = movehit = 1
 triggerall = roundstate = 2
-trigger1 = !AIlevel
 trigger1 = command = "holdup"
-trigger2 = AIlevel
 trigger2 = p2statetype = A
 trigger2 = p2dist y >= -60
 trigger2 = random < 500
@@ -1779,7 +1763,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1875,7 +1858,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1981,7 +1963,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2087,7 +2068,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2193,7 +2173,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2289,7 +2268,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2403,7 +2381,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2525,7 +2502,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2639,7 +2615,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2753,7 +2728,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2867,7 +2841,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2981,7 +2954,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -3095,7 +3067,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -3104,13 +3075,11 @@ persistent = 0
 [State 800, Strength]
 type = varset
 trigger1 = !time
-trigger1 = !AIlevel
 value = ifelse(var(90), 1, 0)
 
 [State 800, Strength AI]
 type = varset
 trigger1 = !time
-trigger1 = AIlevel
 value = (stagebackedgedist < stagefrontedgedist)
 
 [State 800, Tech Hit]
@@ -3210,8 +3179,7 @@ triggerall = target, command != "holdup" && target, command != "holddown"
 trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z")) >= 2
 trigger2 = target, command = "holdfwd" || target, command = "holdback"
 trigger2 = target, command = "b" || target, command = "c" || target, command = "y" || target, command = "z"
-trigger3 = target, AIlevel > 0
-trigger3 = random < (100 * (target, AIlevelF / 8.0))
+trigger3 = random < (100 )
 value = 890
 
 [State 810, Throw]
@@ -3494,8 +3462,7 @@ triggerall = target, command != "holdup" && target, command != "holddown"
 trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z")) >= 2
 trigger2 = target, command = "holdfwd" || target, command = "holdback"
 trigger2 = target, command = "b" || target, command = "c" || target, command = "y" || target, command = "z"
-trigger3 = target, AIlevel > 0
-trigger3 = random < (100 * (target, AIlevelF / 8.0))
+trigger3 = random < (100 )
 value = 890
 
 [State 820, Throw]
