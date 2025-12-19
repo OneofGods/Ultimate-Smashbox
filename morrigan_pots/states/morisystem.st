@@ -3666,7 +3666,7 @@ trigger3 = AIlevel
 trigger3 = inguarddist
 trigger3 = stateno != [700, 702]
 trigger3 = p2bodydist x < var(38)
-trigger3 = random < (ifelse(life < 100 || guardpoints < 200, 100, 50) * (AIlevelF / 8.0))
+trigger3 = random < (ifelse(life < 100, 100, 50) * (AIlevelF / 8.0))
 trigger4 = AIlevel
 trigger4 = inguarddist
 trigger4 = stateno != [700, 702]
