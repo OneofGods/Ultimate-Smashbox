@@ -3624,7 +3624,7 @@ velset = 0, 0
 type = screenbound
 trigger1 = 1
 value = 1
-movecamera = abs(stateowner, pos x - pos x) < 200, 0
+movecamera = 1, 0
 
 [State 822, Vel]
 type = veladd
@@ -3666,7 +3666,7 @@ value = 823
 type = screenbound
 trigger1 = 1
 value = 1
-movecamera = abs(stateowner, pos x - pos x) < 200, 0
+movecamera = 1, 0
 
 [State 823, Sound]
 type = playsnd
@@ -3742,7 +3742,7 @@ value = 5062
 type = screenbound
 trigger1 = 1
 value = 1
-movecamera = abs(stateowner, pos x - pos x) < 200, 0
+movecamera = 1, 0
 
 [State 824, Accel]
 type = veladd
@@ -3932,8 +3932,6 @@ y = 0
 [State 895, Vel Corner]
 type = velset
 trigger1 = numenemy
-trigger1 = stateowner, vel x < 0
-trigger1 = stateowner, backedgedist <= 0
 x = -2.562
 y = 0
 
