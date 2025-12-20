@@ -995,7 +995,6 @@ ignorehitpause if movetype = H {
 	if stateno = [5000, 5019]
 	&& !isasserted(noKO)
 	&& gethitvar(kill)
-	&& gethitvar(frame)
 	&& gethitvar(damage) > 0
 	&& gethitvar(damage) >= life {
 		if prevstateno = [120, 155]
@@ -1169,7 +1168,6 @@ if pausetime = 0 && p2, pausetime > 0 {
 ignorehitpause {
 	# Reset Juggle Count
 	if map(juggle_count) > 0
-	&& p2, gethitvar(frame) = 0 { # Allow time for P2 to go from type S to type A
 		if p2movetype != H
 		|| p2, ctrl
 		|| p2, hitfall = 0
@@ -1187,7 +1185,6 @@ ignorehitpause {
 	&& numtarget
 	&& p2, hitfall
 	&& p2movetype = H
-	&& p2, gethitvar(frame)
 		if map(juggle_timer) <= 0 {
 			mapAdd{map: "juggle_count"; value: map(juggle_start); redirectID: cond(ishelper, root, ID, ID)}
 		} else {
@@ -1216,7 +1213,6 @@ ignorehitpause if pausetime = 0
 && cond(ishelper, root, movetype != H, movetype != H) {
 	for i = 0; numPlayer - 1; 1 {
 		if playerIndexExist($i)
-		&& playerIndex($i), gethitvar(frame)
 		&& playerIndex($i), movetype = H
 		&& (playerIndex($i), prevmovetype = A || playerIndex($i), receivedhits > 1) # Just countered or counter buffer active
 		&& playerIndex($i), gethitvar(guarded) = 0 {
@@ -1263,7 +1259,6 @@ ignorehitpause if pausetime = 0
 		# Find the appropriate enemies
 		for i = 0; numPlayer - 1; 1 {
 			if playerIndexExist($i)
-			&& playerIndex($i), gethitvar(frame)
 				let spark_no = ifelse(playerIndex($i), gethitvar(guarded), map(guard.sparkno), map(sparkno));
 				let getterdist = (playerIndex($i), pos x - pos x) * facing;
 				let spark_x = cond($getterdist > (map(sparkx.max) * $spark_scaleoffset_x), (map(sparkx.max) * $spark_scaleoffset_x), cond($getterdist > (map(sparkx.min) * $spark_scaleoffset_x), $getterdist, (map(sparkx.min) * $spark_scaleoffset_x)));
@@ -1315,7 +1310,6 @@ ignorehitpause if map(sparkno) >= 0 || map(guard.sparkno) >= 0 {
 # Generate particle effects
 ignorehitpause if map(hitparticles) {
 		if movehit = 1 && numtarget
-		&& target, gethitvar(frame)
 		&& target, gethitvar(ID) = ID {
 			if !numhelper(8150) {
 				helper {
