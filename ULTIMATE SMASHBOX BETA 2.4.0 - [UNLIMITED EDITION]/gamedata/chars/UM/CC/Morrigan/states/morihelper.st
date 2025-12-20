@@ -40,8 +40,6 @@ value = root, var(123)
 [State 1005, ProjContact]
 type = null
 trigger1 = movecontact = 1
-trigger1 = p2, gethitvar(frame)
-trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
 trigger1 = 1 || var(52) = 1
 trigger1 = root, stateno = 1000
 trigger1 = root, var(52) = 1
@@ -199,7 +197,7 @@ ownpal = 1
 [State 1006, Trade Sound]
 type = playsnd
 trigger1 = !time
-trigger1 = hitoverridden || prevmovetype = H
+trigger1 = prevmovetype = H
 value = 2, 0
 channel = 2
 volumescale = 33
@@ -319,8 +317,6 @@ value = root, var(123)
 [State 1055, ProjContact]
 type = null
 trigger1 = movecontact = 1
-trigger1 = p2, gethitvar(frame)
-trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
 trigger1 = 1 || var(52) = 1
 trigger1 = root, stateno = 1050
 trigger1 = root, var(52) = 1
@@ -419,7 +415,6 @@ forcestand = 1
 
 [State 1055, Hit Low]
 type = modifyhitdef
-trigger1 = p2dist y < -(p2, const(size.head.pos.y) / 2)
 ground.type = Low
 air.type = Low
 
@@ -475,8 +470,6 @@ ignorehitpause = 1
 [State 1015, ProjContact]
 type = null
 trigger1 = movecontact = 1
-trigger1 = p2, gethitvar(frame)
-trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
 trigger1 = 1 || var(52) = 1
 trigger1 = root, stateno = 1010
 trigger1 = root, var(52) = 1
@@ -534,9 +527,7 @@ x = -0.2
 type = veladd
 triggerall = vel y < 6
 trigger1 = p2statetype = S || p2statetype = A
-trigger1 = pos y < (p2, pos y + p2, const(size.mid.pos.y))
 trigger2 = p2statetype = C
-trigger2 = pos y < (p2, pos y + (p2, const(size.mid.pos.y) / 2.0))
 trigger3 = p2statetype = L
 trigger3 = pos y < -10
 y = 0.2
@@ -545,9 +536,7 @@ y = 0.2
 type = veladd
 triggerall = vel y > -6
 trigger1 = p2statetype = S || p2statetype = A
-trigger1 = pos y > (p2, pos y + p2, const(size.mid.pos.y))
 trigger2 = p2statetype = C
-trigger2 = pos y > (p2, pos y + (p2, const(size.mid.pos.y) / 2))
 trigger3 = p2statetype = L
 trigger3 = pos y < -10
 y = -0.2
@@ -687,8 +676,6 @@ ignorehitpause = 1
 [State 1065, ProjContact]
 type = null
 trigger1 = movecontact = 1
-trigger1 = p2, gethitvar(frame)
-trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
 trigger1 = 1 || var(52) = 1
 trigger1 = root, stateno = 1060
 trigger1 = root, var(52) = 1
@@ -746,9 +733,7 @@ x = -0.2
 type = veladd
 triggerall = vel y < 6
 trigger1 = p2statetype = S || p2statetype = A
-trigger1 = pos y < (p2, pos y + p2, const(size.mid.pos.y))
 trigger2 = p2statetype = C
-trigger2 = pos y < (p2, pos y + (p2, const(size.mid.pos.y) / 2.0))
 trigger3 = p2statetype = L
 trigger3 = pos y < -10
 y = 0.2
@@ -757,9 +742,7 @@ y = 0.2
 type = veladd
 triggerall = vel y > -6
 trigger1 = p2statetype = S || p2statetype = A
-trigger1 = pos y > (p2, pos y + p2, const(size.mid.pos.y))
 trigger2 = p2statetype = C
-trigger2 = pos y > (p2, pos y + (p2, const(size.mid.pos.y) / 2))
 trigger3 = p2statetype = L
 trigger3 = pos y < -10
 y = -0.2
@@ -923,8 +906,6 @@ value = 3005
 [State 3005, ProjContact]
 type = null
 trigger1 = movecontact = 1
-trigger1 = p2, gethitvar(frame)
-trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
 trigger1 = 1 || var(52) = 1
 trigger1 = root, stateno = 3000
 trigger1 = root, var(52) = 1
@@ -1091,7 +1072,7 @@ ownpal = 1
 [State 3006, Trade Sound]
 type = playsnd
 trigger1 = !time
-trigger1 = hitoverridden || prevmovetype = H
+trigger1 = prevmovetype = H
 value = 2, 0
 channel = 2
 volumescale = 33
@@ -1220,8 +1201,6 @@ value = 3005
 [State 3055, ProjContact]
 type = null
 trigger1 = movecontact = 1
-trigger1 = p2, gethitvar(frame)
-trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
 trigger1 = 1 || var(52) = 1
 trigger1 = root, stateno = 3050
 trigger1 = root, var(52) = 1
@@ -1412,8 +1391,6 @@ ignorehitpause = 1
 [State 3305, ProjContact]
 type = null
 trigger1 = movecontact = 1
-trigger1 = p2, gethitvar(frame)
-trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
 trigger1 = 1 || var(52) = 1
 trigger1 = root, stateno = 3300
 trigger1 = root, var(52) = 1
@@ -1444,7 +1421,6 @@ y = 0
 
 [State 3305, Decide Angle]
 type = varset
-triggerall = root, AIlevel = 0
 trigger1 = !time
 trigger2 = time < 16
 trigger2 = root, stateno = 3300
@@ -1452,7 +1428,6 @@ value = ifelse(root, command = "holdup", -1, ifelse(root, command = "holddown", 
 
 [State 3305, Decide Angle]
 type = varset
-triggerall = root, AIlevel > 0
 trigger1 = !time
 trigger2 = time < 16
 trigger2 = root, stateno = 3300
@@ -1562,7 +1537,6 @@ forcestand = 1
 [State 3305, Hit Low]
 type = modifyhitdef
 ;trigger1 = random < 500
-trigger1 = p2dist y < -(p2, const(size.head.pos.y) / 2)
 ground.type = Low
 
 ;[State 3305, Blood]
@@ -1703,7 +1677,6 @@ ID = 4010
 attr = S, HA
 damage = 0, 0
 dizzypoints = 0
-guardpoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1728,7 +1701,7 @@ envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -4, 4)
 envshake.mul = 0.667
 forcestand = 1
-p2facing = ifelse(p2, facing = facing && random < 666, 1, -1)
+p2facing = 1
 
 [State 4015, Hit Low Ground]
 type = hitdef
@@ -1739,7 +1712,6 @@ ID = 4010
 attr = S, HA
 damage = 0, 0
 dizzypoints = 0
-guardpoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1764,7 +1736,7 @@ envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -4, 4)
 envshake.mul = 0.667
 forcestand = 1
-p2facing = ifelse(p2, facing = facing && random < 666, 1, -1)
+p2facing = 1
 
 [State 4015, Hit Up Ground]
 type = hitdef
@@ -1774,7 +1746,6 @@ ID = 4010
 attr = S, HA
 damage = 0, 0
 dizzypoints = 0
-guardpoints = 0
 animtype = Up
 hitflag = MAF
 guardflag = M
@@ -1815,7 +1786,6 @@ ID = 4010
 attr = A, HA
 damage = 0, 0
 dizzypoints = 0
-guardpoints = 0
 animtype = Hard
 fall.animtype = Hard
 hitflag = MAF
@@ -1846,7 +1816,7 @@ fall.recover = 0
 down.recover = 0; cannot mash
 down.recovertime = 30
 forcestand = 1
-p2facing = ifelse(p2, facing = facing && random < 666, 1, -1)
+p2facing = 1
 
 [State 4015, Hit Final]
 type = hitdef
@@ -1856,7 +1826,6 @@ ID = 4010
 attr = A, HA
 damage = 0, 0
 dizzypoints = 0
-guardpoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -2064,7 +2033,6 @@ ID = 4060
 attr = S, HA
 damage = 0, 0
 dizzypoints = 0
-guardpoints = 0
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -2097,7 +2065,7 @@ fall.recover = 0
 down.recover = 0; cannot mash
 down.recovertime = 30
 yaccel = 0.4850
-p2facing = ifelse(p2, facing = facing && random < 666, 1, -1)
+p2facing = 1
 
 [State 4065, Hit Low]
 type = hitdef
@@ -2107,7 +2075,6 @@ ID = 4060
 attr = S, HA
 damage = 0, 0
 dizzypoints = 0
-guardpoints = 0
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -2140,7 +2107,7 @@ fall.recover = 0
 down.recover = 0; cannot mash
 down.recovertime = 30
 yaccel = 0.4850
-p2facing = ifelse(p2, facing = facing && random < 666, 1, -1)
+p2facing = 1
 
 [State 4065, Hit Final]
 type = hitdef
@@ -2150,7 +2117,6 @@ ID = 4060
 attr = A, HA
 damage = 0, 0
 dizzypoints = 0
-guardpoints = 0
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -2236,8 +2202,6 @@ ignorehitpause = 1
 [State 4105, ProjContact]
 type = null
 trigger1 = movecontact = 1
-trigger1 = p2, gethitvar(frame)
-trigger1 = p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID
 trigger1 = 1 || var(52) = 1
 trigger1 = root, stateno = 4100
 trigger1 = root, var(52) = 1
@@ -2290,7 +2254,6 @@ sparkxy = -10, 0
 type = hitdef
 trigger1 = numenemy
 trigger1 = !(root, var(130))
-trigger1 = p2bodydist x = [-(const(size.ground.front) + const(size.ground.back) + p2, const(size.ground.front) + p2, const(size.ground.back)), 0]
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 ID = 4105
 attr = S, HT
@@ -2437,13 +2400,13 @@ trigger1 = anim = 4191 && animelemtime(2) < 0
 value = 0
 
 [State 4190, Pos Var]
-type = mapadd
+type = varadd
 trigger1 = anim = 4190
 trigger1 = animelemtime(2) < 0
 value = 5.33
 
 [State 4190, Pos Var]
-type = mapadd
+type = varadd
 trigger1 = anim = 4191
 trigger1 = animelemtime(2) >= 0
 value = -5.33
@@ -3766,32 +3729,32 @@ var(0) = numhelper(6100)
 [State 6111, Bind]
 type = posset
 trigger1 = var(0) = 1
-x = (p2, pos x) -31 * facing
-y = (p2, pos y) -85
+x = 0 -31 * facing
+y = 0 -85
 
 [State 6111, Bind]
 type = posset
 trigger1 = var(0) = 2
-x = (p2, pos x) -32 * facing
-y = (p2, pos y) -40
+x = 0 -32 * facing
+y = 0 -40
 
 [State 6111, Bind]
 type = posset
 trigger1 = var(0) = 3
-x = (p2, pos x) -18 * facing
-y = (p2, pos y) -42
+x = 0 -18 * facing
+y = 0 -42
 
 [State 6111, Bind]
 type = posset
 trigger1 = var(0) = 4
-x = (p2, pos x) -5 * facing
-y = (p2, pos y) -43
+x = 0 -5 * facing
+y = 0 -43
 
 [State 6111, Bind]
 type = posset
 trigger1 = var(0) = 5
-x = (p2, pos x) + 1 * facing
-y = (p2, pos y) -45
+x = 0 + 1 * facing
+y = 0 -45
 
 [State 6111, Sprite Priority]
 type = sprpriority

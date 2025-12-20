@@ -18,7 +18,7 @@ sprpriority = 2
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -26,7 +26,6 @@ value = 1
 
 [State 1000, Strength]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
 ignorehitpause = 1
@@ -34,14 +33,12 @@ persistent = 0
 
 [State 1000, Strength AI]
 type = varset
-trigger1 = AIlevel
 trigger1 = time <= 0
 value = ifelse((p2movetype = H || random < 500), 2, ifelse(random < 500, 1, 0))
 ignorehitpause = 1
 
 [State 1000, Erase Inputs]
 type = null
-trigger1 = !AIlevel
 trigger1 = time <= 0
 trigger1 = 1 || var(88) = 1
 trigger1 = 1 || var(87) = 1
@@ -112,7 +109,7 @@ sprpriority = 2
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -120,7 +117,6 @@ value = 1
 
 [State 1010, Erase Inputs]
 type = null
-trigger1 = !AIlevel
 trigger1 = time <= 0
 trigger1 = 1 || var(88) = 1
 trigger1 = 1 || var(87) = 1
@@ -208,7 +204,7 @@ sprpriority = 2
 facep2 = p2dist x <= -const(size.ground.back)
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -216,7 +212,6 @@ value = 1
 
 [State 1050, Strength]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
 ignorehitpause = 1
@@ -224,14 +219,12 @@ persistent = 0
 
 [State 1050, Strength AI]
 type = varset
-trigger1 = AIlevel
 trigger1 = time <= 0
 value = ifelse((p2movetype = H || random < 500), 2, ifelse(random < 500, 1, 0))
 ignorehitpause = 1
 
 [State 1050, Erase Inputs]
 type = null
-trigger1 = !AIlevel
 trigger1 = time <= 0
 trigger1 = 1 || var(88) = 1
 trigger1 = 1 || var(87) = 1
@@ -365,7 +358,7 @@ sprpriority = 2
 facep2 = 0
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -373,7 +366,6 @@ value = 1
 
 [State 1060, Erase Inputs]
 type = null
-trigger1 = !AIlevel
 trigger1 = time <= 0
 trigger1 = 1 || var(88) = 1
 trigger1 = 1 || var(87) = 1
@@ -484,7 +476,7 @@ facep2 = 1
 sprpriority = 2
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -492,7 +484,6 @@ value = 1
 
 [State 1100, Strength]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
 ignorehitpause = 1
@@ -500,14 +491,12 @@ persistent = 0
 
 [State 1100, Strength AI]
 type = varset
-trigger1 = AIlevel
 trigger1 = time <= 0
 value = ifelse(random < 500, 2, ifelse(random < 666, 1, 0))
 ignorehitpause = 1
 
 [State 1100, Erase Inputs]
 type = null
-trigger1 = !AIlevel
 trigger1 = time <= 0
 trigger1 = 1 || var(88) = 1
 trigger1 = 1 || var(87) = 1
@@ -785,7 +774,7 @@ facep2 = 1
 sprpriority = 2
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -793,7 +782,6 @@ value = 1
 
 [State 1110, Erase Inputs]
 type = null
-trigger1 = !AIlevel
 trigger1 = time <= 0
 trigger1 = 1 || var(88) = 1
 trigger1 = 1 || var(87) = 1
@@ -1025,7 +1013,7 @@ facep2 = 1
 sprpriority = 2
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1033,7 +1021,6 @@ value = 1
 
 [State 1200, Strength]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = ifelse(var(99), 2, ifelse(var(98), 1, 0))
 ignorehitpause = 1
@@ -1041,14 +1028,12 @@ persistent = 0
 
 [State 1200, Strength AI]
 type = varset
-trigger1 = AIlevel
 trigger1 = time <= 0
 value = ifelse(var(52) >= 17, 2, ifelse(var(52) >= 15, 1, 0))
 ignorehitpause = 1
 
 [State 1200, Erase Inputs]
 type = null
-trigger1 = !AIlevel
 trigger1 = time <= 0
 trigger1 = 1 || var(88) = 1
 trigger1 = 1 || var(87) = 1
@@ -1165,7 +1150,7 @@ airguard.cornerpush.veloff = 0
 [State 1205, Hit High]
 type = modifyhitdef
 trigger1 = animelem = 4 || animelem = 10 || animelem = 16
-trigger1 = p2, anim = [5010, 5019]
+trigger1 = 1
 ground.type = High
 
 [State 1205, End]
@@ -1205,7 +1190,7 @@ facep2 = 1
 sprpriority = 2
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1213,7 +1198,6 @@ value = 1
 
 [State 1250, Erase Inputs]
 type = null
-trigger1 = !AIlevel
 trigger1 = time <= 0
 trigger1 = 1 || var(88) = 1
 trigger1 = 1 || var(87) = 1
@@ -1343,7 +1327,7 @@ airguard.cornerpush.veloff = 0
 [State 1251, Hit High]
 type = modifyhitdef
 trigger1 = !((movecontact + movereversed) % 8)
-trigger1 = p2, anim = [5010, 5019]
+trigger1 = 1
 ground.type = High
 
 [State 1251, End]
@@ -1382,7 +1366,7 @@ poweradd = 50 * var(114)
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1390,7 +1374,6 @@ value = 1
 
 [State 1300, Strength]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
 ignorehitpause = 1
@@ -1398,14 +1381,12 @@ persistent = 0
 
 [State 1300, Strength AI]
 type = varset
-trigger1 = AIlevel
 trigger1 = time <= 0
 value = ifelse(p2bodydist x <= (25 * const(size.xscale)), 2, ifelse(p2bodydist x <= (30 * const(size.xscale)), 1, 0))
 ignorehitpause = 1
 
 [State 1300, Erase Inputs]
 type = null
-trigger1 = !AIlevel
 trigger1 = time <= 0
 trigger1 = 1 || var(88) = 1
 trigger1 = 1 || var(87) = 1
@@ -1973,7 +1954,7 @@ sprpriority = 2
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1988,7 +1969,6 @@ persistent = 0
 
 [State 1330, Erase Inputs]
 type = null
-trigger1 = !AIlevel
 trigger1 = time <= 0
 trigger1 = 1 || var(88) = 1
 trigger1 = 1 || var(87) = 1
@@ -2079,7 +2059,7 @@ facep2 = 1
 juggle = 8 * (p2statetype = L)
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2087,7 +2067,6 @@ value = 1
 
 [State 1900, Erase Inputs]
 type = null
-trigger1 = !AIlevel
 trigger1 = time <= 0
 trigger1 = 1 || var(88) = 1
 trigger1 = 1 || var(87) = 1
@@ -2148,7 +2127,7 @@ trigger1 = numenemy
 trigger1 = animelemtime(2) = 1
 trigger1 = p2movetype = H
 trigger1 = p2statetype = A || p2statetype = L
-x = p2, vel x * (p2, facing) * facing
+x = 0
 
 [State 1900, Vel]
 type = velset
@@ -2350,7 +2329,7 @@ facep2 = 1
 juggle = 8 * (p2statetype = L)
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2358,7 +2337,6 @@ value = 1
 
 [State 1930, Erase Inputs]
 type = null
-trigger1 = !AIlevel
 trigger1 = time <= 0
 trigger1 = 1 || var(88) = 1
 trigger1 = 1 || var(87) = 1
@@ -2437,7 +2415,7 @@ trigger1 = numenemy
 trigger1 = animelemtime(2) = 1
 trigger1 = p2movetype = H
 trigger1 = p2statetype = A || p2statetype = L
-x = p2, vel x * (p2, facing) * facing
+x = 0
 
 [State 1930, Vel]
 type = velset

@@ -18,7 +18,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -26,7 +26,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -113,7 +112,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -121,7 +120,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -208,7 +206,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -216,7 +214,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -313,7 +310,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -321,7 +318,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -428,7 +424,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -436,7 +432,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -533,7 +528,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -541,7 +536,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -691,7 +685,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -699,7 +693,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -786,7 +779,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -794,7 +787,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -934,7 +926,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -942,7 +934,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1077,7 +1068,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1085,7 +1076,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1343,7 +1333,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1351,7 +1341,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1439,7 +1428,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1447,7 +1436,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1545,7 +1533,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1553,7 +1541,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1641,7 +1628,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1649,7 +1636,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1737,9 +1723,7 @@ type = changestate
 value = 40
 triggerall = movehit = 1
 triggerall = roundstate = 2
-trigger1 = !AIlevel
 trigger1 = command = "holdup"
-trigger2 = AIlevel
 trigger2 = p2statetype = A
 trigger2 = p2dist y >= -60
 trigger2 = random < 500
@@ -1771,7 +1755,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1779,7 +1763,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1867,7 +1850,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1875,7 +1858,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1973,7 +1955,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -1981,7 +1963,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2079,7 +2060,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2087,7 +2068,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2185,7 +2165,7 @@ ctrl = 0
 facep2 = 1
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2193,7 +2173,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2281,7 +2260,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2289,7 +2268,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2395,7 +2373,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2403,7 +2381,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2517,7 +2494,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2525,7 +2502,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2631,7 +2607,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2639,7 +2615,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2745,7 +2720,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2753,7 +2728,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2859,7 +2833,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2867,7 +2841,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -2973,7 +2946,7 @@ facep2 = (prevstateno = [100, 105]) && p2dist x < 0
 velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -2981,7 +2954,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -3087,7 +3059,7 @@ facep2 = 1
 poweradd = 0
 
 [State Damage Scaling - Add]
-type = mapadd
+type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
@@ -3095,7 +3067,6 @@ value = 1
 
 [State Erase Inputs]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -3104,13 +3075,11 @@ persistent = 0
 [State 800, Strength]
 type = varset
 trigger1 = !time
-trigger1 = !AIlevel
 value = ifelse(var(90), 1, 0)
 
 [State 800, Strength AI]
 type = varset
 trigger1 = !time
-trigger1 = AIlevel
 value = (stagebackedgedist < stagefrontedgedist)
 
 [State 800, Tech Hit]
@@ -3122,7 +3091,7 @@ value = 0
 type = varset
 trigger1 = numenemy
 trigger1 = p2statetype = S
-trigger1 = p2stateno = [0, 999] && p2stateno != [100, 119] && p2stateno != [200, 799] && p2, anim != 5300
+trigger1 = p2stateno = [0, 999] && p2stateno != [100, 119] && p2stateno != [200, 799]
 value = 7
 
 [State 800, Tech Hit Facing]
@@ -3197,7 +3166,7 @@ velset = 0, 0
 sprpriority = 2
 
 [State Tech Hit]
-type = mapadd
+type = varadd
 trigger1 = time
 trigger1 = var(127) > 0
 value = -1
@@ -3210,8 +3179,7 @@ triggerall = target, command != "holdup" && target, command != "holddown"
 trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z")) >= 2
 trigger2 = target, command = "holdfwd" || target, command = "holdback"
 trigger2 = target, command = "b" || target, command = "c" || target, command = "y" || target, command = "z"
-trigger3 = target, AIlevel > 0
-trigger3 = random < (100 * (target, AIlevelF / 8.0))
+trigger3 = random < (100 )
 value = 890
 
 [State 810, Throw]
@@ -3481,7 +3449,7 @@ velset = 0, 0
 sprpriority = 2
 
 [State Tech Hit]
-type = mapadd
+type = varadd
 trigger1 = time
 trigger1 = var(127) > 0
 value = -1
@@ -3494,8 +3462,7 @@ triggerall = target, command != "holdup" && target, command != "holddown"
 trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z")) >= 2
 trigger2 = target, command = "holdfwd" || target, command = "holdback"
 trigger2 = target, command = "b" || target, command = "c" || target, command = "y" || target, command = "z"
-trigger3 = target, AIlevel > 0
-trigger3 = random < (100 * (target, AIlevelF / 8.0))
+trigger3 = random < (100 )
 value = 890
 
 [State 820, Throw]
@@ -3880,8 +3847,6 @@ y = 0
 [State 890, Vel Corner]
 type = velset
 trigger1 = numenemy
-trigger1 = p2, vel x < 0
-trigger1 = p2, backedgedist <= 0
 x = -2.562
 y = 0
 

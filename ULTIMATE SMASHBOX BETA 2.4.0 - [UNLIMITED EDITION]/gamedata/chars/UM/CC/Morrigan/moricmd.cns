@@ -442,7 +442,6 @@ triggerall = statetype != A
 triggerall = var(50) != 0
 trigger1 = var(50) < 0
 trigger2 = roundstate != 2
-trigger3 = !AIlevel
 trigger3 = var(85)
 trigger3 = roundstate = 2
 trigger3 = var(50) > 0
@@ -450,7 +449,6 @@ trigger3 = var(50) > 0
 [State -1, Guard Cancel]
 type = changestate
 value = 750
-triggerall = !AIlevel
 triggerall = command = "counter_F"
 triggerall = (command = "counter_a" + command = "counter_b" + command = "counter_c") >= 2 || (command = "counter_x" + command = "counter_y" + command = "counter_z") >= 2
 triggerall = roundstate = 2 && statetype != A
@@ -461,7 +459,6 @@ trigger1 = gethitvar(ctrltime) > 5
 [State -1, Retreat]
 type = changestate
 value = 5230
-triggerall = !AIlevel
 triggerall = command = "/$F" || command = "/$B"
 triggerall = command = "a" || command = "b" || command = "c"
 triggerall = roundstate = 2 && alive
@@ -471,7 +468,6 @@ trigger1 = gethitvar(fall.recover)
 [State -1, Forward Roll]
 type = changestate
 value = 720
-triggerall = !AIlevel
 triggerall = var(82)
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ifelse(var(92), command = "/$B", command = "/$F")
@@ -480,7 +476,6 @@ trigger1 = ctrl || stateno = [100, 101]
 [State -1, Back Roll]
 type = changestate
 value = 725
-triggerall = !AIlevel
 triggerall = var(82)
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ifelse(var(92), command = "/$F", command = "/$B")
@@ -489,7 +484,6 @@ trigger1 = ctrl || stateno = [100, 101]
 [State -1, Dodge]
 type = changestate
 value = 710
-triggerall = !AIlevel
 triggerall = var(82)
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ctrl || stateno = [100, 101]
@@ -497,7 +491,6 @@ trigger1 = ctrl || stateno = [100, 101]
 [State -1, Darkness Illusion]
 type = changestate
 value = 4000
-triggerall = !AIlevel
 triggerall = var(86)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 3000 && !var(50)
@@ -509,7 +502,6 @@ trigger3 = stateno != [255, 256]
 [State -1, Eternal Slumber]
 type = changestate
 value = 4100
-triggerall = !AIlevel
 triggerall = var(97)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 3000 && !var(50)
@@ -521,7 +513,6 @@ trigger3 = (stateno = [200, 499])
 [State -1, Air Darkness Illusion]
 type = changestate
 value = 4050
-triggerall = !AIlevel
 triggerall = var(94)
 triggerall = roundstate = 2 && statetype = A
 triggerall = power >= 2000 && !var(50)
@@ -531,7 +522,6 @@ trigger2 = var(55) || (var(56) && (stateno != [4000, 4099]))
 [State -1, Finishing Shower]
 type = changestate
 value = 3300
-triggerall = !AIlevel
 triggerall = var(70)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 2000 && !var(50)
@@ -542,7 +532,6 @@ trigger2 = var(55) || (var(56) && stateno != 3300)
 [State -1, Valkyrie Turn]
 type = changestate
 value = 3400
-triggerall = !AIlevel
 triggerall = var(93)
 triggerall = roundstate = 2
 triggerall = power >= 1000
@@ -552,7 +541,6 @@ trigger2 = var(55) || (var(56) && stateno != 3401)
 [State -1, Cardinal Blade]
 type = changestate
 value = 3100
-triggerall = !AIlevel
 triggerall = var(68)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 1000
@@ -562,7 +550,6 @@ trigger2 = var(55) || (var(56) && stateno != 3100)
 [State -1, Air Soul Phoenix]
 type = changestate
 value = 3050
-triggerall = !AIlevel
 triggerall = var(69)
 triggerall = roundstate = 2 && statetype = A
 triggerall = power >= 1000
@@ -573,7 +560,6 @@ trigger2 = var(55) || (var(56) && stateno != 3050)
 [State -1, Soul Phoenix]
 type = changestate
 value = 3000
-triggerall = !AIlevel
 triggerall = var(69)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 1000
@@ -584,7 +570,6 @@ trigger2 = var(55) || (var(56) && stateno != 3000)
 [State -1, EX Shadow Blade]
 type = changestate
 value = 1110
-triggerall = !AIlevel
 triggerall = var(75)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 500
@@ -594,7 +579,6 @@ trigger2 = var(54)
 [State -1, EX Vector Drain]
 type = changestate
 value = 1330
-triggerall = !AIlevel
 triggerall = var(77)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 500
@@ -604,7 +588,6 @@ trigger2 = var(54)
 [State -1, EX Parasite Roll]
 type = changestate
 value = 1250
-triggerall = !AIlevel
 triggerall = var(67)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 500
@@ -614,7 +597,6 @@ trigger2 = var(54)
 [State -1, EX Air Soul Fist]
 type = changestate
 value = 1060
-triggerall = !AIlevel
 triggerall = var(95)
 triggerall = roundstate = 2 && statetype = A
 triggerall = power >= 500
@@ -625,7 +607,6 @@ trigger2 = var(54)
 [State -1, EX Soul Fist]
 type = changestate
 value = 1010
-triggerall = !AIlevel
 triggerall = var(72)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 500
@@ -636,21 +617,17 @@ trigger2 = var(54)
 [State -1, EX Pursuit]
 type = changestate
 value = 1930
-triggerall = !AIlevel
 triggerall = power >= 500
 triggerall = roundstate = 2 && statetype != A
 triggerall = command = "holdup"
 triggerall = var(91) || var(90)
 triggerall = numenemy
-triggerall = p2, alive && p2stateno != 5120
-triggerall = p2, hitfall || p2statetype = L
 trigger1 = ctrl || stateno = 40 || stateno = 52
 trigger1 = prevstateno != 425;jump cancel
 
 [State -1, Shadow Blade]
 type = changestate
 value = 1100
-triggerall = !AIlevel
 triggerall = var(74)
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ctrl || stateno = 40 || stateno = 52
@@ -659,7 +636,6 @@ trigger2 = var(54)
 [State -1, Vector Drain]
 type = changestate
 value = 1300
-triggerall = !AIlevel
 triggerall = var(76)
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ctrl || stateno = 40 || stateno = 52
@@ -668,7 +644,6 @@ trigger2 = var(54)
 [State -1, Parasite Roll]
 type = changestate
 value = 1200
-triggerall = !AIlevel
 triggerall = var(66)
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ctrl || stateno = 40 || stateno = 52
@@ -677,7 +652,6 @@ trigger2 = var(54)
 [State -1, Air Soul Fist]
 type = changestate
 value = 1050
-triggerall = !AIlevel
 triggerall = var(71)
 triggerall = roundstate = 2 && statetype = A
 triggerall = !var(120) || var(50) > 0
@@ -687,7 +661,6 @@ trigger2 = var(54)
 [State -1, Soul Fist]
 type = changestate
 value = 1000
-triggerall = !AIlevel
 triggerall = var(71)
 triggerall = roundstate = 2 && statetype != A
 triggerall = !var(120) || var(50) > 0
@@ -697,20 +670,16 @@ trigger2 = var(54)
 [State -1, Pursuit]
 type = changestate
 value = 1900
-triggerall = !AIlevel
 triggerall = roundstate = 2 && statetype != A
 triggerall = command = "holdup"
 triggerall = var(79) || var(83) || var(84) || var(102) || var(103) || var(104)
 triggerall = numenemy
-triggerall = p2, alive && p2stateno != 5120
-triggerall = p2, hitfall || p2statetype = L
 trigger1 = ctrl || stateno = 40 || stateno = 52
 trigger1 = prevstateno != 425;jump cancel
 
 [State -1, Throw]
 type = changestate
 value = 800
-triggerall = !AIlevel
 triggerall = command = "holdfwd" || command = "holdback"
 triggerall = var(91) || var(90)
 triggerall = roundstate = 2 && statetype = S
@@ -719,7 +688,6 @@ trigger1 = ctrl
 [State -1, Dark Force]
 type = changestate
 value = 770
-triggerall = !AIlevel
 triggerall = var(85)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 2000
@@ -729,7 +697,6 @@ trigger1 = ctrl
 [State -1, Power Charge]
 type = changestate
 value = 740
-triggerall = !AIlevel
 triggerall = command = "/b" && command = "/y"
 triggerall = roundstate = 2 && statetype != A
 triggerall = power < const(data.power) && power < powermax
@@ -739,7 +706,6 @@ trigger1 = ctrl
 [State -1, SHK2]
 type = changestate
 value = 255
-triggerall = !AIlevel
 triggerall = var(84)
 triggerall = command = "holdfwd"
 triggerall = statetype != A && command != "holddown"
@@ -752,7 +718,6 @@ trigger3 = (stateno = [400, 420]) || (stateno = [430, 445])
 [State -1, CHP2]
 type = changestate
 value = 425
-triggerall = !AIlevel
 triggerall = var(104)
 triggerall = command = "holddown" && command = "holdfwd"
 triggerall = statetype != A
@@ -765,7 +730,6 @@ trigger3 = (stateno = [400, 410]) || (stateno = [430, 445])
 [State -1, CHK]
 type = changestate
 value = 450
-triggerall = !AIlevel
 triggerall = var(84)
 triggerall = statetype != A && command = "holddown"
 trigger1 = ctrl
@@ -777,7 +741,6 @@ trigger3 = (stateno = [400, 420]) || (stateno = [430, 445])
 [State -1, CHP]
 type = changestate
 value = 420
-triggerall = !AIlevel
 triggerall = var(104)
 triggerall = statetype != A && command = "holddown"
 trigger1 = ctrl
@@ -789,7 +752,6 @@ trigger3 = (stateno = [400, 410]) || (stateno = [430, 445])
 [State -1, SHK]
 type = changestate
 value = 250
-triggerall = !AIlevel
 triggerall = var(84)
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
@@ -801,7 +763,6 @@ trigger3 = (stateno = [400, 420]) || (stateno = [430, 445])
 [State -1, SHP]
 type = changestate
 value = ifelse((abs(var(129)) <= (const(size.xscale) * 16)), 221, 220); 14 Hunter
-triggerall = !AIlevel
 triggerall = var(104)
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
@@ -813,7 +774,6 @@ trigger3 = (stateno = [400, 410]) || (stateno = [430, 445])
 [State -1, CMK2]
 type = changestate
 value = 445
-triggerall = !AIlevel
 triggerall = var(83)
 triggerall = command = "holddown" && command = "holdfwd"
 triggerall = statetype != A
@@ -826,7 +786,6 @@ trigger3 = (stateno = [400, 410]) || stateno = 430
 [State -1, CMK]
 type = changestate
 value = 440
-triggerall = !AIlevel
 triggerall = var(83)
 triggerall = statetype != A && command = "holddown"
 trigger1 = ctrl
@@ -838,7 +797,6 @@ trigger3 = (stateno = [400, 410]) || stateno = 430
 [State -1, CMP]
 type = changestate
 value = 410
-triggerall = !AIlevel
 triggerall = var(103)
 triggerall = statetype != A && command = "holddown"
 trigger1 = ctrl
@@ -848,7 +806,6 @@ trigger2 = stateno = [200, 201] || stateno = 400 || stateno = 230 || stateno = 4
 [State -1, SMK]
 type = changestate
 value = 240
-triggerall = !AIlevel
 triggerall = var(83)
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
@@ -860,7 +817,6 @@ trigger3 = (stateno = [400, 410]) || stateno = 430
 [State -1, SMP]
 type = changestate
 value = ifelse(abs(var(129)) <= (const(size.xscale) * 20), 211, 210);18 Hunter
-triggerall = !AIlevel
 triggerall = var(103)
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
@@ -872,7 +828,6 @@ trigger3 = stateno = 400 || stateno = 430
 [State -1, CLK]
 type = changestate
 value = 430
-triggerall = !AIlevel
 triggerall = var(79)
 triggerall = statetype != A && command = "holddown"
 trigger1 = ctrl
@@ -883,7 +838,6 @@ trigger3 = stateno = [200, 201] || stateno = 400
 [State -1, CLP]
 type = changestate
 value = 400
-triggerall = !AIlevel
 triggerall = var(102)
 triggerall = statetype != A && command = "holddown"
 trigger1 = ctrl
@@ -892,7 +846,6 @@ trigger2 = (stateno = [200, 201] || stateno = 230 || stateno = 400) && time >= 5
 [State -1, SLK]
 type = changestate
 value = 230
-triggerall = !AIlevel
 triggerall = var(79)
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
@@ -903,7 +856,6 @@ trigger3 = (stateno = [200, 201] || stateno = 230 || stateno = 400) && time >= 5
 [State -1, SLP]
 type = changestate
 value = ifelse(abs(var(129)) <= (const(size.xscale) * 20), 201, 200);18 Hunter
-triggerall = !AIlevel
 triggerall = var(102)
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
@@ -912,7 +864,6 @@ trigger2 = (stateno = [200, 201] || stateno = 230 || stateno = 400) && time >= 5
 [State -1, AHK]
 type = changestate
 value = 650
-triggerall = !AIlevel
 triggerall = var(84)
 triggerall = statetype = A
 trigger1 = ctrl
@@ -922,7 +873,6 @@ trigger2 = ((movecontact + movereversed) = [1, 4]) && (prevstateno != [100, 105]
 [State -1, AHP]
 type = changestate
 value = 620
-triggerall = !AIlevel
 triggerall = var(104)
 triggerall = statetype = A
 trigger1 = ctrl
@@ -932,7 +882,6 @@ trigger2 = ((movecontact + movereversed) = [1, 4]) && (prevstateno != [100, 105]
 [State -1, AMK]
 type = changestate
 value = 640
-triggerall = !AIlevel
 triggerall = var(83)
 triggerall = statetype = A
 trigger1 = ctrl
@@ -942,7 +891,6 @@ trigger2 = ((movecontact + movereversed) = [1, 4]) && (prevstateno != [100, 105]
 [State -1, AMP]
 type = changestate
 value = 610
-triggerall = !AIlevel
 triggerall = var(103)
 triggerall = statetype = A
 trigger1 = ctrl
@@ -952,7 +900,6 @@ trigger2 = ((movecontact + movereversed) = [1, 4]) && (prevstateno != [100, 105]
 [State -1, ALK]
 type = changestate
 value = ifelse(vel x, 630, 631)
-triggerall = !AIlevel
 triggerall = var(79)
 triggerall = statetype = A
 trigger1 = ctrl
@@ -962,7 +909,6 @@ trigger2 = ((movecontact + movereversed) = [1, 4]) && (prevstateno != [100, 105]
 [State -1, ALP]
 type = changestate
 value = 600
-triggerall = !AIlevel
 triggerall = var(102)
 triggerall = statetype = A
 trigger1 = ctrl
@@ -970,7 +916,6 @@ trigger1 = ctrl
 [State -1, Air Dash]
 type = changestate
 value = ifelse(var(80), 105, 100)
-triggerall = !AIlevel
 triggerall = var(81) || var(80)
 triggerall = roundstate = 2 && statetype = A
 trigger1 = ctrl
@@ -979,7 +924,6 @@ trigger1 = stateno != [100, 105]
 [State -1, Dash]
 type = changestate
 value = ifelse(var(73), 105, 100)
-triggerall = !AIlevel
 triggerall = var(78) || var(73)
 triggerall = roundstate = 2 && statetype = S
 trigger1 = ctrl
@@ -988,7 +932,6 @@ trigger1 = stateno != [100, 105]
 [State -1, Taunt]
 type = changestate
 value = 195
-triggerall = !AIlevel
 triggerall = var(96)
 triggerall = statetype != A
 trigger1 = ctrl || stateno = 40 || stateno = 52
@@ -1009,89 +952,62 @@ ignorehitpause = 1
 
 [State -1, AI Combo Window - Ground]
 type = varset
-trigger1 = AIlevel
 trigger1 = numenemy
 trigger1 = p2movetype = H
 trigger1 = p2statetype = S || p2statetype = C
-trigger1 = p2, gethitvar(hitshaketime) > 0 || p2, gethitvar(hittime) > 0
-value = p2, gethitvar(hitshaketime) + p2, gethitvar(hittime) + 1
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Air]
 type = varset
-trigger1 = AIlevel
 trigger1 = numenemy
-trigger1 = p2, hitshakeover = 1
 trigger1 = p2movetype = H
 trigger1 = p2statetype = A
 trigger1 = p2stateno != [5200, 5219]
-trigger1 = p2, hitfall
-trigger1 = p2, dizzy = 0
-value = (-(p2, vel y) + (((p2, vel y) ** 2 - 2 * 0.4850 * (p2, pos y)) ** 0.5)) / 0.4850
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Air]
 type = varset
-trigger1 = AIlevel
 trigger1 = numenemy
-trigger1 = p2, hitshakeover = 0
 trigger1 = p2movetype = H
 trigger1 = p2statetype = A
-trigger1 = p2, hitfall
-trigger1 = p2, dizzy = 0
-trigger1 = p2, gethitvar(yaccel) != 0
-value = (p2, gethitvar(hitshaketime)) + ((-(p2, gethitvar(yvel)) ** 2 + (((p2, gethitvar(yvel)) - 2 * (p2, gethitvar(yaccel)) * (p2, pos y)) ** 0.5)) / (p2, gethitvar(yaccel)))
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Down]
 type = varset
-trigger1 = AIlevel
 trigger1 = numenemy
 trigger1 = p2movetype = H
 trigger1 = p2statetype = L
 trigger1 = p2stateno != 5120
-trigger1 = p2, time < 30
+trigger1 = 1
 value = 60
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Dizzy]
 type = varset
-triggerall = AIlevel
 triggerall = numenemy
-trigger1 = p2, anim = 5300
-trigger2 = p2stateno = p2, const(statedizzy)
-trigger3 = p2stateno = p2, const(stateguardbreakhit) || p2stateno = p2, const(stateguardbreakrecover)
+trigger1 = 1
+trigger2 = p2stateno = 5900
 value = 60
 ignorehitpause = 1
 
 [State -1, AI Combo Window - Dizzy]
 type = varset
-trigger1 = AIlevel
 trigger1 = numenemy
-trigger1 = p2, dizzy || p2, dizzypoints <= 0
-trigger1 = p2stateno != p2, const(statedizzy)
+trigger1 = p2stateno != 5900
 value = -1
 ignorehitpause = 1
 
 [State -1, AI Punish Window]
 type = null
-triggerall = AIlevel
 triggerall = numenemy
-triggerall = 1 || var(55) = (p2, vel y - var(61))
-triggerall = 1 || var(61) = p2, vel y
-trigger1 = p2, ctrl || p2movetype = H; || (p2movetype = A && p2, movecontact = 0 && p2, movereversed = 0)
 trigger1 = 1 || var(62) = 0
-trigger2 = p2, vel y = 0
-trigger2 = 1 || var(62) = -(p2, animtime)
-trigger3 = p2, vel y != 0
+trigger2 = 1 || var(62) = -(-10)
 trigger3 = var(55) != 0
-trigger3 = 1 || var(62) = (-(p2, vel y) + (((p2, vel y) ** 2 - 2 * var(55) * (p2, pos y)) ** 0.5)) / var(55)
 ignorehitpause = 1
 
 [State -1, AI Attack Window]
 type = varset
-trigger1 = AIlevel
-value = floor(max(var(52), var(62)) + ((random % 9) / AIlevelF))
+value = floor(max(var(52), var(62)) + ((random % 9)))
 ignorehitpause = 1
 
 
@@ -1100,7 +1016,6 @@ ignorehitpause = 1
 [State -1, Back Dash]
 type = changestate
 value = 105
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2
@@ -1109,53 +1024,41 @@ triggerall = ctrl && (stateno != [100, 106])
 triggerall = !var(118)
 triggerall = backedgedist >= 80
 trigger1 = p2movetype = A
-trigger1 = p2bodydist x = [80, 120] && (p2, vel x = [-12, 2])
-trigger1 = random < ifelse((p2, hitdefattr = SC, AT), 150, 50)
 
 [State -1, Jump]
 type = changestate
 value = 40
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ctrl
 trigger1 = p2movetype = A
-trigger1 = p2, hitdefattr = SC, AT || (p2stateno = var(59) && p2statetype != A)
 
 [State -1, Forward Roll]
 type = changestate
 value = 720
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && statetype != A
 triggerall = !var(118)
 trigger1 = ctrl
 trigger1 = p2movetype = A
-trigger1 = p2, vel y <= 0 && p2bodydist x = [-5, 40]
-trigger1 = p2, stagefrontedgedist < p2, stagebackedgedist
-trigger1 = !(p2, hitdefattr = SC, AT || p2stateno = var(59))
 trigger1 = random < 50
 
 [State -1, Dodge]
 type = changestate
 value = 710
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && statetype != A
 triggerall = !var(118)
 trigger1 = ctrl
 trigger1 = p2movetype = A
-trigger1 = p2, vel y <= 0 && p2bodydist x = [30, 80]
-trigger1 = !(p2, hitdefattr = SC, AT || p2stateno = var(59))
 trigger1 = random < 50
 
 [State -1, Roll Fireballs]; incorporate into roll/dodge code blocks later
 type = changestate
 value = ifelse(random < 500 && var(62) >= 20, 720, 710)
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && statetype != A
@@ -1164,13 +1067,11 @@ trigger1 = inguarddist
 trigger1 = numenemy = 1
 trigger1 = var(56) || p2bodydist x >= 150
 trigger1 = var(58) = [1, 16]
-trigger1 = !(p2, hitdefattr = SCA, AT)
 trigger1 = random < 100
 
 [State -1, Guard]
 type = changestate
 value = 120
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2
@@ -1178,9 +1079,8 @@ triggerall = inguarddist
 trigger1 = ctrl
 trigger1 = stateno != [120, 155]
 trigger1 = statetype != A || p2statetype = A || p2movetype != A
-trigger1 = p2, hitdefattr != SCA, AT && p2stateno != var(59)
 trigger1 = life > 10 || p2stateno = [200, 799]
-trigger1 = p2, time < 90 || random < 30
+trigger1 = 1 || random < 30
 trigger1 = isasserted(nostandguard) = 0 || statetype != S
 trigger1 = isasserted(nocrouchguard) = 0 || statetype != C
 trigger1 = isasserted(noairguard) = 0 || statetype != A
@@ -1189,7 +1089,6 @@ trigger1 = stateno != [100, 105]
 [State -1, Guard Cancel]
 type = changestate
 value = 750
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && statetype != A
@@ -1201,7 +1100,6 @@ trigger1 = (p2bodydist x = [-5, 50]) && life < 250
 [State -1, Ground Fall Recovery]
 type = changestate
 value = 5200
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && alive
@@ -1214,7 +1112,6 @@ trigger1 = random < 200
 [State -1, Air Fall Recovery]
 type = changestate
 value = 5210
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && alive
@@ -1226,7 +1123,6 @@ trigger1 = random < 100
 [State -1, Retreat]
 type = changestate
 value = 5230
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && alive
@@ -1237,39 +1133,30 @@ trigger1 = random < 250
 [State -1, Pursuit]
 type = changestate
 value = 1900
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = A
-triggerall = p2movetype = H && p2, hitfall
 triggerall = p2dist y >= -120
-triggerall = p2, vel y >= 0
 trigger1 = ctrl
-trigger1 = p2, alive
 trigger1 = random < var(53) * 200
 
 [State -1, EX Pursuit]
 type = changestate
 value = 1930
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = statetype != A && roundstate = 2
 triggerall = power >= 500
 triggerall = power != [3000, 3499] && (power >= 1500 || random < 500)
 triggerall = p2statetype = A
-triggerall = p2movetype = H && p2, hitfall
 triggerall = p2dist y >= -120
-triggerall = p2, vel y >= 0
 trigger1 = ctrl
-trigger1 = p2, alive
 trigger1 = random < var(53) * 50
 
 [State -1, Vector Drain]
 type = changestate
 value = 1300
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1288,7 +1175,6 @@ trigger2 = random < var(53) * 250
 [State -1, Throw]
 type = changestate
 value = 800
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && statetype = S
@@ -1305,30 +1191,24 @@ trigger2 = random < var(53) * 100
 [State -1, SLP]
 type = changestate
 value = ifelse(abs(var(129)) <= (const(size.xscale) * 20), 201, 200)
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = A
-triggerall = (p2bodydist x = [-5, 25]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 4
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 
 [State -1, SMP]
 type = changestate
 value = ifelse(abs(var(129)) <= (const(size.xscale) * 20), 211, 210)
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [-5, 50]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 6
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1338,13 +1218,11 @@ trigger2 = stateno = [200, 201] || stateno = 230 || stateno = 400 || stateno = 4
 [State -1, SHP]
 type = changestate
 value = ifelse((abs(var(129)) <= (const(size.xscale) * 16)) && stateno != [200, 499], 221, 220)
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = p2bodydist x <= 75 && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 9
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1355,15 +1233,12 @@ trigger1 = random < var(53) * 50
 [State -1, SLK]
 type = changestate
 value = 230
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [-5, 25]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 5
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1373,15 +1248,12 @@ trigger2 = stateno = [200, 201] || stateno = 400
 [State -1, SMK]
 type = changestate
 value = 240
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = p2bodydist x = [30, 50] && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 7
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1391,7 +1263,6 @@ trigger2 = stateno = [210, 211] || stateno = 230 || stateno = 410 || stateno = 4
 [State -1, SHK2]
 type = changestate
 value = 255
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1399,7 +1270,6 @@ triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = C
 triggerall = p2movetype != A
 triggerall = (p2bodydist x = [50, 75]) && (p2dist y = [-50, 60])
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 triggerall = var(54) || var(50) >= 9
 trigger1 = ctrl
 trigger1 = random < var(53) * 20
@@ -1411,28 +1281,23 @@ trigger2 = stateno = [210, 211] || stateno = [220, 221] || stateno = 240 || stat
 [State -1, SHK]
 type = changestate
 value = 250
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = p2bodydist x = [60, 75] && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 7
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 
 [State -1, CLP]
 type = changestate
 value = 400
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [-5, 20]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 4
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1443,13 +1308,11 @@ trigger2 = stateno = [200, 201] || stateno = 230
 [State -1, CMP]
 type = changestate
 value = 410
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [-5, 40]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 5
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1460,7 +1323,6 @@ trigger2 = stateno = [200, 201] || stateno = 230 || stateno = 400 || stateno = 4
 [State -1, CHP2]
 type = changestate
 value = 425
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1479,13 +1341,11 @@ trigger2 = stateno = [210, 211] || stateno = 240 || stateno = 410 || stateno = [
 [State -1, CHP]
 type = changestate
 value = 420
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = p2bodydist x = [40, 60] && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 7
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1496,13 +1356,11 @@ trigger2 = stateno = [210, 211] || stateno = 240 || stateno = 410 || stateno = [
 [State -1, CLK]
 type = changestate
 value = 430
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [-5, 20]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 4
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1513,13 +1371,11 @@ trigger2 = stateno = [200, 201] || stateno = 230 || stateno = 400
 [State -1, CMK2]
 type = changestate
 value = 445
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [40, 64]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 6
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1527,13 +1383,11 @@ trigger1 = random < var(53) * 50
 [State -1, CMK]
 type = changestate
 value = 440
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = (p2bodydist x = [30, 50]) && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 5
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1544,13 +1398,11 @@ trigger2 = stateno = [200, 201] || stateno = 230 || stateno = 400 || stateno = 4
 [State -1, CHK]
 type = changestate
 value = 450
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
-triggerall = p2bodydist x = [45, 70] && p2dist y = [-50, 60] && !(p2, hitfall)
 triggerall = var(54) || var(50) >= 9
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1566,28 +1418,24 @@ trigger3 = p2bodydist x <= 30
 [State -1, ALP]
 type = changestate
 value = 600
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = (p2bodydist x = [-5, 25]) && p2dist y = [-50, 60] && !(p2, hitfall)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 
 [State -1, AMP]
 type = changestate
 value = 610
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = (p2bodydist x = [-5, 50]) && p2dist y = [-50, 60] && !(p2, hitfall)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1597,14 +1445,12 @@ trigger2 = stateno = 600 || stateno = [630, 631]
 [State -1, AHP]
 type = changestate
 value = 620
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = (p2bodydist x = [-5, 75]) && p2dist y = [-50, 60] && !(p2, hitfall)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1614,14 +1460,12 @@ trigger2 = stateno = 610 || stateno = 640
 [State -1, ALK]
 type = changestate
 value = ifelse(vel x, 630, 631)
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = (p2bodydist x = [-5, 25]) && p2dist y = [-50, 60] && !(p2, hitfall)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1631,14 +1475,12 @@ trigger2 = stateno = 600
 [State -1, AMK]
 type = changestate
 value = 640
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = (p2bodydist x = [-50, 50]) && p2dist y = [-50, 60] && !(p2, hitfall)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1648,14 +1490,12 @@ trigger2 = stateno = 610 || stateno = [630, 631]
 [State -1, AHK]
 type = changestate
 value = 650
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = (p2bodydist x = [-5, 75]) && p2dist y = [-50, 60] && !(p2, hitfall)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -1665,22 +1505,18 @@ trigger2 = stateno = 610 || stateno = 620 || stateno = 640
 [State -1, Shadow Blade]
 type = changestate
 value = 1100
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype != A
 triggerall = p2movetype = H || p2movetype = A
 triggerall = p2statetype = A
-triggerall = (p2stateno != [120, 155] || p2statetype = A) && !(p2, hitfall)
-triggerall = (p2bodydist x = [-5, 55]) && (p2dist y >= -180) && (p2, vel y > -1) && (p2, vel x > -2)
 trigger1 = ctrl
 trigger1 = random < var(53) * 200
 
 [State -1, Parasite Roll]
 type = changestate
 value = 1200
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && statetype != A
@@ -1695,7 +1531,6 @@ trigger1 = random < var(53) * 100
 [State -1, Air Soul Fist]
 type = changestate
 value = 1050
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1715,7 +1550,6 @@ trigger2 = random < var(53) * 50
 [State -1, Soul Fist]
 type = changestate
 value = 1000
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1723,14 +1557,12 @@ triggerall = roundstate = 2 && statetype != A
 triggerall = !var(120)
 triggerall = !inguarddist
 triggerall = p2statetype = S || p2statetype = C || (p2statetype = A && p2bodydist x > 200)
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl && p2bodydist x > 120
 trigger1 = random < var(53) * ifelse(prevstateno = 1000, 100, 50)
 
 [State -1, EX Vector Drain]
 type = changestate
 value = 1330
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && statetype = S
@@ -1750,7 +1582,6 @@ trigger2 = random < var(53) * 250
 [State -1, EX Shadow Blade]
 type = changestate
 value = 1110
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1759,10 +1590,8 @@ triggerall = power >= 500
 triggerall = power != [3000, 3499] && (power >= 1500 || random < 500)
 triggerall = p2movetype = H || p2movetype = A
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = p2, hitfall = 0
 triggerall = var(56)
 triggerall = p2stateno != [120, 155]
-triggerall = p2bodydist x = [-5, 40] && (p2dist y >= -50) && (p2, vel y > -1) && (p2, vel x > -2)
 triggerall = var(54) || var(50) >= 4
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1774,7 +1603,6 @@ trigger2 = random < var(53) * 150
 [State -1, EX Parasite Roll]
 type = changestate
 value = 1250
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && statetype != A
@@ -1794,7 +1622,6 @@ trigger1 = random < var(53) * 100
 [State -1, EX Air Soul Fist]
 type = changestate
 value = 1060
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1807,13 +1634,11 @@ triggerall = !inguarddist
 triggerall = p2stateno != [120, 155]
 trigger1 = ctrl && p2dist x < 0
 trigger1 = random < var(53) * 25
-trigger2 = ctrl && p2dist y < -50 && (p2, vel y <= -4)
 trigger2 = random < var(53) * 25
 
 [State -1, EX Soul Fist]
 type = changestate
 value = 1010
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1823,7 +1648,6 @@ triggerall = !var(120) || var(50) > 0
 triggerall = power != [3000, 3499] && (power >= 1500 || random < 500)
 triggerall = !inguarddist
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
-triggerall = p2stateno != [120, 155] && (p2, vel y <= -4)
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
 trigger1 = prevstateno = 1000
@@ -1831,7 +1655,6 @@ trigger1 = prevstateno = 1000
 [State -1, Cardinal Blade]
 type = changestate
 value = 3100
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1844,7 +1667,6 @@ triggerall = (p2stateno != [120, 155] || p2statetype = A)
 triggerall = (p2bodydist x = [-5, 30]) && p2dist y >= -60
 triggerall = var(54) || var(50) >= 8
 trigger1 = ctrl
-trigger1 = random < var(53) * ifelse((p2, hitfall), 200, 50)
 trigger2 = stateno = 1100 || (stateno = [1200, 1250])
 trigger2 = var(55) && p2movetype = H
 trigger2 = movehit = [1, 16]
@@ -1853,7 +1675,6 @@ trigger2 = random < var(53) * 200
 [State -1, Valkyrie Turn]
 type = changestate
 value = 3400
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2
@@ -1863,8 +1684,6 @@ triggerall = !var(60)
 triggerall = p2statetype = S || p2statetype = A
 triggerall = var(56)
 triggerall = (p2stateno != [120, 155] || p2statetype = A)
-triggerall = (p2, pos y <= -80) && (p2, vel y <= -5)
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 triggerall = var(54) || var(50) >= 32
 trigger1 = ctrl
 trigger1 = p2movetype = A
@@ -1886,7 +1705,7 @@ trigger4 = var(56) && numhelper(3055)
 trigger4 = helper(3005), stateno = 3056
 trigger4 = random < var(53) * 100
 trigger5 = ctrl
-trigger5 = p2, animtime <= -40
+trigger5 = -10 <= -40
 trigger5 = var(57) > 0
 trigger5 = var(58) = [1, 40]
 trigger5 = random < var(53) * 200
@@ -1894,7 +1713,6 @@ trigger5 = random < var(53) * 200
 [State -1, Air Soul Phoenix]
 type = changestate
 value = 3050
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1906,7 +1724,6 @@ triggerall = var(109) < 2 || stateno = [1000, 4999]
 triggerall = p2statetype = S || p2statetype = C || (p2statetype = L && p2stateno != 5120)
 triggerall = var(56)
 triggerall = (p2stateno != [120, 155] || p2statetype = A) || p2life <= 40
-triggerall = (p2bodydist x = [-5, 180]) && p2dist y >= -20 && (p2, vel y > -3)
 triggerall = var(54) || var(50) >= 9
 trigger1 = ctrl
 trigger1 = p2dist x = [p2dist y * 0.8, p2dist y * 1.2]
@@ -1933,7 +1750,6 @@ trigger6 = random < var(53) * 200
 [State -1, Soul Phoenix]
 type = changestate
 value = 3000
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1945,8 +1761,6 @@ triggerall = var(109) < 2 || stateno = [1000, 4999]
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
 triggerall = var(56)
 triggerall = (p2stateno != [120, 155] || p2statetype = A) || p2life <= 40
-triggerall = (p2bodydist x = [-5, 120]) && p2dist y > -60 && (p2, vel y > -2)
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 triggerall = var(54) || var(50) >= 9
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
@@ -1962,7 +1776,6 @@ trigger4 = random < var(53) * 100
 [State -1, Finishing Shower]
 type = changestate
 value = 3300
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1974,11 +1787,9 @@ triggerall = var(109) < 2 || stateno = [1000, 4999]
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
 triggerall = var(56)
 triggerall = p2stateno != [120, 155]
-triggerall = p2bodydist x >= 10 && p2dist y >= -120 && p2, vel y >= -6
 triggerall = var(54) || var(50) >= 40
 trigger1 = ctrl
 trigger1 = p2bodydist x >= 140
-trigger1 = p2life <= 30 || p2, guardpoints <= 40
 trigger1 = random < var(53) * 200
 trigger2 = stateno = 3000
 trigger2 = var(56) && p2movetype = H
@@ -1989,7 +1800,6 @@ trigger2 = random < var(53) * 100
 [State -1, Darkness Illusion]
 type = changestate
 value = 4000
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1999,7 +1809,6 @@ triggerall = var(109) < 1 || stateno = [1000, 4999]
 triggerall = p2statetype = S || p2statetype = C
 triggerall = var(56)
 triggerall = (p2stateno != [120, 155] || p2statetype = A)
-triggerall = (p2bodydist x = [-5, 90]) && (p2dist y >= -120) && (p2, vel y = [-2, 2]) && (p2, vel x > -3)
 triggerall = var(54) || var(50) >= 4
 trigger1 = ctrl || stateno = [200, 499]
 trigger1 = stateno != [255, 256]
@@ -2010,7 +1819,6 @@ trigger2 = random < var(53) * ifelse((movehit = [1, 16]), 100, 50)
 [State -1, Eternal Slumber]
 type = changestate
 value = 4100
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -2018,9 +1826,8 @@ triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 3000 && !var(50)
 triggerall = !var(120)
 triggerall = p2statetype = S || p2statetype = C
-triggerall = !(p2, ctrl)
+triggerall = 1
 triggerall = p2bodydist x <= 25 && p2dist y >= -40
-triggerall = p2, const(size.head.pos.y) <= -60 || p2statetype = A
 trigger1 = ctrl
 trigger1 = p2stateno = [120, 132]
 trigger1 = random < var(53) * 100
@@ -2028,7 +1835,6 @@ trigger1 = random < var(53) * 100
 [State -1, Forward Dash]
 type = changestate
 value = 100
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2
@@ -2040,13 +1846,11 @@ trigger1 = stateno != [100, 106]
 trigger1 = random < ifelse(var(120), 100, 33)
 trigger2 = ctrl
 trigger2 = stateno != [100, 106]
-trigger2 = p2stateno = p2, const(statedizzy) || p2stateno = p2, const(stateguardbreakhit) || p2stateno = p2, const(stateguardbreakrecover)
 trigger2 = random < var(53) * 100
 
 [State -1, Power Charge]
 type = changestate
 value = 740
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && statetype != A
@@ -2061,15 +1865,11 @@ trigger1 = random < ifelse(power < 1000, 150, ifelse(power < 2000, 100, 50))
 [State -1, Taunt]
 type = changestate
 value = 195
-triggerall = AIlevel
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = statetype != A
 triggerall = life >= 0.5 * lifemax
-triggerall = p2, lifemax != 0; Avoid division by 0
-triggerall = (1.0 * p2life / p2, lifemax) < (0.5 * life / lifemax)
 triggerall = prevstateno != [170, 199]
 trigger1 = ctrl
-trigger1 = p2bodydist x >= 140 && !(p2, ctrl)
-trigger1 = p2movetype = H && p2, hitfall
+trigger1 = p2bodydist x >= 140 && 1
 trigger1 = random < 50

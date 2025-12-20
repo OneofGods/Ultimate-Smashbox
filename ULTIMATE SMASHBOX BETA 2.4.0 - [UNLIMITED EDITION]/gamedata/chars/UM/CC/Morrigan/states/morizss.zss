@@ -590,7 +590,7 @@ ignorehitpause {
 # TODO: Restore fireball potential in Dark Force?
 
 # +1, Variable Height
-ignorehitpause if !ishelper && stateno != [200,399] {
+ignorehitpause if !ishelper && !incustomstate {
 	if statetype = A && movetype != H && p2statetype != A {
 		# Several compromises made to keep compatibility with Mugen characters
 		let vh_box_top = 78; #VS
@@ -629,7 +629,7 @@ ignorehitpause if map(exflash) > 0 && pausetime = 0 { # PalFX does not update wh
 
 # Fake Hit Sparks
 # Placed here because you can't use functions in CNS
-if stateno = [0,199] && pausetime = 0 {
+if incustomstate = 0 && pausetime = 0 {
 	# Throw
 	if stateno = 820 && animelem = 8 {
 		let spark_no = 8021;
@@ -641,7 +641,6 @@ if stateno = [0,199] && pausetime = 0 {
 
 # +1, Debug text
 ignorehitpause if !ishelper {
-	if !AIlevel {
 		displaytoclipboard{
 			text: "Damage = %.1f%% Juggle = %d Unthrowable = %d";
 			params: attack, ceil(map(juggle_count)), ceil(map(unthrowable));
@@ -675,7 +674,7 @@ ignorehitpause if p2movetype = H && p2statetype = A {
 	&& p2, gethitvar(fall.recover)
 	&& p2, gethitvar(isbound) = 0
 	&& p2, alive && p2, dizzy = 0
-	&& p2stateno = [0,199] # Fall recovery in custom states is best handled inside each state
+	&& p2, incustomstate = 0 # Fall recovery in custom states is best handled inside each state
 	&& p2, vel y > 0
 	&& p2, pos y >= p2, const(movement.air.gethit.groundrecover.ground.threshold) {
 		# Reset time when near ground
@@ -749,11 +748,10 @@ ignorehitpause if roundstate = 2 && movetype = A && numtarget {
 }
 
 # AI
-ignorehitpause if AIlevel {
 
 	# AI Fall Recovery and Throw Escape
 	if !isasserted(noinput) && (inCustomState || hitFall) {
-		if random < (250 * AIlevelF / 8.0) {
+		if random < (250 ) {
 			if random < 500 {
 				assertInput{flag: x; flag2: y; flag3: z}
 			} else {
@@ -857,9 +855,9 @@ ignorehitpause {
 		let p1ref = ifelse(p2dist x < 0, clsnvar(size, 0, back), clsnvar(size, 0, front));
 		# P2 Reference Point
 		if p2dist x >= 0 {
-			let p2ref = ifelse(p2, facing = facing, 30, 30);
+			let p2ref = ifelse(p2, facing = facing, -p2, clsnvar(size, 0, back), p2, clsnvar(size, 0, front));
 		} else {
-			let p2ref = ifelse(p2, facing = facing, 30, 30);
+			let p2ref = ifelse(p2, facing = facing, -p2, clsnvar(size, 0, front), p2, clsnvar(size, 0, back));
 		}
 		# Calculate
 		if abs(p2dist x) <= abs($p1ref + $p2ref) {
@@ -926,7 +924,7 @@ ignorehitpause if p2movetype = H && p2, time <= 0 {
 	if p2, gethitvar(playerno) = playerno
 	&& p2, gethitvar(facing) = 0
 	&& p2, hitshakeover = 0 &&	p2statetype != L
-	&& p2, hitoverridden = 0 && p2stateno = [0,199] {
+	&& p2, hitoverridden = 0 && p2, incustomstate = 0 {
 		if (p2, facing = facing && p2, p2dist x < p2, const(size.ground.front)) ||
 		(p2, facing != facing && p2, p2dist x < -(p2, const(size.ground.back))) {
 			turn{redirectID: p2, ID}
@@ -951,7 +949,7 @@ ignorehitpause if p2movetype = H {
 	if p2, time = 1 {
 		if p2, gethitvar(playerno) = playerno
 		&& (p2stateno = 5035 || p2stateno = 5050)
-		&& p2stateno = [0,199] {
+		&& p2, incustomstate = 0 {
 			if p2, vel y = [(map(p2_yaccelfix) + 1.9 * p2, gethitvar(yaccel)), (map(p2_yaccelfix) + 3.1 * p2, gethitvar(yaccel))] {
 				velset{y: map(p2_yaccelfix) + p2, gethitvar(yaccel); redirectID: p2, ID}
 			}
@@ -1028,7 +1026,6 @@ if stateno = const(StateTagEnteringScreen) {
 
 # -3, Allow win pose selection
 # This workaround is currently necessary in Ikemen because holding a button skips the win screen
-if !AIlevel && roundstate = [3, 4] {
 	if (inputtime(a) > 0 || inputtime(b) > 0 || inputtime(c) > 0 || inputtime(x) > 0 || inputtime(y) > 0 || inputtime(z) > 0 || inputtime(s) > 0) &&
 		inputtime(a) != 1 && inputtime(b) != 1 && inputtime(c) != 1 && inputtime(x) != 1 && inputtime(y) != 1 && inputtime(z) != 1 && inputtime(s) != 1 {
 		assertspecial{flag: postroundinput; flag2: roundnotskip}
@@ -1048,11 +1045,10 @@ if pausetime = 0 && p2, pausetime > 0 {
 }
 
 # AI
-ignorehitpause if AIlevel && alive && !standby && roundstate = 2 {
 
 	# AI acting frequency by difficulty
 	# This map minimizes the calls for RNG
-	mapset{map: "ai_randompass"; value: random < (1000 * (AIlevelF / 8.0))}
+	mapset{map: "ai_randompass"; value: random < (1000 )}
 
 	# AI confirmation
 	# This reduces the number of missed opportunities without making the AI too hard
@@ -1097,7 +1093,7 @@ ignorehitpause if AIlevel && alive && !standby && roundstate = 2 {
 	}
 
 	# AI Spacing
-	if AIlevelF >= 6 && !inGuardDist && stateType = S && ctrl {
+	if !inGuardDist && stateType = S && ctrl {
 		# Set spacing
 		# Unique to each char
 		if p2MoveType = H || p2, dizzy {
@@ -1357,17 +1353,16 @@ ignorehitpause {
 }
 
 # AI
-ignorehitpause if AIlevel && !ishelper {
 
 	# AI block high
 	# Also stand up to parry fireballs
 	if p2stateno != map(ai_p2standinglow)
 	&& (p2statetype = A || p2, hitdefattr = A, AA, AP || p2stateno = map(ai_p2overhead) || (p2, hitdefattr != SCA, AA, AT, AP && map(ai_p2fireball_eta) = [1, 20])) {
-		if random < (100 * (AIlevelF / 8.0)) {
+		if random < (100 ) {
 			mapset{map: "ai_blockhigh"; value: 1}
 		}
 	} else {
-		if random < (200 * (AIlevelF / 8.0)) {
+		if random < (200 ) {
 			mapset{map: "ai_blockhigh"; value: 0}
 		}
 	}
