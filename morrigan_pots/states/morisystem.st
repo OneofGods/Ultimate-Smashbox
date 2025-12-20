@@ -199,6 +199,7 @@ persistent = 0
 
 [State 40, Direction]
 type = varset
+trigger1 = 1
 sysvar(1) = ifelse(p2bodydist x < 30, 0, ifelse((life - p2life) > 200 && p2movetype != H && random < 333, -1, 1))
 
 [State 40, High Jump]
@@ -626,6 +627,7 @@ flag3 = noairguard
 
 [State 120, AI Tranquilizer]
 type = assertspecial
+trigger1 = 1
 flag = noshadow
 
 [State 120, Type]
@@ -714,6 +716,7 @@ flag2 = nocrouchguard
 
 [State 130, AI Tranquilizer]
 type = assertspecial
+trigger1 = 1
 flag = noshadow
 
 [State 130, Anim]
@@ -786,6 +789,7 @@ flag2 = nocrouchguard
 
 [State 131, AI Tranquilizer]
 type = assertspecial
+trigger1 = 1
 flag = noshadow
 
 [State 131, Anim]
@@ -829,6 +833,7 @@ flag = noairguard
 
 [State 132, AI Tranquilizer]
 type = assertspecial
+trigger1 = 1
 flag = noshadow
 
 [State 132, Anim]
