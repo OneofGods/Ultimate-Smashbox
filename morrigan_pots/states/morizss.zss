@@ -1183,13 +1183,11 @@ ignorehitpause {
 	}
 	# Increase Juggle Count
 	if pausetime = 0
-	&& movehitvar(frame)
 	&& movehit = 1
 	&& numtarget
 	&& p2, hitfall
 	&& p2movetype = H
 	&& p2, gethitvar(frame)
-	&& (p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID) {
 		if map(juggle_timer) <= 0 {
 			mapAdd{map: "juggle_count"; value: map(juggle_start); redirectID: cond(ishelper, root, ID, ID)}
 		} else {
@@ -1214,13 +1212,11 @@ ignorehitpause {
 
 # -4, Counter Hit bonus
 ignorehitpause if pausetime = 0
-&& movehitvar(frame) && movehit = 1
 && (movecountered = 1 || map(counterhit_buffer)) # MoveCountered has limits against multiple enemies
 && cond(ishelper, root, movetype != H, movetype != H) {
 	for i = 0; numPlayer - 1; 1 {
 		if playerIndexExist($i)
 		&& playerIndex($i), gethitvar(frame)
-		&& (playerIndex($i), gethitvar(ID) = ID || playerIndex($i), ID = movehitvar(ID))
 		&& playerIndex($i), movetype = H
 		&& (playerIndex($i), prevmovetype = A || playerIndex($i), receivedhits > 1) # Just countered or counter buffer active
 		&& playerIndex($i), gethitvar(guarded) = 0 {
@@ -1252,7 +1248,6 @@ ignorehitpause if pausetime = 0
 }
 
 # Generate Hit Sparks
-ignorehitpause if movehitvar(frame)
 && incustomstate = 0 && pausetime = 0
 && reversaldefattr != SCA, AA, AP, AT && hitdefattr != SCA, AT {
 	if movecontact = 1
@@ -1269,7 +1264,6 @@ ignorehitpause if movehitvar(frame)
 		for i = 0; numPlayer - 1; 1 {
 			if playerIndexExist($i)
 			&& playerIndex($i), gethitvar(frame)
-			&& (playerIndex($i), gethitvar(ID) = ID || playerIndex($i), ID = movehitvar(ID)) { # Latter in case partner hits them as well
 				let spark_no = ifelse(playerIndex($i), gethitvar(guarded), map(guard.sparkno), map(sparkno));
 				let getterdist = (playerIndex($i), pos x - pos x) * facing;
 				let spark_x = cond($getterdist > (map(sparkx.max) * $spark_scaleoffset_x), (map(sparkx.max) * $spark_scaleoffset_x), cond($getterdist > (map(sparkx.min) * $spark_scaleoffset_x), $getterdist, (map(sparkx.min) * $spark_scaleoffset_x)));
@@ -1310,7 +1304,6 @@ ignorehitpause if movehitvar(frame)
 
 # Reset Spark Variables
 ignorehitpause if map(sparkno) >= 0 || map(guard.sparkno) >= 0 {
-	if !movehitvar(frame) && hitdefattr != SCA, AA, AP {
 		mapset{map: "sparkno"; value: -1}
 		mapset{map: "guard.sparkno"; value: -1}
 		mapset{map: "sparkx.min"; value: 0}
@@ -1321,7 +1314,6 @@ ignorehitpause if map(sparkno) >= 0 || map(guard.sparkno) >= 0 {
 
 # Generate particle effects
 ignorehitpause if map(hitparticles) {
-	if movehitvar(frame) {
 		if movehit = 1 && numtarget
 		&& target, gethitvar(frame)
 		&& target, gethitvar(ID) = ID {
