@@ -3674,7 +3674,6 @@ y = -5
 type = selfstate
 trigger1 = alive
 trigger1 = life > 0
-value = const(statedizzyfalldown_air)
 
 [State 824, Dizzy Start]
 type = null

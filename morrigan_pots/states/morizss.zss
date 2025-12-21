@@ -1063,7 +1063,6 @@ if pausetime = 0 && p2, pausetime > 0 {
 	mapset{map: "ai_p2unhittable"; value: 0}
 	if p2, alive = 0 || p2, standby = 1
 	|| p2statetype = A && p2movetype = H && p2, hitfall = 0
-	|| p2, dizzy && p2stateno != p2, const(statedizzy) {
 		mapset{map: "ai_p2unhittable"; value: 1}
 	}
 
