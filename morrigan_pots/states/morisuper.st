@@ -101,6 +101,7 @@ trigger1 = animelemtime(5) < -1
 attr = SCA
 slot = 0
 time = 1
+
 [State 3000, NHB]
 type = nothitby
 trigger1 = animelemtime(5) < 1
