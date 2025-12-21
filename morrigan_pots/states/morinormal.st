@@ -277,7 +277,6 @@ forcenofall = !var(50)
 [State 210, Anim]
 type = changeanim
 trigger1 = anim = 210
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(3) >= 0 && animelemtime(4) <= 0
 value = 210
@@ -381,7 +380,6 @@ forcenofall = !var(50)
 [State 211, Anim]
 type = changeanim
 trigger1 = anim = 211
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(4) >= 0 && animelemtime(5) <= 0
 value = 211
@@ -391,7 +389,6 @@ ignorehitpause = 1
 [State 211, Anim]
 type = changeanim
 trigger1 = anim = 211
-trigger1 = hitpausetime = [1, 5]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(5) >= 0 && animelemtime(6) <= 0
 value = 211
@@ -495,7 +492,6 @@ forcenofall = !var(50)
 [State 220, Anim]
 type = changeanim
 trigger1 = anim = 220
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(5) >= 0 && animelemtime(6) <= 0
 value = 220
@@ -642,7 +638,6 @@ forcenofall = !var(50)
 [State 221, Anim]
 type = changeanim
 trigger1 = anim = 221
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 221
@@ -652,7 +647,6 @@ ignorehitpause = 1
 [State 221, Anim]
 type = changeanim
 trigger1 = anim = 221
-trigger1 = hitpausetime = [1, 5]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(3) >= 0 && animelemtime(4) <= 0
 value = 221
@@ -893,7 +887,6 @@ fall.recovertime = 120
 [State 240, Anim]
 type = changeanim
 trigger1 = anim = 240
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(4) >= 0 && animelemtime(5) <= 0
 value = 240
@@ -1005,7 +998,6 @@ value = -110
 [State 250, Anim]
 type = changeanim
 trigger1 = anim = 250
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(4) >= 0 && animelemtime(5) <= 0
 value = 250
@@ -1015,7 +1007,6 @@ ignorehitpause = 1
 [State 250, Anim]
 type = changeanim
 trigger1 = anim = 250
-trigger1 = hitpausetime = [1, 6]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(5) >= 0 && animelemtime(6) <= 0
 value = 250
@@ -1025,7 +1016,6 @@ ignorehitpause = 1
 [State 250, Anim]
 type = changeanim
 trigger1 = anim = 250
-trigger1 = hitpausetime = [1, 4]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(6) >= 0 && animelemtime(7) <= 0
 value = 250
@@ -1035,7 +1025,6 @@ ignorehitpause = 1
 [State 250, Anim]
 type = changeanim
 trigger1 = anim = 250
-trigger1 = hitpausetime = [1, 2]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(7) >= 0 && animelemtime(8) <= 0
 value = 250
@@ -1500,7 +1489,6 @@ forcenofall = !var(50)
 [State 410, Anim]
 type = changeanim
 trigger1 = anim = 410
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 410
@@ -1701,7 +1689,6 @@ fall = 1
 [State 425, Anim]
 type = changeanim
 trigger1 = anim = 425
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(3) >= 0 && animelemtime(4) <= 0
 value = 425
@@ -1711,7 +1698,6 @@ ignorehitpause = 1
 [State 425, Anim]
 type = changeanim
 trigger1 = anim = 425
-trigger1 = hitpausetime = [1, 5]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(4) >= 0 && animelemtime(5) <= 0
 value = 425
@@ -1922,7 +1908,6 @@ forcenofall = !var(50)
 [State 431, Anim]
 type = changeanim
 trigger1 = anim = 431
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 431
@@ -2027,7 +2012,6 @@ forcenofall = !var(50)
 [State 440, Anim]
 type = changeanim
 trigger1 = anim = 440
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(3) >= 0 && animelemtime(4) <= 0
 value = 440
@@ -2132,7 +2116,6 @@ forcenofall = !var(50)
 [State 445, Anim]
 type = changeanim
 trigger1 = anim = 445
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 445
@@ -2336,7 +2319,6 @@ forcenofall = !var(50)
 [State 600, Anim]
 type = changeanim
 trigger1 = anim = 600
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 600
@@ -2457,7 +2439,6 @@ forcenofall = !var(50)
 [State 610, Anim]
 type = changeanim
 trigger1 = anim = 610
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(3) >= 0 && animelemtime(4) <= 0
 value = 610
@@ -2570,7 +2551,6 @@ forcenofall = !var(50)
 [State 620, Anim]
 type = changeanim
 trigger1 = anim = 620
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(6) >= 0 && animelemtime(7) <= 0
 value = 620
@@ -2683,7 +2663,6 @@ forcenofall = !var(50)
 [State 630, Anim]
 type = changeanim
 trigger1 = anim = 630
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 630
@@ -2796,7 +2775,6 @@ forcenofall = !var(50)
 [State 631, Anim]
 type = changeanim
 trigger1 = anim = 631
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 631
@@ -2909,7 +2887,6 @@ forcenofall = !var(50)
 [State 640, Anim]
 type = changeanim
 trigger1 = anim = 640
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(3) >= 0 && animelemtime(4) <= 0
 value = 640
@@ -3022,7 +2999,6 @@ forcenofall = !var(50)
 [State 650, Anim]
 type = changeanim
 trigger1 = anim = 650
-trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
 trigger1 = animelemtime(3) >= 0 && animelemtime(4) <= 0
 value = 650

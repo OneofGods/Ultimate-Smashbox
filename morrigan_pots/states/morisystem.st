@@ -1229,7 +1229,6 @@ redirectID = 1
 type = posadd
 trigger1 = playerIDexist(1)
 trigger1 = playerID(1), movetype = A
-trigger1 = playerID(1), hitpausetime = 0
 x = -1 * playerID(1), vel x
 y = -1 * playerID(1), vel y
 
@@ -1324,7 +1323,6 @@ redirectID = 1
 type = posadd
 trigger1 = playerIDexist(1)
 trigger1 = playerID(1), movetype = A
-trigger1 = playerID(1), hitpausetime = 0
 x = -1 * playerID(1), vel x
 y = -1 * playerID(1), vel y
 
@@ -1412,7 +1410,6 @@ redirectID = 1
 type = posadd
 trigger1 = playerIDexist(1)
 trigger1 = playerID(1), movetype = A
-trigger1 = playerID(1), hitpausetime = 0
 x = -1 * playerID(1), vel x
 y = -1 * playerID(1), vel y
 
@@ -4113,7 +4110,6 @@ value = 5040
 [State -4, Helper Damage Scaling - Update Root]
 type = null
 trigger1 = ishelper
-trigger1 = pausetime = 0
 trigger1 = !var(65)
 trigger1 = movecontact && numtarget
 trigger1 = root, var(65) = 1
