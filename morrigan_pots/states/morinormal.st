@@ -51,7 +51,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -144,7 +143,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -237,7 +235,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -339,7 +336,6 @@ trigger1 = animelem = 4
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 80, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -450,7 +446,6 @@ trigger1 = animelem = 5
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 100, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -552,7 +547,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 90, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -594,7 +588,6 @@ trigger1 = !movecontact && !movereversed
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 90, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -705,7 +698,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -798,7 +790,6 @@ trigger1 = animelem = 4
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -839,7 +830,6 @@ trigger1 = prevstateno = 710
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -942,7 +932,6 @@ trigger1 = animelem = 4
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 90, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -1116,7 +1105,6 @@ trigger1 = animelem = 3 || animelem = 4
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -1159,7 +1147,6 @@ trigger1 = animelem = 5
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -1202,7 +1189,6 @@ trigger1 = animelem = 6
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -1341,7 +1327,6 @@ trigger1 = animelem = 2 || animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 20, 0
-dizzypoints = 25 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -1435,7 +1420,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 60, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -1538,7 +1522,6 @@ trigger1 = animelem = 4
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 100, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -1632,7 +1615,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 90, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Up
@@ -1756,7 +1738,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -1850,7 +1831,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -1953,7 +1933,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -2056,7 +2035,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -2159,7 +2137,6 @@ trigger1 = animelem = 4
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 80, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -2254,7 +2231,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 40, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -2373,7 +2349,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -2484,7 +2459,6 @@ trigger1 = animelem = 6
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 90, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -2595,7 +2569,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 40, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -2706,7 +2679,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 40, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -2817,7 +2789,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -2928,7 +2899,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 90, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -3364,13 +3334,11 @@ y = -5.5
 type = null
 trigger1 = alive
 trigger1 = life > 0
-trigger1 = dizzypoints <= 0
 trigger1 = !gethitvar(isbound)
 value = 1
 
 [State 817, Fall Recovery]; Exception needed since this state is type L
 type = selfstate
-trigger1 = alive = 1 && dizzy = 0 && dizzypoints > 0
 trigger1 = gethitvar(fall.recover)
 trigger1 = command = "recovery"
 trigger1 = vel y > 0
@@ -3706,14 +3674,12 @@ y = -5
 type = selfstate
 trigger1 = alive
 trigger1 = life > 0
-trigger1 = dizzypoints <= 0
 value = const(statedizzyfalldown_air)
 
 [State 824, Dizzy Start]
 type = null
 trigger1 = alive
 trigger1 = life > 0
-trigger1 = dizzypoints <= 0
 trigger1 = !gethitvar(isbound)
 value = 1
 

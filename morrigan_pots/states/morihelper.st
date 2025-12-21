@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; 
 ;==============================================================================================
 ;=======================================<HELPER STATES>========================================
 ;==============================================================================================
@@ -104,7 +104,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 priority = 4, Hit
 attr = S, SP
 damage = 70, 18
-dizzypoints = 100 * !(root, var(50))
 guard.dist = const(size.proj.attack.dist)
 animtype = Hard
 hitflag = MAF
@@ -375,7 +374,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 priority = 4, Hit
 attr = A, SP
 damage = 70, 18
-dizzypoints = 100 * !(root, var(50))
 guard.dist = const(size.proj.attack.dist)
 animtype = Hard
 hitflag = MAFD
@@ -412,6 +410,7 @@ airguard.velocity = -6.00 * !numhelper(775), -1.00
 forcestand = 1
 
 [State 1055, Hit Low]
+trigger1 = 1
 type = modifyhitdef
 ground.type = Low
 air.type = Low
@@ -593,7 +592,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 2)
 priority = 4, Hit
 attr = S, SP
 damage = 90, 23
-dizzypoints = 100 * !(root, var(50))
 guard.dist = const(size.proj.attack.dist)
 animtype = Hard
 hitflag = MAF
@@ -799,7 +797,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 2)
 priority = 4, Hit
 attr = A, SP
 damage = 90, 23
-dizzypoints = 100 * !(root, var(50))
 guard.dist = const(size.proj.attack.dist)
 animtype = Hard
 hitflag = MAFD
@@ -971,7 +968,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (2 + var(2)))
 priority = 4, Hit
 attr = S, HP
 damage = 67, 17
-dizzypoints = 0
 guard.dist = 320
 animtype = Hard
 air.animtype = Back
@@ -1269,7 +1265,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (2 + var(2)))
 priority = 4, Hit
 attr = A, HP
 damage = 60, 15
-dizzypoints = 0
 guard.dist = 320
 animtype = Hard
 air.animtype = Back
@@ -1488,7 +1483,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 30)
 priority = 4, Hit
 attr = S, HP
 damage = 10, 2
-dizzypoints = 0
 guard.dist = 320
 animtype = Hard
 fall.animtype = Diagup
@@ -1528,6 +1522,7 @@ airguard.velocity = -6.00 * !numhelper(775), -1.00
 forcestand = 1
 
 [State 3305, Hit Low]
+trigger1 = 1
 type = modifyhitdef
 ;trigger1 = random < 500
 ground.type = Low
@@ -1669,7 +1664,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = S, HA
 damage = 0, 0
-dizzypoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1704,7 +1698,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = S, HA
 damage = 0, 0
-dizzypoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1738,7 +1731,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = S, HA
 damage = 0, 0
-dizzypoints = 0
 animtype = Up
 hitflag = MAF
 guardflag = M
@@ -1778,7 +1770,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = A, HA
 damage = 0, 0
-dizzypoints = 0
 animtype = Hard
 fall.animtype = Hard
 hitflag = MAF
@@ -1818,7 +1809,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = A, HA
 damage = 0, 0
-dizzypoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -2025,7 +2015,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4060
 attr = S, HA
 damage = 0, 0
-dizzypoints = 0
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -2067,7 +2056,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4060
 attr = S, HA
 damage = 0, 0
-dizzypoints = 0
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -2109,7 +2097,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4060
 attr = A, HA
 damage = 0, 0
-dizzypoints = 0
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard

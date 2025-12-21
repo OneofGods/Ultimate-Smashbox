@@ -431,7 +431,6 @@ value = 5040
 type = selfstate
 trigger1 = vel y > 0
 trigger1 = pos y >= const(movement.air.gethit.groundrecover.ground.threshold)
-trigger1 = alive = 1 && dizzy = 0 && dizzypoints > 0
 trigger1 = gethitvar(fall.recover)
 trigger1 = command = "recovery"
 value = 5200
@@ -613,7 +612,6 @@ trigger1 = animelem = 2 || animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (3 + hitcount))
 attr = S, HA
 damage = 30, 8
-dizzypoints = 0
 animtype = Back
 hitflag = MAFD
 guardflag = M
@@ -660,7 +658,6 @@ trigger1 = animelem = 4 || animelem = 6 || animelem = 8 || animelem = 9 || anime
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (3 + hitcount))
 attr = A, HA
 damage = 30, 8
-dizzypoints = 0
 animtype = Up
 hitflag = MAF
 guardflag = M
@@ -1180,7 +1177,6 @@ trigger1 = !((movecontact + movereversed) % 3)
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 13)
 attr = A, HA
 damage = ifelse((movecontact || movereversed), 10, 120), ifelse((movecontact || movereversed), 3, 30)
-dizzypoints = 0
 animtype = Hard
 air.animtype = Back
 hitflag = MAF
@@ -1379,7 +1375,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 ID = 4000
 attr = S, HA
 damage = 0, 0
-dizzypoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1639,7 +1634,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = S, HA
 damage = 25, 6
-dizzypoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1680,7 +1674,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = S, HA
 damage = 25, 6
-dizzypoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1720,7 +1713,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = S, HA
 damage = 25, 6
-dizzypoints = 0
 animtype = Up
 hitflag = MAF
 guardflag = M
@@ -1766,7 +1758,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = A, HA
 damage = 25, 6
-dizzypoints = 0
 animtype = Hard
 fall.animtype = Hard
 hitflag = MAF
@@ -1813,7 +1804,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = A, HA
 damage = 45, 11
-dizzypoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -2195,7 +2185,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 ID = 4050
 attr = A, HA
 damage = 0, 0
-dizzypoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -2393,7 +2382,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4060
 attr = S, HA
 damage = 30, 8
-dizzypoints = 0
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -2439,7 +2427,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4060
 attr = S, HA
 damage = 30, 8
-dizzypoints = 0
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -2485,7 +2472,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4060
 attr = A, HA
 damage = 30, 8
-dizzypoints = 0
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -3163,7 +3149,6 @@ y = 0
 type = null
 trigger1 = alive
 trigger1 = life > 0
-trigger1 = dizzypoints <= 0
 trigger1 = !gethitvar(isbound)
 value = 1
 

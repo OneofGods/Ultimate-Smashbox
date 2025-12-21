@@ -1226,10 +1226,6 @@ ignorehitpause if pausetime = 0
 				kill: playerIndex($i), gethitvar(kill);
 				redirectID: playerIndex($i), ID;
 			}
-			dizzypointsadd{
-				value: -0.20 * playerIndex($i), gethitvar(dizzypoints);
-				redirectID: playerIndex($i), ID;
-			}
 			# Sweep hard knockdown
 			if stateno = 450 {
 				gethitvarset{

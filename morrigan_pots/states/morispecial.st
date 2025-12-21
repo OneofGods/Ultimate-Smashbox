@@ -606,7 +606,6 @@ trigger1 = !movecontact && !movereversed
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, SA
 damage = ifelse(var(123) = 2, 120, ifelse(var(123) = 1, 110, 100)), ifelse(var(123) = 2, 30, ifelse(var(123) = 1, 28, 25))
-dizzypoints = 200 * !var(50)
 animtype = Back
 hitflag = MAF
 guardflag = M
@@ -651,7 +650,6 @@ trigger1 = !movecontact && !movereversed
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, SA
 damage = 60, 15
-dizzypoints = 100 * !var(50)
 animtype = Back
 hitflag = MAF
 guardflag = MA
@@ -886,7 +884,6 @@ trigger1 = animelem = 2 || animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (2 + hitcount))
 attr = S, SA
 damage = 40, 10
-dizzypoints = 67 * !var(50)
 animtype = Back
 hitflag = MAF
 guardflag = M
@@ -930,7 +927,6 @@ trigger1 = animelem = 4 && anim = 1110
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (2 + hitcount))
 attr = A, SA
 damage = 60, 15
-dizzypoints = 67 * !var(50)
 animtype = Up
 hitflag = MAF
 guardflag = MA
@@ -1101,7 +1097,6 @@ trigger1 = animelem = 4 || animelem = 10 || animelem = 16
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, SA
 damage = ifelse(var(123) = 2, 34, ifelse(var(123) = 1, 40, 60)), ifelse(var(123) = 2, 9, ifelse(var(123) = 1, 10, 15))
-dizzypoints = ifelse(var(123) = 2, 67, ifelse(var(123) = 1, 75, 100)) * !var(50)
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1277,7 +1272,6 @@ trigger1 = !((movecontact + movereversed) % 8)
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, SA
 damage = 20, 5
-dizzypoints = 34 * !var(50)
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1914,14 +1908,12 @@ y = -6
 type = null
 trigger1 = alive
 trigger1 = life > 0
-trigger1 = dizzypoints <= 0
 trigger1 = !gethitvar(isbound)
 value = 1
 
 [State 1323, Fall Recovery]
 type = selfstate
 trigger1 = time >= 16
-trigger1 = alive = 1 && dizzy = 0 && dizzypoints > 0
 trigger1 = gethitvar(fall.recover)
 trigger1 = command = "recovery"
 trigger1 = vel y > 0
@@ -2165,7 +2157,6 @@ guardflag = HA
 priority = 4, Hit
 damage = 20, 5
 redlife = 20, 5
-dizzypoints = 0
 getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
 givepower = 40, 40
 pausetime = 10, 10
@@ -2452,7 +2443,6 @@ guardflag = HA
 priority = 4, Hit
 damage = 13, 3
 redlife = 13, 3
-dizzypoints = 0
 getpower = 0, 0
 givepower = 40, 40
 pausetime = 8, 8
@@ -2567,7 +2557,6 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 damage = 50, 13
-dizzypoints = 0
 getpower = 0, 0
 givepower = 40, 40
 pausetime = 12, 12
@@ -2657,7 +2646,6 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 damage = 50, 13
-dizzypoints = 0
 getpower = 0, 0
 givepower = 40, 40
 pausetime = 12, 12
