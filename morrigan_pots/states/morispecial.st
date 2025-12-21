@@ -1677,7 +1677,7 @@ value = floor(ifelse(var(123) = 3, -160, ifelse(var(123) = 2, -150, ifelse(var(1
 dizzy = 0
 
 [State 1311, Stun Damage]
-type = targetdizzypointsadd
+type = null
 trigger1 = !time
 trigger1 = numtarget
 value = floor(ifelse(var(123) = 3, -150, -100) * var(67)) * !var(50)

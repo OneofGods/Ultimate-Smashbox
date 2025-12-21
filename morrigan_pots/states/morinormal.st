@@ -3220,7 +3220,7 @@ value = floor(-110 * var(67))
 dizzy = 0
 
 [State 810, Stun Damage]
-type = targetdizzypointsadd
+type = null
 trigger1 = numtarget
 trigger1 = animelem = 6
 value = floor(-140 * var(67)) * !var(50)
@@ -3507,7 +3507,7 @@ dizzy = 0
 kill = 0
 
 [State 820, Stun Damage]
-type = targetdizzypointsadd
+type = null
 trigger1 = numtarget
 trigger1 = animelem = 8
 value = floor(-120 * var(67)) * !var(50)

@@ -3000,7 +3000,7 @@ dizzy = 0
 kill = animelem = 17
 
 [State 4107, Damage]
-type = targetdizzypointsadd
+type = null
 trigger1 = numtarget(4105)
 trigger1 = animelem = 17
 ID = 4105
