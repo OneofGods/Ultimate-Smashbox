@@ -3671,7 +3671,7 @@ x = -3
 y = -5
 
 [State 824, Stun]
-type = selfstate
+type = null
 trigger1 = alive
 trigger1 = life > 0
 
