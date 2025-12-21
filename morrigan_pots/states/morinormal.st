@@ -3361,7 +3361,7 @@ x = -2.5
 y = -5.5
 
 [State 817, Dizzy Start]
-type = dizzyset
+type = null
 trigger1 = alive
 trigger1 = life > 0
 trigger1 = dizzypoints <= 0
@@ -3710,7 +3710,7 @@ trigger1 = dizzypoints <= 0
 value = const(statedizzyfalldown_air)
 
 [State 824, Dizzy Start]
-type = dizzyset
+type = null
 trigger1 = alive
 trigger1 = life > 0
 trigger1 = dizzypoints <= 0

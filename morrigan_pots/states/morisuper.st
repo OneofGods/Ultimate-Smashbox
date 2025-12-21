@@ -3160,7 +3160,7 @@ trigger1 = 1
 y = 0
 
 [State 4121, Dizzy Start]
-type = dizzyset
+type = null
 trigger1 = alive
 trigger1 = life > 0
 trigger1 = dizzypoints <= 0
