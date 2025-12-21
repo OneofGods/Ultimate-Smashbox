@@ -650,7 +650,6 @@ fall = 1
 fall.recover = 0
 down.recover = 1
 fall.animtype = Medium
-p1sprpriority = sprpriority
 forcestand = 1
 yaccel = 0.4850
 
@@ -695,7 +694,6 @@ envshake.mul = 0.667
 fall = 1
 fall.recover = 0
 down.recover = 1
-p1sprpriority = sprpriority
 forcestand = 1
 yaccel = 0.4850
 
@@ -1215,7 +1213,6 @@ envshake.time = 10
 envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -2, 2)
 yaccel = 0.4850
-p1sprpriority = sprpriority
 forcestand = 1
 yaccel = 0.4850
 
@@ -1414,7 +1411,6 @@ envshake.ampl = ifelse((gametime % 2), -4, 4)
 envshake.mul = 0.667
 fall = 0
 air.fall = 1
-p1sprpriority = sprpriority
 forcestand = 1
 kill = 0
 yaccel = 0.4850
@@ -1672,7 +1668,6 @@ envshake.time = 12; super
 envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -4, 4)
 envshake.mul = 0.667
-p1sprpriority = sprpriority
 forcestand = 1
 kill = ifelse((animelem = 8), 0, (numtarget != numenemy))
 yaccel = 0.4850
@@ -1714,7 +1709,6 @@ envshake.time = 12; super
 envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -4, 4)
 envshake.mul = 0.667
-p1sprpriority = sprpriority
 forcestand = 1
 kill = (numtarget != numenemy)
 yaccel = 0.4850
@@ -1762,7 +1756,6 @@ fall.recover = 0
 down.recover = 0; cannot mash
 down.recovertime = 30
 kill = (numtarget != numenemy)
-p1sprpriority = sprpriority
 forcestand = 1
 
 [State 4010, Hit Midair]
@@ -1811,7 +1804,6 @@ down.recover = 0; cannot mash
 down.recovertime = 30
 kill = (numtarget != numenemy)
 yaccel = 0.4850
-p1sprpriority = sprpriority
 forcestand = 1
 
 [State 4010, Hit Final]
@@ -1857,7 +1849,6 @@ fall.recover = 0
 down.recover = 0; cannot mash
 down.recovertime = 30
 yaccel = 0.4850
-p1sprpriority = sprpriority
 forcestand = 1
 
 [State 4010, Vel]
@@ -2235,7 +2226,6 @@ envshake.ampl = ifelse((gametime % 2), -4, 4)
 envshake.mul = 0.667
 fall = 0
 air.fall = 1
-p1sprpriority = sprpriority
 forcestand = 1
 kill = 0
 yaccel = 0.4850
@@ -2434,7 +2424,6 @@ envshake.time = 12; super
 envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -4, 4)
 envshake.mul = 0.667
-p1sprpriority = sprpriority
 forcestand = 1
 kill = ifelse((animelem = 7), 0, (numtarget != numenemy))
 fall = 1
@@ -2481,7 +2470,6 @@ envshake.time = 12; super
 envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -4, 4)
 envshake.mul = 0.667
-p1sprpriority = sprpriority
 forcestand = 1
 kill = (numtarget != numenemy)
 fall = 1
@@ -2535,7 +2523,6 @@ fall.recover = 0
 down.recover = 0; cannot mash
 down.recovertime = 30
 yaccel = 0.4850
-p1sprpriority = sprpriority
 forcestand = 1
 fall.xvelocity = 0
 fall.yvelocity = -4
