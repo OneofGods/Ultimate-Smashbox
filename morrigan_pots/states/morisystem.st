@@ -4075,13 +4075,13 @@ trigger1 = win
 value = 1
 
 [State -3, Victory BGM];Assertspecial nomusic does not work here
-type = playbgm
+type = null
 trigger1 = var(62)
 trigger1 = var(61) = [1, 5]
 bgm = ""
 
 [State -3, Victory BGM]
-type = playbgm
+type = null
 trigger1 = var(62)
 trigger1 = var(61) = 6
 bgm = "moriwin.mp3"
