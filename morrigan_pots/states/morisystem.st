@@ -101,7 +101,6 @@ physics = S
 movetype = I
 velset = 0, 0
 sprpriority = 0
-
 [State 12, Anim]
 type = changeanim
 trigger1 = !time
