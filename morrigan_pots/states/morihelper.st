@@ -411,7 +411,7 @@ forcestand = 1
 
 [State 1055, Hit Low]
 trigger1 = 1
-type = modifyhitdef
+type = null
 ground.type = Low
 air.type = Low
 
@@ -1523,7 +1523,7 @@ forcestand = 1
 
 [State 3305, Hit Low]
 trigger1 = 1
-type = modifyhitdef
+type = null
 ;trigger1 = random < 500
 ground.type = Low
 
