@@ -976,7 +976,7 @@ physics = S
 type = forcefeedback
 trigger1 = !time
 waveform = square
-time = max(4, gethitvar(hitshaketime) / 2)
+time = 4
 
 
 ;----- STAND GUARD HIT 2 (Knocked back) -----
@@ -1067,7 +1067,7 @@ physics = S
 type = forcefeedback
 trigger1 = !time
 waveform = square
-time = max(4, gethitvar(hitshaketime) / 2)
+time = 4
 
 
 ;----- CROUCH GUARD HIT 2 (Knocked back) -----
@@ -1142,7 +1142,7 @@ value = 155
 type = forcefeedback
 trigger1 = !time
 waveform = square
-time = max(4, gethitvar(hitshaketime) / 2)
+time = 4
 
 
 ;----- AIR GUARD HIT 2 (Knocked away) -----
