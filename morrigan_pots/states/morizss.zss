@@ -709,7 +709,6 @@ ignorehitpause if numenemy {
 # P2 Air Reset Trip Guard
 ignorehitpause if p2stateno = 52 {
 	if alive && !standby {
-		if p2, ctrl = 0 && (p2, prevstateno = [5000, 5999] || p2, prevmovetype = H) {
 			ctrlset{value: 1; redirectID: p2, ID}
 		}
 	}
@@ -771,7 +770,6 @@ ignorehitpause if roundstate = 2 && movetype = A && numtarget {
 	}
 
 	# AI Learning
-	if movetype = H && prevmovetype != H && time <= 1 {
 		# Throws
 		if prevstateno != 40 {
 			if gethitvar(attr) = SCA, AT {
@@ -1213,7 +1211,6 @@ ignorehitpause if pausetime = 0
 	for i = 0; numPlayer - 1; 1 {
 		if playerIndexExist($i)
 		&& playerIndex($i), movetype = H
-		&& (playerIndex($i), prevmovetype = A || playerIndex($i), receivedhits > 1) # Just countered or counter buffer active
 		&& playerIndex($i), gethitvar(guarded) = 0 {
 			let time = playerIndex($i), gethitvar(hittime);
 			gethitvarset{
@@ -1266,7 +1263,6 @@ ignorehitpause if pausetime = 0
 				&& cond(ishelper, root, movetype != H, movetype != H)
 				&& (!ishelper || playerIndex($i), hitoverridden = 0)
 				&& playerIndex($i), movetype = H
-				&& (playerIndex($i), prevmovetype = A || playerIndex($i), receivedhits > 1) # Just countered or counter buffer active
 				&& playerIndex($i), gethitvar(guarded) = 0
 				&& map(sparkno) = [8010, 8099] {
 					explod{

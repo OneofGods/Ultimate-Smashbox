@@ -195,7 +195,6 @@ ownpal = 1
 [State 1006, Trade Sound]
 type = playsnd
 trigger1 = !time
-trigger1 = prevmovetype = H
 value = 2, 0
 channel = 2
 volumescale = 33
@@ -1063,7 +1062,6 @@ ownpal = 1
 [State 3006, Trade Sound]
 type = playsnd
 trigger1 = !time
-trigger1 = prevmovetype = H
 value = 2, 0
 channel = 2
 volumescale = 33
