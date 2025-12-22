@@ -3735,7 +3735,7 @@ trigger1 = numtarget
 value = -1
 
 [State 890, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 value = SCA
 time = 1
@@ -3820,7 +3820,7 @@ value = 200
 elem = animelemno(-1)
 
 [State 895, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 value = SCA
 time = 1

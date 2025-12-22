@@ -22,7 +22,7 @@ value = 0
 ctrl = 1
 
 [State 774, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 time = -1
 value = SCA, AA, AP, AT
@@ -87,7 +87,7 @@ value = 0
 ctrl = 1
 
 [State 775, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 time = -1
 value = SCA, AA, AP, AT

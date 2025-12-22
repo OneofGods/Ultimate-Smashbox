@@ -1494,7 +1494,7 @@ velset = 0, 0
 ctrl = 0
 
 [State 705, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 value = SCA
 
@@ -1997,7 +1997,7 @@ velset = 0, 0
 poweradd = -2000
 
 [State 770, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 time = 2
 value = SCA
@@ -2082,7 +2082,7 @@ anim = 5950
 velset = 0, 0
 
 [State 5950, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 value = SCA
 
@@ -2310,7 +2310,7 @@ anim = ifelse(random < 500, 170, 175)
 velset = 0, 0
 
 [State 170, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 value = SCA
 time = 1
@@ -3073,7 +3073,7 @@ ownpal = 1
 ontop = 1
 
 [State 5201, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 value = SCA
 time = 1
@@ -3169,7 +3169,7 @@ trigger1 = !time
 trigger1 = p2dist x < 0
 
 [State 5210, NHB]
-type = nothitby
+type = null
 trigger1 = time < 14
 value = SCA
 time = 1

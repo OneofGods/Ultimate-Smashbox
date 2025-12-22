@@ -1550,7 +1550,7 @@ ctrl = 0
 sprpriority = 3
 
 [State 3306, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 time = -1
 value = SCA
@@ -1584,7 +1584,7 @@ velset = 0, 0
 sprpriority = 2
 
 [State 4015, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 time = -1
 value = SCA, AA, AP, AT
@@ -1929,7 +1929,7 @@ velset = 0, 0
 sprpriority = 2
 
 [State 4065, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 time = -1
 value = SCA, AA, AP, AT
@@ -2278,7 +2278,7 @@ ctrl = 0
 sprpriority = 3
 
 [State 4106, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 time = -1
 value = SCA, AA, AP, AT

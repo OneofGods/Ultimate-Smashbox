@@ -96,14 +96,14 @@ p2defmul = 1
 darken = !var(65)
 
 [State 3000, NHB]
-type = nothitby
+type = null
 trigger1 = animelemtime(5) < -1
 attr = SCA
 slot = 0
 time = 1
 
 [State 3000, NHB]
-type = nothitby
+type = null
 trigger1 = animelemtime(5) < 1
 attr = , AP
 slot = 1
@@ -279,14 +279,14 @@ p2defmul = 1
 darken = !var(65)
 
 [State 3050, NHB]
-type = nothitby
+type = null
 trigger1 = animelemtime(5) < 0
 attr = SCA
 slot = 0
 time = 1
 
 [State 3050, NHB]
-type = nothitby
+type = null
 trigger1 = animelemtime(6) < 1
 attr = , AP
 slot = 1
@@ -533,14 +533,14 @@ p2defmul = 1
 darken = !var(65)
 
 [State 3100, NHB]
-type = nothitby
+type = null
 trigger1 = anim = 3100
 trigger1 = animelemtime(3) < 0
 value = SCA
 time = 1
 
 [State 3100, NHB]
-type = nothitby
+type = null
 trigger1 = anim = 3100
 trigger1 = animelemtime(3) >= 0
 trigger1 = animelemtime(4) < 0
@@ -807,7 +807,7 @@ p2defmul = 1
 darken = !var(65)
 
 [State 3300, NHB]
-type = nothitby
+type = null
 trigger1 = time <= 43
 time = 1
 value = SCA
@@ -989,7 +989,7 @@ p2defmul = 1
 darken = !var(65)
 
 [State 3400, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 time = 1
 value = SCA
@@ -1101,7 +1101,7 @@ type = turn
 trigger1 = !time
 
 [State 3401, NHB]
-type = nothitby
+type = null
 trigger1 = backedgedist < 0
 time = 1
 value = SCA
@@ -1339,7 +1339,7 @@ p2defmul = 1
 darken = !var(65)
 
 [State 4000, NHB]
-type = nothitby
+type = null
 trigger1 = time <= 48
 time = 1
 value = SCA
@@ -1528,7 +1528,7 @@ trigger2 = anim = 4011 && animelemtime(32) < 0
 value = 0
 
 [State 4010, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 value = , AP
 time = 1
@@ -2148,7 +2148,7 @@ p2defmul = 1
 darken = !var(65)
 
 [State 4050, NHB]
-type = nothitby
+type = null
 trigger1 = time <= 46
 time = 1
 value = SCA
@@ -2294,7 +2294,7 @@ trigger1 = 1
 value = 0
 
 [State 4060, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 value = , AP
 time = 1
@@ -2638,7 +2638,7 @@ p2defmul = 1
 darken = !var(65)
 
 [State 4100, NHB]
-type = nothitby
+type = null
 trigger1 = animelemtime(5) < 1
 time = 1
 value = SCA
@@ -2832,7 +2832,7 @@ trigger1 = 1
 value = 0
 
 [State 4110, NHB]
-type = nothitby
+type = null
 trigger1 = 1
 value = SCA
 time = 1

@@ -522,7 +522,7 @@ time = 1
 ignorehitpause = 1
 
 [State 1100, NHB]
-type = nothitby
+type = null
 trigger1 = anim = 1100
 trigger1 = animelemtime(4) < 0
 trigger1 = var(123) = 2
@@ -803,7 +803,7 @@ supermovetime = -1
 ownpal = 1
 
 [State 1110, NHB]
-type = nothitby
+type = null
 trigger1 = anim = 1110
 trigger1 = animelemtime(4) < 1
 value = SCA
@@ -2529,7 +2529,7 @@ sprpriority = 2
 poweradd = 0
 
 [State 2900, NHB]
-type = nothitby
+type = null
 trigger1 = animelemtime(3) < 0
 value = SCA
 time = 1
@@ -2618,7 +2618,7 @@ sprpriority = 2
 poweradd = 0
 
 [State 2910, NHB]
-type = nothitby
+type = null
 trigger1 = animelemtime(4) < 0
 value = SCA
 time = 1
