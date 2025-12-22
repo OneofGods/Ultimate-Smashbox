@@ -3104,7 +3104,7 @@ movecamera = 0, 0
 [State 4120, No Dust]
 type = assertspecial
 trigger1 = 1
-flag = nomakedust
+flag = noshadow
 
 ; Moved to ZSS
 ;[State 4120, Sprite Priority]
