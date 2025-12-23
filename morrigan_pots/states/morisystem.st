@@ -1557,7 +1557,6 @@ trigger7 = anim = 705 || anim = 707
 trigger7 = root, command = "D"
 trigger8 = time >= 1
 trigger8 = anim = 706
-trigger8 = root
 var(0) = 1
 
 [State 705, Disable]
