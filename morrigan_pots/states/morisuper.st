@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; 
 ;==============================================================================================
 ;========================================<SUPER STATES>========================================
 ;==============================================================================================
@@ -22,12 +22,12 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 1
 
 [State 3000, Strength]
 type = varset
 trigger1 = time <= 0
-value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
+value = 0
 ignorehitpause = 1
 persistent = 0
 
@@ -78,7 +78,7 @@ stateno = 8500
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(-68 * const(size.xscale)), ceil(-63 * const(size.yscale))
+pos = -68 * const(size.xscale), -63 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -89,8 +89,8 @@ type = superpause
 trigger1 = time = 3
 time = 41
 movetime = 41
-anim = ifelse(var(65), -1, 100)
-pos = ceil(-68 * const(size.xscale)), ceil(-63 * const(size.yscale))
+anim = 100
+pos = -68 * const(size.xscale), -63 * const(size.yscale)
 sound = s0, 8500
 p2defmul = 1
 darken = !var(65)
@@ -113,7 +113,7 @@ time = 1
 type = width
 trigger1 = animelemtime(2) >= -1
 trigger1 = animelemtime(12) < 0
-edge = 0, ceil(32 * const(size.xscale))
+edge = 0, 32 * const(size.xscale)
 
 [State 3000, FX]
 type = explod
@@ -136,7 +136,7 @@ anim = 7106
 ID = 7106
 sprpriority = 3
 postype = p1
-pos = ceil(-15 * const(size.xscale)), 0
+pos = -15 * const(size.xscale), 0
 ownpal = 1
 scale = 0.5, 0.5
 pausemovetime = -1
@@ -150,7 +150,7 @@ stateno = 3005
 ID = 3005
 name = "Soul Phoenix"
 postype = p1
-pos = ceil(12 * const(size.xscale)), -50
+pos = 12 * const(size.xscale), -50
 size.xscale = 0.75
 size.yscale = 0.75
 ownpal = 1
@@ -205,12 +205,12 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 1
 
 [State 3050, Strength]
 type = varset
 trigger1 = time <= 0
-value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
+value = 0
 ignorehitpause = 1
 persistent = 0
 
@@ -261,7 +261,7 @@ stateno = 8500
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(-16 * const(size.xscale)), ceil(-90 * const(size.yscale))
+pos = -16 * const(size.xscale), -90 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -272,8 +272,8 @@ type = superpause
 trigger1 = time = 3
 time = 41
 movetime = 41
-anim = ifelse(var(65), -1, 100)
-pos = ceil(-13 * const(size.xscale)), ceil(-85 * const(size.yscale))
+anim = 100
+pos = -13 * const(size.xscale), -85 * const(size.yscale)
 sound = s0, 8500
 p2defmul = 1
 darken = !var(65)
@@ -295,7 +295,7 @@ time = 1
 [State 3050, Width]
 type = width
 trigger1 = animelem = 4
-value = ceil(24 * const(size.xscale)), 0
+value = 24 * const(size.xscale), 0
 
 [State 3050, FX]
 type = explod
@@ -319,7 +319,7 @@ stateno = 3055
 ID = 3055
 name = "Soul Phoenix"
 postype = p1
-pos = ceil(60 * const(size.xscale)), -48
+pos = 60 * const(size.xscale), -48
 size.xscale = 0.75
 size.yscale = 0.75
 ownpal = 1
@@ -382,7 +382,7 @@ persistent = 0
 type = changeanim
 trigger1 = !time
 trigger1 = gethitvar(animtype) != [3,5]
-value = ifelse((gethitvar(airtype) = 1), 5000, 5010) + gethitvar(animtype)
+value = 5010 + gethitvar(animtype)
 
 [state 7697, Anim]
 type = changeanim
@@ -459,12 +459,12 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 1
 
 [State 3100, Strength]
 type = varset
 trigger1 = time <= 0
-value = ifelse(var(99), 2, ifelse(var(98), 1, 0))
+value = 0
 ignorehitpause = 1
 persistent = 0
 
@@ -515,7 +515,7 @@ stateno = 8500
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(-25 * const(size.xscale)), ceil(-35 * const(size.yscale))
+pos = -25 * const(size.xscale), -35 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -526,8 +526,8 @@ type = superpause
 trigger1 = time = 3
 time = 41
 movetime = 41
-anim = ifelse(var(65), -1, 100)
-pos = ceil(-25 * const(size.xscale)), ceil(-35 * const(size.yscale))
+anim = 100
+pos = -25 * const(size.xscale), -35 * const(size.yscale)
 sound = s0, 8500
 p2defmul = 1
 darken = !var(65)
@@ -563,7 +563,7 @@ y = 0.67
 type = velset
 trigger1 = anim = 3100
 trigger1 = animelemtime(8) = 1
-x = ifelse(var(123) = 2, 10.2, ifelse(var(123) = 1, 7.65, 5.10))
+x = 5.10
 y = -11.76
 
 [State 3100, Vel]
@@ -619,7 +619,7 @@ priority = 4, Hit
 pausetime = 4, 4
 sparkno = -1 + 0 * (var(121) = 8024)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 25) * (var(133) = 50), var(122) = ifelse((animelem = 2), -35, -60)
+sparkxy = -10 + 0 * (var(132) = 25) * (var(133) = 50), var(122) = -60
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -642,7 +642,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -662,7 +662,7 @@ animtype = Up
 hitflag = MAF
 guardflag = M
 priority = 4, Hit
-pausetime = ifelse((animelem = 11), 12, 4), ifelse((animelem = 11), 12, 4)
+pausetime = 4, 4
 sparkno = -1 + 0 * (var(121) = 8024)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = 0) * (var(133) = 50), var(122) = -100
@@ -686,7 +686,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -746,7 +746,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 1
 
 [State 3300, Erase Inputs]
 type = null
@@ -789,7 +789,7 @@ stateno = 8510
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(-43 * const(size.xscale)), ceil(-68 * const(size.yscale))
+pos = -43 * const(size.xscale), -68 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -800,8 +800,8 @@ type = superpause
 trigger1 = time = 3
 time = 43
 movetime = 43
-anim = ifelse(var(65), -1, 101)
-pos = ceil(-43 * const(size.xscale)), ceil(-68 * const(size.yscale))
+anim = 101
+pos = -43 * const(size.xscale), -68 * const(size.yscale)
 sound = s0, 8510
 p2defmul = 1
 darken = !var(65)
@@ -934,7 +934,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 1
 
 [State 3400, Erase Inputs]
 type = null
@@ -971,7 +971,7 @@ stateno = 8500
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(-39 * const(size.xscale)), ceil(-70 * const(size.yscale))
+pos = -39 * const(size.xscale), -70 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -982,8 +982,8 @@ type = superpause
 trigger1 = time = 3
 time = 41
 movetime = 41
-anim = ifelse(var(65), -1, 100)
-pos = ceil(-39 * const(size.xscale)), ceil(-70 * const(size.yscale))
+anim = 100
+pos = -39 * const(size.xscale), -70 * const(size.yscale)
 sound = s0, 8500
 p2defmul = 1
 darken = !var(65)
@@ -1073,7 +1073,7 @@ accel = 0, 0.05
 anim = 3407
 sprpriority = 3
 postype = p1
-pos = ceil(-45 * const(size.xscale)), -70
+pos = -45 * const(size.xscale), -70
 random = 20, 20
 scale = 0.5, 0.5
 supermovetime = -1
@@ -1131,12 +1131,12 @@ x = (-((gamewidth / 2.0) + 40) -50 * sin(time / 3.33)) * facing
 [State 3401, Vel]
 type = velset
 trigger1 = !time
-y = ifelse(command = "holdup", -10, ifelse(command = "holddown", -2, -6))
+y = -6
 
 [State 3401, Vel]
 type = velset
 trigger1 = !time
-y = ifelse(p2dist y <= -90, -10, ifelse(p2dist y <= -30, -6, -2))
+y = -2
 
 [State 3401, Vel]
 type = velset
@@ -1165,7 +1165,7 @@ stateno = 3405
 ID = 3405
 name = "Drill FX"
 postype = p1
-pos = ceil(76 * const(size.xscale)), -43
+pos = 76 * const(size.xscale), -43
 size.xscale = 0.5
 size.yscale = 0.5
 ownpal = 1
@@ -1176,7 +1176,7 @@ trigger1 = anim = 3402
 trigger1 = !((movecontact + movereversed) % 3)
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 13)
 attr = A, HA
-damage = ifelse((movecontact || movereversed), 10, 120), ifelse((movecontact || movereversed), 3, 30)
+damage = 120, 30
 animtype = Hard
 air.animtype = Back
 hitflag = MAF
@@ -1207,7 +1207,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 10
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 yaccel = 0.4850
 forcestand = 1
 yaccel = 0.4850
@@ -1278,7 +1278,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 1
 
 [State 4000, Erase Inputs]
 type = null
@@ -1321,7 +1321,7 @@ stateno = 8520
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(20 * const(size.xscale)), ceil(-73 * const(size.yscale))
+pos = 20 * const(size.xscale), -73 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -1332,8 +1332,8 @@ type = superpause
 trigger1 = time = 3
 time = 45
 movetime = 45
-anim = ifelse(var(65), -1, 102)
-pos = ceil(20 * const(size.xscale)), ceil(-73 * const(size.yscale))
+anim = 102
+pos = 20 * const(size.xscale), -73 * const(size.yscale)
 sound = s0, 8520
 p2defmul = 1
 darken = !var(65)
@@ -1402,7 +1402,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 0
 air.fall = 1
@@ -1642,7 +1642,7 @@ pausetime = 2, 4
 sparkno = -1 + 0 * (var(121) = 8014)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
-hitsound = s2, ifelse((animelem = 8 || animelem = 14), 2, ifelse((animelem = 19), 3, 6))
+hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1660,10 +1660,10 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 forcestand = 1
-kill = ifelse((animelem = 8), 0, (numtarget != numenemy))
+kill = (numtarget != numenemy)
 yaccel = 0.4850
 
 [State 4010, Hit Low Ground]
@@ -1682,7 +1682,7 @@ pausetime = 2, 4
 sparkno = -1 + 0 * (var(121) = 8014)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
-hitsound = s2, ifelse((animelem = 11), 5, 6)
+hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1695,12 +1695,12 @@ guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
 air.type = Low
-air.velocity = 0, ifelse((animelem = 39), -3, -1.5)
+air.velocity = 0, -1.5
 getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 forcestand = 1
 kill = (numtarget != numenemy)
@@ -1741,7 +1741,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -1767,7 +1767,7 @@ pausetime = 2, 4
 sparkno = -1 + 0 * (var(121) = 8014)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
-hitsound = s2, ifelse((animelem = 4), 5, ifelse((animelem = 9 || animelem = 20), 3, 6))
+hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1780,14 +1780,14 @@ guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
 air.type = Low
-air.velocity = 0, ifelse((animelem = 25), -4, -2.5)
+air.velocity = 0, -2.5
 guard.velocity = -10.52
 guard.cornerpush.veloff = 0
 getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -1832,7 +1832,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -1880,7 +1880,7 @@ trigger1 = anim = 4010 && animelem = 46
 anim = 4095
 sprpriority = 4
 postype = p1
-pos = ceil(-10 * const(size.xscale)), -60
+pos = -10 * const(size.xscale), -60
 scale = 0.75, 0.75
 removeongethit = 1
 ownpal = 1
@@ -1891,7 +1891,7 @@ trigger1 = anim = 4011 && animelem = 31
 anim = 4095
 sprpriority = 4
 postype = p1
-pos = ceil(-10 * const(size.xscale)), -60
+pos = -10 * const(size.xscale), -60
 scale = 0.75, -0.75
 bindtime = -1
 removeongethit = 1
@@ -1915,7 +1915,7 @@ y = 0.75
 type = velset
 trigger1 = anim = 4011
 trigger1 = animelemtime(3) >= 0 && animelemtime(33) < 0
-y = ifelse(pos y <= -20, 0.1, 0)
+y = 0
 
 [State 4010, Type]
 type = statetypeset
@@ -2087,7 +2087,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 1
 
 [State 4050, Erase Inputs]
 type = null
@@ -2130,7 +2130,7 @@ stateno = 8510
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(20 * const(size.xscale)), ceil(-73 * const(size.yscale))
+pos = 20 * const(size.xscale), -73 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -2141,8 +2141,8 @@ type = superpause
 trigger1 = time = 3
 time = 43
 movetime = 43
-anim = ifelse(var(65), -1, 101)
-pos = ceil(20 * const(size.xscale)), ceil(-73 * const(size.yscale))
+anim = 101
+pos = 20 * const(size.xscale), -73 * const(size.yscale)
 sound = s0, 8510
 p2defmul = 1
 darken = !var(65)
@@ -2211,7 +2211,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 0
 air.fall = 1
@@ -2392,7 +2392,7 @@ pausetime = 4, 4
 sparkno = -1 + 0 * (var(121) = 8014)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
-hitsound = s2, ifelse((animelem = 7), 3, 6)
+hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
@@ -2410,10 +2410,10 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 forcestand = 1
-kill = ifelse((animelem = 7), 0, (numtarget != numenemy))
+kill = (numtarget != numenemy)
 fall = 1
 fall.recover = 0
 down.recover = 0; cannot mash
@@ -2437,7 +2437,7 @@ pausetime = 4, 4
 sparkno = -1 + 0 * (var(121) = 8014)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
-hitsound = s2, ifelse((animelem = 10 || animelem = 17), 3, 6)
+hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
@@ -2455,7 +2455,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 forcestand = 1
 kill = (numtarget != numenemy)
@@ -2502,7 +2502,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -2530,7 +2530,7 @@ trigger1 = animelem = 29
 anim = 4095
 sprpriority = 4
 postype = p1
-pos = ceil(-10 * const(size.xscale)), -60
+pos = -10 * const(size.xscale), -60
 scale = 0.75, -0.75
 removeongethit = 1
 ownpal = 1
@@ -2583,7 +2583,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 1
 
 [State 4100, Erase Inputs]
 type = null
@@ -2620,7 +2620,7 @@ stateno = 8520
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(-22 * const(size.xscale)), ceil(-82 * const(size.yscale))
+pos = -22 * const(size.xscale), -82 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -2631,8 +2631,8 @@ type = superpause
 trigger1 = time = 3
 time = 45
 movetime = 45
-anim = ifelse(var(65), -1, 102)
-pos = ceil(-22 * const(size.xscale)), ceil(-82 * const(size.yscale))
+anim = 102
+pos = -22 * const(size.xscale), -82 * const(size.yscale)
 sound = s0, 8520
 p2defmul = 1
 darken = !var(65)
@@ -2662,7 +2662,7 @@ stateno = 4105
 ID = 4105
 name = "Eternal Slumber"
 postype = p1
-pos = ceil(33 * const(size.xscale)), -74
+pos = 33 * const(size.xscale), -74
 size.xscale = 0.75
 size.yscale = 0.75
 size.ground.back = 8
@@ -2675,7 +2675,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = ceil(20 * const(size.xscale)), -71
+pos = 20 * const(size.xscale), -71
 sprpriority = 0
 
 [State 4100, Bat Explods]
@@ -2684,7 +2684,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = ceil(28 * const(size.xscale)), -44
+pos = 28 * const(size.xscale), -44
 sprpriority = 0
 
 [State 4100, Bat Explods]
@@ -2693,7 +2693,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = ceil(-11 * const(size.xscale)), -18
+pos = -11 * const(size.xscale), -18
 sprpriority = 2
 
 [State 4100, Bat Explods]
@@ -2711,7 +2711,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = ceil(11 * const(size.xscale)), -17
+pos = 11 * const(size.xscale), -17
 sprpriority = 2
 
 [State 4100, Bat Explods]
@@ -2720,7 +2720,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = ceil(-26 * const(size.xscale)), -37
+pos = -26 * const(size.xscale), -37
 sprpriority = 2
 
 [State 4100, Bat Explods]
@@ -2885,8 +2885,8 @@ ownpal = 1
 [State 4111, Fade Out]
 type = bgpalfx
 trigger1 = !time
-sinadd = -255, -255, -255, abs(animelemtime(3)) * 4
-time = abs(animelemtime(3))
+sinadd = -255, -255, -255, animelemtime(3) * 4
+time = animelemtime(3)
 
 [State 4110, Sound]
 type = playsnd
@@ -2981,7 +2981,7 @@ type = targetlifeadd
 triggerall = numtarget(4105)
 trigger1 = animelem = 3 || animelem = 5 || animelem = 7 || animelem = 9
 trigger2 = animelem = 11 || animelem = 13 || animelem = 15 || animelem = 17
-value = floor(-25 * var(67))
+value = -25 * var(67)
 dizzy = 0
 kill = animelem = 17
 
@@ -2990,14 +2990,14 @@ type = null
 trigger1 = numtarget(4105)
 trigger1 = animelem = 17
 ID = 4105
-value = floor(-600 * var(67))
+value = -600 * var(67)
 
 ;[State 4107, Damage]
 ;type = targetpoweradd
 ;trigger1 = numtarget(4105)
 ;trigger1 = animelem = 17
 ;ID = 4105
-;value = floor(-1000 * var(67))
+;value = -1000 * var(67)
 
 [State 4107, givepower]
 type = targetpoweradd
@@ -3155,4 +3155,4 @@ value = 1
 [State 4121, End]
 type = selfstate
 trigger1 = 1
-value = ifelse(alive, 5120, 5150)
+value = 5150

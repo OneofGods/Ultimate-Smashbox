@@ -34,7 +34,7 @@ persistent = 0
 [State 200, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 200
-value = 3, ifelse(random < 500, 1, 2)
+value = 3,  2
 channel = 0
 
 [State 200, Sound]
@@ -66,9 +66,9 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
-ground.slidetime = ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12)
-ground.hittime = 1 + ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12); + 2 * var(105)
-ground.velocity = ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), -7.51, -4.49) * !numhelper(775), 0
+ground.slidetime =  12
+ground.hittime = 1 +  12; + 2 * var(105)
+ground.velocity =  -4.49 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
 guard.ctrltime = 1 + 10
@@ -77,7 +77,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
+getpower =  50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -126,7 +126,7 @@ persistent = 0
 [State 201, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 201
-value = 3, ifelse(random < 500, 1, 2)
+value = 3,  2
 channel = 0
 
 [State 201, Sound]
@@ -158,9 +158,9 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
-ground.slidetime = ifelse((prevstateno = 201 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12)
-ground.hittime = 1 + ifelse((prevstateno = 201 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12); + 2 * var(105)
-ground.velocity = ifelse((prevstateno = 201 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), -7.51, -4.49) * !numhelper(775), 0
+ground.slidetime =  12
+ground.hittime = 1 +  12; + 2 * var(105)
+ground.velocity =  -4.49 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
 guard.ctrltime = 1 + 10
@@ -169,7 +169,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
+getpower =  50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -218,13 +218,13 @@ persistent = 0
 [State 210, Sound]
 type = playsnd
 trigger1 = animelem = 3 && random < 350
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 210, Sound]
 type = playsnd
 trigger1 = animelem = 3
-value = 1, 1;ifelse(anim = 210, 1, 8)
+value = 1, 1; 8
 ;channel = 1
 stopongethit = 1
 freqmul = 0.95 + (random / 10000.0)
@@ -261,7 +261,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
+getpower =  100 * !var(50),  50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -319,13 +319,13 @@ persistent = 0
 [State 211, Sound]
 type = playsnd
 trigger1 = animelem = 3 && random < 350
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 211, Sound]
 type = playsnd
 trigger1 = animelem = 4
-value = 1, 1;ifelse(anim = 211, 1, 8)
+value = 1, 1; 8
 ;channel = 1
 stopongethit = 1
 freqmul = 0.95 + (random / 10000.0)
@@ -362,7 +362,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
+getpower =  100 * !var(50),  50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -429,7 +429,7 @@ persistent = 0
 [State 220, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 500
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 220, Sound]
@@ -472,7 +472,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
+getpower =  200 * !var(50),  100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -530,7 +530,7 @@ persistent = 0
 [State 221, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 500
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 221, Sound]
@@ -573,7 +573,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
+getpower =  200 * !var(50),  100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -614,7 +614,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
+getpower =  200 * !var(50),  100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -681,7 +681,7 @@ persistent = 0
 [State 230, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 200
-value = 3, ifelse(random < 500, 1, 2)
+value = 3,  2
 channel = 0
 
 [State 230, Sound]
@@ -713,9 +713,9 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
-ground.slidetime = ifelse(prevstateno = 230, 15, 12)
-ground.hittime = 1 + ifelse(prevstateno = 230, 15, 12); + 2 * var(105)
-ground.velocity = ifelse(prevstateno = 230, -7.51, -4.49) * !numhelper(775), 0
+ground.slidetime =  12
+ground.hittime = 1 +  12; + 2 * var(105)
+ground.velocity =  -4.49 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
 guard.ctrltime = 1 + 10
@@ -724,7 +724,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
+getpower =  50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -773,7 +773,7 @@ persistent = 0
 [State 240, Sound]
 type = playsnd
 trigger1 = animelem = 4 && random < 350
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 240, Sound]
@@ -816,7 +816,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
+getpower =  100 * !var(50),  50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -857,7 +857,7 @@ air.velocity = -5.30 * !numhelper(775), -5.30; sidestep
 air.cornerpush.veloff = 0
 guard.cornerpush.veloff = 0
 guard.velocity = -10.52 * !numhelper(775)
-getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
+getpower =  100 * !var(50),  50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall = 1
@@ -915,7 +915,7 @@ persistent = 0
 [State 250, Sound]
 type = playsnd
 trigger1 = animelem = 3 && random < 500
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 250, Sound]
@@ -958,7 +958,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
+getpower =  200 * !var(50),  100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -1051,12 +1051,12 @@ persistent = 0
 [State 255, Width]
 type = width
 trigger1 = animelemtime(3) >= 0
-player = ceil(30 * const(size.xscale)), 0
+player = 30 * const(size.xscale), 0
 
 [State 255, Sound]
 type = playsnd
 trigger1 = animelem = 3
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 255, Sound]
@@ -1114,7 +1114,7 @@ priority = 4, Hit
 pausetime = 4, 4
 sparkno = -1 + 0 * (var(121) = 8012)
 guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 45) * (var(133) = 115), var(122) = ifelse((animelem = 3), -96, -72)
+sparkxy = -10 + 0 * (var(132) = 45) * (var(133) = 115), var(122) =  -72
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1131,7 +1131,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
+getpower =  200 * !var(50),  100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
@@ -1173,7 +1173,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
+getpower =  200 * !var(50),  100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
@@ -1218,7 +1218,7 @@ air.fall = 1
 fall.recover = 1
 fall.recovertime = 120
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
+getpower =  200 * !var(50),  100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
@@ -1310,7 +1310,7 @@ persistent = 0
 [State 400, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 200
-value = 3, ifelse(random < 500, 1, 2)
+value = 3,  2
 channel = 0
 
 [State 400, Sound]
@@ -1342,9 +1342,9 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.slidetime = ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12)
-ground.hittime = 1 + ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), 15, 12); + 2 * var(105)
-ground.velocity = ifelse((prevstateno = 200 || prevstateno = 201 || prevstateno = 230 || prevstateno = 400), -7.51, -4.49) * !numhelper(775), 0
+ground.slidetime =  12
+ground.hittime = 1 +  12; + 2 * var(105)
+ground.velocity =  -4.49 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
 guard.ctrltime = 1 + 10
@@ -1354,7 +1354,7 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -2, -2
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
+getpower =  50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -1403,7 +1403,7 @@ persistent = 0
 [State 410, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 350
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 410, Sound]
@@ -1447,7 +1447,7 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -3, -3
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
+getpower =  100 * !var(50),  50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -1505,7 +1505,7 @@ persistent = 0
 [State 420, Sound]
 type = playsnd
 trigger1 = animelem = 3 && random < 500
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 420, Sound]
@@ -1549,7 +1549,7 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -4, -4
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
+getpower =  200 * !var(50),  100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -1598,7 +1598,7 @@ persistent = 0
 [State 425, Sound]
 type = playsnd
 trigger1 = animelem = 3
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 425, Sound]
@@ -1642,7 +1642,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -1 * !numhelper(775), -9
 air.cornerpush.veloff = 0
-getpower = ifelse(p2movetype = H, 72, 216) * !var(50), 36 * !var(50)
+getpower =  216 * !var(50), 36 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -1721,7 +1721,7 @@ persistent = 0
 [State 430, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 200
-value = 3, ifelse(random < 500, 1, 2)
+value = 3,  2
 channel = 0
 
 [State 430, Sound]
@@ -1753,9 +1753,9 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.slidetime = ifelse(prevstateno = 230, 15, 12)
-ground.hittime = 1 + ifelse(prevstateno = 230, 15, 12); + 2 * var(105)
-ground.velocity = ifelse(prevstateno = 230, -7.51, -4.49) * !numhelper(775), 0
+ground.slidetime =  12
+ground.hittime = 1 +  12; + 2 * var(105)
+ground.velocity =  -4.49 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
 guard.ctrltime = 1 + 10
@@ -1765,7 +1765,7 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -2, -2
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
+getpower =  50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -1814,7 +1814,7 @@ persistent = 0
 [State 431, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 200
-value = 3, ifelse(random < 500, 1, 2)
+value = 3,  2
 channel = 0
 
 [State 431, Sound]
@@ -1846,9 +1846,9 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.slidetime = ifelse(prevstateno = 230, 15, 12)
-ground.hittime = 1 + ifelse(prevstateno = 230, 15, 12); + 2 * var(105)
-ground.velocity = ifelse(prevstateno = 230, -7.51, -4.49) * !numhelper(775), 0
+ground.slidetime =  12
+ground.hittime = 1 +  12; + 2 * var(105)
+ground.velocity =  -4.49 * !numhelper(775), 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
 guard.ctrltime = 1 + 10
@@ -1858,7 +1858,7 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -2, -2
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
+getpower =  50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -1916,7 +1916,7 @@ persistent = 0
 [State 440, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 350
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 440, Sound]
@@ -1960,7 +1960,7 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -3, -3
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
+getpower =  100 * !var(50),  50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -2018,7 +2018,7 @@ persistent = 0
 [State 445, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 350
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 445, Sound]
@@ -2062,7 +2062,7 @@ air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 down.velocity = -3, -3
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
+getpower =  100 * !var(50),  50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 fall.recover = 1
@@ -2120,7 +2120,7 @@ persistent = 0
 [State 450, Sound]
 type = playsnd
 trigger1 = animelem = 4 && random < 500
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 450, Sound]
@@ -2165,7 +2165,7 @@ guard.slidetime = 16
 guard.velocity = -10.52 * !numhelper(775)
 guard.cornerpush.veloff = 0
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
+getpower =  200 * !var(50),  100 * !var(50)
 givepower = 40, 40
 yaccel = 0.695
 fall = 1
@@ -2195,7 +2195,7 @@ poweradd = 0
 sprpriority = 2
 ctrl = 0
 facep2 = (prevstateno = [100, 105]) && p2dist x < 0
-velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
+velset = vel x *  1, vel y
 
 [State Damage Scaling - Add]
 type = varadd
@@ -2214,7 +2214,7 @@ persistent = 0
 [State 600, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 200
-value = 3, ifelse(random < 500, 1, 2)
+value = 3,  2
 channel = 0
 
 [State 600, Sound]
@@ -2259,7 +2259,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
+getpower =  50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
@@ -2305,7 +2305,7 @@ poweradd = 0
 sprpriority = 2
 ctrl = 0
 facep2 = (prevstateno = [100, 105]) && p2dist x < 0
-velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
+velset = vel x *  1, vel y
 
 [State Damage Scaling - Add]
 type = varadd
@@ -2324,7 +2324,7 @@ persistent = 0
 [State 610, Sound]
 type = playsnd
 trigger1 = animelem = 3 && random < 350
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 610, Sound]
@@ -2377,7 +2377,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
+getpower =  100 * !var(50),  50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
@@ -2423,7 +2423,7 @@ poweradd = 0
 sprpriority = 2
 ctrl = 0
 facep2 = (prevstateno = [100, 105]) && p2dist x < 0
-velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
+velset = vel x *  1, vel y
 
 [State Damage Scaling - Add]
 type = varadd
@@ -2442,7 +2442,7 @@ persistent = 0
 [State 620, Sound]
 type = playsnd
 trigger1 = animelem = 5 && random < 500
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 620, Sound]
@@ -2487,7 +2487,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
+getpower =  200 * !var(50),  100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
@@ -2533,7 +2533,7 @@ poweradd = 0
 sprpriority = 2
 ctrl = 0
 facep2 = (prevstateno = [100, 105]) && p2dist x < 0
-velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
+velset = vel x *  1, vel y
 
 [State Damage Scaling - Add]
 type = varadd
@@ -2552,7 +2552,7 @@ persistent = 0
 [State 630, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 200
-value = 3, ifelse(random < 500, 1, 2)
+value = 3,  2
 channel = 0
 
 [State 630, Sound]
@@ -2597,7 +2597,7 @@ air.type = High
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
+getpower =  50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
@@ -2643,7 +2643,7 @@ poweradd = 0
 sprpriority = 2
 ctrl = 0
 facep2 = (prevstateno = [100, 105]) && p2dist x < 0
-velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
+velset = vel x *  1, vel y
 
 [State Damage Scaling - Add]
 type = varadd
@@ -2662,7 +2662,7 @@ persistent = 0
 [State 631, Sound]
 type = playsnd
 trigger1 = animelem = 2 && random < 200
-value = 3, ifelse(random < 500, 1, 2)
+value = 3,  2
 channel = 0
 
 [State 631, Sound]
@@ -2707,7 +2707,7 @@ air.type = High
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 50) * !var(50), 25 * !var(50)
+getpower =  50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
@@ -2753,7 +2753,7 @@ poweradd = 0
 sprpriority = 2
 ctrl = 0
 facep2 = (prevstateno = [100, 105]) && p2dist x < 0
-velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
+velset = vel x *  1, vel y
 
 [State Damage Scaling - Add]
 type = varadd
@@ -2772,7 +2772,7 @@ persistent = 0
 [State 640, Sound]
 type = playsnd
 trigger1 = animelem = 3 && random < 350
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 640, Sound]
@@ -2817,7 +2817,7 @@ air.type = High
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
+getpower =  100 * !var(50),  50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
@@ -2863,7 +2863,7 @@ poweradd = 0
 sprpriority = 2
 ctrl = 0
 facep2 = (prevstateno = [100, 105]) && p2dist x < 0
-velset = vel x * ifelse((prevstateno = [100, 105]), 0.5, 1), vel y
+velset = vel x *  1, vel y
 
 [State Damage Scaling - Add]
 type = varadd
@@ -2882,7 +2882,7 @@ persistent = 0
 [State 650, Sound]
 type = playsnd
 trigger1 = animelem = 3 && random < 500
-value = 3, ifelse(random < 500, 0, 2)
+value = 3,  2
 channel = 0
 
 [State 650, Sound]
@@ -2927,7 +2927,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 * !numhelper(775), -5.33
 air.cornerpush.veloff = 0
-getpower = ifelse(movehit, 25, 200) * !var(50), ifelse(moveguarded, 25, 100) * !var(50)
+getpower =  200 * !var(50),  100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
@@ -2992,7 +2992,7 @@ persistent = 0
 [State 800, Strength]
 type = varset
 trigger1 = !time
-value = ifelse(var(90), 1, 0)
+value =  0
 
 [State 800, Strength AI]
 type = varset
@@ -3025,7 +3025,7 @@ value = 0
 type = hitdef
 trigger1 = animelem = 2
 trigger1 = !var(130) && !var(108)
-trigger1 = var(129) <= ceil(32 * const(size.xscale))
+trigger1 = var(129) <= 32 * const(size.xscale)
 ID = 800
 attr = S, NT
 hitflag = M
@@ -3035,8 +3035,8 @@ hitsound = s2, 800
 hitsound.channel = 2
 p1facing = 1
 p2facing = 1
-p1stateno = ifelse(var(123), 810, 820)
-p2stateno = ifelse(var(123), 815, 825)
+p1stateno =  820
+p2stateno =  825
 guard.dist = 0
 animtype = Back
 fall = 1
@@ -3122,17 +3122,17 @@ value = -1
 [State 810, Width]
 type = width
 trigger1 = animelemtime(5) < 0
-edge = ceil(50 * const(size.xscale)), 0
+edge = 50 * const(size.xscale), 0
 
 [State 810, Width]
 type = width
 trigger1 = animelemtime(5) >= 0 && animelemtime(6) < 0
-edge = ceil(60 * const(size.xscale)), 0
+edge = 60 * const(size.xscale), 0
 
 [State 810, Width]
 type = width
 trigger1 = animelemtime(6) >= 0 && animelemtime(7) < 0
-edge = ceil(75 * const(size.xscale)), 0
+edge = 75 * const(size.xscale), 0
 
 [State 810, Sound]
 type = playsnd
@@ -3186,14 +3186,14 @@ value = 1
 [State 810, Damage]
 type = targetlifeadd
 trigger1 = animelem = 6
-value = floor(-110 * var(67))
+value = -110 * var(67)
 dizzy = 0
 
 [State 810, Stun Damage]
 type = null
 trigger1 = numtarget
 trigger1 = animelem = 6
-value = floor(-140 * var(67)) * !var(50)
+value = -140 * var(67) * !var(50)
 
 [State 810, Give Power]
 type = targetpoweradd
@@ -3393,12 +3393,12 @@ value = -1
 [State 820, Width]
 type = width
 trigger1 = animelemtime(8) < 0
-edge = ceil(50 * const(size.xscale)), 0
+edge = 50 * const(size.xscale), 0
 
 [State 820, Width]
 type = width
 trigger1 = animelemtime(8) >= 0 && animelemtime(9) < 0
-edge = ceil(80 * const(size.xscale)), 0
+edge = 80 * const(size.xscale), 0
 
 [State 820, Sound]
 type = playsnd
@@ -3470,7 +3470,7 @@ value = 1
 [State 820, Damage]
 type = targetlifeadd
 trigger1 = animelem = 8
-value = floor(-120 * var(67))
+value = -120 * var(67)
 dizzy = 0
 kill = 0
 
@@ -3478,7 +3478,7 @@ kill = 0
 type = null
 trigger1 = numtarget
 trigger1 = animelem = 8
-value = floor(-120 * var(67)) * !var(50)
+value = -120 * var(67) * !var(50)
 
 [State 820, Give Power]
 type = targetpoweradd
@@ -3626,19 +3626,19 @@ trigger1 = !time
 [State 824, Fix Pos]
 type = posadd
 trigger1 = !time
-x = ifelse((frontedgebodydist > backedgebodydist), backedgebodydist, frontedgebodydist)
+x =  frontedgebodydist
 y = -const(size.mid.pos.y)
 
 [State 824, Anim]
 type = changeanim
 trigger1 = !time
-value = ifelse(selfanimexist(5052), 5052, 5030)
+value =  5030
 
 [State 824, Anim]
 type = changeanim
 trigger1 = !animtime
 trigger1 = anim = 5030
-value = ifelse(selfanimexist(5035), 5035, 5050)
+value =  5050
 
 [State 824, Anim]
 type = changeanim
@@ -3804,7 +3804,7 @@ sprpriority = 2
 [State 895, Anim]
 type = changeanim
 trigger1 = !time
-value = ifelse(selfanimexist(5940), 5940, ifelse(selfanimexist(200), 200, 130))
+value =   130
 
 [State 895, Anim]
 type = changeanim
