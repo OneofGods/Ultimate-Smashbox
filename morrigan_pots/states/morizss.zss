@@ -1034,7 +1034,6 @@ if pausetime = 0 && p2, pausetime > 0 {
 	if sprpriority >= 0
 	&& sprpriority = p2, sprpriority
 	&& cond((p2, numtarget), (p2, target, gethitvar(isbound) = 0), 1) {
-		sprpriority{value: p2, sprpriority - 1; redirectID: p2, ID}
 	}
 	if p2, gethitvar(hitshaketime) > 0 {
 		offset{x: (gametime % 2) * facing; redirectID: p2, ID}
