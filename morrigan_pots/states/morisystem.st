@@ -2174,7 +2174,7 @@ y = 0.9
 [State 195, Vel]
 type = velset
 trigger1 = anim = 195 && animelemtime(5) >= 0
-y = -0.25 * 1 / 20.0)
+y = -0.25 * 1 / 20.0
 
 [State 195, Bat Explods]
 type = explod
