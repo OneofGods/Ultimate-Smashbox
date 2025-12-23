@@ -2317,7 +2317,7 @@ ctrl = 0
 
 [State 4107, Send Target]
 redirectID = root, ID
-type = targetadd
+type = null
 trigger1 = numtarget(4105)
 trigger1 = target(4105), ishelper = 0
 playerID = target(4105), ID
