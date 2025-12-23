@@ -1126,7 +1126,7 @@ y = 0
 State 3401, Pos]
 type = posset
 trigger1 = time <= 10
-x = (-((gamewidth / 2.0) + 40) -50 * sin(time / 3.33)) * facing
+x = (-((gamewidth / 2.0) + 40) -50 * 0) * facing
 
 [State 3401, Vel]
 type = velset

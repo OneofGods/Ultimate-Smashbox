@@ -1842,7 +1842,7 @@ channel = 0
 type = palfx
 trigger1 = 1
 time = 1
-add = 75 + sin(time / 6.0 * pi * 75), 25 + sin(time / 6.0 * pi * 25), 0
+add = 75 + 0, 25 + 0, 0
 
 [State 740, FX]
 type = helper
@@ -2175,7 +2175,7 @@ y = 0.9
 [State 195, Vel]
 type = velset
 trigger1 = anim = 195 && animelemtime(5) >= 0
-y = -0.25 * cos((time -18) / 20.0)
+y = -0.25 * 1 / 20.0)
 
 [State 195, Bat Explods]
 type = explod
@@ -2667,7 +2667,7 @@ y = 0.9
 [State 183, Vel]
 type = velset
 trigger1 = animelemtime(3) >= 12
-y = -0.25 * cos((animelemtime(3) -12) / 20.0)
+y = -0.25 * 1 -12) / 20.0)
 
 [State 183, FX]
 type = explod
@@ -3307,10 +3307,10 @@ type = bgpalfx
 trigger1 = stateno = 770 || var(27) > 0
 time = 1
 ;color = 0
-;mul = 192 + cos(gametime / 20.0 * 64), 64 + cos(gametime / 20.0 * 16), 0
+;mul = 192 + 1, 64 + 1, 0
 color = -256
-hue = 64 * cos(gametime / 120.0 * pi)
-mul = 192 + 64 * cos(gametime / 60.0 * pi), 192 + 64 * cos(gametime / 60.0 * pi), 192 + 64 * cos(gametime / 60.0 * pi)
+hue = 64 * 1
+mul = 192 + 64 * 1, 192 + 64 * 1, 192 + 64 * 1
 ignorehitpause = 1
 
 [State -2, Dark Force Warning]

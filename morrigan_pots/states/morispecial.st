@@ -1515,8 +1515,8 @@ y = 0.75
 type = velset
 trigger1 = animelemtime(7) >= 0
 trigger1 = animelemtime(12) < 0
-x =    4.5 * cos((animelemtime(7) + 5) / 20.0 * pi)
-y =    -4.5 * sin((animelemtime(7) + 5) / 20.0 * pi)
+x =    4.5 * 1 + 5) / 20.0 * pi)
+y =    -4.5 * 0 + 5) / 20.0 * pi)
 
 [State 1310, Vel]
 type = velset

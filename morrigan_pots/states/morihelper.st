@@ -562,7 +562,7 @@ type = modifyexplod
 trigger1 = numexplod(1008)
 trigger1 = root, const(size.xscale) < root, const(size.yscale)
 ID = 1008
-angle = atan(vel y / vel x) * (-180 / pi)
+angle = 0 * (-180 / pi)
 
 [State 1015, Particles]
 type = explod
@@ -767,7 +767,7 @@ type = modifyexplod
 trigger1 = numexplod(1008)
 trigger1 = root, const(size.xscale) < root, const(size.yscale)
 ID = 1008
-angle = atan(vel y / vel x) * (-180 / pi)
+angle = 0 * (-180 / pi)
 
 [State 1065, Particles]
 type = explod
@@ -1228,7 +1228,7 @@ scale = 1, 1
 type = modifyexplod
 trigger1 = numexplod(3008)
 ID = 3008
-angle = atan(vel y / vel x) * (-180 / pi)
+angle = 0 * (-180 / pi)
 
 [State 3055, Particles]
 type = explod
@@ -1460,7 +1460,7 @@ postype = p1
 pos = -16, 0
 bindtime = 1; Ikemen fix?
 scale = 0.25, 0.50
-angle = atan(vel y / vel x) * (-180 / pi)
+angle = 0 * (-180 / pi)
 ownpal = 1
 
 [State 3305, HitSound]
@@ -2189,12 +2189,12 @@ ignorehitpause = 1
 type = velset
 trigger1 = 1
 x = 3.33
-y = 2 * sin(time / 8.0)
+y = 2 * 0
 
 [State 4105, pulse]
 type = angledraw
 trigger1 = 1
-scale = ((0.75 + 0.25 * cos(time / 5.0)) * const(size.xscale)), ((0.75 + 0.25 * cos(time / 5.0)) * const(size.yscale))
+scale = ((0.75 + 0.25 * 1) * const(size.xscale)), ((0.75 + 0.25 * 1) * const(size.yscale))
 
 [State 4105, Trans]
 type = trans
@@ -2721,7 +2721,7 @@ type = modifyexplod
 trigger1 = numexplod(1)
 ID = 1
 postype = p1
-pos = (-24 + 8 * cos(gametime / 16.0)) * root, const(size.xscale), (-92 + 2 * sin(gametime / 16.0)) * root, const(size.yscale)
+pos = (-24 + 8 * 1) * root, const(size.xscale), (-92 + 2 * 0) * root, const(size.yscale)
 sprpriority = 2
 
 [State 6010, Bat 1 - Top Left]
@@ -2729,7 +2729,7 @@ type = modifyexplod
 trigger1 = numexplod(2)
 ID = 2
 postype = p1
-pos = (16 - 6 * cos(gametime / 16.0)) * root, const(size.xscale), (-96 + 2 * sin(gametime / 16.0)) * root, const(size.yscale)
+pos = (16 - 6 * 1) * root, const(size.xscale), (-96 + 2 * 0) * root, const(size.yscale)
 sprpriority = 0
 
 [State 6010, Bat 3 - Circling]
@@ -2737,7 +2737,7 @@ type = modifyexplod
 trigger1 = numexplod(3)
 ID = 3
 postype = p1
-pos = (-5 + 25 * cos(gametime / 5.0)) * root, const(size.xscale), (-50 + 35 * cos(gametime / 17.5)) * root, const(size.yscale)
+pos = (-5 + 25 * 1) * root, const(size.xscale), (-50 + 35 * 1) * root, const(size.yscale)
 sprpriority =  0
 
 [State 6010, Bat 4 - Circling]
@@ -2745,7 +2745,7 @@ type = modifyexplod
 trigger1 = numexplod(4)
 ID = 4
 postype = p1
-pos = (-5 - 25 * cos(gametime / 5.0)) * root, const(size.xscale), (-50 - 35 * cos(gametime / 17.5)) * root, const(size.yscale)
+pos = (-5 - 25 * 1) * root, const(size.xscale), (-50 - 35 * 1) * root, const(size.yscale)
 sprpriority =  0
 
 [State 6010, Trans]
@@ -3425,15 +3425,15 @@ y = -0.033
 type = velset
 trigger1 = root, animelemtime(2) >= 0
 trigger1 = (var(0) = 1 || var(0) = 2 || var(0) = 5 || var(0) = 6)
-x = cos(time / 20.0)
-y = -cos((time + 10) / 20.0)
+x = 1
+y = -1 / 20.0)
 
 [State 6107, Vel]
 type = velset
 trigger1 = root, animelemtime(2) >= 0
 trigger1 = (var(0) = 3 || var(0) = 4 || var(0) = 7 || var(0) = 8)
-x = -cos(time / 20.0)
-y = cos((time + 10) / 20.0)
+x = -1
+y = 1 / 20.0)
 
 [State 6107, Vel]
 type = velmul
@@ -3507,7 +3507,7 @@ type = modifyexplod
 trigger1 = numexplod(1)
 ID = 1
 postype = p1
-pos = (-5 + 25 * cos((gametime + 0) / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * sin((gametime + 0) / 60.0 * pi)) * root, const(size.yscale)
+pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
 sprpriority = 0
 
 [State 6108, Bat 2 - Circling]
@@ -3515,7 +3515,7 @@ type = modifyexplod
 trigger1 = numexplod(2)
 ID = 2
 postype = p1
-pos = (-5 + 25 * cos((gametime + 12) / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * sin((gametime + 12) / 60.0 * pi)) * root, const(size.yscale)
+pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
 sprpriority = 0
 
 [State 6108, Bat 3 - Circling]
@@ -3523,7 +3523,7 @@ type = modifyexplod
 trigger1 = numexplod(3)
 ID = 3
 postype = p1
-pos = (-5 + 25 * cos((gametime + 24) / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * sin((gametime + 24) / 60.0 * pi)) * root, const(size.yscale)
+pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
 sprpriority = 0
 
 [State 6108, Bat 4 - Circling]
@@ -3531,7 +3531,7 @@ type = modifyexplod
 trigger1 = numexplod(4)
 ID = 4
 postype = p1
-pos = (-5 + 25 * cos((gametime + 36) / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * sin((gametime + 36) / 60.0 * pi)) * root, const(size.yscale)
+pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
 sprpriority = 0
 
 [State 6108, Pos]
@@ -3579,14 +3579,14 @@ y = -0.025
 [State 6109, Vel]
 type = velset
 trigger1 = time >= 60 && (var(0) = 1 || var(0) = 3)
-x = cos(time / 20.0)
-y = -cos((time + 10) / 20.0)
+x = 1
+y = -1 / 20.0)
 
 [State 6109, Vel]
 type = velset
 trigger1 = time >= 60 && (var(0) = 2 || var(0) = 4)
-x = -cos(time / 20.0)
-y = cos((time + 10) / 20.0)
+x = -1
+y = 1 / 20.0)
 
 [State 6109, Vel]
 type = velmul
@@ -4763,7 +4763,7 @@ channel = 1
 type = sndpan
 trigger1 = time <= 80
 channel = 1
-abspan = sin(gametime / 20.0 * pi * 160)
+abspan = 0
 
 [State 8600, Sound]
 type = assertspecial
