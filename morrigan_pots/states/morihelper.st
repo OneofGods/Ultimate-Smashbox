@@ -3932,16 +3932,16 @@ trigger3 = time > 0
 [State 8150, Pos]
 type = posset
 trigger1 = playerIDexist(var(125))
-x = playerID(var(125), pos x)
-y = playerID(var(125), pos y) + (playerID(var(125)), const(size.mid.pos.y))
+x = playerID(var(125)), pos x
+y = playerID(var(125)), pos y + (playerID(var(125)), const(size.mid.pos.y))
 
 [State 8150, Pos]
 type = posset
 trigger1 = playerIDexist(var(125))
 trigger1 = playerID(var(125)), statetype = L || (playerID(var(125)), anim = [5080, 5119])
 trigger1 = playerID(var(125)), stateno != [5020, 5050]
-x = playerID(var(125), pos x)
-y = playerID(var(125), pos y) - 20
+x = playerID(var(125)), pos x
+y = playerID(var(125)), pos y - 20
 
 [State 8150, Turn]
 type = turn
