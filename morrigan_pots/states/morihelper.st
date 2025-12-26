@@ -3507,7 +3507,7 @@ type = modifyexplod
 trigger1 = numexplod(1)
 ID = 1
 postype = p1
-pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
+pos = 20 * root, const(size.xscale), -50 * root, const(size.yscale)
 sprpriority = 0
 
 [State 6108, Bat 2 - Circling]
@@ -3515,7 +3515,7 @@ type = modifyexplod
 trigger1 = numexplod(2)
 ID = 2
 postype = p1
-pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
+pos = 20 * root, const(size.xscale), -50 * root, const(size.yscale)
 sprpriority = 0
 
 [State 6108, Bat 3 - Circling]
@@ -3523,7 +3523,7 @@ type = modifyexplod
 trigger1 = numexplod(3)
 ID = 3
 postype = p1
-pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
+pos = 20 * root, const(size.xscale), -50 * root, const(size.yscale)
 sprpriority = 0
 
 [State 6108, Bat 4 - Circling]
@@ -3531,7 +3531,7 @@ type = modifyexplod
 trigger1 = numexplod(4)
 ID = 4
 postype = p1
-pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
+pos = 20 * root, const(size.xscale), -50 * root, const(size.yscale)
 sprpriority = 0
 
 [State 6108, Pos]
