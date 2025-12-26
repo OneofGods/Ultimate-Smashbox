@@ -3426,14 +3426,14 @@ type = velset
 trigger1 = root, animelemtime(2) >= 0
 trigger1 = (var(0) = 1 || var(0) = 2 || var(0) = 5 || var(0) = 6)
 x = 1
-y = -1 / 20.0)
+y = -1 / 20.0
 
 [State 6107, Vel]
 type = velset
 trigger1 = root, animelemtime(2) >= 0
 trigger1 = (var(0) = 3 || var(0) = 4 || var(0) = 7 || var(0) = 8)
 x = -1
-y = 1 / 20.0)
+y = 1 / 20.0
 
 [State 6107, Vel]
 type = velmul
@@ -3580,13 +3580,13 @@ y = -0.025
 type = velset
 trigger1 = time >= 60 && (var(0) = 1 || var(0) = 3)
 x = 1
-y = -1 / 20.0)
+y = -1 / 20.0
 
 [State 6109, Vel]
 type = velset
 trigger1 = time >= 60 && (var(0) = 2 || var(0) = 4)
 x = -1
-y = 1 / 20.0)
+y = 1 / 20.0
 
 [State 6109, Vel]
 type = velmul
