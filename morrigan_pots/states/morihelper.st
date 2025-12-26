@@ -3101,7 +3101,7 @@ anim = 9999
 sprpriority = 3
 
 [State 6029, Clear ID]
-type = modifyplayer
+type = null
 trigger1 = !time
 helperID = 0
 
