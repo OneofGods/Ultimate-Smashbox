@@ -3928,7 +3928,6 @@ type = destroyself
 trigger1 = var(128) <= 0
 trigger2 = !playerIDexist(var(125))
 trigger3 = time > 0
-trigger3 = playerID(var(125)), palfxvar(time) = 0
 
 [State 8150, Pos]
 type = posset
