@@ -2666,7 +2666,7 @@ y = 0.9
 [State 183, Vel]
 type = velset
 trigger1 = animelemtime(3) >= 12
-y = -0.25 * 1 -12) / 20.0)
+y = -0.25
 
 [State 183, FX]
 type = explod
