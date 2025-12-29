@@ -698,7 +698,6 @@ ignorehitpause if numenemy {
 		&& enemy($i), statetype = A
 		&& enemy($i), gethitvar(playerno) = playerno
 		&& enemy($i), gethitvar(guarded) = 0
-		&& enemy($i), hitfall = 0
 		&& enemy($i), ctrl = 0
 		&& enemy($i), time < 60 {
 			nothitby{value: SCA; time: 2; redirectID: enemy($i), ID}
@@ -814,12 +813,10 @@ ignorehitpause if roundstate = 2 && movetype = A && numtarget {
 # Infinite Prevention System
 ignorehitpause if p2movetype = H {
 	if p2, gethitvar(playerno) = playerno
-	&& p2, hitfall = 0
 	&& p2statetype != A
 	&& (p2, gethitvar(hitcount) >= 50 || combocount >= 100)
 	&& stateno != [3000, 4999]
 	&& !map(darkforce) {
-		hitfallset{value: 1; redirectID: p2, ID}
 	}
 }
 
@@ -897,7 +894,6 @@ if map(cornerpush) {
 		|| target, gethitvar(ID) != ID
 		|| target, gethitvar(slidetime) = 0
 		|| (target, statetype = S && map(cornerpush) < 1.0)
-		|| target, hitfall = 1
 		|| target, vel y != 0 {
 			mapset{map: "cornerpush"; value: 0}
 		}
@@ -1059,7 +1055,6 @@ if pausetime = 0 && p2, pausetime > 0 {
 	# AI P2 Unhittable Flag
 	mapset{map: "ai_p2unhittable"; value: 0}
 	if p2, alive = 0 || p2, standby = 1
-	|| p2statetype = A && p2movetype = H && p2, hitfall = 0
 		mapset{map: "ai_p2unhittable"; value: 1}
 	}
 
@@ -1166,7 +1161,6 @@ ignorehitpause {
 	if map(juggle_count) > 0
 		if p2movetype != H
 		|| p2, ctrl
-		|| p2, hitfall = 0
 		|| p2statetype = S || p2statetype = C
 		|| (p2statetype = L && p2, pos y = 0 && p2, vel y = 0)
 		|| p2stateno = [120, 155] || p2stateno = 5201 || p2stateno = 5210
@@ -1179,7 +1173,6 @@ ignorehitpause {
 	if pausetime = 0
 	&& movehit = 1
 	&& numtarget
-	&& p2, hitfall
 	&& p2movetype = H
 		if map(juggle_timer) <= 0 {
 			mapAdd{map: "juggle_count"; value: map(juggle_start); redirectID: cond(ishelper, root, ID, ID)}
@@ -1190,7 +1183,6 @@ ignorehitpause {
 	# Juggle Timer
 	# To determine if a certain move is a juggle starter
 	if p2movetype = H
-	&& p2, hitfall
 	&& p2, pausetime = 0 {
 		if p2, gethitvar(playerno) = playerno {
 			mapadd{map: "juggle_timer"; value: 1}

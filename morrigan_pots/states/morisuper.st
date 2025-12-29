@@ -424,7 +424,6 @@ persistent = 0
 type = selfstate
 trigger1 = hitshakeover
 trigger1 = vel y > 0
-trigger1 = !hitfall
 value = 5040
 
 [State 7697, Fall Recovery]
@@ -1966,7 +1965,7 @@ trigger1 = !time
 y = 0
 
 [State 1114010, fall]
-type = hitfallset
+type = null
 trigger1 = 1
 value = 0
 
@@ -2556,7 +2555,7 @@ trigger1 = 1
 value = 5012
 
 [State 1114060, fall]
-type = hitfallset
+type = null
 trigger1 = 1
 value = 1
 

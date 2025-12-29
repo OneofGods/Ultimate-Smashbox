@@ -1010,7 +1010,6 @@ ID = 3005
 type = targetstate
 trigger1 = movehit
 trigger1 = numtarget(3005)
-trigger1 = target(3005), hitfall
 trigger1 = target(3005), selfanimexist(7697)
 trigger1 = target(3005), stateno = 5000 || target(3005), stateno = 5010 || target(3005), stateno = 5020
 value = 7697
@@ -1308,7 +1307,6 @@ ID = 3055
 type = targetstate
 trigger1 = movehit
 trigger1 = numtarget(3055)
-trigger1 = target(3055), hitfall
 trigger1 = target(3055), selfanimexist(7697)
 trigger1 = target(3055), stateno = 5000 || target(3055), stateno = 5010 || target(3055), stateno = 5020
 value = 7697
