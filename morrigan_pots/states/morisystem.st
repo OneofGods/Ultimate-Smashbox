@@ -4148,7 +4148,6 @@ trigger1 = roundstate = 4
 trigger1 = camerazoom <= 1
 trigger1 = screenpos y = [0, gameheight]
 trigger1 = numenemy
-trigger1 = p2, stateno < 1000
 value = 1
 
 [State -3, Victory Camera]
@@ -4205,7 +4204,6 @@ type = selfstate
 trigger1 = numenemy
 trigger1 = movetype != A
 trigger1 = 1
-trigger1 = p2, stateno >= 1000
 value = 5040
 
 
