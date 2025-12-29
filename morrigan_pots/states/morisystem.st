@@ -3881,7 +3881,6 @@ ignorehitpause = 1
 [State -3, Throw Cancel Fix]; Because first frame of a throw has movehit and Custom Combo has so much freedom
 type = null
 trigger1 = numtarget
-trigger1 = movehitvar(frame)
 trigger1 = hitdefattr != SCA, AA
 trigger1 = target, gethitvar(frame)
 trigger1 = target, stateowner, ID = ID
