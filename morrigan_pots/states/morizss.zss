@@ -985,7 +985,6 @@ ignorehitpause if movetype = H {
 		if gethitvar(hitdamage) = [1, 50]
 		&& gethitvar(ground.animtype) = 0
 		&& gethitvar(xvel) < 10
-		&& receiveddamage <= 50 # Because of combos
 		&& gethitvar(attr) != SCA, HA, HT, HP {
 			let cheap = 1;
 		}
