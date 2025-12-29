@@ -1668,7 +1668,6 @@ value = 1
 type = targetlifeadd
 trigger1 = !time
 value = -130 * var(67)
-dizzy = 0
 
 [State 1311, Stun Damage]
 type = null

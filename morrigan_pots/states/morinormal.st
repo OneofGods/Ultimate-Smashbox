@@ -3187,7 +3187,6 @@ value = 1
 type = targetlifeadd
 trigger1 = animelem = 6
 value = -110 * var(67)
-dizzy = 0
 
 [State 810, Stun Damage]
 type = null
@@ -3471,7 +3470,6 @@ value = 1
 type = targetlifeadd
 trigger1 = animelem = 8
 value = -120 * var(67)
-dizzy = 0
 kill = 0
 
 [State 820, Stun Damage]
@@ -3569,7 +3567,6 @@ velset = 0, 0
 type = lifeadd
 trigger1 = !time
 value = -1
-dizzy = 0
 kill = 1
 
 [State 823, Anim]

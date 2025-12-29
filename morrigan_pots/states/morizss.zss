@@ -673,7 +673,6 @@ ignorehitpause if p2movetype = H && p2statetype = A {
 	if p2, gethitvar(playerno) = playerno
 	&& p2, gethitvar(fall.recover)
 	&& p2, gethitvar(isbound) = 0
-	&& p2, alive && p2, dizzy = 0
 	&& p2, incustomstate = 0 # Fall recovery in custom states is best handled inside each state
 	&& p2, vel y > 0
 	&& p2, pos y >= p2, const(movement.air.gethit.groundrecover.ground.threshold) {
@@ -717,7 +716,6 @@ ignorehitpause if p2stateno = 52 {
 ignorehitpause if p2movetype = H {
 	if p2, gethitvar(playerno) = playerno
 	&& p2, alive
-	&& p2, dizzy = 0
 	&& p2, gethitvar(down.recover) = 0
 	&& p2, gethitvar(fall.recover) = 0 {
 		if p2, gethitvar(fallcount) <= 1 {
@@ -1086,7 +1084,6 @@ if pausetime = 0 && p2, pausetime > 0 {
 	if !inGuardDist && stateType = S && ctrl {
 		# Set spacing
 		# Unique to each char
-		if p2MoveType = H || p2, dizzy {
 			map(ai_spacing) := 10;
 		} else {
 			map(ai_spacing) := 150;

@@ -2981,7 +2981,6 @@ triggerall = numtarget(4105)
 trigger1 = animelem = 3 || animelem = 5 || animelem = 7 || animelem = 9
 trigger2 = animelem = 11 || animelem = 13 || animelem = 15 || animelem = 17
 value = -25 * var(67)
-dizzy = 0
 kill = animelem = 17
 
 [State 4107, Damage]
