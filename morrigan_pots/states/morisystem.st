@@ -3609,7 +3609,6 @@ channel = 0
 [State -2, Guard Break Voice]
 type = playsnd
 trigger1 = time = 1
-trigger1 = stateno = const(StateGuardBreakRecover)
 value = 5000, (random % 3)
 lowpriority = 1
 channel = 0
