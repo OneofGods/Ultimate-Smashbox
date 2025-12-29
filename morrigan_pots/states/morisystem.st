@@ -4103,7 +4103,6 @@ supermovetime = 999
 
 [State -3, Super Finish]
 type = helper
-triggerall = winHyper
 triggerall = roundstate = 3
 triggerall = !numhelper(8600)
 trigger1 = movecontact = [1, 4]
