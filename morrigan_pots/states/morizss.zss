@@ -908,7 +908,6 @@ if map(cornerpush) && numtarget {
 ignorehitpause if p2movetype = H && p2, time <= 0 {
 	&& p2, gethitvar(facing) = 0
 	&& p2, hitshakeover = 0 &&	p2statetype != L
-	&& p2, hitoverridden = 0 && p2, incustomstate = 0 {
 		if (p2, facing = facing && p2, p2dist x < p2, const(size.ground.front)) ||
 		(p2, facing != facing && p2, p2dist x < -(p2, const(size.ground.back))) {
 			turn{redirectID: p2, ID}
@@ -1229,14 +1228,12 @@ ignorehitpause if pausetime = 0
 				let spark_no = map(sparkno);
 				let getterdist = (playerIndex($i), pos x - pos x) * facing;
 				let spark_x = cond($getterdist > (map(sparkx.max) * $spark_scaleoffset_x), (map(sparkx.max) * $spark_scaleoffset_x), cond($getterdist > (map(sparkx.min) * $spark_scaleoffset_x), $getterdist, (map(sparkx.min) * $spark_scaleoffset_x)));
-				if !ishelper || playerIndex($i), hitoverridden = 0 {
 					call HitSparks($spark_no, $spark_x, $spark_y);
 				}
 				# Counter hit spark
 				if movehit = 1
 				&& (movecountered = 1 || map(counterhit_buffer)) # MoveCountered has limits against multiple enemies
 				&& cond(ishelper, root, movetype != H, movetype != H)
-				&& (!ishelper || playerIndex($i), hitoverridden = 0)
 				&& playerIndex($i), movetype = H
 				&& playerIndex($i), gethitvar(guarded) = 0
 				&& map(sparkno) = [8010, 8099] {
