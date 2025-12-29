@@ -3911,7 +3911,6 @@ trigger1 = random < 15
 trigger1 = movetype != H
 trigger1 = statetype != A || stateno = 183 || stateno = 195
 trigger1 = stateno != [5900, 5902] && stateno != [190, 192]
-trigger1 = gameVar(pausetime) = 0 && gameVar(superpausetime) = 0
 trigger1 = numexplod(6000) < 6
 anim = 6000
 ID = 6000
@@ -3931,7 +3930,6 @@ trigger1 = random < 30
 trigger1 = movetype != H
 trigger1 = statetype != A || stateno = 183 || stateno = 195
 trigger1 = stateno != [5900, 5902] && stateno != [190, 192]
-trigger1 = gameVar(pausetime) = 0 && gameVar(superpausetime) = 0
 trigger1 = numexplod(6000) < 6
 anim = 6000
 ID = 6000
