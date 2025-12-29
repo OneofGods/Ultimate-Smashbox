@@ -8,6 +8,7 @@
 ;====================<STANDING>====================
 [Statedef 0]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 velset = 0, 0
@@ -50,6 +51,7 @@ value = 5040
 ;====================<CROUCHING>====================
 [Statedef 10]
 type = C
+trigger1 = 1
 physics = C
 movetype = I
 velset = 0, 0
@@ -82,6 +84,7 @@ value = 11
 
 [Statedef 11]
 type = C
+trigger1 = 1
 physics = C
 movetype = I
 anim = 11
@@ -97,6 +100,7 @@ value = 11
 
 [Statedef 12]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 velset = 0, 0
@@ -123,6 +127,7 @@ value = 0
 ;==========<WALK>==========
 [Statedef 20]
 type = S
+trigger1 = 1
 physics = S
 sprpriority = 0
 
@@ -169,6 +174,7 @@ ownpal = 1
 ;----- JUMP START -----
 [Statedef 40]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 40
@@ -270,6 +276,7 @@ ctrl = 1
 ;----- JUMP UP -----
 [Statedef 50]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 sprpriority = 1
@@ -298,6 +305,7 @@ value = 52
 ;----- JUMP FALL -----
 [Statedef 51]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 sprpriority = 1
@@ -316,6 +324,7 @@ value = 52
 ;----- JUMP LAND -----
 [Statedef 52]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 47
@@ -382,6 +391,7 @@ ctrl = 1
 ;======================<FLY FORWARD>===========================
 [Statedef 100]
 type = U
+trigger1 = 1
 physics = N
 anim =  102
 ctrl = 0
@@ -526,6 +536,7 @@ value = 52
 ;======================<FLY BACKWARD>===========================
 [Statedef 105]
 type = U
+trigger1 = 1
 physics = N
 anim =  102
 ctrl = 0
@@ -643,6 +654,7 @@ value = 52
 ;----- START -----
 [Statedef 120]
 type = U
+trigger1 = 1
 physics = U
 
 [State 120, Do or do not]
@@ -739,6 +751,7 @@ flag = nowalk
 ;----- STAND GUARD (Guarding) -----
 [Statedef 130]
 type = S
+trigger1 = 1
 physics = S
 velset =  vel x, 0
 
@@ -818,6 +831,7 @@ flag = nowalk
 ;----- CROUCH GUARD (Guarding) -----
 [Statedef 131]
 type = C
+trigger1 = 1
 physics = C
 velset =  vel x, 0
 
@@ -870,6 +884,7 @@ value = 140
 ;----- AIR GUARD (Guarding) -----
 [Statedef 132]
 type = A
+trigger1 = 1
 physics = N
 
 [State 132, Do or do not]
@@ -926,6 +941,7 @@ value = 52
 ;----- GUARD (End) -----
 [Statedef 140]
 type = U
+trigger1 = 1
 physics = U
 ctrl = 1
 
@@ -990,6 +1006,7 @@ value = (statetype = C) * 11 + (statetype = A) * 51
 ;----- STAND GUARD HIT (Shaking) -----
 [Statedef 150]
 type = S
+trigger1 = 1
 physics = N
 movetype = H
 velset = 0, 0
@@ -1039,6 +1056,7 @@ time = max(4, gethitvar(hitshaketime) / 2)
 ;----- STAND GUARD HIT 2 (Knocked back) -----
 [Statedef 151]
 type = S
+trigger1 = 1
 physics = S
 movetype = H
 anim = 130
@@ -1089,6 +1107,7 @@ ctrl = 1
 ;----- CROUCH GUARD HIT (Shaking) -----
 [Statedef 152]
 type = C
+trigger1 = 1
 physics = N
 movetype = H
 velset = 0, 0
@@ -1138,6 +1157,7 @@ time = max(4, gethitvar(hitshaketime) / 2)
 ;----- CROUCH GUARD HIT 2 (Knocked back) -----
 [Statedef 153]
 type = C
+trigger1 = 1
 physics = C
 movetype = H
 anim = 131
@@ -1188,6 +1208,7 @@ ctrl = 1
 ;----- AIR GUARD HIT (Shaking) -----
 [Statedef 154]
 type = A
+trigger1 = 1
 physics = N
 movetype = H
 velset = 0, 0
@@ -1217,6 +1238,7 @@ time = max(4, gethitvar(hitshaketime) / 2)
 ;----- AIR GUARD HIT 2 (Knocked away) -----
 [Statedef 155]
 type = A
+trigger1 = 1
 physics = N
 movetype = H
 anim = 132
@@ -1270,6 +1292,7 @@ value = 52
 ;----- STANDING -----
 [Statedef 700]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 700
@@ -1365,6 +1388,7 @@ ctrl = 1
 ;----- CROUCHING -----
 [Statedef 701]
 type = C
+trigger1 = 1
 physics = C
 movetype = I
 anim = 701
@@ -1454,6 +1478,7 @@ ctrl = 1
 ;----- JUMPING -----
 [Statedef 702]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 702
@@ -1536,6 +1561,7 @@ ctrl = 1
 
 [Statedef 703]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 703
@@ -1561,6 +1587,7 @@ value = 52
 ;----- HELPER -----
 [Statedef 705]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 705
@@ -1703,6 +1730,7 @@ trigger2 = time >= 2
 ;==========<DODGE>==========
 [Statedef 710]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 710
@@ -1712,6 +1740,7 @@ sprpriority = -1
 
 [State Erase Inputs]
 type = varset
+trigger1 = 1
 var(23) = 1
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1783,6 +1812,7 @@ ctrl = 1
 ;----- FORWARD -----
 [Statedef 720]
 type = S
+trigger1 = 1
 physics = N
 movetype = I
 anim = 720
@@ -1792,6 +1822,7 @@ sprpriority = 1
 
 [State Erase Inputs]
 type = varset
+trigger1 = 1
 var(23) = 1
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1841,6 +1872,7 @@ ctrl = 1
 ;----- BACKWARD -----
 [Statedef 725]
 type = S
+trigger1 = 1
 physics = N
 movetype = I
 anim = 725
@@ -1850,6 +1882,7 @@ sprpriority = 1
 
 [State Erase Inputs]
 type = varset
+trigger1 = 1
 var(23) = 1
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1899,6 +1932,7 @@ ctrl = 1
 ;==========<POWER CHARGE>==========
 [Statedef 740]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 740
@@ -1907,6 +1941,7 @@ velset = 0, 0
 
 [State Erase Inputs]
 type = varset
+trigger1 = 1
 var(23) = 1
 trigger1 = !AIlevel
 trigger1 = time <= 0
@@ -1982,6 +2017,7 @@ value = 741
 ;----- END -----
 [Statedef 741]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 741
@@ -2010,6 +2046,7 @@ ctrl = 1
 ;==========<GUARD CANCEL>==========
 [Statedef 750]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 750
@@ -2081,6 +2118,7 @@ value = 2900
 ;===================<DARK FORCE>===================
 [Statedef 770]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 770
@@ -2148,6 +2186,7 @@ ctrl = 1
 ;----- RESET -----
 [Statedef 771]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 771
@@ -2168,6 +2207,7 @@ ctrl = 1
 ;====================<CHEAP K.O.>====================
 [Statedef 5950]
 type = S
+trigger1 = 1
 movetype = H
 physics = S
 anim = 5950
@@ -2230,6 +2270,7 @@ value =  5150
 ;==========<TAUNT>==========
 [Statedef 195]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 195
@@ -2359,6 +2400,7 @@ value = 196
 ;---Land---
 [Statedef 196]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 47
@@ -2398,6 +2440,7 @@ ctrl = 1
 ;==========<LOSE (Time over)>==========
 [Statedef 170]
 type = S
+trigger1 = 1
 ctrl = 0
 anim =  175
 velset = 0, 0
@@ -2423,6 +2466,7 @@ pos =  26,  -72
 ;==========<DRAWGAME (Time over)>==========
 [Statedef 175]
 type = S
+trigger1 = 1
 ctrl = 0
 velset = 0, 0
 
@@ -2435,6 +2479,7 @@ value = 170
 ;==========<PREINTRO>==========
 [Statedef 190]
 type = S
+trigger1 = 1
 ctrl = 0
 velset = 0, 0
 
@@ -2447,6 +2492,7 @@ value =  192
 ;==========<INTRO 1 - GROUND PORTAL>==========
 [Statedef 191]
 type = S
+trigger1 = 1
 physics = N
 anim = 191
 
@@ -2497,6 +2543,7 @@ value = 0
 ;==========<INTRO 2 - TELEPORT>==========
 [Statedef 192]
 type = A
+trigger1 = 1
 physics = N
 anim = 192
 
@@ -2587,6 +2634,7 @@ value = 0
 ;==========<INTRO vs VIUDA NEGRA>==========
 [Statedef 360]
 type = S
+trigger1 = 1
 physics = N
 anim = 360
 
@@ -2625,6 +2673,7 @@ value = 0
 ;====================<WIN POSE DECIDER>====================
 [Statedef 180]
 type = S
+trigger1 = 1
 ctrl = 0
 velset = 0, 0
 
@@ -2652,6 +2701,7 @@ value =    189
 ;==========<WIN 1>==========
 [Statedef 181]
 type = S
+trigger1 = 1
 anim = 181
 ctrl = 0
 velset = 0, 0
@@ -2700,6 +2750,7 @@ value = 0, 40
 ;==========<WIN 2>==========
 [Statedef 182]
 type = S
+trigger1 = 1
 anim = 182
 ctrl = 0
 velset = 0, 0
@@ -2724,6 +2775,7 @@ y = 0
 ;==========<WIN FLOAT>==========
 [Statedef 183]
 type = S
+trigger1 = 1
 movetype = I
 physics = S
 anim = 183
@@ -2840,6 +2892,7 @@ physics = N
 ;==========<WIN COSTUME>==========
 [Statedef 189]
 type = S
+trigger1 = 1
 anim = 189
 velset = 0, 0
 ctrl = 0
@@ -3013,6 +3066,7 @@ value = 1, 1
 ;==========<CONTINUE?>==========
 [Statedef 5500]
 type = S
+trigger1 = 1
 ctrl = 0
 velset = 0, 0
 
@@ -3026,14 +3080,17 @@ value = 5500
 ;----- Before Config -----
 [Statedef 5900]
 type = S
+trigger1 = 1
 anim = 9999
 
 [State 5900, Var Reset]
 type = varrangeset
+trigger1 = 1
 value = 0
 
 [State 5900, Var Reset]
 type = varrangeset
+trigger1 = 1
 fvalue = 0
 
 [State 5900, Palette]
@@ -3044,6 +3101,7 @@ dest = 1, palno
 
 [State 5900, Set PalFX 1 Colors]
 type = null
+trigger1 = 1
 ;Purple
 trigger1 = palno = 2 || palno = 3 || palno = 5 || palno = 9
 trigger1 = 1
@@ -3072,6 +3130,7 @@ value = 5901; Config
 ;----- After Config -----
 [Statedef 5902]
 type = S
+trigger1 = 1
 
 [State 190, Intro vs Viuda Negra]
 type = changestate
@@ -3090,6 +3149,7 @@ value =  0
 ;==========<FALL RECOVERY>==========
 [Statedef 5200]
 type = A
+trigger1 = 1
 physics = N
 movetype = H
 
@@ -3113,6 +3173,7 @@ value = 5201
 
 [Statedef 5201]
 type = S
+trigger1 = 1
 physics = N
 movetype = I
 anim = 5200
@@ -3180,6 +3241,7 @@ ctrl = 1
 
 [Statedef 5210]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 5210
@@ -3282,6 +3344,7 @@ value = 52
 ;========================<RETREAT>==========================
 [Statedef 5230]
 type = L
+trigger1 = 1
 physics = N
 movetype = I
 anim = 5230
@@ -3323,6 +3386,7 @@ ctrl = 1
 ;========================<TARGET OTG OVERRIDE>========================
 [Statedef 1115080]
 type = L
+trigger1 = 1
 physics = N
 movetype = H
 velset = 0, 0
@@ -3345,6 +3409,7 @@ value = 1115081
 
 [Statedef 1115081]
 type = L
+trigger1 = 1
 physics = C
 movetype = H
 velset = 0, 0
