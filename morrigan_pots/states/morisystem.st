@@ -3882,7 +3882,6 @@ ignorehitpause = 1
 type = null
 trigger1 = numtarget
 trigger1 = hitdefattr != SCA, AA
-trigger1 = target, gethitvar(frame)
 trigger1 = target, stateowner, ID = ID
 trigger1 = time <= 0 && target, time <= 0
 trigger1 = var(53) = 0 || var(54) = 0 || var(55) = 0 || var(56) = 0
