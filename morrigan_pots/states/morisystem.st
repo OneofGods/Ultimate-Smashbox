@@ -3882,7 +3882,6 @@ ignorehitpause = 1
 type = null
 trigger1 = numtarget
 trigger1 = hitdefattr != SCA, AA
-trigger1 = target, stateowner, ID = ID
 trigger1 = time <= 0 && target, time <= 0
 trigger1 = var(53) = 0 || var(54) = 0 || var(55) = 0 || var(56) = 0
 ignorehitpause = 1
@@ -4210,7 +4209,6 @@ trigger1 = numenemy
 trigger1 = movetype != A
 trigger1 = 1
 trigger1 = p2, stateno >= 1000
-trigger1 = p2, stateowner, playerno = playerno
 value = 5040
 
 
