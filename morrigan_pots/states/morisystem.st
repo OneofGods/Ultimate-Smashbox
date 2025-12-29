@@ -3667,12 +3667,10 @@ trigger3 = AIlevel
 trigger3 = inguarddist
 trigger3 = stateno != [700, 702]
 trigger3 = p2bodydist x < var(38)
-trigger3 = random < ( 50 * (AIlevelF / 8.0))
 trigger4 = AIlevel
 trigger4 = inguarddist
 trigger4 = stateno != [700, 702]
 trigger4 = var(39) = [1, 8]
-trigger4 = random < 200 * (AIlevelF / 8.0)
 trigger5 = AIlevel
 trigger5 = stateno = [700, 702]
 trigger5 = time = 14 && random < (250 + 700 * (AIlevel / 8.0))
