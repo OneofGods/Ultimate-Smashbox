@@ -353,7 +353,6 @@ ignorehitpause {
 			# Impact on enemy's back
 			if $spark_no = [8013, 8014]
 			|| $spark_no = [8023, 8024] {
-				if p2movetype = H && p2, gethitvar(playerno) = playerno && p2, animelemvar(group) >= 0 {
 					if p2, anim = [5080, 5089] || p2, anim = [5100, 5119]
 					|| p2, animelemvar(group) = [5001, 5002] || p2, animelemvar(group) = [5011, 5012] || p2, animelemvar(group) = [5031, 5032]
 					|| p2, animelemvar(group) = [5040, 5042] || p2, animelemvar(group) = [5061, 5062] || p2, animelemvar(group) = [5071, 5072] { # type L
@@ -670,7 +669,6 @@ ignorehitpause if !ishelper {
 
 # -2, P2 Fall Recovery
 ignorehitpause if p2movetype = H && p2statetype = A {
-	if p2, gethitvar(playerno) = playerno
 	&& p2, gethitvar(fall.recover)
 	&& p2, gethitvar(isbound) = 0
 	&& p2, incustomstate = 0 # Fall recovery in custom states is best handled inside each state
@@ -695,7 +693,6 @@ ignorehitpause if numenemy {
 	for i = 0; numenemy - 1; 1 {
 		if enemy($i), movetype = H
 		&& enemy($i), statetype = A
-		&& enemy($i), gethitvar(playerno) = playerno
 		&& enemy($i), gethitvar(guarded) = 0
 		&& enemy($i), ctrl = 0
 		&& enemy($i), time < 60 {
@@ -714,7 +711,6 @@ ignorehitpause if p2stateno = 52 {
 
 # -2, P2 Hard Knockdown
 ignorehitpause if p2movetype = H {
-	if p2, gethitvar(playerno) = playerno
 	&& p2, alive
 	&& p2, gethitvar(down.recover) = 0
 	&& p2, gethitvar(fall.recover) = 0 {
@@ -738,7 +734,6 @@ ignorehitpause if p2movetype = H {
 
 # No round stealing
 ignorehitpause if roundstate = 2 && movetype = A && numtarget {
-	if target, alive && target, life <= 1 && target, gethitvar(kill) = 0 && target, gethitvar(playerno) = playerno {
 		nothitby{value: SCA; time: 1}
 	}
 }
@@ -810,7 +805,6 @@ ignorehitpause if roundstate = 2 && movetype = A && numtarget {
 
 # Infinite Prevention System
 ignorehitpause if p2movetype = H {
-	if p2, gethitvar(playerno) = playerno
 	&& p2statetype != A
 	&& (p2, gethitvar(hitcount) >= 50 || combocount >= 100)
 	&& stateno != [3000, 4999]
@@ -825,7 +819,6 @@ ignorehitpause if roundstate = 3 {
 		if playerIDexist(player($i), ID) {
 			if player($i), alive && player($i), standby = 0 {
 				if player($i), playerno != playerno
-				&& player($i), gethitvar(playerno) != playerno {
 					mapset{map: "zoom_allowed"; value: 0}
 				}
 			}
@@ -913,7 +906,6 @@ if map(cornerpush) && numtarget {
 
 # -3, Auto P2 Facing
 ignorehitpause if p2movetype = H && p2, time <= 0 {
-	if p2, gethitvar(playerno) = playerno
 	&& p2, gethitvar(facing) = 0
 	&& p2, hitshakeover = 0 &&	p2statetype != L
 	&& p2, hitoverridden = 0 && p2, incustomstate = 0 {
@@ -939,7 +931,6 @@ ignorehitpause if p2, pausetime > 0 {
 # For Mugen characters that override air get hit states and still duplicate acceleration
 ignorehitpause if p2movetype = H {
 	if p2, time = 1 {
-		if p2, gethitvar(playerno) = playerno
 		&& (p2stateno = 5035 || p2stateno = 5050)
 		&& p2, incustomstate = 0 {
 			if p2, vel y = [(map(p2_yaccelfix) + 1.9 * p2, gethitvar(yaccel)), (map(p2_yaccelfix) + 3.1 * p2, gethitvar(yaccel))] {
@@ -952,7 +943,6 @@ ignorehitpause if p2movetype = H {
 
 # Underground Juggling
 ignorehitpause if numenemy && p2movetype = H {
-	if p2, gethitvar(playerno) = playerno
 	&& p2, gethitvar(isbound) = 0
 	&& p2, pos y > 0 {
 		# Fix position
@@ -969,7 +959,6 @@ ignorehitpause if numenemy && p2movetype = H {
 
 # P2 OTG - Stay Down
 ignorehitpause if p2movetype = H {
-	if p2, gethitvar(playerno) = playerno
 	&& (p2stateno = [5020, 5030] || p2stateno = 5070)
 	&& p2, gethitvar(down.velocity.x) = 0
 	&& p2, gethitvar(down.velocity.y) = 0
@@ -1181,7 +1170,6 @@ ignorehitpause {
 	# To determine if a certain move is a juggle starter
 	if p2movetype = H
 	&& p2, pausetime = 0 {
-		if p2, gethitvar(playerno) = playerno {
 			mapadd{map: "juggle_timer"; value: 1}
 		}
 	} else {
