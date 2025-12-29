@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ;============================================================================================
 ;=====================================<SPECIAL STATES>=======================================
 ;============================================================================================
@@ -1417,7 +1417,7 @@ hitsound.channel = 2
 p1facing = 1
 p2facing = 1
 p1stateno = 1310
-p2stateno = 1320
+; p2stateno = 1320 ; DEMON ELIMINATED - p2stateno unsupported
 fall = 1
 fall.recover = 0
 down.recover = 1
@@ -2017,7 +2017,7 @@ hitsound.channel = 2
 p1facing = 1
 p2facing = 1
 p1stateno = 1310
-p2stateno = 1320
+; p2stateno = 1320 ; DEMON ELIMINATED - p2stateno unsupported
 fall = 1
 fall.recover = 0
 down.recover = 0; cannot mash

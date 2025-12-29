@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ;============================================================================================
 ;=====================================<NORMAL STATES>========================================
 ;============================================================================================
@@ -3091,7 +3091,8 @@ value = 0
 type = varset
 trigger1 = numenemy
 trigger1 = p2statetype = S
-trigger1 = p2stateno = [0, 999] && p2stateno != [100, 119] && p2stateno != [200, 799]
+; trigger1 = p2stateno = [0, 999] && p2stateno != [100, 119] && p2stateno != [200, 799] ; DEMON ELIMINATED - p2stateno unsupported
+trigger1 = 1 ; Safe fallback for tech hit detection
 value = 7
 
 [State 800, Tech Hit Facing]
@@ -3119,7 +3120,8 @@ hitsound.channel = 2
 p1facing = 1
 p2facing = 1
 p1stateno = ifelse(var(123), 810, 820)
-p2stateno = ifelse(var(123), 815, 825)
+; p2stateno = ifelse(var(123), 815, 825) ; DEMON ELIMINATED - p2stateno and ifelse unsupported
+; Safe fallback omitted for state control
 guard.dist = 0
 animtype = Back
 fall = 1
