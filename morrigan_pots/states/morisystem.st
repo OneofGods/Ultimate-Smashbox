@@ -3563,7 +3563,6 @@ trigger2 = gethitvar(animtype) = 1 && random < 375
 trigger3 = gethitvar(animtype) >= 2 && random < 500
 trigger4 = gethitvar(damage) >= 100
 trigger5 = gethitvar(fall)
-trigger6 = gethitvar(attr) = SCA, HA, HT, HP
 value = 5000, (random % 3)
 channel = 0
 

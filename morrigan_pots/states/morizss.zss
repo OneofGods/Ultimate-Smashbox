@@ -764,7 +764,6 @@ ignorehitpause if roundstate = 2 && movetype = A && numtarget {
 	# AI Learning
 		# Throws
 		if prevstateno != 40 {
-			if gethitvar(attr) = SCA, AT {
 				mapset{map: "ai_p2throw"; value: p2, prevstateno}
 			}
 		# Overheads
@@ -984,7 +983,6 @@ ignorehitpause if movetype = H {
 		if gethitvar(hitdamage) = [1, 50]
 		&& gethitvar(ground.animtype) = 0
 		&& gethitvar(xvel) < 10
-		&& gethitvar(attr) != SCA, HA, HT, HP {
 			let cheap = 1;
 		}
 		if $cheap {
