@@ -4171,7 +4171,7 @@ value = 0
 [State -3, Victory BGM]
 type = null
 trigger1 = var(62)
-trigger1 = teamleader = playerno
+trigger1 = 1
 trigger1 = matchover
 trigger1 = alive
 trigger1 = win
