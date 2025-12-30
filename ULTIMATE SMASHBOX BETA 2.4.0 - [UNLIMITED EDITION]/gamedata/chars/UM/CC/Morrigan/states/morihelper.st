@@ -53,7 +53,7 @@ var(1) = 1
 [State 1005, Vel]
 type = velset
 trigger1 = 1
-x = ifelse(var(123) = 2, 5.67, ifelse(var(123) = 1, 4.72, 3.77))
+x = 3.77)
 y = 0
 
 [State 1005, Trans]
@@ -93,7 +93,7 @@ ignorehitpause = 1
 [State 1005, HitSound]
 type = playsnd
 trigger1 = movehit = 1 || movereversed = 1
-value = 2, ifelse(numtarget, 10, 0)
+value = 2, 0
 channel = 2
 ignorehitpause = 1
 
@@ -131,7 +131,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -143,7 +143,7 @@ forcestand = 1
 type = poweradd
 trigger1 = movecontact = 1
 trigger1 = numtarget
-value = ifelse(moveguarded, 25, 50) * root, var(114)
+value = 50 * root, var(114)
 ignorehitpause = 1
 
 [State 1005, Connected]
@@ -155,9 +155,9 @@ ignorehitpause = 1
 [State 1005, End]
 type = changestate
 trigger1 = root, var(50) <= 0
-trigger1 = var(1) >= ifelse(var(123) = 2, 80, ifelse(var(123) = 1, 65, 50))
+trigger1 = var(1) >= 50)
 trigger2 = root, var(50) > 0
-trigger2 = var(1) >= ifelse(var(123) = 2, 160, ifelse(var(123) = 1, 130, 100))
+trigger2 = var(1) >= 100)
 trigger3 = frontedgedist < -20
 trigger4 = backedgedist < -20
 trigger4 = root, var(50) <= 0
@@ -325,7 +325,7 @@ ignorehitpause = 1
 [State 1055, Vel]
 type = velset
 trigger1 = 1
-x = ifelse(var(123) = 2, 4.6, ifelse(var(123) = 1, 3.83, 2.88))
+x = 2.88)
 y = 4.8
 
 [State 1055, Trans]
@@ -365,7 +365,7 @@ ignorehitpause = 1
 [State 1055, HitSound]
 type = playsnd
 trigger1 = movehit = 1 || movereversed = 1
-value = 2, ifelse(numtarget, 10, 0)
+value = 2, 0
 channel = 2
 ignorehitpause = 1
 
@@ -405,7 +405,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -422,7 +422,7 @@ air.type = Low
 type = poweradd
 trigger1 = movecontact = 1
 trigger1 = numtarget
-value = ifelse(moveguarded, 25, 50) * root, var(114)
+value = 50 * root, var(114)
 ignorehitpause = 1
 
 [State 1055, Connected]
@@ -584,7 +584,7 @@ ignorehitpause = 1
 [State 1015, HitSound]
 type = playsnd
 trigger1 = movehit = 1 || movereversed = 1
-value = 2, ifelse(numtarget, 10, 0)
+value = 2, 0
 channel = 2
 ignorehitpause = 1
 
@@ -624,7 +624,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -791,7 +791,7 @@ ignorehitpause = 1
 [State 1065, HitSound]
 type = playsnd
 trigger1 = movehit = 1 || movereversed = 1
-value = 2, ifelse(numtarget, 10, 0)
+value = 2, 0
 channel = 2
 ignorehitpause = 1
 
@@ -831,7 +831,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -886,7 +886,7 @@ type = hitoverride
 trigger1 = 1
 time = -1
 attr = SCA, AA, AP, AT
-stateno = ifelse(var(2) < 3, 3005, 3006)
+stateno = 3006
 ignorehitpause = 1
 
 [State 3005, HB]
@@ -920,7 +920,7 @@ var(1) = 1
 type = velset
 trigger1 = 1
 ;x = 6.70
-x = ifelse(var(123) = 2, 6.70, ifelse(var(123) = 1, 5.58, 4.47))
+x = 4.47)
 
 [State 3005, Trans]
 type = trans
@@ -959,18 +959,18 @@ ignorehitpause = 1
 [State 3005, HitSound]
 type = playsnd
 trigger1 = movehit = 1 || movereversed = 1
-value = 2, ifelse(numtarget, 11, 0)
+value = 2, 0
 channel = 2
 ignorehitpause = 1
 
 [State 3005, Freeze]
 type = posfreeze
-trigger1 = time <= ifelse(numtarget, 6, 0)
+trigger1 = time <= 0
 value = 1
 
 [State 3005, Hit]
 type = hitdef
-trigger1 = time >= ifelse(numtarget, 6, 0)
+trigger1 = time >= 0
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (2 + var(2)))
 priority = 4, Hit
 attr = S, HP
@@ -1005,7 +1005,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 palfx.time = 60
 palfx.color = 0
@@ -1030,7 +1030,7 @@ ignorehitpause = 1
 [State 3005, Connected]
 type = changestate
 trigger1 = movecontact || movereversed
-value = ifelse(var(2) < 3, 3005, 3006)
+value = 3006
 ignorehitpause = 1
 
 [State 3005, End]
@@ -1181,7 +1181,7 @@ type = hitoverride
 trigger1 = 1
 time = -1
 attr = SCA, AA, AP, AT
-stateno = ifelse(var(2) < 3, 3055, 3006)
+stateno = 3006
 ignorehitpause = 1
 
 [State 3055, HB]
@@ -1211,8 +1211,8 @@ type = velset
 trigger1 = 1
 ;x = 5.83
 ;y = 2.33
-x = ifelse(var(123) = 2, 5.84, ifelse(var(123) = 1, 5.26, 4.47))
-y = ifelse(var(123) = 2, 2.42, ifelse(var(123) = 1, 3.52, 4.47))
+x = 4.47)
+y = 4.47)
 
 [State 3055, Trans]
 type = trans
@@ -1258,18 +1258,18 @@ ignorehitpause = 1
 [State 3055, HitSound]
 type = playsnd
 trigger1 = movehit = 1 || movereversed = 1
-value = 2, ifelse(numtarget, 11, 0)
+value = 2, 0
 channel = 2
 ignorehitpause = 1
 
 [State 3055, Freeze]
 type = posfreeze
-trigger1 = time <= ifelse(numtarget, 6, 0)
+trigger1 = time <= 0
 value = 1
 
 [State 3055, Hit]
 type = hitdef
-trigger1 = time >= ifelse(numtarget, 6, 0)
+trigger1 = time >= 0
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (2 + var(2)))
 priority = 4, Hit
 attr = A, HP
@@ -1306,7 +1306,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 palfx.time = 60
 palfx.color = 0
@@ -1331,7 +1331,7 @@ ignorehitpause = 1
 [State 3055, Connected]
 type = changestate
 trigger1 = movecontact || movereversed
-value = ifelse(var(2) < 3, 3055, 3006)
+value = 3006
 ignorehitpause = 1
 
 [State 3055, End]
@@ -1405,7 +1405,7 @@ alpha = 32 * (time + 1), 256 - (32 * (time + 1))
 [State 3305, SprPriority Var]
 type = varset
 trigger1 = !time
-value = ifelse(random < 667, 3, -1)
+value = -1
 ignorehitpause = 1
 
 [State 3305, SprPriority]
@@ -1424,14 +1424,14 @@ type = varset
 trigger1 = !time
 trigger2 = time < 16
 trigger2 = root, stateno = 3300
-value = ifelse(root, command = "holdup", -1, ifelse(root, command = "holddown", 1, 0))
+value = -1, 1, 0
 
 [State 3305, Decide Angle]
 type = varset
 trigger1 = !time
 trigger2 = time < 16
 trigger2 = root, stateno = 3300
-value = ifelse(p2dist y < 0, -1, ifelse(p2dist x < 120, 1, 0))
+value = 0
 
 [State 3305, Vel]
 type = velset
@@ -1480,7 +1480,7 @@ ownpal = 1
 redirectID = root, ID
 type = playsnd
 trigger1 = movecontact = 1
-value = 2, ifelse((movehit && numtarget), 9, 0)
+value = 2, 0
 channel = 2
 abspan = ceil(pos x)
 persistent = 0
@@ -1526,7 +1526,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 yaccel = 0.4850
 p1sprpriority = sprpriority
@@ -1698,7 +1698,7 @@ getpower = 0, 0
 givepower = 0, 0
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 forcestand = 1
 p2facing = 1
@@ -1728,12 +1728,12 @@ ground.hittime = 32
 ground.slidetime = 18
 ground.velocity = 0, 0
 air.type = Low
-air.velocity = 0, ifelse((animelem = 39), -3, -1.5)
+air.velocity = 0, -1.5
 getpower = 0, 0
 givepower = 0, 0
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 forcestand = 1
 p2facing = 1
@@ -1768,7 +1768,7 @@ getpower = 0, 0
 givepower = 0, 0
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -1804,12 +1804,12 @@ ground.slidetime = 18
 ground.velocity = 0, -5
 guard.velocity = 0
 air.type = Low
-air.velocity = 0, ifelse((animelem = 25), -4, -1.5)
+air.velocity = 0, -1.5
 getpower = 0, 0
 givepower = 0, 0
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -1848,7 +1848,7 @@ getpower = 0, 0
 givepower = 0, 0
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -2057,7 +2057,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 forcestand = 1
 fall = 1
@@ -2099,7 +2099,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 forcestand = 1
 fall = 1
@@ -2147,7 +2147,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -2347,7 +2347,7 @@ playerID = target(4105), ID
 [State 4107, Anim]
 type = changeanim
 trigger1 = 1
-value = ifelse(time < 16, 4107, 9999)
+value = 9999
 
 [State 4107, Scale]
 type = angledraw
@@ -2516,7 +2516,7 @@ y = -65
 [State 825, Vel]
 type = velset
 trigger1 = root, numtarget(800)
-x = ifelse(root, numtarget(800), 0, 12)
+x = 0, 12
 
 [State 825, Bind]
 type = bindtoroot
@@ -2575,7 +2575,7 @@ sprpriority = 3
 type = trans
 trigger1 = 1
 trans = addalpha
-alpha = ifelse(time < 16, 16 * time, 256), 256
+alpha = 256, 256
 ignorehitpause = 1
 
 [State 3303, Turn]
@@ -2760,7 +2760,7 @@ trigger1 = numexplod(3)
 ID = 3
 postype = p1
 pos = (-5 + 25 * cos(gametime / 5.0)) * root, const(size.xscale), (-50 + 35 * cos(gametime / 17.5)) * root, const(size.yscale)
-sprpriority = ifelse(sin(gametime / 5.0) > 0, 2, 0)
+sprpriority = 0
 
 [State 6010, Bat 4 - Circling]
 type = modifyexplod
@@ -2768,13 +2768,13 @@ trigger1 = numexplod(4)
 ID = 4
 postype = p1
 pos = (-5 - 25 * cos(gametime / 5.0)) * root, const(size.xscale), (-50 - 35 * cos(gametime / 17.5)) * root, const(size.yscale)
-sprpriority = ifelse(sin(gametime / 5.0) < 0, 2, 0)
+sprpriority = 0
 
 [State 6010, Trans]
 type = trans
 trigger1 = 1
 trans = addalpha
-alpha = ifelse(time < 15, 16 * (time + 1), 256), 256
+alpha = 256, 256
 ignorehitpause = 1
 
 [State 6010, Pos]
@@ -2819,7 +2819,7 @@ sprpriority = -1
 type = trans
 trigger1 = 1
 trans = addalpha
-alpha = ifelse(time < 8, 256 - 32 * (time + 1), 0), 256
+alpha = 0, 256
 ignorehitpause = 1
 
 [State 6011, Bat 1]
@@ -3100,7 +3100,7 @@ pan = 0
 [State 6028, Scale]
 type = angledraw
 trigger1 = 1
-scale = (backedgedist + 160) / 32.0, ifelse(time < 7, (0.125 * (time + 1)), 1)
+scale = (backedgedist + 160) / 32.0, 1
 
 [State 6028, Trans]
 type = trans
@@ -3153,7 +3153,7 @@ var(0) = numhelper(6100)
 [State 6104, Vel]
 type = velset
 trigger1 = 1
-x = ifelse(var(0) = 1, -0.25, 0.25)
+x = 0.25
 y = -0.5
 
 [State 6104, End]
@@ -3397,7 +3397,7 @@ pos = ((19 + fvar(1)) * root, const(size.xscale)), -7 + fvar(2)
 [State 6106, Sprite Priority]
 type = sprpriority
 trigger1 = 1
-value = ifelse(var(0) >= 4, -1, 1)
+value = 1
 pos = 2 + fvar(1), -16 + fvar(2)
 
 [State 6106, End]
@@ -3423,15 +3423,15 @@ var(0) = numhelper(6100)
 type = velset
 trigger1 = !time
 trigger1 = (var(0) % 2) = 1
-x = ifelse(var(0) = 1, -0.75, ifelse(var(0) = 3, -1.25, ifelse(var(0) = 5, -1.25, -0.5)))
-y = ifelse(var(0) = 1, -0.75, ifelse(var(0) = 3, -1, ifelse(var(0) = 5, -1.25, -1.5)))
+x = -0.5)
+y = -1.5)
 
 [State 6107, Vel]
 type = velset
 trigger1 = !time
 trigger1 = !(var(0) % 2)
-x = ifelse(var(0) = 2, -0.75, ifelse(var(0) = 4, -1.25, ifelse(var(0) = 6, -1.25, -0.5)))
-y = ifelse(var(0) = 2, 0.75, ifelse(var(0) = 4, 1, ifelse(var(0) = 6, 1.25, 1.5)))
+x = -0.5)
+y = 1.5)
 
 [State 6107, Accel]
 type = veladd
@@ -3530,7 +3530,7 @@ trigger1 = numexplod(1)
 ID = 1
 postype = p1
 pos = (-5 + 25 * cos((gametime + 0) / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * sin((gametime + 0) / 60.0 * pi)) * root, const(size.yscale)
-sprpriority = ifelse(sin((gametime + 0) / 24.0 * pi) > 0, 2, 0)
+sprpriority = 0
 
 [State 6108, Bat 2 - Circling]
 type = modifyexplod
@@ -3538,7 +3538,7 @@ trigger1 = numexplod(2)
 ID = 2
 postype = p1
 pos = (-5 + 25 * cos((gametime + 12) / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * sin((gametime + 12) / 60.0 * pi)) * root, const(size.yscale)
-sprpriority = ifelse(sin((gametime + 12) / 24.0 * pi) > 0, 2, 0)
+sprpriority = 0
 
 [State 6108, Bat 3 - Circling]
 type = modifyexplod
@@ -3546,7 +3546,7 @@ trigger1 = numexplod(3)
 ID = 3
 postype = p1
 pos = (-5 + 25 * cos((gametime + 24) / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * sin((gametime + 24) / 60.0 * pi)) * root, const(size.yscale)
-sprpriority = ifelse(sin((gametime + 24) / 24.0 * pi) > 0, 2, 0)
+sprpriority = 0
 
 [State 6108, Bat 4 - Circling]
 type = modifyexplod
@@ -3554,7 +3554,7 @@ trigger1 = numexplod(4)
 ID = 4
 postype = p1
 pos = (-5 + 25 * cos((gametime + 36) / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * sin((gametime + 36) / 60.0 * pi)) * root, const(size.yscale)
-sprpriority = ifelse(sin((gametime + 36) / 24.0 * pi) > 0, 2, 0)
+sprpriority = 0
 
 [State 6108, Pos]
 type = bindtoroot
@@ -3585,13 +3585,13 @@ ctrl = 0
 type = varset
 trigger1 = !time
 trigger1 = (ishelper(6101) || ishelper(6102) || ishelper(6103) || ishelper(6104))
-var(0) = ifelse(ishelper(6101), 1, ifelse(ishelper(6102), 2, ifelse(ishelper(6103), 3, 4)))
+var(0) = 4)
 
 [State 6109, Vel]
 type = velset
 trigger1 = !time
-x = ifelse(var(0) = 1, -0.33, ifelse(var(0) = 2, -0.66, ifelse(var(0) = 3, -1, -0.5)))
-y = ifelse(var(0) = 1, -0.4, ifelse(var(0) = 2, -0.1, ifelse(var(0) = 3, 0.2, 0.5)))
+x = -0.5)
+y = 0.5)
 
 [State 6109, Accel]
 type = veladd
@@ -3633,7 +3633,7 @@ ctrl = 0
 type = playsnd
 trigger1 = time = 8
 value = 6, (random < 500)
-volumescale = cond(numhelper(6110) > 1, ifelse(helper(6110, 0), ID != ID, 50, 100), 100)
+volumescale = cond(numhelper(6110) > 1, ID != ID, 50, 100, 100)
 
 [State 6110, Vel]
 type = velset
@@ -3662,37 +3662,37 @@ y = -5 + (random / 100.0)
 type = veladd
 trigger1 = time > 10
 trigger1 = rootdist x >= 0
-trigger1 = vel x < ifelse(rootdist x < 25, 2.5, 5)
-x = ifelse((rootdist y = [0, 160]), 0.5, 0.25)
+trigger1 = vel x < 5
+x = 0.5, 0.25
 
 [State 6110, Accel]
 type = veladd
 trigger1 = time > 10
 trigger1 = rootdist x < 0
-trigger1 = vel x > ifelse(rootdist x > -25, -2.5, -5)
-x = ifelse((rootdist y = [0, 160]), -0.5, -0.25)
+trigger1 = vel x > -5
+x = -0.5, -0.25
 
 [State 6110, Accel]
 type = veladd
 triggerall = time > 10
 trigger1 = root, statetype != C
 trigger1 = rootdist y >= 65
-trigger1 = vel y < ifelse((rootdist y < 80 && rootdist y > 40), 2.5, 5)
+trigger1 = vel y < 5
 trigger2 = root, statetype = C
 trigger2 = rootdist y >= 25
-trigger2 = vel y < ifelse((rootdist y < 50 && rootdist y > 0), 2.5, 5)
-y = ifelse((rootdist x = [-80, 80]), 0.5, 0.25)
+trigger2 = vel y < 5
+y = 0.5, 0.25
 
 [State 6110, Accel]
 type = veladd
 triggerall = time > 10
 trigger1 = root, statetype != C
 trigger1 = rootdist y < 65
-trigger1 = vel y > ifelse((rootdist y < 80 && rootdist y > 40), -2.5, -5)
+trigger1 = vel y > -5
 trigger2 = root, statetype = C
 trigger2 = rootdist y < 25
-trigger2 = vel y > ifelse((rootdist y < 50 && rootdist y > 0), -2.5, -5)
-y = ifelse((rootdist x = [-80, 80]), -0.5, -0.25)
+trigger2 = vel y > -5
+y = -0.5, -0.25
 
 [State 6110, Vel]
 type = velset
@@ -3759,7 +3759,7 @@ y = 0 -45
 [State 6111, Sprite Priority]
 type = sprpriority
 trigger1 = 1
-value = ifelse(var(0) = 4, -1, 2)
+value = 2
 
 [State 6111, End]
 type = changestate
@@ -3830,13 +3830,13 @@ y = 0
 type = explod
 trigger1 = time = 0 || time = 3 || time = 6
 anim = 7104
-ID = ifelse((time = 6), 3, ifelse((time = 3), 2, 1))
+ID = 1)
 postype = p1
 pos = 0, -4
 random = 8, 8
 vel = -3 -(random / 1000.0), -2 -(random / 2000.0)
-facing = ifelse(random < 500, -1, 1)
-vfacing = ifelse(random < 500, -1, 1)
+facing = 1
+vfacing = 1
 angle = 90 * (random % 4)
 removetime = 16
 sprpriority = 3
@@ -3987,8 +3987,8 @@ postype = p1
 pos = 0, 0
 random = 0.33 * (playerID(var(125)), const(size.head.pos.y)), 0.33 * (playerID(var(125)), const(size.head.pos.y))
 vel = (random / 1000.0), -2.0 - (random / 500.0)
-facing = ifelse(random < 500, -1, 1)
-vfacing = ifelse(random < 500, -1, 1)
+facing = 1
+vfacing = 1
 angle = 90 * (random % 4)
 scale = 0.5, 0.5
 ownpal = 1
@@ -4002,8 +4002,8 @@ postype = p1
 pos = 0, 0
 random = 0.66 * (playerID(var(125)), const(size.head.pos.y)), 0.66 * (playerID(var(125)), const(size.head.pos.y))
 vel = (random / 1000.0), -2.0 - (random / 500.0)
-facing = ifelse(random < 500, -1, 1)
-vfacing = ifelse(random < 500, -1, 1)
+facing = 1
+vfacing = 1
 angle = 90 * (random % 4)
 scale = 0.5, 0.5
 ownpal = 1
@@ -4037,7 +4037,7 @@ trigger1 = 1
 value = 7, 8
 channel = 1
 lowpriority = 1
-volumescale = ifelse(time < 180, (time * 0.277), 50)
+volumescale = 50
 
 [State 7240, Aura]
 type = explod
@@ -4127,10 +4127,10 @@ pos = ceil(-160 + (random / 3.125)), ceil(160 - (random / 3.125))
 type = explod
 trigger1 = (time % 8) = 1
 anim = 7241
-sprpriority = ifelse(random < 750, 5, -1)
+sprpriority = -1
 postype = p1
 vel = ((rootdist x - 2) / 32.0), ((rootdist y - 72) / 32.0)
-scale = ifelse(random < 500, 0.5, -0.5), ifelse(random < 500, 0.5, -0.5)
+scale = -0.5, -0.5
 pausemovetime = -1
 supermovetime = -1
 ownpal = 1
@@ -4261,8 +4261,8 @@ anim = 7271
 ID = 1
 sprpriority = 5
 postype = p1
-facing = ifelse(random < 500, -1, 1)
-vfacing = ifelse(random < 500, -1, 1)
+facing = 1
+vfacing = 1
 angle = 90 * (random % 4)
 removetime = 16
 supermovetime = -1
@@ -4273,7 +4273,7 @@ trigger1 = numexplod(1)
 ID = 1
 scale = 2 -(0.125 * time), 2 -(0.125 * time)
 trans = addalpha
-alpha = ifelse(time < 3, 64 * (time + 1), 256), 256
+alpha = 256, 256
 
 [State 7270, Circle]
 type = explod
@@ -4365,11 +4365,11 @@ alpha = 256, 256
 type = explod
 trigger1 = time = 0 || time = 8 || time = 16 || time = 24
 anim = 8501
-ID = ifelse(time = 24, 4, ifelse(time = 16, 3, ifelse(time = 8, 2, 1)))
+ID = 1
 sprpriority = 5
 postype = p1
-facing = ifelse(random < 500, -1, 1)
-vfacing = ifelse(random < 500, -1, 1)
+facing = 1
+vfacing = 1
 angle = 90 * (random % 4)
 bindtime = -1
 removetime = 16
@@ -4381,7 +4381,7 @@ trigger1 = numexplod(1)
 ID = 1
 scale = 1 -(0.0625 * time), 1 -(0.0625 * time)
 trans = addalpha
-alpha = ifelse(time < 3, 64 * (time + 1), 256), 256
+alpha = 256, 256
 
 [State 8500, Scale]
 type = modifyexplod
@@ -4389,7 +4389,7 @@ trigger1 = numexplod(2)
 ID = 2
 scale = 1 -(0.0625 * (time -8)), 1 -(0.0625 * (time -8))
 trans = addalpha
-alpha = ifelse((time -8) < 4, 64 * (time -8), 256), 256
+alpha = 256, 256
 
 [State 8500, Scale]
 type = modifyexplod
@@ -4397,7 +4397,7 @@ trigger1 = numexplod(3)
 ID = 3
 scale = 1 -(0.0625 * (time -16)), 1 -(0.0625 * (time -16))
 trans = addalpha
-alpha = ifelse((time -16) < 4, 64 * (time -16), 256), 256
+alpha = 256, 256
 
 [State 8500, Scale]
 type = modifyexplod
@@ -4405,7 +4405,7 @@ trigger1 = numexplod(4)
 ID = 4
 scale = 1 -(0.0625 * (time -24)), 1 -(0.0625 * (time -24))
 trans = addalpha
-alpha = ifelse((time -24) < 4, 64 * (time -24), 256), 256
+alpha = 256, 256
 
 [State 8500, Circle]
 type = explod
@@ -4414,8 +4414,8 @@ anim = 8502
 ID = 10
 sprpriority = 5
 postype = p1
-facing = ifelse(random < 500, -1, 1)
-vfacing = ifelse(random < 500, -1, 1)
+facing = 1
+vfacing = 1
 angle = 90 * (random % 4)
 bindtime = -1
 removetime = 32
@@ -4427,7 +4427,7 @@ trigger1 = numexplod(10)
 ID = 10
 scale = 2 -(0.125 * (time -24)), 2 -(0.125 * (time -24))
 trans = addalpha
-alpha = ifelse((time -24) < 4, 64 * (time -24), 256), 256
+alpha = 256, 256
 
 [State 8500, Safety]
 type = removeexplod
@@ -4497,11 +4497,11 @@ alpha = 256, 256
 type = explod
 trigger1 = time = 0 || time = 8 || time = 16 || time = 24
 anim = 8511
-ID = ifelse(time = 24, 4, ifelse(time = 16, 3, ifelse(time = 8, 2, 1)))
+ID = 1
 sprpriority = 5
 postype = p1
-facing = ifelse(random < 500, -1, 1)
-vfacing = ifelse(random < 500, -1, 1)
+facing = 1
+vfacing = 1
 angle = 90 * (random % 4)
 bindtime = -1
 removetime = 16
@@ -4513,7 +4513,7 @@ trigger1 = numexplod(1)
 ID = 1
 scale = 1 -(0.0625 * time), 1 -(0.0625 * time)
 trans = addalpha
-alpha = ifelse(time < 3, 64 * (time + 1), 256), 256
+alpha = 256, 256
 
 [State 8510, Scale]
 type = modifyexplod
@@ -4521,7 +4521,7 @@ trigger1 = numexplod(2)
 ID = 2
 scale = 1 -(0.0625 * (time -8)), 1 -(0.0625 * (time -8))
 trans = addalpha
-alpha = ifelse((time -8) < 4, 64 * (time -8), 256), 256
+alpha = 256, 256
 
 [State 8510, Scale]
 type = modifyexplod
@@ -4529,7 +4529,7 @@ trigger1 = numexplod(3)
 ID = 3
 scale = 1 -(0.0625 * (time -16)), 1 -(0.0625 * (time -16))
 trans = addalpha
-alpha = ifelse((time -16) < 4, 64 * (time -16), 256), 256
+alpha = 256, 256
 
 [State 8510, Scale]
 type = modifyexplod
@@ -4537,7 +4537,7 @@ trigger1 = numexplod(4)
 ID = 4
 scale = 1 -(0.0625 * (time -24)), 1 -(0.0625 * (time -24))
 trans = addalpha
-alpha = ifelse((time -24) < 4, 64 * (time -24), 256), 256
+alpha = 256, 256
 
 [State 8510, Circle]
 type = explod
@@ -4546,8 +4546,8 @@ anim = 8512
 ID = 10
 sprpriority = 5
 postype = p1
-facing = ifelse(random < 500, -1, 1)
-vfacing = ifelse(random < 500, -1, 1)
+facing = 1
+vfacing = 1
 angle = 90 * (random % 4)
 bindtime = -1
 removetime = 32
@@ -4559,7 +4559,7 @@ trigger1 = numexplod(10)
 ID = 10
 scale = 2 -(0.125 * (time -24)), 2 -(0.125 * (time -24))
 trans = addalpha
-alpha = ifelse((time -24) < 4, 64 * (time -24), 256), 256
+alpha = 256, 256
 
 [State 8510, Safety]
 type = removeexplod
@@ -4652,7 +4652,7 @@ type = modifyexplod
 trigger1 = numexplod(20) && time < 16
 ID = 20
 postype = back
-pos = 160, ifelse((gamewidth / gameheight) > 1.55, 90, 120)
+pos = 160, 120
 scale = 1 - (0.03125 * time), 1 - (0.03125 * time)
 trans = addalpha
 alpha = (8 * time), 256
@@ -4662,7 +4662,7 @@ type = modifyexplod
 trigger1 = numexplod(21) && time < 16
 ID = 21
 postype = back
-pos = 160, ifelse((gamewidth / gameheight) > 1.55, 90, 120)
+pos = 160, 120
 scale = 2 - (0.09375 * time), 2 - (0.09375 * time)
 trans = addalpha
 alpha = (8 * time), 256
@@ -4672,7 +4672,7 @@ type = modifyexplod
 trigger1 = numexplod(20) && (time = [16, 32])
 ID = 20
 postype = back
-pos = 160, ifelse((gamewidth / gameheight) > 1.55, 90, 120)
+pos = 160, 120
 scale = 0.5, 0.5
 trans = addalpha
 alpha = 256, 256
@@ -4687,7 +4687,7 @@ type = modifyexplod
 trigger1 = numexplod(20) && time >= 32
 ID = 20
 postype = back
-pos = 160, ifelse((gamewidth / gameheight) > 1.55, 90, 120)
+pos = 160, 120
 scale = 0.5, 0.5
 trans = addalpha
 alpha = 128 - 16 * (time -32), 256
@@ -4696,11 +4696,11 @@ alpha = 128 - 16 * (time -32), 256
 type = explod
 trigger1 = time = 0 || time = 8 || time = 16 || time = 24
 anim = 8521
-ID = ifelse(time = 24, 4, ifelse(time = 16, 3, ifelse(time = 8, 2, 1)))
+ID = 1
 sprpriority = 5
 postype = p1
-facing = ifelse(random < 500, -1, 1)
-vfacing = ifelse(random < 500, -1, 1)
+facing = 1
+vfacing = 1
 angle = 90 * (random % 4)
 bindtime = -1
 removetime = 16
@@ -4712,7 +4712,7 @@ trigger1 = numexplod(1)
 ID = 1
 scale = 1 -(0.0625 * time), 1 -(0.0625 * time)
 trans = addalpha
-alpha = ifelse(time < 3, 64 * (time + 1), 256), 256
+alpha = 256, 256
 
 [State 8520, Scale]
 type = modifyexplod
@@ -4720,7 +4720,7 @@ trigger1 = numexplod(2)
 ID = 2
 scale = 1 -(0.0625 * (time -8)), 1 -(0.0625 * (time -8))
 trans = addalpha
-alpha = ifelse((time -8) < 4, 64 * (time -8), 256), 256
+alpha = 256, 256
 
 [State 8520, Scale]
 type = modifyexplod
@@ -4728,7 +4728,7 @@ trigger1 = numexplod(3)
 ID = 3
 scale = 1 -(0.0625 * (time -16)), 1 -(0.0625 * (time -16))
 trans = addalpha
-alpha = ifelse((time -16) < 4, 64 * (time -16), 256), 256
+alpha = 256, 256
 
 [State 8520, Scale]
 type = modifyexplod
@@ -4736,7 +4736,7 @@ trigger1 = numexplod(4)
 ID = 4
 scale = 1 -(0.0625 * (time -24)), 1 -(0.0625 * (time -24))
 trans = addalpha
-alpha = ifelse((time -24) < 4, 64 * (time -24), 256), 256
+alpha = 256, 256
 
 [State 8520, Circle]
 type = explod
@@ -4745,8 +4745,8 @@ anim = 8522
 ID = 10
 sprpriority = 5
 postype = p1
-facing = ifelse(random < 500, -1, 1)
-vfacing = ifelse(random < 500, -1, 1)
+facing = 1
+vfacing = 1
 angle = 90 * (random % 4)
 bindtime = -1
 removetime = 32
@@ -4758,7 +4758,7 @@ trigger1 = numexplod(10)
 ID = 10
 scale = 2 -(0.125 * (time -24)), 2 -(0.125 * (time -24))
 trans = addalpha
-alpha = ifelse((time -24) < 4, 64 * (time -24), 256), 256
+alpha = 256, 256
 
 [State 8520, Safety]
 type = removeexplod
@@ -4870,7 +4870,7 @@ anim = 8600
 ID = 8600
 ontop = 1
 postype = left
-pos = 160, ifelse((gamewidth / gameheight) > 1.55, 90, 120)
+pos = 160, 120
 scale = 0.5, 0.5 * (1.3333333 * gameheight / gamewidth)
 bindtime = -1
 removetime = 32
@@ -4882,7 +4882,7 @@ type = modifyexplod
 trigger1 = numexplod(8600)
 ID = 8600
 trans = addalpha
-alpha = ifelse(time < 16, 256, 256 -32 * (time -16)), 256
+alpha = 256 -32 * (time -16), 256
 
 [State 8600, Text]
 type = explod
@@ -4892,7 +4892,7 @@ anim = 8609 + var(0)
 ID = 10
 ontop = 1
 postype = left
-pos = 160, ifelse((gamewidth / gameheight) > 1.55, 90, 120)
+pos = 160, 120
 scale = 0.5, 0.5 * (1.3333333 * gameheight / gamewidth)
 bindtime = -1
 removetime = 32
@@ -4907,7 +4907,7 @@ anim = 8609 + var(0)
 ID = 11
 ontop = 1
 postype = left
-pos = 160, ifelse((gamewidth / gameheight) > 1.55, 90, 120)
+pos = 160, 120
 scale = 0.5, 0.5 * (1.3333333 * gameheight / gamewidth)
 bindtime = -1
 removetime = 8
@@ -4919,7 +4919,7 @@ type = modifyexplod
 trigger1 = numexplod(10)
 ID = 10
 trans = addalpha
-alpha = ifelse(time < 16, 256, 256 -32 * (time -16)), ifelse(time < 16, 0, 32 * (time -16))
+alpha = 256 -32 * (time -16), 32 * (time -16)
 
 [State 8600, Fade]
 type = modifyexplod

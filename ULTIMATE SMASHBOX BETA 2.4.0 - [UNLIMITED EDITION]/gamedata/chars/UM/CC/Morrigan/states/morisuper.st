@@ -22,12 +22,12 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 3, 2, 1)
 
 [State 3000, Strength]
 type = varset
 trigger1 = time <= 0
-value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
+value = 0)
 ignorehitpause = 1
 persistent = 0
 
@@ -89,7 +89,7 @@ type = superpause
 trigger1 = time = 3
 time = 41
 movetime = 41
-anim = ifelse(var(65), -1, 100)
+anim = 100
 pos = ceil(-68 * const(size.xscale)), ceil(-63 * const(size.yscale))
 sound = s0, 8500
 p2defmul = 1
@@ -205,12 +205,12 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 3, 2, 1)
 
 [State 3050, Strength]
 type = varset
 trigger1 = time <= 0
-value = ifelse(var(101), 2, ifelse(var(100), 1, 0))
+value = 0)
 ignorehitpause = 1
 persistent = 0
 
@@ -272,7 +272,7 @@ type = superpause
 trigger1 = time = 3
 time = 41
 movetime = 41
-anim = ifelse(var(65), -1, 100)
+anim = 100
 pos = ceil(-13 * const(size.xscale)), ceil(-85 * const(size.yscale))
 sound = s0, 8500
 p2defmul = 1
@@ -382,7 +382,7 @@ persistent = 0
 type = changeanim
 trigger1 = !time
 trigger1 = gethitvar(animtype) != [3,5]
-value = ifelse((gethitvar(airtype) = 1), 5000, 5010) + gethitvar(animtype)
+value = 5010 + gethitvar(animtype)
 
 [state 7697, Anim]
 type = changeanim
@@ -460,12 +460,12 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 3, 2, 1)
 
 [State 3100, Strength]
 type = varset
 trigger1 = time <= 0
-value = ifelse(var(99), 2, ifelse(var(98), 1, 0))
+value = 0)
 ignorehitpause = 1
 persistent = 0
 
@@ -527,7 +527,7 @@ type = superpause
 trigger1 = time = 3
 time = 41
 movetime = 41
-anim = ifelse(var(65), -1, 100)
+anim = 100
 pos = ceil(-25 * const(size.xscale)), ceil(-35 * const(size.yscale))
 sound = s0, 8500
 p2defmul = 1
@@ -564,7 +564,7 @@ y = 0.67
 type = velset
 trigger1 = anim = 3100
 trigger1 = animelemtime(8) = 1
-x = ifelse(var(123) = 2, 10.2, ifelse(var(123) = 1, 7.65, 5.10))
+x = 5.10)
 y = -11.76
 
 [State 3100, Vel]
@@ -621,7 +621,7 @@ priority = 4, Hit
 pausetime = 4, 4
 sparkno = -1 + 0 * (var(121) = 8024)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 25) * (var(133) = 50), var(122) = ifelse((animelem = 2), -35, -60)
+sparkxy = -10 + 0 * (var(132) = 25) * (var(133) = 50), var(122) = -60
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -644,7 +644,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -666,7 +666,7 @@ animtype = Up
 hitflag = MAF
 guardflag = M
 priority = 4, Hit
-pausetime = ifelse((animelem = 11), 12, 4), ifelse((animelem = 11), 12, 4)
+pausetime = 4, 4
 sparkno = -1 + 0 * (var(121) = 8024)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = 0) * (var(133) = 50), var(122) = -100
@@ -690,7 +690,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -751,7 +751,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 3, 2, 1)
 
 [State 3300, Erase Inputs]
 type = null
@@ -805,7 +805,7 @@ type = superpause
 trigger1 = time = 3
 time = 43
 movetime = 43
-anim = ifelse(var(65), -1, 101)
+anim = 101
 pos = ceil(-43 * const(size.xscale)), ceil(-68 * const(size.yscale))
 sound = s0, 8510
 p2defmul = 1
@@ -939,7 +939,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 3, 2, 1)
 
 [State 3400, Erase Inputs]
 type = null
@@ -987,7 +987,7 @@ type = superpause
 trigger1 = time = 3
 time = 41
 movetime = 41
-anim = ifelse(var(65), -1, 100)
+anim = 100
 pos = ceil(-39 * const(size.xscale)), ceil(-70 * const(size.yscale))
 sound = s0, 8500
 p2defmul = 1
@@ -1136,12 +1136,12 @@ x = (-((gamewidth / 2.0) + 40) -50 * sin(time / 3.33)) * facing
 [State 3401, Vel]
 type = velset
 trigger1 = !time
-y = ifelse(command = "holdup", -10, ifelse(command = "holddown", -2, -6))
+y = -6
 
 [State 3401, Vel]
 type = velset
 trigger1 = !time
-y = ifelse(p2dist y <= -90, -10, ifelse(p2dist y <= -30, -6, -2))
+y = -2
 
 [State 3401, Vel]
 type = velset
@@ -1181,7 +1181,7 @@ trigger1 = anim = 3402
 trigger1 = !((movecontact + movereversed) % 3)
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 13)
 attr = A, HA
-damage = ifelse((movecontact || movereversed), 10, 120), ifelse((movecontact || movereversed), 3, 30)
+damage = 120, 30
 dizzypoints = 0
 animtype = Hard
 air.animtype = Back
@@ -1213,7 +1213,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 10
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 yaccel = 0.4850
 p1sprpriority = sprpriority
 forcestand = 1
@@ -1285,7 +1285,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 3, 2, 1)
 
 [State 4000, Erase Inputs]
 type = null
@@ -1339,7 +1339,7 @@ type = superpause
 trigger1 = time = 3
 time = 45
 movetime = 45
-anim = ifelse(var(65), -1, 102)
+anim = 102
 pos = ceil(20 * const(size.xscale)), ceil(-73 * const(size.yscale))
 sound = s0, 8520
 p2defmul = 1
@@ -1410,7 +1410,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 0
 air.fall = 1
@@ -1652,7 +1652,7 @@ pausetime = 2, 4
 sparkno = -1 + 0 * (var(121) = 8014)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
-hitsound = s2, ifelse((animelem = 8 || animelem = 14), 2, ifelse((animelem = 19), 3, 6))
+hitsound = s2, 6)
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1670,11 +1670,11 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 p1sprpriority = sprpriority
 forcestand = 1
-kill = ifelse((animelem = 8), 0, (numtarget != numenemy))
+kill = (numtarget != numenemy)
 yaccel = 0.4850
 
 [State 4010, Hit Low Ground]
@@ -1694,7 +1694,7 @@ pausetime = 2, 4
 sparkno = -1 + 0 * (var(121) = 8014)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
-hitsound = s2, ifelse((animelem = 11), 5, 6)
+hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1707,12 +1707,12 @@ guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
 air.type = Low
-air.velocity = 0, ifelse((animelem = 39), -3, -1.5)
+air.velocity = 0, -1.5
 getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 p1sprpriority = sprpriority
 forcestand = 1
@@ -1755,7 +1755,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -1783,7 +1783,7 @@ pausetime = 2, 4
 sparkno = -1 + 0 * (var(121) = 8014)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
-hitsound = s2, ifelse((animelem = 4), 5, ifelse((animelem = 9 || animelem = 20), 3, 6))
+hitsound = s2, 6)
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1796,14 +1796,14 @@ guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
 air.type = Low
-air.velocity = 0, ifelse((animelem = 25), -4, -2.5)
+air.velocity = 0, -2.5
 guard.velocity = -10.52
 guard.cornerpush.veloff = 0
 getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -1850,7 +1850,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -1934,7 +1934,7 @@ y = 0.75
 type = velset
 trigger1 = anim = 4011
 trigger1 = animelemtime(3) >= 0 && animelemtime(33) < 0
-y = ifelse(pos y <= -20, 0.1, 0)
+y = 0
 
 [State 4010, Type]
 type = statetypeset
@@ -2106,7 +2106,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 3, 2, 1)
 
 [State 4050, Erase Inputs]
 type = null
@@ -2160,7 +2160,7 @@ type = superpause
 trigger1 = time = 3
 time = 43
 movetime = 43
-anim = ifelse(var(65), -1, 101)
+anim = 101
 pos = ceil(20 * const(size.xscale)), ceil(-73 * const(size.yscale))
 sound = s0, 8510
 p2defmul = 1
@@ -2231,7 +2231,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 0
 air.fall = 1
@@ -2414,7 +2414,7 @@ pausetime = 4, 4
 sparkno = -1 + 0 * (var(121) = 8014)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
-hitsound = s2, ifelse((animelem = 7), 3, 6)
+hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
@@ -2432,11 +2432,11 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 p1sprpriority = sprpriority
 forcestand = 1
-kill = ifelse((animelem = 7), 0, (numtarget != numenemy))
+kill = (numtarget != numenemy)
 fall = 1
 fall.recover = 0
 down.recover = 0; cannot mash
@@ -2461,7 +2461,7 @@ pausetime = 4, 4
 sparkno = -1 + 0 * (var(121) = 8014)
 guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
-hitsound = s2, ifelse((animelem = 10 || animelem = 17), 3, 6)
+hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
@@ -2479,7 +2479,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 p1sprpriority = sprpriority
 forcestand = 1
@@ -2528,7 +2528,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 0
@@ -2610,7 +2610,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
-value = ifelse((prevstateno = [3000, 4999]), 3, ifelse((prevstateno = [1000, 2999]), 2, 1))
+value = 3, 2, 1)
 
 [State 4100, Erase Inputs]
 type = null
@@ -2658,7 +2658,7 @@ type = superpause
 trigger1 = time = 3
 time = 45
 movetime = 45
-anim = ifelse(var(65), -1, 102)
+anim = 102
 pos = ceil(-22 * const(size.xscale)), ceil(-82 * const(size.yscale))
 sound = s0, 8520
 p2defmul = 1
@@ -3183,4 +3183,4 @@ value = 1
 [State 4121, End]
 type = selfstate
 trigger1 = 1
-value = ifelse(alive, 5120, 5150)
+value = 5150

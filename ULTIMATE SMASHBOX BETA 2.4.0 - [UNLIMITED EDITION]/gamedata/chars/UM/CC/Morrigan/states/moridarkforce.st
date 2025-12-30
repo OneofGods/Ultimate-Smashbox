@@ -103,7 +103,7 @@ ignorehitpause = 1
 type = changeanim
 trigger1 = selfanimexist(root, anim)
 trigger1 = root, stateno != [770, 771]
-trigger1 = ifelse((root, movetype = H), (root, anim = [5000, 5300]), 1)
+trigger1 = (root, anim = [5000, 5300], 1)
 trigger1 = (anim != root, anim) || (animelemno(0) != root, animelemno(0))
 value = root, anim
 elem = root, animelemno(0)
@@ -205,9 +205,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
-sparkxy = -10, ifelse((root, anim = 200), -82, -74)
+sparkno = -1, 2
+guard.sparkno = -1, 40
+sparkxy = -10, -82, -74
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -221,7 +221,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 9
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -1, 1)
+envshake.ampl = 1
 yaccel = 0.4850
 fall = var(0) >= 40
 
@@ -236,8 +236,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8011)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2 + 0 * (var(121) = 8011)
+guard.sparkno = -1, 40
 sparkxy = -10, -54
 hitsound = -1
 guardsound = s2, 0
@@ -252,7 +252,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 yaccel = 0.4850
 
@@ -267,8 +267,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -62
 hitsound = -1
 guardsound = s2, 0
@@ -283,7 +283,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 yaccel = 0.4850
 
@@ -298,8 +298,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -48
 hitsound = -1
 guardsound = s2, 0
@@ -314,7 +314,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 10
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -3, 3)
+envshake.ampl = 3
 yaccel = 0.4850
 
 [State 775, Hit]
@@ -328,8 +328,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -36
 hitsound = -1
 guardsound = s2, 0
@@ -344,7 +344,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 10
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -3, 3)
+envshake.ampl = 3
 yaccel = 0.4850
 
 [State 775, Hit]
@@ -359,8 +359,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -62
 hitsound = -1
 guardsound = s2, 0
@@ -375,7 +375,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 10
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -3, 3)
+envshake.ampl = 3
 yaccel = 0.4850
 
 [State 775, Hit]
@@ -389,8 +389,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -32
 hitsound = -1
 guardsound = s2, 0
@@ -405,7 +405,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 9
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -1, 1)
+envshake.ampl = 1
 yaccel = 0.4850
 fall = var(0) >= 40
 
@@ -420,8 +420,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8011)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2 + 0 * (var(121) = 8011)
+guard.sparkno = -1, 40
 sparkxy = -10, -53
 hitsound = -1
 guardsound = s2, 0
@@ -436,7 +436,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 yaccel = 0.4850
 
@@ -451,8 +451,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -59
 hitsound = -1
 guardsound = s2, 0
@@ -467,7 +467,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 10
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -3, 3)
+envshake.ampl = 3
 yaccel = 0.4850
 
 [State 775, Hit]
@@ -481,9 +481,9 @@ guardflag = HA
 hitflag = HAF
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8012)
-guard.sparkno = ifelse(root, var(64), -1, 40)
-sparkxy = -10, ifelse((root, animelem = 3), -96, -72)
+sparkno = -1, 2 + 0 * (var(121) = 8012)
+guard.sparkno = -1, 40
+sparkxy = -10, -96, -72
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -497,7 +497,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 10
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -3, 3)
+envshake.ampl = 3
 yaccel = 0.4850
 
 [State 775, Hit]
@@ -511,8 +511,8 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8012)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2 + 0 * (var(121) = 8012)
+guard.sparkno = -1, 40
 sparkxy = -10, -48
 hitsound = -1
 guardsound = s2, 0
@@ -527,7 +527,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 10
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -3, 3)
+envshake.ampl = 3
 yaccel = 0.4850
 
 [State 775, Hit]
@@ -542,8 +542,8 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8012)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2 + 0 * (var(121) = 8012)
+guard.sparkno = -1, 40
 sparkxy = -10, -24
 hitsound = -1
 guardsound = s2, 0
@@ -561,7 +561,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 10
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -3, 3)
+envshake.ampl = 3
 yaccel = 0.4850
 
 [State 775, Hit]
@@ -574,8 +574,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -36
 hitsound = -1
 guardsound = s2, 0
@@ -591,7 +591,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 9
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -1, 1)
+envshake.ampl = 1
 yaccel = 0.4850
 fall = var(0) >= 40
 
@@ -606,8 +606,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -29
 hitsound = -1
 guardsound = s2, 0
@@ -623,7 +623,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 yaccel = 0.4850
 
@@ -638,8 +638,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -32
 hitsound = -1
 guardsound = s2, 0
@@ -654,7 +654,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 10
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -3, 3)
+envshake.ampl = 3
 yaccel = 0.4850
 
 [State 775, Hit]
@@ -668,8 +668,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -120
 hitsound = -1
 guardsound = s2, 0
@@ -684,7 +684,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 10
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -3, 3)
+envshake.ampl = 3
 yaccel = 0.4850
 
 [State 775, Hit]
@@ -698,9 +698,9 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
-sparkxy = -10, ifelse((root, anim = 430), -4, -17)
+sparkno = -1, 2
+guard.sparkno = -1, 40
+sparkxy = -10, -4, -17
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -715,7 +715,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 9
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -1, 1)
+envshake.ampl = 1
 yaccel = 0.4850
 fall = var(0) >= 40
 
@@ -730,9 +730,9 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8011)
-guard.sparkno = ifelse(root, var(64), -1, 40)
-sparkxy = -10, ifelse((root, anim = 440), -14, -31)
+sparkno = -1, 2 + 0 * (var(121) = 8011)
+guard.sparkno = -1, 40
+sparkxy = -10, -14, -31
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -747,7 +747,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 yaccel = 0.4850
 
@@ -762,8 +762,8 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8012)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2 + 0 * (var(121) = 8012)
+guard.sparkno = -1, 40
 sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -30
 hitsound = -1
 guardsound = s2, 0
@@ -778,7 +778,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 10
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -3, 3)
+envshake.ampl = 3
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
@@ -799,8 +799,8 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -43
 hitsound = -1
 guardsound = s2, 0
@@ -815,7 +815,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 9
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -1, 1)
+envshake.ampl = 1
 yaccel = 0.4850
 
 [State 775, Hit]
@@ -829,8 +829,8 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -48
 hitsound = -1
 guardsound = s2, 0
@@ -845,7 +845,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 yaccel = 0.4850
 
@@ -860,8 +860,8 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8012)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2 + 0 * (var(121) = 8012)
+guard.sparkno = -1, 40
 sparkxy = -10, -66
 hitsound = -1
 guardsound = s2, 0
@@ -876,7 +876,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 10
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -3, 3)
+envshake.ampl = 3
 yaccel = 0.4850
 
 [State 775, Hit]
@@ -890,9 +890,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
-sparkxy = -10, ifelse((root, anim = 630), -42, -62)
+sparkno = -1, 2
+guard.sparkno = -1, 40
+sparkxy = -10, -42, -62
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -906,7 +906,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 9
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -1, 1)
+envshake.ampl = 1
 yaccel = 0.4850
 
 [State 775, Hit]
@@ -920,8 +920,8 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8011)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2 + 0 * (var(121) = 8011)
+guard.sparkno = -1, 40
 sparkxy = -10, -47
 hitsound = -1
 guardsound = s2, 0
@@ -936,7 +936,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 yaccel = 0.4850
 
@@ -951,8 +951,8 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8012)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2 + 0 * (var(121) = 8012)
+guard.sparkno = -1, 40
 sparkxy = -10, -54
 hitsound = -1
 guardsound = s2, 0
@@ -967,7 +967,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 10
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -3, 3)
+envshake.ampl = 3
 yaccel = 0.4850
 
 [State 775, Hit]
@@ -982,9 +982,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8023)
-guard.sparkno = ifelse(root, var(64), -1, 40)
-sparkxy = -10, ifelse((root, animelem = 2), -35, -60)
+sparkno = -1, 2 + 0 * (var(121) = 8023)
+guard.sparkno = -1, 40
+sparkxy = -10, -35, -60
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -998,7 +998,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
@@ -1024,8 +1024,8 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8023)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2 + 0 * (var(121) = 8023)
+guard.sparkno = -1, 40
 sparkxy = -10, -100
 hitsound = -1
 guardsound = s2, 0
@@ -1040,7 +1040,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12
 envshake.freq = 60
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
@@ -1064,8 +1064,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 8, 8
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -60
 hitsound = -1
 guardsound = s2, 0
@@ -1086,7 +1086,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 1
@@ -1106,8 +1106,8 @@ hitflag = MAF
 guardflag = MA
 priority = 4, Hit
 pausetime = 8, 8
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -100
 hitsound = -1
 guardsound = s2, 0
@@ -1128,7 +1128,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 1
 fall.recover = 1
@@ -1150,8 +1150,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8023)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2 + 0 * (var(121) = 8023)
+guard.sparkno = -1, 40
 sparkxy = -10, -60
 hitsound = -1
 guardsound = s2, 0
@@ -1172,7 +1172,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 0
 air.fall = 1
@@ -1195,8 +1195,8 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = ifelse(root, var(64), -1, 2)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2
+guard.sparkno = -1, 40
 sparkxy = -10, -60
 hitsound = -1
 guardsound = s2, 0
@@ -1217,7 +1217,7 @@ getpower = 0, 0
 givepower = 40, 40
 envshake.time = 12; super
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -4, 4)
+envshake.ampl = 4
 envshake.mul = 0.667
 fall = 0
 air.fall = 1
@@ -1241,7 +1241,7 @@ priority = 4, Hit
 damage = 20, 5
 redlife = 20, 5
 dizzypoints = 0
-getpower = ifelse(movehit, 25, 100) * !var(50), ifelse(moveguarded, 25, 50) * !var(50)
+getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
 pausetime = 10, 10
 guard.pausetime = 10, 10
@@ -1283,7 +1283,7 @@ guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = -10) * (var(133) = 10), var(122) = 0
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 
 [State 775, Hit]
@@ -1340,7 +1340,7 @@ guard.sparkno = -1 + 0 * (var(131) = 8001)
 sparkxy = -10 + 0 * (var(132) = -10) * (var(133) = 10), var(122) = 0
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 
 [State 775, Hit]
@@ -1354,9 +1354,9 @@ hitflag = MAFD
 guardflag = M
 priority = 4, Hit
 pausetime = 3, 4
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8024)
-guard.sparkno = ifelse(root, var(64), -1, 40)
-sparkxy = -10, ifelse((root, animelem = 2), -35, -60)
+sparkno = -1, 2 + 0 * (var(121) = 8024)
+guard.sparkno = -1, 40
+sparkxy = -10, -35, -60
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1372,7 +1372,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
@@ -1397,9 +1397,9 @@ animtype = Up
 hitflag = MAF
 guardflag = M
 priority = 4, Hit
-pausetime = ifelse((root, animelem = 11), 12, 4), ifelse((root, animelem = 11), 12, 4)
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8024)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+pausetime = 12, 4, 12, 4
+sparkno = -1, 2 + 0 * (var(121) = 8024)
+guard.sparkno = -1, 40
 sparkxy = -10, -100
 hitsound = -1
 guardsound = s2, 0
@@ -1415,7 +1415,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
@@ -1434,15 +1434,15 @@ type = hitdef
 trigger1 = root, anim = 3402
 trigger1 = !((root, movecontact + root, movereversed) % 3)
 attr = A, HA
-damage = ifelse((root, movecontact || root, movereversed), 10, 120), ifelse((root, movecontact || root, movereversed), 3, 30)
+damage = movereversed, 10, 120), movereversed, 3, 30)
 animtype = Hard
 air.animtype = Back
 hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, var(64), -1, 2) + 0 * (var(121) = 8024)
-guard.sparkno = ifelse(root, var(64), -1, 40)
+sparkno = -1, 2 + 0 * (var(121) = 8024)
+guard.sparkno = -1, 40
 sparkxy = -10, -43
 hitsound = -1
 guardsound = s2, 0
@@ -1460,7 +1460,7 @@ getpower = 0, 0
 givepower = 0
 envshake.time = 12; special
 envshake.freq = 180
-envshake.ampl = ifelse((gametime % 2), -2, 2)
+envshake.ampl = 2
 envshake.mul = 0.667
 yaccel = 0.4850
 forcestand = 1
