@@ -8,6 +8,7 @@
 ;======================<SOUL FIST>=============================
 [Statedef 1000]
 type = S
+trigger1 = 1
 physics = S
 movetype = A
 anim = 1000
@@ -99,6 +100,7 @@ ctrl = 1
 ;======================<EX SOUL FIST>=============================
 [Statedef 1010]
 type = S
+trigger1 = 1
 physics = S
 movetype = A
 anim = 1000
@@ -194,6 +196,7 @@ ctrl = 1
 ;======================<AIR SOUL FIST>=============================
 [Statedef 1050]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 1050
@@ -307,6 +310,7 @@ value = 1053
 ;---Land---
 [Statedef 1053]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 1053
@@ -347,6 +351,7 @@ ctrl = 1
 ;======================<EX AIR SOUL FIST>=============================
 [Statedef 1060]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 1050
@@ -465,6 +470,7 @@ value = 1053
 ;======================<SHADOW BLADE>=============================
 [Statedef 1100]
 type = S
+trigger1 = 1
 physics = S
 movetype = A
 anim = 1100
@@ -720,6 +726,7 @@ value = 1109
 ;---Land---
 [Statedef 1109]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 1109
@@ -760,6 +767,7 @@ ctrl = 1
 ;======================<EX SHADOW BLADE>=============================
 [Statedef 1110]
 type = S
+trigger1 = 1
 physics = S
 movetype = A
 anim = 1110
@@ -997,6 +1005,7 @@ value = 1109
 ;---Startup---
 [Statedef 1200]
 type = S
+trigger1 = 1
 physics = S
 movetype = A
 anim = 1200
@@ -1054,6 +1063,7 @@ value = 1205
 ;---Active---
 [Statedef 1205]
 type = S
+trigger1 = 1
 physics = N
 movetype = A
 anim = 1205)
@@ -1155,6 +1165,7 @@ value = 1210
 ;---Recovery---
 [Statedef 1210]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 1210
@@ -1173,6 +1184,7 @@ ctrl = 1
 ;---Startup---
 [Statedef 1250]
 type = S
+trigger1 = 1
 physics = S
 movetype = A
 anim = 1250
@@ -1230,6 +1242,7 @@ value = 1251
 ;---Active---
 [Statedef 1251]
 type = S
+trigger1 = 1
 physics = N
 movetype = A
 anim = 1251
@@ -1331,6 +1344,7 @@ value = 1252
 ;---Recovery---
 [Statedef 1252]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 1252
@@ -1348,6 +1362,7 @@ ctrl = 1
 ;======================<VECTOR DRAIN>=============================
 [Statedef 1300]
 type = S
+trigger1 = 1
 movetype = A
 physics = S
 velset = 0, 0
@@ -1439,6 +1454,7 @@ ctrl = 1
 ;----- PLAYER -----
 [Statedef 1310]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 1310
@@ -1645,6 +1661,7 @@ value = 1311
 ;----- HIT FLOOR -----
 [Statedef 1311]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 1311
@@ -1757,6 +1774,7 @@ value = 1312
 ;----- Land -----
 [Statedef 1312]
 type = S
+trigger1 = 1
 physics = N
 movetype = I
 ctrl = 0
@@ -1796,6 +1814,7 @@ ctrl = 1
 ;----- TARGET -----
 [Statedef 1320]
 type = A
+trigger1 = 1
 physics = N
 movetype = H
 ctrl = 0
@@ -1820,6 +1839,7 @@ value = 5040
 
 [Statedef 1321]
 type = A
+trigger1 = 1
 physics = N
 movetype = H
 ctrl = 0
@@ -1844,6 +1864,7 @@ value = 5040
 
 [Statedef 1322]
 type = A
+trigger1 = 1
 physics = N
 movetype = H
 ctrl = 0
@@ -1879,6 +1900,7 @@ value = 5040
 ;----- TARGET HIT FLOOR -----
 [Statedef 1323]
 type = A
+trigger1 = 1
 physics = N
 movetype = H
 ctrl = 0
@@ -1930,6 +1952,7 @@ value = 5110
 ;======================<EX VECTOR DRAIN>=============================
 [Statedef 1330]
 type = S
+trigger1 = 1
 movetype = A
 physics = S
 velset = 0, 0
@@ -2034,6 +2057,7 @@ ctrl = 1
 ;========================<PURSUIT>=============================
 [Statedef 1900]
 type = S
+trigger1 = 1
 physics = N
 movetype = A
 anim = 1900
@@ -2203,6 +2227,7 @@ envshake.mul = 0.667
 
 [State 1900, Lock On]
 type = posfreeze
+trigger1 = 1
 value = 1
 
 [State 1900, Lock On]
@@ -2231,6 +2256,7 @@ value = 52
 ;----- Recover -----
 [Statedef 1910]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 ctrl = 0
@@ -2258,6 +2284,7 @@ value = 1911
 ;----- Land -----
 [Statedef 1911]
 type = S
+trigger1 = 1
 physics = N
 movetype = I
 ctrl = 0
@@ -2297,6 +2324,7 @@ ctrl = 1
 ;========================<EX PURSUIT>=============================
 [Statedef 1930]
 type = S
+trigger1 = 1
 physics = N
 movetype = A
 anim = 1900
@@ -2484,6 +2512,7 @@ envshake.mul = 0.667
 
 [State 1930, Lock On]
 type = posfreeze
+trigger1 = 1
 value = 1
 
 [State 1930, Lock On]
@@ -2512,6 +2541,7 @@ value = 52
 ;========================<PUNCH ZERO COUNTER>=============================
 [Statedef 2900]
 type = S
+trigger1 = 1
 physics = N
 movetype = A
 anim = 2900
@@ -2601,6 +2631,7 @@ ctrl = 1
 ;========================<KICK ZERO COUNTER>=============================
 [Statedef 2910]
 type = S
+trigger1 = 1
 physics = N
 movetype = A
 anim = 2910

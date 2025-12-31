@@ -8,6 +8,7 @@
 ;===================<START>===================
 [Statedef 774]
 type = S
+trigger1 = 1
 physics = N
 movetype = I
 anim = 773
@@ -74,6 +75,7 @@ value = 779
 ;===================<ACTIVE>===================
 [Statedef 775]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 0

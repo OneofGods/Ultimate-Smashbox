@@ -8,6 +8,7 @@
 ;=======================<Standing Far Light Punch>========================
 [Statedef 200]
 type = S
+trigger1 = 1
 movetype = A
 physics = S
 anim = 200
@@ -101,6 +102,7 @@ ctrl = 1
 ;=======================<Standing Close Light Punch>========================
 [Statedef 201]
 type = S
+trigger1 = 1
 movetype = A
 physics = S
 anim = 201
@@ -194,6 +196,7 @@ ctrl = 1
 ;=======================<Standing Far Medium Punch>========================
 [Statedef 210]
 type = S
+trigger1 = 1
 movetype = A
 physics = S
 anim = 210
@@ -297,6 +300,7 @@ ctrl = 1
 ;=======================<Standing Close Medium Punch>========================
 [Statedef 211]
 type = S
+trigger1 = 1
 movetype = A
 physics = S
 anim = 211
@@ -410,6 +414,7 @@ ctrl = 1
 ;=======================<Standing Far Hard Punch>========================
 [Statedef 220]
 type = S
+trigger1 = 1
 movetype = A
 physics = S
 anim = 220
@@ -513,6 +518,7 @@ ctrl = 1
 ;=======================<Standing Close Hard Punch>========================
 [Statedef 221]
 type = S
+trigger1 = 1
 movetype = A
 physics = S
 anim = 221
@@ -668,6 +674,7 @@ ctrl = 1
 ;=======================<Standing Light Kick>========================
 [Statedef 230]
 type = S
+trigger1 = 1
 movetype = A
 physics = S
 anim = 230
@@ -761,6 +768,7 @@ ctrl = 1
 ;=======================<Standing Medium Kick>========================
 [Statedef 240]
 type = S
+trigger1 = 1
 movetype = A
 physics = S
 anim = 240
@@ -906,6 +914,7 @@ ctrl = 1
 ;=======================<Standing Hard Kick>========================
 [Statedef 250]
 type = S
+trigger1 = 1
 movetype = A
 physics = S
 anim = 250
@@ -1047,6 +1056,7 @@ ctrl = 1
 ;=======================<Standing Hard Kick 2>========================
 [Statedef 255]
 type = S
+trigger1 = 1
 movetype = A
 physics = S
 anim = 255
@@ -1268,6 +1278,7 @@ value = 256
 ;---Land---
 [Statedef 256]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 256
@@ -1308,6 +1319,7 @@ ctrl = 1
 ;=======================<Crouching Light Punch>========================
 [Statedef 400]
 type = C
+trigger1 = 1
 movetype = A
 physics = C
 anim = 400
@@ -1402,6 +1414,7 @@ ctrl = 1
 ;=======================<Crouching Medium Punch>========================
 [Statedef 410]
 type = C
+trigger1 = 1
 movetype = A
 physics = C
 anim = 410
@@ -1506,6 +1519,7 @@ ctrl = 1
 ;=======================<Crouching Hard Punch>========================
 [Statedef 420]
 type = C
+trigger1 = 1
 movetype = A
 physics = C
 anim = 420
@@ -1600,6 +1614,7 @@ ctrl = 1
 ;=======================<Ecstatic Climb>========================
 [Statedef 425]
 type = C
+trigger1 = 1
 movetype = A
 physics = C
 anim = 425
@@ -1725,6 +1740,7 @@ ctrl = 1
 ;=======================<Crouching Light Kick>========================
 [Statedef 430]
 type = C
+trigger1 = 1
 movetype = A
 physics = C
 anim = 430
@@ -1819,6 +1835,7 @@ ctrl = 1
 ;=======================<Crouching Light Kick (MvC)>========================
 [Statedef 431]
 type = C
+trigger1 = 1
 movetype = A
 physics = C
 anim = 431
@@ -1923,6 +1940,7 @@ ctrl = 1
 ;=======================<Crouching Medium Kick>========================
 [Statedef 440]
 type = C
+trigger1 = 1
 movetype = A
 physics = C
 anim = 440
@@ -2027,6 +2045,7 @@ ctrl = 1
 ;=======================<Crouching Medium Kick (MvC)>========================
 [Statedef 445]
 type = C
+trigger1 = 1
 movetype = A
 physics = C
 anim = 445
@@ -2131,6 +2150,7 @@ ctrl = 1
 ;=======================<Crouching Hard Kick>========================
 [Statedef 450]
 type = C
+trigger1 = 1
 movetype = A
 physics = C
 anim = 450
@@ -2225,6 +2245,7 @@ ctrl = 1
 ;=======================<Jumping Light Punch>========================
 [Statedef 600]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 600
@@ -2337,6 +2358,7 @@ value = 52
 ;=======================<Jumping Medium Punch>========================
 [Statedef 610]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 610
@@ -2457,6 +2479,7 @@ value = 52
 ;=======================<Jumping Hard Punch>========================
 [Statedef 620]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 620
@@ -2569,6 +2592,7 @@ value = 52
 ;=======================<Diagonal Jumping Light Kick>========================
 [Statedef 630]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 630
@@ -2681,6 +2705,7 @@ value = 52
 ;=======================<Neutral Jumping Light Kick>========================
 [Statedef 631]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 631
@@ -2793,6 +2818,7 @@ value = 52
 ;=======================<Jumping Medium Kick>========================
 [Statedef 640]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 640
@@ -2905,6 +2931,7 @@ value = 52
 ;=======================<Jumping Hard Kick>========================
 [Statedef 650]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 650
@@ -3017,6 +3044,7 @@ value = 52
 ;=======================<Throw Attempt>========================
 [Statedef 800]
 type = S
+trigger1 = 1
 physics = S
 movetype = A
 velset = 0, 0
@@ -3128,6 +3156,7 @@ ctrl = 1
 ;----- PLAYER -----
 [Statedef 810]
 type = S
+trigger1 = 1
 physics = S
 movetype = A
 anim = 810
@@ -3313,6 +3342,7 @@ ctrl = 1
 ;----- TARGET -----
 [Statedef 815]
 type = A
+trigger1 = 1
 physics = N
 movetype = H
 velset = 0, 0
@@ -3337,6 +3367,7 @@ value = 5040
 
 [Statedef 816]
 type = A
+trigger1 = 1
 physics = N
 movetype = H
 
@@ -3358,6 +3389,7 @@ value = 817
 
 [Statedef 817]
 type = L
+trigger1 = 1
 physics = N
 movetype = H
 
@@ -3407,6 +3439,7 @@ value = 5110
 ;----- PLAYER -----
 [Statedef 820]
 type = S
+trigger1 = 1
 physics = S
 movetype = A
 anim = 820
@@ -3556,6 +3589,7 @@ ctrl = 1
 ;----- TARGET -----
 [Statedef 821]
 type = A
+trigger1 = 1
 physics = N
 movetype = H
 velset = 0, 0
@@ -3581,6 +3615,7 @@ value = 5040
 ;----- Flying -----
 [Statedef 822]
 type = A
+trigger1 = 1
 physics = N
 movetype = H
 velset = 0, 0
@@ -3610,6 +3645,7 @@ value = 823
 ;----- Hit wall -----
 [Statedef 823]
 type = A
+trigger1 = 1
 physics = N
 movetype = H
 velset = 0, 0
@@ -3662,6 +3698,7 @@ value = 824
 ;----- Bouncing -----
 [Statedef 824]
 type = A
+trigger1 = 1
 physics = N
 movetype = H
 velset = 0, 0
@@ -3744,6 +3781,7 @@ value = 5100
 ;=======================<Target Escaped>========================
 [Statedef 890]
 type = S
+trigger1 = 1
 physics = N
 movetype = I
 anim = 890
@@ -3841,6 +3879,7 @@ ctrl = 1
 ;----- TARGET -----
 [Statedef 895]
 type = S
+trigger1 = 1
 physics = N
 movetype = I
 ctrl = 0

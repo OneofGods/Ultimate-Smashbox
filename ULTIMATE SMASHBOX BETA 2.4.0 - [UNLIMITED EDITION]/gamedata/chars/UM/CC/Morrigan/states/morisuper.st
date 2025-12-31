@@ -8,6 +8,7 @@
 ;======================<SOUL PHOENIX>=============================
 [Statedef 3000]
 type = S
+trigger1 = 1
 physics = S
 movetype = A
 anim = 3000
@@ -191,6 +192,7 @@ ctrl = 1
 ;======================<MID-AIR SOUL PHOENIX>=============================
 [Statedef 3050]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 3050
@@ -362,6 +364,7 @@ value = 1053
 ;========================<BURNED>=============================
 [Statedef 7697]
 type = U
+trigger1 = 1
 physics = N
 movetype = H
 velset = 0, 0
@@ -437,6 +440,7 @@ value = 5100
 ;======================<CARDINAL BLADE>=============================
 [Statedef 3100]
 type = S
+trigger1 = 1
 physics = S
 movetype = A
 anim = 3100
@@ -726,6 +730,7 @@ value = 1109
 ;======================<FINISHING SHOWER>=============================
 [Statedef 3300]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 3300
@@ -873,6 +878,7 @@ value = 3301
 ;---Land---
 [Statedef 3301]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 3301
@@ -913,6 +919,7 @@ ctrl = 1
 ;======================<VALKYRIE TURN>=============================
 [Statedef 3400]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 3400
@@ -1045,6 +1052,7 @@ supermovetime = 60
 
 [State 3400, Jet]
 type = helper
+trigger1 = 1
 helpertype = normal
 stateno = 6028
 ID = 6028
@@ -1079,6 +1087,7 @@ value = 3401
 ;----- RETURN -----
 [Statedef 3401]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 3400
@@ -1149,6 +1158,7 @@ value = 3402
 
 [State 3401, Drill FX]
 type = helper
+trigger1 = 1
 helpertype = normal
 stateno = 3405
 ID = 3405
@@ -1213,6 +1223,7 @@ value = 3403
 ;---Land---
 [Statedef 3403]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 3403
@@ -1253,6 +1264,7 @@ ctrl = 1
 ;======================<DARKNESS ILLUSION>=============================
 [Statedef 4000]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 4000
@@ -1401,6 +1413,7 @@ yaccel = 0.4850
 
 [State 4000, Super Pause Away]
 type = superpause
+trigger1 = 1
 time = 0
 anim = -1
 p2defmul = 1
@@ -1421,6 +1434,7 @@ value = 1114010
 
 [State 4000, P1 State]
 type = changestate
+trigger1 = 1
 value = 4010
 
 [State 4000, Guarded]
@@ -1438,6 +1452,7 @@ value = 4001
 ;---Land---
 [Statedef 4001]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 4001
@@ -1478,6 +1493,7 @@ ctrl = 1
 ;----- PLAYER -----
 [Statedef 4010]
 type = S
+trigger1 = 1
 physics = N
 movetype = A
 anim = 4010
@@ -1934,6 +1950,7 @@ physics = A
 
 [Statedef 1114010]
 type = S
+trigger1 = 1
 physics = N
 movetype = H
 velset = 0, 0
@@ -1963,6 +1980,7 @@ ctrl = 1
 ;----- Target dropped -----
 [Statedef 4012]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 4012
@@ -1988,6 +2006,7 @@ value = 4003
 ;----- JUMP BACK -----
 [Statedef 4002]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 43
@@ -2015,6 +2034,7 @@ value = 4003
 ;---Land---
 [Statedef 4003]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 4003
@@ -2055,6 +2075,7 @@ ctrl = 1
 ;======================<AIR DARKNESS ILLUSION>=============================
 [Statedef 4050]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 4050
@@ -2203,6 +2224,7 @@ yaccel = 0.4850
 
 [State 4050, Super Pause Away]
 type = superpause
+trigger1 = 1
 time = 0
 anim = -1
 p2defmul = 1
@@ -2222,6 +2244,7 @@ value = 1114060
 
 [State 4050, P1 State]
 type = changestate
+trigger1 = 1
 value = 4060
 
 [State 4050, Guarded]
@@ -2240,6 +2263,7 @@ value = 4012
 ;----- PLAYER -----
 [Statedef 4060]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 4060
@@ -2523,6 +2547,7 @@ value = 52
 ;----- Lock target -----
 [Statedef 1114060]
 type = S
+trigger1 = 1
 physics = N
 movetype = H
 velset = 0, 0
@@ -2546,6 +2571,7 @@ value = 5030
 ;======================<ETERNAL SLUMBER>=============================
 [Statedef 4100]
 type = S
+trigger1 = 1
 physics = S
 movetype = A
 anim = 4100
@@ -2746,6 +2772,7 @@ value = 4103
 ;--- MISS ---
 [Statedef 4103]
 type = S
+trigger1 = 1
 physics = S
 movetype = I
 anim = 4103
@@ -2779,6 +2806,7 @@ ctrl = 1
 ;----- PLAYER -----
 [Statedef 4110]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 4110
@@ -2998,6 +3026,7 @@ ctrl = 1
 ;----- End -----
 [Statedef 4111]
 type = S
+trigger1 = 1
 physics = N
 movetype = I
 anim = 4111
@@ -3052,6 +3081,7 @@ ctrl = 1
 ;----- TARGET -----
 [Statedef 4120]
 type = S
+trigger1 = 1
 physics = N
 movetype = H
 velset = 0, 0
@@ -3108,6 +3138,7 @@ value = 5040
 
 [Statedef 4121]
 type = L
+trigger1 = 1
 physics = C
 movetype = H
 velset = 0, 0

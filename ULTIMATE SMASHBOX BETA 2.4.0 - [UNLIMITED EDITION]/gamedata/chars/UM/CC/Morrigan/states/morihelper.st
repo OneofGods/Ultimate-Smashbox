@@ -8,6 +8,7 @@
 ;========================<SOUL FIST>=============================
 [Statedef 1005]
 type = S
+trigger1 = 1
 physics = N
 movetype = A
 anim = 1005
@@ -92,6 +93,7 @@ ignorehitpause = 1
 
 [State 1005, HitSound]
 type = playsnd
+trigger1 = 1
 value = 2, 0
 channel = 2
 ignorehitpause = 1
@@ -166,6 +168,7 @@ ignorehitpause = 1
 ;----- Contact -----
 [Statedef 1006]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 1006
@@ -226,6 +229,7 @@ trigger1 = !animtime
 ;----- Fade -----
 [Statedef 1007]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 1007
@@ -283,6 +287,7 @@ trigger1 = time >= 15
 ;========================<AIR SOUL FIST>=============================
 [Statedef 1055]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 1055
@@ -362,6 +367,7 @@ ignorehitpause = 1
 
 [State 1055, HitSound]
 type = playsnd
+trigger1 = 1
 value = 2, 0
 channel = 2
 ignorehitpause = 1
@@ -411,6 +417,7 @@ forcestand = 1
 
 [State 1055, Hit Low]
 type = modifyhitdef
+trigger1 = 1
 ground.type = Low
 air.type = Low
 
@@ -440,6 +447,7 @@ ignorehitpause = 1
 ;========================<EX SOUL FIST>=============================
 [Statedef 1015]
 type = S
+trigger1 = 1
 physics = N
 movetype = A
 anim = 1005
@@ -579,6 +587,7 @@ ignorehitpause = 1
 
 [State 1015, HitSound]
 type = playsnd
+trigger1 = 1
 value = 2, 0
 channel = 2
 ignorehitpause = 1
@@ -643,6 +652,7 @@ ignorehitpause = 1
 ;========================<EX AIR SOUL FIST>=============================
 [Statedef 1065]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 1055
@@ -784,6 +794,7 @@ ignorehitpause = 1
 
 [State 1065, HitSound]
 type = playsnd
+trigger1 = 1
 value = 2, 0
 channel = 2
 ignorehitpause = 1
@@ -848,6 +859,7 @@ ignorehitpause = 1
 ;========================<SOUL PHOENIX>=============================
 [Statedef 3005]
 type = S
+trigger1 = 1
 physics = N
 movetype = A
 ctrl = 0
@@ -950,6 +962,7 @@ ignorehitpause = 1
 
 [State 3005, HitSound]
 type = playsnd
+trigger1 = 1
 value = 2, 0
 channel = 2
 ignorehitpause = 1
@@ -1033,6 +1046,7 @@ ignorehitpause = 1
 
 [Statedef 3006]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 3006
@@ -1090,6 +1104,7 @@ trigger1 = !animtime
 
 [Statedef 3007]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 3007
@@ -1145,6 +1160,7 @@ trigger1 = time >= 15
 ;========================<MID-AIR SOUL PHOENIX>=============================
 [Statedef 3055]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 ctrl = 0
@@ -1245,6 +1261,7 @@ ignorehitpause = 1
 
 [State 3055, HitSound]
 type = playsnd
+trigger1 = 1
 value = 2, 0
 channel = 2
 ignorehitpause = 1
@@ -1331,6 +1348,7 @@ ignorehitpause = 1
 ;========================<FINISHING SHOWER>=============================
 [Statedef 3305]
 type = S
+trigger1 = 1
 physics = N
 movetype = A
 anim = 3305
@@ -1519,6 +1537,7 @@ forcestand = 1
 
 [State 3305, Hit Low]
 type = modifyhitdef
+trigger1 = 1
 ;trigger1 = random < 500
 ground.type = Low
 
@@ -1538,6 +1557,7 @@ ignorehitpause = 1
 ;----- Disappear -----
 [Statedef 3306]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 3305
@@ -1571,6 +1591,7 @@ trigger1 = time >= 16
 ;===================<DARKNESS ILLUSION DOUBLE>===================
 [Statedef 4015]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 4010
@@ -1873,6 +1894,7 @@ trigger1 = !ishelper(4015) || root, stateno != 4010
 ;----- Fade out -----
 [Statedef 4016]
 type = A
+trigger1 = 1
 physics = N
 sprpriority = 2
 
@@ -1916,6 +1938,7 @@ trigger1 = time >= 20 || pos y >= 0
 ;===================<AIR DARKNESS ILLUSION DOUBLE>===================
 [Statedef 4065]
 type = A
+trigger1 = 1
 physics = N
 movetype = A
 anim = 4060
@@ -2150,6 +2173,7 @@ trigger1 = !ishelper(4065) || root, stateno != 4060
 ;----- PROJECTILE -----
 [Statedef 4105]
 type = S
+trigger1 = 1
 physics = N
 movetype = A
 anim = 4105
@@ -2266,6 +2290,7 @@ ignorehitpause = 1
 ;----- Miss -----
 [Statedef 4106]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 velset = 0, 0
@@ -2305,6 +2330,7 @@ trigger2 = frontedgedist < -40 || backedgedist < -200
 ;----- BINDING -----
 [Statedef 4107]
 type = S
+trigger1 = 1
 physics = N
 movetype = A
 anim = 4105
@@ -3442,6 +3468,7 @@ trigger1 = root, stateno != 181 || root, movetype = H
 ;----- POWER CHARGE -----
 [Statedef 6108]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 9999
@@ -3786,6 +3813,7 @@ trigger2 = time >= 60
 ;----- Dash -----
 [Statedef 7104]
 type = A
+trigger1 = 1
 anim = 9999
 velset = 0, 0
 sprpriority = 5
@@ -3848,6 +3876,7 @@ trigger1 = !numexplod
 ;----- Impact -----
 [Statedef 8110]
 type = A
+trigger1 = 1
 anim = 9999
 velset = 0, 0
 
@@ -3906,6 +3935,7 @@ trigger1 = !numexplod
 ;========================<FLAME PARTICLES>=============================
 [Statedef 8150]
 type = A
+trigger1 = 1
 velset = 0, 0
 anim = 9999
 
@@ -3982,6 +4012,7 @@ ownpal = 1
 ;----- MAIN FX -----
 [Statedef 7240]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 9999
@@ -4081,6 +4112,7 @@ trigger2 = root, movetype = H
 ;----- Particles -----
 [Statedef 7241]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 9999
@@ -4116,6 +4148,7 @@ trigger1 = root, stateno != 740
 ;====================<ZERO COUNTER PAUSE>====================
 [Statedef 7250]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 9999
@@ -4167,6 +4200,7 @@ trigger1 = time >= 16
 ;========================<DARK FORCE PAUSE=============================
 [Statedef 7270]
 type = A
+trigger1 = 1
 physics = N
 movetype = I
 anim = 7270
@@ -4278,6 +4312,7 @@ alpha = 256 - 25.6 * (time -16), 256
 ;----- Level 1 -----
 [Statedef 8500]
 type = A
+trigger1 = 1
 velset = 0, 0
 anim = 8500
 sprpriority = 5
@@ -4410,6 +4445,7 @@ trigger1 = time >= 40
 ;----- Level 2 -----
 [Statedef 8510]
 type = A
+trigger1 = 1
 velset = 0, 0
 anim = 8510
 sprpriority = 5
@@ -4542,6 +4578,7 @@ trigger1 = time >= 40
 ;----- Level 3 -----
 [Statedef 8520]
 type = A
+trigger1 = 1
 velset = 0, 0
 anim = 8520
 sprpriority = 5
@@ -4741,6 +4778,7 @@ trigger1 = time >= 40
 ;========================<SUPER FINISH>=============================
 [Statedef 8600]
 type = A
+trigger1 = 1
 velset = 0, 0
 anim = 9999
 
