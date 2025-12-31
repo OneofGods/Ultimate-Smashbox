@@ -2912,8 +2912,8 @@ ownpal = 1
 [State 4111, Fade Out]
 type = bgpalfx
 trigger1 = !time
-sinadd = -255, -255, -255, abs(animelemtime(3)) * 4
-time = abs(animelemtime(3))
+sinadd = -255, -255, -255, animelemtime(3) * 4
+time = animelemtime(3)
 
 [State 4110, Sound]
 type = playsnd

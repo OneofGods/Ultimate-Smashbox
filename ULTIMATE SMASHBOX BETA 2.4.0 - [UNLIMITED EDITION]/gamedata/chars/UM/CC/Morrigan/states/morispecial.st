@@ -1087,7 +1087,7 @@ stopongethit = 1
 
 [State 1205, Dust]
 type = explod
-trigger1 = !(time % 3) && abs(vel x) >= 1
+trigger1 = !(time % 3) && vel x >= 1
 anim = 7103
 sprpriority = 3
 postype = p1
@@ -1264,7 +1264,7 @@ stopongethit = 1
 
 [State 1251, Dust]
 type = explod
-trigger1 = !(time % 3) && abs(vel x) >= 1
+trigger1 = !(time % 3) && vel x >= 1
 anim = 7103
 sprpriority = 3
 postype = p1

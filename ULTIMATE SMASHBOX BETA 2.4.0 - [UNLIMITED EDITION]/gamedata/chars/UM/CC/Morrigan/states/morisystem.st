@@ -1755,7 +1755,7 @@ trigger1 = AIlevel
 trigger1 = time = [15, 25]
 trigger1 = !inguarddist
 trigger1 = p2dist y >= -60
-trigger1 = abs(p2bodydist x) < 80
+trigger1 = p2bodydist x < 80
 value =  240
 
 [State 710, AI Guard]
