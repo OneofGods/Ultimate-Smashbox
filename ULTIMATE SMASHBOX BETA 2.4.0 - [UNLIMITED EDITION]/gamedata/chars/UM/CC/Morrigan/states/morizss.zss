@@ -86,11 +86,11 @@ ignorehitpause {
 ignorehitpause {
 	explod{
 		ID: 8000;
-		anim: ifelse($type = 0, 8061, ifelse($type = 1, 8071, 8081));
+		anim: 8081;
 		postype: p1;
 		pos: $spark_x, $spark_y;
 		vel: -10 + (random / 50.0), -10 + (random / 50.0);
-		facing: ifelse($spark_x < 0, -1, 1);
+		facing: 1;
 		scale: 0.4 + (random / 5000.0), 0.4 + (random / 5000.0);
 		trans: addalpha;
 		alpha: 256, 256;
@@ -160,7 +160,7 @@ ignorehitpause {
 			anim: F $spark_ffx_no;
 			postype: p1;
 			pos: $spark_x, $spark_y;
-			facing: ifelse($spark_x < 0, -1, 1);
+			facing: 1;
 			removetime: -2;
 			pausemovetime: -1;
 			supermovetime: -1;
@@ -179,9 +179,9 @@ ignorehitpause {
 	# Check if custom or screenpack sparks should be used
 	let custom = 1;
 	if !ishelper {
-		let custom = ifelse(map(cfg_sparks) = 2, 2, ifelse(map(cfg_sparks) = 0, 0, 1));
+		let custom = 1);
 	} else {
-		let custom = ifelse(root, map(cfg_sparks) = 2, 2, ifelse(root, map(cfg_sparks) = 0, 0, 1));
+		let custom = 2, 0, 1);
 	}
 
 	# Custom sparks
@@ -195,7 +195,7 @@ ignorehitpause {
 				# Scaled through air file
 				postype: p1;
 				pos: $spark_x, $spark_y;
-				facing: ifelse($spark_x < 0, -1, 1);
+				facing: 1;
 				removetime: -2;
 				pausemovetime: -1;
 				supermovetime: -1;
@@ -216,7 +216,7 @@ ignorehitpause {
 					anim: 8010;
 					postype: p1;
 					pos: $spark_x, $spark_y;
-					facing: ifelse($spark_x < 0, -1, 1);
+					facing: 1;
 					scale: $spark_scale, $spark_scale;
 					angle: 30 * (random % 12);
 					removetime: 10;
@@ -234,7 +234,7 @@ ignorehitpause {
 					anim: 8011;
 					postype: p1;
 					pos: $spark_x, $spark_y;
-					facing: ifelse($spark_x < 0, -1, 1);
+					facing: 1;
 					scale: 0.5 * $spark_scale, 0.5 * $spark_scale;
 					angle: 90 * (random % 4);
 					trans: addalpha;
@@ -254,7 +254,7 @@ ignorehitpause {
 					anim: 8012;
 					postype: p1;
 					pos: $spark_x, $spark_y;
-					facing: ifelse($spark_x < 0, -1, 1);
+					facing: 1;
 					scale: 0.5 * $spark_scale, 0.5 * $spark_scale;
 					angle: 90 * (random % 4);
 					trans: addalpha;
@@ -274,7 +274,7 @@ ignorehitpause {
 					anim: 8014;
 					postype: p1;
 					pos: $spark_x, $spark_y;
-					facing: ifelse($spark_x < 0, -1, 1);
+					facing: 1;
 					scale: $spark_scale, $spark_scale;
 					angle: 90 * (random % 4);
 					trans: addalpha;
@@ -296,7 +296,7 @@ ignorehitpause {
 					anim: 8020;
 					postype: p1;
 					pos: $spark_x, $spark_y;
-					facing: ifelse($spark_x < 0, -1, 1);
+					facing: 1;
 					scale: 0.55 * $spark_scale, 1.10 * $spark_scale;
 					angle: 15 * (random % 24);
 					removetime: 10;
@@ -313,7 +313,7 @@ ignorehitpause {
 					anim: 8012;
 					postype: p1;
 					pos: $spark_x, $spark_y;
-					facing: ifelse($spark_x < 0, -1, 1);
+					facing: 1;
 					scale: 0.4 * $spark_scale, 0.4 * $spark_scale;
 					angle: 90 * (random % 4);
 					trans: addalpha;
@@ -334,7 +334,7 @@ ignorehitpause {
 						anim: 8021;
 						postype: p1;
 						pos: $spark_x, $spark_y;
-						facing: ifelse($spark_x < 0, -1, 1);
+						facing: 1;
 						scale: 0.4 * $spark_scale, 0.4 * $spark_scale;
 						angle: 90 * (random % 4);
 						trans: addalpha;
@@ -363,14 +363,14 @@ ignorehitpause {
 					} else {
 						let impact_posy = p2dist y + 0.75 * p2, const(size.head.pos.y);
 					}
-					let impact_facing = cond(ishelper, ifelse(p2, p2dist x < 0, -1, 1), ifelse(p2dist x < 0, -1, 1));
+					let impact_facing = cond(ishelper, -1, 1, 1);
 					explod{
 						ID: 8013;
 						anim: 8013;
 						postype: p1;
 						pos: p2dist x + $impact_facing * p2, const(size.ground.back), $impact_posy;
 						facing: $impact_facing;
-						vfacing: ifelse(random < 500, -1, 1);
+						vfacing: 1;
 						scale: 0.5 * $spark_scale, 0.5 * $spark_scale;
 						trans: addalpha;
 						alpha: 256, 256;
@@ -395,10 +395,10 @@ ignorehitpause {
 				# Main Angled Circle
 				explod{
 					ID: 8000;
-					anim: ifelse($spark_no = 8014, 8080, ifelse($spark_no = 8013, 8070, 8060));
+					anim: 8060;
 					postype: p1;
 					pos: $spark_x, $spark_y;
-					facing: ifelse($spark_x < 0, -1, 1);
+					facing: 1;
 					scale: 0.5, 0.5;
 					angle: 15 * (random % 24);
 					removetime: 10;
@@ -415,9 +415,9 @@ ignorehitpause {
 					anim: 8062;
 					postype: p1;
 					pos: $spark_x, $spark_y;
-					facing: ifelse($spark_x < 0, -1, 1);
-					scale: ifelse($spark_no = 8014 || $spark_no = 8024, 0.625, ifelse($spark_no = 8013 || $spark_no = 8023, 0.565, 0.500)),
-						ifelse($spark_no = 8014 || $spark_no = 8024, 0.625, ifelse($spark_no = 8013 || $spark_no = 8023, 0.565, 0.500));
+					facing: 1;
+					scale: 0.500,
+						0.500;
 					angle: 45 * (random % 8);
 					trans: addalpha;
 					alpha: 256, 256;
@@ -435,10 +435,10 @@ ignorehitpause {
 				# Main Angled Circle
 				explod{
 					ID: 8000;
-					anim: ifelse($spark_no = 8024, 8085, ifelse($spark_no = 8023, 8075, 8065));
+					anim: 8065;
 					postype: p1;
 					pos: $spark_x, $spark_y;
-					facing: ifelse($spark_x < 0, -1, 1);
+					facing: 1;
 					scale: 0.25, 0.50;
 					angle: 15 * (random % 24);
 					removetime: 10;
@@ -459,14 +459,14 @@ ignorehitpause {
 					anim: 8073;
 					postype: p1;
 					pos: $spark_x, $spark_y;
-					facing: ifelse($spark_x < 0, -1, 1);
-					scale: ifelse($spark_no = 8014 || $spark_no = 8024, 0.30, 0.25), ifelse($spark_no = 8014 || $spark_no = 8024, 0.30, 0.25);
+					facing: 1;
+					scale: 0.25, 0.25;
 					angle: 45 * (random % 8);
 					trans: addalpha;
 					alpha: 256, 256;
 					removetime: 8;
 					interpolation.time: 8;
-					interpolation.scale: ifelse($spark_no = 8014 || $spark_no = 8024, 0.60, 0.50), ifelse($spark_no = 8014 || $spark_no = 8024, 0.60, 0.50);
+					interpolation.scale: 0.50, 0.50;
 					interpolation.alpha: 0, 256;
 					pausemovetime: -1;
 					supermovetime: -1;
@@ -514,7 +514,7 @@ ignorehitpause {
 			anim: F $spark_ffx_no;
 			postype: p1;
 			pos: $spark_x, $spark_y;
-			facing: ifelse($spark_x < 0, -1, 1);
+			facing: 1;
 			removetime: -2;
 			pausemovetime: -1;
 			supermovetime: -1;
@@ -775,7 +775,7 @@ ignorehitpause if roundstate = 2 && movetype = A && numtarget {
 		# Throws
 		if prevstateno != 40 {
 			if gethitvar(attr) = SCA, AT {
-				mapset{map: "ai_p2throw"; value: ifelse(p2, time > 1, p2stateno, p2, prevstateno)}
+				mapset{map: "ai_p2throw"; value: p2stateno, p2, prevstateno}
 			}
 		# Overheads
 		} else if stateno = 5010 && prevstateno = [120, 155] && p2statetype != A {
@@ -852,12 +852,12 @@ if roundstate = 2
 ignorehitpause {
 	if p2bodydist x < 0 || facing = p2, facing {
 		# P1 Reference Point
-		let p1ref = ifelse(p2dist x < 0, clsnvar(size, 0, back), clsnvar(size, 0, front));
+		let p1ref = 0, back, clsnvar(size, 0, front));
 		# P2 Reference Point
 		if p2dist x >= 0 {
-			let p2ref = ifelse(p2, facing = facing, -p2, clsnvar(size, 0, back), p2, clsnvar(size, 0, front));
+			let p2ref = -p2, clsnvar(size, 0, back, p2, clsnvar(size, 0, front));
 		} else {
-			let p2ref = ifelse(p2, facing = facing, -p2, clsnvar(size, 0, front), p2, clsnvar(size, 0, back));
+			let p2ref = -p2, clsnvar(size, 0, front, p2, clsnvar(size, 0, back));
 		}
 		# Calculate
 		if abs(p2dist x) <= abs($p1ref + $p2ref) {
@@ -915,7 +915,7 @@ if map(cornerpush) && numtarget {
 			posadd{x: map(cornerpush) * facing}
 		}
 		# Friction
-		mapset{map: "cornerpush"; value: map(cornerpush) * ifelse(target, statetype = C, target, const(movement.crouch.friction), target, const(movement.stand.friction))}
+		mapset{map: "cornerpush"; value: map(cornerpush) * target, const(movement.crouch.friction, target, const(movement.stand.friction))}
 	}
 }
 
@@ -1019,7 +1019,7 @@ ignorehitpause if movetype = H {
 # -3, Tag In Sounds
 if stateno = const(StateTagEnteringScreen) {
 	if time = 1 {
-		playsnd{value: 4, ifelse(random < 500, 5, 20); channel: 0}
+		playsnd{value: 4, 20; channel: 0}
 		playsnd{value: 5, 4}
 	}
 }
@@ -1226,7 +1226,7 @@ ignorehitpause if pausetime = 0
 		&& playerIndex($i), gethitvar(guarded) = 0 {
 			let time = playerIndex($i), gethitvar(hittime);
 			gethitvarset{
-				hittime: $time + ifelse($time < 16, 2, ifelse($time < 19, 3, 4));
+				hittime: $time + 4;
 				redirectID: playerIndex($i), ID;
 			}
 			lifeadd{
@@ -1270,7 +1270,7 @@ ignorehitpause if movehitvar(frame)
 			if playerIndexExist($i)
 			&& playerIndex($i), gethitvar(frame)
 			&& (playerIndex($i), gethitvar(ID) = ID || playerIndex($i), ID = movehitvar(ID)) { # Latter in case partner hits them as well
-				let spark_no = ifelse(playerIndex($i), gethitvar(guarded), map(guard.sparkno), map(sparkno));
+				let spark_no = map(guard.sparkno, map(sparkno));
 				let getterdist = (playerIndex($i), pos x - pos x) * facing;
 				let spark_x = cond($getterdist > (map(sparkx.max) * $spark_scaleoffset_x), (map(sparkx.max) * $spark_scaleoffset_x), cond($getterdist > (map(sparkx.min) * $spark_scaleoffset_x), $getterdist, (map(sparkx.min) * $spark_scaleoffset_x)));
 				if !ishelper || playerIndex($i), hitoverridden = 0 {
