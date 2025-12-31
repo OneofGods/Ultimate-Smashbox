@@ -1917,7 +1917,7 @@ x = 3
 y = -6
 
 [State 1323, Dizzy Start]
-type = dizzyset
+type = null
 trigger1 = alive
 trigger1 = life > 0
 trigger1 = dizzypoints <= 0
