@@ -363,7 +363,7 @@ ignorehitpause {
 					} else {
 						let impact_posy = p2dist y + 0.75 * p2, const(size.head.pos.y);
 					}
-					let impact_facing = cond(ishelper, -1, 1, 1);
+					let impact_facing = 1; // fallback value
 					explod{
 						ID: 8013;
 						anim: 8013;
@@ -525,7 +525,7 @@ ignorehitpause {
 
 	# Blood
 	if $spark_no = [8020, 8024]
-	&& cond(!ishelper, map(cfg_blood), root, map(cfg_blood)) {
+	&& root, map(cfg_blood) {
 		call BloodSparks($spark_no, $spark_x, $spark_y);
 	}
 
@@ -582,8 +582,8 @@ if stateno = 4110 && numhelper(4190) && animelemtime(3) >= 0 {
 # +1, Juggle System
 ignorehitpause {
 	# Disable Juggling
-	if cond(ishelper, root, map(juggle_count), map(juggle_count)) >= map(juggle_limit)
-	&& cond(ishelper, root, map(darkforce) = 0, map(darkforce) = 0) { # Dark Force has infinite limit (TODO: keep or not?)
+	if map(juggle_count, map(juggle_count)) >= map(juggle_limit)
+	&& map(darkforce = 0, map(darkforce) = 0) { # Dark Force has infinite limit (TODO: keep or not?)
 		assertspecial{flag: nofallhitflag}
 	}
 }
@@ -1036,7 +1036,7 @@ if stateno = const(StateTagEnteringScreen) {
 if pausetime = 0 && p2, pausetime > 0 {
 	if sprpriority >= 0
 	&& sprpriority = p2, sprpriority
-	&& cond((p2, numtarget), (p2, target, gethitvar(isbound) = 0), 1) {
+	&& (p2, target, gethitvar(isbound = 0), 1) {
 		sprpriority{value: p2, sprpriority - 1; redirectID: p2, ID}
 	}
 	if p2, gethitvar(hitshaketime) > 0 {
@@ -1191,9 +1191,9 @@ ignorehitpause {
 	&& p2, gethitvar(frame)
 	&& (p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID) {
 		if map(juggle_timer) <= 0 {
-			mapAdd{map: "juggle_count"; value: map(juggle_start); redirectID: cond(ishelper, root, ID, ID)}
+			mapAdd{map: "juggle_count"; value: map(juggle_start); redirectID: ID, ID}
 		} else {
-			mapAdd{map: "juggle_count"; value: map(juggle_increase); redirectID: cond(ishelper, root, ID, ID)}
+			mapAdd{map: "juggle_count"; value: map(juggle_increase); redirectID: ID, ID}
 		}
 	}
 	# Juggle Timer
@@ -1216,7 +1216,7 @@ ignorehitpause {
 ignorehitpause if pausetime = 0
 && movehitvar(frame) && movehit = 1
 && (movecountered = 1 || map(counterhit_buffer)) # MoveCountered has limits against multiple enemies
-&& cond(ishelper, root, movetype != H, movetype != H) {
+&& movetype != H, movetype != H {
 	for i = 0; numPlayer - 1; 1 {
 		if playerIndexExist($i)
 		&& playerIndex($i), gethitvar(frame)
@@ -1272,14 +1272,14 @@ ignorehitpause if movehitvar(frame)
 			&& (playerIndex($i), gethitvar(ID) = ID || playerIndex($i), ID = movehitvar(ID)) { # Latter in case partner hits them as well
 				let spark_no = map(guard.sparkno, map(sparkno));
 				let getterdist = (playerIndex($i), pos x - pos x) * facing;
-				let spark_x = cond($getterdist > (map(sparkx.max) * $spark_scaleoffset_x), (map(sparkx.max) * $spark_scaleoffset_x), cond($getterdist > (map(sparkx.min) * $spark_scaleoffset_x), $getterdist, (map(sparkx.min) * $spark_scaleoffset_x)));
+				let spark_x = (map(sparkx.min * $spark_scaleoffset_x)));
 				if !ishelper || playerIndex($i), hitoverridden = 0 {
 					call HitSparks($spark_no, $spark_x, $spark_y);
 				}
 				# Counter hit spark
 				if movehit = 1
 				&& (movecountered = 1 || map(counterhit_buffer)) # MoveCountered has limits against multiple enemies
-				&& cond(ishelper, root, movetype != H, movetype != H)
+				&& movetype != H, movetype != H
 				&& (!ishelper || playerIndex($i), hitoverridden = 0)
 				&& playerIndex($i), movetype = H
 				&& (playerIndex($i), prevmovetype = A || playerIndex($i), receivedhits > 1) # Just countered or counter buffer active

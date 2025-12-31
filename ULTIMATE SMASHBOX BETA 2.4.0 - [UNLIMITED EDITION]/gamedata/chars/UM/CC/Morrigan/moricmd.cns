@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ;==============================================================================================
 ;=======================================< COMMAND FILE >=======================================
 ;==============================================================================================
@@ -470,7 +470,7 @@ type = changestate
 value = 720
 triggerall = var(82)
 triggerall = roundstate = 2 && statetype != A
-trigger1 = ifelse(var(92), command = "/$B", command = "/$F")
+trigger1 = command = "/$F"
 trigger1 = ctrl || stateno = [100, 101]
 
 [State -1, Back Roll]
@@ -478,7 +478,7 @@ type = changestate
 value = 725
 triggerall = var(82)
 triggerall = roundstate = 2 && statetype != A
-trigger1 = ifelse(var(92), command = "/$F", command = "/$B")
+trigger1 = command = "/$B"
 trigger1 = ctrl || stateno = [100, 101]
 
 [State -1, Dodge]
@@ -762,7 +762,7 @@ trigger3 = (stateno = [400, 420]) || (stateno = [430, 445])
 
 [State -1, SHP]
 type = changestate
-value = ifelse((abs(var(129)) <= (const(size.xscale) * 16)), 221, 220); 14 Hunter
+value = 220; 14 Hunter (fallback)
 triggerall = var(104)
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
@@ -816,7 +816,7 @@ trigger3 = (stateno = [400, 410]) || stateno = 430
 
 [State -1, SMP]
 type = changestate
-value = ifelse(abs(var(129)) <= (const(size.xscale) * 20), 211, 210);18 Hunter
+value = 210;18 Hunter (fallback)
 triggerall = var(103)
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
@@ -855,7 +855,7 @@ trigger3 = (stateno = [200, 201] || stateno = 230 || stateno = 400) && time >= 5
 
 [State -1, SLP]
 type = changestate
-value = ifelse(abs(var(129)) <= (const(size.xscale) * 20), 201, 200);18 Hunter
+value = 200;18 Hunter (fallback)
 triggerall = var(102)
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
@@ -899,7 +899,7 @@ trigger2 = ((movecontact + movereversed) = [1, 4]) && (prevstateno != [100, 105]
 
 [State -1, ALK]
 type = changestate
-value = ifelse(vel x, 630, 631)
+value = 631
 triggerall = var(79)
 triggerall = statetype = A
 trigger1 = ctrl
@@ -915,7 +915,7 @@ trigger1 = ctrl
 
 [State -1, Air Dash]
 type = changestate
-value = ifelse(var(80), 105, 100)
+value = 100
 triggerall = var(81) || var(80)
 triggerall = roundstate = 2 && statetype = A
 trigger1 = ctrl
@@ -923,7 +923,7 @@ trigger1 = stateno != [100, 105]
 
 [State -1, Dash]
 type = changestate
-value = ifelse(var(73), 105, 100)
+value = 100
 triggerall = var(78) || var(73)
 triggerall = roundstate = 2 && statetype = S
 trigger1 = ctrl
@@ -1058,7 +1058,7 @@ trigger1 = random < 50
 
 [State -1, Roll Fireballs]; incorporate into roll/dodge code blocks later
 type = changestate
-value = ifelse(random < 500 && var(62) >= 20, 720, 710)
+value = 710
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && statetype != A
@@ -1190,7 +1190,7 @@ trigger2 = random < var(53) * 100
 
 [State -1, SLP]
 type = changestate
-value = ifelse(abs(var(129)) <= (const(size.xscale) * 20), 201, 200)
+value = 200
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1202,7 +1202,7 @@ trigger1 = random < var(53) * 50
 
 [State -1, SMP]
 type = changestate
-value = ifelse(abs(var(129)) <= (const(size.xscale) * 20), 211, 210)
+value = 210
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1217,7 +1217,7 @@ trigger2 = stateno = [200, 201] || stateno = 230 || stateno = 400 || stateno = 4
 
 [State -1, SHP]
 type = changestate
-value = ifelse((abs(var(129)) <= (const(size.xscale) * 16)) && stateno != [200, 499], 221, 220)
+value = 221, 220
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1459,7 +1459,7 @@ trigger2 = stateno = 610 || stateno = 640
 
 [State -1, ALK]
 type = changestate
-value = ifelse(vel x, 630, 631)
+value = 631
 triggerall = var(63)
 triggerall = numenemy && !isasserted(noinput)
 triggerall = !var(60)
@@ -1558,7 +1558,7 @@ triggerall = !var(120)
 triggerall = !inguarddist
 triggerall = p2statetype = S || p2statetype = C || (p2statetype = A && p2bodydist x > 200)
 trigger1 = ctrl && p2bodydist x > 120
-trigger1 = random < var(53) * ifelse(prevstateno = 1000, 100, 50)
+trigger1 = random < var(53) * 50
 
 [State -1, EX Vector Drain]
 type = changestate
@@ -1814,7 +1814,7 @@ trigger1 = ctrl || stateno = [200, 499]
 trigger1 = stateno != [255, 256]
 trigger1 = random < var(53) * 50
 trigger2 = stateno = [200, 499]
-trigger2 = random < var(53) * ifelse((movehit = [1, 16]), 100, 50)
+trigger2 = random < var(53) * 100, 50
 
 [State -1, Eternal Slumber]
 type = changestate
@@ -1843,7 +1843,7 @@ triggerall = p2movetype != A && !inguarddist
 triggerall = p2bodydist x >= 80
 trigger1 = ctrl
 trigger1 = stateno != [100, 106]
-trigger1 = random < ifelse(var(120), 100, 33)
+trigger1 = random < 33
 trigger2 = ctrl
 trigger2 = stateno != [100, 106]
 trigger2 = random < var(53) * 100
@@ -1860,7 +1860,7 @@ triggerall = !numhelper(775)
 trigger1 = ctrl
 trigger1 = !inguarddist
 trigger1 = p2movetype != A && p2bodydist x >= 200
-trigger1 = random < ifelse(power < 1000, 150, ifelse(power < 2000, 100, 50))
+trigger1 = random < 50
 
 [State -1, Taunt]
 type = changestate
