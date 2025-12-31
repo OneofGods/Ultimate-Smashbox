@@ -62,7 +62,7 @@ type = changeanim
 trigger1 = !time
 trigger1 = anim = 12
 value = 10
-elem = 5 - animelemno(0)
+elem = 5 - animelemno(0
 
 [State 10, Anim]
 type = changeanim
@@ -111,7 +111,7 @@ type = changeanim
 trigger1 = !time
 trigger1 = anim = 10
 value = 12
-elem = 5 - animelemno(0)
+elem = 5 - animelemno(0
 
 [State 12, Anim]
 type = changeanim
@@ -441,7 +441,7 @@ value = 110
 [State 100, Change]
 type = changeanim
 triggerall = anim = 100
-triggerall = time > 10 || var(0)
+triggerall = time > 10 || var(0
 trigger1 = command = "holddown"
 trigger2 = (p2dist x - 64) < p2dist y
 value = 115
@@ -865,12 +865,12 @@ sysvar(0) = vel y > 0 && (pos y > -vel y)
 
 [State 132, Vel]
 type = velset
-trigger1 = sysvar(0)
+trigger1 = sysvar(0
 y = 0
 
 [State 132, Pos]
 type = posset
-trigger1 = sysvar(0)
+trigger1 = sysvar(0
 y = 0
 
 [State 132, End]
@@ -881,7 +881,7 @@ value = 130
 
 [State 132, End]
 type = changestate
-trigger1 = sysvar(0)
+trigger1 = sysvar(0
 value = 52
 
 ;[State 132, Stop guarding was here]
@@ -1192,12 +1192,12 @@ sysvar(0) = vel y > 0 && (pos y > -vel y)
 
 [State 155, Vel]
 type = velset
-trigger1 = sysvar(0)
+trigger1 = sysvar(0
 y = 0
 
 [State 155, Pos]
 type = posset
-trigger1 = sysvar(0)
+trigger1 = sysvar(0
 y = 0
 
 [State 155, End]
@@ -1208,7 +1208,7 @@ value = 130
 
 [State 155, End]
 type = changestate
-trigger1 = sysvar(0)
+trigger1 = sysvar(0
 value = 52
 
 
@@ -1244,11 +1244,11 @@ trigger1 = 1
 [State Freeze Parried Helper]
 redirectID = 1
 type = posadd
-trigger1 = playerIDexist(1)
-trigger1 = playerID(1), movetype = A
-trigger1 = playerID(1), hitpausetime = 0
-x = -1 * playerID(1), vel x
-y = -1 * playerID(1), vel y
+trigger1 = playerIDexist(1
+trigger1 = playerID(1, movetype = A
+trigger1 = playerID(1, hitpausetime = 0
+x = -1 * playerID(1, vel x
+y = -1 * playerID(1, vel y
 
 [State 700, Consecutive Parries]
 type = posadd
@@ -1290,7 +1290,7 @@ trigger1 = !time
 anim = 7200
 sprpriority = 5
 postype = p1
-pos = 15 * const(size.xscale), -71
+pos = 15 * const(size.xscale, -71
 pausemovetime = -1
 supermovetime = -1
 scale = 0.5, 0.5
@@ -1340,11 +1340,11 @@ trigger1 = 1
 [State Freeze Parried Helper]
 redirectID = 1
 type = posadd
-trigger1 = playerIDexist(1)
-trigger1 = playerID(1), movetype = A
-trigger1 = playerID(1), hitpausetime = 0
-x = -1 * playerID(1), vel x
-y = -1 * playerID(1), vel y
+trigger1 = playerIDexist(1
+trigger1 = playerID(1, movetype = A
+trigger1 = playerID(1, hitpausetime = 0
+x = -1 * playerID(1, vel x
+y = -1 * playerID(1, vel y
 
 [State 701, Freeze]
 type = posfreeze
@@ -1380,7 +1380,7 @@ trigger1 = !time
 anim = 7200
 sprpriority = 5
 postype = p1
-pos = 30 * const(size.xscale), -21
+pos = 30 * const(size.xscale, -21
 pausemovetime = -1
 supermovetime = -1
 scale = 0.5, 0.5
@@ -1429,11 +1429,11 @@ trigger1 = 1
 [State Freeze Parried Helper]
 redirectID = 1
 type = posadd
-trigger1 = playerIDexist(1)
-trigger1 = playerID(1), movetype = A
-trigger1 = playerID(1), hitpausetime = 0
-x = -1 * playerID(1), vel x
-y = -1 * playerID(1), vel y
+trigger1 = playerIDexist(1
+trigger1 = playerID(1, movetype = A
+trigger1 = playerID(1, hitpausetime = 0
+x = -1 * playerID(1, vel x
+y = -1 * playerID(1, vel y
 
 [State 702, Freeze]
 type = posfreeze
@@ -1464,7 +1464,7 @@ trigger1 = !time
 anim = 7200
 sprpriority = 5
 postype = p1
-pos = 33 * const(size.xscale), -48
+pos = 33 * const(size.xscale, -48
 pausemovetime = -1
 supermovetime = -1
 scale = 0.5, 0.5
@@ -1560,7 +1560,7 @@ var(0) = 1
 
 [State 705, Disable]
 type = varset
-triggerall = !var(0)
+triggerall = !var(0
 trigger1 = root, p2dist x >= 0
 trigger1 = root, command = "holdback"
 trigger2 = root, p2dist x < 0
@@ -1592,7 +1592,7 @@ value = 9999
 
 [State 705, Standing / Air]
 type = reversaldef
-trigger1 = !var(0)
+trigger1 = !var(0
 trigger1 = anim = 705 || anim = 707
 trigger1 = 1
 reversal.attr = SCA, AA
@@ -1603,7 +1603,7 @@ numhits = 0
 
 [State 705, Crouching]
 type = reversaldef
-trigger1 = !var(0)
+trigger1 = !var(0
 trigger1 = anim = 706
 trigger1 = 1; no air
 reversal.attr = SC, AA
@@ -1990,7 +1990,7 @@ helpertype = normal
 stateno = 7250
 ID = 7250
 postype = p1
-pos = 28 * const(size.xscale), -52
+pos = 28 * const(size.xscale, -52
 ownpal = 1
 persistent = 0
 supermovetime = 999
@@ -2078,7 +2078,7 @@ facing = -1
 type = changestate
 triggerall = !animtime
 trigger1 = 1
-trigger2 = helper(775), stateno = 775
+trigger2 = helper(775, stateno = 775
 value = 0
 ctrl = 1
 
@@ -2209,7 +2209,7 @@ y = 0.9
 [State 195, Vel]
 type = velset
 trigger1 = anim = 195 && animelemtime(5) >= 0
-y = -0.25 * 1 / 20.0)
+y = -0.25 * 1 / 20.0
 
 [State 195, Bat Explods]
 type = explod
@@ -2217,8 +2217,8 @@ trigger1 = anim = 195 && animelem = 2
 anim = 6100
 ID = 195
 postype = p1
-pos = -35 * const(size.xscale), -37
-scale = const(size.xscale), const(size.yscale)
+pos = -35 * const(size.xscale, -37
+scale = const(size.xscale, const(size.yscale)
 sprpriority = 0
 
 [State 195, Bat Explods]
@@ -2228,7 +2228,7 @@ anim = 6100
 ID = 195
 postype = p1
 pos = 2, -40
-scale = const(size.xscale), const(size.yscale)
+scale = const(size.xscale, const(size.yscale)
 sprpriority = 0
 
 [State 195, Bat Explods]
@@ -2237,8 +2237,8 @@ trigger1 = anim = 195 && animelem = 2
 anim = 6100
 ID = 195
 postype = p1
-pos = -21 * const(size.xscale), -31
-scale = const(size.xscale), const(size.yscale)
+pos = -21 * const(size.xscale, -31
+scale = const(size.xscale, const(size.yscale)
 sprpriority = 0
 
 [State 195, Bat Explods]
@@ -2247,8 +2247,8 @@ trigger1 = anim = 195 && animelem = 2
 anim = 6100
 ID = 195
 postype = p1
-pos = -34 * const(size.xscale), -30
-scale = const(size.xscale), const(size.yscale)
+pos = -34 * const(size.xscale, -30
+scale = const(size.xscale, const(size.yscale)
 sprpriority = 2
 
 [State 195, Bat Explods]
@@ -2257,13 +2257,13 @@ trigger1 = anim = 195 && animelem = 2
 anim = 6100
 ID = 195
 postype = p1
-pos = -10 * const(size.xscale), -36
-scale = const(size.xscale), const(size.yscale)
+pos = -10 * const(size.xscale, -36
+scale = const(size.xscale, const(size.yscale)
 sprpriority = 2
 
 [State 195, Bat Explods]
 type = modifyexplod
-trigger1 = numexplod(195)
+trigger1 = numexplod(195
 ID = 195
 bindtime = -1
 removetime = -1
@@ -2464,7 +2464,7 @@ value = 5, 11
 ;[State 192, Scale]
 ;type = angledraw
 ;trigger1 = animelemtime(2) >= 0 && animelemtime(2) <= 10
-;scale = (animelemtime(2) / 10.0), (10 -(0.9 * animelemtime(2)))
+;scale = (animelemtime(2) / 10.0, (10 -(0.9 * animelemtime(2)))
 
 [State 192, Pos]
 type = posset
@@ -2486,16 +2486,16 @@ y = 0
 [State 192, Scale]
 type = angledraw
 trigger1 = animelemtime(2) >= 0 && animelemtime(2) < 5
-scale = (5 -0.4 * animelemtime(2)), (0.05 * animelemtime(2))
+scale = (5 -0.4 * animelemtime(2), (0.05 * animelemtime(2))
 
 [State 192, Scale]
 type = angledraw
 trigger1 = animelemtime(2) >= 5 && animelemtime(2) < 10
-scale = (5 -0.4 * animelemtime(2)), (0.25 + 0.15 * (animelemtime(2) -5))
+scale = (5 -0.4 * animelemtime(2), (0.25 + 0.15 * (animelemtime(2) -5))
 
 [State 192, pal]
 type = palfx
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) < 0 && !(time % 2)
+trigger1 = animelemtime(2) >= 0 && animelemtime(3) < 0 && !(time % 2
 time = 1
 add = 255, 255, 255
 
@@ -2579,7 +2579,7 @@ velset = 0, 0
 ;[State 180, Quote]
 ;type = victoryquote
 ;trigger1 = 1
-;value = randomrange(1, 10)
+;value = randomrange(1, 10
 
 [State 180, Win]
 type = changestate
@@ -2629,7 +2629,7 @@ stateno = 6107
 ID = 6100
 name = "Bat"
 postype = p1
-pos = -4 * const(size.xscale), -60
+pos = -4 * const(size.xscale, -60
 facing = -1
 
 [State 181, Sound]
@@ -2711,7 +2711,7 @@ y = 0.9
 [State 183, Vel]
 type = velset
 trigger1 = animelemtime(3) >= 12
-y = -0.25 * 1 -12) / 20.0)
+y = -0.25 * (1 - 12) / 20.0
 
 [State 183, FX]
 type = explod
@@ -2721,7 +2721,7 @@ ID = 6040
 sprpriority = 2
 postype = p1
 ownpal = 1
-scale = const(size.xscale), const(size.yscale)
+scale = const(size.xscale, const(size.yscale)
 
 [State 183, Bat Explods]
 type = explod
@@ -2729,8 +2729,8 @@ trigger1 = time = 5
 anim = 6100
 ID = 183
 postype = p1
-pos = -35 * const(size.xscale), -37
-scale = const(size.xscale), const(size.yscale)
+pos = -35 * const(size.xscale, -37
+scale = const(size.xscale, const(size.yscale)
 sprpriority = 0
 
 [State 183, Bat Explods]
@@ -2740,7 +2740,7 @@ anim = 6100
 ID = 183
 postype = p1
 pos = 2, -40
-scale = const(size.xscale), const(size.yscale)
+scale = const(size.xscale, const(size.yscale)
 sprpriority = 0
 
 [State 183, Bat Explods]
@@ -2749,8 +2749,8 @@ trigger1 = time = 15
 anim = 6100
 ID = 183
 postype = p1
-pos = -21 * const(size.xscale), -31
-scale = const(size.xscale), const(size.yscale)
+pos = -21 * const(size.xscale, -31
+scale = const(size.xscale, const(size.yscale)
 sprpriority = 0
 
 [State 183, Bat Explods]
@@ -2759,8 +2759,8 @@ trigger1 = time = 20
 anim = 6100
 ID = 183
 postype = p1
-pos = -34 * const(size.xscale), -30
-scale = const(size.xscale), const(size.yscale)
+pos = -34 * const(size.xscale, -30
+scale = const(size.xscale, const(size.yscale)
 sprpriority = 2
 
 [State 183, Bat Explods]
@@ -2769,13 +2769,13 @@ trigger1 = time = 25
 anim = 6100
 ID = 183
 postype = p1
-pos = -10 * const(size.xscale), -36
-scale = const(size.xscale), const(size.yscale)
+pos = -10 * const(size.xscale, -36
+scale = const(size.xscale, const(size.yscale)
 sprpriority = 2
 
 [State 183, Bat Explods]
 type = modifyexplod
-trigger1 = numexplod(183)
+trigger1 = numexplod(183
 ID = 183
 bindtime = -1
 removetime = -1
@@ -2825,7 +2825,7 @@ ID = 6040
 sprpriority = 3
 postype = p1
 ownpal = 2
-scale = const(size.xscale), const(size.yscale)
+scale = const(size.xscale, const(size.yscale)
 
 [State 189, Sound]
 type = playsnd
@@ -2841,7 +2841,7 @@ stateno = 6109
 ID = 6101
 name = "Bat"
 postype = p1
-pos = -23 * const(size.xscale), -49
+pos = -23 * const(size.xscale, -49
 
 [State 189, Bats]
 type = helper
@@ -2851,7 +2851,7 @@ stateno = 6109
 ID = 6102
 name = "Bat"
 postype = p1
-pos = -31 * const(size.xscale), -38
+pos = -31 * const(size.xscale, -38
 facing = 1
 
 [State 189, Bats]
@@ -2862,7 +2862,7 @@ stateno = 6109
 ID = 6103
 name = "Bat"
 postype = p1
-pos = -35 * const(size.xscale), -24
+pos = -35 * const(size.xscale, -24
 
 [State 189, Bats]
 type = helper
@@ -2872,7 +2872,7 @@ stateno = 6109
 ID = 6104
 name = "Bat"
 postype = p1
-pos = -38 * const(size.xscale), -11
+pos = -38 * const(size.xscale, -11
 
 [State 189, Bats]
 type = helper
@@ -2882,7 +2882,7 @@ stateno = 6109
 ID = 6101
 name = "Bat"
 postype = p1
-pos = -4 * const(size.xscale), -43
+pos = -4 * const(size.xscale, -43
 facing = -1
 
 [State 189, Bats]
@@ -2904,7 +2904,7 @@ stateno = 6109
 ID = 6103
 name = "Bat"
 postype = p1
-pos = 4 * const(size.xscale), -29
+pos = 4 * const(size.xscale, -29
 facing = -1
 
 [State 189, Bats]
@@ -2915,21 +2915,21 @@ stateno = 6109
 ID = 6104
 name = "Bat"
 postype = p1
-pos = 7 * const(size.xscale), -22
+pos = 7 * const(size.xscale, -22
 facing = -1
 
 [State 189, Anim Random]
 type = changeanim
 trigger1 = !animtime
 trigger1 = anim = 189
-trigger1 = !var(0)
+trigger1 = !var(0
 value =     357
 
 [State 189, Anim Random]
 type = changeanim
 trigger1 = !animtime
 trigger1 = anim = 189
-trigger1 = var(0)
+trigger1 = var(0
 value =       369
 
 [State 189, Sound]
@@ -3369,7 +3369,7 @@ ignorehitpause = 1
 
 [State -2, Dark Force Warning]
 type = palfx
-triggerall = !(gametime % 2)
+triggerall = !(gametime % 2
 trigger1 = var(27) = [1, 60]
 trigger2 = var(27) = -1 && stateno != 771
 time = 1
@@ -3437,7 +3437,7 @@ ignorehitpause = 1
 [State -2, Damage Scaling - Base Formula]
 type = varset
 trigger1 = 1
-var(33) =   1 - 0.1 * var(31)
+var(33) =   1 - 0.1 * var(31
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Chain Combos]
@@ -3448,12 +3448,12 @@ trigger1 = stateno = [200, 699]
 trigger1 = prevstateno = [200, 699]
 trigger1 =  1
 trigger1 =  1
-var(33) = 0.75 * var(33)
+var(33) = 0.75 * var(33
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Dark Force]
 type = varset
-trigger1 = var(27)
+trigger1 = var(27
 var(33) = 0.75 *   1 - 0.1 * var(31) * 2
 ignorehitpause = 1
 
@@ -3479,7 +3479,7 @@ type = null
 trigger1 = var(27) > 0
 trigger1 = 1 || var(35) = 0
 trigger2 = var(27) <= 0
-trigger2 = 1 || var(35) = var(33)
+trigger2 = 1 || var(35) = var(33
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Override Fall Defense Bonus]
@@ -3518,7 +3518,7 @@ triggerall = alive
 triggerall = time <= 1
 triggerall = movetype = H
 triggerall = stateno != [120, 155]
-value = 5000, (random % 3)
+value = 5000, (random % 3
 channel = 0
 
 [State -2, Get Hit Voice]
@@ -3529,7 +3529,7 @@ triggerall = movetype = H
 trigger1 = stateno = 5100
 trigger2 = stateno = 5050 || stateno = 5100
 trigger2 = prevstateno != [5000, 5120]
-value = 5000, (random % 3)
+value = 5000, (random % 3
 lowpriority = 1
 channel = 0
 
@@ -3549,7 +3549,7 @@ trigger7 = anim = [5100, 5101]
 trigger8 = anim = 5170
 trigger9 = anim = 5950
 trigger10 = anim = 170
-value = 5000, (random % 3)
+value = 5000, (random % 3
 lowpriority = 1
 channel = 0
 
@@ -3562,7 +3562,7 @@ channel = 0
 [State -2, Guard Break Voice]
 type = playsnd
 trigger1 = time = 1
-value = 5000, (random % 3)
+value = 5000, (random % 3
 lowpriority = 1
 channel = 0
 
@@ -3605,7 +3605,7 @@ scale = 1.20, 1
 [State -3, Parry Detection]
 type = helper
 triggerall = roundstate = 2
-triggerall = !var(27)
+triggerall = !var(27
 triggerall = (movetype = I && ctrl) || stateno = [700, 702] || stateno = 5120
 trigger1 = command != "rlsdir"
 trigger1 = statetype = S || statetype = C || stateno = 5120
@@ -3615,7 +3615,7 @@ trigger2 = statetype = A
 trigger2 = (p2dist x >= 0 && command = "F") || (p2dist x < 0 && command = "B")
 trigger3 = inguarddist
 trigger3 = stateno != [700, 702]
-trigger3 = p2bodydist x < var(38)
+trigger3 = p2bodydist x < var(38
 trigger4 = inguarddist
 trigger4 = stateno != [700, 702]
 trigger4 = var(39) = [1, 8]
@@ -3631,14 +3631,14 @@ supermovetime = 65535
 [State -3, Parry Attacks]
 type = changestate
 trigger1 = stateno != [700, 702]
-trigger1 = helper(705), stateno = 706
+trigger1 = helper(705, stateno = 706
 value = 700
 ctrl = 0
 
 [State -3, Parry Projectiles]
 type = hitoverride
 trigger1 = stateno != [700, 702]
-trigger1 = !(helper(705), var(0)) && (helper(705), anim = 705)
+trigger1 = !(helper(705, var(0)) && (helper(705, anim = 705
 attr = SA, AP
 stateno = 700
 slot = 0
@@ -3648,7 +3648,7 @@ ignorehitpause = 1
 [State -3, Parry Projectiles]
 type = hitoverride
 trigger1 = stateno != [700, 702]
-trigger1 = !(helper(705), var(0)) && (helper(705), anim = 706)
+trigger1 = !(helper(705, var(0)) && (helper(705, anim = 706
 attr = C, AP
 stateno = 701
 slot = 0
@@ -3658,7 +3658,7 @@ ignorehitpause = 1
 [State -3, Parry Projectiles]
 type = hitoverride
 trigger1 = stateno != [700, 702]
-trigger1 = !(helper(705), var(0)) && (helper(705), anim = 707)
+trigger1 = !(helper(705, var(0)) && (helper(705, anim = 707
 attr = SCA, AP
 stateno = 702
 slot = 0
@@ -3668,12 +3668,12 @@ ignorehitpause = 1
 [State -3, NoWalk after Parry]
 type = assertspecial
 trigger1 = 1
-trigger1 = 1 || var(40) = (var(40) - 1)
+trigger1 = 1 || var(40) = (var(40) - 1
 flag = nowalk
 
 [State -3, ProjContact Reset]
 type = varset
-triggerall = var(41)
+triggerall = var(41
 trigger1 = stateno != 1000 && stateno != 1010 && stateno != 1050 && stateno != 1060
 trigger1 = stateno != 3000 && stateno != 3050 && stateno != 3300 && stateno != 4100
 trigger2 = stateno = 1000 && animelemtime(4) < 0
@@ -3688,7 +3688,7 @@ var(41) = 0
 
 [State -3, ProjContact Timer]
 type = varadd
-trigger1 = var(41)
+trigger1 = var(41
 var(41) = 1
 
 [State -3, Projectile Flag]
@@ -3701,14 +3701,14 @@ ignorehitpause = 1
 type = varset
 triggerall = var(27) <= 0
 triggerall = var(42) != 1
-trigger1 = helper(1005), stateno = 1005
-trigger2 = helper(1015), stateno = 1015
-trigger3 = helper(1055), stateno = 1055
-trigger4 = helper(1065), stateno = 1065
-trigger5 = helper(3005), stateno = 3005
-trigger6 = helper(3055), stateno = 3055
-trigger7 = helper(3305), stateno = 3305
-trigger8 = helper(4105), stateno = 4105
+trigger1 = helper(1005, stateno = 1005
+trigger2 = helper(1015, stateno = 1015
+trigger3 = helper(1055, stateno = 1055
+trigger4 = helper(1065, stateno = 1065
+trigger5 = helper(3005, stateno = 3005
+trigger6 = helper(3055, stateno = 3055
+trigger7 = helper(3305, stateno = 3305
+trigger8 = helper(4105, stateno = 4105
 var(42) = 1
 ignorehitpause = 1
 
@@ -3765,7 +3765,7 @@ ignorehitpause = 1
 [State -3, Super Cancel Check]
 type = varset
 triggerall = stateno = [200, 2999]
-trigger1 = var(54)
+trigger1 = var(54
 trigger2 = stateno = 220
 trigger2 = (movecontact || movereversed) && animelemtime(7) < 0 && prevstateno != [200, 699]
 trigger3 = stateno = 1000
@@ -3821,14 +3821,14 @@ ignorehitpause = 1
 
 [State -3, Super Cancel Flag Reset]
 type = varset
-trigger1 = var(57)
+trigger1 = var(57
 trigger1 = (stateno != [3000, 4999]) || movetype = H
 value = 0
 ignorehitpause = 1
 
 [State -3, Hyper Cancel Flag Reset]
 type = varset
-trigger1 = var(58)
+trigger1 = var(58
 trigger1 = (stateno != [3000, 4999]) || movetype = H
 value = 0
 ignorehitpause = 1
@@ -3836,7 +3836,7 @@ ignorehitpause = 1
 [State -3, Sparkle Timer]
 type = null
 trigger1 = 1
-value = 1.0 + (random / 1000.0)
+value = 1.0 + (random / 1000.0
 
 [State -3, Sparkles Back]
 type = explod
@@ -3851,10 +3851,10 @@ sprpriority = -1
 postype = p1
 pos = 0, -pos y - 2
 random = 40, 4
-vel = 0, (-0.80 - (random / 5000.0)) *  1.00
-scale = 0.50 * const(size.xscale), 0.50 * const(size.yscale)
+vel = 0, (-0.80 - (random / 5000.0) *  1.00
+scale = 0.50 * const(size.xscale, 0.50 * const(size.yscale)
 palfx.time = -1
-palfx.hue = -256 + 4 * (var(66) % 128); randomRange(-256, 256)
+palfx.hue = -256 + 4 * (var(66) % 128); randomRange(-256, 256
 ownpal = 1
 
 [State -3, Sparkles Front]
@@ -3870,32 +3870,32 @@ sprpriority = 3
 postype = p1
 pos = 0, -pos y + 2
 random = 52, 4
-vel = 0, (-1.00 - (random / 4000.0)) *  1.00
-scale = 0.50 * const(size.xscale), 0.50 * const(size.yscale)
+vel = 0, (-1.00 - (random / 4000.0) *  1.00
+scale = 0.50 * const(size.xscale, 0.50 * const(size.yscale)
 palfx.time = -1
-palfx.hue = -256 + 4 * (var(66) % 128); randomRange(-256, 256)
+palfx.hue = -256 + 4 * (var(66) % 128); randomRange(-256, 256
 ownpal = 1
 
 [State -3, Sparkles Parasite Roll]
 type = explod
 trigger1 = movetype != H
-trigger1 = !(gametime % 4)
+trigger1 = !(gametime % 4
 trigger1 = stateno = 1205 || stateno = 1251
 trigger1 = numexplod(6000) < 16
 anim = 6001
 ID = 6000
 sprpriority =  3
 postype = p1
-pos = -8 * const(size.xscale), 0
+pos = -8 * const(size.xscale, 0
 random = 16, 8
-vel = -1.50 - (random / 3000.0), -1.50 - (random / 3000.0)
+vel = -1.50 - (random / 3000.0, -1.50 - (random / 3000.0
 friction = 0.95, 1
-scale = 0.50 * const(size.xscale), 0.50 * const(size.yscale)
+scale = 0.50 * const(size.xscale, 0.50 * const(size.yscale)
 angle = 45
 interpolation.time = 30
 interpolation.angle = 0
 palfx.time = -1
-palfx.hue = -256 + 4 * (var(66) % 128); randomRange(-256, 256)
+palfx.hue = -256 + 4 * (var(66) % 128); randomRange(-256, 256
 ownpal = 1
 ignorehitpause = 1
 
@@ -3991,14 +3991,14 @@ value = 320
 
 [State -3, Jump Reset]
 type = varset
-trigger1 = var(51)
+trigger1 = var(51
 trigger1 = stateno != 40
 trigger1 = statetype != A || movetype = H
 value = 0
 
 [State -3, Reset Super Finish Var]
 type = varset
-trigger1 = var(59)
+trigger1 = var(59
 trigger1 = roundstate = [0, 2]
 value = 0
 
@@ -4007,10 +4007,10 @@ type = helper
 triggerall = winKO
 triggerall = roundstate = 3
 trigger1 = movecontact = [1, 4]
-trigger2 = helper(1005), var(52)
-trigger3 = helper(1015), var(52)
-trigger4 = helper(1055), var(52)
-trigger5 = helper(1065), var(52)
+trigger2 = helper(1005, var(52
+trigger3 = helper(1015, var(52
+trigger4 = helper(1055, var(52
+trigger5 = helper(1065, var(52
 trigger6 = stateno = 810
 trigger6 = animelemtime(6) = [0, 1]
 trigger7 = stateno = 820
@@ -4019,7 +4019,7 @@ trigger8 = stateno = 1311 || stateno = 1341
 trigger8 = time <= 1
 helpertype = normal
 stateno = 8600
-ID = 8600 + 0 * (var(59) = 900)
+ID = 8600 + 0 * (var(59) = 900
 name = "Super Finish"
 postype = left
 pos = 160, -120
@@ -4034,13 +4034,13 @@ triggerall = roundstate = 3
 trigger1 = movecontact = [1, 4]
 trigger1 = stateno = [3000, 4999]
 trigger1 = var(59) = stateno
-trigger2 = helper(3005), var(52)
+trigger2 = helper(3005, var(52
 trigger2 = var(59) = 3000
-trigger3 = helper(3055), var(52)
+trigger3 = helper(3055, var(52
 trigger3 = var(59) = 3050
-trigger4 = stateno = 3300 && var(52)
+trigger4 = stateno = 3300 && var(52
 trigger4 = var(59) = 3300
-trigger5 = helper(3305), var(52)
+trigger5 = helper(3305, var(52
 trigger5 = var(59) = 3300
 trigger6 = stateno = 4110
 trigger6 = var(59) = 4100
@@ -4062,8 +4062,8 @@ value = 0
 
 [State -3, Victory Camera]
 type = varset
-trigger1 = var(63)
-trigger1 = var(64)
+trigger1 = var(63
+trigger1 = var(64
 trigger1 = alive && !standby
 trigger1 = winKO
 trigger1 = stateno > 180
@@ -4075,7 +4075,7 @@ value = 1
 
 [State -3, Victory Camera]
 type = zoom
-trigger1 = var(60)
+trigger1 = var(60
 scale = 1.0 / camerazoom
 lag = 0.92
 stagebound = 1
@@ -4089,7 +4089,7 @@ value = 0
 
 [State -3, Victory BGM]
 type = null
-trigger1 = var(62)
+trigger1 = var(62
 trigger1 = 1
 trigger1 = matchover
 trigger1 = alive
@@ -4098,13 +4098,13 @@ value = 1
 
 [State -3, Victory BGM];Assertspecial nomusic does not work here
 type = null
-trigger1 = var(62)
+trigger1 = var(62
 trigger1 = var(61) = [1, 5]
 bgm = ""
 
 [State -3, Victory BGM]
 type = null
-trigger1 = var(62)
+trigger1 = var(62
 trigger1 = var(61) = 6
 bgm = "moriwin.mp3"
 loop = 0
@@ -4137,7 +4137,7 @@ value = 5040
 type = null
 trigger1 = ishelper
 trigger1 = 1
-trigger1 = !var(65)
+trigger1 = !var(65
 trigger1 = movecontact && numtarget
 trigger1 = root, var(65) = 1
 trigger1 = var(65) = 1
@@ -4146,5 +4146,5 @@ ignorehitpause = 1
 [State -4, Damage Scaling - Helper Multiplier]
 type = attackmulset
 trigger1 = ishelper
-value = root, var(67)
+value = root, var(67
 ignorehitpause = 1

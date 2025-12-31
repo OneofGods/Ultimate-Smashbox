@@ -34,7 +34,7 @@ ignorehitpause = 1
 [State 1005, Strength]
 type = varset
 trigger1 = !time
-value = root, var(123)
+value = root, var(123
 
 ; Damage Scaling was here
 
@@ -54,19 +54,19 @@ var(1) = 1
 [State 1005, Vel]
 type = velset
 trigger1 = 1
-x = 3.77)
+x = 3.77
 y = 0
 
 [State 1005, Trans]
 type = trans
 trigger1 = 1
 trans = addalpha
-alpha = 256 - 32 * (gametime % 6), 256
+alpha = 256 - 32 * (gametime % 6, 256
 ignorehitpause = 1
 
 [State 1005, Bats]
 type = explod
-trigger1 = !numexplod(1008)
+trigger1 = !numexplod(1008
 anim = 1008
 ID = 1008
 sprpriority = 3
@@ -80,8 +80,8 @@ scale = 1, 1
 
 [State 1005, Particles]
 type = explod
-trigger1 = !(time % 2)
-vel = -1 + (random < 500), 0
+trigger1 = !(time % 2
+vel = -1 + (random < 500, 0
 accel = 0, 0.05
 anim = 1009
 sprpriority = 3
@@ -101,7 +101,7 @@ ignorehitpause = 1
 [State 1005, Hit]
 type = hitdef
 trigger1 = 1
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
 priority = 4, Hit
 attr = S, SP
 damage = 70, 18
@@ -110,13 +110,13 @@ animtype = Hard
 hitflag = MAF
 guardflag = MA
 pausetime = 0, 12
-sparkno = -1 + 0 * (var(121) = 8013)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = -30) * (var(133) = 20), var(122) = 0
+sparkno = -1 + 0 * (var(121) = 8013
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = -30 * (var(133) = 20, var(122) = 0
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
-ground.hittime = 1 + 18; + 2 * var(105)
+ground.hittime = 1 + 18; + 2 * var(105
 ground.slidetime = 18
 ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
@@ -143,7 +143,7 @@ forcestand = 1
 type = poweradd
 trigger1 = movecontact = 1
 trigger1 = numtarget
-value = 50 * root, var(114)
+value = 50 * root, var(114
 ignorehitpause = 1
 
 [State 1005, Connected]
@@ -155,9 +155,9 @@ ignorehitpause = 1
 [State 1005, End]
 type = changestate
 trigger1 = root, var(50) <= 0
-trigger1 = var(1) >= 50)
+trigger1 = var(1) >= 50
 trigger2 = root, var(50) > 0
-trigger2 = var(1) >= 100)
+trigger2 = var(1) >= 100
 trigger3 = frontedgedist < -20
 trigger4 = backedgedist < -20
 trigger4 = root, var(50) <= 0
@@ -178,13 +178,13 @@ sprpriority = 3
 
 [State 1006, removebat]
 type = removeexplod
-trigger1 = numexplod(1008)
+trigger1 = numexplod(1008
 ID = 1008
 ignorehitpause = 1
 
 [State 1006, Bats]
 type = helper
-trigger1 = !numexplod(1008)
+trigger1 = !numexplod(1008
 helpertype = normal
 stateno = 6110
 ID = 6110
@@ -239,12 +239,12 @@ sprpriority = 3
 
 [State 1007, removebat]
 type = removeexplod
-trigger1 = numexplod(1008)
+trigger1 = numexplod(1008
 ID = 1008
 
 [State 1007, Bats]
 type = helper
-trigger1 = !numexplod(1008)
+trigger1 = !numexplod(1008
 helpertype = normal
 stateno = 6110
 ID = 6110
@@ -258,7 +258,7 @@ ownpal = 1
 [State 1007, Shrink]
 type = angledraw
 trigger1 = 1
-scale = const(size.xscale) -time * (const(size.xscale) / 15), const(size.yscale) -time * (const(size.yscale) / 15)
+scale = const(size.xscale) -time * (const(size.xscale) / 15, const(size.yscale) -time * (const(size.yscale) / 15
 
 [State 1007, Trans]
 type = trans
@@ -280,7 +280,7 @@ y = -10
 
 [State 1007, End]
 type = destroyself
-trigger1 = !numexplod(1008)
+trigger1 = !numexplod(1008
 trigger1 = time >= 15
 
 
@@ -313,7 +313,7 @@ ignorehitpause = 1
 [State 1055, Strength]
 type = varset
 trigger1 = !time
-value = root, var(123)
+value = root, var(123
 
 ; Damage Scaling was here
 
@@ -328,19 +328,19 @@ ignorehitpause = 1
 [State 1055, Vel]
 type = velset
 trigger1 = 1
-x = 2.88)
+x = 2.88
 y = 4.8
 
 [State 1055, Trans]
 type = trans
 trigger1 = 1
 trans = addalpha
-alpha = 256 - 32 * (gametime % 6), 256
+alpha = 256 - 32 * (gametime % 6, 256
 ignorehitpause = 1
 
 [State 1055, Bats]
 type = explod
-trigger1 = !numexplod(1008)
+trigger1 = !numexplod(1008
 anim = 1058
 ID = 1008
 sprpriority = 3
@@ -354,8 +354,8 @@ scale = 1, 1
 
 [State 1055, Particles]
 type = explod
-trigger1 = !(time % 2)
-vel = -1 + (random < 500), -0.5 + (random < 500)
+trigger1 = !(time % 2
+vel = -1 + (random < 500, -0.5 + (random < 500
 accel = 0, 0.05
 anim = 1009
 sprpriority = 3
@@ -375,7 +375,7 @@ ignorehitpause = 1
 [State 1055, Hit]
 type = hitdef
 trigger1 = 1
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
 priority = 4, Hit
 attr = A, SP
 damage = 70, 18
@@ -384,13 +384,13 @@ animtype = Hard
 hitflag = MAFD
 guardflag = MA
 pausetime = 0, 12
-sparkno = -1 + 0 * (var(121) = 8013)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = -30) * (var(133) = 10), var(122) = 10
+sparkno = -1 + 0 * (var(121) = 8013
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = -30 * (var(133) = 10, var(122) = 10
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
-ground.hittime = 1 + 18; + 2 * var(105)
+ground.hittime = 1 + 18; + 2 * var(105
 ground.slidetime = 18
 ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
@@ -425,7 +425,7 @@ air.type = Low
 type = poweradd
 trigger1 = movecontact = 1
 trigger1 = numtarget
-value = 50 * root, var(114)
+value = 50 * root, var(114
 ignorehitpause = 1
 
 [State 1055, Connected]
@@ -549,12 +549,12 @@ y = -0.2
 type = trans
 trigger1 = 1
 trans = addalpha
-alpha = 256 - 32 * (gametime % 6), 256
+alpha = 256 - 32 * (gametime % 6, 256
 ignorehitpause = 1
 
 [State 1015, Bats]
 type = explod
-trigger1 = !numexplod(1008)
+trigger1 = !numexplod(1008
 anim = 1008
 ID = 1008
 sprpriority = 3
@@ -567,15 +567,15 @@ ignorehitpause = 1
 
 [State 1015, Rotate Bat]
 type = modifyexplod
-trigger1 = numexplod(1008)
+trigger1 = numexplod(1008
 trigger1 = root, const(size.xscale) < root, const(size.yscale)
 ID = 1008
 angle = a0 * (-180 / pi)
 
 [State 1015, Particles]
 type = explod
-trigger1 = !(time % 2)
-vel = -1 + (random < 500), 0
+trigger1 = !(time % 2
+vel = -1 + (random < 500, 0
 accel = 0, 0.05
 anim = 1009
 sprpriority = 3
@@ -595,7 +595,7 @@ ignorehitpause = 1
 [State 1015, Hit]
 type = hitdef
 trigger1 = 1
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 2)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 2
 priority = 4, Hit
 attr = S, SP
 damage = 90, 23
@@ -604,13 +604,13 @@ animtype = Hard
 hitflag = MAF
 guardflag = MA
 pausetime = 0, 12
-sparkno = -1 + 0 * (var(121) = 8013)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = -30) * (var(133) = 20), var(122) = 0
+sparkno = -1 + 0 * (var(121) = 8013
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = -30 * (var(133) = 20, var(122) = 0
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
-ground.hittime = 1 + 18; + 2 * var(105)
+ground.hittime = 1 + 18; + 2 * var(105
 ground.slidetime = 18
 ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
@@ -755,12 +755,12 @@ y = -0.2
 type = trans
 trigger1 = 1
 trans = addalpha
-alpha = 256 - 32 * (gametime % 6), 256
+alpha = 256 - 32 * (gametime % 6, 256
 ignorehitpause = 1
 
 [State 1065, Bats]
 type = explod
-trigger1 = !numexplod(1008)
+trigger1 = !numexplod(1008
 anim = 1008
 ID = 1008
 sprpriority = 3
@@ -774,15 +774,15 @@ scale = 1, 1
 
 [State 1065, Rotate Bat]
 type = modifyexplod
-trigger1 = numexplod(1008)
+trigger1 = numexplod(1008
 trigger1 = root, const(size.xscale) < root, const(size.yscale)
 ID = 1008
 angle = a0 * (-180 / pi)
 
 [State 1065, Particles]
 type = explod
-trigger1 = !(time % 2)
-vel = -1 + (random < 500), 0
+trigger1 = !(time % 2
+vel = -1 + (random < 500, 0
 accel = 0, 0.05
 anim = 1009
 sprpriority = 3
@@ -802,7 +802,7 @@ ignorehitpause = 1
 [State 1065, Hit]
 type = hitdef
 trigger1 = 1
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 2)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 2
 priority = 4, Hit
 attr = A, SP
 damage = 90, 23
@@ -811,13 +811,13 @@ animtype = Hard
 hitflag = MAFD
 guardflag = MA
 pausetime = 0, 12
-sparkno = -1 + 0 * (var(121) = 8013)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = -30) * (var(133) = 20), var(122) = 0
+sparkno = -1 + 0 * (var(121) = 8013
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = -30 * (var(133) = 20, var(122) = 0
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
-ground.hittime = 1 + 18; + 2 * var(105)
+ground.hittime = 1 + 18; + 2 * var(105
 ground.slidetime = 18
 ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
@@ -870,13 +870,13 @@ sprpriority = 3
 type = varset
 trigger1 = !time
 trigger1 = !prevstateno
-value = root, var(123)
+value = root, var(123
 
 [State 3005, Strength]
 type = varset
 trigger1 = !time
 trigger1 = !prevstateno
-value = root, var(123)
+value = root, var(123
 
 [State 3005, Hit Number]
 type = varadd
@@ -924,18 +924,18 @@ var(1) = 1
 type = velset
 trigger1 = 1
 ;x = 6.70
-x = 4.47)
+x = 4.47
 
 [State 3005, Trans]
 type = trans
 trigger1 = 1
 trans = addalpha
-alpha = 256 - 32 * (gametime % 6), 256
+alpha = 256 - 32 * (gametime % 6, 256
 ignorehitpause = 1
 
 [State 3005, Skull]
 type = explod
-trigger1 = !numexplod(3008)
+trigger1 = !numexplod(3008
 anim = 3008
 ID = 3008
 sprpriority = 3
@@ -955,7 +955,7 @@ sprpriority = 3
 postype = p1
 pos = -20, 0
 random = 20, 20
-vel = -2, -1 + (random / 500.0)
+vel = -2, -1 + (random / 500.0
 scale = 0.5, 0.5
 ownpal = 1
 ignorehitpause = 1
@@ -986,9 +986,9 @@ fall.animtype = Back
 hitflag = MAF
 guardflag = M
 pausetime = 0, 12
-sparkno = -1 + 0 * (var(121) = 8014)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = -30) * (var(133) = 20), var(122) = 0
+sparkno = -1 + 0 * (var(121) = 8014
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = -30 * (var(133) = 20, var(122) = 0
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -1013,7 +1013,7 @@ envshake.mul = 0.667
 palfx.time = 60
 palfx.color = 0
 palfx.sinadd = 128, 128, 128, 4
-palfx.mul = root, var(117), root, var(116), root, var(115)
+palfx.mul = root, var(117, root, var(116, root, var(115
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 forcestand = 1
@@ -1021,9 +1021,9 @@ ID = 3005
 
 [State 3005, Burned]
 type = targetstate
-trigger1 = numtarget(3005)
-trigger1 = target(3005), selfanimexist(7697)
-trigger1 = target(3005), stateno = 5000 || target(3005), stateno = 5010 || target(3005), stateno = 5020
+trigger1 = numtarget(3005
+trigger1 = target(3005, selfanimexist(7697
+trigger1 = target(3005, stateno = 5000 || target(3005, stateno = 5010 || target(3005, stateno = 5020
 value = 7697
 ID = 3005
 ignorehitpause = 1
@@ -1056,7 +1056,7 @@ sprpriority = 3
 
 [State 3006, Remove Skull]
 type = removeexplod
-trigger1 = numexplod(3008)
+trigger1 = numexplod(3008
 ID = 3008
 
 [State 3006, Bats]
@@ -1114,7 +1114,7 @@ sprpriority = 3
 
 [State 3007, Remove Skull]
 type = removeexplod
-trigger1 = numexplod(3008)
+trigger1 = numexplod(3008
 ID = 3008
 
 [State 3007, Bats]
@@ -1132,7 +1132,7 @@ ownpal = 1
 [State 3007, Shrink]
 type = angledraw
 trigger1 = 1
-scale = const(size.xscale) - time * (const(size.xscale) / 15), const(size.yscale) - time * (const(size.yscale) / 15)
+scale = const(size.xscale) - time * (const(size.xscale) / 15, const(size.yscale) - time * (const(size.yscale) / 15
 
 [State 3007, Trans]
 type = trans
@@ -1171,7 +1171,7 @@ sprpriority = 3
 type = varset
 trigger1 = !time
 trigger1 = !prevstateno
-value = root, var(123)
+value = root, var(123
 
 [State 3055, Hit Number]
 type = varadd
@@ -1215,19 +1215,19 @@ type = velset
 trigger1 = 1
 ;x = 5.83
 ;y = 2.33
-x = 4.47)
-y = 4.47)
+x = 4.47
+y = 4.47
 
 [State 3055, Trans]
 type = trans
 trigger1 = 1
 trans = addalpha
-alpha = 256 - 32 * (gametime % 6), 256
+alpha = 256 - 32 * (gametime % 6, 256
 ignorehitpause = 1
 
 [State 3055, Skull]
 type = explod
-trigger1 = !numexplod(3008)
+trigger1 = !numexplod(3008
 anim = 3008; 3058
 ID = 3008
 sprpriority = 3
@@ -1241,7 +1241,7 @@ scale = 1, 1
 
 [State 3055, Rotate Skull]
 type = modifyexplod
-trigger1 = numexplod(3008)
+trigger1 = numexplod(3008
 ID = 3008
 angle = a0 * (-180 / pi)
 
@@ -1254,7 +1254,7 @@ sprpriority = 3
 postype = p1
 pos = -14, -14
 random = 20, 20
-vel = -2, -1 - (random / 500.0)
+vel = -2, -1 - (random / 500.0
 scale = 0.5, 0.5
 ownpal = 1
 ignorehitpause = 1
@@ -1285,9 +1285,9 @@ fall.animtype = Back
 hitflag = MAFD
 guardflag = M
 pausetime = 0, 12
-sparkno = -1 + 0 * (var(121) = 8014)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = -30) * (var(133) = 10), var(122) = 10
+sparkno = -1 + 0 * (var(121) = 8014
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = -30 * (var(133) = 10, var(122) = 10
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -1314,7 +1314,7 @@ envshake.mul = 0.667
 palfx.time = 60
 palfx.color = 0
 palfx.sinadd = 128, 128, 128, 4
-palfx.mul = root, var(117), root, var(116), root, var(115)
+palfx.mul = root, var(117, root, var(116, root, var(115
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 forcestand = 1
@@ -1322,9 +1322,9 @@ ID = 3055
 
 [State 3055, Burned]
 type = targetstate
-trigger1 = numtarget(3055)
-trigger1 = target(3055), selfanimexist(7697)
-trigger1 = target(3055), stateno = 5000 || target(3055), stateno = 5010 || target(3055), stateno = 5020
+trigger1 = numtarget(3055
+trigger1 = target(3055, selfanimexist(7697
+trigger1 = target(3055, stateno = 5000 || target(3055, stateno = 5010 || target(3055, stateno = 5020
 value = 7697
 ID = 3055
 ignorehitpause = 1
@@ -1359,17 +1359,17 @@ sprpriority = 3
 [State 3305, Pos]
 type = varset
 trigger1 = !time
-fvar(24) = -36 - (random / 100.0)
+fvar(24) = -36 - (random / 100.0
 
 [State 3305, Pos]
 type = varset
 trigger1 = !time
-fvar(25) = -30 - 70 * ((fvar(24) + 36) / -10.0)
+fvar(25) = -30 - 70 * ((fvar(24) + 36) / -10.0
 
 [State 3305, Bind]
 type = bindtoroot
 trigger1 = time < 16
-pos = (fvar(24) * root, const(size.xscale)), fvar(25)
+pos = (fvar(24) * root, const(size.xscale), fvar(25
 facing = 1
 ignorehitpause = 1
 
@@ -1402,7 +1402,7 @@ ignorehitpause = 1
 type = trans
 trigger1 = time < 7
 trans = addalpha
-alpha = 32 * (time + 1), 256 - (32 * (time + 1))
+alpha = 32 * (time + 1, 256 - (32 * (time + 1))
 
 [State 3305, SprPriority Var]
 type = varset
@@ -1413,7 +1413,7 @@ ignorehitpause = 1
 [State 3305, SprPriority]
 type = sprpriority
 trigger1 = 1
-value = var(113)
+value = var(113
 
 [State 3305, Vel]
 type = velset
@@ -1443,7 +1443,7 @@ y = var(106) * 2.0
 
 [State 3305, Jet]
 type = explod
-trigger1 = time >= 16 && !numexplod(3306)
+trigger1 = time >= 16 && !numexplod(3306
 anim = 3306
 ID = 3306
 sprpriority = var(113) + 1
@@ -1492,7 +1492,7 @@ ignorehitpause = 1
 type = hitdef
 trigger1 = !movecontact && !movereversed
 trigger1 = time >= 18
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 30)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 30
 priority = 4, Hit
 attr = S, HP
 damage = 10, 2
@@ -1503,9 +1503,9 @@ hitflag = MAF
 guardflag = MA
 pausetime = 0, 12
 guard.pausetime = 0, 12
-sparkno = -1 + 0 * (var(121) = 8024)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = -20) * (var(133) = 0), var(122) = 0
+sparkno = -1 + 0 * (var(121) = 8024
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = -20 * (var(133) = 0, var(122) = 0
 hitsound = -1; root
 guardsound = -1; root
 ground.type = High
@@ -1573,7 +1573,7 @@ ignorehitpause = 1
 
 [State 3306, removejet]
 type = removeexplod
-trigger1 = numexplod(3306)
+trigger1 = numexplod(3306
 ID = 3306
 ignorehitpause = 1
 
@@ -1581,7 +1581,7 @@ ignorehitpause = 1
 type = trans
 trigger1 = 1
 trans = addalpha
-alpha = (256 - 16 * time), (16 * time)
+alpha = (256 - 16 * time, (16 * time)
 
 [State 3306, End]
 type = destroyself
@@ -1623,15 +1623,15 @@ flag = invisible
 type = trans
 trigger1 = time < 32
 trans = addalpha
-alpha = (8 * time), 256 - (8 * time)
+alpha = (8 * time, 256 - (8 * time)
 
 [State 4015, Anim]
 type = changeanim
-triggerall = (root, stateno = 4010) && (root, anim = [4010, 4011])
+triggerall = (root, stateno = 4010 && (root, anim = [4010, 4011])
 trigger1 = anim != (root, anim)
 trigger2 = animelemno(0) != (root, animelemno(0))
 value = root, anim
-elem = root, animelemno(0)
+elem = root, animelemno(0
 
 [State 4015, Pos]
 type = posset
@@ -1641,7 +1641,7 @@ y = root, pos y
 [State 4015, Bind]
 type = bindtoroot
 trigger1 = 1
-pos = 160 * const(size.xscale), 0
+pos = 160 * const(size.xscale, 0
 facing = -1
 time = 1
 
@@ -1666,17 +1666,17 @@ trigger1 = facing = (root, facing)
 
 [State 4015, Spark Properties]
 type = null
-trigger1 = 1 || var(121) = root, var(121)
-trigger1 = 1 || var(131) = root, var(131)
-trigger1 = 1 || var(132) = root, var(132)
-trigger1 = 1 || var(133) = root, var(133)
+trigger1 = 1 || var(121) = root, var(121
+trigger1 = 1 || var(131) = root, var(131
+trigger1 = 1 || var(132) = root, var(132
+trigger1 = 1 || var(133) = root, var(133
 trigger1 = 1 || var(122) = (0.5 * root, var(122))
 
 [State 4015, Hit High Ground]
 type = hitdef
 trigger1 = anim = 4010
 trigger1 = animelem = 8 || animelem = 14 || animelem = 19 || animelem = 36 || animelem = 37
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4010
 attr = S, HA
 damage = 0, 0
@@ -1687,7 +1687,7 @@ priority = 4, Hit
 pausetime = 2, 4
 sparkno = -1
 guard.sparkno = -1
-sparkxy = -10, var(122)
+sparkxy = -10, var(122
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1710,7 +1710,7 @@ p2facing = 1
 type = hitdef
 trigger1 = anim = 4010
 trigger1 = animelem = 11 || animelem = 28 || animelem = 38 || animelem = 39
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4010
 attr = S, HA
 damage = 0, 0
@@ -1721,7 +1721,7 @@ priority = 4, Hit
 pausetime = 2, 4
 sparkno = -1
 guard.sparkno = -1
-sparkxy = -10, var(122)
+sparkxy = -10, var(122
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1743,7 +1743,7 @@ p2facing = 1
 [State 4015, Hit Up Ground]
 type = hitdef
 trigger1 = anim = 4010 && animelem = 42
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4010
 attr = S, HA
 damage = 0, 0
@@ -1754,7 +1754,7 @@ priority = 4, Hit
 pausetime = 2, 4
 sparkno = -1
 guard.sparkno = -1
-sparkxy = -10, var(122)
+sparkxy = -10, var(122
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1782,7 +1782,7 @@ p2facing = -1
 type = hitdef
 trigger1 = anim = 4011
 trigger1 = animelem = 4 || animelem = 9 || animelem = 15 || animelem = 20 || animelem = 25
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4010
 attr = A, HA
 damage = 0, 0
@@ -1794,7 +1794,7 @@ priority = 4, Hit
 pausetime = 2, 4
 sparkno = -1
 guard.sparkno = -1
-sparkxy = -10, var(122)
+sparkxy = -10, var(122
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1821,7 +1821,7 @@ p2facing = 1
 [State 4015, Hit Final]
 type = hitdef
 trigger1 = anim = 4011 && animelem = 32
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4010
 attr = A, HA
 damage = 0, 0
@@ -1832,7 +1832,7 @@ priority = 4, Hit
 pausetime = 2, 4
 sparkno = -1
 guard.sparkno = -1
-sparkxy = -10, var(122)
+sparkxy = -10, var(122
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1911,7 +1911,7 @@ alpha = 256 - 12.8 * time, 12.8 * time
 
 [State 4016, Bats]
 type = helper
-trigger1 = time && !(time % 6)
+trigger1 = time && !(time % 6
 helpertype = normal
 stateno = 6110
 ID = 6110
@@ -1970,20 +1970,20 @@ flag = invisible
 type = trans
 trigger1 = time < 32
 trans = addalpha
-alpha = (8 * time), 256 - (8 * time)
+alpha = (8 * time, 256 - (8 * time)
 
 [State 4065, Anim]
 type = changeanim
-triggerall = (root, stateno = 4060) && (root, anim = 4060)
+triggerall = (root, stateno = 4060 && (root, anim = 4060
 trigger1 = anim != (root, anim)
 trigger2 = animelemno(0) != (root, animelemno(0))
 value = 4060
-elem = root, animelemno(0)
+elem = root, animelemno(0
 
 [State 4065, Bind]
 type = bindtoroot
 trigger1 = 1
-pos = 128 * const(size.xscale), 0
+pos = 128 * const(size.xscale, 0
 facing = -1
 time = 1
 
@@ -2020,16 +2020,16 @@ ownpal = 1
 
 [State 4065, Spark Properties]
 type = null
-trigger1 = 1 || var(121) = root, var(121)
-trigger1 = 1 || var(131) = root, var(131)
-trigger1 = 1 || var(132) = root, var(132)
-trigger1 = 1 || var(133) = root, var(133)
+trigger1 = 1 || var(121) = root, var(121
+trigger1 = 1 || var(131) = root, var(131
+trigger1 = 1 || var(132) = root, var(132
+trigger1 = 1 || var(133) = root, var(133
 trigger1 = 1 || var(122) = (0.5 * root, var(122))
 
 [State 4065, Hit High]
 type = hitdef
 trigger1 = animelem = 7 || animelem = 13 || animelem = 20 || animelem = 22
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4060
 attr = S, HA
 damage = 0, 0
@@ -2042,7 +2042,7 @@ priority = 4, Hit
 pausetime = 4, 4
 sparkno = -1
 guard.sparkno = -1
-sparkxy = -10, var(122)
+sparkxy = -10, var(122
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -2070,7 +2070,7 @@ p2facing = 1
 [State 4065, Hit Low]
 type = hitdef
 trigger1 = animelem = 3 || animelem = 10 || animelem = 17 || animelem = 21 || animelem = 23
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4060
 attr = S, HA
 damage = 0, 0
@@ -2083,7 +2083,7 @@ priority = 4, Hit
 pausetime = 4, 4
 sparkno = -1
 guard.sparkno = -1
-sparkxy = -10, var(122)
+sparkxy = -10, var(122
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -2111,7 +2111,7 @@ p2facing = 1
 [State 4065, Hit Final]
 type = hitdef
 trigger1 = animelem = 30
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4060
 attr = A, HA
 damage = 0, 0
@@ -2124,7 +2124,7 @@ priority = 4, Hit
 pausetime = 12, 12
 sparkno = -1
 guard.sparkno = -1
-sparkxy = -10, var(122)
+sparkxy = -10, var(122
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -2215,7 +2215,7 @@ y = 2 * 0
 [State 4105, pulse]
 type = angledraw
 trigger1 = 1
-scale = ((0.75 + 0.25 * 1) * const(size.xscale)), ((0.75 + 0.25 * 1) * const(size.yscale))
+scale = ((0.75 + 0.25 * 1* const(size.xscale), ((0.75 + 0.25 * 1* const(size.yscale))
 
 [State 4105, Trans]
 type = trans
@@ -2232,7 +2232,7 @@ value = 4
 [State 4105, Particles]
 type = explod
 trigger1 = 1
-vel = -1 + (random < 500), 0
+vel = -1 + (random < 500, 0
 accel = 0, 0.05
 anim = 4109
 sprpriority = 4
@@ -2253,15 +2253,15 @@ sparkxy = -10, 0
 type = hitdef
 trigger1 = numenemy
 trigger1 = !(root, var(130))
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
 ID = 4105
 attr = S, HT
 hitflag = M
 priority = 1, Miss
 getpower = 0, 0
 givepower = 0, 0
-sparkno = -1 + 0 * (var(121) = -1)
-guard.sparkno = -1 + 0 * (var(131) = -1)
+sparkno = -1 + 0 * (var(121) = -1
+guard.sparkno = -1 + 0 * (var(131) = -1
 sparkxy = -10, 0
 hitsound = s2, 800
 hitsound.channel = 2
@@ -2314,7 +2314,7 @@ ignorehitpause = 1
 [State 4106, Shrink]
 type = angledraw
 trigger1 = 1
-scale = const(size.xscale) -time * (const(size.xscale) / 20), const(size.yscale) -time * (const(size.yscale) / 20)
+scale = const(size.xscale) -time * (const(size.xscale) / 20, const(size.yscale) -time * (const(size.yscale) / 20
 
 [State 4106, Trans]
 type = trans
@@ -2341,9 +2341,9 @@ ctrl = 0
 [State 4107, Send Target]
 redirectID = root, ID
 type = targetadd
-trigger1 = numtarget(4105)
-trigger1 = target(4105), ishelper = 0
-playerID = target(4105), ID
+trigger1 = numtarget(4105
+trigger1 = target(4105, ishelper = 0
+playerID = target(4105, ID
 
 [State 4107, Anim]
 type = changeanim
@@ -2359,7 +2359,7 @@ scale = (time + 1) * 0.5, (time + 1) * 0.5
 type = trans
 trigger1 = time < 16
 trans = addalpha
-alpha = 256 - (16 * time), 128 + (8 * time)
+alpha = 256 - (16 * time, 128 + (8 * time)
 
 [State 4107, Shadow]
 type = assertspecial
@@ -2420,7 +2420,7 @@ y = pos y - screenpos y
 
 [State 4190, Anim]
 type = changeanim
-trigger1 = anim = 4190 && animelemtime(3) > 4 && (root, stateno != 4110)
+trigger1 = anim = 4190 && animelemtime(3) > 4 && (root, stateno != 4110
 value = 4191
 
 [State 4190, Palfx]
@@ -2428,7 +2428,7 @@ type = bgpalfx
 trigger1 = anim = 4191
 trigger1 = animelemtime(1) < 30
 time = 2
-mul = animelemtime(1 * 8.53), animelemtime(1 * 8.53), animelemtime(1 * 8.53)
+mul = animelemtime(1 * 8.53, animelemtime(1 * 8.53, animelemtime(1 * 8.53
 
 [State 4190, Sound]
 type = playsnd
@@ -2510,13 +2510,13 @@ sprpriority = 2
 
 [State 825, Bind to Target]
 type = posset
-trigger1 = root, numtarget(800)
-x = root, target(800), pos x
+trigger1 = root, numtarget(800
+x = root, target(800, pos x
 y = -65
 
 [State 825, Vel]
 type = velset
-trigger1 = root, numtarget(800)
+trigger1 = root, numtarget(800
 x = 0, 12
 
 [State 825, Bind]
@@ -2524,7 +2524,7 @@ type = bindtoroot
 trigger1 = root, stateno = 820
 trigger1 = root, anim = 820
 trigger1 = root, animelemtime(9) < 0
-pos = 105 * root, const(size.xscale), -65
+pos = 105 * root, const(size.xscale, -65
 
 [State 825, Camera]
 type = screenbound
@@ -2552,16 +2552,16 @@ ownpal = 1
 [State 825, Jet]
 type = removeexplod
 trigger1 = root, numtarget(800) = 0
-trigger2 = root, numtarget(800)
-trigger2 = root, target(800), stateno != [821, 823]
+trigger2 = root, numtarget(800
+trigger2 = root, target(800, stateno != [821, 823]
 trigger3 = time >= 180
 ID = 3306
 
 [State 825, End]
 type = changestate
 trigger1 = root, numtarget(800) = 0
-trigger2 = root, numtarget(800)
-trigger2 = root, target(800), stateno != [821, 823]
+trigger2 = root, numtarget(800
+trigger2 = root, target(800, stateno != [821, 823]
 trigger3 = time >= 180
 value = 6110
 
@@ -2607,7 +2607,7 @@ sprpriority = 3
 type = trans
 trigger1 = 1
 trans = addalpha
-alpha = 256 - (16 * time), 256
+alpha = 256 - (16 * time, 256
 ignorehitpause = 1
 
 [State 3304, End]
@@ -2632,7 +2632,7 @@ ignorehitpause = 1
 [State 3405, Pos]
 type = bindtoroot
 trigger1 = 1
-pos = (76 * root, const(size.xscale)), -43
+pos = (76 * root, const(size.xscale), -43
 
 [State 3405, Turn]
 type = turn
@@ -2646,14 +2646,14 @@ channel = 0
 
 [State 3405, Sound]
 type = stopsnd
-trigger1 = (root, stateno != 3401) || (root, anim != 3402)
-trigger2 = (root, anim = 3402) && (root, animelemtime(3) < 0)
+trigger1 = (root, stateno != 3401 || (root, anim != 3402
+trigger2 = (root, anim = 3402 && (root, animelemtime(3) < 0
 channel = 0
 
 [State 3405, End]
 type = destroyself
-trigger1 = (root, stateno != 3401) || (root, anim != 3402)
-trigger2 = (root, anim = 3402) && (root, animelemtime(3) < 0)
+trigger1 = (root, stateno != 3401 || (root, anim != 3402
+trigger2 = (root, anim = 3402 && (root, animelemtime(3) < 0
 
 
 ;========================<HOLE>=============================
@@ -2672,7 +2672,7 @@ flag = noshadow
 type = trans
 trigger1 = root, animelemtime(13) >= 0
 trans = addalpha
-alpha = 256 -10.2 * root, animelemtime(13), 10.2 * root, animelemtime(13)
+alpha = 256 -10.2 * root, animelemtime(13, 10.2 * root, animelemtime(13
 
 [State 6005, End]
 type = destroyself
@@ -2689,12 +2689,12 @@ sprpriority = 1
 
 [State 6010, Bat 1 - Top Left]
 type = explod
-trigger1 = !numexplod(1)
+trigger1 = !numexplod(1
 anim = 6100
 ID = 1
 postype = p1
 pos = 0, 0
-scale = (root, const(size.xscale)), (root, const(size.yscale))
+scale = (root, const(size.xscale), (root, const(size.yscale))
 sprpriority = 2
 removetime = -1
 ownpal = 1
@@ -2702,12 +2702,12 @@ removeongethit = 1
 
 [State 6010, Bat 2 - Top Right]
 type = explod
-trigger1 = !numexplod(2)
+trigger1 = !numexplod(2
 anim = 6100
 ID = 2
 postype = p1
 pos = 0, 0
-scale = (root, const(size.xscale)), (root, const(size.yscale))
+scale = (root, const(size.xscale), (root, const(size.yscale))
 sprpriority = 0
 removetime = -1
 ownpal = 1
@@ -2715,12 +2715,12 @@ removeongethit = 1
 
 [State 6010, Bat 3 - Circling]
 type = explod
-trigger1 = !numexplod(3)
+trigger1 = !numexplod(3
 anim = 6100
 ID = 3
 postype = p1
 pos = 0, 0
-scale = (root, const(size.xscale)), (root, const(size.yscale))
+scale = (root, const(size.xscale), (root, const(size.yscale))
 sprpriority = 2
 removetime = -1
 ownpal = 1
@@ -2728,12 +2728,12 @@ removeongethit = 1
 
 [State 6010, Bat 4 - Circling]
 type = explod
-trigger1 = !numexplod(4)
+trigger1 = !numexplod(4
 anim = 6100
 ID = 4
 postype = p1
 pos = 0, 0
-scale = (root, const(size.xscale)), (root, const(size.yscale))
+scale = (root, const(size.xscale), (root, const(size.yscale))
 sprpriority = 2
 removetime = -1
 ownpal = 1
@@ -2741,34 +2741,34 @@ removeongethit = 1
 
 [State 6010, Bat 1 - Top Left]
 type = modifyexplod
-trigger1 = numexplod(1)
+trigger1 = numexplod(1
 ID = 1
 postype = p1
-pos = (-24 + 8 * 1) * root, const(size.xscale), (-92 + 2 * 0) * root, const(size.yscale)
+pos = (-24 + 8 * 1* root, const(size.xscale, (-92 + 2 * 0* root, const(size.yscale)
 sprpriority = 2
 
 [State 6010, Bat 1 - Top Left]
 type = modifyexplod
-trigger1 = numexplod(2)
+trigger1 = numexplod(2
 ID = 2
 postype = p1
-pos = (16 - 6 * 1) * root, const(size.xscale), (-96 + 2 * 0) * root, const(size.yscale)
+pos = (16 - 6 * 1* root, const(size.xscale, (-96 + 2 * 0* root, const(size.yscale)
 sprpriority = 0
 
 [State 6010, Bat 3 - Circling]
 type = modifyexplod
-trigger1 = numexplod(3)
+trigger1 = numexplod(3
 ID = 3
 postype = p1
-pos = (-5 + 25 * 1) * root, const(size.xscale), (-50 + 35 * 1) * root, const(size.yscale)
+pos = (-5 + 25 * 1* root, const(size.xscale, (-50 + 35 * 1* root, const(size.yscale)
 sprpriority = 0
 
 [State 6010, Bat 4 - Circling]
 type = modifyexplod
-trigger1 = numexplod(4)
+trigger1 = numexplod(4
 ID = 4
 postype = p1
-pos = (-5 - 25 * 1) * root, const(size.xscale), (-50 - 35 * 1) * root, const(size.yscale)
+pos = (-5 - 25 * 1* root, const(size.xscale, (-50 - 35 * 1* root, const(size.yscale)
 sprpriority = 0
 
 [State 6010, Trans]
@@ -2825,37 +2825,37 @@ ignorehitpause = 1
 
 [State 6011, Bat 1]
 type = modifyexplod
-trigger1 = numexplod(1)
+trigger1 = numexplod(1
 ID = 1
 postype = p1
-pos = -18 * root, const(size.xscale), -48 * root, const(size.yscale)
+pos = -18 * root, const(size.xscale, -48 * root, const(size.yscale)
 sprpriority = -1
 anim = 6100
 
 [State 6011, Bat 2]
 type = modifyexplod
-trigger1 = numexplod(2)
+trigger1 = numexplod(2
 ID = 2
 postype = p1
-pos = -22 * root, const(size.xscale), -40 * root, const(size.yscale)
+pos = -22 * root, const(size.xscale, -40 * root, const(size.yscale)
 sprpriority = -1
 anim = 6100
 
 [State 6011, Bat 3]
 type = modifyexplod
-trigger1 = numexplod(3)
+trigger1 = numexplod(3
 ID = 3
 postype = p1
-pos = -26 * root, const(size.xscale), -32 * root, const(size.yscale)
+pos = -26 * root, const(size.xscale, -32 * root, const(size.yscale)
 sprpriority = -1
 anim = 6100
 
 [State 6011, Bat 4]
 type = modifyexplod
-trigger1 = numexplod(4)
+trigger1 = numexplod(4
 ID = 4
 postype = p1
-pos = -30 * root, const(size.xscale), -24 * root, const(size.yscale)
+pos = -30 * root, const(size.xscale, -24 * root, const(size.yscale)
 sprpriority = -1
 anim = 6100
 
@@ -2964,7 +2964,7 @@ trigger1 = 1
 ID = 6020
 anim = anim
 animfreeze = 1
-animelem = animelemno(0)
+animelem = animelemno(0
 postype = p1
 vel = root, vel x, root, vel y
 friction = 0.5, 0.5
@@ -2972,7 +2972,7 @@ sprpriority = sprpriority - 1
 removetime = 8
 trans = addalpha
 alpha = 128, 256
-scale = const(size.xscale), const(size.yscale)
+scale = const(size.xscale, const(size.yscale)
 interpolation.time = 8
 interpolation.alpha = 0, 256
 ownpal = 0
@@ -3018,13 +3018,13 @@ trigger1 = 1
 ID = 6020
 anim = anim
 animfreeze = 1
-animelem = animelemno(0)
+animelem = animelemno(0
 postype = p1
 sprpriority = sprpriority - 1
 removetime = 8
 trans = addalpha
 alpha = 128, 256
-scale = const(size.xscale), const(size.yscale)
+scale = const(size.xscale, const(size.yscale)
 interpolation.time = 8
 interpolation.alpha = 0, 256
 ownpal = 0
@@ -3078,7 +3078,7 @@ sprpriority = 3
 type = bindtoroot
 trigger1 = !time
 trigger2 = root, stateno = 3400
-pos = (-40 * root, const(size.xscale)), -70
+pos = (-40 * root, const(size.xscale), -70
 
 [State 6028, Anim]
 type = changeanim
@@ -3226,46 +3226,46 @@ fvar(2) = 0
 [State 6105, Bind]
 type = bindtoroot
 trigger1 = var(0) = 1
-pos = ((2 + fvar(1)) * root, const(size.xscale)), -16 + fvar(2)
+pos = ((2 + fvar(1)) * root, const(size.xscale), -16 + fvar(2
 
 [State 6105, Bind]
 type = bindtoroot
 trigger1 = var(0) = 2
-pos = (-64 + fvar(1) * root, const(size.xscale)), -18 + fvar(2)
+pos = (-64 + fvar(1) * root, const(size.xscale), -18 + fvar(2
 
 [State 6105, Bind]
 type = bindtoroot
 trigger1 = var(0) = 3
-pos = (-24 + fvar(1) * root, const(size.xscale)), -36 + fvar(2)
+pos = (-24 + fvar(1) * root, const(size.xscale), -36 + fvar(2
 
 [State 6105, Bind]
 type = bindtoroot
 trigger1 = var(0) = 4
-pos = (-7 + fvar(1) * root, const(size.xscale)), -43 + fvar(2)
+pos = (-7 + fvar(1) * root, const(size.xscale), -43 + fvar(2
 
 [State 6105, Retreat Binding]
 type = bindtoroot
 trigger1 = root, stateno = 5230
 trigger1 = var(0) = 1
-pos = ((-48 + fvar(1)) * root, const(size.xscale)), -2 + fvar(2)
+pos = ((-48 + fvar(1)) * root, const(size.xscale), -2 + fvar(2
 
 [State 6105, Retreat Binding]
 type = bindtoroot
 trigger1 = root, stateno = 5230
 trigger1 = var(0) = 2
-pos = ((-20 + fvar(1)) * root, const(size.xscale)), -14 + fvar(2)
+pos = ((-20 + fvar(1)) * root, const(size.xscale), -14 + fvar(2
 
 [State 6105, Retreat Binding]
 type = bindtoroot
 trigger1 = root, stateno = 5230
 trigger1 = var(0) = 3
-pos = ((-14 + fvar(1)) * root, const(size.xscale)), -2 + fvar(2)
+pos = ((-14 + fvar(1)) * root, const(size.xscale), -2 + fvar(2
 
 [State 6105, Retreat Binding]
 type = bindtoroot
 trigger1 = root, stateno = 5230
 trigger1 = var(0) = 4
-pos = ((16 + fvar(1)) * root, const(size.xscale)), -14 + fvar(2)
+pos = ((16 + fvar(1)) * root, const(size.xscale), -14 + fvar(2
 
 [State 6105, Hide]
 type = assertspecial
@@ -3365,38 +3365,38 @@ fvar(2) = -3.4
 [State 6106, Bind]
 type = bindtoroot
 trigger1 = var(0) = 1
-pos = ((-23 + fvar(1)) * root, const(size.xscale)), 1 + fvar(2)
+pos = ((-23 + fvar(1)) * root, const(size.xscale), 1 + fvar(2
 
 [State 6106, Bind]
 type = bindtoroot
 trigger1 = var(0) = 2
-pos = ((0 + fvar(1)) * root, const(size.xscale)), 4 + fvar(2)
+pos = ((0 + fvar(1)) * root, const(size.xscale), 4 + fvar(2
 
 [State 6106, Bind]
 type = bindtoroot
 trigger1 = var(0) = 3
-pos = ((23 + fvar(1)) * root, const(size.xscale)), 1 + fvar(2)
+pos = ((23 + fvar(1)) * root, const(size.xscale), 1 + fvar(2
 
 [State 6106, Bind]
 type = bindtoroot
 trigger1 = var(0) = 4
-pos = ((-19 + fvar(1)) * root, const(size.xscale)), -7 + fvar(2)
+pos = ((-19 + fvar(1)) * root, const(size.xscale), -7 + fvar(2
 
 [State 6106, Bind]
 type = bindtoroot
 trigger1 = var(0) = 5
-pos = ((0 + fvar(1)) * root, const(size.xscale)), -10 + fvar(2)
+pos = ((0 + fvar(1)) * root, const(size.xscale), -10 + fvar(2
 
 [State 6106, Bind]
 type = bindtoroot
 trigger1 = var(0) = 6
-pos = ((19 + fvar(1)) * root, const(size.xscale)), -7 + fvar(2)
+pos = ((19 + fvar(1)) * root, const(size.xscale), -7 + fvar(2
 
 [State 6106, Sprite Priority]
 type = sprpriority
 trigger1 = 1
 value = 1
-pos = 2 + fvar(1), -16 + fvar(2)
+pos = 2 + fvar(1, -16 + fvar(2
 
 [State 6106, End]
 type = destroyself
@@ -3420,15 +3420,15 @@ trigger1 = !time
 type = velset
 trigger1 = !time
 trigger1 = (var(0) % 2) = 1
-x = -0.5)
-y = -1.5)
+x = -0.5
+y = -1.5
 
 [State 6107, Vel]
 type = velset
 trigger1 = !time
-trigger1 = !(var(0) % 2)
-x = -0.5)
-y = 1.5)
+trigger1 = !(var(0) % 2
+x = -0.5
+y = 1.5
 
 [State 6107, Accel]
 type = veladd
@@ -3443,16 +3443,16 @@ y = -0.033
 [State 6107, Vel]
 type = velset
 trigger1 = root, animelemtime(2) >= 0
-trigger1 = (var(0) = 1 || var(0) = 2 || var(0) = 5 || var(0) = 6)
+trigger1 = (var(0) = 1 || var(0) = 2 || var(0) = 5 || var(0) = 6
 x = 1
-y = -1 / 20.0)
+y = -1 / 20.0
 
 [State 6107, Vel]
 type = velset
 trigger1 = root, animelemtime(2) >= 0
-trigger1 = (var(0) = 3 || var(0) = 4 || var(0) = 7 || var(0) = 8)
+trigger1 = (var(0) = 3 || var(0) = 4 || var(0) = 7 || var(0) = 8
 x = -1
-y = 1 / 20.0)
+y = 1 / 20.0
 
 [State 6107, Vel]
 type = velmul
@@ -3476,82 +3476,82 @@ velset = 0, 0
 
 [State 6108, Bat 1 - Top Left]
 type = explod
-trigger1 = !numexplod(1)
+trigger1 = !numexplod(1
 anim = 6100
 ID = 1
 postype = p1
 pos = 0, 0
-scale = (root, const(size.xscale)), (root, const(size.yscale))
+scale = (root, const(size.xscale), (root, const(size.yscale))
 sprpriority = 2
 removetime = -1
 removeongethit = 1
 
 [State 6108, Bat 2 - Top Right]
 type = explod
-trigger1 = !numexplod(2)
+trigger1 = !numexplod(2
 anim = 6100
 ID = 2
 postype = p1
 pos = 0, 0
-scale = (root, const(size.xscale)), (root, const(size.yscale))
+scale = (root, const(size.xscale), (root, const(size.yscale))
 sprpriority = 0
 removetime = -1
 removeongethit = 1
 
 [State 6108, Bat 3 - Circling]
 type = explod
-trigger1 = !numexplod(3)
+trigger1 = !numexplod(3
 anim = 6100
 ID = 3
 postype = p1
 pos = 0, 0
-scale = (root, const(size.xscale)), (root, const(size.yscale))
+scale = (root, const(size.xscale), (root, const(size.yscale))
 sprpriority = 2
 removetime = -1
 removeongethit = 1
 
 [State 6108, Bat 4 - Circling]
 type = explod
-trigger1 = !numexplod(4)
+trigger1 = !numexplod(4
 anim = 6100
 ID = 4
 postype = p1
 pos = 0, 0
-scale = (root, const(size.xscale)), (root, const(size.yscale))
+scale = (root, const(size.xscale), (root, const(size.yscale))
 sprpriority = 2
 removetime = -1
 removeongethit = 1
 
 [State 6108, Bat 1 - Circling]
 type = modifyexplod
-trigger1 = numexplod(1)
+trigger1 = numexplod(1
 ID = 1
 postype = p1
-pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
+pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale, (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
 sprpriority = 0
 
 [State 6108, Bat 2 - Circling]
 type = modifyexplod
-trigger1 = numexplod(2)
+trigger1 = numexplod(2
 ID = 2
 postype = p1
-pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
+pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale, (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
 sprpriority = 0
 
 [State 6108, Bat 3 - Circling]
 type = modifyexplod
-trigger1 = numexplod(3)
+trigger1 = numexplod(3
 ID = 3
 postype = p1
-pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
+pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale, (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
 sprpriority = 0
 
 [State 6108, Bat 4 - Circling]
 type = modifyexplod
-trigger1 = numexplod(4)
+trigger1 = numexplod(4
 ID = 4
 postype = p1
-pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale), (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
+pos = (-5 + 25 * 1 / 24.0 * pi)) * root, const(size.xscale, (-50 + 35 * 0 / 60.0 * pi)) * root, const(size.yscale)
 sprpriority = 0
 
 [State 6108, Pos]
@@ -3583,13 +3583,13 @@ ctrl = 0
 type = varset
 trigger1 = !time
 trigger1 = (ishelper(6101) || ishelper(6102) || ishelper(6103) || ishelper(6104))
-var(0) = 4)
+var(0) = 4
 
 [State 6109, Vel]
 type = velset
 trigger1 = !time
-x = -0.5)
-y = 0.5)
+x = -0.5
+y = 0.5
 
 [State 6109, Accel]
 type = veladd
@@ -3598,15 +3598,15 @@ y = -0.025
 
 [State 6109, Vel]
 type = velset
-trigger1 = time >= 60 && (var(0) = 1 || var(0) = 3)
+trigger1 = time >= 60 && (var(0) = 1 || var(0) = 3
 x = 1
-y = -1 / 20.0)
+y = -1 / 20.0
 
 [State 6109, Vel]
 type = velset
-trigger1 = time >= 60 && (var(0) = 2 || var(0) = 4)
+trigger1 = time >= 60 && (var(0) = 2 || var(0) = 4
 x = -1
-y = 1 / 20.0)
+y = 1 / 20.0
 
 [State 6109, Vel]
 type = velmul
@@ -3623,14 +3623,14 @@ trigger1 = root, stateno != 189 || root, movetype = H
 [Statedef 6110]
 physics = N
 anim = 6100
-velset = -7.5 + (random / 66.7), -7.5 + (random / 66.7)
+velset = -7.5 + (random / 66.7, -7.5 + (random / 66.7
 sprpriority = 1
 ctrl = 0
 
 [State 6110, Sound]
 type = playsnd
 trigger1 = time = 8
-value = 6, (random < 500)
+value = 6, (random < 500
 
 [State 6110, Vel]
 type = velset
@@ -3644,16 +3644,16 @@ type = velset
 trigger1 = !time
 trigger1 = playerIDexist(parent, ID)
 trigger1 = (parent, stateno = [1005, 1055])
-x = 3 + (random / 500.0)
-y = -3 + (random / 167.0)
+x = 3 + (random / 500.0
+y = -3 + (random / 167.0
 
 [State 6110, Vel]
 type = velset
 trigger1 = !time
 trigger1 = playerIDexist(parent, ID)
 trigger1 = (parent, stateno = [3005, 3007])
-x = 5 + (random / 333.0)
-y = -5 + (random / 100.0)
+x = 5 + (random / 333.0
+y = -5 + (random / 100.0
 
 [State 6110, Accel]
 type = veladd
@@ -3827,14 +3827,14 @@ y = 0
 type = explod
 trigger1 = time = 0 || time = 3 || time = 6
 anim = 7104
-ID = 1)
+ID = 1
 postype = p1
 pos = 0, -4
 random = 8, 8
-vel = -3 -(random / 1000.0), -2 -(random / 2000.0)
+vel = -3 -(random / 1000.0, -2 -(random / 2000.0
 facing = 1
 vfacing = 1
-angle = 90 * (random % 4)
+angle = 90 * (random % 4
 removetime = 16
 sprpriority = 3
 pausemovetime = -1
@@ -3842,27 +3842,27 @@ supermovetime = -1
 
 [State 7104, Scale]
 type = modifyexplod
-trigger1 = numexplod(1)
+trigger1 = numexplod(1
 ID = 1
-scale = 0.1 + (0.025 * time), 0.1 + (0.025 * time)
+scale = 0.1 + (0.025 * time, 0.1 + (0.025 * time)
 trans = addalpha
-alpha = 256 - (16 * time), 256
+alpha = 256 - (16 * time, 256
 
 [State 7104, Scale]
 type = modifyexplod
-trigger1 = numexplod(2)
+trigger1 = numexplod(2
 ID = 2
-scale = 0.1 + (0.025 * (time -3)), 0.1 + (0.025 * (time -3))
+scale = 0.1 + (0.025 * (time -3), 0.1 + (0.025 * (time -3))
 trans = addalpha
-alpha = 256 - (16 * (time -3)), 256
+alpha = 256 - (16 * (time -3), 256
 
 [State 7104, Scale]
 type = modifyexplod
-trigger1 = numexplod(3)
+trigger1 = numexplod(3
 ID = 3
-scale = 0.1 + (0.025 * (time -6)), 0.1 + (0.025 * (time -6))
+scale = 0.1 + (0.025 * (time -6), 0.1 + (0.025 * (time -6))
 trans = addalpha
-alpha = 256 - (16 * (time -6)), 256
+alpha = 256 - (16 * (time -6), 256
 
 [State 7104, End]
 type = removeexplod
@@ -3909,19 +3909,19 @@ supermovetime = -1
 
 [State 8110, Scale]
 type = modifyexplod
-trigger1 = numexplod(1)
+trigger1 = numexplod(1
 ID = 1
-scale = 0.25 + (0.03125 * time), 0.25 + (0.03125 * time)
+scale = 0.25 + (0.03125 * time, 0.25 + (0.03125 * time)
 trans = addalpha
-alpha = 256 - (23 * time), 256
+alpha = 256 - (23 * time, 256
 
 [State 8110, Scale]
 type = modifyexplod
-trigger1 = numexplod(2)
+trigger1 = numexplod(2
 ID = 2
-scale = 0.25 + (0.03125 * time), 0.25 + (0.03125 * time)
+scale = 0.25 + (0.03125 * time, 0.25 + (0.03125 * time)
 trans = addalpha
-alpha = 256 - (32 * time), 256
+alpha = 256 - (32 * time, 256
 
 [State 8110, End]
 type = removeexplod
@@ -3942,38 +3942,38 @@ anim = 9999
 [State 8150, Timer]
 type = null
 trigger1 = time
-trigger1 = var(128) = (var(128) - 1)
+trigger1 = var(128) = (var(128) - 1
 
 [State 8150, End]
 type = destroyself
 trigger1 = var(128) <= 0
 trigger2 = !playerIDexist(var(125))
 trigger3 = time > 0
-trigger3 = playerID(var(125)), palfxvar(time) = 0
+trigger3 = playerID(var(125), palfxvar(time) = 0
 
 [State 8150, Pos]
 type = posset
 trigger1 = playerIDexist(var(125))
-x = playerID(var(125), pos x)
-y = playerID(var(125), pos y) + (playerID(var(125)), const(size.mid.pos.y))
+x = playerID(var(125, pos x)
+y = playerID(var(125, pos y) + (playerID(var(125), const(size.mid.pos.y))
 
 [State 8150, Pos]
 type = posset
 trigger1 = playerIDexist(var(125))
-trigger1 = playerID(var(125)), statetype = L || (playerID(var(125)), anim = [5080, 5119])
-trigger1 = playerID(var(125)), stateno != [5020, 5050]
-x = playerID(var(125), pos x)
-y = playerID(var(125), pos y) - 20
+trigger1 = playerID(var(125), statetype = L || (playerID(var(125), anim = [5080, 5119])
+trigger1 = playerID(var(125), stateno != [5020, 5050]
+x = playerID(var(125, pos x)
+y = playerID(var(125, pos y) - 20
 
 [State 8150, Turn]
 type = turn
 trigger1 = playerIDexist(var(125))
-trigger1 = facing != (playerID(var(125)), facing)
+trigger1 = facing != (playerID(var(125), facing)
 
 [State 8150, Sound]
 type = playsnd
 trigger1 = playerIDexist(var(125))
-trigger1 = playerID(var(125)), hitshakeover
+trigger1 = playerID(var(125), hitshakeover
 value = 5, 1
 persistent = 0
 
@@ -3981,14 +3981,14 @@ persistent = 0
 type = explod
 trigger1 = playerIDexist(var(125))
 anim = 8150
-sprpriority = playerID(var(125)), sprpriority + 1
+sprpriority = playerID(var(125), sprpriority + 1
 postype = p1
 pos = 0, 0
-random = 0.33 * (playerID(var(125)), const(size.head.pos.y)), 0.33 * (playerID(var(125)), const(size.head.pos.y))
-vel = (random / 1000.0), -2.0 - (random / 500.0)
+random = 0.33 * (playerID(var(125), const(size.head.pos.y), 0.33 * (playerID(var(125), const(size.head.pos.y))
+vel = (random / 1000.0, -2.0 - (random / 500.0
 facing = 1
 vfacing = 1
-angle = 90 * (random % 4)
+angle = 90 * (random % 4
 scale = 0.5, 0.5
 ownpal = 1
 
@@ -3996,14 +3996,14 @@ ownpal = 1
 type = explod
 trigger1 = playerIDexist(var(125))
 anim = 8150
-sprpriority = playerID(var(125)), sprpriority - 1
+sprpriority = playerID(var(125), sprpriority - 1
 postype = p1
 pos = 0, 0
-random = 0.66 * (playerID(var(125)), const(size.head.pos.y)), 0.66 * (playerID(var(125)), const(size.head.pos.y))
-vel = (random / 1000.0), -2.0 - (random / 500.0)
+random = 0.66 * (playerID(var(125), const(size.head.pos.y), 0.66 * (playerID(var(125), const(size.head.pos.y))
+vel = (random / 1000.0, -2.0 - (random / 500.0
 facing = 1
 vfacing = 1
-angle = 90 * (random % 4)
+angle = 90 * (random % 4
 scale = 0.5, 0.5
 ownpal = 1
 
@@ -4041,7 +4041,7 @@ volumescale = 50
 
 [State 7240, Aura]
 type = explod
-trigger1 = !numexplod(7240)
+trigger1 = !numexplod(7240
 ID = 7240
 anim = 7240
 sprpriority = 3
@@ -4055,7 +4055,7 @@ ownpal = 1
 
 [State 7240, Dust]
 type = explod
-trigger1 = !(time % 6)
+trigger1 = !(time % 6
 anim = 7105
 sprpriority = -3
 postype = p1
@@ -4067,21 +4067,21 @@ ownpal = 1
 
 [State 7240, FX]
 type = modifyexplod
-trigger1 = numexplod(7240)
+trigger1 = numexplod(7240
 trigger1 = root, time <= 60
 ID = 7240
 scale = 0.5, 0.125
 
 [State 7240, FX]
 type = modifyexplod
-trigger1 = numexplod(7240)
+trigger1 = numexplod(7240
 trigger1 = root, time = [61, 119]
 ID = 7240
-scale = 0.5, 0.1 + ((root, time - 60) * 0.00625)
+scale = 0.5, 0.1 + ((root, time - 60) * 0.00625
 
 [State 7240, FX]
 type = modifyexplod
-trigger1 = numexplod(7240)
+trigger1 = numexplod(7240
 trigger1 = root, time >= 120
 ID = 7240
 scale = 0.5, 0.5
@@ -4121,8 +4121,8 @@ velset = 0, 0
 
 [State 7241, Bind]
 type = bindtoroot
-trigger1 = !(time % 8)
-pos = -160 + (random / 3.125), 160 - (random / 3.125)
+trigger1 = !(time % 8
+pos = -160 + (random / 3.125, 160 - (random / 3.125
 
 [State 7241, Particle]
 type = explod
@@ -4130,7 +4130,7 @@ trigger1 = (time % 8) = 1
 anim = 7241
 sprpriority = -1
 postype = p1
-vel = ((rootdist x - 2) / 32.0), ((rootdist y - 72) / 32.0)
+vel = ((rootdist x - 2) / 32.0, ((rootdist y - 72) / 32.0
 scale = -0.5, -0.5
 pausemovetime = -1
 supermovetime = -1
@@ -4175,11 +4175,11 @@ ownpal = 1
 
 [State 7250, Scale]
 type = modifyexplod
-trigger1 = numexplod(1)
+trigger1 = numexplod(1
 ID = 1
-scale = 0.0556 * (time + 1), 0.0556 * (time + 1)
+scale = 0.0556 * (time + 1, 0.0556 * (time + 1
 trans = addalpha
-alpha = 256 - (16 * time), 256
+alpha = 256 - (16 * time, 256
 
 [State 7250, Lightning]
 type = explod
@@ -4228,7 +4228,7 @@ mul = 48, 16, 0
 [State 7270, Rotate]
 type = angleset
 trigger1 = !time
-value = 6 * (random % 60)
+value = 6 * (random % 60
 
 [State 7270, Rotate]
 type = angleadd
@@ -4238,7 +4238,7 @@ value = -6
 [State 7270, Scale]
 type = angledraw
 trigger1 = time < 8
-scale = 0.0556 * (time + 1), 0.0556 * (time + 1)
+scale = 0.0556 * (time + 1, 0.0556 * (time + 1
 
 [State 7270, Scale]
 type = angledraw
@@ -4255,7 +4255,7 @@ alpha = 256, 256
 type = trans
 trigger1 = time >= 16
 trans = addalpha
-alpha = 256 - 25.6 * (time -16), 256
+alpha = 256 - 25.6 * (time -16, 256
 
 [State 7270, Lines]
 type = explod
@@ -4266,15 +4266,15 @@ sprpriority = 5
 postype = p1
 facing = 1
 vfacing = 1
-angle = 90 * (random % 4)
+angle = 90 * (random % 4
 removetime = 16
 supermovetime = -1
 
 [State 7270, Scale]
 type = modifyexplod
-trigger1 = numexplod(1)
+trigger1 = numexplod(1
 ID = 1
-scale = 2 -(0.125 * time), 2 -(0.125 * time)
+scale = 2 -(0.125 * time, 2 -(0.125 * time)
 trans = addalpha
 alpha = 256, 256
 
@@ -4301,11 +4301,11 @@ ownpal = 1
 
 [State 7270, Scale]
 type = modifyexplod
-trigger1 = numexplod(2)
+trigger1 = numexplod(2
 ID = 2
-scale = (0.1 * (time -16)), (0.1 * (time -16))
+scale = (0.1 * (time -16), (0.1 * (time -16))
 trans = addalpha
-alpha = 256 - 25.6 * (time -16), 256
+alpha = 256 - 25.6 * (time -16, 256
 
 
 ;========================<SUPERPAUSE FX>=============================
@@ -4330,7 +4330,7 @@ fvar(25) = -rootdist y
 [State 8500, Bind]
 type = bindtoroot
 trigger1 = 1
-pos = fvar(24), fvar(25)
+pos = fvar(24, fvar(25
 
 [State 8500, No Shadow]
 type = assertspecial
@@ -4347,7 +4347,7 @@ mul = 0, 0, 256
 [State 8500, Rotate]
 type = angleset
 trigger1 = !time
-value = 6 * (random % 60)
+value = 6 * (random % 60
 
 [State 8500, Rotate]
 type = angleadd
@@ -4374,40 +4374,40 @@ sprpriority = 5
 postype = p1
 facing = 1
 vfacing = 1
-angle = 90 * (random % 4)
+angle = 90 * (random % 4
 bindtime = -1
 removetime = 16
 supermovetime = -1
 
 [State 8500, Scale]
 type = modifyexplod
-trigger1 = numexplod(1)
+trigger1 = numexplod(1
 ID = 1
-scale = 1 -(0.0625 * time), 1 -(0.0625 * time)
+scale = 1 -(0.0625 * time, 1 -(0.0625 * time)
 trans = addalpha
 alpha = 256, 256
 
 [State 8500, Scale]
 type = modifyexplod
-trigger1 = numexplod(2)
+trigger1 = numexplod(2
 ID = 2
-scale = 1 -(0.0625 * (time -8)), 1 -(0.0625 * (time -8))
+scale = 1 -(0.0625 * (time -8), 1 -(0.0625 * (time -8))
 trans = addalpha
 alpha = 256, 256
 
 [State 8500, Scale]
 type = modifyexplod
-trigger1 = numexplod(3)
+trigger1 = numexplod(3
 ID = 3
-scale = 1 -(0.0625 * (time -16)), 1 -(0.0625 * (time -16))
+scale = 1 -(0.0625 * (time -16), 1 -(0.0625 * (time -16))
 trans = addalpha
 alpha = 256, 256
 
 [State 8500, Scale]
 type = modifyexplod
-trigger1 = numexplod(4)
+trigger1 = numexplod(4
 ID = 4
-scale = 1 -(0.0625 * (time -24)), 1 -(0.0625 * (time -24))
+scale = 1 -(0.0625 * (time -24), 1 -(0.0625 * (time -24))
 trans = addalpha
 alpha = 256, 256
 
@@ -4420,16 +4420,16 @@ sprpriority = 5
 postype = p1
 facing = 1
 vfacing = 1
-angle = 90 * (random % 4)
+angle = 90 * (random % 4
 bindtime = -1
 removetime = 32
 supermovetime = -1
 
 [State 8500, Scale]
 type = modifyexplod
-trigger1 = numexplod(10)
+trigger1 = numexplod(10
 ID = 10
-scale = 2 -(0.125 * (time -24)), 2 -(0.125 * (time -24))
+scale = 2 -(0.125 * (time -24), 2 -(0.125 * (time -24))
 trans = addalpha
 alpha = 256, 256
 
@@ -4463,7 +4463,7 @@ fvar(25) = -rootdist y
 [State 8510, Bind]
 type = bindtoroot
 trigger1 = 1
-pos = fvar(24), fvar(25)
+pos = fvar(24, fvar(25
 
 [State 8510, No Shadow]
 type = assertspecial
@@ -4480,7 +4480,7 @@ mul = 192, 0, 256
 [State 8510, Rotate]
 type = angleset
 trigger1 = !time
-value = 6 * (random % 60)
+value = 6 * (random % 60
 
 [State 8510, Rotate]
 type = angleadd
@@ -4507,40 +4507,40 @@ sprpriority = 5
 postype = p1
 facing = 1
 vfacing = 1
-angle = 90 * (random % 4)
+angle = 90 * (random % 4
 bindtime = -1
 removetime = 16
 supermovetime = -1
 
 [State 8510, Scale]
 type = modifyexplod
-trigger1 = numexplod(1)
+trigger1 = numexplod(1
 ID = 1
-scale = 1 -(0.0625 * time), 1 -(0.0625 * time)
+scale = 1 -(0.0625 * time, 1 -(0.0625 * time)
 trans = addalpha
 alpha = 256, 256
 
 [State 8510, Scale]
 type = modifyexplod
-trigger1 = numexplod(2)
+trigger1 = numexplod(2
 ID = 2
-scale = 1 -(0.0625 * (time -8)), 1 -(0.0625 * (time -8))
+scale = 1 -(0.0625 * (time -8), 1 -(0.0625 * (time -8))
 trans = addalpha
 alpha = 256, 256
 
 [State 8510, Scale]
 type = modifyexplod
-trigger1 = numexplod(3)
+trigger1 = numexplod(3
 ID = 3
-scale = 1 -(0.0625 * (time -16)), 1 -(0.0625 * (time -16))
+scale = 1 -(0.0625 * (time -16), 1 -(0.0625 * (time -16))
 trans = addalpha
 alpha = 256, 256
 
 [State 8510, Scale]
 type = modifyexplod
-trigger1 = numexplod(4)
+trigger1 = numexplod(4
 ID = 4
-scale = 1 -(0.0625 * (time -24)), 1 -(0.0625 * (time -24))
+scale = 1 -(0.0625 * (time -24), 1 -(0.0625 * (time -24))
 trans = addalpha
 alpha = 256, 256
 
@@ -4553,16 +4553,16 @@ sprpriority = 5
 postype = p1
 facing = 1
 vfacing = 1
-angle = 90 * (random % 4)
+angle = 90 * (random % 4
 bindtime = -1
 removetime = 32
 supermovetime = -1
 
 [State 8510, Scale]
 type = modifyexplod
-trigger1 = numexplod(10)
+trigger1 = numexplod(10
 ID = 10
-scale = 2 -(0.125 * (time -24)), 2 -(0.125 * (time -24))
+scale = 2 -(0.125 * (time -24), 2 -(0.125 * (time -24))
 trans = addalpha
 alpha = 256, 256
 
@@ -4596,7 +4596,7 @@ fvar(25) = -rootdist y
 [State 8520, Bind]
 type = bindtoroot
 trigger1 = 1
-pos = fvar(24), fvar(25)
+pos = fvar(24, fvar(25
 
 [State 8520, No Shadow]
 type = assertspecial
@@ -4613,7 +4613,7 @@ flag3 = noFG
 [State 8520, Rotate]
 type = angleset
 trigger1 = !time
-value = 6 * (random % 60)
+value = 6 * (random % 60
 
 [State 8520, Rotate]
 type = angleadd
@@ -4659,9 +4659,9 @@ trigger1 = numexplod(20) && time < 16
 ID = 20
 postype = back
 pos = 160, 120
-scale = 1 - (0.03125 * time), 1 - (0.03125 * time)
+scale = 1 - (0.03125 * time, 1 - (0.03125 * time)
 trans = addalpha
-alpha = (8 * time), 256
+alpha = (8 * time, 256
 
 [State 8520, Scale]
 type = modifyexplod
@@ -4669,9 +4669,9 @@ trigger1 = numexplod(21) && time < 16
 ID = 21
 postype = back
 pos = 160, 120
-scale = 2 - (0.09375 * time), 2 - (0.09375 * time)
+scale = 2 - (0.09375 * time, 2 - (0.09375 * time)
 trans = addalpha
-alpha = (8 * time), 256
+alpha = (8 * time, 256
 
 [State 8520, Scale]
 type = modifyexplod
@@ -4696,7 +4696,7 @@ postype = back
 pos = 160, 120
 scale = 0.5, 0.5
 trans = addalpha
-alpha = 128 - 16 * (time -32), 256
+alpha = 128 - 16 * (time -32, 256
 
 [State 8520, Lines]
 type = explod
@@ -4707,40 +4707,40 @@ sprpriority = 5
 postype = p1
 facing = 1
 vfacing = 1
-angle = 90 * (random % 4)
+angle = 90 * (random % 4
 bindtime = -1
 removetime = 16
 supermovetime = -1
 
 [State 8520, Scale]
 type = modifyexplod
-trigger1 = numexplod(1)
+trigger1 = numexplod(1
 ID = 1
-scale = 1 -(0.0625 * time), 1 -(0.0625 * time)
+scale = 1 -(0.0625 * time, 1 -(0.0625 * time)
 trans = addalpha
 alpha = 256, 256
 
 [State 8520, Scale]
 type = modifyexplod
-trigger1 = numexplod(2)
+trigger1 = numexplod(2
 ID = 2
-scale = 1 -(0.0625 * (time -8)), 1 -(0.0625 * (time -8))
+scale = 1 -(0.0625 * (time -8), 1 -(0.0625 * (time -8))
 trans = addalpha
 alpha = 256, 256
 
 [State 8520, Scale]
 type = modifyexplod
-trigger1 = numexplod(3)
+trigger1 = numexplod(3
 ID = 3
-scale = 1 -(0.0625 * (time -16)), 1 -(0.0625 * (time -16))
+scale = 1 -(0.0625 * (time -16), 1 -(0.0625 * (time -16))
 trans = addalpha
 alpha = 256, 256
 
 [State 8520, Scale]
 type = modifyexplod
-trigger1 = numexplod(4)
+trigger1 = numexplod(4
 ID = 4
-scale = 1 -(0.0625 * (time -24)), 1 -(0.0625 * (time -24))
+scale = 1 -(0.0625 * (time -24), 1 -(0.0625 * (time -24))
 trans = addalpha
 alpha = 256, 256
 
@@ -4753,16 +4753,16 @@ sprpriority = 5
 postype = p1
 facing = 1
 vfacing = 1
-angle = 90 * (random % 4)
+angle = 90 * (random % 4
 bindtime = -1
 removetime = 32
 supermovetime = -1
 
 [State 8520, Scale]
 type = modifyexplod
-trigger1 = numexplod(10)
+trigger1 = numexplod(10
 ID = 10
-scale = 2 -(0.125 * (time -24)), 2 -(0.125 * (time -24))
+scale = 2 -(0.125 * (time -24), 2 -(0.125 * (time -24))
 trans = addalpha
 alpha = 256, 256
 
@@ -4802,7 +4802,7 @@ flag = nomusic
 [State 8600, BG PalFX]
 type = bgpalfx
 trigger1 = time < 16
-trigger1 = !(time % 2)
+trigger1 = !(time % 2
 time = 1
 color = 0
 mul = 192, 192, 192
@@ -4810,7 +4810,7 @@ mul = 192, 192, 192
 [State 8600, BG PalFX]
 type = bgpalfx
 trigger1 = time < 16
-trigger1 = (time % 2)
+trigger1 = (time % 2
 time = 1
 color = 0
 mul = 128, 32, 0
@@ -4819,8 +4819,8 @@ mul = 128, 32, 0
 type = bgpalfx
 trigger1 = time = [16, 24]
 time = 1
-color = 32 * (time -16)
-mul = 128 + 8 * (time - 16), 32 + 14 * (time - 16), 32 * (time - 16)
+color = 32 * (time -16
+mul = 128 + 8 * (time - 16, 32 + 14 * (time - 16, 32 * (time - 16
 
 [State 8600, Move Name]
 type = varset
@@ -4886,16 +4886,16 @@ supermovetime = -1
 
 [State 8600, Fade]
 type = modifyexplod
-trigger1 = numexplod(8600)
+trigger1 = numexplod(8600
 ID = 8600
 trans = addalpha
-alpha = 256 -32 * (time -16), 256
+alpha = 256 -32 * (time -16, 256
 
 [State 8600, Text]
 type = explod
 trigger1 = !time
-trigger1 = var(0)
-anim = 8609 + var(0)
+trigger1 = var(0
+anim = 8609 + var(0
 ID = 10
 ontop = 1
 postype = left
@@ -4909,8 +4909,8 @@ supermovetime = -1
 [State 8600, Text]
 type = explod
 trigger1 = !time
-trigger1 = var(0)
-anim = 8609 + var(0)
+trigger1 = var(0
+anim = 8609 + var(0
 ID = 11
 ontop = 1
 postype = left
@@ -4923,18 +4923,18 @@ supermovetime = -1
 
 [State 8600, Fade]
 type = modifyexplod
-trigger1 = numexplod(10)
+trigger1 = numexplod(10
 ID = 10
 trans = addalpha
-alpha = 256 -32 * (time -16), 32 * (time -16)
+alpha = 256 -32 * (time -16, 32 * (time -16
 
 [State 8600, Fade]
 type = modifyexplod
-trigger1 = numexplod(11)
+trigger1 = numexplod(11
 ID = 11
-scale = 0.5 + (0.0625 * time), (0.5 + (0.0625 * time)) * (1.3333333 * gameheight / gamewidth)
+scale = 0.5 + (0.0625 * time, (0.5 + (0.0625 * time)) * (1.3333333 * gameheight / gamewidth)
 trans = addalpha
-alpha = 256 - (32 * time), 32 * time
+alpha = 256 - (32 * time, 32 * time
 
 [State 8600, Stop Shake]
 type = envshake

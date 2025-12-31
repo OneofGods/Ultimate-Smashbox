@@ -14,21 +14,21 @@ movetype = A
 anim = 3000
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (var(124) = 1)
+poweradd = -1000 + 0 * (var(124) = 1
 sprpriority = 2
 facep2 = 1
 
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = 1 || var(65) = 0
-value = 3, 2, 1)
+value = 3, 2, 1
 
 [State 3000, Strength]
 type = varset
 trigger1 = time <= 0
-value = 0)
+value = 0
 ignorehitpause = 1
 persistent = 0
 
@@ -58,7 +58,7 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(57) || var(58
 trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
@@ -72,14 +72,14 @@ channel = 0
 
 [State 3000, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = time = 3
 helpertype = normal
 stateno = 8500
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = -68 * const(size.xscale), -63 * const(size.yscale)
+pos = -68 * const(size.xscale, -63 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -91,10 +91,10 @@ trigger1 = time = 3
 time = 41
 movetime = 41
 anim = 100
-pos = -68 * const(size.xscale), -63 * const(size.yscale)
+pos = -68 * const(size.xscale, -63 * const(size.yscale)
 sound = s0, 8500
 p2defmul = 1
-darken = !var(65)
+darken = !var(65
 
 [State 3000, NHB]
 type = nothitby
@@ -123,7 +123,7 @@ anim = 3004
 ID = 3004
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
+scale = 0.5 * const(size.xscale, 0.5 * const(size.yscale)
 bindtime = -1
 removeongethit = 1
 ownpal = 1
@@ -137,7 +137,7 @@ anim = 7106
 ID = 7106
 sprpriority = 3
 postype = p1
-pos = -15 * const(size.xscale), 0
+pos = -15 * const(size.xscale, 0
 ownpal = 1
 scale = 0.5, 0.5
 pausemovetime = -1
@@ -151,7 +151,7 @@ stateno = 3005
 ID = 3005
 name = "Soul Phoenix"
 postype = p1
-pos = 12 * const(size.xscale), -50
+pos = 12 * const(size.xscale, -50
 size.xscale = 0.75
 size.yscale = 0.75
 ownpal = 1
@@ -163,7 +163,7 @@ anim = 3003
 ID = 3003
 sprpriority = 3
 postype = p1
-pos = -30 * const(size.xscale), 0
+pos = -30 * const(size.xscale, 0
 scale = 0.5, 0.5
 bindtime = -1
 removeongethit = 1
@@ -198,21 +198,21 @@ movetype = A
 anim = 3050
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (var(124) = 1)
+poweradd = -1000 + 0 * (var(124) = 1
 sprpriority = 2
 facep2 = p2dist x <= -const(size.ground.back)
 
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = 1 || var(65) = 0
-value = 3, 2, 1)
+value = 3, 2, 1
 
 [State 3050, Strength]
 type = varset
 trigger1 = time <= 0
-value = 0)
+value = 0
 ignorehitpause = 1
 persistent = 0
 
@@ -242,7 +242,7 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(57) || var(58
 trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
@@ -256,14 +256,14 @@ channel = 0
 
 [State 3050, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = time = 3
 helpertype = normal
 stateno = 8500
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = -16 * const(size.xscale), -90 * const(size.yscale)
+pos = -16 * const(size.xscale, -90 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -275,10 +275,10 @@ trigger1 = time = 3
 time = 41
 movetime = 41
 anim = 100
-pos = -13 * const(size.xscale), -85 * const(size.yscale)
+pos = -13 * const(size.xscale, -85 * const(size.yscale)
 sound = s0, 8500
 p2defmul = 1
-darken = !var(65)
+darken = !var(65
 
 [State 3050, NHB]
 type = nothitby
@@ -297,7 +297,7 @@ time = 1
 [State 3050, Width]
 type = width
 trigger1 = animelem = 4
-value = 24 * const(size.xscale), 0
+value = 24 * const(size.xscale, 0
 
 [State 3050, FX]
 type = explod
@@ -306,7 +306,7 @@ anim = 1054
 ID = 1054
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
+scale = 0.5 * const(size.xscale, 0.5 * const(size.yscale)
 bindtime = -1
 pausemovetime = -1
 supermovetime = -1
@@ -321,7 +321,7 @@ stateno = 3055
 ID = 3055
 name = "Soul Phoenix"
 postype = p1
-pos = 60 * const(size.xscale), -48
+pos = 60 * const(size.xscale, -48
 size.xscale = 0.75
 size.yscale = 0.75
 ownpal = 1
@@ -371,7 +371,7 @@ velset = 0, 0
 
 [State 7697, End]
 type = selfstate
-trigger1 = !selfanimexist(7697)
+trigger1 = !selfanimexist(7697
 value = 5020
 
 [State 7697, Type]
@@ -446,21 +446,21 @@ movetype = A
 anim = 3100
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (var(124) = 1)
+poweradd = -1000 + 0 * (var(124) = 1
 facep2 = 1
 sprpriority = 2
 
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = 1 || var(65) = 0
-value = 3, 2, 1)
+value = 3, 2, 1
 
 [State 3100, Strength]
 type = varset
 trigger1 = time <= 0
-value = 0)
+value = 0
 ignorehitpause = 1
 persistent = 0
 
@@ -490,7 +490,7 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(57) || var(58
 trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
@@ -504,14 +504,14 @@ channel = 0
 
 [State 3100, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = time = 3
 helpertype = normal
 stateno = 8500
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = -25 * const(size.xscale), -35 * const(size.yscale)
+pos = -25 * const(size.xscale, -35 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -523,10 +523,10 @@ trigger1 = time = 3
 time = 41
 movetime = 41
 anim = 100
-pos = -25 * const(size.xscale), -35 * const(size.yscale)
+pos = -25 * const(size.xscale, -35 * const(size.yscale)
 sound = s0, 8500
 p2defmul = 1
-darken = !var(65)
+darken = !var(65
 
 [State 3100, NHB]
 type = nothitby
@@ -559,7 +559,7 @@ y = 0.67
 type = velset
 trigger1 = anim = 3100
 trigger1 = animelemtime(8) = 1
-x = 5.10)
+x = 5.10
 y = -11.76
 
 [State 3100, Vel]
@@ -613,9 +613,9 @@ hitflag = MAFD
 guardflag = M
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (var(121) = 8024)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 25) * (var(133) = 50), var(122) = -60
+sparkno = -1 + 0 * (var(121) = 8024
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = 25 * (var(133) = 50, var(122) = -60
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -660,9 +660,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (var(121) = 8024)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 0) * (var(133) = 50), var(122) = -100
+sparkno = -1 + 0 * (var(121) = 8024
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = 0 * (var(133) = 50, var(122) = -100
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -736,16 +736,16 @@ movetype = A
 anim = 3300
 ctrl = 0
 velset = 0, 0
-poweradd = -2000 + 0 * (var(124) = 2)
+poweradd = -2000 + 0 * (var(124) = 2
 facep2 = 1
 sprpriority = 2
 
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = 1 || var(65) = 0
-value = 3, 2, 1)
+value = 3, 2, 1
 
 [State 3300, Erase Inputs]
 type = null
@@ -767,7 +767,7 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(57) || var(58
 trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
@@ -781,14 +781,14 @@ channel = 0
 
 [State 3300, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = time = 3
 helpertype = normal
 stateno = 8510
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = -43 * const(size.xscale), -68 * const(size.yscale)
+pos = -43 * const(size.xscale, -68 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -800,10 +800,10 @@ trigger1 = time = 3
 time = 43
 movetime = 43
 anim = 101
-pos = -43 * const(size.xscale), -68 * const(size.yscale)
+pos = -43 * const(size.xscale, -68 * const(size.yscale)
 sound = s0, 8510
 p2defmul = 1
-darken = !var(65)
+darken = !var(65
 
 [State 3300, NHB]
 type = nothitby
@@ -851,7 +851,7 @@ channel = 0
 
 [State 3300, Bullets]
 type = helper
-trigger1 = !(time % 6)
+trigger1 = !(time % 6
 trigger1 = time >= 60
 helpertype = normal; projectile
 stateno = 3305
@@ -863,7 +863,7 @@ ownpal = 0
 [State 3305, Sound]
 type = playsnd
 trigger1 = time >= 68
-trigger1 = !((time - 68) % 11)
+trigger1 = !((time - 68) % 11
 value = 5, 6
 channel = 5
 
@@ -925,16 +925,16 @@ movetype = A
 anim = 3400
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (var(124) = 1)
+poweradd = -1000 + 0 * (var(124) = 1
 sprpriority = 2
 facep2 = 0
 
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = 1 || var(65) = 0
-value = 3, 2, 1)
+value = 3, 2, 1
 
 [State 3400, Erase Inputs]
 type = null
@@ -956,7 +956,7 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(57) || var(58
 trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
@@ -964,14 +964,14 @@ ignorehitpause = 1
 
 [State 3400, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = time = 3
 helpertype = normal
 stateno = 8500
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = -39 * const(size.xscale), -70 * const(size.yscale)
+pos = -39 * const(size.xscale, -70 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -983,10 +983,10 @@ trigger1 = time = 3
 time = 41
 movetime = 41
 anim = 100
-pos = -39 * const(size.xscale), -70 * const(size.yscale)
+pos = -39 * const(size.xscale, -70 * const(size.yscale)
 sound = s0, 8500
 p2defmul = 1
-darken = !var(65)
+darken = !var(65
 
 [State 3400, NHB]
 type = nothitby
@@ -1066,12 +1066,12 @@ supermovetime = 60
 [State 3400, Particles]
 type = explod
 trigger1 = time >= 43
-vel = -1 + (random / 1000.0), 0
+vel = -1 + (random / 1000.0, 0
 accel = 0, 0.05
 anim = 3407
 sprpriority = 3
 postype = p1
-pos = -45 * const(size.xscale), -70
+pos = -45 * const(size.xscale, -70
 random = 20, 20
 scale = 0.5, 0.5
 supermovetime = -1
@@ -1125,7 +1125,7 @@ y = 0
 State 3401, Pos]
 type = posset
 trigger1 = time <= 10
-x = (-((gamewidth / 2.0) + 40) -50 * 0) * facing
+x = (-((gamewidth / 2.0 + 40) -50 * 0* facing
 
 [State 3401, Vel]
 type = velset
@@ -1164,7 +1164,7 @@ stateno = 3405
 ID = 3405
 name = "Drill FX"
 postype = p1
-pos = 76 * const(size.xscale), -43
+pos = 76 * const(size.xscale, -43
 size.xscale = 0.5
 size.yscale = 0.5
 ownpal = 1
@@ -1172,8 +1172,8 @@ ownpal = 1
 [State 3401, Hit]
 type = hitdef
 trigger1 = anim = 3402
-trigger1 = !((movecontact + movereversed) % 3)
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 13)
+trigger1 = !((movecontact + movereversed) % 3
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 13
 attr = A, HA
 damage = 120, 30
 animtype = Hard
@@ -1182,9 +1182,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 6, 12
-sparkno = -1 + 0 * (var(121) = 8024)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 20) * (var(133) = 75), var(122) = -43
+sparkno = -1 + 0 * (var(121) = 8024
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = 20 * (var(133) = 75, var(122) = -43
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1270,16 +1270,16 @@ movetype = A
 anim = 4000
 ctrl = 0
 velset = 0, 0
-poweradd = -3000 + 0 * (var(124) = 3)
+poweradd = -3000 + 0 * (var(124) = 3
 facep2 = 1
 sprpriority = 2
 
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = 1 || var(65) = 0
-value = 3, 2, 1)
+value = 3, 2, 1
 
 [State 4000, Erase Inputs]
 type = null
@@ -1301,7 +1301,7 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(57) || var(58
 trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
@@ -1315,14 +1315,14 @@ channel = 0
 
 [State 4000, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = time = 3
 helpertype = normal
 stateno = 8520
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = 20 * const(size.xscale), -73 * const(size.yscale)
+pos = 20 * const(size.xscale, -73 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -1334,10 +1334,10 @@ trigger1 = time = 3
 time = 45
 movetime = 45
 anim = 102
-pos = 20 * const(size.xscale), -73 * const(size.yscale)
+pos = 20 * const(size.xscale, -73 * const(size.yscale)
 sound = s0, 8520
 p2defmul = 1
-darken = !var(65)
+darken = !var(65
 
 [State 4000, NHB]
 type = nothitby
@@ -1371,7 +1371,7 @@ edge = 20, 0
 [State 4000, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
 ID = 4000
 attr = S, HA
 damage = 0, 0
@@ -1380,9 +1380,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 12, 12
-sparkno = -1 + 0 * (var(121) = 8014)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 15) * (var(133) = 30), var(122) = -60
+sparkno = -1 + 0 * (var(121) = 8014
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = 15 * (var(133) = 30, var(122) = -60
 hitsound = s2, 3
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1421,14 +1421,14 @@ p2defmul = 1
 [State 4000, Drop Others]
 type = targetdrop
 trigger1 = numtarget > 1
-trigger1 = numtarget(4000)
+trigger1 = numtarget(4000
 excludeID = 4000
 ignorehitpause = 1
 
 [State 4000, P2 State]
 type = targetstate
-trigger1 = numtarget(4000)
-trigger1 = target(4000), stateno = 5000 || target(4000), stateno = 5010 || target(4000), stateno = 5020
+trigger1 = numtarget(4000
+trigger1 = target(4000, stateno = 5000 || target(4000, stateno = 5010 || target(4000, stateno = 5020
 ID = 4000
 value = 1114010
 
@@ -1548,7 +1548,7 @@ trigger1 = anim = 4010
 trigger1 = animelemtime(48) < 0
 trigger1 = numtarget
 trigger1 = target, stateno = [5000, 5050] || target, stateno = 1114010
-pos = 80 * const(size.xscale), 0
+pos = 80 * const(size.xscale, 0
 ignorehitpause = 1
 
 [State 4010, Bind]
@@ -1557,7 +1557,7 @@ trigger1 = anim = 4011
 trigger1 = animelemtime(32) < 0
 trigger1 = numtarget
 trigger1 = target, stateno = [5000, 5050]
-pos = 80 * const(size.xscale), -55 -(target, const(size.mid.pos.y))
+pos = 80 * const(size.xscale, -55 -(target, const(size.mid.pos.y))
 ignorehitpause = 1
 
 [State 4010, Sound]
@@ -1572,7 +1572,7 @@ value = 4, 6
 
 [State 4010, Sound]
 type = playsnd
-trigger1 = anim = 4010 && (animelem = 8 || animelem = 14)
+trigger1 = anim = 4010 && (animelem = 8 || animelem = 14
 trigger2 = anim = 4011 && animelem = 9
 value = 1, 2
 ;channel = 1
@@ -1595,8 +1595,8 @@ stopongethit = 1
 
 [State 4010, Sound]
 type = playsnd
-trigger1 = anim = 4010 && (animelem = 27 || animelem = 36)
-trigger2 = anim = 4011 && (animelem = 15 || animelem = 24)
+trigger1 = anim = 4010 && (animelem = 27 || animelem = 36
+trigger2 = anim = 4011 && (animelem = 15 || animelem = 24
 ;channel = 1
 stopongethit = 1
 value = 1, 6
@@ -1617,8 +1617,8 @@ stopongethit = 1
 
 [State 4010, Sound]
 type = playsnd
-trigger1 = anim = 4010 && (animelem = 47)
-trigger2 = anim = 4011 && (animelem = 31)
+trigger1 = anim = 4010 && (animelem = 47
+trigger2 = anim = 4011 && (animelem = 31
 value = 1, 9
 ;channel = 1
 stopongethit = 1
@@ -1627,7 +1627,7 @@ stopongethit = 1
 type = hitdef
 trigger1 = anim = 4010
 trigger1 = animelem = 8 || animelem = 14 || animelem = 19 || animelem = 36 || animelem = 37
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4010
 attr = S, HA
 damage = 25, 6
@@ -1636,10 +1636,10 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
-sparkno = -1 + 0 * (var(121) = 8014)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
-hitsound = s2, 6)
+sparkno = -1 + 0 * (var(121) = 8014
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = 30 * (var(133) = 90, var(122) = -60
+hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1668,7 +1668,7 @@ yaccel = 0.4850
 type = hitdef
 trigger1 = anim = 4010
 trigger1 = animelem = 11 || animelem = 28 || animelem = 38 || animelem = 39
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4010
 attr = S, HA
 damage = 25, 6
@@ -1677,9 +1677,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
-sparkno = -1 + 0 * (var(121) = 8014)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
+sparkno = -1 + 0 * (var(121) = 8014
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = 30 * (var(133) = 90, var(122) = -60
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1708,7 +1708,7 @@ yaccel = 0.4850
 [State 4010, Hit Up Ground]
 type = hitdef
 trigger1 = anim = 4010 && animelem = 48
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4010
 attr = S, HA
 damage = 25, 6
@@ -1717,9 +1717,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
-sparkno = -1 + 0 * (var(121) = 8014)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
+sparkno = -1 + 0 * (var(121) = 8014
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = 30 * (var(133) = 90, var(122) = -60
 hitsound = s2, 3
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1754,7 +1754,7 @@ forcestand = 1
 type = hitdef
 trigger1 = anim = 4011
 trigger1 = animelem = 4 || animelem = 9 || animelem = 15 || animelem = 20 || animelem = 25
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4010
 attr = A, HA
 damage = 25, 6
@@ -1764,10 +1764,10 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
-sparkno = -1 + 0 * (var(121) = 8014)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
-hitsound = s2, 6)
+sparkno = -1 + 0 * (var(121) = 8014
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = 30 * (var(133) = 90, var(122) = -60
+hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1801,7 +1801,7 @@ forcestand = 1
 [State 4010, Hit Final]
 type = hitdef
 trigger1 = anim = 4011 && animelem = 32
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4010
 attr = A, HA
 damage = 45, 11
@@ -1810,9 +1810,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 2, 4
-sparkno = -1 + 0 * (var(121) = 8014)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
+sparkno = -1 + 0 * (var(121) = 8014
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = 30 * (var(133) = 90, var(122) = -60
 hitsound = s2, 3
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1881,7 +1881,7 @@ trigger1 = anim = 4010 && animelem = 46
 anim = 4095
 sprpriority = 4
 postype = p1
-pos = -10 * const(size.xscale), -60
+pos = -10 * const(size.xscale, -60
 scale = 0.75, 0.75
 removeongethit = 1
 ownpal = 1
@@ -1892,7 +1892,7 @@ trigger1 = anim = 4011 && animelem = 31
 anim = 4095
 sprpriority = 4
 postype = p1
-pos = -10 * const(size.xscale), -60
+pos = -10 * const(size.xscale, -60
 scale = 0.75, -0.75
 bindtime = -1
 removeongethit = 1
@@ -2081,16 +2081,16 @@ movetype = A
 anim = 4050
 ctrl = 0
 velset = 0, 0
-poweradd = -2000 + 0 * (var(124) = 2)
+poweradd = -2000 + 0 * (var(124) = 2
 facep2 = 0
 sprpriority = 2
 
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = 1 || var(65) = 0
-value = 3, 2, 1)
+value = 3, 2, 1
 
 [State 4050, Erase Inputs]
 type = null
@@ -2112,7 +2112,7 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(57) || var(58
 trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
@@ -2126,14 +2126,14 @@ channel = 0
 
 [State 4050, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = time = 3
 helpertype = normal
 stateno = 8510
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = 20 * const(size.xscale), -73 * const(size.yscale)
+pos = 20 * const(size.xscale, -73 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -2145,10 +2145,10 @@ trigger1 = time = 3
 time = 43
 movetime = 43
 anim = 101
-pos = 20 * const(size.xscale), -73 * const(size.yscale)
+pos = 20 * const(size.xscale, -73 * const(size.yscale)
 sound = s0, 8510
 p2defmul = 1
-darken = !var(65)
+darken = !var(65
 
 [State 4050, NHB]
 type = nothitby
@@ -2183,7 +2183,7 @@ edge = 20, 0
 type = hitdef
 trigger1 = animelem = 3
 trigger1 = !movecontact && !movereversed
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
 ID = 4050
 attr = A, HA
 damage = 0, 0
@@ -2192,9 +2192,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 12, 12
-sparkno = -1 + 0 * (var(121) = 8014)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 15) * (var(133) = 30), var(122) = -60
+sparkno = -1 + 0 * (var(121) = 8014
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = 15 * (var(133) = 30, var(122) = -60
 hitsound = s2, 3
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2232,14 +2232,14 @@ p2defmul = 1
 [State 4050, Drop Others]
 type = targetdrop
 trigger1 = numtarget > 1
-trigger1 = numtarget(4050)
+trigger1 = numtarget(4050
 excludeID = 4050
 ignorehitpause = 1
 
 [State 4050, P2 State]
 type = targetstate
-trigger1 = numtarget(4050)
-trigger1 = target(4050), stateno = 5000 || target(4050), stateno = 5010 || target(4050), stateno = 5020
+trigger1 = numtarget(4050
+trigger1 = target(4050, stateno = 5000 || target(4050, stateno = 5010 || target(4050, stateno = 5020
 value = 1114060
 
 [State 4050, P1 State]
@@ -2313,7 +2313,7 @@ type = targetbind
 trigger1 = numtarget
 trigger1 = animelemtime(3) < 0
 trigger1 = target, stateno = 1114060
-pos = 64 * const(size.xscale), -75 - target, const(size.mid.pos.y)
+pos = 64 * const(size.xscale, -75 - target, const(size.mid.pos.y)
 ignorehitpause = 1
 
 [State 4060, Bind]
@@ -2322,7 +2322,7 @@ trigger1 = numtarget
 trigger1 = animelemtime(3) >= 0
 trigger1 = animelemtime(30) < 0
 trigger1 = target, stateno = [5000, 5050]
-pos = 64 * const(size.xscale), -75 - target, const(size.mid.pos.y)
+pos = 64 * const(size.xscale, -75 - target, const(size.mid.pos.y)
 ID = 4060
 ignorehitpause = 1
 
@@ -2377,7 +2377,7 @@ stopongethit = 1
 [State 4060, Hit High]
 type = hitdef
 trigger1 = animelem = 7 || animelem = 13 || animelem = 20 || animelem = 22
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4060
 attr = S, HA
 damage = 30, 8
@@ -2388,9 +2388,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (var(121) = 8014)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
+sparkno = -1 + 0 * (var(121) = 8014
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = 30 * (var(133) = 90, var(122) = -60
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2423,7 +2423,7 @@ yaccel = 0.4850
 [State 4060, Hit Low]
 type = hitdef
 trigger1 = animelem = 3 || animelem = 10 || animelem = 17 || animelem = 21 || animelem = 23
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4060
 attr = S, HA
 damage = 30, 8
@@ -2434,9 +2434,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (var(121) = 8014)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
+sparkno = -1 + 0 * (var(121) = 8014
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = 30 * (var(133) = 90, var(122) = -60
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2469,7 +2469,7 @@ yaccel = 0.4850
 [State 4060, Hit Final]
 type = hitdef
 trigger1 = animelem = 30
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
+air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99
 ID = 4060
 attr = A, HA
 damage = 30, 8
@@ -2480,9 +2480,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 12, 12
-sparkno = -1 + 0 * (var(121) = 8014)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 90), var(122) = -60
+sparkno = -1 + 0 * (var(121) = 8014
+guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkxy = -10 + 0 * (var(132) = 30 * (var(133) = 90, var(122) = -60
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2532,7 +2532,7 @@ trigger1 = animelem = 29
 anim = 4095
 sprpriority = 4
 postype = p1
-pos = -10 * const(size.xscale), -60
+pos = -10 * const(size.xscale, -60
 scale = 0.75, -0.75
 removeongethit = 1
 ownpal = 1
@@ -2577,16 +2577,16 @@ movetype = A
 anim = 4100
 ctrl = 0
 velset = 0, 0
-poweradd = -3000 + 0 * (var(124) = 3)
+poweradd = -3000 + 0 * (var(124) = 3
 sprpriority = 2
 facep2 = 1
 
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = 1 || var(65) = 0
-value = 3, 2, 1)
+value = 3, 2, 1
 
 [State 4100, Erase Inputs]
 type = null
@@ -2608,7 +2608,7 @@ persistent = 0
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(57) || var(58
 trigger1 = 1 || var(109) = 0
 time = 1
 add = 255, 255, 255
@@ -2616,14 +2616,14 @@ ignorehitpause = 1
 
 [State 4100, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(65
 trigger1 = time = 3
 helpertype = normal
 stateno = 8520
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = -22 * const(size.xscale), -82 * const(size.yscale)
+pos = -22 * const(size.xscale, -82 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -2635,10 +2635,10 @@ trigger1 = time = 3
 time = 45
 movetime = 45
 anim = 102
-pos = -22 * const(size.xscale), -82 * const(size.yscale)
+pos = -22 * const(size.xscale, -82 * const(size.yscale)
 sound = s0, 8520
 p2defmul = 1
-darken = !var(65)
+darken = !var(65
 
 [State 4100, NHB]
 type = nothitby
@@ -2665,7 +2665,7 @@ stateno = 4105
 ID = 4105
 name = "Eternal Slumber"
 postype = p1
-pos = 33 * const(size.xscale), -74
+pos = 33 * const(size.xscale, -74
 size.xscale = 0.75
 size.yscale = 0.75
 size.ground.back = 8
@@ -2678,7 +2678,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = 20 * const(size.xscale), -71
+pos = 20 * const(size.xscale, -71
 sprpriority = 0
 
 [State 4100, Bat Explods]
@@ -2687,7 +2687,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = 28 * const(size.xscale), -44
+pos = 28 * const(size.xscale, -44
 sprpriority = 0
 
 [State 4100, Bat Explods]
@@ -2696,7 +2696,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = -11 * const(size.xscale), -18
+pos = -11 * const(size.xscale, -18
 sprpriority = 2
 
 [State 4100, Bat Explods]
@@ -2714,7 +2714,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = 11 * const(size.xscale), -17
+pos = 11 * const(size.xscale, -17
 sprpriority = 2
 
 [State 4100, Bat Explods]
@@ -2723,12 +2723,12 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = -26 * const(size.xscale), -37
+pos = -26 * const(size.xscale, -37
 sprpriority = 2
 
 [State 4100, Bat Explods]
 type = modifyexplod
-trigger1 = numexplod(4100)
+trigger1 = numexplod(4100
 ID = 4100
 bindtime = -1
 removetime = -1
@@ -2738,19 +2738,19 @@ supermovetime = 47
 [State 4100, Wait]
 type = changeanim
 trigger1 = animelemtime(8) >= 0
-trigger1 = helper(4105), stateno = 4105
+trigger1 = helper(4105, stateno = 4105
 value = 4100
 elem = 8
 
 [State 4100, Drop Others]
 type = targetdrop
 trigger1 = numtarget > 1
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 excludeID = 4105
 
 [State 4100, Throw]
 type = targetstate
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 trigger1 = animelemtime(5) >= 0
 value = 4120
 ID = 4105
@@ -2759,8 +2759,8 @@ persistent = 0
 [State 4100, Success]
 type = changestate
 trigger1 = animelemtime(5) >= 0
-trigger1 = numtarget(4105)
-trigger1 = target(4105), stateno = 4120
+trigger1 = numtarget(4105
+trigger1 = target(4105, stateno = 4120
 value = 4110
 
 [State 4100, Miss]
@@ -2787,7 +2787,7 @@ y = 0
 
 [State 4100, Bat Explods]
 type = removeexplod
-trigger1 = numexplod(4100)
+trigger1 = numexplod(4100
 ID = 4100
 
 [State 4100, Sound]
@@ -2826,7 +2826,7 @@ sprpriority = 2
 [State 4110, Bat Explods]
 type = removeexplod
 trigger1 = animelemtime(2) >= 0
-trigger1 = numexplod(4100)
+trigger1 = numexplod(4100
 ID = 4100
 
 [State 4110, Push]
@@ -2849,7 +2849,7 @@ time = 0
 ;[State 4110, Sprite Priority]
 ;type = sprpriority
 ;trigger1 = animelem = 2
-;value = helper(4190), sprpriority + 1
+;value = helper(4190, sprpriority + 1
 
 [State 4110, Shadow]
 type = assertspecial
@@ -2888,7 +2888,7 @@ ownpal = 1
 type = bgpalfx
 trigger1 = !time
 sinadd = -255, -255, -255, animelemtime(3) * 4
-time = animelemtime(3)
+time = animelemtime(3
 
 [State 4110, Sound]
 type = playsnd
@@ -2910,9 +2910,9 @@ y = 0
 
 [State 4110, Pos]
 type = posset
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 trigger1 = animelemtime(12) >= 0 && animelemtime(14) < 0
-y = target(4105), const(size.head.pos.y)
+y = target(4105, const(size.head.pos.y)
 
 ; Moved to ZSS
 ;[State 4110, Palfx]
@@ -2925,84 +2925,84 @@ y = target(4105), const(size.head.pos.y)
 [State 4110, Throw]
 type = targetfacing
 trigger1 = animelem = 2
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 ID = 4105
 value = -1
 
 [State 4107, Bind 2]
 type = targetbind
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 trigger1 = animelemtime(2) >= 0 && animelemtime(4) < 0
-pos = 40 * const(size.xscale), 0 * const(size.yscale)
+pos = 40 * const(size.xscale, 0 * const(size.yscale)
 
 [State 4107, Bind 4]
 type = targetbind
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 trigger1 = animelemtime(4) >= 0 && animelemtime(6) < 0
-pos = 6 * const(size.xscale), -72 * const(size.yscale)
+pos = 6 * const(size.xscale, -72 * const(size.yscale)
 
 [State 4107, Bind 6]
 type = targetbind
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 trigger1 = animelemtime(6) >= 0 && animelemtime(8) < 0
-pos = 45 * const(size.xscale), -70 * const(size.yscale)
+pos = 45 * const(size.xscale, -70 * const(size.yscale)
 
 [State 4107, Bind 8]
 type = targetbind
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 trigger1 = animelemtime(8) >= 0 && animelemtime(10) < 0
-pos = 40 * const(size.xscale), 0 * const(size.yscale)
+pos = 40 * const(size.xscale, 0 * const(size.yscale)
 
 [State 4107, Bind 10]
 type = targetbind
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 trigger1 = animelemtime(10) >= 0 && animelemtime(12) < 0
-pos = 11 * const(size.xscale), -44 * const(size.yscale)
+pos = 11 * const(size.xscale, -44 * const(size.yscale)
 
 [State 4107, Bind 12]
 type = targetbind
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 trigger1 = animelemtime(12) >= 0 && animelemtime(14) < 0
 pos = 0, 0
 
 [State 4107, Bind 14]
 type = targetbind
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 trigger1 = animelemtime(14) >= 0 && animelemtime(16) < 0
-pos = 6 * const(size.xscale), -104 * const(size.yscale)
+pos = 6 * const(size.xscale, -104 * const(size.yscale)
 
 [State 4107, Pos Finish]
 type = targetbind
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 trigger1 = animelemtime(16) >= 0
 x = 32
 y = 0
 
 [State 4107, Damage]
 type = targetlifeadd
-triggerall = numtarget(4105)
+triggerall = numtarget(4105
 trigger1 = animelem = 3 || animelem = 5 || animelem = 7 || animelem = 9
 trigger2 = animelem = 11 || animelem = 13 || animelem = 15 || animelem = 17
-value = -25 * var(67)
+value = -25 * var(67
 kill = animelem = 17
 
 [State 4107, Damage]
 type = null
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 trigger1 = animelem = 17
 ID = 4105
-value = -600 * var(67)
+value = -600 * var(67
 
 ;[State 4107, Damage]
 ;type = targetpoweradd
-;trigger1 = numtarget(4105)
+;trigger1 = numtarget(4105
 ;trigger1 = animelem = 17
 ;ID = 4105
-;value = -1000 * var(67)
+;value = -1000 * var(67
 
 [State 4107, givepower]
 type = targetpoweradd
-triggerall = numtarget(4105)
+triggerall = numtarget(4105
 trigger1 = animelem = 3 || animelem = 5 || animelem = 7 || animelem = 9
 trigger2 = animelem = 11 || animelem = 13 || animelem = 15 || animelem = 17
 ID = 4105
@@ -3010,7 +3010,7 @@ value = 40; givepower
 
 [State 4107, Hit add]
 type = hitadd
-triggerall = numtarget(4105)
+triggerall = numtarget(4105
 trigger1 = animelem = 3 || animelem = 5 || animelem = 7 || animelem = 9
 trigger2 = animelem = 11 || animelem = 13 || animelem = 15 || animelem = 17
 ID = 4105
@@ -3037,7 +3037,7 @@ sprpriority = 2
 [State 4111, Target]
 type = targetstate
 trigger1 = !animtime
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 ID = 4105
 value = 4121
 
@@ -3055,7 +3055,7 @@ x = -32 * facing
 [State 4111, Bind]
 type = targetbind
 trigger1 = !time
-trigger1 = numtarget(4105)
+trigger1 = numtarget(4105
 ID = 4105
 pos = 64, 0
 
