@@ -1683,7 +1683,7 @@ value = floor(-130) * var(67))
 dizzy = 0
 
 [State 1311, Stun Damage]
-type = targetdizzypointsadd
+type = null
 trigger1 = !time
 trigger1 = numtarget
 value = floor(-100 * var(67)) * !var(50)
