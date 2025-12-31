@@ -234,7 +234,7 @@ persistent = 0
 [State 1050, Width]
 type = width
 trigger1 = animelemtime(4) >= 0 && animelemtime(9) < 0
-player = ceil(16 * const(size.xscale)), 0
+player = 16 * const(size.xscale), 0
 
 [State 1050, FX]
 type = explod
@@ -393,7 +393,7 @@ ownpal = 1
 [State 1060, Width]
 type = width
 trigger1 = animelemtime(4) >= 0 && animelemtime(9) < 0
-player = ceil(16 * const(size.xscale)), 0
+player = 16 * const(size.xscale), 0
 
 [State 1060, FX]
 type = explod
@@ -606,7 +606,6 @@ trigger1 = !movecontact && !movereversed
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, SA
 damage = 100), 25)
-dizzypoints = 200 * !var(50)
 animtype = Back
 hitflag = MAF
 guardflag = M
@@ -652,7 +651,6 @@ trigger1 = !movecontact && !movereversed
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, SA
 damage = 60, 15
-dizzypoints = 100 * !var(50)
 animtype = Back
 hitflag = MAF
 guardflag = MA
@@ -888,7 +886,6 @@ trigger1 = animelem = 2 || animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (2 + hitcount))
 attr = S, SA
 damage = 40, 10
-dizzypoints = 67 * !var(50)
 animtype = Back
 hitflag = MAF
 guardflag = M
@@ -933,7 +930,6 @@ trigger1 = animelem = 4 && anim = 1110
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (2 + hitcount))
 attr = A, SA
 damage = 60, 15
-dizzypoints = 67 * !var(50)
 animtype = Up
 hitflag = MAF
 guardflag = MA
@@ -1105,7 +1101,6 @@ trigger1 = animelem = 4 || animelem = 10 || animelem = 16
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, SA
 damage = 60), 15)
-dizzypoints = 100) * !var(50)
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1282,7 +1277,6 @@ trigger1 = !((movecontact + movereversed) % 8)
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, SA
 damage = 20, 5
-dizzypoints = 34 * !var(50)
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1472,7 +1466,7 @@ value = 1322
 [State 1310, Width]
 type = width
 trigger1 = 1
-edge = ceil(40 * const(size.xscale)), ceil(40 * const(size.xscale))
+edge = 40 * const(size.xscale), 40 * const(size.xscale)
 
 [State 1310, Vel]
 type = velmul
@@ -1527,8 +1521,8 @@ y = 0.75
 type = velset
 trigger1 = animelemtime(7) >= 0
 trigger1 = animelemtime(12) < 0
-x = 4.5) * cos((animelemtime(7) + 5) / 20.0 * pi)
-y = -4.5) * sin((animelemtime(7) + 5) / 20.0 * pi)
+x = 4.5) * 1 + 5) / 20.0 * pi)
+y = -4.5) * 0 + 5) / 20.0 * pi)
 
 [State 1310, Vel]
 type = velset
@@ -1679,14 +1673,13 @@ value = 1
 [State 1311, Damage]
 type = targetlifeadd
 trigger1 = !time
-value = floor(-130) * var(67))
-dizzy = 0
+value = -130 * var(67))
 
 [State 1311, Stun Damage]
 type = null
 trigger1 = !time
 trigger1 = numtarget
-value = floor(-100 * var(67)) * !var(50)
+value = -100 * var(67) * !var(50)
 
 [State 1311, Give Power]
 type = targetpoweradd
@@ -1916,7 +1909,6 @@ trigger1 = time = 16
 x = 3
 y = -6
 
-[State 1323, Dizzy Start]
 type = null
 trigger1 = alive
 trigger1 = life > 0
@@ -2171,7 +2163,6 @@ guardflag = HA
 priority = 4, Hit
 damage = 20, 5
 redlife = 20, 5
-dizzypoints = 0
 getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
 pausetime = 10, 10
@@ -2459,7 +2450,6 @@ guardflag = HA
 priority = 4, Hit
 damage = 13, 3
 redlife = 13, 3
-dizzypoints = 0
 getpower = 0, 0
 givepower = 40, 40
 pausetime = 8, 8
@@ -2575,7 +2565,6 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 damage = 50, 13
-dizzypoints = 0
 getpower = 0, 0
 givepower = 40, 40
 pausetime = 12, 12
@@ -2665,7 +2654,6 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 damage = 50, 13
-dizzypoints = 0
 getpower = 0, 0
 givepower = 40, 40
 pausetime = 12, 12

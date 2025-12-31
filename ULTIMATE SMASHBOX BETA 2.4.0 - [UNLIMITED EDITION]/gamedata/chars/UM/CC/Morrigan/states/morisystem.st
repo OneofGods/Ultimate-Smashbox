@@ -180,7 +180,6 @@ facep2 = 1
 [State 40, Keyboard Check]; currently obsolete in Ikemen
 type = changestate
 trigger1 = !time
-trigger1 = !AIlevel
 trigger1 = prevstateno = 52
 trigger1 = command = "holddown" && command = "holdup"
 value = 10
@@ -193,7 +192,6 @@ sysvar(1) = 0
 
 [State 40, Direction]
 type = varset
-trigger1 = !AIlevel
 trigger1 = time >= 1
 trigger1 = command = "holdfwd" || command = "holdback"
 sysvar(1) = (command = "holdfwd") - (command = "holdback")
@@ -201,7 +199,6 @@ persistent = 0
 
 [State 40, Direction]
 type = varset
-trigger1 = AIlevel
 sysvar(1) =   1
 
 [State 40, High Jump]
@@ -212,13 +209,11 @@ var(10) = 0
 [State 40, High Jump]
 type = varset
 trigger1 = !time
-trigger1 = !AIlevel
 var(11) = 3
 
 [State 40, High Jump]
 type = varset
 trigger1 = !time
-trigger1 = AIlevel
 trigger1 = p2bodydist x > 80 && p2statetype != L
 trigger1 = random < 333
 var(12) = 3
@@ -344,9 +339,7 @@ triggerall = !time
 triggerall = ctrl
 triggerall = inguarddist
 triggerall = 1
-trigger1 = !AIlevel
 trigger1 = command = "holdback"
-trigger2 = AIlevel
 trigger2 = random < 500
 value = 120
 
@@ -432,9 +425,7 @@ ownpal = 1
 [State 100, Change]
 type = changeanim
 triggerall = anim = 100
-trigger1 = !AIlevel
 trigger1 = command = "holdup"
-trigger2 = AIlevel
 trigger2 = p2dist y < -50
 value = 110
 
@@ -442,29 +433,23 @@ value = 110
 type = changeanim
 triggerall = anim = 100
 triggerall = time > 10 || var(0)
-trigger1 = !AIlevel
 trigger1 = command = "holddown"
-trigger2 = AIlevel
 trigger2 = (p2dist x - 64) < p2dist y
 value = 115
 
 [State 100, Change]
 type = changeanim
 triggerall = anim = 110
-trigger1 = !AIlevel
 trigger1 = command != "holdup"
 trigger1 = command = "holdfwd"
-trigger2 = AIlevel
 trigger2 = p2dist y = [-50, 50]
 value = 100
 
 [State 100, Change]
 type = changeanim
 triggerall = anim = 115
-trigger1 = !AIlevel
 trigger1 = command != "holddown"
 trigger1 = command = "holdfwd"
-trigger2 = AIlevel
 trigger2 = p2dist y = [-50, 50]
 value = 100
 
@@ -491,15 +476,10 @@ type = changeanim
 triggerall = time > 10
 triggerall = anim != 101
 trigger1 = time >  38
-trigger2 = !AIlevel
 trigger2 = command = "holdback"
-trigger3 = !AIlevel
 trigger3 = anim = 100 && command != "holdfwd"
-trigger4 = !AIlevel
 trigger4 = anim = 110 && command != "holdup"
-trigger5 = !AIlevel
 trigger5 = anim = 115 && command != "holddown"
-trigger6 = AIlevel
 trigger6 = p2dist x < 60
 value = 101
 
@@ -576,19 +556,15 @@ ownpal = 1
 [State 105, Change]
 type = changeanim
 triggerall = anim = 105
-trigger1 = !AIlevel
 trigger1 = command = "holdup"
-trigger2 = AIlevel
 trigger2 = p2dist y > 50
 value = 110
 
 [State 105, Change]
 type = changeanim
 triggerall = anim = 110
-trigger1 = !AIlevel
 trigger1 = command != "holdup"
 trigger1 = command = "holdback"
-trigger2 = AIlevel
 trigger2 = p2dist y < -50
 value = 105
 
@@ -609,13 +585,9 @@ type = changeanim
 triggerall = anim != 101
 triggerall = time > 10
 trigger1 = time >  38
-trigger2 = !AIlevel
 trigger2 = command = "holdfwd"
-trigger3 = !AIlevel
 trigger3 = anim = 105 && command != "holdback"
-trigger4 = !AIlevel
 trigger4 = anim = 110 && command != "holdup"
-trigger5 = AIlevel
 trigger5 = p2dist x < 60
 value = 101
 
@@ -654,7 +626,6 @@ flag3 = noairguard
 
 [State 120, AI Tranquilizer]
 type = assertspecial
-trigger1 = AIlevel
 flag = noshadow
 
 [State 120, Type]
@@ -685,9 +656,7 @@ y = 0
 [State 120, High to Low]
 type = statetypeset
 triggerall = statetype = S
-trigger1 = !AIlevel
 trigger1 = command = "holddown"
-trigger2 = AIlevel
 trigger2 = random < 500
 statetype = C
 physics = C
@@ -695,9 +664,7 @@ physics = C
 [State 120, Low to High]
 type = statetypeset
 triggerall = statetype = C
-trigger1 = !AIlevel
 trigger1 = command != "holddown"
-trigger2 = AIlevel
 trigger2 = random > 500
 statetype = S
 physics = S
@@ -716,13 +683,10 @@ value = 130 + (statetype = C) + (statetype = A) * 2
 type = changestate
 triggerall = statetype != A
 trigger1 = !inguarddist
-trigger2 = !AIlevel
 trigger2 = p2dist x >= 0
 trigger2 = command != "holdback" || command = "holdfwd"
-trigger3 = !AIlevel
 trigger3 = p2dist x < 0
 trigger3 = command != "holdfwd" || command = "holdback"
-trigger4 = AIlevel && numenemy
 trigger4 = animelem = 5
 value = 140
 
@@ -750,7 +714,6 @@ flag2 = nocrouchguard
 
 [State 130, AI Tranquilizer]
 type = assertspecial
-trigger1 = AIlevel
 flag = noshadow
 
 [State 130, Anim]
@@ -760,7 +723,6 @@ value = 130
 
 [State 130, AI fix]
 type = changestate
-trigger1 = AIlevel
 trigger1 = numenemy
 trigger1 = time >= 60
 trigger1 = random < 17
@@ -786,22 +748,17 @@ ownpal = 1
 
 [State 130, High to Low]
 type = changestate
-trigger1 = !AIlevel
 trigger1 = command = "holddown"
-trigger2 = AIlevel
 trigger2 = random < 500
 value = 131
 
 [State 130, Stop Guarding]
 type = changestate
 trigger1 = !inguarddist
-trigger2 = !AIlevel
 trigger2 = p2dist x >= 0
 trigger2 = command != "holdback" || command = "holdfwd"
-trigger3 = !AIlevel
 trigger3 = p2dist x < 0
 trigger3 = command != "holdfwd" || command = "holdback"
-trigger4 = AIlevel && numenemy
 trigger4 = animelem = 5
 value = 140
 
@@ -829,7 +786,6 @@ flag2 = nocrouchguard
 
 [State 131, AI Tranquilizer]
 type = assertspecial
-trigger1 = AIlevel
 flag = noshadow
 
 [State 131, Anim]
@@ -839,15 +795,12 @@ value = 131
 
 [State 131, Low to High]
 type = changestate
-trigger1 = !AIlevel
 trigger1 = command != "holddown"
-trigger2 = AIlevel
 trigger2 = random > 500
 value = 130
 
 [State 131, AI fix]
 type = changestate
-trigger1 = AIlevel
 trigger1 = numenemy
 trigger1 = time >= 60
 trigger1 = random < 17
@@ -856,13 +809,10 @@ value = 40
 [State 131, Stop Guarding]
 type = changestate
 trigger1 = !inguarddist
-trigger2 = !AIlevel
 trigger2 = p2dist x >= 0
 trigger2 = command != "holdback" || command = "holdfwd"
-trigger3 = !AIlevel
 trigger3 = p2dist x < 0
 trigger3 = command != "holdfwd" || command = "holdback"
-trigger4 = AIlevel && numenemy
 trigger4 = animelem = 5
 value = 140
 
@@ -879,7 +829,6 @@ flag = noairguard
 
 [State 132, AI Tranquilizer]
 type = assertspecial
-trigger1 = AIlevel
 flag = noshadow
 
 [State 132, Anim]
@@ -910,9 +859,7 @@ y = 0
 [State 132, End]
 type = changestate
 triggerall = sysvar(0) && inguarddist
-trigger1 = !AIlevel
 trigger1 =  command = "holdback"
-trigger2 = AIlevel
 value = 130
 
 [State 132, End]
@@ -950,9 +897,7 @@ physics = A
 [State 140, High to Low]
 type = statetypeset
 triggerall = statetype = S
-trigger1 = !AIlevel
 trigger1 = command = "holddown"
-trigger2 = AIlevel
 trigger2 = random < 500
 statetype = C
 physics = C
@@ -960,9 +905,7 @@ physics = C
 [State 140, Low to High]
 type = statetypeset
 triggerall = statetype = C
-trigger1 = !AIlevel
 trigger1 = command != "holddown"
-trigger2 = AIlevel
 trigger2 = random > 500
 statetype = S
 physics = S
@@ -1012,9 +955,7 @@ value =  151
 [State 150, High to Low]
 type = statetypeset
 triggerall = statetype = S
-trigger1 = !AIlevel
 trigger1 = command = "holddown"
-trigger2 = AIlevel
 trigger2 = random < 500
 statetype = C
 physics = C
@@ -1022,9 +963,7 @@ physics = C
 [State 150, Low to High]
 type = statetypeset
 triggerall = statetype = C
-trigger1 = !AIlevel
 trigger1 = command != "holddown"
-trigger2 = AIlevel
 trigger2 = random > 500
 statetype = S
 physics = S
@@ -1062,9 +1001,7 @@ value = 1
 [State 151, High to Low]
 type = statetypeset
 triggerall = statetype = S
-trigger1 = !AIlevel
 trigger1 = command = "holddown"
-trigger2 = AIlevel
 trigger2 = random < 500
 statetype = C
 physics = C
@@ -1072,9 +1009,7 @@ physics = C
 [State 151, Low to High]
 type = statetypeset
 triggerall = statetype = C
-trigger1 = !AIlevel
 trigger1 = command != "holddown"
-trigger2 = AIlevel
 trigger2 = random > 500
 statetype = S
 physics = S
@@ -1111,9 +1046,7 @@ value =  151
 [State 152, High to Low]
 type = statetypeset
 triggerall = statetype = S
-trigger1 = !AIlevel
 trigger1 = command = "holddown"
-trigger2 = AIlevel
 trigger2 = random < 500
 statetype = C
 physics = C
@@ -1121,9 +1054,7 @@ physics = C
 [State 152, Low to High]
 type = statetypeset
 triggerall = statetype = C
-trigger1 = !AIlevel
 trigger1 = command != "holddown"
-trigger2 = AIlevel
 trigger2 = random > 500
 statetype = S
 physics = S
@@ -1161,9 +1092,7 @@ value = 1
 [State 153, High to Low]
 type = statetypeset
 triggerall = statetype = S
-trigger1 = !AIlevel
 trigger1 = command = "holddown"
-trigger2 = AIlevel
 trigger2 = random < 500
 statetype = C
 physics = C
@@ -1171,9 +1100,7 @@ physics = C
 [State 153, Low to High]
 type = statetypeset
 triggerall = statetype = C
-trigger1 = !AIlevel
 trigger1 = command != "holddown"
-trigger2 = AIlevel
 trigger2 = random > 500
 statetype = S
 physics = S
@@ -1255,9 +1182,7 @@ y = 0
 [State 155, End]
 type = changestate
 triggerall = sysvar(0) && inguarddist
-trigger1 = !AIlevel
 trigger1 =  command = "holdback"
-trigger2 = AIlevel
 value = 130
 
 [State 155, End]
@@ -1343,7 +1268,7 @@ trigger1 = !time
 anim = 7200
 sprpriority = 5
 postype = p1
-pos = ceil(15 * const(size.xscale)), -71
+pos = 15 * const(size.xscale), -71
 pausemovetime = -1
 supermovetime = -1
 scale = 0.5, 0.5
@@ -1432,7 +1357,7 @@ trigger1 = !time
 anim = 7200
 sprpriority = 5
 postype = p1
-pos = ceil(30 * const(size.xscale)), -21
+pos = 30 * const(size.xscale), -21
 pausemovetime = -1
 supermovetime = -1
 scale = 0.5, 0.5
@@ -1515,7 +1440,7 @@ trigger1 = !time
 anim = 7200
 sprpriority = 5
 postype = p1
-pos = ceil(33 * const(size.xscale)), -48
+pos = 33 * const(size.xscale), -48
 pausemovetime = -1
 supermovetime = -1
 scale = 0.5, 0.5
@@ -1580,18 +1505,14 @@ time = -1
 [State 705, Anim]
 type = changeanim
 triggerall = !time
-trigger1 = !(root, AIlevel)
 trigger1 = root, command = "D"
-trigger2 = root, AIlevel
 trigger2 = (root, statetype != A) && p2statetype = C
 value = 706
 
 [State 705, Anim]
 type = changeanim
 triggerall = !time
-trigger1 = !(root, AIlevel)
 trigger1 = root, command = "F"
-trigger2 = root, AIlevel
 trigger2 = anim != 706
 value =  705
 
@@ -1614,7 +1535,6 @@ var(0) = 1
 [State 705, Disable]
 type = varset
 triggerall = !var(0)
-triggerall = !(root, AIlevel)
 trigger1 = root, p2dist x >= 0
 trigger1 = root, command = "holdback"
 trigger2 = root, p2dist x < 0
@@ -1713,7 +1633,6 @@ sprpriority = -1
 [State Erase Inputs]
 type = varset
 var(23) = 1
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1744,14 +1663,12 @@ time = 1
 
 [State 710, Attack]
 type = changestate
-trigger1 = !AIlevel
 trigger1 = time = [15, 25]
 trigger1 = command = "a" || command = "b" || command = "c" || command = "x" || command = "y" || command = "z"
 value =  221
 
 [State 710, Attack]
 type = changestate
-trigger1 = AIlevel
 trigger1 = time = [15, 25]
 trigger1 = !inguarddist
 trigger1 = p2dist y >= -60
@@ -1760,14 +1677,12 @@ value =  240
 
 [State 710, AI Guard]
 type = null
-trigger1 = AIlevel
 trigger1 = animtime = [-10, -1]
 trigger1 = facing = 1
 flag = L
 
 [State 710, AI Guard]
 type = null
-trigger1 = AIlevel
 trigger1 = animtime = [-10, -1]
 trigger1 = facing = -1
 flag = R
@@ -1793,7 +1708,6 @@ sprpriority = 1
 [State Erase Inputs]
 type = varset
 var(23) = 1
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1851,7 +1765,6 @@ sprpriority = 1
 [State Erase Inputs]
 type = varset
 var(23) = 1
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1908,7 +1821,6 @@ velset = 0, 0
 [State Erase Inputs]
 type = varset
 var(23) = 1
-trigger1 = !AIlevel
 trigger1 = time <= 0
 value = 1
 ignorehitpause = 1
@@ -1929,7 +1841,7 @@ channel = 0
 type = palfx
 trigger1 = 1
 time = 1
-add = 75 + ceil(sin(time / 6.0 * pi) * 75), 25 + ceil(sin(time / 6.0 * pi) * 25), 0
+add = 75 + 0, 25 + 0, 0
 
 [State 740, FX]
 type = helper
@@ -1969,11 +1881,8 @@ postype = p1
 type = changestate
 triggerall = time >= 24
 trigger1 = power >= const(data.power) || power >= powermax || roundstate != 2
-trigger2 = !AIlevel
 trigger2 = command != "/b" || command != "/y"
-trigger3 = AIlevel
 trigger3 = inguarddist || p2bodydist x <= 120
-trigger4 = AIlevel
 trigger4 = p2movetype = A
 trigger4 = animelem = 10
 value = 741
@@ -2022,14 +1931,12 @@ facep2 = 1
 [State 750, Strength]
 type = varset
 trigger1 = !time
-trigger1 = !AIlevel
 var(24) = 1
 ignorehitpause = 1
 
 [State 750, Strength AI]
 type = varset
 trigger1 = !time
-trigger1 = AIlevel
 var(25) = 1
 ignorehitpause = 1
 
@@ -2052,7 +1959,7 @@ helpertype = normal
 stateno = 7250
 ID = 7250
 postype = p1
-pos = ceil(28 * const(size.xscale)), -52
+pos = 28 * const(size.xscale), -52
 ownpal = 1
 persistent = 0
 supermovetime = 999
@@ -2268,7 +2175,7 @@ y = 0.9
 [State 195, Vel]
 type = velset
 trigger1 = anim = 195 && animelemtime(5) >= 0
-y = -0.25 * cos((time -18) / 20.0)
+y = -0.25 * 1 / 20.0)
 
 [State 195, Bat Explods]
 type = explod
@@ -2276,7 +2183,7 @@ trigger1 = anim = 195 && animelem = 2
 anim = 6100
 ID = 195
 postype = p1
-pos = ceil(-35 * const(size.xscale)), -37
+pos = -35 * const(size.xscale), -37
 scale = const(size.xscale), const(size.yscale)
 sprpriority = 0
 
@@ -2296,7 +2203,7 @@ trigger1 = anim = 195 && animelem = 2
 anim = 6100
 ID = 195
 postype = p1
-pos = ceil(-21 * const(size.xscale)), -31
+pos = -21 * const(size.xscale), -31
 scale = const(size.xscale), const(size.yscale)
 sprpriority = 0
 
@@ -2306,7 +2213,7 @@ trigger1 = anim = 195 && animelem = 2
 anim = 6100
 ID = 195
 postype = p1
-pos = ceil(-34 * const(size.xscale)), -30
+pos = -34 * const(size.xscale), -30
 scale = const(size.xscale), const(size.yscale)
 sprpriority = 2
 
@@ -2316,7 +2223,7 @@ trigger1 = anim = 195 && animelem = 2
 anim = 6100
 ID = 195
 postype = p1
-pos = ceil(-10 * const(size.xscale)), -36
+pos = -10 * const(size.xscale), -36
 scale = const(size.xscale), const(size.yscale)
 sprpriority = 2
 
@@ -2680,7 +2587,7 @@ stateno = 6107
 ID = 6100
 name = "Bat"
 postype = p1
-pos = ceil(-4 * const(size.xscale)), -60
+pos = -4 * const(size.xscale), -60
 facing = -1
 
 [State 181, Sound]
@@ -2760,7 +2667,7 @@ y = 0.9
 [State 183, Vel]
 type = velset
 trigger1 = animelemtime(3) >= 12
-y = -0.25 * cos((animelemtime(3) -12) / 20.0)
+y = -0.25 * 1 -12) / 20.0)
 
 [State 183, FX]
 type = explod
@@ -2778,7 +2685,7 @@ trigger1 = time = 5
 anim = 6100
 ID = 183
 postype = p1
-pos = ceil(-35 * const(size.xscale)), -37
+pos = -35 * const(size.xscale), -37
 scale = const(size.xscale), const(size.yscale)
 sprpriority = 0
 
@@ -2798,7 +2705,7 @@ trigger1 = time = 15
 anim = 6100
 ID = 183
 postype = p1
-pos = ceil(-21 * const(size.xscale)), -31
+pos = -21 * const(size.xscale), -31
 scale = const(size.xscale), const(size.yscale)
 sprpriority = 0
 
@@ -2808,7 +2715,7 @@ trigger1 = time = 20
 anim = 6100
 ID = 183
 postype = p1
-pos = ceil(-34 * const(size.xscale)), -30
+pos = -34 * const(size.xscale), -30
 scale = const(size.xscale), const(size.yscale)
 sprpriority = 2
 
@@ -2818,7 +2725,7 @@ trigger1 = time = 25
 anim = 6100
 ID = 183
 postype = p1
-pos = ceil(-10 * const(size.xscale)), -36
+pos = -10 * const(size.xscale), -36
 scale = const(size.xscale), const(size.yscale)
 sprpriority = 2
 
@@ -2856,9 +2763,7 @@ var(0) = 0
 
 [State 189, Type]
 type = varset
-trigger1 = !AIlevel
 trigger1 = command = "/c"
-trigger2 = AIlevel
 trigger2 = random < 500
 var(0) = 1
 
@@ -2891,7 +2796,7 @@ stateno = 6109
 ID = 6101
 name = "Bat"
 postype = p1
-pos = ceil(-23 * const(size.xscale)), -49
+pos = -23 * const(size.xscale), -49
 
 [State 189, Bats]
 type = helper
@@ -2901,7 +2806,7 @@ stateno = 6109
 ID = 6102
 name = "Bat"
 postype = p1
-pos = ceil(-31 * const(size.xscale)), -38
+pos = -31 * const(size.xscale), -38
 facing = 1
 
 [State 189, Bats]
@@ -2912,7 +2817,7 @@ stateno = 6109
 ID = 6103
 name = "Bat"
 postype = p1
-pos = ceil(-35 * const(size.xscale)), -24
+pos = -35 * const(size.xscale), -24
 
 [State 189, Bats]
 type = helper
@@ -2922,7 +2827,7 @@ stateno = 6109
 ID = 6104
 name = "Bat"
 postype = p1
-pos = ceil(-38 * const(size.xscale)), -11
+pos = -38 * const(size.xscale), -11
 
 [State 189, Bats]
 type = helper
@@ -2932,7 +2837,7 @@ stateno = 6109
 ID = 6101
 name = "Bat"
 postype = p1
-pos = ceil(-4 * const(size.xscale)), -43
+pos = -4 * const(size.xscale), -43
 facing = -1
 
 [State 189, Bats]
@@ -2954,7 +2859,7 @@ stateno = 6109
 ID = 6103
 name = "Bat"
 postype = p1
-pos = ceil(4 * const(size.xscale)), -29
+pos = 4 * const(size.xscale), -29
 facing = -1
 
 [State 189, Bats]
@@ -2965,7 +2870,7 @@ stateno = 6109
 ID = 6104
 name = "Bat"
 postype = p1
-pos = ceil(7 * const(size.xscale)), -22
+pos = 7 * const(size.xscale), -22
 facing = -1
 
 [State 189, Anim Random]
@@ -3161,7 +3066,7 @@ trigger1 = !time
 ID = 8200
 anim = 8200
 postype = p1
-pos = 0, ceil(-16 * const(size.yscale))
+pos = 0, -16 * const(size.yscale)
 pausemovetime = -1
 supermovetime = -1
 ownpal = 1
@@ -3211,7 +3116,7 @@ trigger1 = !time
 ID = 8200
 anim = 8200
 postype = p1
-pos = 0, ceil(-74 * const(size.yscale))
+pos = 0, -74 * const(size.yscale)
 pausemovetime = -1
 supermovetime = -1
 ownpal = 1
@@ -3299,9 +3204,7 @@ x = -6.39
 [State 5230, Vel Forward]
 type = velset
 triggerall = !time
-trigger1 = !AIlevel
 trigger1 = command = "holdfwd"
-trigger2 = AIlevel
 trigger2 = random < 500
 x = 6.39
 
@@ -3404,10 +3307,10 @@ type = bgpalfx
 trigger1 = stateno = 770 || var(27) > 0
 time = 1
 ;color = 0
-;mul = 192 + ceil(cos(gametime / 20.0) * 64), 64 + ceil(cos(gametime / 20.0) * 16), 0
+;mul = 192 + 1, 64 + 1, 0
 color = -256
-hue = 64 * cos(gametime / 120.0 * pi)
-mul = 192 + 64 * cos(gametime / 60.0 * pi), 192 + 64 * cos(gametime / 60.0 * pi), 192 + 64 * cos(gametime / 60.0 * pi)
+hue = 64 * 1
+mul = 192 + 64 * 1, 192 + 64 * 1, 192 + 64 * 1
 ignorehitpause = 1
 
 [State -2, Dark Force Warning]
@@ -3603,7 +3506,6 @@ value = 5000, (random % 3)
 lowpriority = 1
 channel = 0
 
-[State -2, Dizzy Voice]
 type = playsnd
 trigger1 = time = 1
 trigger1 = anim = 5300
@@ -3659,25 +3561,19 @@ triggerall = roundstate = 2
 triggerall = !numhelper(705)
 triggerall = !var(27)
 triggerall = (movetype = I && ctrl) || stateno = [700, 702] || stateno = 5120
-trigger1 = !AIlevel
 trigger1 = command != "rlsdir"
 trigger1 = statetype = S || statetype = C || stateno = 5120
 trigger1 = (p2dist x >= 0 && command = "F") || (p2dist x < 0 && command = "B") || command = "D"
-trigger2 = !AIlevel
 trigger2 = command != "rlsdir"
 trigger2 = statetype = A
 trigger2 = (p2dist x >= 0 && command = "F") || (p2dist x < 0 && command = "B")
-trigger3 = AIlevel
 trigger3 = inguarddist
 trigger3 = stateno != [700, 702]
 trigger3 = p2bodydist x < var(38)
-trigger4 = AIlevel
 trigger4 = inguarddist
 trigger4 = stateno != [700, 702]
 trigger4 = var(39) = [1, 8]
-trigger5 = AIlevel
 trigger5 = stateno = [700, 702]
-trigger5 = time = 14 && random < (250 + 700 * (AIlevel / 8.0))
 helpertype = normal
 stateno = 705
 ID = 705
@@ -3792,7 +3688,6 @@ ignorehitpause = 1
 [State -3, Special Cancel Check]
 type = varset
 triggerall = stateno = [200, 699]
-trigger1 = !AIlevel
 trigger1 = time <= 2
 trigger1 = stateno = [200, 699]
 trigger1 = prevstateno != [200, 4999]
@@ -3925,7 +3820,7 @@ random = 40, 4
 vel = 0, (-0.80 - (random / 5000.0)) *  1.00
 scale = 0.50 * const(size.xscale), 0.50 * const(size.yscale)
 palfx.time = -1
-palfx.hue = -256 + 4 * (ceil(var(66)) % 128); randomRange(-256, 256)
+palfx.hue = -256 + 4 * (var(66) % 128); randomRange(-256, 256)
 ownpal = 1
 
 [State -3, Sparkles Front]
@@ -3944,7 +3839,7 @@ random = 52, 4
 vel = 0, (-1.00 - (random / 4000.0)) *  1.00
 scale = 0.50 * const(size.xscale), 0.50 * const(size.yscale)
 palfx.time = -1
-palfx.hue = -256 + 4 * (ceil(var(66)) % 128); randomRange(-256, 256)
+palfx.hue = -256 + 4 * (var(66) % 128); randomRange(-256, 256)
 ownpal = 1
 
 [State -3, Sparkles Parasite Roll]
@@ -3966,7 +3861,7 @@ angle = 45
 interpolation.time = 30
 interpolation.angle = 0
 palfx.time = -1
-palfx.hue = -256 + 4 * (ceil(var(66)) % 128); randomRange(-256, 256)
+palfx.hue = -256 + 4 * (var(66) % 128); randomRange(-256, 256)
 ownpal = 1
 ignorehitpause = 1
 

@@ -51,7 +51,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -145,7 +144,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -239,7 +237,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -343,7 +340,6 @@ trigger1 = animelem = 4
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 80, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -457,7 +453,6 @@ trigger1 = animelem = 5
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 100, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -561,7 +556,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 90, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -604,7 +598,6 @@ trigger1 = !movecontact && !movereversed
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 90, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -718,7 +711,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -812,7 +804,6 @@ trigger1 = animelem = 4
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -854,7 +845,6 @@ trigger1 = prevstateno = 710
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -959,7 +949,6 @@ trigger1 = animelem = 4
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 90, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -1084,7 +1073,7 @@ persistent = 0
 [State 255, Width]
 type = width
 trigger1 = animelemtime(3) >= 0
-player = ceil(30 * const(size.xscale)), 0
+player = 30 * const(size.xscale), 0
 
 [State 255, Sound]
 type = playsnd
@@ -1138,7 +1127,6 @@ trigger1 = animelem = 3 || animelem = 4
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -1182,7 +1170,6 @@ trigger1 = animelem = 5
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -1226,7 +1213,6 @@ trigger1 = animelem = 6
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -1366,7 +1352,6 @@ trigger1 = animelem = 2 || animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 20, 0
-dizzypoints = 25 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -1461,7 +1446,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 60, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -1566,7 +1550,6 @@ trigger1 = animelem = 4
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 100, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -1661,7 +1644,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 90, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Up
@@ -1788,7 +1770,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -1883,7 +1864,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 30, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -1988,7 +1968,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -2093,7 +2072,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = S, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -2198,7 +2176,6 @@ trigger1 = animelem = 4
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = C, NA
 damage = 80, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -2293,7 +2270,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 40, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -2414,7 +2390,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -2527,7 +2502,6 @@ trigger1 = animelem = 6
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 90, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -2640,7 +2614,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 40, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -2753,7 +2726,6 @@ trigger1 = animelem = 2
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 40, 0
-dizzypoints = 50 * !var(50)
 animtype = Light
 air.animtype = Back
 fall.animtype = Back
@@ -2866,7 +2838,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 70, 0
-dizzypoints = 100 * !var(50)
 animtype = Medium
 air.animtype = Back
 fall.animtype = Back
@@ -2979,7 +2950,6 @@ trigger1 = animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 attr = A, NA
 damage = 90, 0
-dizzypoints = 200 * !var(50)
 animtype = Hard
 air.animtype = Back
 fall.animtype = Back
@@ -3109,7 +3079,7 @@ value = 0
 type = hitdef
 trigger1 = animelem = 2
 trigger1 = !var(130) && !var(108)
-trigger1 = var(129) <= ceil(32 * const(size.xscale))
+trigger1 = var(129) <= 32 * const(size.xscale)
 ID = 800
 attr = S, NT
 hitflag = M
@@ -3207,17 +3177,17 @@ value = -1
 [State 810, Width]
 type = width
 trigger1 = animelemtime(5) < 0
-edge = ceil(50 * const(size.xscale)), 0
+edge = 50 * const(size.xscale), 0
 
 [State 810, Width]
 type = width
 trigger1 = animelemtime(5) >= 0 && animelemtime(6) < 0
-edge = ceil(60 * const(size.xscale)), 0
+edge = 60 * const(size.xscale), 0
 
 [State 810, Width]
 type = width
 trigger1 = animelemtime(6) >= 0 && animelemtime(7) < 0
-edge = ceil(75 * const(size.xscale)), 0
+edge = 75 * const(size.xscale), 0
 
 [State 810, Sound]
 type = playsnd
@@ -3271,14 +3241,13 @@ value = 1
 [State 810, Damage]
 type = targetlifeadd
 trigger1 = animelem = 6
-value = floor(-110 * var(67))
-dizzy = 0
+value = -110 * var(67)
 
 [State 810, Stun Damage]
 type = null
 trigger1 = numtarget
 trigger1 = animelem = 6
-value = floor(-140 * var(67)) * !var(50)
+value = -140 * var(67) * !var(50)
 
 [State 810, Give Power]
 type = targetpoweradd
@@ -3415,7 +3384,6 @@ trigger1 = !time
 x = -2.5
 y = -5.5
 
-[State 817, Dizzy Start]
 type = null
 trigger1 = alive
 trigger1 = life > 0
@@ -3480,12 +3448,12 @@ value = -1
 [State 820, Width]
 type = width
 trigger1 = animelemtime(8) < 0
-edge = ceil(50 * const(size.xscale)), 0
+edge = 50 * const(size.xscale), 0
 
 [State 820, Width]
 type = width
 trigger1 = animelemtime(8) >= 0 && animelemtime(9) < 0
-edge = ceil(80 * const(size.xscale)), 0
+edge = 80 * const(size.xscale), 0
 
 [State 820, Sound]
 type = playsnd
@@ -3557,15 +3525,14 @@ value = 1
 [State 820, Damage]
 type = targetlifeadd
 trigger1 = animelem = 8
-value = floor(-120 * var(67))
-dizzy = 0
+value = -120 * var(67)
 kill = 0
 
 [State 820, Stun Damage]
 type = null
 trigger1 = numtarget
 trigger1 = animelem = 8
-value = floor(-120 * var(67)) * !var(50)
+value = -120 * var(67) * !var(50)
 
 [State 820, Give Power]
 type = targetpoweradd
@@ -3655,7 +3622,6 @@ velset = 0, 0
 type = lifeadd
 trigger1 = !time
 value = -1
-dizzy = 0
 kill = 1
 
 [State 823, Anim]
@@ -3686,7 +3652,7 @@ sprpriority = -5
 type = zoom
 trigger1 = 1
 scale = 1
-pos = 3 * cos(pi * time), 0
+pos = 3 * 1, 0
 lag = 0
 stagebound = 1
 camerabound = 0
@@ -3759,9 +3725,7 @@ type = selfstate
 trigger1 = alive
 trigger1 = life > 0
 trigger1 = 1
-value = const(statedizzyfalldown_air)
 
-[State 824, Dizzy Start]
 type = null
 trigger1 = alive
 trigger1 = life > 0

@@ -78,7 +78,7 @@ stateno = 8500
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(-68 * const(size.xscale)), ceil(-63 * const(size.yscale))
+pos = -68 * const(size.xscale), -63 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -90,7 +90,7 @@ trigger1 = time = 3
 time = 41
 movetime = 41
 anim = 100
-pos = ceil(-68 * const(size.xscale)), ceil(-63 * const(size.yscale))
+pos = -68 * const(size.xscale), -63 * const(size.yscale)
 sound = s0, 8500
 p2defmul = 1
 darken = !var(65)
@@ -113,7 +113,7 @@ time = 1
 type = width
 trigger1 = animelemtime(2) >= -1
 trigger1 = animelemtime(12) < 0
-edge = 0, ceil(32 * const(size.xscale))
+edge = 0, 32 * const(size.xscale)
 
 [State 3000, FX]
 type = explod
@@ -136,7 +136,7 @@ anim = 7106
 ID = 7106
 sprpriority = 3
 postype = p1
-pos = ceil(-15 * const(size.xscale)), 0
+pos = -15 * const(size.xscale), 0
 ownpal = 1
 scale = 0.5, 0.5
 pausemovetime = -1
@@ -150,7 +150,7 @@ stateno = 3005
 ID = 3005
 name = "Soul Phoenix"
 postype = p1
-pos = ceil(12 * const(size.xscale)), -50
+pos = 12 * const(size.xscale), -50
 size.xscale = 0.75
 size.yscale = 0.75
 ownpal = 1
@@ -261,7 +261,7 @@ stateno = 8500
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(-16 * const(size.xscale)), ceil(-90 * const(size.yscale))
+pos = -16 * const(size.xscale), -90 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -273,7 +273,7 @@ trigger1 = time = 3
 time = 41
 movetime = 41
 anim = 100
-pos = ceil(-13 * const(size.xscale)), ceil(-85 * const(size.yscale))
+pos = -13 * const(size.xscale), -85 * const(size.yscale)
 sound = s0, 8500
 p2defmul = 1
 darken = !var(65)
@@ -295,7 +295,7 @@ time = 1
 [State 3050, Width]
 type = width
 trigger1 = animelem = 4
-value = ceil(24 * const(size.xscale)), 0
+value = 24 * const(size.xscale), 0
 
 [State 3050, FX]
 type = explod
@@ -319,7 +319,7 @@ stateno = 3055
 ID = 3055
 name = "Soul Phoenix"
 postype = p1
-pos = ceil(60 * const(size.xscale)), -48
+pos = 60 * const(size.xscale), -48
 size.xscale = 0.75
 size.yscale = 0.75
 ownpal = 1
@@ -424,7 +424,6 @@ persistent = 0
 type = selfstate
 trigger1 = hitshakeover
 trigger1 = vel y > 0
-trigger1 = !hitfall
 value = 5040
 
 [State 7697, Fall Recovery]
@@ -516,7 +515,7 @@ stateno = 8500
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(-25 * const(size.xscale)), ceil(-35 * const(size.yscale))
+pos = -25 * const(size.xscale), -35 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -528,7 +527,7 @@ trigger1 = time = 3
 time = 41
 movetime = 41
 anim = 100
-pos = ceil(-25 * const(size.xscale)), ceil(-35 * const(size.yscale))
+pos = -25 * const(size.xscale), -35 * const(size.yscale)
 sound = s0, 8500
 p2defmul = 1
 darken = !var(65)
@@ -613,7 +612,6 @@ trigger1 = animelem = 2 || animelem = 3
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (3 + hitcount))
 attr = S, HA
 damage = 30, 8
-dizzypoints = 0
 animtype = Back
 hitflag = MAFD
 guardflag = M
@@ -661,7 +659,6 @@ trigger1 = animelem = 4 || animelem = 6 || animelem = 8 || animelem = 9 || anime
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (3 + hitcount))
 attr = A, HA
 damage = 30, 8
-dizzypoints = 0
 animtype = Up
 hitflag = MAF
 guardflag = M
@@ -794,7 +791,7 @@ stateno = 8510
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(-43 * const(size.xscale)), ceil(-68 * const(size.yscale))
+pos = -43 * const(size.xscale), -68 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -806,7 +803,7 @@ trigger1 = time = 3
 time = 43
 movetime = 43
 anim = 101
-pos = ceil(-43 * const(size.xscale)), ceil(-68 * const(size.yscale))
+pos = -43 * const(size.xscale), -68 * const(size.yscale)
 sound = s0, 8510
 p2defmul = 1
 darken = !var(65)
@@ -976,7 +973,7 @@ stateno = 8500
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(-39 * const(size.xscale)), ceil(-70 * const(size.yscale))
+pos = -39 * const(size.xscale), -70 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -988,7 +985,7 @@ trigger1 = time = 3
 time = 41
 movetime = 41
 anim = 100
-pos = ceil(-39 * const(size.xscale)), ceil(-70 * const(size.yscale))
+pos = -39 * const(size.xscale), -70 * const(size.yscale)
 sound = s0, 8500
 p2defmul = 1
 darken = !var(65)
@@ -1078,7 +1075,7 @@ accel = 0, 0.05
 anim = 3407
 sprpriority = 3
 postype = p1
-pos = ceil(-45 * const(size.xscale)), -70
+pos = -45 * const(size.xscale), -70
 random = 20, 20
 scale = 0.5, 0.5
 supermovetime = -1
@@ -1131,7 +1128,7 @@ y = 0
 State 3401, Pos]
 type = posset
 trigger1 = time <= 10
-x = (-((gamewidth / 2.0) + 40) -50 * sin(time / 3.33)) * facing
+x = (-((gamewidth / 2.0) + 40) -50 * 0) * facing
 
 [State 3401, Vel]
 type = velset
@@ -1170,7 +1167,7 @@ stateno = 3405
 ID = 3405
 name = "Drill FX"
 postype = p1
-pos = ceil(76 * const(size.xscale)), -43
+pos = 76 * const(size.xscale), -43
 size.xscale = 0.5
 size.yscale = 0.5
 ownpal = 1
@@ -1182,7 +1179,6 @@ trigger1 = !((movecontact + movereversed) % 3)
 air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 13)
 attr = A, HA
 damage = 120, 30
-dizzypoints = 0
 animtype = Hard
 air.animtype = Back
 hitflag = MAF
@@ -1328,7 +1324,7 @@ stateno = 8520
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(20 * const(size.xscale)), ceil(-73 * const(size.yscale))
+pos = 20 * const(size.xscale), -73 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -1340,7 +1336,7 @@ trigger1 = time = 3
 time = 45
 movetime = 45
 anim = 102
-pos = ceil(20 * const(size.xscale)), ceil(-73 * const(size.yscale))
+pos = 20 * const(size.xscale), -73 * const(size.yscale)
 sound = s0, 8520
 p2defmul = 1
 darken = !var(65)
@@ -1382,7 +1378,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 ID = 4000
 attr = S, HA
 damage = 0, 0
-dizzypoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1643,7 +1638,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = S, HA
 damage = 25, 6
-dizzypoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1685,7 +1679,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = S, HA
 damage = 25, 6
-dizzypoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1726,7 +1719,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = S, HA
 damage = 25, 6
-dizzypoints = 0
 animtype = Up
 hitflag = MAF
 guardflag = M
@@ -1773,7 +1765,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = A, HA
 damage = 25, 6
-dizzypoints = 0
 animtype = Hard
 fall.animtype = Hard
 hitflag = MAF
@@ -1821,7 +1812,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4010
 attr = A, HA
 damage = 45, 11
-dizzypoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -1899,7 +1889,7 @@ trigger1 = anim = 4010 && animelem = 46
 anim = 4095
 sprpriority = 4
 postype = p1
-pos = ceil(-10 * const(size.xscale)), -60
+pos = -10 * const(size.xscale), -60
 scale = 0.75, 0.75
 removeongethit = 1
 ownpal = 1
@@ -1910,7 +1900,7 @@ trigger1 = anim = 4011 && animelem = 31
 anim = 4095
 sprpriority = 4
 postype = p1
-pos = ceil(-10 * const(size.xscale)), -60
+pos = -10 * const(size.xscale), -60
 scale = 0.75, -0.75
 bindtime = -1
 removeongethit = 1
@@ -1966,7 +1956,6 @@ statetype = A
 physics = A
 
 
-;----- DIZZY TARGET -----
 [Statedef 1114010]
 type = S
 physics = N
@@ -1985,7 +1974,6 @@ trigger1 = !time
 y = 0
 
 [State 1114010, fall]
-type = hitfallset
 trigger1 = 1
 value = 0
 
@@ -2149,7 +2137,7 @@ stateno = 8510
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(20 * const(size.xscale)), ceil(-73 * const(size.yscale))
+pos = 20 * const(size.xscale), -73 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -2161,7 +2149,7 @@ trigger1 = time = 3
 time = 43
 movetime = 43
 anim = 101
-pos = ceil(20 * const(size.xscale)), ceil(-73 * const(size.yscale))
+pos = 20 * const(size.xscale), -73 * const(size.yscale)
 sound = s0, 8510
 p2defmul = 1
 darken = !var(65)
@@ -2204,7 +2192,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
 ID = 4050
 attr = A, HA
 damage = 0, 0
-dizzypoints = 0
 animtype = Hard
 hitflag = MAF
 guardflag = M
@@ -2403,7 +2390,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4060
 attr = S, HA
 damage = 30, 8
-dizzypoints = 0
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -2450,7 +2436,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4060
 attr = S, HA
 damage = 30, 8
-dizzypoints = 0
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -2497,7 +2482,6 @@ air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 99)
 ID = 4060
 attr = A, HA
 damage = 30, 8
-dizzypoints = 0
 animtype = Hard
 air.animtype = Hard
 fall.animtype = Hard
@@ -2557,7 +2541,7 @@ trigger1 = animelem = 29
 anim = 4095
 sprpriority = 4
 postype = p1
-pos = ceil(-10 * const(size.xscale)), -60
+pos = -10 * const(size.xscale), -60
 scale = 0.75, -0.75
 removeongethit = 1
 ownpal = 1
@@ -2583,7 +2567,6 @@ trigger1 = 1
 value = 5012
 
 [State 1114060, fall]
-type = hitfallset
 trigger1 = 1
 value = 1
 
@@ -2647,7 +2630,7 @@ stateno = 8520
 ID = 8500
 name = "Superpause FX"
 postype = p1
-pos = ceil(-22 * const(size.xscale)), ceil(-82 * const(size.yscale))
+pos = -22 * const(size.xscale), -82 * const(size.yscale)
 supermovetime = 255
 size.xscale = 1
 size.yscale = 1
@@ -2659,7 +2642,7 @@ trigger1 = time = 3
 time = 45
 movetime = 45
 anim = 102
-pos = ceil(-22 * const(size.xscale)), ceil(-82 * const(size.yscale))
+pos = -22 * const(size.xscale), -82 * const(size.yscale)
 sound = s0, 8520
 p2defmul = 1
 darken = !var(65)
@@ -2689,7 +2672,7 @@ stateno = 4105
 ID = 4105
 name = "Eternal Slumber"
 postype = p1
-pos = ceil(33 * const(size.xscale)), -74
+pos = 33 * const(size.xscale), -74
 size.xscale = 0.75
 size.yscale = 0.75
 size.ground.back = 8
@@ -2702,7 +2685,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = ceil(20 * const(size.xscale)), -71
+pos = 20 * const(size.xscale), -71
 sprpriority = 0
 
 [State 4100, Bat Explods]
@@ -2711,7 +2694,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = ceil(28 * const(size.xscale)), -44
+pos = 28 * const(size.xscale), -44
 sprpriority = 0
 
 [State 4100, Bat Explods]
@@ -2720,7 +2703,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = ceil(-11 * const(size.xscale)), -18
+pos = -11 * const(size.xscale), -18
 sprpriority = 2
 
 [State 4100, Bat Explods]
@@ -2738,7 +2721,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = ceil(11 * const(size.xscale)), -17
+pos = 11 * const(size.xscale), -17
 sprpriority = 2
 
 [State 4100, Bat Explods]
@@ -2747,7 +2730,7 @@ trigger1 = animelem = 2
 anim = 6100
 ID = 4100
 postype = p1
-pos = ceil(-26 * const(size.xscale)), -37
+pos = -26 * const(size.xscale), -37
 sprpriority = 2
 
 [State 4100, Bat Explods]
@@ -3008,8 +2991,7 @@ type = targetlifeadd
 triggerall = numtarget(4105)
 trigger1 = animelem = 3 || animelem = 5 || animelem = 7 || animelem = 9
 trigger2 = animelem = 11 || animelem = 13 || animelem = 15 || animelem = 17
-value = floor(-25 * var(67))
-dizzy = 0
+value = -25 * var(67)
 kill = animelem = 17
 
 [State 4107, Damage]
@@ -3017,14 +2999,14 @@ type = null
 trigger1 = numtarget(4105)
 trigger1 = animelem = 17
 ID = 4105
-value = floor(-600 * var(67))
+value = -600 * var(67)
 
 ;[State 4107, Damage]
 ;type = targetpoweradd
 ;trigger1 = numtarget(4105)
 ;trigger1 = animelem = 17
 ;ID = 4105
-;value = floor(-1000 * var(67))
+;value = -1000 * var(67)
 
 [State 4107, givepower]
 type = targetpoweradd
@@ -3172,7 +3154,6 @@ type = posset
 trigger1 = 1
 y = 0
 
-[State 4121, Dizzy Start]
 type = null
 trigger1 = alive
 trigger1 = life > 0
