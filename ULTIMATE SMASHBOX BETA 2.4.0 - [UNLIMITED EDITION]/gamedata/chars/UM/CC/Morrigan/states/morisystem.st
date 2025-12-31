@@ -1008,6 +1008,7 @@ x = 1
 
 [State 151, Vel]
 type = velset
+trigger1 = 1
 trigger2 = hitover
 x = 0
 
@@ -1099,6 +1100,7 @@ x = 1
 
 [State 153, Vel]
 type = velset
+trigger1 = 1
 trigger2 = hitover
 x = 0
 
@@ -2075,6 +2077,7 @@ facing = -1
 [State 770, End]
 type = changestate
 triggerall = !animtime
+trigger1 = 1
 trigger2 = helper(775), stateno = 775
 value = 0
 ctrl = 1
