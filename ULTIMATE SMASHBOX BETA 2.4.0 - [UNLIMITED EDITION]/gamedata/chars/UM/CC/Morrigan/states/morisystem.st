@@ -62,7 +62,6 @@ type = changeanim
 trigger1 = !time
 trigger1 = anim = 12
 value = 10
-elem = 5 - animelemno(0
 
 [State 10, Anim]
 type = changeanim
@@ -111,7 +110,6 @@ type = changeanim
 trigger1 = !time
 trigger1 = anim = 10
 value = 12
-elem = 5 - animelemno(0
 
 [State 12, Anim]
 type = changeanim

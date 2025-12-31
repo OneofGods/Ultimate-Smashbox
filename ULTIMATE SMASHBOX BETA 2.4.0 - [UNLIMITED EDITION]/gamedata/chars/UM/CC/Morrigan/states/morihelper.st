@@ -1629,9 +1629,7 @@ alpha = (8 * time, 256 - (8 * time)
 type = changeanim
 triggerall = (root, stateno = 4010 && (root, anim = [4010, 4011])
 trigger1 = anim != (root, anim)
-trigger2 = animelemno(0) != (root, animelemno(0))
 value = root, anim
-elem = root, animelemno(0
 
 [State 4015, Pos]
 type = posset
@@ -1976,9 +1974,7 @@ alpha = (8 * time, 256 - (8 * time)
 type = changeanim
 triggerall = (root, stateno = 4060 && (root, anim = 4060
 trigger1 = anim != (root, anim)
-trigger2 = animelemno(0) != (root, animelemno(0))
 value = 4060
-elem = root, animelemno(0
 
 [State 4065, Bind]
 type = bindtoroot
@@ -2964,7 +2960,6 @@ trigger1 = 1
 ID = 6020
 anim = anim
 animfreeze = 1
-animelem = animelemno(0
 postype = p1
 vel = root, vel x, root, vel y
 friction = 0.5, 0.5
@@ -3018,7 +3013,6 @@ trigger1 = 1
 ID = 6020
 anim = anim
 animfreeze = 1
-animelem = animelemno(0
 postype = p1
 sprpriority = sprpriority - 1
 removetime = 8

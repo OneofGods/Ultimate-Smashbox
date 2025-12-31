@@ -106,9 +106,7 @@ type = changeanim
 trigger1 = selfanimexist(root, anim)
 trigger1 = root, stateno != [770, 771]
 trigger1 = (root, anim = [5000, 5300], 1
-trigger1 = (anim != root, anim) || (animelemno(0) != root, animelemno(0))
 value = root, anim
-elem = root, animelemno(0
 ignorehitpause = 1
 
 [State 775, Custom States Anim]
@@ -1642,7 +1640,6 @@ velset = 0, 0
 type = changeanim
 trigger1 = 1
 value = anim
-elem = animelemno(0
 
 [State 779, shrink]
 type = angledraw

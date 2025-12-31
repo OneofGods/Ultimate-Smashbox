@@ -3902,7 +3902,6 @@ type = changeanim
 trigger1 = anim = 200
 trigger1 = animtime = -1
 value = 200
-elem = animelemno(-1
 
 [State 895, NHB]
 type = nothitby
