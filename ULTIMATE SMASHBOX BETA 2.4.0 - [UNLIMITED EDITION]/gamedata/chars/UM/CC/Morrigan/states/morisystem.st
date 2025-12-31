@@ -154,7 +154,6 @@ value = 21
 [State 20, Walking FX]
 type = helper
 trigger1 = anim = [20, 21]
-trigger1 = !numhelper(6010)
 helpertype = normal
 stateno = 6010
 ID = 6010
@@ -411,7 +410,6 @@ value = 1
 
 [State 100, Jet]
 type = helper
-trigger1 = !numhelper(6020)
 trigger1 = anim = 100 || anim = 110 || anim = 115
 helpertype = normal
 stateno = 6020
@@ -542,7 +540,6 @@ value = 1
 
 [State 105, Jet]
 type = helper
-trigger1 = !numhelper(6020)
 trigger1 = anim = 105 || anim = 110 || anim = 115
 helpertype = normal
 stateno = 6020
@@ -972,7 +969,6 @@ physics = S
 type = forcefeedback
 trigger1 = !time
 waveform = square
-time = max(4, gethitvar(hitshaketime) / 2)
 
 
 ;----- STAND GUARD HIT 2 (Knocked back) -----
@@ -989,13 +985,11 @@ x = 1
 
 [State 151, Vel]
 type = velset
-trigger1 = time = gethitvar(slidetime)
 trigger2 = hitover
 x = 0
 
 [State 151, Ctrl]
 type = ctrlset
-trigger1 = time = gethitvar(ctrltime)
 value = 1
 
 [State 151, High to Low]
@@ -1063,7 +1057,6 @@ physics = S
 type = forcefeedback
 trigger1 = !time
 waveform = square
-time = max(4, gethitvar(hitshaketime) / 2)
 
 
 ;----- CROUCH GUARD HIT 2 (Knocked back) -----
@@ -1080,13 +1073,11 @@ x = 1
 
 [State 153, Vel]
 type = velset
-trigger1 = time = gethitvar(slidetime)
 trigger2 = hitover
 x = 0
 
 [State 153, Ctrl]
 type = ctrlset
-trigger1 = time = gethitvar(ctrltime)
 value = 1
 
 [State 153, High to Low]
@@ -1138,7 +1129,6 @@ value = 155
 type = forcefeedback
 trigger1 = !time
 waveform = square
-time = max(4, gethitvar(hitshaketime) / 2)
 
 
 ;----- AIR GUARD HIT 2 (Knocked away) -----
@@ -1161,7 +1151,6 @@ y = const(movement.yaccel)
 
 [State 155, Ctrl]
 type = ctrlset
-trigger1 = time = gethitvar(ctrltime)
 value = 1
 
 [State 155, Var]
@@ -1845,7 +1834,6 @@ add = 75 + 0, 25 + 0, 0
 
 [State 740, FX]
 type = helper
-trigger1 = !numhelper(7240)
 helpertype = normal
 stateno = 7240
 ID = 7240
@@ -1857,7 +1845,6 @@ ownpal = 1
 
 [State 740, FX]
 type = helper
-trigger1 = !numhelper(7241)
 helpertype = normal
 stateno = 7241
 ID = 7241
@@ -1870,7 +1857,6 @@ ownpal = 1
 [State 740, Bats]
 type = helper
 trigger1 = anim = 740
-trigger1 = !numhelper(6108)
 helpertype = normal
 stateno = 6108
 ID = 6108
@@ -2045,8 +2031,6 @@ facing = -1
 [State 770, End]
 type = changestate
 triggerall = !animtime
-trigger1 = !numhelper(775)
-trigger2 = numhelper(775)
 trigger2 = helper(775), stateno = 775
 value = 0
 ctrl = 1
@@ -2318,7 +2302,6 @@ time = 1
 [State 170, Bats]
 type = helper
 trigger1 = anim = 170
-trigger1 = numhelper(6100) < 2
 helpertype = normal
 stateno = 6104
 ID = 6100
@@ -2378,7 +2361,6 @@ postype = p1
 
 [State 191, Bats]
 type = helper
-trigger1 = animelemtime(2) < 0 && numhelper(6100) < 6
 helpertype = normal
 stateno = 6106
 ID = 6100
@@ -2504,7 +2486,6 @@ flag = intro
 
 [State 360, Bats]
 type = helper
-trigger1 = numhelper(6100) < 5
 helpertype = normal
 stateno = 6111
 ID = 6100
@@ -2581,7 +2562,6 @@ value = 6, 2
 
 [State 181, Bats]
 type = helper
-trigger1 = animelemtime(2) < 0 && numhelper(6100) < 8
 helpertype = normal
 stateno = 6107
 ID = 6100
@@ -3464,12 +3444,6 @@ triggerall = alive
 triggerall = time <= 1
 triggerall = movetype = H
 triggerall = stateno != [120, 155]
-triggerall = gethitvar(damage) = (0, life)
-trigger1 = gethitvar(animtype) = 0 && random < 250
-trigger2 = gethitvar(animtype) = 1 && random < 375
-trigger3 = gethitvar(animtype) >= 2 && random < 500
-trigger4 = gethitvar(damage) >= 100
-trigger5 = gethitvar(fall)
 value = 5000, (random % 3)
 channel = 0
 
@@ -3479,7 +3453,6 @@ triggerall = alive
 triggerall = time = 1
 triggerall = movetype = H
 trigger1 = stateno = 5100
-trigger1 = gethitvar(fall.damage) > 0 || sysvar(1) > 14
 trigger2 = stateno = 5050 || stateno = 5100
 trigger2 = prevstateno != [5000, 5120]
 value = 5000, (random % 3)
@@ -3558,7 +3531,6 @@ scale = 1.20, 1
 [State -3, Parry Detection]
 type = helper
 triggerall = roundstate = 2
-triggerall = !numhelper(705)
 triggerall = !var(27)
 triggerall = (movetype = I && ctrl) || stateno = [700, 702] || stateno = 5120
 trigger1 = command != "rlsdir"
@@ -3584,7 +3556,6 @@ supermovetime = 65535
 
 [State -3, Parry Attacks]
 type = changestate
-trigger1 = numhelper(705)
 trigger1 = stateno != [700, 702]
 trigger1 = helper(705), stateno = 706
 value = 700
@@ -3592,7 +3563,6 @@ ctrl = 0
 
 [State -3, Parry Projectiles]
 type = hitoverride
-trigger1 = numhelper(705)
 trigger1 = stateno != [700, 702]
 trigger1 = !(helper(705), var(0)) && (helper(705), anim = 705)
 attr = SA, AP
@@ -3603,7 +3573,6 @@ ignorehitpause = 1
 
 [State -3, Parry Projectiles]
 type = hitoverride
-trigger1 = numhelper(705)
 trigger1 = stateno != [700, 702]
 trigger1 = !(helper(705), var(0)) && (helper(705), anim = 706)
 attr = C, AP
@@ -3614,7 +3583,6 @@ ignorehitpause = 1
 
 [State -3, Parry Projectiles]
 type = hitoverride
-trigger1 = numhelper(705)
 trigger1 = stateno != [700, 702]
 trigger1 = !(helper(705), var(0)) && (helper(705), anim = 707)
 attr = SCA, AP
@@ -3659,21 +3627,13 @@ ignorehitpause = 1
 type = varset
 triggerall = var(27) <= 0
 triggerall = var(42) != 1
-trigger1 = stateno != 1000 && numhelper(1005)
 trigger1 = helper(1005), stateno = 1005
-trigger2 = stateno != 1010 && numhelper(1015)
 trigger2 = helper(1015), stateno = 1015
-trigger3 = stateno != 1050 && numhelper(1055)
 trigger3 = helper(1055), stateno = 1055
-trigger4 = stateno != 1060 && numhelper(1065)
 trigger4 = helper(1065), stateno = 1065
-trigger5 = stateno != 3000 && numhelper(3005)
 trigger5 = helper(3005), stateno = 3005
-trigger6 = stateno != 3050 && numhelper(3055)
 trigger6 = helper(3055), stateno = 3055
-trigger7 = stateno != 3300 && numhelper(3305)
 trigger7 = helper(3305), stateno = 3305
-trigger8 = stateno != 4100 && numhelper(4105)
 trigger8 = helper(4105), stateno = 4105
 var(42) = 1
 ignorehitpause = 1
@@ -3868,7 +3828,6 @@ ignorehitpause = 1
 [State -3, Lie Down Bats]
 type = helper
 trigger1 = stateno = 5110 || stateno = 5115 || stateno = 5150 || stateno = 5230
-trigger1 = numhelper(6100) < 4
 helpertype = normal
 stateno = 6105
 ID = 6100
@@ -3973,15 +3932,10 @@ value = 0
 type = helper
 triggerall = winKO
 triggerall = roundstate = 3
-triggerall = var(50) && !numhelper(8600)
 trigger1 = movecontact = [1, 4]
-trigger2 = numhelper(1005)
 trigger2 = helper(1005), var(52)
-trigger3 = numhelper(1015)
 trigger3 = helper(1015), var(52)
-trigger4 = numhelper(1055)
 trigger4 = helper(1055), var(52)
-trigger5 = numhelper(1065)
 trigger5 = helper(1065), var(52)
 trigger6 = stateno = 810
 trigger6 = animelemtime(6) = [0, 1]
@@ -4003,19 +3957,15 @@ supermovetime = 999
 [State -3, Super Finish]
 type = helper
 triggerall = roundstate = 3
-triggerall = !numhelper(8600)
 trigger1 = movecontact = [1, 4]
 trigger1 = stateno = [3000, 4999]
 trigger1 = var(59) = stateno
-trigger2 = numhelper(3005)
 trigger2 = helper(3005), var(52)
 trigger2 = var(59) = 3000
-trigger3 = numhelper(3055)
 trigger3 = helper(3055), var(52)
 trigger3 = var(59) = 3050
 trigger4 = stateno = 3300 && var(52)
 trigger4 = var(59) = 3300
-trigger5 = numhelper(3305)
 trigger5 = helper(3305), var(52)
 trigger5 = var(59) = 3300
 trigger6 = stateno = 4110

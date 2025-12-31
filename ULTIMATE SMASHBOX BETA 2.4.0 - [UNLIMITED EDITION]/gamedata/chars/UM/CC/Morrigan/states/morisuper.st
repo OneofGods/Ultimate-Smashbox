@@ -374,27 +374,21 @@ value = 5020
 [State 7697, Type]
 type = statetypeset
 trigger1 = statetype != A
-trigger1 = gethitvar(fall) || gethitvar(yvel) || pos y || vel y
 statetype = A
 persistent = 0
 
 [state 7697, Anim]
 type = changeanim
 trigger1 = !time
-trigger1 = gethitvar(animtype) != [3,5]
-value = 5010 + gethitvar(animtype)
 
 [state 7697, Anim]
 type = changeanim
 trigger1 = !time
-trigger1 = gethitvar(animtype) = [3,5]
 value = 5030
 
 [state 7697, Anim]
 type = changeanim
 trigger1 = !time
-trigger1 = (gethitvar(animtype) = [4,5]) && (selfanimexist(5047 + gethitvar(animtype)))
-value = 5047 + gethitvar(animtype)
 
 [state 7697, Anim]
 type = changeanim
@@ -411,7 +405,6 @@ value = 7697
 type = veladd
 trigger1 = hitshakeover
 trigger1 = statetype = A
-y = max(0.35, gethitvar(yaccel))
 
 [State 7697, Vel]
 type = hitvelset
@@ -431,7 +424,6 @@ type = selfstate
 trigger1 = vel y > 0
 trigger1 = pos y >= const(movement.air.gethit.groundrecover.ground.threshold)
 trigger1 = 1
-trigger1 = gethitvar(fall.recover)
 trigger1 = command = "recovery"
 value = 5200
 
@@ -674,13 +666,13 @@ guardsound.channel = 2
 ground.type = High
 ground.hittime = 1 + 18
 ground.slidetime = 18
-ground.velocity = -4 * !numhelper(775), -7.0
+ground.velocity = -4 , -7.0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
 air.type = Low
-air.velocity = -4 * !numhelper(775), -7.0
+air.velocity = -4 , -7.0
 guard.velocity = -10.52
 guard.cornerpush.veloff = 0
 getpower = 0, 0
@@ -887,7 +879,6 @@ anim = 3301
 ctrl = 0
 velset = 0, 0
 sprpriority = 2
-movehitpersist = 1
 hitcountpersist = 1
 
 [State 3301, Pos]
@@ -1042,7 +1033,6 @@ channel = 0
 [State 3400, Jet]
 type = helper
 trigger1 = time = 43
-trigger1 = !numhelper(6020)
 helpertype = normal
 stateno = 6020
 ID = 6020
@@ -1055,7 +1045,6 @@ supermovetime = 60
 
 [State 3400, Jet]
 type = helper
-trigger1 = time >= 43 && !numhelper(6028)
 helpertype = normal
 stateno = 6028
 ID = 6028
@@ -1069,7 +1058,6 @@ supermovetime = 60
 [State 3400, Particles]
 type = explod
 trigger1 = time >= 43
-trigger1 = numhelper(6020)
 vel = -1 + (random / 1000.0), 0
 accel = 0, 0.05
 anim = 3407
@@ -1161,7 +1149,6 @@ value = 3402
 
 [State 3401, Drill FX]
 type = helper
-trigger1 = anim = 3402 && animelemtime(3) >= 0 && !numhelper(3405)
 helpertype = normal
 stateno = 3405
 ID = 3405
@@ -1195,13 +1182,13 @@ guardsound.channel = 2
 ground.type = High
 ground.hittime = 1 + 18
 ground.slidetime = 18
-ground.velocity = -4 * !numhelper(775), 0
+ground.velocity = -4 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
 air.type = Low
-air.velocity = -2 * !numhelper(775), -3
+air.velocity = -2 , -3
 air.fall = 1
 fall.recover = 0
 down.recover = 1
@@ -1232,7 +1219,6 @@ anim = 3403
 ctrl = 0
 velset = 0, 0
 sprpriority = 2
-movehitpersist = 1
 hitcountpersist = 1
 
 [State 3403, Pos]
@@ -1356,7 +1342,6 @@ x = 7.5
 [State 4000, Jet]
 type = helper
 trigger1 = animelemtime(4) >= 0
-trigger1 = !numhelper(6020)
 helpertype = normal
 stateno = 6020
 ID = 6020
@@ -1400,7 +1385,7 @@ guard.ctrltime = 1 + 16
 guard.slidetime = 16
 guard.velocity = -7.51
 air.type = Low
-air.velocity = -5 * !numhelper(775), -5
+air.velocity = -5 , -5
 getpower = 0, 0
 givepower = 0
 envshake.time = 12; super
@@ -1416,14 +1401,12 @@ yaccel = 0.4850
 
 [State 4000, Super Pause Away]
 type = superpause
-trigger1 = movehit = 1
 time = 0
 anim = -1
 p2defmul = 1
 
 [State 4000, Drop Others]
 type = targetdrop
-trigger1 = movehit
 trigger1 = numtarget > 1
 trigger1 = numtarget(4000)
 excludeID = 4000
@@ -1431,7 +1414,6 @@ ignorehitpause = 1
 
 [State 4000, P2 State]
 type = targetstate
-trigger1 = movehit
 trigger1 = numtarget(4000)
 trigger1 = target(4000), stateno = 5000 || target(4000), stateno = 5010 || target(4000), stateno = 5020
 ID = 4000
@@ -1439,7 +1421,6 @@ value = 1114010
 
 [State 4000, P1 State]
 type = changestate
-trigger1 = movehit
 value = 4010
 
 [State 4000, Guarded]
@@ -1463,7 +1444,6 @@ anim = 4001
 ctrl = 0
 velset = 0, 0
 sprpriority = 2
-movehitpersist = 1
 hitcountpersist = 1
 
 [State 4001, Pos]
@@ -1541,7 +1521,6 @@ ignorehitpause = 1
 [State 4010, Guarded]
 type = changestate
 trigger1 = time >= 36
-trigger1 = (moveguarded = 1 || movereversed = 1) && movehit != 1
 trigger2 = anim = 4011
 trigger2 = animelemtime(4) > 0 && animelemtime(32) < 0
 trigger2 = (movecontact + movereversed) != [1, 24]
@@ -1551,7 +1530,6 @@ value = 4002
 type = targetbind
 trigger1 = anim = 4010
 trigger1 = animelemtime(48) < 0
-trigger1 = movehit >= (moveguarded + movereversed)
 trigger1 = numtarget
 trigger1 = target, stateno = [5000, 5050] || target, stateno = 1114010
 pos = 80 * const(size.xscale), 0
@@ -1559,7 +1537,6 @@ ignorehitpause = 1
 
 [State 4010, Bind]
 type = targetbind
-trigger1 = movehit = 1
 trigger1 = anim = 4011
 trigger1 = animelemtime(32) < 0
 trigger1 = numtarget
@@ -1858,7 +1835,6 @@ y = -9
 [State 4010, Jet]
 type = helper
 trigger1 = anim = 4010 && animelemtime(56) >= 0
-trigger1 = !numhelper(6020)
 helpertype = normal
 stateno = 6020
 ID = 6020
@@ -2045,7 +2021,6 @@ anim = 4003
 ctrl = 0
 velset = 0, 0
 sprpriority = 2
-movehitpersist = 1
 hitcountpersist = 1
 
 [State 4003, Pos]
@@ -2169,7 +2144,6 @@ x = 6.75
 [State 4050, Jet]
 type = helper
 trigger1 = animelemtime(4) >= 0
-trigger1 = !numhelper(6020)
 helpertype = normal
 stateno = 6020
 ID = 6020
@@ -2207,13 +2181,13 @@ guardsound.channel = 2
 ground.type = Low
 ground.hittime = 1 + 18
 ground.slidetime = 18
-ground.velocity = -10 * !numhelper(775), 0
+ground.velocity = -10 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
 air.type = Low
-air.velocity = -5 * !numhelper(775), -5
+air.velocity = -5 , -5
 getpower = 0, 0
 givepower = 0
 envshake.time = 12; super
@@ -2229,14 +2203,12 @@ yaccel = 0.4850
 
 [State 4050, Super Pause Away]
 type = superpause
-trigger1 = movehit = 1
 time = 0
 anim = -1
 p2defmul = 1
 
 [State 4050, Drop Others]
 type = targetdrop
-trigger1 = movehit
 trigger1 = numtarget > 1
 trigger1 = numtarget(4050)
 excludeID = 4050
@@ -2244,14 +2216,12 @@ ignorehitpause = 1
 
 [State 4050, P2 State]
 type = targetstate
-trigger1 = movehit
 trigger1 = numtarget(4050)
 trigger1 = target(4050), stateno = 5000 || target(4050), stateno = 5010 || target(4050), stateno = 5020
 value = 1114060
 
 [State 4050, P1 State]
 type = changestate
-trigger1 = movehit
 value = 4060
 
 [State 4050, Guarded]
@@ -2312,14 +2282,12 @@ ignorehitpause = 1
 type = changestate
 trigger1 = moveguarded
 trigger2 = time >= 36
-trigger2 = !(movehit + movereversed)
 value = 4002
 
 [State 4060, Bind]
 type = targetbind
 trigger1 = numtarget
 trigger1 = animelemtime(3) < 0
-trigger1 = (moveguarded + movereversed) <= movehit
 trigger1 = target, stateno = 1114060
 pos = 64 * const(size.xscale), -75 - target, const(size.mid.pos.y)
 ignorehitpause = 1
@@ -2329,7 +2297,6 @@ type = targetbind
 trigger1 = numtarget
 trigger1 = animelemtime(3) >= 0
 trigger1 = animelemtime(30) < 0
-trigger1 = (moveguarded + movereversed) <= movehit
 trigger1 = target, stateno = [5000, 5050]
 pos = 64 * const(size.xscale), -75 - target, const(size.mid.pos.y)
 ID = 4060
@@ -2744,7 +2711,6 @@ supermovetime = 47
 
 [State 4100, Wait]
 type = changeanim
-trigger1 = numhelper(4105)
 trigger1 = animelemtime(8) >= 0
 trigger1 = helper(4105), stateno = 4105
 value = 4100
@@ -2766,7 +2732,6 @@ persistent = 0
 
 [State 4100, Success]
 type = changestate
-trigger1 = numhelper(4105)
 trigger1 = animelemtime(5) >= 0
 trigger1 = numtarget(4105)
 trigger1 = target(4105), stateno = 4120
@@ -2856,7 +2821,6 @@ time = 0
 ;[State 4110, Sprite Priority]
 ;type = sprpriority
 ;trigger1 = animelem = 2
-;trigger1 = numhelper(4190)
 ;value = helper(4190), sprpriority + 1
 
 [State 4110, Shadow]
@@ -3158,7 +3122,6 @@ type = null
 trigger1 = alive
 trigger1 = life > 0
 trigger1 = 1
-trigger1 = !gethitvar(isbound)
 value = 1
 
 [State 4121, End]

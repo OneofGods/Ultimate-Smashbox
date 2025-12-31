@@ -313,7 +313,6 @@ anim = 1053
 ctrl = 0
 velset = 0, 0
 sprpriority = 2
-movehitpersist = 1
 hitcountpersist = 1
 
 [State 1053, Pos]
@@ -621,14 +620,14 @@ guardsound.channel = 2
 ground.type = Low
 ground.hittime = 1 + 18; + 2 * var(105)
 ground.slidetime = 18
-ground.velocity = -3.0) * !numhelper(775), -6.0)
+ground.velocity = -3.0) , -6.0)
 air.type = Low
-air.velocity = -3.0) * !numhelper(775), -6.0)
+air.velocity = -3.0) , -6.0)
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
+guard.velocity = -10.52 
 guard.cornerpush.veloff = 0
 getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
@@ -666,14 +665,14 @@ guardsound.channel = 2
 ground.type = High
 ground.hittime = 1 + 18; + 2 * var(105)
 ground.slidetime = 18
-ground.velocity = -3.0) * !numhelper(775), -6.0)
+ground.velocity = -3.0) , -6.0)
 air.type = Low
-air.velocity = -3.0) * !numhelper(775), -6.0)
+air.velocity = -3.0) , -6.0)
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
+guard.velocity = -10.52 
 guard.cornerpush.veloff = 0
 getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
@@ -686,7 +685,7 @@ fall.recover = 1
 fall.recovertime = 120
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
-airguard.velocity = -6.00 * !numhelper(775), -1.00
+airguard.velocity = -6.00 , -1.00
 ;p1sprpriority = sprpriority
 forcestand = 1
 airguard.cornerpush.veloff = 0
@@ -727,7 +726,6 @@ anim = 1109
 ctrl = 0
 velset = 0, 0
 sprpriority = 2
-movehitpersist = 1
 hitcountpersist = 1
 
 [State 1109, Pos]
@@ -908,7 +906,7 @@ ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
+guard.velocity = -10.52 
 guard.cornerpush.veloff = 0
 getpower = 0, 0
 givepower = 40, 40
@@ -945,14 +943,14 @@ guardsound.channel = 2
 ground.type = High
 ground.hittime = 1 + 18; + 2 * var(105)
 ground.slidetime = 18
-ground.velocity = -4.0 * !numhelper(775), -8.5
+ground.velocity = -4.0 , -8.5
 air.type = Low
-air.velocity = -4.0 * !numhelper(775), -8.5
+air.velocity = -4.0 , -8.5
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
+guard.velocity = -10.52 
 guard.cornerpush.veloff = 0
 getpower = 0, 0
 givepower = 40, 40
@@ -966,7 +964,7 @@ fall.recovertime = 120
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
 airguard.cornerpush.veloff = 0
-airguard.velocity = -6.00 * !numhelper(775), -1.00
+airguard.velocity = -6.00 , -1.00
 ;p1sprpriority = sprpriority
 forcestand = 1
 
@@ -1123,7 +1121,7 @@ ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
+guard.velocity = -10.52 
 guard.cornerpush.veloff = 0
 getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
@@ -1137,7 +1135,7 @@ fall.recover = 1
 fall.recovertime = 120
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
-airguard.velocity = -6.00 * !numhelper(775), -1.00
+airguard.velocity = -6.00 , -1.00
 ;p1sprpriority = sprpriority
 forcestand = 1
 airguard.cornerpush.veloff = 0
@@ -1313,7 +1311,7 @@ fall.recover = 1
 fall.recovertime = 120
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
-airguard.velocity = -6.00 * !numhelper(775), -1.00
+airguard.velocity = -6.00 , -1.00
 ;p1sprpriority = sprpriority
 forcestand = 1
 airguard.cornerpush.veloff = 0
@@ -1477,7 +1475,6 @@ x = 0.97
 type = helper
 trigger1 = animelemtime(4) >= 0
 trigger1 = animelemtime(8) < 0
-trigger1 = !numhelper(6020)
 helpertype = normal
 stateno = 6026
 ID = 6020
@@ -1766,7 +1763,6 @@ ctrl = 0
 anim = 1312
 velset = 0, 0
 sprpriority = 2
-movehitpersist = 1
 
 [State 1312, Pos]
 type = posset
@@ -1913,14 +1909,12 @@ type = null
 trigger1 = alive
 trigger1 = life > 0
 trigger1 = 1
-trigger1 = !gethitvar(isbound)
 value = 1
 
 [State 1323, Fall Recovery]
 type = selfstate
 trigger1 = time >= 16
 trigger1 = 1
-trigger1 = gethitvar(fall.recover)
 trigger1 = command = "recovery"
 trigger1 = vel y > 0
 trigger1 = pos y >= const(movement.air.gethit.groundrecover.ground.threshold)
@@ -2069,7 +2063,6 @@ persistent = 0
 type = helper
 trigger1 = animelemtime(2) >= 1
 trigger1 = animelemtime(9) < 0
-trigger1 = !numhelper(6020)
 helpertype = normal
 stateno = 6020
 ID = 6020
@@ -2181,7 +2174,7 @@ ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
+guard.velocity = -10.52 
 guard.cornerpush.veloff = 0
 air.velocity = 0, 0
 air.cornerpush.veloff = 0
@@ -2210,12 +2203,10 @@ envshake.mul = 0.667
 
 [State 1900, Lock On]
 type = posfreeze
-trigger1 = movehit = [1, 2]
 value = 1
 
 [State 1900, Lock On]
 type = posset
-trigger1 = movehit = 1
 trigger1 = hitcount = 1
 trigger1 = numtarget(1900) = 1
 trigger1 = target(1900), statetype = L
@@ -2231,7 +2222,6 @@ value = 1910
 
 [State 1900, Land]
 type = changestate
-trigger1 = movehit != [1, 2]
 trigger1 = animelemtime(12) >= 0
 trigger1 = vel y > 0
 trigger1 = pos y > -vel y
@@ -2246,7 +2236,6 @@ movetype = I
 ctrl = 0
 anim = 43
 sprpriority = 2
-movehitpersist = 1
 
 [State 1910, Accel]
 type = veladd
@@ -2275,7 +2264,6 @@ ctrl = 0
 anim = 1911
 velset = 0, 0
 sprpriority = 2
-movehitpersist = 1
 
 [State 1911, Pos]
 type = posset
@@ -2356,7 +2344,6 @@ ownpal = 1
 type = helper
 trigger1 = animelemtime(2) >= 1
 trigger1 = animelemtime(9) < 0
-trigger1 = !numhelper(6020)
 helpertype = normal
 stateno = 6020
 ID = 6020
@@ -2468,7 +2455,7 @@ ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
+guard.velocity = -10.52 
 guard.cornerpush.veloff = 0
 air.velocity = 0, 0
 air.cornerpush.veloff = 0
@@ -2497,12 +2484,10 @@ envshake.mul = 0.667
 
 [State 1930, Lock On]
 type = posfreeze
-trigger1 = movehit = [1, 2]
 value = 1
 
 [State 1930, Lock On]
 type = posset
-trigger1 = movehit = 1
 trigger1 = hitcount = 1
 trigger1 = numtarget(1930) = 1
 trigger1 = target(1930), statetype = L
@@ -2518,7 +2503,6 @@ value = 1910
 
 [State 1930, Land]
 type = changestate
-trigger1 = movehit != [1, 2]
 trigger1 = animelemtime(12) >= 0
 trigger1 = vel y > 0
 trigger1 = pos y > -vel y

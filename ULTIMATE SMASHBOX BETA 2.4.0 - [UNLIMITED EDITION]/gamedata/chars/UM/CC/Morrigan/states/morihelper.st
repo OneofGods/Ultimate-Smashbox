@@ -92,7 +92,6 @@ ignorehitpause = 1
 
 [State 1005, HitSound]
 type = playsnd
-trigger1 = movehit = 1 || movereversed = 1
 value = 2, 0
 channel = 2
 ignorehitpause = 1
@@ -117,12 +116,12 @@ guardsound.channel = 2
 ground.type = High
 ground.hittime = 1 + 18; + 2 * var(105)
 ground.slidetime = 18
-ground.velocity = -10.52 * !numhelper(775), 0
+ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
-air.velocity = -3.00 * !numhelper(775), -8.15
+air.velocity = -3.00 , -8.15
 air.fall = 1
 fall.recover = 1
 fall.recovertime = 120
@@ -135,7 +134,7 @@ envshake.mul = 0.667
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 airguard.ctrltime = 1 + 16
-airguard.velocity = -6.00 * !numhelper(775), -1.00
+airguard.velocity = -6.00 , -1.00
 forcestand = 1
 
 [State 1005, Getpower]
@@ -363,7 +362,6 @@ ignorehitpause = 1
 
 [State 1055, HitSound]
 type = playsnd
-trigger1 = movehit = 1 || movereversed = 1
 value = 2, 0
 channel = 2
 ignorehitpause = 1
@@ -388,12 +386,12 @@ guardsound.channel = 2
 ground.type = High
 ground.hittime = 1 + 18; + 2 * var(105)
 ground.slidetime = 18
-ground.velocity = -10.52 * !numhelper(775), 0
+ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
-air.velocity = -3.00 * !numhelper(775), -8.15
+air.velocity = -3.00 , -8.15
 down.velocity = 0, 0
 down.hittime = 20
 air.fall = 1
@@ -408,7 +406,7 @@ envshake.mul = 0.667
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 airguard.ctrltime = 1 + 16
-airguard.velocity = -6.00 * !numhelper(775), -1.00
+airguard.velocity = -6.00 , -1.00
 forcestand = 1
 
 [State 1055, Hit Low]
@@ -581,7 +579,6 @@ ignorehitpause = 1
 
 [State 1015, HitSound]
 type = playsnd
-trigger1 = movehit = 1 || movereversed = 1
 value = 2, 0
 channel = 2
 ignorehitpause = 1
@@ -606,12 +603,12 @@ guardsound.channel = 2
 ground.type = High
 ground.hittime = 1 + 18; + 2 * var(105)
 ground.slidetime = 18
-ground.velocity = -10.52 * !numhelper(775), 0
+ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
-air.velocity = -3.00 * !numhelper(775), -8.15
+air.velocity = -3.00 , -8.15
 down.velocity = 0, 0
 down.hittime = 20
 air.fall = 1
@@ -626,7 +623,7 @@ envshake.mul = 0.667
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 airguard.ctrltime = 1 + 16
-airguard.velocity = -6.00 * !numhelper(775), -1.00
+airguard.velocity = -6.00 , -1.00
 forcestand = 1
 
 [State 1015, Connected]
@@ -787,7 +784,6 @@ ignorehitpause = 1
 
 [State 1065, HitSound]
 type = playsnd
-trigger1 = movehit = 1 || movereversed = 1
 value = 2, 0
 channel = 2
 ignorehitpause = 1
@@ -812,12 +808,12 @@ guardsound.channel = 2
 ground.type = High
 ground.hittime = 1 + 18; + 2 * var(105)
 ground.slidetime = 18
-ground.velocity = -10.52 * !numhelper(775), 0
+ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
-air.velocity = -3.00 * !numhelper(775), -8.15
+air.velocity = -3.00 , -8.15
 down.velocity = 0, 0
 down.hittime = 20
 air.fall = 1
@@ -832,7 +828,7 @@ envshake.mul = 0.667
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 airguard.ctrltime = 1 + 16
-airguard.velocity = -6.00 * !numhelper(775), -1.00
+airguard.velocity = -6.00 , -1.00
 forcestand = 1
 
 [State 1065, Connected]
@@ -954,7 +950,6 @@ ignorehitpause = 1
 
 [State 3005, HitSound]
 type = playsnd
-trigger1 = movehit = 1 || movereversed = 1
 value = 2, 0
 channel = 2
 ignorehitpause = 1
@@ -986,13 +981,13 @@ guardsound.channel = 2
 ground.type = High
 ground.hittime = 1 + 18
 ground.slidetime = 18
-ground.velocity = -4.00 * !numhelper(775), -7.00
+ground.velocity = -4.00 , -7.00
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
 guard.velocity = -10.52
-air.velocity = -4.00 * !numhelper(775), -7.00
+air.velocity = -4.00 , -7.00
 fall = 1
 fall.recover = 0
 down.recover = 1
@@ -1013,7 +1008,6 @@ ID = 3005
 
 [State 3005, Burned]
 type = targetstate
-trigger1 = movehit
 trigger1 = numtarget(3005)
 trigger1 = target(3005), selfanimexist(7697)
 trigger1 = target(3005), stateno = 5000 || target(3005), stateno = 5010 || target(3005), stateno = 5020
@@ -1251,7 +1245,6 @@ ignorehitpause = 1
 
 [State 3055, HitSound]
 type = playsnd
-trigger1 = movehit = 1 || movereversed = 1
 value = 2, 0
 channel = 2
 ignorehitpause = 1
@@ -1283,13 +1276,13 @@ guardsound.channel = 2
 ground.type = High
 ground.hittime = 1 + 18
 ground.slidetime = 18
-ground.velocity = -4.00 * !numhelper(775), -7.00
+ground.velocity = -4.00 , -7.00
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
 guard.velocity = -10.52
-air.velocity = -4.00 * !numhelper(775), -7.00
+air.velocity = -4.00 , -7.00
 down.velocity = 0, 0
 down.hittime = 20
 fall = 1
@@ -1312,7 +1305,6 @@ ID = 3055
 
 [State 3055, Burned]
 type = targetstate
-trigger1 = movehit
 trigger1 = numtarget(3055)
 trigger1 = target(3055), selfanimexist(7697)
 trigger1 = target(3055), stateno = 5000 || target(3055), stateno = 5010 || target(3055), stateno = 5020
@@ -1501,14 +1493,14 @@ guardsound = -1; root
 ground.type = High
 ground.hittime = 1 + 18
 ground.slidetime = 18
-ground.velocity = -10.52 * !numhelper(775), 0
+ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 16
 guard.ctrltime = 1 + 16
 guard.slidetime = 16
-air.velocity = -4 * !numhelper(775), -6
-down.velocity = -3 * !numhelper(775), -3
-guard.velocity = -10.52 * !numhelper(775)
+air.velocity = -4 , -6
+down.velocity = -3 , -3
+guard.velocity = -10.52 
 air.fall = 1
 fall.recover = 0
 down.recover = 0; cannot mash
@@ -1522,7 +1514,7 @@ envshake.mul = 0.667
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 airguard.ctrltime = 1 + 16
-airguard.velocity = -6.00 * !numhelper(775), -1.00
+airguard.velocity = -6.00 , -1.00
 forcestand = 1
 
 [State 3305, Hit Low]
@@ -3131,7 +3123,6 @@ ctrl = 0
 [State 6104, ID]
 type = varset
 trigger1 = !time
-var(0) = numhelper(6100)
 
 [State 6104, Vel]
 type = velset
@@ -3155,7 +3146,6 @@ ctrl = 0
 [State 6105, ID]
 type = varset
 trigger1 = !time
-var(0) = numhelper(6100)
 
 [State 6105, Turn]
 type = turn
@@ -3275,7 +3265,6 @@ ctrl = 0
 [State 6106, ID]
 type = varset
 trigger1 = !time
-var(0) = numhelper(6100)
 
 [State 6100, varx]
 type = varset
@@ -3400,7 +3389,6 @@ ctrl = 0
 [State 6107, ID]
 type = varset
 trigger1 = !time
-var(0) = numhelper(6100)
 
 [State 6107, Vel]
 type = velset
@@ -3616,7 +3604,6 @@ ctrl = 0
 type = playsnd
 trigger1 = time = 8
 value = 6, (random < 500)
-volumescale = cond(numhelper(6110) > 1, ID != ID, 50, 100, 100)
 
 [State 6110, Vel]
 type = velset
@@ -3707,7 +3694,6 @@ ctrl = 0
 [State 6111, ID]
 type = varset
 trigger1 = !time
-var(0) = numhelper(6100)
 
 [State 6111, Bind]
 type = posset

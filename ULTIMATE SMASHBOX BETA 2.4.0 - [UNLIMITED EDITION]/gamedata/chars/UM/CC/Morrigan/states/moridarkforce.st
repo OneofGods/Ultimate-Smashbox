@@ -149,7 +149,6 @@ trigger1 = 1
 value = root, var(123)
 
 [State 775, Hit Reset]
-type = movehitreset
 trigger1 = !(root, movecontact)
 
 [State Damage Scaling - Helper Multiplier]
