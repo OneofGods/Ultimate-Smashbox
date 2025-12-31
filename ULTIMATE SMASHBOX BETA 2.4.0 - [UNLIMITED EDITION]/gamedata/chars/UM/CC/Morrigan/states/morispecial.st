@@ -642,7 +642,7 @@ fall.recover = 1
 fall.recovertime = 120
 fall.animtype = Medium
 yaccel = 0.4850
-p1sprpriority = sprpriority
+;p1sprpriority = sprpriority
 forcestand = 1
 
 [State 1100, Hit 2]
@@ -689,7 +689,7 @@ fall.recovertime = 120
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
 airguard.velocity = -6.00 * !numhelper(775), -1.00
-p1sprpriority = sprpriority
+;p1sprpriority = sprpriority
 forcestand = 1
 airguard.cornerpush.veloff = 0
 
@@ -924,7 +924,7 @@ fall.recover = 1
 fall.recovertime = 120
 fall.animtype = Medium
 yaccel = 0.4850
-p1sprpriority = sprpriority
+;p1sprpriority = sprpriority
 forcestand = 1
 
 [State 1110, Hit 2]
@@ -971,7 +971,7 @@ yaccel = 0.4850
 airguard.ctrltime = 1 + 16
 airguard.cornerpush.veloff = 0
 airguard.velocity = -6.00 * !numhelper(775), -1.00
-p1sprpriority = sprpriority
+;p1sprpriority = sprpriority
 forcestand = 1
 
 [State 1110, Type]
@@ -1143,7 +1143,7 @@ fall.recovertime = 120
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
 airguard.velocity = -6.00 * !numhelper(775), -1.00
-p1sprpriority = sprpriority
+;p1sprpriority = sprpriority
 forcestand = 1
 airguard.cornerpush.veloff = 0
 
@@ -1320,7 +1320,7 @@ fall.recovertime = 120
 yaccel = 0.4850
 airguard.ctrltime = 1 + 16
 airguard.velocity = -6.00 * !numhelper(775), -1.00
-p1sprpriority = sprpriority
+;p1sprpriority = sprpriority
 forcestand = 1
 airguard.cornerpush.veloff = 0
 
@@ -2203,7 +2203,7 @@ fall = 0
 air.fall = 1
 fall.recover = 1
 fall.recovertime = 120
-p1sprpriority = sprpriority
+;p1sprpriority = sprpriority
 forcestand = 1
 hitsound = s2, 9
 hitsound.channel = 2
@@ -2491,7 +2491,7 @@ fall = 0
 air.fall = 1
 fall.recover = 1
 fall.recovertime = 120
-p1sprpriority = sprpriority
+;p1sprpriority = sprpriority
 forcestand = 1
 hitsound = s2, 9
 hitsound.channel = 2

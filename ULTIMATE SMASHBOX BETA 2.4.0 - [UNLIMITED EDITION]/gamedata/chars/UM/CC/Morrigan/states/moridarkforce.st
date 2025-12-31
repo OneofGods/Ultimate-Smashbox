@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ;==============================================================================================
 ;======================================<DARK FORCE STATES>=====================================
 ;==============================================================================================
@@ -1272,7 +1272,7 @@ fall = 0
 air.fall = 1
 fall.recover = 1
 fall.recovertime = 120
-p1sprpriority = sprpriority
+;p1sprpriority = sprpriority
 forcestand = 1
 hitsound = s2, 9
 hitsound.channel = 2
@@ -1329,7 +1329,7 @@ fall = 0
 air.fall = 1
 fall.recover = 1
 fall.recovertime = 120
-p1sprpriority = sprpriority
+;p1sprpriority = sprpriority
 forcestand = 1
 hitsound = s2, 9
 hitsound.channel = 2
