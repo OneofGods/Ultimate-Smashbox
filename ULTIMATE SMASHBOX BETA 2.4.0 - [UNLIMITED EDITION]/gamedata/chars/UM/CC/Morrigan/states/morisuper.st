@@ -431,7 +431,7 @@ value = 5040
 type = selfstate
 trigger1 = vel y > 0
 trigger1 = pos y >= const(movement.air.gethit.groundrecover.ground.threshold)
-trigger1 = alive = 1 && dizzy = 0 && dizzypoints > 0
+trigger1 = 1
 trigger1 = gethitvar(fall.recover)
 trigger1 = command = "recovery"
 value = 5200
@@ -3176,7 +3176,7 @@ y = 0
 type = null
 trigger1 = alive
 trigger1 = life > 0
-trigger1 = dizzypoints <= 0
+trigger1 = 1
 trigger1 = !gethitvar(isbound)
 value = 1
 

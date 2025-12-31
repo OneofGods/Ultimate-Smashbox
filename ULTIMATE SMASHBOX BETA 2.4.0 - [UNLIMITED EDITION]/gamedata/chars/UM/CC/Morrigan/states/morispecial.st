@@ -1920,14 +1920,14 @@ y = -6
 type = null
 trigger1 = alive
 trigger1 = life > 0
-trigger1 = dizzypoints <= 0
+trigger1 = 1
 trigger1 = !gethitvar(isbound)
 value = 1
 
 [State 1323, Fall Recovery]
 type = selfstate
 trigger1 = time >= 16
-trigger1 = alive = 1 && dizzy = 0 && dizzypoints > 0
+trigger1 = 1
 trigger1 = gethitvar(fall.recover)
 trigger1 = command = "recovery"
 trigger1 = vel y > 0
