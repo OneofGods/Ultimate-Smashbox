@@ -2127,7 +2127,7 @@ trigger1 = p2dist x < 0
 [State 1900, Vel]
 type = velset
 trigger1 = animelemtime(2) = 1
-x = min(p2dist x, 290) / float(-animelemtime(9)); where 290 is the maximum p2dist x without zoom
+x = p2dist x / -animelemtime(9); where 290 is the maximum p2dist x without zoom
 y = -4.06
 
 [State 1900, Vel Correction]
@@ -2412,7 +2412,7 @@ trigger1 = p2dist x < 0
 [State 1930, Vel]
 type = velset
 trigger1 = animelemtime(2) = 1
-x = min(p2dist x, 290) / float(-animelemtime(9)); where 290 is the maximum p2dist x without zoom
+x = p2dist x / -animelemtime(9); where 290 is the maximum p2dist x without zoom
 y = -4.06
 
 [State 1930, Vel Correction]

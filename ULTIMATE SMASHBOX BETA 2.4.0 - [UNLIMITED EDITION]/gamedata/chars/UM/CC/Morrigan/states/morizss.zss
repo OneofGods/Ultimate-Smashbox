@@ -15,7 +15,7 @@ if p2, numhelper > 0 {
 		if playerIDexist(p2, helper(-1, $i), ID) {
 			if p2, helper(-1, $i), hitdefattr = SCA, AP {
 				if !playerIDexist(map(ai_p2fireball_ID))
-				|| abs(p2, helper(-1, $i), pos x - pos x) < abs(map(ai_p2fireball_distx)) {
+				|| p2, helper(-1, $i, pos x - pos x) < map(ai_p2fireball_distx) {
 					map(ai_p2fireball_ID) := p2, helper(-1, $i), ID;
 					map(ai_p2fireball_super) := (p2, helper(-1, $i), hitdefattr = SCA, HP);
 					map(ai_p2fireball_distx) := ((p2, helper(-1, $i), pos x) - pos x) * facing;
@@ -32,7 +32,7 @@ if p2, numhelper > 0 {
 # Check projectiles
 if p2, numproj {
 	for i = 0; p2, numproj - 1; 1 {
-		if abs(p2, projvar(-1, $i, pos x) - pos x) < abs(map(ai_p2fireball_distx)) {
+		if p2, projvar(-1, $i, pos x - pos x) < map(ai_p2fireball_distx) {
 			map(ai_p2fireball_ID) := -1;
 			map(ai_p2fireball_super) := 0; # Temporary until more Ikemen features are added
 			map(ai_p2fireball_distx) := (p2, projvar(-1, $i, pos x) - pos x) * facing;
@@ -643,12 +643,12 @@ if incustomstate = 0 && pausetime = 0 {
 ignorehitpause if !ishelper {
 		displaytoclipboard{
 			text: "Damage = %.1f%% Juggle = %d Unthrowable = %d";
-			params: attack, ceil(map(juggle_count)), ceil(map(unthrowable));
+			params: attack, map(juggle_count), map(unthrowable);
 		}
 	} else {
 		displaytoclipboard{
 			text: "AI Combo %d Punish %d Attack %d";
-			params: floor(map(ai_combowindow)), floor(map(ai_punishwindow)), floor(map(ai_attackwindow));
+			params: map(ai_combowindow), map(ai_punishwindow), map(ai_attackwindow);
 		}
 	}
 	appendtoclipboard {
@@ -860,7 +860,7 @@ ignorehitpause {
 			let p2ref = -p2, clsnvar(size, 0, front, p2, clsnvar(size, 0, back));
 		}
 		# Calculate
-		if abs(p2dist x) <= abs($p1ref + $p2ref) {
+		if p2dist x <= $p1ref + $p2ref {
 			mapset{map: "truebodydistx"; value: 0}
 		} else {
 			mapset{map: "truebodydistx"; value: p2dist x - $p1ref - $p2ref}
@@ -871,7 +871,7 @@ ignorehitpause {
 }
 
 # Corner Priority
-ignorehitpause if movetype != H && abs(p2dist x) < 80
+ignorehitpause if movetype != H && p2dist x < 80
 && (frontedgedist < vel x || backedgedist < -vel x) {
 	if statetype = A && map(jumptype) = 3 {
 		width{edge: -1, -1}
@@ -898,7 +898,7 @@ if map(cornerpush) {
 		if target, movetype != H
 		|| target, gethitvar(ID) != ID
 		|| target, gethitvar(slidetime) = 0
-		|| (target, statetype = S && abs(map(cornerpush)) < 1.0)
+		|| (target, statetype = S && map(cornerpush) < 1.0)
 		|| target, hitfall = 1
 		|| target, vel y != 0 {
 			mapset{map: "cornerpush"; value: 0}
@@ -1004,7 +1004,7 @@ ignorehitpause if movetype = H {
 		}
 		if gethitvar(hitdamage) = [1, 50]
 		&& gethitvar(ground.animtype) = 0
-		&& abs(gethitvar(xvel)) < 10
+		&& gethitvar(xvel) < 10
 		&& receiveddamage <= 50 # Because of combos
 		&& gethitvar(attr) != SCA, HA, HT, HP {
 			let cheap = 1;

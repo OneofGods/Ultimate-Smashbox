@@ -1007,7 +1007,7 @@ ignorehitpause = 1
 
 [State -1, AI Attack Window]
 type = varset
-value = floor(max(var(52), var(62)) + ((random % 9)))
+value = var(62 + ((random % 9)))
 ignorehitpause = 1
 
 
@@ -1180,7 +1180,7 @@ triggerall = numenemy && !isasserted(noinput)
 triggerall = roundstate = 2 && statetype = S
 triggerall = var(51)
 triggerall = p2statetype = S || p2statetype = C
-triggerall = abs(var(129)) <= ceil(32 * const(size.xscale)) && p2dist y = 0
+triggerall = var(129) <= 32 * const(size.xscale) && p2dist y = 0
 triggerall = var(54) || var(50) >= 3
 trigger1 = ctrl
 trigger1 = random < var(53) * 50
