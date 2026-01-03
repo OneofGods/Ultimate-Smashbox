@@ -639,22 +639,22 @@ if incustomstate = 0 && pausetime = 0 {
 	}
 }
 
-# +1, Debug text
-ignorehitpause if !ishelper {
-		displaytoclipboard{
-			text: "Damage = %.1f%% Juggle = %d Unthrowable = %d";
-			params: attack, map(juggle_count), map(unthrowable);
-		}
-	} else {
-		displaytoclipboard{
-			text: "AI Combo %d Punish %d Attack %d";
-			params: map(ai_combowindow), map(ai_punishwindow), map(ai_attackwindow);
-		}
-	}
-	appendtoclipboard {
-		text: "\nBy PotS - https://network.mugenguild.com/pots/";
-	}
-}
+# +1, Debug text (DISABLED - Unsupported in Ultimate Smash Box)
+;ignorehitpause if !ishelper {
+;		displaytoclipboard{
+;			text: "Damage = %.1f%% Juggle = %d Unthrowable = %d";
+;			params: attack, map(juggle_count), map(unthrowable);
+;		}
+;	} else {
+;		displaytoclipboard{
+;			text: "AI Combo %d Punish %d Attack %d";
+;			params: map(ai_combowindow), map(ai_punishwindow), map(ai_attackwindow);
+;		}
+;	}
+;	appendtoclipboard {
+;		text: "\nBy PotS - https://network.mugenguild.com/pots/";
+;	}
+;}
 
 
 ###################################################################################################
