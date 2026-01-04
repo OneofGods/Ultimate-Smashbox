@@ -145,7 +145,7 @@ ignorehitpause = 1
 
 [State 775, Strength]
 type = varset
-trigger1 = 1
+value = 1
 value = root, var(123)
 
 [State 775, Hit Reset]

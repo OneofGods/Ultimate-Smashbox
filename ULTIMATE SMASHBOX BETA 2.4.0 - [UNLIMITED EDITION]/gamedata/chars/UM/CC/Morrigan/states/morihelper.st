@@ -3576,7 +3576,7 @@ ctrl = 0
 [State 6109, ID]
 type = varset
 trigger1 = !time
-trigger1 = (ishelper(6101) || ishelper(6102) || ishelper(6103) || ishelper(6104)
+value = (ishelper(6101) || ishelper(6102) || ishelper(6103) || ishelper(6104)
 var(0) = 4
 
 [State 6109, Vel]

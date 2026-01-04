@@ -996,8 +996,8 @@ forcestand = 1
 [State 250, SparkXY]
 type = varset
 trigger1 = animelem = 5
-trigger1 = var(13)2) = 50
-trigger1 = var(13)3) = 110
+value = var(13)2) = 50
+value = var(13)3) = 110
 value = -110
 
 [State 250, Anim]
@@ -3080,12 +3080,12 @@ value = (stagebackedgedist < stagefrontedgedist)
 
 [State 800, Tech Hit]
 type = varset
-trigger1 = 1
+value = 1
 value = 0
 
 [State 800, Tech Hit]
 type = varset
-trigger1 = numenemy
+value = numenemy
 trigger1 = p2statetype = S
 ; trigger1 = p2stateno = [0, 999] && p2stateno != [100, 119] && p2stateno != [200, 799] ; DEMON ELIMINATED - p2stateno unsupported
 trigger1 = 1 ; Safe fallback for tech hit detection
