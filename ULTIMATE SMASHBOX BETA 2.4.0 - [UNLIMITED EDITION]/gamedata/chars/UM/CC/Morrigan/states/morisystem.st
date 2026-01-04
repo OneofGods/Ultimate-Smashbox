@@ -1238,10 +1238,10 @@ trigger1 = 1
 [State Freeze Parried Helper]
 redirectID = 1
 type = posadd
-trigger1 = playerIDexist(1
-trigger1 = playerID(1, movetype = A
-trigger1 = playerID(1, hitpausetime = 0
-x = -1 * playerID(1, vel x
+trigger1 = playerIDexist(1)
+trigger1 = playerID(1), movetype = A
+trigger1 = playerID(1), hitpausetime = 0
+x = -1 * playerID(1), vel x
 y = -1 * playerID(1, vel y
 
 [State 700, Consecutive Parries]
@@ -1331,10 +1331,10 @@ trigger1 = 1
 [State Freeze Parried Helper]
 redirectID = 1
 type = posadd
-trigger1 = playerIDexist(1
-trigger1 = playerID(1, movetype = A
-trigger1 = playerID(1, hitpausetime = 0
-x = -1 * playerID(1, vel x
+trigger1 = playerIDexist(1)
+trigger1 = playerID(1), movetype = A
+trigger1 = playerID(1), hitpausetime = 0
+x = -1 * playerID(1), vel x
 y = -1 * playerID(1, vel y
 
 [State 701, Freeze]
@@ -1417,10 +1417,10 @@ trigger1 = 1
 [State Freeze Parried Helper]
 redirectID = 1
 type = posadd
-trigger1 = playerIDexist(1
-trigger1 = playerID(1, movetype = A
-trigger1 = playerID(1, hitpausetime = 0
-x = -1 * playerID(1, vel x
+trigger1 = playerIDexist(1)
+trigger1 = playerID(1), movetype = A
+trigger1 = playerID(1), hitpausetime = 0
+x = -1 * playerID(1), vel x
 y = -1 * playerID(1, vel y
 
 [State 702, Freeze]
