@@ -21,7 +21,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -84,7 +84,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State Idle]
 type = statetypeset
@@ -115,7 +115,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -178,7 +178,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State Idle]
 type = statetypeset
@@ -209,7 +209,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -272,7 +272,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 210, Anim]
 type = changeanim
@@ -313,7 +313,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -376,7 +376,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 211, Anim]
 type = changeanim
@@ -427,7 +427,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -490,7 +490,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 220, Anim]
 type = changeanim
@@ -531,7 +531,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -594,14 +594,14 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 forcestand = 1
 
 [State 221, Hit]
 type = hitdef
 trigger1 = animelem = 3
 trigger1 = !movecontact && !movereversed
-air.juggle )= 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
+air.juggle )= 0 * (var(112) = 1 || var(1) != 01) != 00) = 1 || var(1) != 01) != 01) = 1
 attr = S, NA
 damage = 90, 0
 animtype = Hard
@@ -636,7 +636,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 221, Anim]
 type = changeanim
@@ -687,7 +687,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -750,7 +750,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State Idle]
 type = statetypeset
@@ -781,7 +781,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -844,13 +844,13 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 240, Hit]
 type = hitdef
 trigger1 = animelem = 4
 trigger1 = prevstateno = 710
-air.juggle )= 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
+air.juggle )= 0 * (var(112) = 1 || var(1) != 01) != 00) = 1 || var(1) != 01) != 01) = 1
 attr = S, NA
 damage = 70, 0
 animtype = Medium
@@ -927,7 +927,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -990,14 +990,14 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 forcestand = 1
 
 [State 250, SparkXY]
 type = varset
 trigger1 = animelem = 5
-value = var(13)2) = 50
-value = var(13)3) = 110
+value = var(1)3)2) = 50
+value = var(1)3)3) = 110
 value = -110
 
 [State 250, Anim]
@@ -1069,7 +1069,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -1107,7 +1107,7 @@ physics = N
 
 [State 255, Accel]
 type = veladd
-trigger1 = animelemtime(3) >= 0
+trigger1 )= animelemtime(3) >= 0
 y = 0.5
 
 [State 255, Vel]
@@ -1172,12 +1172,12 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 5
-air.juggle )= 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
+air.juggle )= 0 * (var(112) = 1 || var(1) != 01) != 00) = 1 || var(1) != 01) != 01) = 1
 attr = A, NA
 damage = 30, 0
 animtype = Hard
@@ -1215,12 +1215,12 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 6
-air.juggle )= 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
+air.juggle )= 0 * (var(112) = 1 || var(1) != 01) != 00) = 1 || var(1) != 01) != 01) = 1
 attr = A, NA
 damage = 30, 0
 animtype = Hard
@@ -1259,7 +1259,7 @@ yaccel = 0.4850
 airguard.ctrltime = 1 + 16
 airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State Idle]
 type = statetypeset
@@ -1332,7 +1332,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -1396,7 +1396,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State Idle]
 type = statetypeset
@@ -1427,7 +1427,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -1491,7 +1491,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 410, Anim]
 type = changeanim
@@ -1532,7 +1532,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -1596,7 +1596,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State Idle]
 type = statetypeset
@@ -1627,7 +1627,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -1753,7 +1753,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -1817,7 +1817,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State Idle]
 type = statetypeset
@@ -1848,7 +1848,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -1912,7 +1912,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 431, Anim]
 type = changeanim
@@ -1953,7 +1953,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -2017,7 +2017,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 440, Anim]
 type = changeanim
@@ -2058,7 +2058,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -2122,7 +2122,7 @@ yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 445, Anim]
 type = changeanim
@@ -2163,7 +2163,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -2226,7 +2226,7 @@ getpower = 200, 100
 givepower = 40, 40
 yaccel = 0.695
 fall = 1
-fall.recover = !var(105)
+fall.recover = !var(10)5)
 fall.recovertime = 120
 
 [State Idle]
@@ -2258,7 +2258,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -2326,7 +2326,7 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 600, Anim]
 type = changeanim
@@ -2371,7 +2371,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -2447,7 +2447,7 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 610, Anim]
 type = changeanim
@@ -2492,7 +2492,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -2560,7 +2560,7 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 620, Anim]
 type = changeanim
@@ -2605,7 +2605,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -2673,7 +2673,7 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 630, Anim]
 type = changeanim
@@ -2718,7 +2718,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -2786,7 +2786,7 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 631, Anim]
 type = changeanim
@@ -2831,7 +2831,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -2899,7 +2899,7 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 640, Anim]
 type = changeanim
@@ -2944,7 +2944,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -3012,7 +3012,7 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50)
+forcenofall = !var(5)0)
 
 [State 650, Anim]
 type = changeanim
@@ -3057,7 +3057,7 @@ poweradd = 0
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -3080,7 +3080,7 @@ value = (stagebackedgedist < stagefrontedgedist)
 
 [State 800, Tech Hit]
 type = varset
-trigger1 = 1
+value = 1
 value = 1
 value = 0
 
@@ -3105,8 +3105,8 @@ value = 0
 [State 800, Hit]
 type = hitdef
 trigger1 = animelem = 2
-trigger1 = !var(130) && !var(108)
-trigger1 = var(12)9) <= 32 * const(size.xscale)
+trigger1 = !var(13)0) && !var(10)8)
+trigger1 = var(1)2)9) <= 32 * const(size.xscale)
 ID = 800
 attr = S, NT
 hitflag = M
@@ -3168,13 +3168,13 @@ sprpriority = 2
 [State Tech Hit]
 type = varadd
 trigger1 = time
-trigger1 = var(12)7) > 0
+trigger1 = var(1)2)7) > 0
 value = -1
 
 [State Tech Hit]
 type = changestate
 triggerall = numtarget
-triggerall = var(127)
+triggerall = var(1)2)7)
 triggerall = target, command != "holdup" && target, command != "holddown"
 trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z") >= 2
 trigger2 = target, command = "holdfwd" || target, command = "holdback"
@@ -3209,12 +3209,12 @@ edge = 50 * const(size.xscale, 0
 
 [State 810, Width]
 type = width
-trigger1 = animelemtime(5) >= 0 && animelemtime(6) < 0
+trigger1 )= animelemtime(5) >= 0 && animelemtime(6) < 0
 edge = 60 * const(size.xscale, 0
 
 [State 810, Width]
 type = width
-trigger1 = animelemtime(6) >= 0 && animelemtime(7) < 0
+trigger1 )= animelemtime(6) >= 0 && animelemtime(7) < 0
 edge = 75 * const(size.xscale, 0
 
 [State 810, Sound]
@@ -3233,27 +3233,27 @@ freqmul = 0.95 + (random / 10000.0
 
 [State 810, Bind 1]
 type = targetbind
-trigger1 = animelemtime(1) >= 0 && animelemtime(2) < 0
+trigger1 )= animelemtime(1) >= 0 && animelemtime(2) < 0
 pos = 66 * const(size.xscale, -76
 
 [State 810, Bind 2]
 type = targetbind
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) < 0
+trigger1 )= animelemtime(2) >= 0 && animelemtime(3) < 0
 pos = 60 * const(size.xscale, -77
 
 [State 810, Bind 3]
 type = targetbind
-trigger1 = animelemtime(3) >= 0 && animelemtime(4) < 0
+trigger1 )= animelemtime(3) >= 0 && animelemtime(4) < 0
 pos = -4 * const(size.xscale, -72
 
 [State 810, Bind 4]
 type = targetbind
-trigger1 = animelemtime(4) >= 0 && animelemtime(5) < 0
+trigger1 )= animelemtime(4) >= 0 && animelemtime(5) < 0
 pos = 52 * const(size.xscale, -70
 
 [State 810, Bind 5]
 type = targetbind
-trigger1 = animelemtime(5) >= 0 && animelemtime(6) < 0
+trigger1 )= animelemtime(5) >= 0 && animelemtime(6) < 0
 pos = 72* const(size.xscale, -38
 
 [State 810, Bind 6]
@@ -3269,13 +3269,13 @@ value = 1
 [State 810, Damage]
 type = targetlifeadd
 trigger1 = animelem = 6
-value = -110 * var(67)
+value )= -110 * var(67)
 
 [State 810, Stun Damage]
 type = null
 trigger1 = numtarget
 trigger1 = animelem = 6
-value )= -140 * var(67) * !var(50)
+value )= -140 * var(67) * !var(5)0)
 
 [State 810, Give Power]
 type = targetpoweradd
@@ -3285,7 +3285,7 @@ value = 40; givepower
 [State 810, Get Power]
 type = poweradd
 trigger1 = animelem = 6
-trigger1 = !var(50)
+trigger1 = !var(5)0)
 value )= 100 * var(114); getpower
 
 [State 810, Throw]
@@ -3302,7 +3302,7 @@ value = 5, 2
 
 [State 810, Dust]
 type = helper
-trigger1 = var(64)
+trigger1 = var(6)4)
 trigger1 = numtarget
 trigger1 = animelem = 6
 helpertype = normal
@@ -3315,7 +3315,7 @@ ownpal = 1
 
 [State 810, Dust]
 type = explod
-trigger1 = !var(64)
+trigger1 = !var(6)4)
 trigger1 = numtarget
 trigger1 = animelem = 6
 anim = F 62
@@ -3451,13 +3451,13 @@ sprpriority = 2
 [State Tech Hit]
 type = varadd
 trigger1 = time
-trigger1 = var(12)7) > 0
+trigger1 = var(1)2)7) > 0
 value = -1
 
 [State Tech Hit]
 type = changestate
 triggerall = numtarget
-triggerall = var(127)
+triggerall = var(1)2)7)
 triggerall = target, command != "holdup" && target, command != "holddown"
 trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z") >= 2
 trigger2 = target, command = "holdfwd" || target, command = "holdback"
@@ -3482,7 +3482,7 @@ edge = 50 * const(size.xscale, 0
 
 [State 820, Width]
 type = width
-trigger1 = animelemtime(8) >= 0 && animelemtime(9) < 0
+trigger1 )= animelemtime(8) >= 0 && animelemtime(9) < 0
 edge = 80 * const(size.xscale, 0
 
 [State 820, Sound]
@@ -3506,22 +3506,22 @@ value = 5, 3
 
 [State 820, Bind 1]
 type = targetbind
-trigger1 = animelemtime(1) >= 0 && animelemtime(2) < 0
+trigger1 )= animelemtime(1) >= 0 && animelemtime(2) < 0
 pos = 60 * const(size.xscale, -71
 
 [State 820, Bind 2]
 type = targetbind
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) < 0
+trigger1 )= animelemtime(2) >= 0 && animelemtime(3) < 0
 pos = 66 * const(size.xscale, -75
 
 [State 820, Bind 3]
 type = targetbind
-trigger1 = animelemtime(3) >= 0 && animelemtime(8) < 0
+trigger1 )= animelemtime(3) >= 0 && animelemtime(8) < 0
 pos = 66 * const(size.xscale, -70
 
 [State 820, Bind 8]
 type = targetbind
-trigger1 = animelemtime(8) >= 0 && animelemtime(9) < 0
+trigger1 )= animelemtime(8) >= 0 && animelemtime(9) < 0
 pos = 112 * const(size.xscale, -66
 
 [State 820, Claw]
@@ -3533,7 +3533,7 @@ ID = 825
 name = "Claw"
 postype = p1
 pos = 105 * const(size.xscale, -65
-size.ground.front = (target), const(size.ground.back)
+size.ground.front )= (target), const(size.ground.back)
 
 [State 820, HitSound]
 type = playsnd
@@ -3562,7 +3562,7 @@ kill = 0
 type = null
 trigger1 = numtarget
 trigger1 = animelem = 8
-value )= -120 * var(67) * !var(50)
+value )= -120 * var(67) * !var(5)0)
 
 [State 820, Give Power]
 type = targetpoweradd
@@ -3572,7 +3572,7 @@ value = 40; givepower
 [State 820, Get Power]
 type = poweradd
 trigger1 = animelem = 8
-trigger1 = !var(50)
+trigger1 = !var(5)0)
 value )= 100 * var(114); getpower
 
 [State 820, Throw]
@@ -3793,7 +3793,7 @@ sprpriority = 0
 [State 890, Tech Hit Facing]
 type = turn
 trigger1 = !time
-trigger1 = facing !)= var(12)6)
+trigger1 = facing )!)= var(1)2)6)
 
 [State 890, Bind]
 type = targetbind
@@ -3936,4 +3936,4 @@ y = 0
 type = selfstate
 trigger1 = time >= 26
 value = 0
-ctrl = 1)
+ctrl )= 1)

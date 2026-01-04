@@ -38,7 +38,7 @@ ignorehitpause = 1
 [State 774, Vel]
 type = velset
 trigger1 = !time
-x = 0.05 * facing * (root, pos x + 2 * (root, p2dist x * root), facing) -pos x)
+x = 0.05 * facing * (root, pos x + 2 * (root), p2dist x * root), facing) -pos x)
 
 [State 774, Anim]
 type = changeanim
@@ -103,7 +103,7 @@ ignorehitpause = 1
 
 [State 775, Anim]
 type = changeanim
-trigger1 = selfanimexist(root), anim)
+trigger1 )= selfanimexist(root), anim)
 trigger1 = root, stateno != [770, 771]
 trigger1 = (root, anim = [5000, 5300], 1
 value = root, anim
@@ -145,7 +145,7 @@ ignorehitpause = 1
 
 [State 775, Strength]
 type = varset
-trigger1 = 1
+value = 1
 value = 1
 value = root, var(123)
 
@@ -181,16 +181,16 @@ ignorehitpause = 1
 [State 775, Juggle Properties]
 type = null
 trigger1 != 0
-trigger1 = 1 || var(11) != 01) = (root, var(111) + 1
+trigger1 = 1 || var(1) != 01) != 01) = (root, var(111) + 1
 ignorehitpause = 1
 
 [State 775, Spark Properties]
 type = null
-trigger1 = 1 || var(12) != 01) = root, var(121)
-trigger1 = 1 || var(13) != 01) = root, var(131)
-trigger1 = 1 || var(13) != 02) = root, var(132)
-trigger1 = 1 || var(13) != 03) = root, var(133)
-trigger1 = 1 || var(12) != 02) = root, var(122)
+trigger1 = 1 || var(1) != 02) != 01) = root, var(121)
+trigger1 = 1 || var(1) != 03) != 01) = root, var(131)
+trigger1 = 1 || var(1) != 03) != 02) = root, var(132)
+trigger1 = 1 || var(1) != 03) != 03) = root, var(133)
+trigger1 = 1 || var(1) != 02) != 02) = root, var(122)
 ignorehitpause = 1
 
 [State 775, Hit]
@@ -1015,7 +1015,7 @@ forcestand = 1
 type = hitdef
 trigger1 = root, anim = 1100
 trigger1 = root, animelem = 4
-trigger1 = !(root), movecontact) && !(root, movereversed)
+trigger1 = )!(root), movecontact) && !(root, movereversed)
 attr = A, SA
 damage = 60, 0
 animtype = Back
@@ -1149,7 +1149,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1), 2 + 0 * (var(121) = 8023
+sparkno )= -1), 2 + 0 * (var(121) = 8023
 guard.sparkno = -1, 40
 sparkxy = -10, -60
 hitsound = -1

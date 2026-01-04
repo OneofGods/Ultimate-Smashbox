@@ -21,7 +21,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -113,7 +113,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 )= var(6)5)
 trigger1 != 0
 value = 1
 
@@ -133,7 +133,7 @@ value = 0, 1000
 [State 1010, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(10) != 07) = 30
+trigger1 = 1 || var(1) != 00) != 07) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -204,12 +204,12 @@ ctrl = 0
 velset = 0, 0
 poweradd = 50
 sprpriority = 2
-facep2 = p2dist x <)= -const(size.ground.back)
+facep2 = p2dist x )<)= -const(size.ground.back)
 
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -246,7 +246,7 @@ anim = 1054
 ID = 1054
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
+scale )= 0.5 * const(size.xscale), 0.5 * const(size.yscale)
 ownpal = 1
 bindtime = -1
 removeongethit = 1
@@ -273,7 +273,7 @@ ownpal = 1
 
 [State 1050, Vel]
 type = velset
-trigger1 = animelemtime(6) < 0
+trigger1 )= animelemtime(6) < 0
 x = 0
 y = 0
 
@@ -364,7 +364,7 @@ facep2 = 0
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -384,7 +384,7 @@ value = 0, 1000
 [State 1060, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(10) != 07) = 30
+trigger1 = 1 || var(1) != 00) != 07) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -406,7 +406,7 @@ anim = 1054
 ID = 1054
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
+scale )= 0.5 * const(size.xscale), 0.5 * const(size.yscale)
 ownpal = 1
 bindtime = -1
 removeongethit = 1
@@ -433,7 +433,7 @@ ownpal = 1
 
 [State 1060, Vel]
 type = velset
-trigger1 = animelemtime(6) < 0
+trigger1 )= animelemtime(6) < 0
 x = 0
 y = 0
 
@@ -483,7 +483,7 @@ sprpriority = 2
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -512,7 +512,7 @@ persistent = 0
 type = hitby
 trigger1 = anim = 1100
 trigger1 = animelemtime(4) < 0
-trigger1 = var(12)3) = 0
+trigger1 = var(1)2)3) = 0
 value = SC, AA
 time = 1
 ignorehitpause = 1
@@ -521,7 +521,7 @@ ignorehitpause = 1
 type = hitby
 trigger1 = anim = 1100
 trigger1 = animelemtime(4) < 0
-trigger1 = var(12)3) = 1
+trigger1 = var(1)2)3) = 1
 value = C, AA
 time = 1
 ignorehitpause = 1
@@ -530,7 +530,7 @@ ignorehitpause = 1
 type = nothitby
 trigger1 = anim = 1100
 trigger1 = animelemtime(4) < 0
-trigger1 = var(12)3) = 2
+trigger1 = var(1)2)3) = 2
 value = SCA
 time = 1
 ignorehitpause = 1
@@ -653,7 +653,7 @@ forcestand = 1
 type = hitdef
 trigger1 = animelem = 4 && anim = 1100
 trigger1 = !movecontact && !movereversed
-air.juggle )= 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
+air.juggle )= 0 * (var(112) = 1 || var(1) != 01) != 00) = 1 || var(1) != 01) != 01) = 1
 attr = A, SA
 damage = 60, 15
 animtype = Back
@@ -780,7 +780,7 @@ sprpriority = 2
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -800,7 +800,7 @@ value = 0, 1000
 [State 1110, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(10) != 07) = 30
+trigger1 = 1 || var(1) != 00) != 07) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -889,7 +889,7 @@ channel = 0
 type = hitdef
 trigger1 = anim = 1110
 trigger1 = animelem = 2 || animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = (2 + hitcount)
+air.juggle = 0 * (var(112) = 1 || var(1) != 01) != 00) = 1 || var(1) != 01) != 01) = (2 + hitcount)
 attr = S, SA
 damage = 40, 10
 animtype = Back
@@ -933,7 +933,7 @@ forcestand = 1
 [State 1110, Hit 2]
 type = hitdef
 trigger1 = animelem = 4 && anim = 1110
-air.juggle )= 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = (2 + hitcount)
+air.juggle )= 0 * (var(112) = 1 || var(1) != 01) != 00) = 1 || var(1) != 01) != 01) = (2 + hitcount)
 attr = A, SA
 damage = 60, 15
 animtype = Up
@@ -1018,7 +1018,7 @@ sprpriority = 2
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -1105,8 +1105,8 @@ ownpal = 1
 
 [State 1205, Hit]
 type = hitdef
-trigger1 = animelem = 4 || animelem = 10 || animelem = 16
-air.juggle )= 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
+trigger1 = animelem = 4 || animelem = 10 || animelem = 16)
+air.juggle )= 0 * (var(112) = 1 || var(1) != 01) != 00) = 1 || var(1) != 01) != 01) = 1
 attr = S, SA
 damage = 60, 15
 animtype = Hard
@@ -1197,7 +1197,7 @@ sprpriority = 2
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -1217,7 +1217,7 @@ value = 0, 1000
 [State 1250, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(10) != 07) = 30
+trigger1 = 1 || var(1) != 00) != 07) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -1284,7 +1284,7 @@ ownpal = 1
 
 [State 1251, Hit]
 type = hitdef
-trigger1 = )!((movecontact + movereversed) % 8
+trigger1 )= )!((movecontact + movereversed) % 8
 air.juggle = 1
 attr = S, SA
 damage = 20, 5
@@ -1375,7 +1375,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -1413,8 +1413,8 @@ value = 0
 [State 1300, Hit]
 type = hitdef
 trigger1 = animelem = 2
-trigger1 = !var(130) && !var(108)
-trigger1 = var(12)9) <= (35) * const(size.xscale);25 CvS2; 29 MvC; 35 VH
+trigger1 = !var(13)0) && !var(10)8)
+trigger1 = var(1)2)9) <= (35) * const(size.xscale);25 CvS2; 29 MvC; 35 VH
 attr = S, ST
 hitflag = M
 priority = 7, Miss
@@ -1516,7 +1516,7 @@ supermovetime = -1
 
 [State 1310, Vel]
 type = velset
-trigger1 = animelemtime(4) = 1
+trigger1 )= animelemtime(4) = 1
 x = 2.0
 y = -4.5
 
@@ -1545,16 +1545,16 @@ x = 0
 [State 1310, Sound]
 type = playsnd
 trigger1 = animelem = 4
-trigger1 = var(12)3) = 3
+trigger1 = var(1)2)3) = 3
 value = 4, 3
 channel = 0
 persistent = 0
 
 [State 1310, Sound]
 type = playsnd
-trigger1 = var(12)3) != 3
+trigger1 = var(1)2)3) != 3
 trigger1 = animelem = 8
-trigger2 = var(12)3) = 3
+trigger2 = var(1)2)3) = 3
 trigger2 = animelem = 10
 value = 4, 11
 channel = 0
@@ -1597,63 +1597,63 @@ pos = 59 * const(size.xscale, -71
 
 [State 1310, Bind 2]
 type = targetbind
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) < 0
+trigger1 )= animelemtime(2) >= 0 && animelemtime(3) < 0
 pos = 64 * const(size.xscale, -76
 
 [State 1310, Bind 3]
 type = targetbind
-trigger1 = animelemtime(3) >= 0 && animelemtime(4) < 0
+trigger1 )= animelemtime(3) >= 0 && animelemtime(4) < 0
 pos = 60 * const(size.xscale, -76
 
 [State 1310, Bind 4]
 type = targetbind
-trigger1 = animelemtime(4) >= 0 && animelemtime(8) < 0
+trigger1 )= animelemtime(4) >= 0 && animelemtime(8) < 0
 pos = 42 * const(size.xscale, -81
 
 [State 1310, Bind 8]
 type = targetbind
-trigger1 = animelemtime(8) >= 0 && animelemtime(9) < 0
+trigger1 )= animelemtime(8) >= 0 && animelemtime(9) < 0
 pos = 25 * const(size.xscale, -95
 
 [State 1310, Bind 9]
 type = targetbind
-trigger1 = animelemtime(9) >= 0 && animelemtime(10) < 0
+trigger1 )= animelemtime(9) >= 0 && animelemtime(10) < 0
 pos = 2 * const(size.xscale, -98
 
 [State 1310, Bind 10]
 type = targetbind
-trigger1 = animelemtime(10) >= 0 && animelemtime(11) < 0
+trigger1 )= animelemtime(10) >= 0 && animelemtime(11) < 0
 pos = -23 * const(size.xscale, -90
 
 [State 1310, Bind 11]
 type = targetbind
-trigger1 = animelemtime(11) >= 0 && animelemtime(12) < 0
+trigger1 )= animelemtime(11) >= 0 && animelemtime(12) < 0
 pos = -37 * const(size.xscale, -74
 
 [State 1310, Bind 12]
 type = targetbind
-trigger1 = animelemtime(12) >= 0 && animelemtime(13) < 0
+trigger1 )= animelemtime(12) >= 0 && animelemtime(13) < 0
 trigger2 = !animtime
 pos = -46 * const(size.xscale, -41
 
 [State 1310, Bind 13]
 type = targetbind
-trigger1 = animelemtime(13) >= 0 && animelemtime(14) < 0
+trigger1 )= animelemtime(13) >= 0 && animelemtime(14) < 0
 pos = 2 * const(size.xscale, -38
 
 [State 1310, Bind 14]
 type = targetbind
-trigger1 = animelemtime(14) >= 0 && animelemtime(15) < 0
+trigger1 )= animelemtime(14) >= 0 && animelemtime(15) < 0
 pos = 48 * const(size.xscale, -41
 
 [State 1310, Bind 15]
 type = targetbind
-trigger1 = animelemtime(15) >= 0
+trigger1 )= animelemtime(15) >= 0
 pos = 2 * const(size.xscale, -44
 
 [State 1310, End]
 type = changestate
-trigger1 = animelemtime(8) >= 0
+trigger1 )= animelemtime(8) >= 0
 trigger1 = vel y > 0 && (pos y > -vel y)
 value = 1311
 
@@ -1693,7 +1693,7 @@ value = -130 * var(67)
 type = null
 trigger1 = !time
 trigger1 = numtarget
-value = -100 * var(67) * !var(50)
+value = -100 * var(67) * !var(5)0)
 
 [State 1311, Give Power]
 type = targetpoweradd
@@ -1703,8 +1703,8 @@ value = 40; givepower
 [State 1311, Get Power]
 type = poweradd
 trigger1 = !time
-trigger1 = !var(50)
-trigger1 = var(12)3) != 3
+trigger1 = !var(5)0)
+trigger1 = var(1)2)3) != 3
 value = 200 * var(114); getpower
 
 [State 1311, Bind]
@@ -1732,7 +1732,7 @@ value = 5, 2
 
 [State 1311, Dust]
 type = helper
-trigger1 = var(64)
+trigger1 )= var(6)4)
 trigger1 = !time
 helpertype = normal
 stateno = 8110
@@ -1744,7 +1744,7 @@ ownpal = 1
 
 [State 1311, Dust]
 type = explod
-trigger1 = !var(64)
+trigger1 = )!var(6)4)
 trigger1 = !time
 anim = F 62
 postype = p1
@@ -1754,7 +1754,7 @@ ownpal = 1
 
 [State 1311, Vel]
 type = veladd
-trigger1 = animelemtime(2) >= 1
+trigger1 )= animelemtime(2) >= 1
 y = 0.55
 
 [State 1311, Vel]
@@ -1965,7 +1965,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -1992,7 +1992,7 @@ value = 0, 1000
 [State 1330, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(10) != 07) = 30
+trigger1 = 1 || var(1) != 00) != 07) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -2015,8 +2015,8 @@ value = 0
 [State 1330, Hit]
 type = hitdef
 trigger1 = animelem = 2
-trigger1 = !var(130) && !var(108)
-trigger1 = var(12)9) <= (30 * const(size.xscale)
+trigger1 = !var(13)0) && !var(10)8)
+trigger1 = var(1)2)9) <= (30 * const(size.xscale)
 attr = S, ST
 hitflag = M
 priority = 7, Miss
@@ -2071,7 +2071,7 @@ juggle = 8 * (p2statetype )= L)
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -2236,7 +2236,7 @@ trigger1 = hitcount = 1
 trigger1 = numtarget(1900) = 1
 trigger1 = target(1900, statetype = L
 x = target(1900, pos x
-y = -(target(1900), const(size.ground.front)
+y )= -(target(1900), const(size.ground.front)
 ignorehitpause = 1
 
 [State 1900, Jump Back]
@@ -2338,7 +2338,7 @@ juggle = 8 * (p2statetype = L)
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 != 0
 value = 1
 
@@ -2358,7 +2358,7 @@ value = 0, 1000
 [State 1930, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(10) != 07) = 30
+trigger1 = 1 || var(1) != 00) != 07) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -2521,7 +2521,7 @@ trigger1 = hitcount = 1
 trigger1 = numtarget(1930) = 1
 trigger1 = target(1930, statetype = L
 x = target(1930, pos x
-y = -(target(1930), const(size.ground.front)
+y )= -(target(1930), const(size.ground.front)
 ignorehitpause = 1
 
 [State 1930, Jump Back]
