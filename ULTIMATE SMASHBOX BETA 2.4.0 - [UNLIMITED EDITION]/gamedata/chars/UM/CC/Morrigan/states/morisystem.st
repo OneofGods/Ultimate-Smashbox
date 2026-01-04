@@ -191,7 +191,7 @@ ctrl = 1
 [State 40, Direction]
 type = varset
 trigger1 = !time
-trigger1 = 0
+value = 0
 
 [State 40, Direction]
 type = varset
