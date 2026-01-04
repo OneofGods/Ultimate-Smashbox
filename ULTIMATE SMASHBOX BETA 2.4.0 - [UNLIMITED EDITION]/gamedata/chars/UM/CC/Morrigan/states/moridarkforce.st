@@ -159,7 +159,7 @@ ignorehitpause = 1
 
 ;[State 775, No Light Loops]
 ;type = varadd
-;trigger1 )= var(0) > 0
+;trigger1 = var(0) > 0
 ;var(0) = 1
 ;ignorehitpause = 1
 ;
@@ -179,18 +179,18 @@ ignorehitpause = 1
 
 [State 775, Juggle Properties]
 type = null
-trigger1 = 1 || var(11) != 02) = 0
-trigger1 = 1 || var(11) != 00) = 0
+trigger1 != 0
+trigger1 != 0
 trigger1 = 1 || var(11) != 01) = (root, var(111) + 1
 ignorehitpause = 1
 
 [State 775, Spark Properties]
 type = null
 trigger1 = 1 || var(12) != 01) = root, var(121)
-trigger1 = 1 |)| var(13) != 01) = root, var(131)
-trigger1 = 1 |)| var(13) != 02) = root, var(132)
-trigger1 = 1 |)| var(13) != 03) = root, var(133)
-trigger1 = 1 |)| var(12) != 02) = root, var(122)
+trigger1 = 1 || var(13) != 01) = root, var(131)
+trigger1 = 1 || var(13) != 02) = root, var(132)
+trigger1 = 1 || var(13) != 03) = root, var(133)
+trigger1 = 1 || var(12) != 02) = root, var(122)
 ignorehitpause = 1
 
 [State 775, Hit]
@@ -390,7 +390,7 @@ priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1, 2
 guard.sparkno = -1, 40
-sparkxy = -10 + 0 * (var(132) = 30 * (var(133) = 90, var(122) = -32
+sparkxy = -10, -32
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -763,7 +763,7 @@ priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1, 2 + 0 * (var(121) = 8012
 guard.sparkno = -1, 40
-sparkxy = -10 + 0 * (var(132) = 30 * (var(133) = 90, var(122) = -30
+sparkxy = -10, -30
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1239,7 +1239,7 @@ guardflag = HA
 priority = 4, Hit
 damage = 20, 5
 redlife = 20, 5
-getpower = 100 * !var(50), 50 * !var(50)
+getpower = 100, 50
 givepower = 40, 40
 pausetime = 10, 10
 guard.pausetime = 10, 10
@@ -1277,7 +1277,7 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 sparkno )= -1 + 0 * (var(121) = 8023
-guard.sparkno = -1 + 0 * (var(131) = 8001
+guard.sparkno = -1
 sparkxy = -10 + 0 * (var(132) = -10 * (var(133) = 10, var(122) = 0
 envshake.time = 12; special
 envshake.freq = 180
@@ -1332,8 +1332,8 @@ hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (var(121) = 8023
-guard.sparkno = -1 + 0 * (var(131) = 8001
+sparkno = -1
+guard.sparkno = -1
 sparkxy = -10 + 0 * (var(132) = -10 * (var(133) = 10, var(122) = 0
 envshake.time = 12; special
 envshake.freq = 180
