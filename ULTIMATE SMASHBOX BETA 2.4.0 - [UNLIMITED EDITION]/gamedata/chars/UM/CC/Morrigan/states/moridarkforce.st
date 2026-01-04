@@ -145,6 +145,7 @@ ignorehitpause = 1
 
 [State 775, Strength]
 type = varset
+trigger1 = 1
 value = 1
 value = root, var(123)
 
@@ -179,7 +180,6 @@ ignorehitpause = 1
 
 [State 775, Juggle Properties]
 type = null
-trigger1 != 0
 trigger1 != 0
 trigger1 = 1 || var(11) != 01) = (root, var(111) + 1
 ignorehitpause = 1

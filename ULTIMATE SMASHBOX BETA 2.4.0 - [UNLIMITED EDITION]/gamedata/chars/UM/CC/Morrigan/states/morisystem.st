@@ -202,7 +202,7 @@ persistent = 0
 
 [State 40, Direction]
 type = varset
-value = 1
+trigger1 = 1
 value = 1
 
 [State 40, High Jump]
@@ -224,11 +224,13 @@ var(12) = 3
 
 [State 40, Jump Cancel]
 type = varset
+trigger1 = 1
 value = prevstateno = 425
 var(13) = 3
 
 [State 40, Jump Cancel]
 type = varset
+trigger1 = 1
 value = prevstateno = 425
 var(14) = 0
 
@@ -1234,10 +1236,6 @@ time = 1
 type = null
 trigger1 = !time
 trigger1 = 1
-trigger1 = 1
-trigger1 = 1
-trigger1 = 1
-trigger1 = 1
 
 [State Freeze Parried Helper]
 redirectID = 1
@@ -1261,6 +1259,7 @@ value = 1
 
 [State 700, No walking]
 type = varset
+trigger1 = 1
 value = 1)
 var(20) = 4
 
@@ -1330,10 +1329,6 @@ time = 1
 type = null
 trigger1 = !time
 trigger1 = 1
-trigger1 = 1
-trigger1 = 1
-trigger1 = 1
-trigger1 = 1
 
 [State Freeze Parried Helper]
 redirectID = 1
@@ -1351,6 +1346,7 @@ value = 1
 
 [State 701, No walking]
 type = varset
+trigger1 = 1
 value = 1)
 var(21) = 4
 
@@ -1418,10 +1414,6 @@ time = 1
 [State Check Parried Helper]
 type = null
 trigger1 = !time
-trigger1 = 1
-trigger1 = 1
-trigger1 = 1
-trigger1 = 1
 trigger1 = 1
 
 [State Freeze Parried Helper]
@@ -1635,6 +1627,7 @@ ctrl = 0
 
 [State 706, Disable]
 type = varset
+trigger1 = 1
 value = 1
 var(0) = 1
 
@@ -2059,6 +2052,7 @@ supermovetime = 9999
 
 [State 770, Var]
 type = varset
+trigger1 = 1
 value = 1
 var(27) = 300
 
@@ -2093,6 +2087,7 @@ velset = 0, 0
 
 [State 771, Var]
 type = varset
+trigger1 = 1
 value = var(27) > 0
 var(27) = 0
 
@@ -3013,7 +3008,6 @@ trigger5 = palno = 10
 trigger5 = 1
 ;Green (Default)
 trigger6 = 1
-trigger6 = 1
 
 [State 5900, End]
 type = changestate
@@ -3327,9 +3321,6 @@ type = null
 trigger1 = numenemy
 trigger1 = time > 0
 trigger1 = 1
-trigger1 = 1
-trigger1 = 1
-trigger1 = 1
 ignorehitpause = 1
 
 [State -2, Dark Force]
@@ -3404,7 +3395,6 @@ ignorehitpause = 1
 [State -2, Unthrowable Flag - Hurt]
 type = varset
 triggerall = 1
-triggerall = 1
 ; triggerall = p2stateno != 5900 ; DEMON ELIMINATED - p2stateno unsupported
 triggerall = 1 ; Safe fallback
 ; trigger1 = p2stateno = [150, 155] ; DEMON ELIMINATED - p2stateno unsupported
@@ -3422,7 +3412,6 @@ ignorehitpause = 1
 type = null
 trigger1 = p2movetype != H
 trigger1 != 0
-trigger1 != 0
 ignorehitpause = 1
 
 [State -2, Damage Scaling - Attack Connected Flag]
@@ -3434,6 +3423,7 @@ ignorehitpause = 1
 
 [State -2, Damage Scaling - Base Formula]
 type = varset
+trigger1 = 1
 value = 1
 var(33) =   1 - 0.1 * var(31)
 ignorehitpause = 1
@@ -3451,6 +3441,7 @@ ignorehitpause = 1
 
 [State -2, Damage Scaling - Dark Force]
 type = varset
+trigger1 = 1
 value = var(27)
 var(33) = 0.75 *   1 - 0.1 * var(31) * 2
 ignorehitpause = 1
@@ -3490,8 +3481,8 @@ ignorehitpause = 1
 
 [State -2, Damage Scaling - Long Combo Guts]
 type = varset
+trigger1 = 1
 value = numenemy
-var(33) = var(33) * 0.95
 var(33) = var(33) * 0.95
 
 [State -2, Damage Scaling - Root Multiplier]
@@ -3691,6 +3682,7 @@ var(41) = 1
 
 [State -3, Projectile Flag]
 type = varset
+trigger1 = 1
 value = 1
 var(42) = 0
 ignorehitpause = 1
@@ -4082,6 +4074,7 @@ pos = pos x * camerazoom, 0
 
 [State -3, Victory BGM]
 type = varset
+trigger1 = 1
 value = var(61) != 0
 value = 0
 

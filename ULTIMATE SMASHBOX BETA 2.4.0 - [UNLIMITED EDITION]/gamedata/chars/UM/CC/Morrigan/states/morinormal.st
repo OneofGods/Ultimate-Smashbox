@@ -3080,6 +3080,7 @@ value = (stagebackedgedist < stagefrontedgedist)
 
 [State 800, Tech Hit]
 type = varset
+trigger1 = 1
 value = 1
 value = 0
 
