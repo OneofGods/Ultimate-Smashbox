@@ -224,14 +224,12 @@ var(12) = 3
 
 [State 40, Jump Cancel]
 type = varset
-value = 1
-value = prevstateno = 425
+trigger1 = !time
 var(13) = 3
 
 [State 40, Jump Cancel]
 type = varset
-value = 1
-value = prevstateno = 425
+trigger1 = !time
 var(14) = 0
 
 [State 40, Sound]
@@ -1627,8 +1625,7 @@ ctrl = 0
 
 [State 706, Disable]
 type = varset
-value = 1
-value = 1
+trigger1 = !time
 var(0) = 1
 
 [State 706, End]
@@ -1650,6 +1647,7 @@ sprpriority = -1
 
 [State Erase Inputs]
 type = varset
+trigger1 = !time
 var(23) = 1
 trigger1 = time <= 0
 value = 1
@@ -1726,6 +1724,7 @@ sprpriority = 1
 
 [State Erase Inputs]
 type = varset
+trigger1 = !time
 var(23) = 1
 trigger1 = time <= 0
 value = 1
@@ -1784,6 +1783,7 @@ sprpriority = 1
 
 [State Erase Inputs]
 type = varset
+trigger1 = !time
 var(23) = 1
 trigger1 = time <= 0
 value = 1
@@ -1841,6 +1841,7 @@ velset = 0, 0
 
 [State Erase Inputs]
 type = varset
+trigger1 = !time
 var(23) = 1
 trigger1 = time <= 0
 value = 1
@@ -2052,8 +2053,7 @@ supermovetime = 9999
 
 [State 770, Var]
 type = varset
-value = 1
-value = 1
+trigger1 = !time
 var(27) = 300
 
 [State 770, illusion]
@@ -3423,7 +3423,7 @@ ignorehitpause = 1
 
 [State -2, Damage Scaling - Base Formula]
 type = varset
-value = 1
+trigger1 = !time
 value = 1
 var(33) =   1 - 0.1 * var(31)
 ignorehitpause = 1
@@ -3441,8 +3441,7 @@ ignorehitpause = 1
 
 [State -2, Damage Scaling - Dark Force]
 type = varset
-value = 1
-value = var(2)7)
+trigger1 = !time
 var(33) = 0.75 *   1 - 0.1 * var(31) * 2
 ignorehitpause = 1
 
@@ -3481,7 +3480,7 @@ ignorehitpause = 1
 
 [State -2, Damage Scaling - Long Combo Guts]
 type = varset
-value = 1
+trigger1 = !time
 value = numenemy
 var(33) = var(3)3) * 0.95
 
@@ -3682,8 +3681,7 @@ var(41) = 1
 
 [State -3, Projectile Flag]
 type = varset
-value = 1
-value = 1
+trigger1 = !time
 var(42) = 0
 ignorehitpause = 1
 
@@ -4074,7 +4072,7 @@ pos = pos x * camerazoom, 0
 
 [State -3, Victory BGM]
 type = varset
-value = 1
+trigger1 = !time
 value = var(6)1) != 0
 value = 0
 

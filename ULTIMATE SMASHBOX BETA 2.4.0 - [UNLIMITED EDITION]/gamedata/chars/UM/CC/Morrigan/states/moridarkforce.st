@@ -145,7 +145,7 @@ ignorehitpause = 1
 
 [State 775, Strength]
 type = varset
-value = 1
+trigger1 = !time
 value = 1
 value = root, var(123)
 
