@@ -191,19 +191,19 @@ ctrl = 1
 [State 40, Direction]
 type = varset
 trigger1 = !time
-sysvar(1) = 0
+trigger1 = 0
 
 [State 40, Direction]
 type = varset
 trigger1 = time >= 1
 trigger1 = command = "holdfwd" || command = "holdback"
-sysvar(1) = (command = "holdfwd") - (command = "holdback")
+trigger1 = (command = "holdfwd") - (command = "holdback")
 persistent = 0
 
 [State 40, Direction]
 type = varset
 trigger1 = 1
-sysvar(1) =   1
+trigger1 = 1
 
 [State 40, High Jump]
 type = varset
@@ -859,27 +859,27 @@ y = const(movement.yaccel)
 [State 132, Var]
 type = varset
 trigger1 = 1
-sysvar(0) = vel y > 0 && (pos y > -vel y)
+trigger1 = vel y > 0 && (pos y > -vel y)
 
 [State 132, Vel]
 type = velset
-trigger1 = sysvar(0
+trigger1 = sysvar(0) != 0
 y = 0
 
 [State 132, Pos]
 type = posset
-trigger1 = sysvar(0
+trigger1 = sysvar(0) != 0
 y = 0
 
 [State 132, End]
 type = changestate
-triggerall )= sysvar(0) && inguarddist
+triggerall = sysvar(0) && inguarddist
 trigger1 =  command = "holdback"
 value = 130
 
 [State 132, End]
 type = changestate
-trigger1 = sysvar(0
+trigger1 = sysvar(0) != 0
 value = 52
 
 ;[State 132, Stop guarding was here]
@@ -1186,27 +1186,27 @@ value = 1
 [State 155, Var]
 type = varset
 trigger1 = 1
-sysvar(0) = vel y > 0 && (pos y > -vel y)
+trigger1 = vel y > 0 && (pos y > -vel y)
 
 [State 155, Vel]
 type = velset
-trigger1 = sysvar(0
+trigger1 = sysvar(0) != 0
 y = 0
 
 [State 155, Pos]
 type = posset
-trigger1 = sysvar(0
+trigger1 = sysvar(0) != 0
 y = 0
 
 [State 155, End]
 type = changestate
-triggerall )= sysvar(0) && inguarddist
+triggerall = sysvar(0) && inguarddist
 trigger1 =  command = "holdback"
 value = 130
 
 [State 155, End]
 type = changestate
-trigger1 = sysvar(0
+trigger1 = sysvar(0) != 0
 value = 52
 
 
@@ -3309,7 +3309,7 @@ velset = 0, 0
 [State 1115081, Var]
 type = varset
 trigger1 = !time
-sysvar(0) = 1
+trigger1 = 1
 
 [State 1115081, End]
 type = selfstate
