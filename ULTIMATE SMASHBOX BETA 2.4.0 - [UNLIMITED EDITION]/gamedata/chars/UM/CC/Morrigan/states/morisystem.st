@@ -202,8 +202,8 @@ persistent = 0
 
 [State 40, Direction]
 type = varset
-value = 1
-value = 1
+trigger1 = !time
+var(12) = 1
 
 [State 40, High Jump]
 type = varset
