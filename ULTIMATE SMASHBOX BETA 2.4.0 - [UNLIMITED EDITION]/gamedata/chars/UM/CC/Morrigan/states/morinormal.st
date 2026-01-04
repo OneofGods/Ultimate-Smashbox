@@ -21,8 +21,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -49,7 +49,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 200, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = S, NA
 damage = 30, 0
 animtype = Light
@@ -68,7 +68,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
 ground.slidetime = 12
-ground.hittime = 1 + 12; + 2 * var(105
+ground.hittime = 1 + 12; + 2 * var(105)
 ground.velocity = -4.49 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
@@ -78,17 +78,17 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 50 * !var(50, 25 * !var(50
+getpower = 50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
-trigger1 = animelemtime(3) >= 0
+trigger1 )= animelemtime(3) >= 0
 movetype = I
 persistent = 0
 
@@ -115,8 +115,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -143,7 +143,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 201, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = S, NA
 damage = 30, 0
 animtype = Light
@@ -162,7 +162,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
 ground.slidetime = 12
-ground.hittime = 1 + 12; + 2 * var(105
+ground.hittime = 1 + 12; + 2 * var(105)
 ground.velocity = -4.49 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
@@ -172,17 +172,17 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 50 * !var(50, 25 * !var(50
+getpower = 50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
-trigger1 = animelemtime(3) >= 0
+trigger1 )= animelemtime(3) >= 0
 movetype = I
 persistent = 0
 
@@ -209,8 +209,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -237,7 +237,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 210, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = S, NA
 damage = 70, 0
 animtype = Medium
@@ -256,7 +256,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * var(105); + 3 * var(105
+ground.hittime = 1 + 15; + 3 * var(105); + 3 * var(105)
 ground.velocity = -7.51 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -266,20 +266,20 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 100 * !var(50, 50 * !var(50
+getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 210, Anim]
 type = changeanim
 trigger1 = anim = 210
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(3) >= 0 && animelemtime(4) <= 0
+trigger1 )= animelemtime(3) >= 0 && animelemtime(4) <= 0
 value = 210
 elem = 4
 ignorehitpause = 1
@@ -313,8 +313,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -341,7 +341,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 211, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = S, NA
 damage = 80, 0
 animtype = Medium
@@ -360,7 +360,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * var(105); + 3 * var(105
+ground.hittime = 1 + 15; + 3 * var(105); + 3 * var(105)
 ground.velocity = -7.51 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -370,20 +370,20 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 100 * !var(50, 50 * !var(50
+getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 211, Anim]
 type = changeanim
 trigger1 = anim = 211
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(4) >= 0 && animelemtime(5) <= 0
+trigger1 )= animelemtime(4) >= 0 && animelemtime(5) <= 0
 value = 211
 elem = 5
 ignorehitpause = 1
@@ -427,8 +427,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -455,7 +455,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 220, Hit]
 type = hitdef
 trigger1 = animelem = 5
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = S, NA
 damage = 100, 0
 animtype = Hard
@@ -473,7 +473,7 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.hittime = 1 + 18; + 4 * var(105
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
@@ -484,20 +484,20 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 200 * !var(50, 100 * !var(50
+getpower = 200 * !var(50), 100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 220, Anim]
 type = changeanim
 trigger1 = anim = 220
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(5) >= 0 && animelemtime(6) <= 0
+trigger1 )= animelemtime(5) >= 0 && animelemtime(6) <= 0
 value = 220
 elem = 6
 ignorehitpause = 1
@@ -531,8 +531,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -559,7 +559,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 221, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = S, NA
 damage = 90, 0
 animtype = Hard
@@ -577,7 +577,7 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.hittime = 1 + 18; + 4 * var(105
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
@@ -588,20 +588,20 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 200 * !var(50, 100 * !var(50
+getpower = 200 * !var(50), 100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 forcestand = 1
 
 [State 221, Hit]
 type = hitdef
 trigger1 = animelem = 3
 trigger1 = !movecontact && !movereversed
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle )= 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = S, NA
 damage = 90, 0
 animtype = Hard
@@ -619,7 +619,7 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.hittime = 1 + 18; + 4 * var(105
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
@@ -630,20 +630,20 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 200 * !var(50, 100 * !var(50
+getpower = 200 * !var(50), 100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 221, Anim]
 type = changeanim
 trigger1 = anim = 221
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
+trigger1 )= animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 221
 elem = 3
 ignorehitpause = 1
@@ -687,8 +687,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -715,7 +715,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 230, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = S, NA
 damage = 30, 0
 animtype = Light
@@ -734,7 +734,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
 ground.slidetime = 12
-ground.hittime = 1 + 12; + 2 * var(105
+ground.hittime = 1 + 12; + 2 * var(105)
 ground.velocity = -4.49 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
@@ -744,17 +744,17 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 50 * !var(50, 25 * !var(50
+getpower = 50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
-trigger1 = animelemtime(3) >= 0
+trigger1 )= animelemtime(3) >= 0
 movetype = I
 persistent = 0
 
@@ -781,8 +781,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -809,7 +809,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 240, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = S, NA
 damage = 70, 0
 animtype = Medium
@@ -828,7 +828,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * var(105
+ground.hittime = 1 + 15; + 3 * var(105)
 ground.velocity = -7.51 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -838,19 +838,19 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 100 * !var(50, 50 * !var(50
+getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 240, Hit]
 type = hitdef
 trigger1 = animelem = 4
 trigger1 = prevstateno = 710
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle )= 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = S, NA
 damage = 70, 0
 animtype = Medium
@@ -869,7 +869,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * var(105
+ground.hittime = 1 + 15; + 3 * var(105)
 ground.velocity = -5.30 , -5.25
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -880,7 +880,7 @@ air.velocity = -5.30 , -5.30; sidestep
 air.cornerpush.veloff = 0
 guard.cornerpush.veloff = 0
 guard.velocity = -10.52 
-getpower = 100 * !var(50, 50 * !var(50
+getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
@@ -893,7 +893,7 @@ type = changeanim
 trigger1 = anim = 240
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(4) >= 0 && animelemtime(5) <= 0
+trigger1 )= animelemtime(4) >= 0 && animelemtime(5) <= 0
 value = 240
 elem = 5
 ignorehitpause = 1
@@ -927,8 +927,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -955,7 +955,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 250, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = S, NA
 damage = 90, 0
 animtype = Hard
@@ -973,7 +973,7 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
-ground.hittime = 1 + 18; + 4 * var(105
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
@@ -984,20 +984,20 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 200 * !var(50, 100 * !var(50
+getpower = 200 * !var(50), 100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 forcestand = 1
 
 [State 250, SparkXY]
 type = varset
 trigger1 = animelem = 5
-trigger1 = var(132) = 50
-trigger1 = var(133) = 110
+trigger1 )= var(1)3)2) = 50
+trigger1 = var(1)3)3) = 110
 value = -110
 
 [State 250, Anim]
@@ -1069,8 +1069,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -1107,7 +1107,7 @@ physics = N
 
 [State 255, Accel]
 type = veladd
-trigger1 = animelemtime(3) >= 0
+trigger1 )= animelemtime(3) >= 0
 y = 0.5
 
 [State 255, Vel]
@@ -1134,7 +1134,7 @@ ownpal = 1
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 3 || animelem = 4
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = A, NA
 damage = 30, 0
 animtype = Hard
@@ -1152,7 +1152,7 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
-ground.hittime = 1 + 18; + 4 * var(105
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -4.49 , 0
 ground.cornerpush.veloff = 0
@@ -1163,7 +1163,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 200 * !var(50, 100 * !var(50
+getpower = 200 * !var(50), 100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
@@ -1172,12 +1172,12 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 5
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle )= 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = A, NA
 damage = 30, 0
 animtype = Hard
@@ -1195,7 +1195,7 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
-ground.hittime = 1 + 18; + 4 * var(105
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -4.49 , 0
 ground.cornerpush.veloff = 0
@@ -1206,7 +1206,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 200 * !var(50, 100 * !var(50
+getpower = 200 * !var(50), 100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
@@ -1215,12 +1215,12 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 6
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle )= 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = A, NA
 damage = 30, 0
 animtype = Hard
@@ -1238,7 +1238,7 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.hittime = 1 + 18; + 4 * var(105
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
@@ -1252,18 +1252,18 @@ air.fall = 1
 fall.recover = 1
 fall.recovertime = 120
 air.cornerpush.veloff = 0
-getpower = 200 * !var(50, 100 * !var(50
+getpower = 200 * !var(50), 100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 airguard.ctrltime = 1 + 16
 airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
-trigger1 = animelemtime(7) >= 0
+trigger1 )= animelemtime(7) >= 0
 movetype = I
 persistent = 0
 
@@ -1332,8 +1332,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -1360,7 +1360,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 400, Hit]
 type = hitdef
 trigger1 = animelem = 2 || animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = C, NA
 damage = 20, 0
 animtype = Light
@@ -1379,7 +1379,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 12
-ground.hittime = 1 + 12; + 2 * var(105
+ground.hittime = 1 + 12; + 2 * var(105)
 ground.velocity = -4.49 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
@@ -1390,17 +1390,17 @@ air.hittime = 120
 air.velocity = -2.78 , -5.33
 down.velocity = -2, -2
 air.cornerpush.veloff = 0
-getpower = 50 * !var(50, 25 * !var(50
+getpower = 50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
-trigger1 = animelemtime(4) >= 0
+trigger1 )= animelemtime(4) >= 0
 movetype = I
 persistent = 0
 
@@ -1427,8 +1427,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -1455,7 +1455,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 410, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = C, NA
 damage = 60, 0
 animtype = Medium
@@ -1474,7 +1474,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * var(105
+ground.hittime = 1 + 15; + 3 * var(105)
 ground.velocity = -7.51 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -1485,20 +1485,20 @@ air.hittime = 120
 air.velocity = -2.78 , -5.33
 down.velocity = -3, -3
 air.cornerpush.veloff = 0
-getpower = 100 * !var(50, 50 * !var(50
+getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 410, Anim]
 type = changeanim
 trigger1 = anim = 410
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
+trigger1 )= animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 410
 elem = 3
 ignorehitpause = 1
@@ -1532,8 +1532,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -1560,7 +1560,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 420, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = C, NA
 damage = 100, 0
 animtype = Hard
@@ -1578,7 +1578,7 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.hittime = 1 + 18; + 4 * var(105
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -10.52 , 0
 ground.cornerpush.veloff = 0
@@ -1590,17 +1590,17 @@ air.hittime = 120
 air.velocity = -2.78 , -5.33
 down.velocity = -4, -4
 air.cornerpush.veloff = 0
-getpower = 200 * !var(50, 100 * !var(50
+getpower = 200 * !var(50), 100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
-trigger1 = animelemtime(5) >= 0
+trigger1 )= animelemtime(5) >= 0
 movetype = I
 persistent = 0
 
@@ -1627,8 +1627,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -1655,7 +1655,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 425, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = C, NA
 damage = 90, 0
 animtype = Hard
@@ -1673,7 +1673,7 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
-ground.hittime = 1 + 18; + 4 * var(105
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -1 , -9
 ground.cornerpush.veloff = 0
@@ -1685,7 +1685,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -1 , -9
 air.cornerpush.veloff = 0
-getpower = 216 * !var(50, 36 * !var(50
+getpower = 216 * !var(50), 36 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
@@ -1699,7 +1699,7 @@ type = changeanim
 trigger1 = anim = 425
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(3) >= 0 && animelemtime(4) <= 0
+trigger1 )= animelemtime(3) >= 0 && animelemtime(4) <= 0
 value = 425
 elem = 4
 ignorehitpause = 1
@@ -1753,8 +1753,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -1781,7 +1781,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 430, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = C, NA
 damage = 30, 0
 animtype = Light
@@ -1800,7 +1800,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 12
-ground.hittime = 1 + 12; + 2 * var(105
+ground.hittime = 1 + 12; + 2 * var(105)
 ground.velocity = -4.49 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
@@ -1811,17 +1811,17 @@ air.hittime = 120
 air.velocity = -2.78 , -5.33
 down.velocity = -2, -2
 air.cornerpush.veloff = 0
-getpower = 50 * !var(50, 25 * !var(50
+getpower = 50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State Idle]
 type = statetypeset
-trigger1 = animelemtime(4) >= 0
+trigger1 )= animelemtime(4) >= 0
 movetype = I
 persistent = 0
 
@@ -1848,8 +1848,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -1876,7 +1876,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 431, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = C, NA
 damage = 30, 0
 animtype = Light
@@ -1895,7 +1895,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 12
-ground.hittime = 1 + 12; + 2 * var(105
+ground.hittime = 1 + 12; + 2 * var(105)
 ground.velocity = -4.49 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 10
@@ -1906,20 +1906,20 @@ air.hittime = 120
 air.velocity = -2.78 , -5.33
 down.velocity = -2, -2
 air.cornerpush.veloff = 0
-getpower = 50 * !var(50, 25 * !var(50
+getpower = 50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 431, Anim]
 type = changeanim
 trigger1 = anim = 431
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
+trigger1 )= animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 431
 elem = 3
 ignorehitpause = 1
@@ -1953,8 +1953,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -1981,7 +1981,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 440, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = S, NA
 damage = 70, 0
 animtype = Medium
@@ -2000,7 +2000,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * var(105
+ground.hittime = 1 + 15; + 3 * var(105)
 ground.velocity = -7.51 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -2011,20 +2011,20 @@ air.hittime = 120
 air.velocity = -2.78 , -5.33
 down.velocity = -3, -3
 air.cornerpush.veloff = 0
-getpower = 100 * !var(50, 50 * !var(50
+getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 440, Anim]
 type = changeanim
 trigger1 = anim = 440
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(3) >= 0 && animelemtime(4) <= 0
+trigger1 )= animelemtime(3) >= 0 && animelemtime(4) <= 0
 value = 440
 elem = 4
 ignorehitpause = 1
@@ -2058,8 +2058,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -2086,7 +2086,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 445, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = S, NA
 damage = 70, 0
 animtype = Medium
@@ -2105,7 +2105,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 14
-ground.hittime = 1 + 15; + 3 * var(105
+ground.hittime = 1 + 15; + 3 * var(105)
 ground.velocity = -7.51 , 0
 ground.cornerpush.veloff = 0
 guard.hittime = 1 + 13
@@ -2116,20 +2116,20 @@ air.hittime = 120
 air.velocity = -2.78 , -5.33
 down.velocity = -3, -3
 air.cornerpush.veloff = 0
-getpower = 100 * !var(50, 50 * !var(50
+getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 445, Anim]
 type = changeanim
 trigger1 = anim = 445
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
+trigger1 )= animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 445
 elem = 3
 ignorehitpause = 1
@@ -2163,8 +2163,8 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -2191,7 +2191,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 450, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = C, NA
 damage = 80, 0
 animtype = Hard
@@ -2209,7 +2209,7 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = Trip
-ground.hittime = 1 + 18; + 4 * var(105
+ground.hittime = 1 + 18; + 4 * var(105)
 ground.slidetime = 18
 ground.velocity = -1.0, -8.0
 air.type = Trip
@@ -2222,16 +2222,16 @@ guard.slidetime = 16
 guard.velocity = -10.52 
 guard.cornerpush.veloff = 0
 air.cornerpush.veloff = 0
-getpower = 200 * !var(50, 100 * !var(50
+getpower = 200 * !var(50), 100 * !var(50)
 givepower = 40, 40
 yaccel = 0.695
 fall = 1
-fall.recover = !var(105
+fall.recover = !var(105)
 fall.recovertime = 120
 
 [State Idle]
 type = statetypeset
-trigger1 = animelemtime(5) >= 0
+trigger1 )= animelemtime(5) >= 0
 movetype = I
 persistent = 0
 
@@ -2258,8 +2258,8 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -2286,7 +2286,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 600, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = A, NA
 damage = 40, 0
 animtype = Light
@@ -2317,7 +2317,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 50 * !var(50, 25 * !var(50
+getpower = 50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
@@ -2326,14 +2326,14 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 600, Anim]
 type = changeanim
 trigger1 = anim = 600
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
+trigger1 )= animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 600
 elem = 3
 ignorehitpause = 1
@@ -2371,8 +2371,8 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -2407,7 +2407,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 610, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = A, NA
 damage = 70, 0
 animtype = Medium
@@ -2438,7 +2438,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 100 * !var(50, 50 * !var(50
+getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
@@ -2447,14 +2447,14 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 610, Anim]
 type = changeanim
 trigger1 = anim = 610
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(3) >= 0 && animelemtime(4) <= 0
+trigger1 )= animelemtime(3) >= 0 && animelemtime(4) <= 0
 value = 610
 elem = 4
 ignorehitpause = 1
@@ -2492,8 +2492,8 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -2520,7 +2520,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 620, Hit]
 type = hitdef
 trigger1 = animelem = 6
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = A, NA
 damage = 90, 0
 animtype = Hard
@@ -2551,7 +2551,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 200 * !var(50, 100 * !var(50
+getpower = 200 * !var(50), 100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
@@ -2560,14 +2560,14 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 620, Anim]
 type = changeanim
 trigger1 = anim = 620
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(6) >= 0 && animelemtime(7) <= 0
+trigger1 )= animelemtime(6) >= 0 && animelemtime(7) <= 0
 value = 620
 elem = 7
 ignorehitpause = 1
@@ -2605,8 +2605,8 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -2633,7 +2633,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 630, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = A, NA
 damage = 40, 0
 animtype = Light
@@ -2664,7 +2664,7 @@ air.type = High
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 50 * !var(50, 25 * !var(50
+getpower = 50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
@@ -2673,14 +2673,14 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 630, Anim]
 type = changeanim
 trigger1 = anim = 630
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
+trigger1 )= animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 630
 elem = 3
 ignorehitpause = 1
@@ -2718,8 +2718,8 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -2746,7 +2746,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 631, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = A, NA
 damage = 40, 0
 animtype = Light
@@ -2777,7 +2777,7 @@ air.type = High
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 50 * !var(50, 25 * !var(50
+getpower = 50 * !var(50), 25 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
@@ -2786,14 +2786,14 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 631, Anim]
 type = changeanim
 trigger1 = anim = 631
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) <= 0
+trigger1 )= animelemtime(2) >= 0 && animelemtime(3) <= 0
 value = 631
 elem = 3
 ignorehitpause = 1
@@ -2831,8 +2831,8 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -2859,7 +2859,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 640, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = A, NA
 damage = 70, 0
 animtype = Medium
@@ -2890,7 +2890,7 @@ air.type = High
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 100 * !var(50, 50 * !var(50
+getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
@@ -2899,14 +2899,14 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 640, Anim]
 type = changeanim
 trigger1 = anim = 640
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(3) >= 0 && animelemtime(4) <= 0
+trigger1 )= animelemtime(3) >= 0 && animelemtime(4) <= 0
 value = 640
 elem = 4
 ignorehitpause = 1
@@ -2944,8 +2944,8 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -2972,7 +2972,7 @@ freqmul = 0.95 + (random / 10000.0
 [State 650, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1
+air.juggle = 0 * (var(112) = 1 || var(11) != 00) = 1 || var(11) != 01) = 1
 attr = A, NA
 damage = 90, 0
 animtype = Hard
@@ -3003,7 +3003,7 @@ air.type = Low
 air.hittime = 120
 air.velocity = -2.78 , -5.33
 air.cornerpush.veloff = 0
-getpower = 200 * !var(50, 100 * !var(50
+getpower = 200 * !var(50), 100 * !var(50)
 givepower = 40, 40
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
@@ -3012,14 +3012,14 @@ airguard.velocity = -6.00 , -1.00
 airguard.cornerpush.veloff = 0
 fall.recover = 1
 fall.recovertime = 120
-forcenofall = !var(50
+forcenofall = !var(50)
 
 [State 650, Anim]
 type = changeanim
 trigger1 = anim = 650
 trigger1 = hitpausetime = [1, 8]
 trigger1 = movecontact = 1 || movereversed = 1
-trigger1 = animelemtime(3) >= 0 && animelemtime(4) <= 0
+trigger1 )= animelemtime(3) >= 0 && animelemtime(4) <= 0
 value = 650
 elem = 4
 ignorehitpause = 1
@@ -3057,8 +3057,8 @@ poweradd = 0
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65
-trigger1 = 1 || var(65) = 0
+trigger1 = var(6)5)
+trigger1 = 1 || var(6) != 05) = 0
 value = 1
 
 [State Erase Inputs]
@@ -3104,8 +3104,8 @@ value = 0
 [State 800, Hit]
 type = hitdef
 trigger1 = animelem = 2
-trigger1 = !var(130) && !var(108
-trigger1 = var(129) <= 32 * const(size.xscale)
+trigger1 = !var(13)0) && !var(108)
+trigger1 )= var(1)2)9) <= 32 * const(size.xscale)
 ID = 800
 attr = S, NT
 hitflag = M
@@ -3167,13 +3167,13 @@ sprpriority = 2
 [State Tech Hit]
 type = varadd
 trigger1 = time
-trigger1 = var(127) > 0
+trigger1 = var(1)2)7) > 0
 value = -1
 
 [State Tech Hit]
 type = changestate
 triggerall = numtarget
-triggerall = var(127
+triggerall = var(12)7)
 triggerall = target, command != "holdup" && target, command != "holddown"
 trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z")) >= 2
 trigger2 = target, command = "holdfwd" || target, command = "holdback"
@@ -3208,12 +3208,12 @@ edge = 50 * const(size.xscale, 0
 
 [State 810, Width]
 type = width
-trigger1 = animelemtime(5) >= 0 && animelemtime(6) < 0
+trigger1 )= animelemtime(5) >= 0 && animelemtime(6) < 0
 edge = 60 * const(size.xscale, 0
 
 [State 810, Width]
 type = width
-trigger1 = animelemtime(6) >= 0 && animelemtime(7) < 0
+trigger1 )= animelemtime(6) >= 0 && animelemtime(7) < 0
 edge = 75 * const(size.xscale, 0
 
 [State 810, Sound]
@@ -3232,27 +3232,27 @@ freqmul = 0.95 + (random / 10000.0
 
 [State 810, Bind 1]
 type = targetbind
-trigger1 = animelemtime(1) >= 0 && animelemtime(2) < 0
+trigger1 )= animelemtime(1) >= 0 && animelemtime(2) < 0
 pos = 66 * const(size.xscale, -76
 
 [State 810, Bind 2]
 type = targetbind
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) < 0
+trigger1 )= animelemtime(2) >= 0 && animelemtime(3) < 0
 pos = 60 * const(size.xscale, -77
 
 [State 810, Bind 3]
 type = targetbind
-trigger1 = animelemtime(3) >= 0 && animelemtime(4) < 0
+trigger1 )= animelemtime(3) >= 0 && animelemtime(4) < 0
 pos = -4 * const(size.xscale, -72
 
 [State 810, Bind 4]
 type = targetbind
-trigger1 = animelemtime(4) >= 0 && animelemtime(5) < 0
+trigger1 )= animelemtime(4) >= 0 && animelemtime(5) < 0
 pos = 52 * const(size.xscale, -70
 
 [State 810, Bind 5]
 type = targetbind
-trigger1 = animelemtime(5) >= 0 && animelemtime(6) < 0
+trigger1 )= animelemtime(5) >= 0 && animelemtime(6) < 0
 pos = 72* const(size.xscale, -38
 
 [State 810, Bind 6]
@@ -3268,13 +3268,13 @@ value = 1
 [State 810, Damage]
 type = targetlifeadd
 trigger1 = animelem = 6
-value = -110 * var(67
+value = -110 * var(67)
 
 [State 810, Stun Damage]
 type = null
 trigger1 = numtarget
 trigger1 = animelem = 6
-value = -140 * var(67) * !var(50
+value )= -140 * var(67) * !var(50)
 
 [State 810, Give Power]
 type = targetpoweradd
@@ -3284,8 +3284,8 @@ value = 40; givepower
 [State 810, Get Power]
 type = poweradd
 trigger1 = animelem = 6
-trigger1 = !var(50
-value = 100 * var(114); getpower
+trigger1 = !var(50)
+value )= 100 * var(114); getpower
 
 [State 810, Throw]
 type = targetstate
@@ -3301,7 +3301,7 @@ value = 5, 2
 
 [State 810, Dust]
 type = helper
-trigger1 = var(64
+trigger1 = var(6)4)
 trigger1 = numtarget
 trigger1 = animelem = 6
 helpertype = normal
@@ -3314,7 +3314,7 @@ ownpal = 1
 
 [State 810, Dust]
 type = explod
-trigger1 = !var(64
+trigger1 = !var(64)
 trigger1 = numtarget
 trigger1 = animelem = 6
 anim = F 62
@@ -3401,7 +3401,7 @@ value = 5160
 [State 817, Pos]
 type = posset
 trigger1 = !time
-y = const(movement.down.bounce.offset.y)
+y )= const(movement.down.bounce.offset.y)
 
 [State 817, Accel]
 type = veladd
@@ -3450,13 +3450,13 @@ sprpriority = 2
 [State Tech Hit]
 type = varadd
 trigger1 = time
-trigger1 = var(127) > 0
+trigger1 = var(1)2)7) > 0
 value = -1
 
 [State Tech Hit]
 type = changestate
 triggerall = numtarget
-triggerall = var(127
+triggerall = var(12)7)
 triggerall = target, command != "holdup" && target, command != "holddown"
 trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z")) >= 2
 trigger2 = target, command = "holdfwd" || target, command = "holdback"
@@ -3481,7 +3481,7 @@ edge = 50 * const(size.xscale, 0
 
 [State 820, Width]
 type = width
-trigger1 = animelemtime(8) >= 0 && animelemtime(9) < 0
+trigger1 )= animelemtime(8) >= 0 && animelemtime(9) < 0
 edge = 80 * const(size.xscale, 0
 
 [State 820, Sound]
@@ -3505,22 +3505,22 @@ value = 5, 3
 
 [State 820, Bind 1]
 type = targetbind
-trigger1 = animelemtime(1) >= 0 && animelemtime(2) < 0
+trigger1 )= animelemtime(1) >= 0 && animelemtime(2) < 0
 pos = 60 * const(size.xscale, -71
 
 [State 820, Bind 2]
 type = targetbind
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) < 0
+trigger1 )= animelemtime(2) >= 0 && animelemtime(3) < 0
 pos = 66 * const(size.xscale, -75
 
 [State 820, Bind 3]
 type = targetbind
-trigger1 = animelemtime(3) >= 0 && animelemtime(8) < 0
+trigger1 )= animelemtime(3) >= 0 && animelemtime(8) < 0
 pos = 66 * const(size.xscale, -70
 
 [State 820, Bind 8]
 type = targetbind
-trigger1 = animelemtime(8) >= 0 && animelemtime(9) < 0
+trigger1 )= animelemtime(8) >= 0 && animelemtime(9) < 0
 pos = 112 * const(size.xscale, -66
 
 [State 820, Claw]
@@ -3532,7 +3532,7 @@ ID = 825
 name = "Claw"
 postype = p1
 pos = 105 * const(size.xscale, -65
-size.ground.front = (target, const(size.ground.back))
+size.ground.front = (target), const(size.ground.back))
 
 [State 820, HitSound]
 type = playsnd
@@ -3554,14 +3554,14 @@ value = 1
 [State 820, Damage]
 type = targetlifeadd
 trigger1 = animelem = 8
-value = -120 * var(67
+value = -120 * var(67)
 kill = 0
 
 [State 820, Stun Damage]
 type = null
 trigger1 = numtarget
 trigger1 = animelem = 8
-value = -120 * var(67) * !var(50
+value )= -120 * var(67) * !var(50)
 
 [State 820, Give Power]
 type = targetpoweradd
@@ -3571,8 +3571,8 @@ value = 40; givepower
 [State 820, Get Power]
 type = poweradd
 trigger1 = animelem = 8
-trigger1 = !var(50
-value = 100 * var(114); getpower
+trigger1 = !var(50)
+value )= 100 * var(114); getpower
 
 [State 820, Throw]
 type = targetstate
@@ -3792,7 +3792,7 @@ sprpriority = 0
 [State 890, Tech Hit Facing]
 type = turn
 trigger1 = !time
-trigger1 = facing != var(126
+trigger1 = facing !)= var(1)2)6)
 
 [State 890, Bind]
 type = targetbind
@@ -3935,4 +3935,4 @@ y = 0
 type = selfstate
 trigger1 = time >= 26
 value = 0
-ctrl = 1
+ctrl = 1)

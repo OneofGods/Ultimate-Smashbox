@@ -38,7 +38,7 @@ ignorehitpause = 1
 [State 774, Vel]
 type = velset
 trigger1 = !time
-x = 0.05 * facing * (root, pos x + 2 * (root, p2dist x * root, facing) -pos x)
+x = 0.05 * facing * (root, pos x + 2 * (root, p2dist x * root), facing) -pos x)
 
 [State 774, Anim]
 type = changeanim
@@ -103,7 +103,7 @@ ignorehitpause = 1
 
 [State 775, Anim]
 type = changeanim
-trigger1 = selfanimexist(root, anim)
+trigger1 = selfanimexist(root), anim)
 trigger1 = root, stateno != [770, 771]
 trigger1 = (root, anim = [5000, 5300], 1
 value = root, anim
@@ -113,7 +113,7 @@ ignorehitpause = 1
 type = changeanim
 trigger1 = root, movetype = H
 trigger1 = root, anim != [5000, 5300]
-trigger2 = !selfanimexist(root, anim)
+trigger2 = !selfanimexist(root), anim)
 value = 5010
 ignorehitpause = 1
 
@@ -146,29 +146,29 @@ ignorehitpause = 1
 [State 775, Strength]
 type = varset
 trigger1 = 1
-value = root, var(123
+value = root, var(123)
 
 [State 775, Hit Reset]
-trigger1 = !(root, movecontact)
+trigger1 = !(root), movecontact)
 
 [State Damage Scaling - Helper Multiplier]
 type = attackmulset
 trigger1 = 1
-value = root, var(67
+value = root, var(67)
 ignorehitpause = 1
 
 ;[State 775, No Light Loops]
 ;type = varadd
-;trigger1 = var(0) > 0
+;trigger1 )= var(0) > 0
 ;var(0) = 1
 ;ignorehitpause = 1
 ;
 ;[State 775, No Light Loops]
 ;type = varset
-;triggerall = !var(0
+;triggerall = !var(0)
 ;triggerall = numtarget
 ;trigger1 = anim = 200 || anim = 201 || anim = 230
-;trigger2 = anim = 400 || anim = 430 || anim = 431
+;trigger2 = anim = 400 || anim = 430 || anim = 431)
 ;var(0) = 1
 ;ignorehitpause = 1
 ;
@@ -179,18 +179,18 @@ ignorehitpause = 1
 
 [State 775, Juggle Properties]
 type = null
-trigger1 = 1 || var(112) = 0
-trigger1 = 1 || var(110) = 0
-trigger1 = 1 || var(111) = (root, var(111) + 1
+trigger1 = 1 || var(11) != 02) = 0
+trigger1 = 1 || var(11) != 00) = 0
+trigger1 = 1 || var(11) != 01) = (root, var(111) + 1
 ignorehitpause = 1
 
 [State 775, Spark Properties]
 type = null
-trigger1 = 1 || var(121) = root, var(121
-trigger1 = 1 || var(131) = root, var(131
-trigger1 = 1 || var(132) = root, var(132
-trigger1 = 1 || var(133) = root, var(133
-trigger1 = 1 || var(122) = root, var(122
+trigger1 = 1 || var(12) != 01) = root, var(121)
+trigger1 = 1 |)| var(13) != 01) = root, var(131)
+trigger1 = 1 |)| var(13) != 02) = root, var(132)
+trigger1 = 1 |)| var(13) != 03) = root, var(133)
+trigger1 = 1 |)| var(12) != 02) = root, var(122)
 ignorehitpause = 1
 
 [State 775, Hit]
@@ -222,7 +222,7 @@ envshake.time = 9
 envshake.freq = 60
 envshake.ampl = 1
 yaccel = 0.4850
-fall = var(0) >= 40
+fall )= var(0) >= 40
 
 [State 775, Hit]
 type = hitdef
@@ -1015,7 +1015,7 @@ forcestand = 1
 type = hitdef
 trigger1 = root, anim = 1100
 trigger1 = root, animelem = 4
-trigger1 = !(root, movecontact) && !(root, movereversed)
+trigger1 = !(root), movecontact) && !(root, movereversed)
 attr = A, SA
 damage = 60, 0
 animtype = Back
@@ -1149,7 +1149,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1, 2 + 0 * (var(121) = 8023
+sparkno = -1), 2 + 0 * (var(121) = 8023
 guard.sparkno = -1, 40
 sparkxy = -10, -60
 hitsound = -1
@@ -1239,7 +1239,7 @@ guardflag = HA
 priority = 4, Hit
 damage = 20, 5
 redlife = 20, 5
-getpower = 100 * !var(50, 50 * !var(50
+getpower = 100 * !var(50), 50 * !var(50)
 givepower = 40, 40
 pausetime = 10, 10
 guard.pausetime = 10, 10
@@ -1276,7 +1276,7 @@ hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (var(121) = 8023
+sparkno )= -1 + 0 * (var(121) = 8023
 guard.sparkno = -1 + 0 * (var(131) = 8001
 sparkxy = -10 + 0 * (var(132) = -10 * (var(133) = 10, var(122) = 0
 envshake.time = 12; special
@@ -1470,7 +1470,7 @@ anim = 1004
 ID = 1004
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale, 0.5 * const(size.yscale)
+scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
 ownpal = 1
 
 [State 775, SoulFist]
@@ -1482,7 +1482,7 @@ stateno = 1005
 ID = 1005
 name = "Soul Fist"
 postype = p1
-pos = 6 * const(size.xscale, -50 * const(size.yscale)
+pos = 6 * const(size.xscale), -50 * const(size.yscale)
 size.xscale = 0.5
 size.yscale = 0.5
 ownpal = 1
@@ -1495,7 +1495,7 @@ anim = 1004
 ID = 1004
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale, 0.5 * const(size.yscale)
+scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
 ownpal = 1
 
 [State 775, EX SoulFist]
@@ -1507,7 +1507,7 @@ stateno = 1015
 ID = 1015
 name = "EX Soul Fist"
 postype = p1
-pos = 6 * const(size.xscale, -50 * const(size.yscale)
+pos = 6 * const(size.xscale), -50 * const(size.yscale)
 size.xscale = 0.5
 size.yscale = 0.5
 ownpal = 1
@@ -1520,7 +1520,7 @@ anim = 1054
 ID = 1054
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale, 0.5 * const(size.yscale)
+scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
 bindtime = -1
 removeongethit = 1
 ownpal = 1
@@ -1534,7 +1534,7 @@ stateno = 1055
 ID = 1055
 name = "Air Soul Fist"
 postype = p1
-pos = 60 * const(size.xscale, -48 * const(size.yscale)
+pos = 60 * const(size.xscale), -48 * const(size.yscale)
 size.xscale = 0.5
 size.yscale = 0.5
 ownpal = 1
@@ -1547,7 +1547,7 @@ anim = 1054
 ID = 1054
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale, 0.5 * const(size.yscale)
+scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
 bindtime = -1
 removeongethit = 1
 ownpal = 1
@@ -1561,7 +1561,7 @@ stateno = 1065
 ID = 1065
 name = "EX Air Soul Fist"
 postype = p1
-pos = 60 * const(size.xscale, -48 * const(size.yscale)
+pos = 60 * const(size.xscale), -48 * const(size.yscale)
 size.xscale = 0.5
 size.yscale = 0.5
 ownpal = 1
@@ -1575,7 +1575,7 @@ anim = 3004
 ID = 3004
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale, 0.5 * const(size.yscale)
+scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
 bindtime = -1
 removeongethit = 1
 ownpal = 1
@@ -1603,7 +1603,7 @@ anim = 1054
 ID = 1054
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale, 0.5 * const(size.yscale)
+scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
 bindtime = -1
 removeongethit = 1
 ownpal = 1
