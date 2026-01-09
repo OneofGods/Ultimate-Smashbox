@@ -17,7 +17,7 @@ sprpriority = 1
 facep2 = 1
 [State 774, End]
 type = changestate
-trigger1 = !ishelper(775
+trigger1 = !ishelper(775)
 value = 0
 ctrl = 1
 [State 774, NHB]
@@ -73,7 +73,7 @@ ctrl = 0
 velset = 0, 0
 [State 775, End]
 type = selfstate
-trigger1 = !ishelper(775
+trigger1 = !ishelper(775)
 value = 0
 ctrl = 1
 [State 775, NHB]
@@ -89,16 +89,16 @@ value = 0
 ignorehitpause = 1
 [State 775, Anim]
 type = changeanim
-trigger1 = selfanimexist(root), anim)
+trigger1 = selfanimexist(root, anim)
 trigger1 = root, stateno != [770, 771]
-trigger1 = (root, anim = [5000, 5300], 1
+trigger1 = root, anim = [5000, 5300]
 value = root, anim
 ignorehitpause = 1
 [State 775, Custom States Anim]
 type = changeanim
 trigger1 = root, movetype = H
 trigger1 = root, anim != [5000, 5300]
-trigger2 = !selfanimexist(root), anim)
+trigger2 = !selfanimexist(root, anim)
 value = 5010
 ignorehitpause = 1
 [State 775, Pos]
@@ -130,7 +130,7 @@ value = 1
 value = root, var(123)
 
 [State 775, Hit Reset]
-trigger1 = !(root), movecontact)
+trigger1 = !(root, movecontact)
 
 [State Damage Scaling - Helper Multiplier]
 type = attackmulset
@@ -140,7 +140,7 @@ ignorehitpause = 1
 ;[State 775, No Light Loops]
 ;type = varadd
 ;trigger1 = var(0) > 0
-;var(0 = 1
+;var(0) = 1
 ;ignorehitpause = 1
 ;
 ;[State 775, No Light Loops]
@@ -149,26 +149,26 @@ ignorehitpause = 1
 ;triggerall = numtarget
 ;trigger1 = anim = 200 || anim = 201 || anim = 230
 ;trigger2 = anim = 400 || anim = 430 || anim = 431)
-;var(0 = 1
+;var(0) = 1
 ;ignorehitpause = 1
 ;
 ;[State 775, No Light Loops]
 ;type = varset
 ;trigger1 = !numtarget
-;var(0 = 0
+;var(0) = 0
 
 [State 775, Juggle Properties]
 type = null
-trigger1 != 0
-trigger1 = 1 || var(1) != 01) != 01 = (root, var(111) + 1
+trigger1 = 1
+trigger1 = 1 || var(112) = 0
 ignorehitpause = 1
 [State 775, Spark Properties]
 type = null
-trigger1 = 1 || var(1) != 02) != 01 = root, var(121)
-trigger1 = 1 || var(1) != 03) != 01 = root, var(131)
-trigger1 = 1 || var(1) != 03) != 02 = root, var(132)
-trigger1 = 1 || var(1) != 03) != 03 = root, var(133)
-trigger1 = 1 || var(1) != 02) != 02 = root, var(122)
+trigger1 = 1 || var(121) = root, var(121)
+trigger1 = 1 || var(131) = root, var(131)
+trigger1 = 1 || var(132) = root, var(132)
+trigger1 = 1 || var(1) != 3
+trigger1 = 1 || var(1) != 2
 ignorehitpause = 1
 [State 775, Hit]
 type = hitdef
@@ -212,7 +212,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1, 2 + 0 * (var(121 = 8011
+sparkno = -1
 guard.sparkno = -1, 40
 sparkxy = -10, -54
 hitsound = -1
@@ -391,7 +391,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1, 2 + 0 * (var(121 = 8011
+sparkno = -1
 guard.sparkno = -1, 40
 sparkxy = -10, -53
 hitsound = -1
@@ -450,7 +450,7 @@ guardflag = HA
 hitflag = HAF
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = -1, 2 + 0 * (var(121 = 8012
+sparkno = -1
 guard.sparkno = -1, 40
 sparkxy = -10, -96, -72
 hitsound = -1
@@ -479,7 +479,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = -1, 2 + 0 * (var(121 = 8012
+sparkno = -1
 guard.sparkno = -1, 40
 sparkxy = -10, -48
 hitsound = -1
@@ -509,7 +509,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1, 2 + 0 * (var(121 = 8012
+sparkno = -1
 guard.sparkno = -1, 40
 sparkxy = -10, -24
 hitsound = -1
@@ -693,7 +693,7 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1, 2 + 0 * (var(121 = 8011
+sparkno = -1
 guard.sparkno = -1, 40
 sparkxy = -10, -14, -31
 hitsound = -1
@@ -724,7 +724,7 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1, 2 + 0 * (var(121 = 8012
+sparkno = -1
 guard.sparkno = -1, 40
 sparkxy = -10, -30
 hitsound = -1
@@ -819,7 +819,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1, 2 + 0 * (var(121 = 8012
+sparkno = -1
 guard.sparkno = -1, 40
 sparkxy = -10, -66
 hitsound = -1
@@ -877,7 +877,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1, 2 + 0 * (var(121 = 8011
+sparkno = -1
 guard.sparkno = -1, 40
 sparkxy = -10, -47
 hitsound = -1
@@ -907,7 +907,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1, 2 + 0 * (var(121 = 8012
+sparkno = -1
 guard.sparkno = -1, 40
 sparkxy = -10, -54
 hitsound = -1
@@ -937,7 +937,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = -1, 2 + 0 * (var(121 = 8023
+sparkno = -1, 2 + 0 * (var(121) = 8023
 guard.sparkno = -1, 40
 sparkxy = -10, -35, -60
 hitsound = -1
@@ -946,9 +946,9 @@ guardsound.channel = 2
 ground.type = Low
 ground.slidetime = 18
 ground.hittime = 1 + 22
-ground.velocity = 0, -6 -var(123
+ground.velocity = 0, -6 - var(123)
 air.type = Low
-air.velocity = 0, -6 -var(123
+air.velocity = 0, -6 - var(123)
 getpower = 0, 0
 givepower = 0
 envshake.time = 12
@@ -970,7 +970,7 @@ forcestand = 1
 type = hitdef
 trigger1 = root, anim = 1100
 trigger1 = root, animelem = 4
-trigger1 = )!(root), movecontact) && !(root, movereversed)
+trigger1 = !(root, movecontact) && !(root, movereversed)
 attr = A, SA
 damage = 60, 0
 animtype = Back
@@ -978,7 +978,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = -1, 2 + 0 * (var(121 = 8023
+sparkno = -1, 2 + 0 * (var(121) = 8023
 guard.sparkno = -1, 40
 sparkxy = -10, -100
 hitsound = -1
@@ -987,9 +987,9 @@ guardsound.channel = 2
 ground.type = High
 ground.slidetime = 18
 ground.hittime = 1 + 22
-ground.velocity = 0, -6 -var(123
+ground.velocity = 0, -6 - var(123)
 air.type = Low
-air.velocity = 0, -6 -var(123
+air.velocity = 0, -6 - var(123)
 getpower = 0, 0
 givepower = 0
 envshake.time = 12
@@ -1228,7 +1228,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 sparkno = -1 + 0 * (var(121) = 8023
 guard.sparkno = -1
-sparkxy = -10 + 0 * (var(132 = -10 * (var(133) = 10, var(122 = 0
+sparkxy = -10 + 0 * (var(132) = -10) * (var(133) = 10), var(122) = 0
 envshake.time = 12; special
 envshake.freq = 180
 envshake.ampl = 2
@@ -1283,7 +1283,7 @@ guardsound = s2, 0
 guardsound.channel = 2
 sparkno = -1
 guard.sparkno = -1
-sparkxy = -10 + 0 * (var(132 = -10 * (var(133) = 10, var(122 = 0
+sparkxy = -10 + 0 * (var(132) = -10) * (var(133) = 10), var(122) = 0
 envshake.time = 12; special
 envshake.freq = 180
 envshake.ampl = 2
@@ -1299,7 +1299,7 @@ hitflag = MAFD
 guardflag = M
 priority = 4, Hit
 pausetime = 3, 4
-sparkno = -1, 2 + 0 * (var(121 = 8024
+sparkno = -1, 2 + 0 * (var(121) = 8024
 guard.sparkno = -1, 40
 sparkxy = -10, -35, -60
 hitsound = -1
@@ -1342,7 +1342,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 12, 4, 12, 4
-sparkno = -1, 2 + 0 * (var(121 = 8024
+sparkno = -1, 2 + 0 * (var(121) = 8024
 guard.sparkno = -1, 40
 sparkxy = -10, -100
 hitsound = -1
@@ -1384,7 +1384,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = -1, 2 + 0 * (var(121 = 8024
+sparkno = -1, 2 + 0 * (var(121) = 8024
 guard.sparkno = -1, 40
 sparkxy = -10, -43
 hitsound = -1

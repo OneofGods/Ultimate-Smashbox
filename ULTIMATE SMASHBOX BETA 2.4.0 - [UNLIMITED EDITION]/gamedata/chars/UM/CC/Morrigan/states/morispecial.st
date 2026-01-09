@@ -21,7 +21,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State 1000, Strength]
 type = varset
@@ -37,8 +37,8 @@ ignorehitpause = 1
 [State 1000, Erase Inputs]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(8) != 08 = 1
-trigger1 = 1 || var(8) != 07 = 1
+trigger1 = 1 || var(8) != 0
+trigger1 = 1 || var(8) != 0
 ignorehitpause = 1
 persistent = 0
 [State 1000, FX]
@@ -101,13 +101,13 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State 1010, Erase Inputs]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(8) != 08 = 1
-trigger1 = 1 || var(8) != 07 = 1
+trigger1 = 1 || var(8) != 0
+trigger1 = 1 || var(8) != 0
 ignorehitpause = 1
 persistent = 0
 [State 1010, EX FX]
@@ -117,7 +117,7 @@ value = 0, 1000
 [State 1010, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(1) != 00) != 07 = 30
+trigger1 = 1 || var(1) != 0
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -186,7 +186,7 @@ facep2 = p2dist x )<)= -const(size.ground.back)
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State 1050, Strength]
 type = varset
@@ -202,14 +202,14 @@ ignorehitpause = 1
 [State 1050, Erase Inputs]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(8) != 08 = 1
-trigger1 = 1 || var(8) != 07 = 1
+trigger1 = 1 || var(8) != 0
+trigger1 = 1 || var(8) != 0
 ignorehitpause = 1
 persistent = 0
 [State 1050, Width]
 type = width
 trigger1 = animelemtime(4) >= 0 && animelemtime(9) < 0
-player = 16 * const(size.xscale, 0
+player = 16 * const(size.xscale), 0
 [State 1050, FX]
 type = explod
 trigger1 = animelem = 4
@@ -250,7 +250,7 @@ trigger1 = animelemtime(6) >= 1
 y = 0.5
 [State 1050, Vel]
 type = velset
-trigger1 = animelemtime(6 = 1
+trigger1 = animelemtime(6) = 1
 x = -1
 y = -6
 [State 1050, Sound]
@@ -319,13 +319,13 @@ facep2 = 0
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State 1060, Erase Inputs]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(8) != 08 = 1
-trigger1 = 1 || var(8) != 07 = 1
+trigger1 = 1 || var(8) != 0
+trigger1 = 1 || var(8) != 0
 ignorehitpause = 1
 persistent = 0
 [State 1060, EX FX]
@@ -335,7 +335,7 @@ value = 0, 1000
 [State 1060, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(1) != 00) != 07 = 30
+trigger1 = 1 || var(1) != 0
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -347,7 +347,7 @@ ownpal = 1
 [State 1060, Width]
 type = width
 trigger1 = animelemtime(4) >= 0 && animelemtime(9) < 0
-player = 16 * const(size.xscale, 0
+player = 16 * const(size.xscale), 0
 [State 1060, FX]
 type = explod
 trigger1 = animelem = 4
@@ -388,7 +388,7 @@ trigger1 = animelemtime(6) >= 1
 y = 0.5
 [State 1060, Vel]
 type = velset
-trigger1 = animelemtime(6 = 1
+trigger1 = animelemtime(6) = 1
 x = -1
 y = -6
 [State 1060, Sound]
@@ -422,7 +422,7 @@ sprpriority = 2
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State 1100, Strength]
 type = varset
@@ -438,8 +438,8 @@ ignorehitpause = 1
 [State 1100, Erase Inputs]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(8) != 08 = 1
-trigger1 = 1 || var(8) != 07 = 1
+trigger1 = 1 || var(8) != 0
+trigger1 = 1 || var(8) != 0
 ignorehitpause = 1
 persistent = 0
 [State 1100, HB]
@@ -485,13 +485,13 @@ y = 0.50
 [State 1100, Vel]
 type = velset
 trigger1 = anim = 1100
-trigger1 = animelemtime(4 = [0, 1]
+trigger1 = animelemtime(4) = [0, 1]
 x = 4.9
 y = -5.50
 [State 1100, Grounded Frame]
 type = posfreeze
 trigger1 = anim = 1100
-trigger1 = animelemtime(4 = 0
+trigger1 = animelemtime(4) = 0
 value = 1
 [State 1100, Vel]
 type = velset
@@ -507,12 +507,12 @@ stopongethit = 1
 [State 1100, Sound]
 type = playsnd
 trigger1 = anim = 1100
-trigger1 = animelemtime(4 = 1
+trigger1 = animelemtime(4) = 1
 value = 0, 41
 [State 1100, Dust]
 type = helper
 trigger1 = anim = 1100
-trigger1 = animelemtime(4 = 1
+trigger1 = animelemtime(4) = 1
 helpertype = normal
 stateno = 7100
 ID = 7100
@@ -574,7 +574,7 @@ forcestand = 1
 type = hitdef
 trigger1 = animelem = 4 && anim = 1100
 trigger1 = !movecontact && !movereversed
-air.juggle = 0 * (var(112) = 1 || var(1) != 01) != 00 = 1 || var(1) != 01) != 01 = 1
+air.juggle = 1
 attr = A, SA
 damage = 60, 15
 animtype = Back
@@ -689,13 +689,13 @@ sprpriority = 2
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State 1110, Erase Inputs]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(8) != 08 = 1
-trigger1 = 1 || var(8) != 07 = 1
+trigger1 = 1 || var(8) != 0
+trigger1 = 1 || var(8) != 0
 ignorehitpause = 1
 persistent = 0
 [State 1110, EX FX]
@@ -705,7 +705,7 @@ value = 0, 1000
 [State 1110, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(1) != 00) != 07 = 30
+trigger1 = 1 || var(1) != 0
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -740,13 +740,13 @@ y = 0.67
 [State 1110, Vel]
 type = velset
 trigger1 = anim = 1110
-trigger1 = animelemtime(4 = [0, 1]
+trigger1 = animelemtime(4) = [0, 1]
 x = 10.2
 y = -11.76
 [State 1110, Grounded Frame]
 type = posfreeze
 trigger1 = anim = 1110
-trigger1 = animelemtime(4 = 0
+trigger1 = animelemtime(4) = 0
 value = 1
 [State 1110, Vel]
 type = velset
@@ -761,12 +761,12 @@ stopongethit = 1
 [State 1110, Sound]
 type = playsnd
 trigger1 = anim = 1110
-trigger1 = animelemtime(4 = 1
+trigger1 = animelemtime(4) = 1
 value = 0, 41
 [State 1110, Dust]
 type = helper
 trigger1 = anim = 1110
-trigger1 = animelemtime(4 = 1
+trigger1 = animelemtime(4) = 1
 helpertype = normal
 stateno = 7100
 ID = 7100
@@ -783,7 +783,7 @@ channel = 0
 type = hitdef
 trigger1 = anim = 1110
 trigger1 = animelem = 2 || animelem = 3
-air.juggle = 0 * (var(112 = 1 || var(1) != 01) != 00 = 1 || var(1) != 01) != 01 = (2 + hitcount)
+air.juggle = 2 + hitcount
 attr = S, SA
 damage = 40, 10
 animtype = Back
@@ -826,7 +826,7 @@ forcestand = 1
 [State 1110, Hit 2]
 type = hitdef
 trigger1 = animelem = 4 && anim = 1110
-air.juggle = 0 * (var(112) = 1 || var(1) != 01) != 00 = 1 || var(1) != 01) != 01 = (2 + hitcount)
+air.juggle = (2 + hitcount)
 attr = A, SA
 damage = 60, 15
 animtype = Up
@@ -905,7 +905,7 @@ sprpriority = 2
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State 1200, Strength]
 type = varset
@@ -921,8 +921,8 @@ ignorehitpause = 1
 [State 1200, Erase Inputs]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(8) != 08 = 1
-trigger1 = 1 || var(8) != 07 = 1
+trigger1 = 1 || var(8) != 0
+trigger1 = 1 || var(8) != 0
 ignorehitpause = 1
 persistent = 0
 [State 1200, End]
@@ -979,7 +979,7 @@ ownpal = 1
 [State 1205, Hit]
 type = hitdef
 trigger1 = animelem = 4 || animelem = 10 || animelem = 16)
-air.juggle = 0 * (var(112) = 1 || var(1) != 01) != 00 = 1 || var(1) != 01) != 01 = 1
+air.juggle = 1
 attr = S, SA
 damage = 60, 15
 animtype = Hard
@@ -1063,13 +1063,13 @@ sprpriority = 2
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State 1250, Erase Inputs]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(8) != 08 = 1
-trigger1 = 1 || var(8) != 07 = 1
+trigger1 = 1 || var(8) != 0
+trigger1 = 1 || var(8) != 0
 ignorehitpause = 1
 persistent = 0
 [State 1250, EX FX]
@@ -1079,7 +1079,7 @@ value = 0, 1000
 [State 1250, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(1) != 00) != 07 = 30
+trigger1 = 1 || var(1) != 0
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -1137,7 +1137,7 @@ supermovetime = -1
 ownpal = 1
 [State 1251, Hit]
 type = hitdef
-trigger1 = )!((movecontact + movereversed) % 8
+trigger1 = !((movecontact + movereversed) % 8)
 air.juggle = 1
 attr = S, SA
 damage = 20, 5
@@ -1183,7 +1183,7 @@ forcestand = 1
 airguard.cornerpush.veloff = 0
 [State 1251, Hit High]
 type = modifyhitdef
-trigger1 = )!((movecontact + movereversed) % 8
+trigger1 = !((movecontact + movereversed) % 8)
 trigger1 = 1
 ground.type = High
 [State 1251, End]
@@ -1221,7 +1221,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State 1300, Strength]
 type = varset
@@ -1237,8 +1237,8 @@ ignorehitpause = 1
 [State 1300, Erase Inputs]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(8) != 08 = 1
-trigger1 = 1 || var(8) != 07 = 1
+trigger1 = 1 || var(8) != 0
+trigger1 = 1 || var(8) != 0
 ignorehitpause = 1
 persistent = 0
 [State 1300, Pos]
@@ -1344,7 +1344,7 @@ pausemovetime = -1
 supermovetime = -1
 [State 1310, Vel]
 type = velset
-trigger1 = animelemtime(4 = 1
+trigger1 = animelemtime(4) = 1
 x = 2.0
 y = -4.5
 [State 1310, Vel]
@@ -1385,7 +1385,7 @@ persistent = 0
 [State 1310, Sound]
 type = playsnd
 trigger1 = animelemtime(13) >= 0
-trigger1 = !(time % 9
+trigger1 = !(time % 9)
 value = 1, 6
 ;channel = 1
 stopongethit = 1
@@ -1538,7 +1538,7 @@ pos = 48 * const(size.xscale), 0
 ownpal = 1
 [State 1311, Dust]
 type = explod
-trigger1 = )!var(64)
+trigger1 = !var(64)
 trigger1 = !time
 anim = F 62
 postype = p1
@@ -1551,7 +1551,7 @@ trigger1 = animelemtime(2) >= 1
 y = 0.55
 [State 1311, Vel]
 type = velset
-trigger1 = animelemtime(2 = 1
+trigger1 = animelemtime(2) = 1
 x = -2.5
 y = -8.0
 [State 1311, End]
@@ -1722,7 +1722,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State 1330, Strength]
 type = varset
@@ -1733,8 +1733,8 @@ persistent = 0
 [State 1330, Erase Inputs]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(8) != 08 = 1
-trigger1 = 1 || var(8) != 07 = 1
+trigger1 = 1 || var(8) != 0
+trigger1 = 1 || var(8) != 0
 ignorehitpause = 1
 persistent = 0
 [State 1330, EX FX]
@@ -1744,7 +1744,7 @@ value = 0, 1000
 [State 1330, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(1) != 00) != 07 = 30
+trigger1 = 1 || var(1) != 0
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -1766,7 +1766,7 @@ value = 0
 type = hitdef
 trigger1 = animelem = 2
 trigger1 = !var(130) && !var(108)
-trigger1 = var(12)9) <= (30 * const(size.xscale)
+trigger1 = var(129) <= (30 * const(size.xscale))
 attr = S, ST
 hitflag = M
 priority = 7, Miss
@@ -1817,13 +1817,13 @@ juggle = 8 * (p2statetype = L)
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State 1900, Erase Inputs]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(8) != 08 = 1
-trigger1 = 1 || var(8) != 07 = 1
+trigger1 = 1 || var(8) != 0
+trigger1 = 1 || var(8) != 0
 ignorehitpause = 1
 persistent = 0
 [State 1900, Jet]
@@ -1860,17 +1860,17 @@ statetype = A
 physics = N
 [State 1900, Turn]
 type = turn
-trigger1 = animelemtime(2 = 1
+trigger1 = animelemtime(2) = 1
 trigger1 = p2dist x < 0
 [State 1900, Vel]
 type = velset
-trigger1 = animelemtime(2 = 1
+trigger1 = animelemtime(2) = 1
 x = p2dist x / -animelemtime(9); where 290 is the maximum p2dist x without zoom
 y = -4.06
 [State 1900, Vel Correction]
 type = veladd
 trigger1 = numenemy
-trigger1 = animelemtime(2 = 1
+trigger1 = animelemtime(2) = 1
 trigger1 = p2movetype = H
 trigger1 = p2statetype = A || p2statetype = L
 x = 0
@@ -1948,9 +1948,9 @@ hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (var(121) = 8023
+sparkno = -1
 guard.sparkno = -1
-sparkxy = -10 + 0 * (var(132 = -10 * (var(133) = 10, var(122 = 0
+sparkxy = -10 + 0 * (var(132) = -10) * (var(133) = 10), var(122) = 0
 envshake.time = 12; special
 envshake.freq = 180
 envshake.ampl = 2
@@ -1962,10 +1962,10 @@ value = 1
 [State 1900, Lock On]
 type = posset
 trigger1 = hitcount = 1
-trigger1 = numtarget(1900 = 1
-trigger1 = target(1900, statetype = L
-x = target(1900, pos x
-y = -(target(1900), const(size.ground.front)
+trigger1 = numtarget(1900) = 1
+trigger1 = target(1900), statetype = L
+x = target(1900), pos x
+y = -(target(1900), const(size.ground.front))
 ignorehitpause = 1
 [State 1900, Jump Back]
 type = changestate
@@ -2053,13 +2053,13 @@ juggle = 8 * (p2statetype = L)
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State 1930, Erase Inputs]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(8) != 08 = 1
-trigger1 = 1 || var(8) != 07 = 1
+trigger1 = 1 || var(8) != 0
+trigger1 = 1 || var(8) != 0
 ignorehitpause = 1
 persistent = 0
 [State 1930, EX FX]
@@ -2069,7 +2069,7 @@ value = 0, 1000
 [State 1930, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(1) != 00) != 07 = 30
+trigger1 = 1 || var(1) != 0
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -2112,17 +2112,17 @@ statetype = A
 physics = N
 [State 1930, Turn]
 type = velset
-trigger1 = animelemtime(2 = 1
+trigger1 = animelemtime(2) = 1
 trigger1 = p2dist x < 0
 [State 1930, Vel]
 type = velset
-trigger1 = animelemtime(2 = 1
+trigger1 = animelemtime(2) = 1
 x = p2dist x / -animelemtime(9); where 290 is the maximum p2dist x without zoom
 y = -4.06
 [State 1930, Vel Correction]
 type = veladd
 trigger1 = numenemy
-trigger1 = animelemtime(2 = 1
+trigger1 = animelemtime(2) = 1
 trigger1 = p2movetype = H
 trigger1 = p2statetype = A || p2statetype = L
 x = 0
@@ -2200,9 +2200,9 @@ hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (var(121) = 8023
+sparkno = -1
 guard.sparkno = -1
-sparkxy = -10 + 0 * (var(132 = -10 * (var(133) = 10, var(122 = 0
+sparkxy = -10 + 0 * (var(132) = -10) * (var(133) = 10), var(122) = 0
 envshake.time = 12; special
 envshake.freq = 180
 envshake.ampl = 2
@@ -2214,10 +2214,10 @@ value = 1
 [State 1930, Lock On]
 type = posset
 trigger1 = hitcount = 1
-trigger1 = numtarget(1930 = 1
-trigger1 = target(1930, statetype = L
-x = target(1930, pos x
-y = -(target(1930), const(size.ground.front)
+trigger1 = numtarget(1930) = 1
+trigger1 = target(1930), statetype = L
+x = target(1930), pos x
+y = -(target(1930), const(size.ground.front))
 ignorehitpause = 1
 [State 1930, Jump Back]
 type = changestate
@@ -2296,7 +2296,7 @@ forcestand = 1
 hitsound = s2, 9
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (var(121) = 8013
+sparkno = -1
 guard.sparkno = -1
 sparkxy = -10, -62
 envshake.time = 10
@@ -2378,7 +2378,7 @@ forcestand = 1
 hitsound = s2, 9
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (var(121) = 8013
+sparkno = -1
 guard.sparkno = -1
 sparkxy = -10, -32
 envshake.time = 10

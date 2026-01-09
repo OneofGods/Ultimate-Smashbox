@@ -21,7 +21,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -107,7 +107,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -193,7 +193,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -288,7 +288,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -392,7 +392,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -487,7 +487,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -551,7 +551,7 @@ forcestand = 1
 type = hitdef
 trigger1 = animelem = 3
 trigger1 = !movecontact && !movereversed
-air.juggle = 0 * (var(112) = 1 || var(1) != 01) != 00 = 1 || var(1) != 01) != 01 = 1
+air.juggle = 1
 attr = S, NA
 damage = 90, 0
 animtype = Hard
@@ -632,7 +632,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -718,7 +718,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -782,7 +782,7 @@ forcenofall = !var(50)
 type = hitdef
 trigger1 = animelem = 4
 trigger1 = prevstateno = 710
-air.juggle = 0 * (var(112) = 1 || var(1) != 01) != 00 = 1 || var(1) != 01) != 01 = 1
+air.juggle = 1
 attr = S, NA
 damage = 70, 0
 animtype = Medium
@@ -854,7 +854,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -982,7 +982,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -993,7 +993,7 @@ persistent = 0
 [State 255, Width]
 type = width
 trigger1 = animelemtime(3) >= 0
-player = 30 * const(size.xscale, 0
+player = 30 * const(size.xscale), 0
 [State 255, Sound]
 type = playsnd
 trigger1 = animelem = 3
@@ -1079,7 +1079,7 @@ forcenofall = !var(50)
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 5
-air.juggle = 0 * (var(112) = 1 || var(1) != 01) != 00 = 1 || var(1) != 01) != 01 = 1
+air.juggle = 1
 attr = A, NA
 damage = 30, 0
 animtype = Hard
@@ -1122,7 +1122,7 @@ forcenofall = !var(50)
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 6
-air.juggle = 0 * (var(112) = 1 || var(1) != 01) != 00 = 1 || var(1) != 01) != 01 = 1
+air.juggle = 1
 attr = A, NA
 damage = 30, 0
 animtype = Hard
@@ -1225,7 +1225,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -1312,7 +1312,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -1408,7 +1408,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -1495,7 +1495,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -1609,7 +1609,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -1696,7 +1696,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -1792,7 +1792,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -1888,7 +1888,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -1984,7 +1984,7 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -2070,7 +2070,7 @@ velset = vel x * 0.5, 1, vel y
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -2173,7 +2173,7 @@ velset = vel x * 0.5, 1, vel y
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -2283,7 +2283,7 @@ velset = vel x * 0.5, 1, vel y
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -2386,7 +2386,7 @@ velset = vel x * 0.5, 1, vel y
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -2489,7 +2489,7 @@ velset = vel x * 0.5, 1, vel y
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -2592,7 +2592,7 @@ velset = vel x * 0.5, 1, vel y
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -2627,7 +2627,7 @@ priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1
 guard.sparkno = -1
-sparkxy = -10 + 0 * (var(132 = -25 * (var(133) = 75, var(122 = -42
+sparkxy = -10, -42
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2695,7 +2695,7 @@ velset = vel x * 0.5, 1, vel y
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -2798,7 +2798,7 @@ poweradd = 0
 type = varadd
 trigger1 = !time
 trigger1 = var(65)
-trigger1 != 0
+trigger1 = 1
 value = 1
 [State Erase Inputs]
 type = varset
@@ -2925,15 +2925,15 @@ value = -1
 [State 810, Width]
 type = width
 trigger1 = animelemtime(5) < 0
-edge = 50 * const(size.xscale, 0
+edge = 50 * const(size.xscale), 0
 [State 810, Width]
 type = width
 trigger1 = animelemtime(5) >= 0 && animelemtime(6) < 0
-edge = 60 * const(size.xscale, 0
+edge = 60 * const(size.xscale), 0
 [State 810, Width]
 type = width
 trigger1 = animelemtime(6) >= 0 && animelemtime(7) < 0
-edge = 75 * const(size.xscale, 0
+edge = 75 * const(size.xscale), 0
 [State 810, Sound]
 type = playsnd
 trigger1 = animelem = 5
@@ -3155,11 +3155,11 @@ value = -1
 [State 820, Width]
 type = width
 trigger1 = animelemtime(8) < 0
-edge = 50 * const(size.xscale, 0
+edge = 50 * const(size.xscale), 0
 [State 820, Width]
 type = width
 trigger1 = animelemtime(8) >= 0 && animelemtime(9) < 0
-edge = 80 * const(size.xscale, 0
+edge = 80 * const(size.xscale), 0
 [State 820, Sound]
 type = playsnd
 trigger1 = animelem = 4
@@ -3369,9 +3369,9 @@ trigger1 = anim = 5035
 value = 5050
 [State 824, Anim]
 type = changeanim
-trigger1 = vel y >= const240p(2
+trigger1 = vel y >= const240p(2)
 trigger1 = anim = 5052
-trigger1 = selfanimexist(5062
+trigger1 = selfanimexist(5062)
 value = 5062
 [State 824, Camera]
 type = screenbound
