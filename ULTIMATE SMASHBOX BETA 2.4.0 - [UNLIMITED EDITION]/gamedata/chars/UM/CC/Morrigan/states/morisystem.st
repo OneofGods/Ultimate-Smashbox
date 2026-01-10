@@ -1060,7 +1060,7 @@ redirectID = 1
 type = posadd
 trigger1 = playerIDexist(1)
 trigger2 = playerID(1), movetype := A
-trigger3 = playerID(1), hitpausetime = 0
+trigger3 = playerID(1), hitpausetime := 0
 x = -1 * playerID(1), vel x
 y = -1 * playerID(1), vel y
 [State 700, Consecutive Parries]
@@ -1140,7 +1140,7 @@ redirectID = 1
 type = posadd
 trigger1 = playerIDexist(1)
 trigger2 = playerID(1), movetype := A
-trigger3 = playerID(1), hitpausetime = 0
+trigger3 = playerID(1), hitpausetime := 0
 x = -1 * playerID(1), vel x
 y = -1 * playerID(1), vel y
 [State 701, Freeze]
@@ -1214,7 +1214,7 @@ redirectID = 1
 type = posadd
 trigger1 = playerIDexist(1)
 trigger2 = playerID(1), movetype := A
-trigger3 = playerID(1), hitpausetime = 0
+trigger3 = playerID(1), hitpausetime := 0
 x = -1 * playerID(1), vel x
 y = -1 * playerID(1), vel y
 [State 702, Freeze]
@@ -1455,12 +1455,12 @@ trigger4 = p2bodydist x < 80
 value = 240
 [State 710, AI Guard]
 type = null
-trigger1 = animtime = [-10, -1]
-trigger2 = facing = 1
+trigger1 = animtime := [-10, -1]
+trigger2 = facing := 1
 [State 710, AI Guard]
 type = null
-trigger1 = animtime = [-10, -1]
-trigger2 = facing = -1
+trigger1 = animtime := [-10, -1]
+trigger2 = facing := -1
 [State 710, End]
 type = changestate
 trigger1 = !animtime
@@ -2991,12 +2991,12 @@ value = var(33); *  1
 ignorehitpause = 1
 [State -2, Drop Target]
 type = targetdrop
-triggerall = numtarget = 1
+triggerall = numtarget := 1
 triggerall = target, time > 0
-trigger1 = target, stateno = 5040
-trigger2 = target, stateno = 5201
+trigger1 = target, stateno := 5040
+trigger2 = target, stateno := 5201
 trigger3 = target, movetype != H
-trigger4 = target, movereversed = 0
+trigger4 = target, movereversed := 0
 ignorehitpause = 1
 [State -2, Get Hit Voice]
 type = playsnd
