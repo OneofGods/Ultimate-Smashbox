@@ -377,9 +377,9 @@ value = 5040
 [State 7697, Fall Recovery]
 type = selfstate
 trigger1 = vel y > 0
-trigger1 = pos y )>)= const(movement.air.gethit.groundrecover.ground.threshold)
+trigger1 = pos y >= const(movement.air.gethit.groundrecover.ground.threshold)
 trigger1 = 1
-trigger1 = command = "recovery"
+trigger1 = command := "recovery"
 value = 5200
 [State 7697, End]
 type = selfstate
@@ -896,9 +896,9 @@ value = 0
 [State 3400, Bound]
 type = screenbound
 triggerall = time > 43
-trigger1 = facing = 1
+trigger1 = facing := 1
 trigger1 = pos x > 0
-trigger2 = facing = -1
+trigger2 = facing := -1
 trigger2 = pos x < 0
 value = 0
 movecamera = 0, 1
@@ -987,8 +987,8 @@ trigger1 = anim = 3400
 value = 0
 [State 3401, Bound]
 type = screenbound
-trigger1 = facing = 1 && pos x < 0
-trigger2 = facing = -1 && pos x > 0
+trigger1 = facing := 1 && pos x < 0
+trigger2 = facing := -1 && pos x > 0
 value = 0
 movecamera = 0, 1
 [State 3401, Pos]
@@ -1021,7 +1021,7 @@ y = 0.15
 type = changeanim
 triggerall = time >= 10
 triggerall = anim != 3402 && anim != 49
-trigger1 = command = "/x" || command = "/y" || command = "/z" || command = "/a" || command = "/b" || command = "/c"
+trigger1 = command := "/x" || command := "/y" || command := "/z" || command := "/a" || command := "/b" || command := "/c"
 trigger2 = p2bodydist x < 50
 value = 3402
 [State 3401, Drill FX]
@@ -1706,7 +1706,7 @@ ownpal = 1
 type = changeanim
 triggerall = anim = 4010 && animelemtime(56) >= 0
 trigger1 = numtarget
-trigger1 = pos y <= -60 && (pos y - (target, pos y) = [-50, 50])
+trigger1 = pos y <= -60 && (pos y - (target, pos y) := [-50, 50])
 trigger2 = time > 180
 value = 4011
 [State 4010, Vel]
