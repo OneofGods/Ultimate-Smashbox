@@ -21,15 +21,15 @@ removeexplods = 1
 [State 0, Walk Transition Frame]
 type = changeanim
 trigger1 = !time
-trigger2 = anim = 20 || anim = 21
+trigger2 = anim := 20 || anim := 21
 value = 2
 [State 0, Anim]
 type = changeanim
 trigger1 = anim != 0
 trigger2 = anim != 2
 trigger3 = anim != 5
-trigger2 = anim = 2 && !animtime
-trigger3 = anim = 5 && !animtime
+trigger4 = anim := 2 && !animtime
+trigger5 = anim := 5 && !animtime
 value = 0
 [State 0, Dead]
 type = selfstate
@@ -52,12 +52,12 @@ sprpriority = 0
 [State 10, Anim]
 type = changeanim
 trigger1 = !time
-trigger2 = anim = 12
+trigger2 = anim := 12
 value = 10
 [State 10, Anim]
 type = changeanim
 trigger1 = !time
-trigger2 = anim = 47
+trigger2 = anim := 47
 value = 10
 elem = 2
 [State 10, Anim]
@@ -78,7 +78,7 @@ velset = 0, 0
 sprpriority = 0
 [State 11, Anim]
 type = changeanim
-trigger1 = anim = 6
+trigger1 = anim := 6
 trigger2 = !animtime
 value = 11
 [Statedef 12]
@@ -91,7 +91,7 @@ sprpriority = 0
 [State 12, Anim]
 type = changeanim
 trigger1 = !time
-trigger2 = anim = 10
+trigger2 = anim := 10
 value = 12
 [State 12, Anim]
 type = changeanim
@@ -115,19 +115,19 @@ x = vel x
 type = changeanim
 triggerall = vel x > 0
 trigger1 = anim != 5 && anim != 12 && anim != 20
-trigger2 = anim = 5
-trigger2 = !animtime
-trigger3 = anim = 12
+trigger2 = anim := 5
 trigger3 = !animtime
+trigger4 = anim := 12
+trigger5 = !animtime
 value = 20
 [State 20, Anim]
 type = changeanim
 triggerall = vel x < 0
 trigger1 = anim != 5 && anim != 12 && anim != 21
-trigger2 = anim = 5
-trigger2 = !animtime
-trigger3 = anim = 12
+trigger2 = anim := 5
 trigger3 = !animtime
+trigger4 = anim := 12
+trigger5 = !animtime
 value = 21
 [State 20, Walking FX]
 type = helper
@@ -155,8 +155,8 @@ facep2 = 1
 [State 40, Keyboard Check]; currently obsolete in Ikemen
 type = changestate
 trigger1 = !time
-trigger2 = prevstateno = 52
-trigger3 = command = "holddown" && command = "holdup"
+trigger2 = prevstateno := 52
+trigger3 = command := "holddown" && command := "holdup"
 value = 10
 ctrl = 1
 [State 40, Direction]
@@ -166,8 +166,8 @@ value = 0
 [State 40, Direction]
 type = varset
 trigger1 = time >= 1
-trigger2 = command = "holdfwd" || command = "holdback"
-value = (command = "holdfwd") - (command = "holdback")
+trigger2 = command := "holdfwd" || command := "holdback"
+value = (command := "holdfwd") - (command := "holdback")
 persistent = 0
 [State 40, Direction]
 type = varset
@@ -222,7 +222,7 @@ y = const(velocity.jump.y)
 
 [State 40, Vel Long]
 type = velset
-trigger1 = !animtime && var(1) = 3
+trigger1 = !animtime && var(1) := 3
 x =   const(velocity.runjump.back.x)
 y =  const(velocity.jump.y)
 
@@ -244,7 +244,7 @@ trigger1 = !time
 value = 43
 [State 50, Grounded Frame]
 type = posfreeze
-trigger1 = time < 1 && prevstateno = 40
+trigger1 = time < 1 && prevstateno := 40
 value = 1
 [State 50, Accel]
 type = gravity
@@ -299,7 +299,7 @@ triggerall = !time
 triggerall = ctrl
 triggerall = inguarddist
 triggerall = 1
-trigger1 = command = "holdback"
+trigger1 = command := "holdback"
 trigger2 = random < 500
 value = 120
 [State 52, No Walk]
@@ -373,7 +373,7 @@ ownpal = 1
 [State 100, Change]
 type = changeanim
 triggerall = anim = 100
-trigger1 = command = "holdup"
+trigger1 = command := "holdup"
 trigger2 = p2dist y < -50
 value = 110
 [State 100, Change]
@@ -388,14 +388,14 @@ type = changeanim
 triggerall = anim = 110
 trigger1 = command != "holdup"
 trigger2 = command = "holdfwd"
-trigger2 = p2dist y = [-50, 50]
+trigger3 = p2dist y = [-50, 50]
 value = 100
 [State 100, Change]
 type = changeanim
 triggerall = anim = 115
 trigger1 = command != "holddown"
 trigger2 = command = "holdfwd"
-trigger2 = p2dist y = [-50, 50]
+trigger3 = p2dist y = [-50, 50]
 value = 100
 [State 100, Vel]
 type = velset
@@ -490,7 +490,7 @@ ownpal = 1
 [State 105, Change]
 type = changeanim
 triggerall = anim = 105
-trigger1 = command = "holdup"
+trigger1 = command := "holdup"
 trigger2 = p2dist y > 50
 value = 110
 [State 105, Change]
@@ -498,7 +498,7 @@ type = changeanim
 triggerall = anim = 110
 trigger1 = command != "holdup"
 trigger2 = command = "holdback"
-trigger2 = p2dist y < -50
+trigger3 = p2dist y < -50
 value = 105
 [State 105, Vel]
 type = velset
@@ -603,18 +603,18 @@ type = changestate
 triggerall = statetype != A
 trigger1 = !inguarddist
 trigger2 = p2dist x >= 0
-trigger2 = command != "holdback" || command = "holdfwd"
-trigger3 = p2dist x < 0
-trigger3 = command != "holdfwd" || command = "holdback"
-trigger4 = animelem = 5
+trigger3 = command != "holdback" || command = "holdfwd"
+trigger4 = p2dist x < 0
+trigger5 = command != "holdfwd" || command = "holdback"
+trigger6 = animelem = 5
 value = 140
 [State 120, No Walking]
 type = assertspecial
 triggerall = ctrl
 trigger1 = p2dist x >= 0
 trigger2 = command != "holdfwd"
-trigger2 = p2dist x < 0
-trigger2 = command != "holdback"
+trigger3 = p2dist x < 0
+trigger4 = command != "holdback"
 flag = nowalk
 ;----- STAND GUARD (Guarding) -----
 [Statedef 130]
@@ -644,12 +644,12 @@ value = 40
 [State 130, Sound]
 type = playsnd
 trigger1 = !time
-trigger2 = prevstateno = 132 || (prevstateno = [154, 155])
+trigger2 = prevstateno := 132 || (prevstateno := [154, 155])
 value = 0, 52
 [State 130, Dust]
 type = explod
 trigger1 = !time
-trigger2 = prevstateno = 132 || (prevstateno = [154, 155])
+trigger2 = prevstateno := 132 || (prevstateno := [154, 155])
 anim = 7102
 sprpriority = -3
 postype = p1
@@ -666,18 +666,18 @@ value = 131
 type = changestate
 trigger1 = !inguarddist
 trigger2 = p2dist x >= 0
-trigger2 = command != "holdback" || command = "holdfwd"
-trigger3 = p2dist x < 0
-trigger3 = command != "holdfwd" || command = "holdback"
-trigger4 = animelem = 5
+trigger3 = command != "holdback" || command = "holdfwd"
+trigger4 = p2dist x < 0
+trigger5 = command != "holdfwd" || command = "holdback"
+trigger6 = animelem = 5
 value = 140
 [State 130, No Walking]
 type = assertspecial
 triggerall = ctrl
 trigger1 = p2dist x >= 0
 trigger2 = command != "holdfwd"
-trigger2 = p2dist x < 0
-trigger2 = command != "holdback"
+trigger3 = p2dist x < 0
+trigger4 = command != "holdback"
 flag = nowalk
 ;----- CROUCH GUARD (Guarding) -----
 [Statedef 131]
@@ -713,10 +713,10 @@ value = 40
 type = changestate
 trigger1 = !inguarddist
 trigger2 = p2dist x >= 0
-trigger2 = command != "holdback" || command = "holdfwd"
-trigger3 = p2dist x < 0
-trigger3 = command != "holdfwd" || command = "holdback"
-trigger4 = animelem = 5
+trigger3 = command != "holdback" || command = "holdfwd"
+trigger4 = p2dist x < 0
+trigger5 = command != "holdfwd" || command = "holdback"
+trigger6 = animelem = 5
 value = 140
 ;----- AIR GUARD (Guarding) -----
 [Statedef 132]
@@ -764,7 +764,6 @@ trigger1 = sysvar(0) != 0
 value = 52
 ;[State 132, Stop guarding was here]
 
-)
 ;----- GUARD (End) -----
 [Statedef 140]
 type = U
@@ -809,8 +808,8 @@ type = assertspecial
 triggerall = ctrl
 trigger1 = p2dist x >= 0
 trigger2 = command != "holdfwd"
-trigger2 = p2dist x < 0
-trigger2 = command != "holdback"
+trigger3 = p2dist x < 0
+trigger4 = command != "holdback"
 flag = nowalk
 [State 140, End]
 type = changestate
@@ -1316,10 +1315,10 @@ type = varset
 trigger1 = time >=  10
 trigger2 = facing != (root, facing)
 trigger3 = !(root, ctrl)
-trigger3 = root, stateno != [700, 702]
-trigger3 = root, stateno != 5120
-trigger4 = root, stateno = [120, 155]
-trigger4 = root, stateno != 140
+trigger4 = root, stateno != [700, 702]
+trigger5 = root, stateno != 5120
+trigger6 = root, stateno = [120, 155]
+trigger7 = root, stateno != 140
 var(0) = 1
 
 [State 705, Disable]
@@ -1327,31 +1326,31 @@ type = varset
 triggerall = !var(0)
 trigger1 = root, p2dist x >= 0
 trigger2 = root, command = "holdback"
-trigger2 = root, p2dist x < 0
-trigger2 = root, command = "holdfwd"
-trigger3 = time < 5
-trigger3 = root, p2dist x >= 0
-trigger3 = (root, command = "holdfwd" + root, command = "holddown") > 1
-trigger4 = time < 5
-trigger4 = root, p2dist x < 0
-trigger4 = (root, command = "holdback" + root, command = "holddown") > 1
-trigger5 = time >= 5
-trigger5 = root, p2dist x >= 0
-trigger5 = root, command = "holdfwd" || root, command = "holddown"
-trigger6 = time >= 5
-trigger6 = root, p2dist x < 0
-trigger6 = root, command = "holdback" || root, command = "holddown"
-trigger7 = time >= 1
-trigger7 = anim = 705 || anim = 707
-trigger7 = root, command = "D"
-trigger8 = time >= 1
-trigger8 = anim = 706
-trigger8 = root, command = "F"
+trigger3 = root, p2dist x < 0
+trigger4 = root, command = "holdfwd"
+trigger5 = time < 5
+trigger6 = root, p2dist x >= 0
+trigger7 = (root, command = "holdfwd" + root, command = "holddown") > 1
+trigger8 = time < 5
+trigger9 = root, p2dist x < 0
+trigger10 = (root, command = "holdback" + root, command = "holddown") > 1
+trigger11 = time >= 5
+trigger12 = root, p2dist x >= 0
+trigger13 = root, command = "holdfwd" || root, command = "holddown"
+trigger14 = time >= 5
+trigger15 = root, p2dist x < 0
+trigger16 = root, command = "holdback" || root, command = "holddown"
+trigger17 = time >= 1
+trigger18 = anim = 705 || anim = 707
+trigger19 = root, command = "D"
+trigger20 = time >= 1
+trigger21 = anim = 706
+trigger22 = root, command = "F"
 var(0) = 1
 
 [State 705, Disable]
 type = changeanim
-trigger1 = var(0) = 1
+trigger1 = var(0) := 1
 value = 9999
 [State 705, Standing / Air]
 type = reversaldef
@@ -1375,8 +1374,8 @@ sparkno = -1
 numhits = 0
 [State 705, Disable]
 type = reversaldef
-trigger1 = var(0) = 1
-reversal.attr =
+trigger1 = var(0) := 1
+reversal.attr = 
 pausetime = 0, 0
 sparkno = -1
 numhits = 0
@@ -1385,9 +1384,9 @@ type = destroyself
 trigger1 = time >= 23
 trigger2 = root, movetype != I
 trigger3 = root, ctrl = 0
-trigger3 = root, stateno != [700, 702] && root, stateno != 5120
-trigger4 = root, stateno = [700, 702]
-trigger4 = root, time <= 1
+trigger4 = root, stateno != [700, 702] && root, stateno != 5120
+trigger5 = root, stateno = [700, 702]
+trigger6 = root, time <= 1
 
 
 ;----- Success -----
@@ -1458,12 +1457,10 @@ value = 240
 type = null
 trigger1 = animtime = [-10, -1]
 trigger2 = facing = 1
-flag = L
 [State 710, AI Guard]
 type = null
 trigger1 = animtime = [-10, -1]
 trigger2 = facing = -1
-flag = R
 [State 710, End]
 type = changestate
 trigger1 = !animtime
@@ -1636,7 +1633,7 @@ trigger1 = power >= const(data.power) || power >= powermax || roundstate != 2
 trigger2 = command != "/b" || command != "/y"
 trigger3 = inguarddist || p2bodydist x <= 120
 trigger4 = p2movetype = A
-trigger4 = animelem = 10
+trigger5 = animelem = 10
 value = 741
 ;----- END -----
 [Statedef 741]
@@ -1954,7 +1951,7 @@ value = 196
 type = statetypeset
 trigger1 = anim = 195
 trigger2 = animelemtime(3) >= 0
-trigger2 = anim = 196
+trigger3 = anim = 196
 statetype = A
 physics = N
 [State 195, Type]
@@ -2054,7 +2051,7 @@ trigger1 = 1
 flag = intro
 [State 191, Wait]
 type = assertspecial
-trigger1 = roundstate = 0
+trigger1 = roundstate := 0
 flag = noshadow
 [State 191, hole]
 type = helper
@@ -2096,7 +2093,7 @@ trigger1 = 1
 flag = intro
 [State 192, Wait]
 type = assertspecial
-trigger1 = roundstate = 0
+trigger1 = roundstate := 0
 flag = noshadow
 [State 192, Sound]
 type = playsnd
@@ -2105,7 +2102,7 @@ value = 5, 11
 ;[State 192, Scale]
 ;type = angledraw
 ;trigger1 = animelemtime(2) >= 0 && animelemtime(2) <= 10
-scale = (animelemtime(2) / 10.0), (10 - (0.9 * animelemtime(2)))
+;scale = (animelemtime(2) / 10.0), (10 - (0.9 * animelemtime(2)))
 
 [State 192, Pos]
 type = posset
@@ -2203,7 +2200,6 @@ velset = 0, 0
 ;[State 180, Quote]
 ;type = victoryquote
 ;trigger1 = 1
-value = randomrange(1, 10)
 [State 180, Win]
 type = changestate
 trigger1 = command = "/b" || command = "/c" || command = "/y" || command = "/z"
@@ -2567,19 +2563,19 @@ type = null
 trigger1 = palno = 2 || palno = 3 || palno = 5 || palno = 9
 trigger2 = 1
 ;Magenta
-trigger2 = palno = 4
-trigger2 = 1
-;Red
-trigger3 = palno = 6
-trigger3 = 1
-;Yellow
-trigger4 = palno = 8
+trigger3 = palno = 4
 trigger4 = 1
-;Blue
-trigger5 = palno = 10
-trigger5 = 1
-;Green (Default)
+;Red
+trigger5 = palno = 6
 trigger6 = 1
+;Yellow
+trigger7 = palno = 8
+trigger8 = 1
+;Blue
+trigger9 = palno = 10
+trigger10 = 1
+;Green (Default)
+trigger11 = 1
 [State 5900, End]
 type = changestate
 trigger1 = time > 0; Wait for enemy to be loaded
@@ -2716,38 +2712,38 @@ y = const(movement.air.gethit.airrecover.yaccel)
 
 [state 5210, Vel]
 type = velmul
-trigger2 = !time
+trigger1 = !time
 x = const(velocity.air.gethit.airrecover.mul.x)
 y = const(velocity.air.gethit.airrecover.mul.y)
 
 [state 5210, Vel]
 type = veladd
-trigger3 = !time
+trigger1 = !time
 x = const(velocity.air.gethit.airrecover.add.x)
 y = const(velocity.air.gethit.airrecover.add.y)
 
 [state 5210, Up]
 type = veladd
-trigger4 = !time
-trigger5 = command = "holdup"
+trigger1 = !time
+trigger2 = command = "holdup"
 y = const(velocity.air.gethit.airrecover.up)
 
 [state 5210, Down]
 type = veladd
-trigger6 = !time
-trigger7 = command = "holddown"
+trigger1 = !time
+trigger2 = command = "holddown"
 y = const(velocity.air.gethit.airrecover.down)
 
 [state 5210, Forward]
 type = veladd
-trigger8 = !time
-trigger9 = command = "holdfwd"
+trigger1 = !time
+trigger2 = command = "holdfwd"
 x = const(velocity.air.gethit.airrecover.fwd)
 
 [state 5210, Back]
 type = veladd
-trigger10 = !time
-trigger11 = command = "holdback"
+trigger1 = !time
+trigger2 = command = "holdback"
 x = const(velocity.air.gethit.airrecover.back)
 
 [State 5210, Turn]
@@ -2868,7 +2864,7 @@ var(28) = 6
 ignorehitpause = 1
 [State -2, Dark Force BG]
 type = bgpalfx
-trigger1 = stateno = 770 || var(2) != 0
+trigger1 = stateno := 770 || var(2) != 0
 time = 1
 ;color = 0
 ;mul = 192 + 1, 64 + 1, 0
@@ -2889,7 +2885,7 @@ type = null
 trigger1 = 1
 trigger2 = p2dist x < 0
 trigger3 = p2dist x < 40
-trigger4 = var(29) = 1
+trigger4 = var(29) := 1
 ignorehitpause = 1
 [State -2, Unthrowable Flag]
 type = varadd
@@ -2916,10 +2912,10 @@ triggerall = 1 ; Safe fallback
 ; trigger2 = p2stateno = 5120; Just in case ; DEMON ELIMINATED - p2stateno unsupported
 ; trigger3 = p2stateno = 5201 ; DEMON ELIMINATED - p2stateno unsupported
 value = 1 ; Safe fallback for hurt state detection
-trigger4 = p2movetype = H
-trigger4 = p2statetype != A
-trigger5 = p2movetype = H
-trigger5 = p2statetype = A
+trigger1 = p2movetype = H
+trigger2 = p2statetype != A
+trigger3 = p2movetype = H
+trigger4 = p2statetype = A
 var(30) = 3
 ignorehitpause = 1
 [State -2, Damage Scaling - Reset]
@@ -2946,7 +2942,7 @@ trigger2 = p2movetype = H
 trigger3 = stateno = [200, 699]
 trigger4 = prevstateno = [200, 699]
 trigger5 = 1
-trigger6 =  1)
+trigger6 = 1
 var(33) = 0.75 * var(33)
 ignorehitpause = 1
 [State -2, Damage Scaling - Dark Force]
@@ -2958,21 +2954,21 @@ ignorehitpause = 1
 type = null
 triggerall = stateno = [3000, 4999]
 ;Level 3
-trigger1 = var(34) = 3
+trigger1 = var(34) := 3
 trigger2 = var(33) < 0.5 && var(33) != 0.5
 ;Level 2
-trigger2 = var(34) = 2
-trigger2 = var(33) < 0.4 && var(33) != 0.4
+trigger3 = var(34) := 2
+trigger4 = var(33) < 0.4 && var(33) != 0.4
 ;Other
-trigger3 = stateno = [3000, 4999]
-trigger3 = var(33) < 0.3 && var(33) != 0.3
+trigger5 = stateno = [3000, 4999]
+trigger6 = var(33) < 0.3 && var(33) != 0.3
 ignorehitpause = 1
 [State -2, Meter Scaling]
 type = null
 trigger1 = var(27) > 0
 trigger2 = 1
-trigger2 = var(27) <= 0
-trigger2 = 1 || var(35) = var(33)
+trigger3 = var(27) <= 0
+trigger4 = 1 || var(35) := var(33)
 ignorehitpause = 1
 [State -2, Damage Scaling - Override Fall Defense Bonus]
 redirectID = p2, ID
@@ -3000,7 +2996,7 @@ triggerall = target, time > 0
 trigger1 = target, stateno = 5040
 trigger2 = target, stateno = 5201
 trigger3 = target, movetype != H
-trigger3 = target, movereversed = 0
+trigger4 = target, movereversed = 0
 ignorehitpause = 1
 [State -2, Get Hit Voice]
 type = playsnd
@@ -3008,6 +3004,7 @@ triggerall = alive
 triggerall = time <= 1
 triggerall = movetype = H
 triggerall = stateno != [120, 155]
+trigger1 = 1
 value = 5000, (random % 3)
 channel = 0
 [State -2, Get Hit Voice]
@@ -3017,7 +3014,7 @@ triggerall = time = 1
 triggerall = movetype = H
 trigger1 = stateno = 5100
 trigger2 = stateno = 5050 || stateno = 5100
-trigger2 = prevstateno != [5000, 5120]
+trigger3 = prevstateno != [5000, 5120]
 value = 5000, (random % 3)
 lowpriority = 1
 channel = 0
@@ -3040,11 +3037,6 @@ trigger10 = anim = 170
 value = 5000, (random % 3)
 lowpriority = 1
 channel = 0
-type = playsnd
-trigger2 = time = 1
-trigger3 = anim = 5300
-value = 5000, 2
-channel = 0
 [State -2, Guard Break Voice]
 type = playsnd
 trigger1 = time = 1
@@ -3058,7 +3050,7 @@ trigger2 = animelemtime(6) >= 0
 value = 1
 [State -2, Midnight Bliss Voice]
 type = playsnd
-trigger1 = var(37) = 1
+trigger1 = var(37) := 1
 value = 5000, 2
 channel = 0
 freqmul = 1.50
@@ -3084,22 +3076,22 @@ scale = 1.20, 1
 
 [State -3, Parry Detection]
 type = helper
-triggerall = roundstate = 2
+triggerall = roundstate := 2
 triggerall = !var(27)
 triggerall = (movetype = I && ctrl) || stateno = [700, 702] || stateno = 5120
 trigger1 = command != "rlsdir"
 trigger2 = statetype = S || statetype = C || stateno = 5120
 trigger3 = (p2dist x >= 0 && command = "F") || (p2dist x < 0 && command = "B") || command = "D"
-trigger2 = command != "rlsdir"
-trigger2 = statetype = A
-trigger2 = (p2dist x >= 0 && command = "F") || (p2dist x < 0 && command = "B")
-trigger3 = inguarddist
-trigger3 = stateno != [700, 702]
-trigger3 = p2bodydist x < var(38)
-trigger4 = inguarddist
-trigger4 = stateno != [700, 702]
-trigger4 = var(39) = [1, 8]
-trigger5 = stateno = [700, 702]
+trigger4 = command != "rlsdir"
+trigger5 = statetype = A
+trigger6 = (p2dist x >= 0 && command = "F") || (p2dist x < 0 && command = "B")
+trigger7 = inguarddist
+trigger8 = stateno != [700, 702]
+trigger9 = p2bodydist x < var(38)
+trigger10 = inguarddist
+trigger11 = stateno != [700, 702]
+trigger12 = var(39) = [1, 8]
+trigger13 = stateno = [700, 702]
 helpertype = normal
 stateno = 705
 ID = 705
@@ -3116,7 +3108,7 @@ ctrl = 0
 [State -3, Parry Projectiles]
 type = hitoverride
 trigger1 = stateno != [700, 702]
-trigger2 = !(helper(705), var(0)) && (helper(705), anim = 705)
+trigger2 = !(helper(705), var(0)) && (helper(705), anim := 705)
 attr = SA, AP
 stateno = 700
 slot = 0
@@ -3125,7 +3117,7 @@ ignorehitpause = 1
 [State -3, Parry Projectiles]
 type = hitoverride
 trigger1 = stateno != [700, 702]
-trigger2 = !(helper(705), var(0)) && (helper(705), anim = 706)
+trigger2 = !(helper(705), var(0)) && (helper(705), anim := 706)
 attr = C, AP
 stateno = 701
 slot = 0
@@ -3134,7 +3126,7 @@ ignorehitpause = 1
 [State -3, Parry Projectiles]
 type = hitoverride
 trigger1 = stateno != [700, 702]
-trigger2 = !(helper(705), var(0)) && (helper(705), anim = 707)
+trigger2 = !(helper(705), var(0)) && (helper(705), anim := 707)
 attr = SCA, AP
 stateno = 702
 slot = 0
@@ -3143,21 +3135,21 @@ ignorehitpause = 1
 [State -3, NoWalk after Parry]
 type = assertspecial
 trigger1 = 1
-trigger2 = 1 || var(40) = (var(40) - 1)
+trigger2 = 1 || var(40) := (var(40) - 1)
 flag = nowalk
 [State -3, ProjContact Reset]
 type = varset
 triggerall = var(41)
 trigger1 = stateno != 1000 && stateno != 1010 && stateno != 1050 && stateno != 1060
 trigger2 = stateno != 3000 && stateno != 3050 && stateno != 3300 && stateno != 4100
-trigger2 = stateno = 1000 && animelemtime(4) < 0
-trigger3 = stateno = 1010 && animelemtime(4) < 0
-trigger4 = stateno = 1050 && animelemtime(4) < 0
-trigger5 = stateno = 1060 && animelemtime(4) < 0
-trigger6 = stateno = 3000 && animelemtime(4) < 0
-trigger7 = stateno = 3050 && animelemtime(4) < 0
-trigger8 = stateno = 3300 && time <= 8
-trigger9 = stateno = 4100 && time <= 8
+trigger3 = stateno = 1000 && animelemtime(4) < 0
+trigger4 = stateno = 1010 && animelemtime(4) < 0
+trigger5 = stateno = 1050 && animelemtime(4) < 0
+trigger6 = stateno = 1060 && animelemtime(4) < 0
+trigger7 = stateno = 3000 && animelemtime(4) < 0
+trigger8 = stateno = 3050 && animelemtime(4) < 0
+trigger9 = stateno = 3300 && time <= 8
+trigger10 = stateno = 4100 && time <= 8
 var(41) = 0
 
 [State -3, ProjContact Timer]
@@ -3181,7 +3173,7 @@ trigger4 = helper(1065), stateno = 1065
 trigger5 = helper(3005), stateno = 3005
 trigger6 = helper(3055), stateno = 3055
 trigger7 = helper(3305), stateno = 3305
-trigger8 = helper(4105, stateno = 4105)
+trigger8 = helper(4105), stateno = 4105
 var(42) = 1
 ignorehitpause = 1
 [State -3, Special Cancel Reset]
@@ -3196,33 +3188,33 @@ triggerall = stateno = [200, 699]
 trigger1 = time <= 2
 trigger2 = stateno = [200, 699]
 value = prevstateno != [200, 4999]
-trigger2 = stateno = 200 || stateno = 201
-trigger3 = stateno = 210
-trigger3 = (movecontact || movereversed) && animelemtime(5) < 0 && prevstateno != [200, 699]
-trigger4 = stateno = 211
-trigger4 = (movecontact || movereversed) && animelemtime(7) < 0 && prevstateno != [200, 699]
-trigger5 = stateno = 221
+trigger3 = stateno = 200 || stateno = 201
+trigger4 = stateno = 210
 trigger5 = (movecontact || movereversed) && animelemtime(5) < 0 && prevstateno != [200, 699]
-trigger6 = stateno = 230
-trigger7 = stateno = 400
-trigger8 = stateno = 410
-trigger8 = (movecontact || movereversed) && animelemtime(4) < 0 && prevstateno != [200, 699]
-trigger9 = stateno = 430
+trigger6 = stateno = 211
+trigger7 = (movecontact || movereversed) && animelemtime(7) < 0 && prevstateno != [200, 699]
+trigger8 = stateno = 221
 trigger9 = (movecontact || movereversed) && animelemtime(5) < 0 && prevstateno != [200, 699]
-trigger10 = stateno = 440
-trigger10 = (movecontact || movereversed) && animelemtime(4) < 0 && prevstateno != [200, 699]
-trigger11 = stateno = 445
-trigger11 = (movecontact || movereversed) && animelemtime(4) < 0 && prevstateno != [200, 699]
-trigger12 = stateno = 600
-trigger12 = (movecontact || movereversed) && animelemtime(4) < 0 && prevstateno != [200, 699]
-trigger13 = stateno = 610
-trigger13 = (movecontact || movereversed) && animelemtime(5) < 0 && prevstateno != [200, 699]
-trigger14 = stateno = 630
-trigger14 = (movecontact || movereversed) && animelemtime(4) < 0 && prevstateno != [200, 699]
-trigger15 = stateno = 631
-trigger15 = (movecontact || movereversed) && animelemtime(4) < 0 && prevstateno != [200, 699]
-trigger16 = stateno = 640
-trigger16 = (movecontact || movereversed) && animelemtime(5) < 0 && prevstateno != [200, 699]
+trigger10 = stateno = 230
+trigger11 = stateno = 400
+trigger12 = stateno = 410
+trigger13 = (movecontact || movereversed) && animelemtime(4) < 0 && prevstateno != [200, 699]
+trigger14 = stateno = 430
+trigger15 = (movecontact || movereversed) && animelemtime(5) < 0 && prevstateno != [200, 699]
+trigger16 = stateno = 440
+trigger17 = (movecontact || movereversed) && animelemtime(4) < 0 && prevstateno != [200, 699]
+trigger18 = stateno = 445
+trigger19 = (movecontact || movereversed) && animelemtime(4) < 0 && prevstateno != [200, 699]
+trigger20 = stateno = 600
+trigger21 = (movecontact || movereversed) && animelemtime(4) < 0 && prevstateno != [200, 699]
+trigger22 = stateno = 610
+trigger23 = (movecontact || movereversed) && animelemtime(5) < 0 && prevstateno != [200, 699]
+trigger24 = stateno = 630
+trigger25 = (movecontact || movereversed) && animelemtime(4) < 0 && prevstateno != [200, 699]
+trigger26 = stateno = 631
+trigger27 = (movecontact || movereversed) && animelemtime(4) < 0 && prevstateno != [200, 699]
+trigger28 = stateno = 640
+trigger29 = (movecontact || movereversed) && animelemtime(5) < 0 && prevstateno != [200, 699]
 var(43) = 1
 ignorehitpause = 1
 [State -3, Super Cancel Reset]
@@ -3235,25 +3227,25 @@ ignorehitpause = 1
 type = varset
 triggerall = stateno = [200, 2999]
 value = var(54)
-trigger2 = stateno = 220
+trigger1 = stateno = 220
 trigger2 = (movecontact || movereversed) && animelemtime(7) < 0 && prevstateno != [200, 699]
 trigger3 = stateno = 1000
-trigger3 = animelemtime(5) = [1, 12] && var(5) != 02
-trigger4 = stateno = 1010
 trigger4 = animelemtime(5) = [1, 12] && var(5) != 02
-trigger5 = stateno = 1050
-trigger5 = animelemtime(6) = [1, 12] && var(5) != 02
-trigger6 = stateno = 1060
-trigger6 = animelemtime(6) = [1, 12] && var(5) != 02
-trigger7 = stateno = 1100
-trigger7 = anim = 1100 && animelemtime(4) < 0
-trigger7 = (movecontact + movereversed) = [1, 12]
-trigger8 = stateno = 1110
-trigger8 = (movecontact + movereversed) = [1, 24]
-trigger9 = stateno = 1205
-trigger9 = (movecontact + movereversed) = [1, 12]
-trigger10 = stateno = 1251
-trigger10 = (movecontact + movereversed) = [1, 12]
+trigger5 = stateno = 1010
+trigger6 = animelemtime(5) = [1, 12] && var(5) != 02
+trigger7 = stateno = 1050
+trigger8 = animelemtime(6) = [1, 12] && var(5) != 02
+trigger9 = stateno = 1060
+trigger10 = animelemtime(6) = [1, 12] && var(5) != 02
+trigger11 = stateno = 1100
+trigger12 = anim = 1100 && animelemtime(4) < 0
+trigger13 = (movecontact + movereversed) = [1, 12]
+trigger14 = stateno = 1110
+trigger15 = (movecontact + movereversed) = [1, 24]
+trigger16 = stateno = 1205
+trigger17 = (movecontact + movereversed) = [1, 12]
+trigger18 = stateno = 1251
+trigger19 = (movecontact + movereversed) = [1, 12]
 value = 1
 ignorehitpause = 1
 [State -3, Hyper Cancel Reset]
@@ -3267,14 +3259,14 @@ type = varset
 triggerall = stateno = [3000, 4999]
 trigger1 = stateno = 3000
 trigger2 = animelemtime(5) = [1, 24] && var(5) != 02
-trigger2 = stateno = 3050
-trigger2 = animelemtime(6) = [1, 24] && var(5) != 02
-trigger3 = stateno = 3100
-trigger3 = (movecontact + movereversed) = [1, 12]
-trigger4 = stateno = 3300
-trigger4 = var(52) = [1, 12]
-trigger5 = stateno = 3401
-trigger5 = (movecontact + movereversed) = [1, 12]
+trigger3 = stateno = 3050
+trigger4 = animelemtime(6) = [1, 24] && var(5) != 02
+trigger5 = stateno = 3100
+trigger6 = (movecontact + movereversed) = [1, 12]
+trigger7 = stateno = 3300
+trigger8 = var(52) = [1, 12]
+trigger9 = stateno = 3401
+trigger10 = (movecontact + movereversed) = [1, 12]
 value = 1
 ignorehitpause = 1
 [State -3, Throw Cancel Fix]; Because first frame of a throw has movehit and Custom Combo has so much freedom
@@ -3282,7 +3274,7 @@ type = null
 trigger1 = numtarget
 trigger2 = hitdefattr != SCA, AA
 trigger3 = time <= 0 && target, time <= 0
-trigger4 = var(53) = 0 || var(54) = 0 || var(55) = 0 || var(56) = 0
+trigger4 = var(53) := 0 || var(54) := 0 || var(55) := 0 || var(56) := 0
 ignorehitpause = 1
 [State -3, Super Cancel Flag Reset]
 type = varset
@@ -3299,7 +3291,7 @@ ignorehitpause = 1
 [State -3, Sparkle Timer]
 type = null
 trigger1 = 1
-value = 1.0 + (random / 1000.0
+value = 1.0 + (random / 1000.0)
 [State -3, Sparkles Back]
 type = explod
 trigger1 = random < 15
@@ -3433,8 +3425,8 @@ trans = add1
 type = afterimagetime
 trigger1 = stateno = 50 || stateno = [600, 699]
 trigger2 = var(51) = 3 && vel y < -1
-trigger2 = stateno = [710, 725]
-trigger3 = stateno = [3000, 4999]
+trigger3 = stateno = [710, 725]
+trigger4 = stateno = [3000, 4999]
 time = 2
 ignorehitpause = 1
 [State -3, Scary Supers]
@@ -3455,18 +3447,18 @@ value = 0
 [State -3, Dark Force Finish]
 type = helper
 triggerall = winKO
-triggerall = roundstate = 3
+triggerall = roundstate := 3
 trigger1 = movecontact = [1, 4]
 trigger2 = helper(1005), var(52)
 trigger3 = helper(1015), var(52)
 trigger4 = helper(1055), var(52)
 trigger5 = helper(1065), var(52)
 trigger6 = stateno = 810
-trigger6 = animelemtime(6) = [0, 1]
-trigger7 = stateno = 820
-trigger7 = animelemtime(8) >= 0
-trigger8 = stateno = 1311 || stateno = 1341
-trigger8 = time <= 1
+trigger7 = animelemtime(6) = [0, 1]
+trigger8 = stateno = 820
+trigger9 = animelemtime(8) >= 0
+trigger10 = stateno = 1311 || stateno = 1341
+trigger11 = time <= 1
 helpertype = normal
 stateno = 8600
 ID = 8600 + 0 * (var(59) = 900)
@@ -3479,20 +3471,20 @@ pausemovetime = 999
 supermovetime = 999
 [State -3, Super Finish]
 type = helper
-triggerall = roundstate = 3
+triggerall = roundstate := 3
 trigger1 = movecontact = [1, 4]
 trigger2 = stateno = [3000, 4999]
 trigger3 = var(59) = stateno
-trigger2 = helper(3005), var(52)
-trigger2 = var(59) = 3000
-trigger3 = helper(3055), var(52)
-trigger3 = var(59) = 3050
-trigger4 = stateno = 3300 && var(5) != 0
-trigger4 = var(59) = 3300
-trigger5 = helper(3305), var(52)
-trigger5 = var(59) = 3300
-trigger6 = stateno = 4110
-trigger6 = var(59) = 4100
+trigger4 = helper(3005), var(52)
+trigger5 = var(59) := 3000
+trigger6 = helper(3055), var(52)
+trigger7 = var(59) := 3050
+trigger8 = stateno := 3300 && var(5) != 0
+trigger9 = var(59) := 3300
+trigger10 = helper(3305), var(52)
+trigger11 = var(59) := 3300
+trigger12 = stateno := 4110
+trigger13 = var(59) = 4100
 helpertype = normal
 stateno = 8600
 ID = 8600
@@ -3509,12 +3501,12 @@ trigger1 = roundstate != 4
 value = 0
 [State -3, Victory Camera]
 type = varset
-value = var(63)
+var = 63
 value = var(64)
 trigger1 = alive && !standby
 value = winKO
 trigger2 = stateno > 180
-trigger3 = roundstate = 4
+trigger3 = roundstate := 4
 value = camerazoom <= 1
 value = screenpos y = [0, gameheight]
 value = numenemy
@@ -3556,7 +3548,7 @@ volume = 100
 type = changestate
 triggerall = !ctrl
 triggerall = time >= 300
-triggerall = roundstate = 2
+triggerall = roundstate := 2
 trigger1 = pos y > 0 && screenpos y > gameheight
 trigger2 = !selfanimexist(anim)
 value = 5040
