@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ;============================================================================================
 ;=====================================<NORMAL STATES>========================================
 ;============================================================================================
@@ -22,11 +22,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -48,7 +50,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 200, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = S, NA
 damage = 30, 0
 animtype = Light
@@ -58,9 +60,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8010)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 20) * (var(133) = 65), var(122) = -82
+sparkno = -1 + 0 * (var(121) := 8010)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 20) * (var(133) := 65), var(122) := -82
 hitsound = s2, 1
 hitsound.channel = 2
 guardsound = s2, 0
@@ -114,11 +116,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -140,7 +144,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 201, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = S, NA
 damage = 30, 0
 animtype = Light
@@ -150,9 +154,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8010)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 20) * (var(133) = 65), var(122) = -74
+sparkno = -1 + 0 * (var(121) := 8010)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 20) * (var(133) := 65), var(122) := -74
 hitsound = s2, 1
 hitsound.channel = 2
 guardsound = s2, 0
@@ -206,11 +210,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -232,7 +238,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 210, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = S, NA
 damage = 70, 0
 animtype = Medium
@@ -242,9 +248,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8011)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 70) * (var(133) = 115), var(122) = -54
+sparkno = -1 + 0 * (var(121) := 8011)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 70) * (var(133) := 115), var(122) := -54
 hitsound = s2, 2
 hitsound.channel = 2
 guardsound = s2, 0
@@ -307,11 +313,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -333,7 +341,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 211, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = S, NA
 damage = 80, 0
 animtype = Medium
@@ -343,9 +351,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8021)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 50) * (var(133) = 110), var(122) = -62
+sparkno = -1 + 0 * (var(121) := 8021)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 50) * (var(133) := 110), var(122) := -62
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
@@ -417,11 +425,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -443,7 +453,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 220, Hit]
 type = hitdef
 trigger1 = animelem = 5
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = S, NA
 damage = 100, 0
 animtype = Hard
@@ -453,9 +463,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8022)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 70) * (var(133) = 130), var(122) = -48
+sparkno = -1 + 0 * (var(121) := 8022)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 70) * (var(133) := 130), var(122) := -48
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -518,11 +528,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -544,7 +556,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 221, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = S, NA
 damage = 90, 0
 animtype = Hard
@@ -554,9 +566,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8022)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 40) * (var(133) = 60), var(122) = -36
+sparkno = -1 + 0 * (var(121) := 8022)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 40) * (var(133) := 60), var(122) := -36
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -585,7 +597,7 @@ forcestand = 1
 type = hitdef
 trigger1 = animelem = 3
 trigger1 = !movecontact && !movereversed
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = S, NA
 damage = 90, 0
 animtype = Hard
@@ -595,9 +607,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8022)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 40) * (var(133) = 60), var(122) = -62
+sparkno = -1 + 0 * (var(121) := 8022)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 40) * (var(133) := 60), var(122) := -62
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -669,11 +681,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -695,7 +709,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 230, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = S, NA
 damage = 30, 0
 animtype = Light
@@ -705,9 +719,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8010)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 35) * (var(133) = 70), var(122) = -32
+sparkno = -1 + 0 * (var(121) := 8010)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 35) * (var(133) := 70), var(122) := -32
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -761,11 +775,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -787,7 +803,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 240, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = S, NA
 damage = 70, 0
 animtype = Medium
@@ -797,9 +813,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8011)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 60) * (var(133) = 110), var(122) = -53
+sparkno = -1 + 0 * (var(121) := 8011)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 60) * (var(133) := 110), var(122) := -53
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -903,11 +919,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -929,7 +947,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 250, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = S, NA
 damage = 90, 0
 animtype = Hard
@@ -939,9 +957,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8022)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 60) * (var(133) = 120), var(122) = -70
+sparkno = -1 + 0 * (var(121) := 8022)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 60) * (var(133) := 120), var(122) := -70
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1039,11 +1057,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -1102,7 +1122,7 @@ ownpal = 1
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 3 || animelem = 4
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = A, NA
 damage = 30, 0
 animtype = Hard
@@ -1112,9 +1132,9 @@ guardflag = HA
 hitflag = HAF
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (var(121) = 8012)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 45) * (var(133) = 115), var(122) =  -72
+sparkno = -1 + 0 * (var(121) := 8012)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 45) * (var(133) := 115), var(122) :=  -72
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1186,7 +1206,7 @@ forcenofall = !var(50)
 [State 255, Hit]
 type = hitdef
 trigger1 = animelem = 6
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = A, NA
 damage = 30, 0
 animtype = Hard
@@ -1196,9 +1216,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8012)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 45) * (var(133) = 100), var(122) = -24
+sparkno = -1 + 0 * (var(121) := 8012)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 45) * (var(133) := 100), var(122) := -24
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1298,11 +1318,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -1324,7 +1346,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 400, Hit]
 type = hitdef
 trigger1 = animelem = 2 || animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = C, NA
 damage = 20, 0
 animtype = Light
@@ -1334,9 +1356,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8010)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 70), var(122) = -36
+sparkno = -1 + 0 * (var(121) := 8010)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 30) * (var(133) := 70), var(122) := -36
 hitsound = s2, 1
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1391,11 +1413,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -1417,7 +1441,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 410, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = C, NA
 damage = 60, 0
 animtype = Medium
@@ -1427,9 +1451,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8021)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 40) * (var(133) = 75), var(122) = -29
+sparkno = -1 + 0 * (var(121) := 8021)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 40) * (var(133) := 75), var(122) := -29
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1493,11 +1517,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -1519,7 +1545,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 420, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = C, NA
 damage = 100, 0
 animtype = Hard
@@ -1529,9 +1555,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8022)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 60) * (var(133) = 130), var(122) = -32
+sparkno = -1 + 0 * (var(121) := 8022)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 60) * (var(133) := 130), var(122) := -32
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1586,11 +1612,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -1612,7 +1640,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 425, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = C, NA
 damage = 90, 0
 animtype = Hard
@@ -1622,9 +1650,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8022)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 50) * (var(133) = 90), var(122) = -120
+sparkno = -1 + 0 * (var(121) := 8022)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 50) * (var(133) := 90), var(122) := -120
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1709,11 +1737,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -1735,7 +1765,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 430, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = C, NA
 damage = 30, 0
 animtype = Light
@@ -1745,9 +1775,9 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8010)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 35) * (var(133) = 85), var(122) = -16
+sparkno = -1 + 0 * (var(121) := 8010)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 35) * (var(133) := 85), var(122) := -16
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1802,11 +1832,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -1828,7 +1860,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 431, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = C, NA
 damage = 30, 0
 animtype = Light
@@ -1838,9 +1870,9 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8010)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 35) * (var(133) = 85), var(122) = -4
+sparkno = -1 + 0 * (var(121) := 8010)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 35) * (var(133) := 85), var(122) := -4
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1904,11 +1936,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -1930,7 +1964,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 440, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = S, NA
 damage = 70, 0
 animtype = Medium
@@ -1940,9 +1974,9 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8011)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 40) * (var(133) = 85), var(122) = -32
+sparkno = -1 + 0 * (var(121) := 8011)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 40) * (var(133) := 85), var(122) := -32
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2006,11 +2040,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -2032,7 +2068,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 445, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = S, NA
 damage = 70, 0
 animtype = Medium
@@ -2042,9 +2078,9 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8011)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 40) * (var(133) = 90), var(122) = -14
+sparkno = -1 + 0 * (var(121) := 8011)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 40) * (var(133) := 90), var(122) := -14
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2108,11 +2144,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -2134,7 +2172,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 450, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = C, NA
 damage = 80, 0
 animtype = Hard
@@ -2144,9 +2182,9 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8012)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 60) * (var(133) = 120), var(122) = -30
+sparkno = -1 + 0 * (var(121) := 8012)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 60) * (var(133) := 120), var(122) := -30
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2202,11 +2240,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -2228,7 +2268,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 600, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = A, NA
 damage = 40, 0
 animtype = Light
@@ -2238,9 +2278,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8020)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 80), var(122) = -43
+sparkno = -1 + 0 * (var(121) := 8020)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 30) * (var(133) := 80), var(122) := -43
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2312,11 +2352,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -2346,7 +2388,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 610, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = A, NA
 damage = 70, 0
 animtype = Medium
@@ -2356,9 +2398,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8021)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 35) * (var(133) = 75), var(122) = -48
+sparkno = -1 + 0 * (var(121) := 8021)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 35) * (var(133) := 75), var(122) := -48
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2430,11 +2472,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -2456,7 +2500,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 620, Hit]
 type = hitdef
 trigger1 = animelem = 6
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = A, NA
 damage = 90, 0
 animtype = Hard
@@ -2466,9 +2510,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8012)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 85), var(122) = -66
+sparkno = -1 + 0 * (var(121) := 8012)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 30) * (var(133) := 85), var(122) := -66
 hitsound = s2, 3
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2540,11 +2584,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -2566,7 +2612,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 630, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = A, NA
 damage = 40, 0
 animtype = Light
@@ -2576,9 +2622,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8010)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 65), var(122) = -42
+sparkno = -1 + 0 * (var(121) := 8010)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 30) * (var(133) := 65), var(122) := -42
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2650,11 +2696,13 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1 || var(65) = 0
+var = 65
 value = 1
 
 [State Erase Inputs]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 1
 ignorehitpause = 1
 persistent = 0
@@ -2676,7 +2724,7 @@ freqmul = 0.95 + (random / 10000.0)
 [State 631, Hit]
 type = hitdef
 trigger1 = animelem = 2
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+air.juggle = 0 * (var(112) := 1 || var(110) := 1 || var(111) := 1)
 attr = A, NA
 damage = 40, 0
 animtype = Light
@@ -2686,9 +2734,9 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = -1 + 0 * (var(121) = 8010)
-guard.sparkno = -1 + 0 * (var(131) = 8000)
-sparkxy = -10 + 0 * (var(132) = 30) * (var(133) = 65), var(122) = -62
+sparkno = -1 + 0 * (var(121) := 8010)
+guard.sparkno = -1 + 0 * (var(131) := 8000)
+sparkxy = -10 + 0 * (var(132) := 30) * (var(133) := 65), var(122) := -62
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
