@@ -14,7 +14,7 @@ movetype = A
 anim = 3000
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (var(124) = 1))
+poweradd = -1000 + 0 * (var(124) := 1)
 sprpriority = 2
 facep2 = 1
 [State Damage Scaling - Add]
@@ -22,16 +22,19 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1
+var = 65
 value = 3, 2, 1
 [State 3000, Strength]
 type = varset
 trigger1 = time <= 0
+var = 40
 value = 0
 ignorehitpause = 1
 persistent = 0
 [State 3000, Button AI]
 type = varset
 trigger1 = time <= 0
+var = 59
 value = 2
 ignorehitpause = 1
 [State 3000, Erase Inputs]
@@ -44,8 +47,8 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
-trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
+trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
+trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
@@ -59,13 +62,13 @@ add = 255, 255, 255
 ignorehitpause = 1
 [State 3000, Sound]
 type = playsnd
-trigger1 = time = 3
+trigger1 = time := 3
 value = 4, 5
 channel = 0
 [State 3000, Super Pause FX]
 type = helper
 trigger1 = var(65)
-trigger1 = time = 3
+trigger1 = time := 3
 helpertype = normal
 stateno = 8500
 ID = 8500
@@ -78,7 +81,7 @@ size.yscale = 1
 ownpal = 1
 [State 3000, Super Pause]
 type = superpause
-trigger1 = time = 3
+trigger1 = time := 3
 time = 41
 movetime = 41
 anim = 100
@@ -106,7 +109,7 @@ edge = 0, 32 * const(size.xscale)
 
 [State 3000, FX]
 type = explod
-trigger1 = animelem = 3
+trigger1 = animelem := 3
 anim = 3004
 ID = 3004
 sprpriority = 3
@@ -119,7 +122,7 @@ pausemovetime = -1
 supermovetime = -1
 [State 3000, Dust]
 type = explod
-trigger1 = animelem = 5
+trigger1 = animelem := 5
 anim = 7106
 ID = 7106
 sprpriority = 3
@@ -131,7 +134,7 @@ pausemovetime = -1
 supermovetime = -1
 [State 3000, Soul Phoenix]
 type = helper
-trigger1 = animelem = 5
+trigger1 = animelem := 5
 helpertype = normal; projectile
 stateno = 3005
 ID = 3005
@@ -143,7 +146,7 @@ size.yscale = 0.75
 ownpal = 1
 [State 3000, Dome]
 type = explod
-trigger1 = animelem = 5
+trigger1 = animelem := 5
 anim = 3003
 ID = 3003
 sprpriority = 3
@@ -157,12 +160,12 @@ pausemovetime = -1
 supermovetime = -1
 [State 3000, Sound]
 type = playsnd
-trigger1 = animelem = 3
+trigger1 = animelem := 3
 value = 4, 17
 channel = 0
 [State 3000, Sound]
 type = playsnd
-trigger1 = animelem = 5
+trigger1 = animelem := 5
 value = 5, 13
 [State 3000, End]
 type = changestate
@@ -178,7 +181,7 @@ movetype = A
 anim = 3050
 ctrl = 0
 velset = 0, 0)
-poweradd = -1000 + 0 * (var(124) = 1)
+poweradd = -1000 + 0 * (var(124) := 1)
 sprpriority = 2
 facep2 = p2dist x <= -const(size.ground.back)
 
@@ -187,6 +190,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1
+var = 65
 value = 3, 2, 1
 [State 3050, Strength]
 type = varset
@@ -209,8 +213,8 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
-trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
+trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
+trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
@@ -224,13 +228,13 @@ add = 255, 255, 255
 ignorehitpause = 1
 [State 3050, Sound]
 type = playsnd
-trigger1 = time = 3
+trigger1 = time := 3
 value = 4, 5
 channel = 0
 [State 3050, Super Pause FX]
 type = helper
 trigger1 = var(65)
-trigger1 = time = 3
+trigger1 = time := 3
 helpertype = normal
 stateno = 8500
 ID = 8500
@@ -243,7 +247,7 @@ size.yscale = 1
 ownpal = 1
 [State 3050, Super Pause]
 type = superpause
-trigger1 = time = 3
+trigger1 = time := 3
 time = 41
 movetime = 41
 anim = 100
@@ -391,7 +395,7 @@ movetype = A
 anim = 3100
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (var(124) = 1))
+poweradd = -1000 + 0 * (var(124) := 1)
 facep2 = 1
 sprpriority = 2
 [State Damage Scaling - Add]
@@ -399,6 +403,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1
+var = 65
 value = 3, 2, 1
 [State 3100, Strength]
 type = varset
@@ -421,8 +426,8 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
-trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
+trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
+trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
@@ -436,13 +441,13 @@ add = 255, 255, 255
 ignorehitpause = 1
 [State 3100, Sound]
 type = playsnd
-trigger1 = time = 3
+trigger1 = time := 3
 value = 4, 0
 channel = 0
 [State 3100, Super Pause FX]
 type = helper
 trigger1 = var(65)
-trigger1 = time = 3
+trigger1 = time := 3
 helpertype = normal
 stateno = 8500
 ID = 8500
@@ -455,7 +460,7 @@ size.yscale = 1
 ownpal = 1
 [State 3100, Super Pause]
 type = superpause
-trigger1 = time = 3
+trigger1 = time := 3
 time = 41
 movetime = 41
 anim = 100
@@ -465,13 +470,13 @@ p2defmul = 1
 darken = 1
 [State 3100, NHB]
 type = nothitby
-trigger1 = anim = 3100
+trigger1 = anim := 3100
 trigger1 = animelemtime(3) < 0
 value = SCA
 time = 1
 [State 3100, NHB]
 type = nothitby
-trigger1 = anim = 3100
+trigger1 = anim := 3100
 trigger1 = animelemtime(3) >= 0
 trigger1 = animelemtime(4) < 0
 value = A
@@ -482,13 +487,13 @@ trigger1 = vel y < 0
 x = 0.95
 [State 3100, Accel]
 type = veladd
-trigger1 = anim = 3100
+trigger1 = anim := 3100
 trigger1 = animelemtime(8) >= 1
-trigger2 = anim = 1101
+trigger2 = anim := 1101
 y = 0.67
 [State 3100, Vel]
 type = velset
-trigger1 = anim = 3100
+trigger1 = anim := 3100
 trigger1 = animelemtime(8) = 1
 x = 5.10
 y = -11.76
@@ -498,19 +503,19 @@ trigger1 = anim = 1101
 x = 0
 [State 1110, Sound]
 type = playsnd
-trigger1 = anim = 3100
+trigger1 = anim := 3100
 trigger1 = animelem = 4
 value = 1, 9
 ;channel = 1
 stopongethit = 1
 [State 3100, Sound]
 type = playsnd
-trigger1 = anim = 3100
+trigger1 = anim := 3100
 trigger1 = animelemtime(8) = 1
 value = 0, 41
 [State 3100, Dust]
 type = helper
-trigger1 = anim = 3100
+trigger1 = anim := 3100
 trigger1 = animelemtime(8) = 1
 helpertype = normal
 stateno = 7100
@@ -520,15 +525,15 @@ postype = p1
 ownpal = 1
 [State 3100, Sound]
 type = playsnd
-trigger1 = anim = 3100
-trigger1 = animelem = 3
+trigger1 = anim := 3100
+trigger1 = animelem := 3
 value = 4, 16
 channel = 0
 ignorehitpause = 1
 persistent = 0
 [State 3100, Hit]
 type = hitdef
-trigger1 = anim = 3100
+trigger1 = anim := 3100
 trigger1 = animelem = 2 || animelem = 3
 air.juggle = 3 + hitcount
 attr = S, HA
@@ -574,7 +579,7 @@ forcestand = 1
 yaccel = 0.4850
 [State 3100, Hit 2]
 type = hitdef
-trigger1 = anim = 3100
+trigger1 = anim := 3100
 trigger1 = animelem = 4 || animelem = 6 || animelem = 8 || animelem = 9 || animelem = 10 || animelem = 11
 air.juggle = 3 + hitcount
 attr = A, HA
@@ -617,14 +622,14 @@ forcestand = 1
 yaccel = 0.4850
 [State 3100, Type]
 type = statetypeset
-trigger1 = anim = 3100
+trigger1 = anim := 3100
 trigger1 = animelemtime(4) >= 0
-trigger2 = anim = 1101
+trigger2 = anim := 1101
 statetype = A
 physics = N
 [State 3100, Anim]
 type = changeanim
-trigger1 = anim = 3100
+trigger1 = anim := 3100
 trigger1 = animelemtime(11) >= 2 && vel y > -1
 value = 1101
 [State 3100, Pos Fix]
@@ -652,7 +657,7 @@ movetype = A
 anim = 3300
 ctrl = 0
 velset = 0, 0
-poweradd = -2000 + 0 * (var(124) = 2)
+poweradd = -2000 + 0 * (var(124) := 2)
 facep2 = 1
 sprpriority = 2
 [State Damage Scaling - Add]
@@ -660,6 +665,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1
+var = 65
 value = 3, 2, 1
 [State 3300, Erase Inputs]
 type = null
@@ -671,8 +677,8 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
-trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
+trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
+trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
@@ -686,13 +692,13 @@ add = 255, 255, 255
 ignorehitpause = 1
 [State 3300, Sound]
 type = playsnd
-trigger1 = time = 3
+trigger1 = time := 3
 value = 4, 0
 channel = 0
 [State 3300, Super Pause FX]
 type = helper
 trigger1 = var(65)
-trigger1 = time = 3
+trigger1 = time := 3
 helpertype = normal
 stateno = 8510
 ID = 8500
@@ -705,7 +711,7 @@ size.yscale = 1
 ownpal = 1
 [State 3300, Super Pause]
 type = superpause
-trigger1 = time = 3
+trigger1 = time := 3
 time = 43
 movetime = 43
 anim = 101
@@ -817,7 +823,7 @@ movetype = A
 anim = 3400
 ctrl = 0
 velset = 0, 0
-poweradd = -1000 + 0 * (var(124) = 1))
+poweradd = -1000 + 0 * (var(124) := 1)
 sprpriority = 2
 facep2 = 0
 [State Damage Scaling - Add]
@@ -825,6 +831,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1
+var = 65
 value = 3, 2, 1
 [State 3400, Erase Inputs]
 type = null
@@ -836,8 +843,8 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
-trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
+trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
+trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
@@ -852,7 +859,7 @@ ignorehitpause = 1
 [State 3400, Super Pause FX]
 type = helper
 trigger1 = var(65)
-trigger1 = time = 3
+trigger1 = time := 3
 helpertype = normal
 stateno = 8500
 ID = 8500
@@ -865,7 +872,7 @@ size.yscale = 1
 ownpal = 1
 [State 3400, Super Pause]
 type = superpause
-trigger1 = time = 3
+trigger1 = time := 3
 time = 41
 movetime = 41
 anim = 100
@@ -1129,6 +1136,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1
+var = 65
 value = 3, 2, 1
 [State 4000, Erase Inputs]
 type = null
@@ -1140,8 +1148,8 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
-trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
+trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
+trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
@@ -1155,13 +1163,13 @@ add = 255, 255, 255
 ignorehitpause = 1
 [State 4000, Sound]
 type = playsnd
-trigger1 = time = 3
+trigger1 = time := 3
 value = 4, 10
 channel = 0
 [State 4000, Super Pause FX]
 type = helper
 trigger1 = var(65)
-trigger1 = time = 3
+trigger1 = time := 3
 helpertype = normal
 stateno = 8520
 ID = 8500
@@ -1174,7 +1182,7 @@ size.yscale = 1
 ownpal = 1
 [State 4000, Super Pause]
 type = superpause
-trigger1 = time = 3
+trigger1 = time := 3
 time = 45
 movetime = 45
 anim = 102
@@ -1209,7 +1217,7 @@ trigger1 = animelemtime(4) >= 0
 edge = 20, 0
 [State 4000, Hit]
 type = hitdef
-trigger1 = animelem = 3
+trigger1 = animelem := 3
 air.juggle = 1
 ID = 4000
 attr = S, HA
@@ -1264,7 +1272,7 @@ ignorehitpause = 1
 [State 4000, P2 State]
 type = targetstate
 trigger1 = numtarget(4000)
-trigger1 = target(4000), stateno = 5000 || target(4000), stateno = 5010 || target(4000), stateno = 5020
+trigger1 = target(4000), stateno := 5000 || target(4000), stateno := 5010 || target(4000), stateno := 5020
 ID = 4000
 value = 1114010
 [State 4000, P1 State]
@@ -1365,7 +1373,7 @@ type = targetbind
 trigger1 = anim = 4010
 trigger1 = animelemtime(48) < 0
 trigger1 = numtarget
-trigger1 = target, stateno = [5000, 5050] || target, stateno = 1114010
+trigger1 = target, stateno := [5000, 5050] || target, stateno := 1114010
 pos = 80 * const(size.xscale), 0
 ignorehitpause = 1
 [State 4010, Bind]
@@ -1728,12 +1736,12 @@ physics = N
 [State 4010, Vel]
 type = velset
 trigger1 = anim = 4011
-trigger1 = animelem = 33
+trigger1 = animelem := 33
 x = -2
 [State 4010, Type]
 type = statetypeset
 trigger1 = anim = 4011
-trigger1 = animelem = 33
+trigger1 = animelem := 33
 statetype = A
 physics = A
 [Statedef 1114010]
@@ -1847,7 +1855,7 @@ movetype = A
 anim = 4050
 ctrl = 0
 velset = 0, 0
-poweradd = -2000 + 0 * (var(124) = 2)
+poweradd = -2000 + 0 * (var(124) := 2)
 facep2 = 0
 sprpriority = 2
 [State Damage Scaling - Add]
@@ -1855,6 +1863,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1
+var = 65
 value = 3, 2, 1
 [State 4050, Erase Inputs]
 type = null
@@ -1866,8 +1875,8 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
-trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
+trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
+trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
@@ -1881,13 +1890,13 @@ add = 255, 255, 255
 ignorehitpause = 1
 [State 4050, Sound]
 type = playsnd
-trigger1 = time = 3
+trigger1 = time := 3
 value = 4, 10
 channel = 0
 [State 4050, Super Pause FX]
 type = helper
 trigger1 = var(65)
-trigger1 = time = 3
+trigger1 = time := 3
 helpertype = normal
 stateno = 8510
 ID = 8500
@@ -1900,7 +1909,7 @@ size.yscale = 1
 ownpal = 1
 [State 4050, Super Pause]
 type = superpause
-trigger1 = time = 3
+trigger1 = time := 3
 time = 43
 movetime = 43
 anim = 101
@@ -1935,7 +1944,7 @@ trigger1 = animelemtime(4) >= 0
 edge = 20, 0
 [State 4050, Hit]
 type = hitdef
-trigger1 = animelem = 3
+trigger1 = animelem := 3
 trigger1 = !movecontact && !movereversed
 air.juggle = 1
 ID = 4050
@@ -1990,7 +1999,7 @@ ignorehitpause = 1
 [State 4050, P2 State]
 type = targetstate
 trigger1 = numtarget(4050)
-trigger1 = target(4050), stateno = 5000 || target(4050), stateno = 5010 || target(4050), stateno = 5020
+trigger1 = target(4050), stateno := 5000 || target(4050), stateno := 5010 || target(4050), stateno := 5020
 value = 1114060
 [State 4050, P1 State]
 type = changestate
@@ -2051,7 +2060,7 @@ value = 4002
 type = targetbind
 trigger1 = numtarget
 trigger1 = animelemtime(3) < 0
-trigger1 = target, stateno = 1114060
+trigger1 = target, stateno := 1114060
 pos = 64 * const(size.xscale), -75 - target), const(size.mid.pos.y)
 ignorehitpause = 1
 [State 4060, Bind]
@@ -2089,7 +2098,7 @@ value = 1, 2
 stopongethit = 1
 [State 4060, Sound]
 type = playsnd
-trigger1 = animelem = 3 || animelem = 12 || animelem = 20
+trigger1 = animelem := 3 || animelem = 12 || animelem = 20
 value = 1, 5
 ;channel = 1
 stopongethit = 1
@@ -2151,7 +2160,7 @@ down.recovertime = 30
 yaccel = 0.4850
 [State 4060, Hit Low]
 type = hitdef
-trigger1 = animelem = 3 || animelem = 10 || animelem = 17 || animelem = 21 || animelem = 23
+trigger1 = animelem := 3 || animelem = 10 || animelem = 17 || animelem = 21 || animelem = 23
 air.juggle = 99
 ID = 4060
 attr = S, HA
@@ -2196,7 +2205,7 @@ down.recovertime = 30
 yaccel = 0.4850
 [State 4060, Hit Final]
 type = hitdef
-trigger1 = animelem = 30
+trigger1 = animelem := 30
 air.juggle = 99
 ID = 4060
 attr = A, HA
@@ -2248,7 +2257,7 @@ trigger1 = animelemtime(33) >= 0
 y = 0.5
 [State 4060, Vel]
 type = velset
-trigger1 = animelem = 33
+trigger1 = animelem := 33
 x = -2.0
 y = -6
 [State 4060, FX]
@@ -2302,6 +2311,7 @@ type = varadd
 trigger1 = !time
 trigger1 = var(65)
 trigger1 = 1
+var = 65
 value = 3, 2, 1
 [State 4100, Erase Inputs]
 type = null
@@ -2313,8 +2323,8 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) = (prevstateno = [1000, 2999] && var(55))
-trigger1 = 1 || var(58) = (prevstateno = [3000, 4999] && var(56))
+trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
+trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
@@ -2329,7 +2339,7 @@ ignorehitpause = 1
 [State 4100, Super Pause FX]
 type = helper
 trigger1 = var(65)
-trigger1 = time = 3
+trigger1 = time := 3
 helpertype = normal
 stateno = 8520
 ID = 8500
@@ -2342,7 +2352,7 @@ size.yscale = 1
 ownpal = 1
 [State 4100, Super Pause]
 type = superpause
-trigger1 = time = 3
+trigger1 = time := 3
 time = 45
 movetime = 45
 anim = 102
@@ -2357,16 +2367,16 @@ time = 1
 value = SCA
 [State 4100, Sound]
 type = playsnd
-trigger1 = animelem = 5
+trigger1 = animelem := 5
 value = 5, 8
 [State 4100, Correct Projectile Trade]
 type = hitby
-trigger1 = animelem = 5
+trigger1 = animelem := 5
 value2 = SCA, AA, AT
 time = 1
 [State 4100, Heart]
 type = helper
-trigger1 = animelem = 5
+trigger1 = animelem := 5
 helpertype = normal; projectile
 stateno = 4105
 ID = 4105
@@ -2437,7 +2447,7 @@ supermovetime = 47
 [State 4100, Wait]
 type = changeanim
 trigger1 = animelemtime(8) >= 0
-trigger1 = helper(4105), stateno = 4105
+trigger1 = helper(4105), stateno := 4105
 value = 4100
 elem = 8
 [State 4100, Drop Others]
@@ -2649,7 +2659,7 @@ y = 0
 [State 4107, Damage]
 type = targetlifeadd
 triggerall = numtarget(4105)
-trigger1 = animelem = 3 || animelem = 5 || animelem = 7 || animelem = 9
+trigger1 = animelem := 3 || animelem = 5 || animelem = 7 || animelem = 9
 trigger2 = animelem = 11 || animelem = 13 || animelem = 15 || animelem = 17
 value = -25 * var(67)
 kill = animelem = 17
@@ -2670,14 +2680,14 @@ value = -600 * var(67)
 [State 4107, givepower]
 type = targetpoweradd
 triggerall = numtarget(4105)
-trigger1 = animelem = 3 || animelem = 5 || animelem = 7 || animelem = 9
+trigger1 = animelem := 3 || animelem = 5 || animelem = 7 || animelem = 9
 trigger2 = animelem = 11 || animelem = 13 || animelem = 15 || animelem = 17
 ID = 4105
 value = 40; givepower
 [State 4107, Hit add]
 type = hitadd
 triggerall = numtarget(4105)
-trigger1 = animelem = 3 || animelem = 5 || animelem = 7 || animelem = 9
+trigger1 = animelem := 3 || animelem = 5 || animelem = 7 || animelem = 9
 trigger2 = animelem = 11 || animelem = 13 || animelem = 15 || animelem = 17
 ID = 4105
 value = 1
