@@ -20,7 +20,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 var = 65
 value = 3, 2, 1
@@ -47,15 +47,15 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
-trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
+trigger1 = 1 || var(5) != 07) := (prevstateno := [1000, 2999] && var(5) != 05))
+trigger1 = 1 || var(5) != 08) := (prevstateno := [3000, 4999] && var(5) != 06))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(5)7) || var(5) != 08)
 trigger1 = 1
 time = 1
 add = 255, 255, 255
@@ -67,7 +67,7 @@ value = 4, 5
 channel = 0
 [State 3000, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = time := 3
 helpertype = normal
 stateno = 8500
@@ -188,7 +188,7 @@ facep2 = p2dist x <= -const(size.ground.back)
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 var = 65
 value = 3, 2, 1
@@ -213,15 +213,15 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
-trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
+trigger1 = 1 || var(5) != 07) := (prevstateno := [1000, 2999] && var(5) != 05))
+trigger1 = 1 || var(5) != 08) := (prevstateno := [3000, 4999] && var(5) != 06))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(5)7) || var(5) != 08)
 trigger1 = 1
 time = 1
 add = 255, 255, 255
@@ -233,7 +233,7 @@ value = 4, 5
 channel = 0
 [State 3050, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = time := 3
 helpertype = normal
 stateno = 8500
@@ -401,7 +401,7 @@ sprpriority = 2
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 var = 65
 value = 3, 2, 1
@@ -426,15 +426,15 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
-trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
+trigger1 = 1 || var(5) != 07) := (prevstateno := [1000, 2999] && var(5) != 05))
+trigger1 = 1 || var(5) != 08) := (prevstateno := [3000, 4999] && var(5) != 06))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(5)7) || var(5) != 08)
 trigger1 = 1
 time = 1
 add = 255, 255, 255
@@ -446,7 +446,7 @@ value = 4, 0
 channel = 0
 [State 3100, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = time := 3
 helpertype = normal
 stateno = 8500
@@ -663,7 +663,7 @@ sprpriority = 2
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 var = 65
 value = 3, 2, 1
@@ -677,15 +677,15 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
-trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
+trigger1 = 1 || var(5) != 07) := (prevstateno := [1000, 2999] && var(5) != 05))
+trigger1 = 1 || var(5) != 08) := (prevstateno := [3000, 4999] && var(5) != 06))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(5)7) || var(5) != 08)
 trigger1 = 1
 time = 1
 add = 255, 255, 255
@@ -697,7 +697,7 @@ value = 4, 0
 channel = 0
 [State 3300, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = time := 3
 helpertype = normal
 stateno = 8510
@@ -829,7 +829,7 @@ facep2 = 0
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 var = 65
 value = 3, 2, 1
@@ -843,22 +843,22 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
-trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
+trigger1 = 1 || var(5) != 07) := (prevstateno := [1000, 2999] && var(5) != 05))
+trigger1 = 1 || var(5) != 08) := (prevstateno := [3000, 4999] && var(5) != 06))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(5)7) || var(5) != 08)
 trigger1 = 1
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
 [State 3400, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = time := 3
 helpertype = normal
 stateno = 8500
@@ -1134,7 +1134,7 @@ sprpriority = 2
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 var = 65
 value = 3, 2, 1
@@ -1148,15 +1148,15 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
-trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
+trigger1 = 1 || var(5) != 07) := (prevstateno := [1000, 2999] && var(5) != 05))
+trigger1 = 1 || var(5) != 08) := (prevstateno := [3000, 4999] && var(5) != 06))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(5)7) || var(5) != 08)
 trigger1 = 1
 time = 1
 add = 255, 255, 255
@@ -1168,7 +1168,7 @@ value = 4, 10
 channel = 0
 [State 4000, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = time := 3
 helpertype = normal
 stateno = 8520
@@ -1861,7 +1861,7 @@ sprpriority = 2
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 var = 65
 value = 3, 2, 1
@@ -1875,15 +1875,15 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
-trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
+trigger1 = 1 || var(5) != 07) := (prevstateno := [1000, 2999] && var(5) != 05))
+trigger1 = 1 || var(5) != 08) := (prevstateno := [3000, 4999] && var(5) != 06))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(5)7) || var(5) != 08)
 trigger1 = 1
 time = 1
 add = 255, 255, 255
@@ -1895,7 +1895,7 @@ value = 4, 10
 channel = 0
 [State 4050, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = time := 3
 helpertype = normal
 stateno = 8510
@@ -2309,7 +2309,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 var = 65
 value = 3, 2, 1
@@ -2323,22 +2323,22 @@ persistent = 0
 [State Cancel Flags]
 type = null
 trigger1 = time <= 0
-trigger1 = 1 || var(57) := (prevstateno := [1000, 2999] && var(55))
-trigger1 = 1 || var(58) := (prevstateno := [3000, 4999] && var(56))
+trigger1 = 1 || var(5) != 07) := (prevstateno := [1000, 2999] && var(5) != 05))
+trigger1 = 1 || var(5) != 08) := (prevstateno := [3000, 4999] && var(5) != 06))
 ignorehitpause = 1
 persistent = 0
 [State Super Cancel Flash]
 type = palfx
 trigger1 = time % 2
 trigger1 = time = [1, 11]
-trigger1 = var(57) || var(58)
+trigger1 = var(5)7) || var(5) != 08)
 trigger1 = 1
 time = 1
 add = 255, 255, 255
 ignorehitpause = 1
 [State 4100, Super Pause FX]
 type = helper
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = time := 3
 helpertype = normal
 stateno = 8520

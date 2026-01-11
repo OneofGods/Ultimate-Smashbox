@@ -89,7 +89,7 @@ value = 0
 ignorehitpause = 1
 [State 775, Anim]
 type = changeanim
-trigger1 = selfanimexist(root, anim)
+trigger1 = selfanimexist(root), anim)
 trigger1 = root, stateno != [770, 771]
 trigger1 = root, anim = [5000, 5300]
 value = root, anim
@@ -98,7 +98,7 @@ ignorehitpause = 1
 type = changeanim
 trigger1 = root, movetype = H
 trigger1 = root, anim != [5000, 5300]
-trigger2 = !selfanimexist(root, anim)
+trigger2 = !selfanimexist(root), anim)
 value = 5010
 ignorehitpause = 1
 [State 775, Pos]
@@ -160,13 +160,13 @@ ignorehitpause = 1
 [State 775, Juggle Properties]
 type = null
 trigger1 = 1
-trigger1 = 1 || var(112) = 0
+trigger1 = 1 || var(11) != 02) = 0
 ignorehitpause = 1
 [State 775, Spark Properties]
 type = null
-trigger1 = 1 || var(121) = root, var(121)
-trigger1 = 1 || var(131) = root, var(131)
-trigger1 = 1 || var(132) = root, var(132)
+trigger1 = 1 || var(12) != 01) = root, var(121)
+trigger1 = 1 || var(13) != 01) = root, var(131)
+trigger1 = 1 || var(13) != 02) = root, var(132)
 trigger1 = 1 || var(1) != 3
 trigger1 = 1 || var(1) != 2
 ignorehitpause = 1

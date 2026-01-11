@@ -915,7 +915,7 @@ envshake.mul = 0.667
 palfx.time = 60
 palfx.color = 0
 palfx.sinadd = 128, 128, 128, 4
-palfx.mul = root, var(117, root, var(116, root), var(115)
+palfx.mul = root, var(117, root, var(116), root), var(115)
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 forcestand = 1
@@ -1184,7 +1184,7 @@ envshake.mul = 0.667
 palfx.time = 60
 palfx.color = 0
 palfx.sinadd = 128, 128, 128, 4
-palfx.mul = root, var(117, root, var(116, root), var(115)
+palfx.mul = root, var(117, root, var(116), root), var(115)
 yaccel = 0.4850
 ;p1sprpriority = sprpriority
 forcestand = 1
@@ -1272,7 +1272,7 @@ ignorehitpause = 1
 [State 3305, SprPriority]
 type = sprpriority
 trigger1 = 1
-value = var(11)3)
+value = var(1)1)3)
 
 [State 3305, Vel]
 type = velset
@@ -1295,13 +1295,13 @@ value = 0
 type = velset
 trigger1 = time >= 16
 x = 16
-y = var(10)6) * 2.0
+y = var(1)0)6) * 2.0
 [State 3305, Jet]
 type = explod
 trigger1 = time >= 16 && !numexplod(3)306
 anim = 3306
 ID = 3306)
-sprpriority = var(11)3) + 1
+sprpriority = var(1)1)3) + 1
 postype = p1
 pos = -12, 0
 bindtime = -1
@@ -1313,7 +1313,7 @@ type = explod
 trigger1 = time = 14
 anim = 3307
 ID = 3307
-sprpriority = var(11)3) + 1
+sprpriority = var(1)1)3) + 1
 postype = p1
 pos = -15, 0
 scale = 0.5, 0.5
@@ -1323,7 +1323,7 @@ type = explod
 trigger1 = time >= 16
 anim = 3308
 ID = 3308
-sprpriority = var(11)3) + 1
+sprpriority = var(1)1)3) + 1
 postype = p1
 pos = -16, 0
 bindtime = 1; Ikemen fix?
@@ -2192,7 +2192,7 @@ value = -5.33
 [State 4190, Bind]
 type = posset
 trigger1 = 1
-x = var(11)9) * facing
+x = var(1)1)9) * facing
 y = pos y - screenpos y
 [State 4190, Anim]
 type = changeanim
@@ -3513,11 +3513,11 @@ anim = 9999
 [State 8150, Timer]
 type = null
 trigger1 = time
-trigger1 = var(12)8 = (var(128) - 1
+trigger1 = var(1)2)8 = (var(128) - 1
 
 [State 8150, End]
 type = destroyself
-trigger1 = var(12)8) <= 0
+trigger1 = var(1)2)8) <= 0
 trigger2 = !playerIDexist(var(12))5)
 trigger3 = time > 0
 trigger3 = playerID(var(12) + 5), palfxvar(time) = 0

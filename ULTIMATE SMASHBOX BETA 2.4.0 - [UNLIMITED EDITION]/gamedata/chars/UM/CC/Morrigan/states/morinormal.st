@@ -20,7 +20,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -40,7 +40,7 @@ trigger1 = animelem = 2
 value = 1, 1
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 200, Hit]
 type = hitdef
 trigger1 = animelem = 2
@@ -106,7 +106,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -126,7 +126,7 @@ trigger1 = animelem = 2
 value = 1, 1
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 201, Hit]
 type = hitdef
 trigger1 = animelem = 2
@@ -192,7 +192,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -212,7 +212,7 @@ trigger1 = animelem = 3
 value = 1, 1;8
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 210, Hit]
 type = hitdef
 trigger1 = animelem = 3
@@ -287,7 +287,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -307,7 +307,7 @@ trigger1 = animelem = 4
 value = 1, 1;8
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 211, Hit]
 type = hitdef
 trigger1 = animelem = 4
@@ -391,7 +391,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -411,7 +411,7 @@ trigger1 = animelem = 4
 value = 1, 9
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 220, Hit]
 type = hitdef
 trigger1 = animelem = 5
@@ -486,7 +486,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -506,7 +506,7 @@ trigger1 = animelem = 2
 value = 1, 9
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 221, Hit]
 type = hitdef
 trigger1 = animelem = 2
@@ -631,7 +631,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -651,7 +651,7 @@ trigger1 = animelem = 2
 value = 1, 4
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 230, Hit]
 type = hitdef
 trigger1 = animelem = 2
@@ -717,7 +717,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -737,7 +737,7 @@ trigger1 = animelem = 4
 value = 1, 5
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 240, Hit]
 type = hitdef
 trigger1 = animelem = 4
@@ -853,7 +853,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -873,7 +873,7 @@ trigger1 = animelem = 4
 value = 1, 9
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 250, Hit]
 type = hitdef
 trigger1 = animelem = 4
@@ -917,9 +917,8 @@ forcestand = 1
 [State 250, SparkXY]
 type = varset
 trigger1 = animelem = 5
-value = var(13)2 = 50
-value = var(13)3 = 110
-value = -110
+v = 132
+value = 50
 [State 250, Anim]
 type = changeanim
 trigger1 = anim = 250
@@ -981,7 +980,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -993,7 +992,7 @@ persistent = 0
 [State 255, Width]
 type = width
 trigger1 = animelemtime(3) >= 0
-player = 30 * const(size.xscale), 0
+edge = 30 * const(size.xscale), 0
 [State 255, Sound]
 type = playsnd
 trigger1 = animelem = 3
@@ -1005,7 +1004,7 @@ trigger1 = animelem = 4
 value = 1, 6
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 255, Type]
 type = statetypeset
 trigger1 = animelem = 2
@@ -1224,7 +1223,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -1244,7 +1243,7 @@ trigger1 = animelem = 2
 value = 1, 1
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 400, Hit]
 type = hitdef
 trigger1 = animelem = 2 || animelem = 3
@@ -1311,7 +1310,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -1331,7 +1330,7 @@ trigger1 = animelem = 2
 value = 1, 8
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 410, Hit]
 type = hitdef
 trigger1 = animelem = 2
@@ -1407,7 +1406,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -1427,7 +1426,7 @@ trigger1 = animelem = 3
 value = 1, 9
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 420, Hit]
 type = hitdef
 trigger1 = animelem = 4
@@ -1494,7 +1493,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -1514,7 +1513,7 @@ trigger1 = animelem = 3
 value = 1, 9
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 425, Hit]
 type = hitdef
 trigger1 = animelem = 3
@@ -1608,7 +1607,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -1628,7 +1627,7 @@ trigger1 = animelem = 3
 value = 1, 4
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 430, Hit]
 type = hitdef
 trigger1 = animelem = 3
@@ -1695,7 +1694,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -1715,7 +1714,7 @@ trigger1 = animelem = 2
 value = 1, 4
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 431, Hit]
 type = hitdef
 trigger1 = animelem = 2
@@ -1791,7 +1790,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -1811,7 +1810,7 @@ trigger1 = animelem = 3
 value = 1, 5
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 440, Hit]
 type = hitdef
 trigger1 = animelem = 3
@@ -1887,7 +1886,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -1907,7 +1906,7 @@ trigger1 = animelem = 2
 value = 1, 5
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 445, Hit]
 type = hitdef
 trigger1 = animelem = 2
@@ -1983,7 +1982,7 @@ facep2 = 1
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -2003,7 +2002,7 @@ trigger1 = animelem = 4
 value = 1, 6
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 450, Hit]
 type = hitdef
 trigger1 = animelem = 4
@@ -2069,7 +2068,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -2089,7 +2088,7 @@ trigger1 = animelem = 2
 value = 1, 1
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 600, Hit]
 type = hitdef
 trigger1 = animelem = 2
@@ -2172,7 +2171,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -2192,14 +2191,14 @@ trigger1 = animelem = 3
 value = 1, 8
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 610, Sound]
 type = playsnd
 trigger1 = animelem = 3
 value = 5, 5
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 610, Hit]
 type = hitdef
 trigger1 = animelem = 3
@@ -2282,7 +2281,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -2302,7 +2301,7 @@ trigger1 = animelem = 5
 value = 1, 3
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 620, Hit]
 type = hitdef
 trigger1 = animelem = 6
@@ -2385,7 +2384,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -2405,7 +2404,7 @@ trigger1 = animelem = 2
 value = 1, 4
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 630, Hit]
 type = hitdef
 trigger1 = animelem = 2
@@ -2488,7 +2487,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -2508,7 +2507,7 @@ trigger1 = animelem = 2
 value = 1, 4
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 631, Hit]
 type = hitdef
 trigger1 = animelem = 2
@@ -2591,7 +2590,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -2611,7 +2610,7 @@ trigger1 = animelem = 3
 value = 1, 5
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 640, Hit]
 type = hitdef
 trigger1 = animelem = 3
@@ -2694,7 +2693,7 @@ velset = vel x * 0.5, 1, vel y
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -2714,7 +2713,7 @@ trigger1 = animelem = 3
 value = 1, 6
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 650, Hit]
 type = hitdef
 trigger1 = animelem = 3
@@ -2797,7 +2796,7 @@ poweradd = 0
 [State Damage Scaling - Add]
 type = varadd
 trigger1 = !time
-trigger1 = var(65)
+trigger1 = var(6)5)
 trigger1 = 1
 value = 1
 [State Erase Inputs]
@@ -2869,7 +2868,7 @@ trigger1 = animelem = 4
 value = 1, 1
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State Idle]
 type = statetypeset
 trigger1 = animelemtime(3) >= 0
@@ -2901,10 +2900,10 @@ type = changestate
 triggerall = numtarget
 triggerall = var(12)7)
 triggerall = target, command != "holdup" && target, command != "holddown"
-trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z") >= 2
+trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z")) >= 2
 trigger2 = target, command = "holdfwd" || target, command = "holdback"
 trigger2 = target, command = "b" || target, command = "c" || target, command = "y" || target, command = "z"
-trigger3 = random < (100 )
+trigger3 = random < (100)
 value = 890
 [State 810, Throw]
 type = targetstate
@@ -2945,7 +2944,7 @@ trigger1 = animelem = 4
 value = 1, 6
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 810, Bind 1]
 type = targetbind
 trigger1 = animelemtime(1) >= 0 && animelemtime(2) < 0
@@ -2965,7 +2964,7 @@ pos = 52 * const(size.xscale), -70
 [State 810, Bind 5]
 type = targetbind
 trigger1 = animelemtime(5) >= 0 && animelemtime(6) < 0
-pos = 72* const(size.xscale), -38
+pos = 72 * const(size.xscale), -38
 [State 810, Bind 6]
 type = targetbind
 trigger1 = animelem = 6
@@ -3007,7 +3006,7 @@ trigger1 = animelem = 6
 value = 5, 2
 [State 810, Dust]
 type = helper
-trigger1 = var(64)
+trigger1 = var(6)4)
 trigger1 = numtarget
 trigger1 = animelem = 6
 helpertype = normal
@@ -3139,10 +3138,10 @@ type = changestate
 triggerall = numtarget
 triggerall = var(12)7)
 triggerall = target, command != "holdup" && target, command != "holddown"
-trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z") >= 2
+trigger1 = ((target, command = "a") + (target, command = "b") + (target, command = "c") + (target, command = "x") + (target, command = "y") + (target, command = "z")) >= 2
 trigger2 = target, command = "holdfwd" || target, command = "holdback"
 trigger2 = target, command = "b" || target, command = "c" || target, command = "y" || target, command = "z"
-trigger3 = random < (100 )
+trigger3 = random < (100)
 value = 890
 [State 820, Throw]
 type = targetstate
@@ -3171,7 +3170,7 @@ trigger1 = animelem = 6
 value = 1, 3
 ;channel = 1
 stopongethit = 1
-freqmul = 0.95 + (random / 10000.0
+freqmul = 0.95 + (random / 10000.0)
 [State 820, Sound]
 type = playsnd
 trigger1 = animelem = 9
@@ -3201,7 +3200,7 @@ ID = 825
 name = "Claw"
 postype = p1
 pos = 105 * const(size.xscale), -65
-size.ground.front = (target), const(size.ground.back)
+ownpal = 1
 
 [State 820, HitSound]
 type = playsnd
@@ -3369,7 +3368,7 @@ trigger1 = anim = 5035
 value = 5050
 [State 824, Anim]
 type = changeanim
-trigger1 = vel y >= const240p(2)
+trigger1 = vel y >= const(240) * 2
 trigger1 = anim = 5052
 trigger1 = selfanimexist(5062)
 value = 5062
@@ -3419,18 +3418,18 @@ sprpriority = 0
 [State 890, Tech Hit Facing]
 type = turn
 trigger1 = !time
-trigger1 = facing )!)= var(12)6)
+trigger1 = facing != var(1)2)6)
 
 [State 890, Bind]
 type = targetbind
 trigger1 = !time
 trigger1 = numtarget = 1
-pos = (const(size.ground.front) + target, const(size.ground.front), 0
+pos = (const(size.ground.front) + target,const(size.ground.front), 0)
 [State 890, Width]
 type = width
 trigger1 = !time
 trigger1 = numtarget = 1
-edge = (target, const(size.ground.front) + target, const(size.ground.back), 0
+edge = (target,const(size.ground.front) + target,const(size.ground.back), 0)
 [State 890, P2 State]
 type = targetstate
 trigger1 = !time
@@ -3539,4 +3538,4 @@ y = 0
 type = selfstate
 trigger1 = time >= 26
 value = 0
-ctrl = 1)
+ctrl = 1
