@@ -4404,14 +4404,14 @@ pos = pos x * camerazoom, 0
 type = varset
 fvar = 7
 trigger1 = fvar(7) != 0
-trigger1 = motifstate(victoryscreen) = 0
+trigger1 = roundstate != 4
 value = 0
 
 [State -3, Victory BGM]
-type = mapadd
+type = varadd
 fvar = 7
 trigger1 = fvar(5)
-trigger1 = motifstate(victoryscreen)
+trigger1 = roundstate = 4
 trigger1 = teamleader = playerno
 trigger1 = matchover
 trigger1 = alive
