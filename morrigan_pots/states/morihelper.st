@@ -51,7 +51,8 @@ ignorehitpause = 1
 [State 1005, Time Var]
 type = varadd
 trigger1 = time
-var(1) = 1
+var = 1
+value = 1
 
 [State 1005, Vel]
 type = velset
@@ -487,7 +488,8 @@ ignorehitpause = 1
 [State 1015, Time Var]
 type = varadd
 trigger1 = time
-var(1) = 1
+var = 1
+value = 1
 
 [State 1015, Vel]
 type = velset
@@ -699,7 +701,8 @@ ignorehitpause = 1
 [State 1065, Time Var]
 type = varadd
 trigger1 = time
-var(1) = 1
+var = 1
+value = 1
 
 [State 1065, Vel]
 type = velset
@@ -898,7 +901,8 @@ value = root, var(45)
 [State 3005, Hit Number]
 type = varadd
 trigger1 = 1
-var(2) = 1
+var = 2
+value = 1
 persistent = 0
 ignorehitpause = 1
 
@@ -937,7 +941,8 @@ ignorehitpause = 1
 [State 3005, Time Var]
 type = varadd
 trigger1 = time > 0
-var(1) = 1
+var = 1
+value = 1
 
 [State 3005, Vel]
 type = velset
@@ -1196,7 +1201,8 @@ value = root, var(45)
 [State 3055, Hit Number]
 type = varadd
 trigger1 = 1
-var(2) = 1
+var = 2
+value = 1
 persistent = 0
 ignorehitpause = 1
 
@@ -1383,12 +1389,14 @@ sprpriority = 3
 [State 3305, Pos]
 type = varset
 trigger1 = !time
-fvar(24) = -36 - (random / 100.0)
+fvar = 24
+value = -36 - (random / 100.0)
 
 [State 3305, Pos]
 type = varset
 trigger1 = !time
-fvar(25) = -30 - 70 * ((fvar(24) + 36) / -10.0)
+fvar = 25
+value = -30 - 70 * ((fvar(24) + 36) / -10.0)
 
 [State 3305, Bind]
 type = bindtoroot
@@ -3197,7 +3205,8 @@ ctrl = 0
 [State 6104, ID]
 type = varset
 trigger1 = !time
-var(0) = numhelper(6100)
+var = 0
+value = numhelper(6100)
 
 [State 6104, Vel]
 type = velset
@@ -3221,7 +3230,8 @@ ctrl = 0
 [State 6105, ID]
 type = varset
 trigger1 = !time
-var(0) = numhelper(6100)
+var = 0
+value = numhelper(6100)
 
 [State 6105, Turn]
 type = turn
@@ -3265,13 +3275,15 @@ trigger4 = (fvar(1) := (fvar(1) - 2.5)) + (fvar(2) := (fvar(2) - 2.0))
 type = varset
 trigger1 = root, stateno != 5120 && root, stateno != 5230
 trigger2 = root, stateno = 5230 && root, animelemtime(2) < 0
-fvar(1) = 0
+fvar = 1
+value = 0
 
 [State 6105, Var Y]
 type = varset
 trigger1 = root, stateno != 5120 && root, stateno != 5230
 trigger2 = root, stateno = 5230 && root, animelemtime(2) < 0
-fvar(2) = 0
+fvar = 2
+value = 0
 
 [State 6105, Bind]
 type = bindtoroot
@@ -3341,77 +3353,92 @@ ctrl = 0
 [State 6106, ID]
 type = varset
 trigger1 = !time
-var(0) = numhelper(6100)
+var = 0
+value = numhelper(6100)
 
 [State 6100, varx]
 type = varset
 trigger1 = root, animelemtime(13) < 0
-fvar(1) = 0
+fvar = 1
+value = 0
 
 [State 6100, vary]
 type = varset
 trigger1 = root, animelemtime(13) < 0
-fvar(2) = 0
+fvar = 2
+value = 0
 
 [State 6106, varx]
 type = varadd
 trigger1 = var(0) = 1 && (root, animelemtime(13) = [0, 25])
-fvar(1) = -0.16
+fvar = 1
+value = -0.16
 
 [State 6106, vary]
 type = varadd
 trigger1 = var(0) = 1 && (root, animelemtime(13) = [0, 25])
-fvar(2) = -2.04
+fvar = 2
+value = -2.04
 
 [State 6106, varx]
 type = varadd
 trigger1 = var(0) = 2 && (root, animelemtime(13) = [0, 25])
-fvar(1) = -1.08
+fvar = 1
+value = -1.08
 
 [State 6106, vary]
 type = varadd
 trigger1 = var(0) = 2 && (root, animelemtime(13) = [0, 25])
-fvar(2) = -1.4
+fvar = 2
+value = -1.4
 
 [State 6106, varx]
 type = varadd
 trigger1 = var(0) = 3 && (root, animelemtime(13) = [0, 25])
-fvar(1) = -1.32
+fvar = 1
+value = -1.32
 
 [State 6106, vary]
 type = varadd
 trigger1 = var(0) = 3 && (root, animelemtime(13) = [0, 25])
-fvar(2) = -3.7
+fvar = 2
+value = -3.7
 
 [State 6106, varx]
 type = varadd
 trigger1 = var(0) = 4 && (root, animelemtime(13) = [0, 25])
-fvar(1) = 0.84
+fvar = 1
+value = 0.84
 
 [State 6106, vary]
 type = varadd
 trigger1 = var(0) = 4 && (root, animelemtime(13) = [0, 25])
-fvar(2) = -1.72
+fvar = 2
+value = -1.72
 
 [State 6106, varx]
 type = varadd
 trigger1 = var(0) = 5 && (root, animelemtime(13) = [0, 25])
-fvar(1) = -0.04
+fvar = 1
+value = -0.04
 
 [State 6106, vary]
 type = varadd
 trigger1 = var(0) = 5 && (root, animelemtime(13) = [0, 25])
-fvar(2) = -0.8
+fvar = 2
+value = -0.8
 
 [State 6106, varx]
 type = varadd
 trigger1 = var(0) = 6 && (root, animelemtime(13) = [0, 25])
-fvar(1) = -0.56
+fvar = 1
+value = -0.56
 
 [State 6106, vary]
 type = varadd
 trigger1 = var(0) = 6 && (root, animelemtime(13) = [0, 25])
-fvar(2) = -3.4
+fvar = 2
+value = -3.4
 
 [State 6106, Bind]
 type = bindtoroot
@@ -3466,7 +3493,8 @@ ctrl = 0
 [State 6107, ID]
 type = varset
 trigger1 = !time
-var(0) = numhelper(6100)
+var = 0
+value = numhelper(6100)
 
 [State 6107, Vel]
 type = velset
@@ -3634,7 +3662,8 @@ ctrl = 0
 type = varset
 trigger1 = !time
 trigger1 = (ishelper(6101) || ishelper(6102) || ishelper(6103) || ishelper(6104))
-var(0) = ifelse(ishelper(6101), 1, ifelse(ishelper(6102), 2, ifelse(ishelper(6103), 3, 4)))
+var = 0
+value = ifelse(ishelper(6101), 1, ifelse(ishelper(6102), 2, ifelse(ishelper(6103), 3, 4)))
 
 [State 6109, Vel]
 type = velset
@@ -3773,7 +3802,8 @@ ctrl = 0
 [State 6111, ID]
 type = varset
 trigger1 = !time
-var(0) = numhelper(6100)
+var = 0
+value = numhelper(6100)
 
 [State 6111, Bind]
 type = posset
@@ -4365,12 +4395,14 @@ sprpriority = 5
 [State 8500, Bind]
 type = varset
 trigger1 = !time
-fvar(24) = -rootdist x
+fvar = 24
+value = -rootdist x
 
 [State 8500, Bind]
 type = varset
 trigger1 = !time
-fvar(25) = -rootdist y
+fvar = 25
+value = -rootdist y
 
 [State 8500, Bind]
 type = bindtoroot
@@ -4497,12 +4529,14 @@ sprpriority = 5
 [State 8510, Bind]
 type = varset
 trigger1 = !time
-fvar(24) = -rootdist x
+fvar = 24
+value = -rootdist x
 
 [State 8510, Bind]
 type = varset
 trigger1 = !time
-fvar(25) = -rootdist y
+fvar = 25
+value = -rootdist y
 
 [State 8510, Bind]
 type = bindtoroot
@@ -4629,12 +4663,14 @@ sprpriority = 5
 [State 8520, Bind]
 type = varset
 trigger1 = !time
-fvar(24) = -rootdist x
+fvar = 24
+value = -rootdist x
 
 [State 8520, Bind]
 type = varset
 trigger1 = !time
-fvar(25) = -rootdist y
+fvar = 25
+value = -rootdist y
 
 [State 8520, Bind]
 type = bindtoroot
@@ -4868,49 +4904,57 @@ mul = 128 + 8 * (time - 16), 32 + 14 * (time - 16), 32 * (time - 16)
 type = varset
 trigger1 = !time
 trigger1 = root, var(50) = 900
-var(0) = 1
+var = 0
+value = 1
 
 [State 8600, Move Name]
 type = varset
 trigger1 = !time
 trigger1 = root, var(50) = 3000 || root, var(50) = 3050
-var(0) = 2
+var = 0
+value = 2
 
 [State 8600, Move Name]
 type = varset
 trigger1 = !time
 trigger1 = root, var(50) = 3100
-var(0) = 3
+var = 0
+value = 3
 
 [State 8600, Move Name]
 type = varset
 trigger1 = !time
 trigger1 = root, var(50) = 3401
-var(0) = 4
+var = 0
+value = 4
 
 [State 8600, Move Name]
 type = varset
 trigger1 = !time
 trigger1 = root, var(50) = 4050 || root, var(50) = 4060
-var(0) = 5
+var = 0
+value = 5
 
 [State 8600, Move Name]
 type = varset
 trigger1 = !time
 trigger1 = root, var(50) = 3300
-var(0) = 6
+var = 0
+value = 6
 
 [State 8600, Move Name]
 type = varset
 trigger1 = !time
 trigger1 = root, var(50) = 4000 || root, var(50) = 4010
-var(0) = 7
+var = 0
+value = 7
 
 [State 8600, Move Name]
 type = varset
 trigger1 = !time
 trigger1 = root, var(50) = 4100
-var(0) = 8
+var = 0
+value = 8
 
 [State 8600, MvC]
 type = explod
