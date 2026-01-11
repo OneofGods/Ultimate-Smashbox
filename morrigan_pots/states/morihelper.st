@@ -115,8 +115,8 @@ hitflag = MAF
 guardflag = MA
 pausetime = 0, 12
 sparkno = -1 + 0 * (var(47) := 8013)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -30) * (map(sparkx.max) := 20), var(48) := 0
+guard.sparkno = -1 + 0 * (var(71) := 8001)
+sparkxy = -10 + 0 * (var(72) := -30) * (var(73) := 20), var(48) := 0
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -390,8 +390,8 @@ hitflag = MAFD
 guardflag = MA
 pausetime = 0, 12
 sparkno = -1 + 0 * (var(47) := 8013)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -30) * (map(sparkx.max) := 10), var(48) := 10
+guard.sparkno = -1 + 0 * (var(71) := 8001)
+sparkxy = -10 + 0 * (var(72) := -30) * (var(73) := 10), var(48) := 10
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -617,8 +617,8 @@ hitflag = MAF
 guardflag = MA
 pausetime = 0, 12
 sparkno = -1 + 0 * (var(47) := 8013)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -30) * (map(sparkx.max) := 20), var(48) := 0
+guard.sparkno = -1 + 0 * (var(71) := 8001)
+sparkxy = -10 + 0 * (var(72) := -30) * (var(73) := 20), var(48) := 0
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -831,8 +831,8 @@ hitflag = MAFD
 guardflag = MA
 pausetime = 0, 12
 sparkno = -1 + 0 * (var(47) := 8013)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -30) * (map(sparkx.max) := 20), var(48) := 0
+guard.sparkno = -1 + 0 * (var(71) := 8001)
+sparkxy = -10 + 0 * (var(72) := -30) * (var(73) := 20), var(48) := 0
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -1012,8 +1012,8 @@ hitflag = MAF
 guardflag = M
 pausetime = 0, 12
 sparkno = -1 + 0 * (var(47) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -30) * (map(sparkx.max) := 20), var(48) := 0
+guard.sparkno = -1 + 0 * (var(71) := 8001)
+sparkxy = -10 + 0 * (var(72) := -30) * (var(73) := 20), var(48) := 0
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -1315,8 +1315,8 @@ hitflag = MAFD
 guardflag = M
 pausetime = 0, 12
 sparkno = -1 + 0 * (var(47) := 8014)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -30) * (map(sparkx.max) := 10), var(48) := 10
+guard.sparkno = -1 + 0 * (var(71) := 8001)
+sparkxy = -10 + 0 * (var(72) := -30) * (var(73) := 10), var(48) := 10
 guardsound = s2, 0
 guardsound.channel = 2
 ground.type = High
@@ -1544,8 +1544,8 @@ guardflag = MA
 pausetime = 0, 12
 guard.pausetime = 0, 12
 sparkno = -1 + 0 * (var(47) := 8024)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -20) * (map(sparkx.max) := 0), var(48) := 0
+guard.sparkno = -1 + 0 * (var(71) := 8001)
+sparkxy = -10 + 0 * (var(72) := -20) * (var(73) := 0), var(48) := 0
 hitsound = -1; root
 guardsound = -1; root
 ground.type = High
@@ -1705,9 +1705,9 @@ trigger1 = facing = (root, facing)
 [State 4015, Spark Properties]
 type = null
 trigger1 = 1 || var(47) := root, var(47)
-trigger1 = 1 || map(guard.sparkno) := root, map(guard.sparkno)
-trigger1 = 1 || map(sparkx.min) := root, map(sparkx.min)
-trigger1 = 1 || map(sparkx.max) := root, map(sparkx.max)
+trigger1 = 1 || var(71) := root, var(71)
+trigger1 = 1 || var(72) := root, var(72)
+trigger1 = 1 || var(73) := root, var(73)
 trigger1 = 1 || var(48) := (0.5 * root, var(48))
 
 [State 4015, Hit High Ground]
@@ -2067,9 +2067,9 @@ ownpal = 1
 [State 4065, Spark Properties]
 type = null
 trigger1 = 1 || var(47) := root, var(47)
-trigger1 = 1 || map(guard.sparkno) := root, map(guard.sparkno)
-trigger1 = 1 || map(sparkx.min) := root, map(sparkx.min)
-trigger1 = 1 || map(sparkx.max) := root, map(sparkx.max)
+trigger1 = 1 || var(71) := root, var(71)
+trigger1 = 1 || var(72) := root, var(72)
+trigger1 = 1 || var(73) := root, var(73)
 trigger1 = 1 || var(48) := (0.5 * root, var(48))
 
 [State 4065, Hit High]
@@ -2315,7 +2315,7 @@ priority = 1, Miss
 getpower = 0, 0
 givepower = 0, 0
 sparkno = -1 + 0 * (var(47) := -1)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := -1)
+guard.sparkno = -1 + 0 * (var(71) := -1)
 sparkxy = -10, 0
 hitsound = s2, 800
 hitsound.channel = 2

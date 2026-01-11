@@ -63,8 +63,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 20) * (map(sparkx.max) := 65), var(48) := -82
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 20) * (var(73) := 65), var(48) := -82
 hitsound = s2, 1
 hitsound.channel = 2
 guardsound = s2, 0
@@ -160,8 +160,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 20) * (map(sparkx.max) := 65), var(48) := -74
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 20) * (var(73) := 65), var(48) := -74
 hitsound = s2, 1
 hitsound.channel = 2
 guardsound = s2, 0
@@ -257,8 +257,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8011)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 70) * (map(sparkx.max) := 115), var(48) := -54
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 70) * (var(73) := 115), var(48) := -54
 hitsound = s2, 2
 hitsound.channel = 2
 guardsound = s2, 0
@@ -364,8 +364,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8021)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 50) * (map(sparkx.max) := 110), var(48) := -62
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 50) * (var(73) := 110), var(48) := -62
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
@@ -481,8 +481,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8022)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 70) * (map(sparkx.max) := 130), var(48) := -48
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 70) * (var(73) := 130), var(48) := -48
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -588,8 +588,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8022)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 60), var(48) := -36
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 40) * (var(73) := 60), var(48) := -36
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -631,8 +631,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8022)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 60), var(48) := -62
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 40) * (var(73) := 60), var(48) := -62
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -748,8 +748,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 35) * (map(sparkx.max) := 70), var(48) := -32
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 35) * (var(73) := 70), var(48) := -32
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -845,8 +845,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8011)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 110), var(48) := -53
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 60) * (var(73) := 110), var(48) := -53
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -887,8 +887,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8011)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 110), var(48) := -53
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 60) * (var(73) := 110), var(48) := -53
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -995,8 +995,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8022)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 120), var(48) := -70
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 60) * (var(73) := 120), var(48) := -70
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1025,8 +1025,8 @@ forcestand = 1
 [State 250, SparkXY]
 type = varset
 trigger1 = animelem = 5
-trigger1 = map(sparkx.min) := 50
-trigger1 = map(sparkx.max) := 110
+trigger1 = var(72) := 50
+trigger1 = var(73) := 110
 var = 48
 value = -110
 
@@ -1178,8 +1178,8 @@ hitflag = HAF
 priority = 4, Hit
 pausetime = 4, 4
 sparkno = -1 + 0 * (var(47) := 8012)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 45) * (map(sparkx.max) := 115), var(48) := ifelse((animelem = 3), -96, -72)
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 45) * (var(73) := 115), var(48) := ifelse((animelem = 3), -96, -72)
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1222,8 +1222,8 @@ hitflag = MAF
 priority = 4, Hit
 pausetime = 4, 4
 sparkno = -1 + 0 * (var(47) := 8012)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 45) * (map(sparkx.max) := 100), var(48) := -48
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 45) * (var(73) := 100), var(48) := -48
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1266,8 +1266,8 @@ hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8012)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 45) * (map(sparkx.max) := 100), var(48) := -24
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 45) * (var(73) := 100), var(48) := -24
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1409,8 +1409,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 70), var(48) := -36
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 30) * (var(73) := 70), var(48) := -36
 hitsound = s2, 1
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1507,8 +1507,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8021)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 75), var(48) := -29
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 40) * (var(73) := 75), var(48) := -29
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1615,8 +1615,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8022)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 130), var(48) := -32
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 60) * (var(73) := 130), var(48) := -32
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1713,8 +1713,8 @@ guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8022)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 50) * (map(sparkx.max) := 90), var(48) := -120
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 50) * (var(73) := 90), var(48) := -120
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1845,8 +1845,8 @@ guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 35) * (map(sparkx.max) := 85), var(48) := -16
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 35) * (var(73) := 85), var(48) := -16
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1943,8 +1943,8 @@ guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 35) * (map(sparkx.max) := 85), var(48) := -4
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 35) * (var(73) := 85), var(48) := -4
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2051,8 +2051,8 @@ guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8011)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 85), var(48) := -32
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 40) * (var(73) := 85), var(48) := -32
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2159,8 +2159,8 @@ guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8011)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 40) * (map(sparkx.max) := 90), var(48) := -14
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 40) * (var(73) := 90), var(48) := -14
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2267,8 +2267,8 @@ guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8012)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 60) * (map(sparkx.max) := 120), var(48) := -30
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 60) * (var(73) := 120), var(48) := -30
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2365,8 +2365,8 @@ hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8020)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 80), var(48) := -43
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 30) * (var(73) := 80), var(48) := -43
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2489,8 +2489,8 @@ hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8021)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 35) * (map(sparkx.max) := 75), var(48) := -48
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 35) * (var(73) := 75), var(48) := -48
 hitsound = s2, 8
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2605,8 +2605,8 @@ hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8012)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 85), var(48) := -66
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 30) * (var(73) := 85), var(48) := -66
 hitsound = s2, 3
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2721,8 +2721,8 @@ hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 65), var(48) := -42
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 30) * (var(73) := 65), var(48) := -42
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2837,8 +2837,8 @@ hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8010)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 65), var(48) := -62
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 30) * (var(73) := 65), var(48) := -62
 hitsound = s2, 4
 hitsound.channel = 2
 guardsound = s2, 0
@@ -2953,8 +2953,8 @@ hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8011)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := -25) * (map(sparkx.max) := 75), var(48) := -42
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := -25) * (var(73) := 75), var(48) := -42
 hitsound = s2, 5
 hitsound.channel = 2
 guardsound = s2, 0
@@ -3069,8 +3069,8 @@ hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
 sparkno = -1 + 0 * (var(47) := 8012)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8000)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 75), var(48) := -54
+guard.sparkno = -1 + 0 * (var(71) := 8000)
+sparkxy = -10 + 0 * (var(72) := 30) * (var(73) := 75), var(48) := -54
 hitsound = s2, 6
 hitsound.channel = 2
 guardsound = s2, 0

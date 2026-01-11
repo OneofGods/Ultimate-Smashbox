@@ -189,9 +189,9 @@ ignorehitpause = 1
 [State 775, Spark Properties]
 type = null
 trigger1 = 1 || var(47) := root, var(47)
-trigger1 = 1 || map(guard.sparkno) := root, map(guard.sparkno)
-trigger1 = 1 || map(sparkx.min) := root, map(sparkx.min)
-trigger1 = 1 || map(sparkx.max) := root, map(sparkx.max)
+trigger1 = 1 || var(71) := root, var(71)
+trigger1 = 1 || var(72) := root, var(72)
+trigger1 = 1 || var(73) := root, var(73)
 trigger1 = 1 || var(48) := root, var(48)
 ignorehitpause = 1
 
@@ -392,7 +392,7 @@ priority = 4, Hit
 pausetime = 10, 10
 sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), var(48) := -32
+sparkxy = -10 + 0 * (var(72) := 30) * (var(73) := 90), var(48) := -32
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -765,7 +765,7 @@ priority = 4, Hit
 pausetime = 10, 10
 sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8012)
 guard.sparkno = ifelse(root, var(22), -1, 40)
-sparkxy = -10 + 0 * (map(sparkx.min) := 30) * (map(sparkx.max) := 90), var(48) := -30
+sparkxy = -10 + 0 * (var(72) := 30) * (var(73) := 90), var(48) := -30
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -1280,8 +1280,8 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 sparkno = -1 + 0 * (var(47) := 8023)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -10) * (map(sparkx.max) := 10), var(48) := 0
+guard.sparkno = -1 + 0 * (var(71) := 8001)
+sparkxy = -10 + 0 * (var(72) := -10) * (var(73) := 10), var(48) := 0
 envshake.time = 12; special
 envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -2, 2)
@@ -1337,8 +1337,8 @@ hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
 sparkno = -1 + 0 * (var(47) := 8023)
-guard.sparkno = -1 + 0 * (map(guard.sparkno) := 8001)
-sparkxy = -10 + 0 * (map(sparkx.min) := -10) * (map(sparkx.max) := 10), var(48) := 0
+guard.sparkno = -1 + 0 * (var(71) := 8001)
+sparkxy = -10 + 0 * (var(72) := -10) * (var(73) := 10), var(48) := 0
 envshake.time = 12; special
 envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -2, 2)
