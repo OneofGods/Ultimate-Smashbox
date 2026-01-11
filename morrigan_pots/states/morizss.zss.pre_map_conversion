@@ -14,14 +14,14 @@ if p2, numhelper > 0 {
 	for i = 0; p2, numhelper - 1; 1 {
 		if playerIDexist(p2, helper(-1, $i), ID) {
 			if p2, helper(-1, $i), hitdefattr = SCA, AP {
-				if !playerIDexist(fvar(39))
-				|| abs(p2, helper(-1, $i), pos x - pos x) < abs(fvar(21)) {
-					fvar(39) := p2, helper(-1, $i), ID;
-					var(60) := (p2, helper(-1, $i), hitdefattr = SCA, HP);
-					fvar(21) := ((p2, helper(-1, $i), pos x) - pos x) * facing;
-					fvar(22) := ((p2, helper(-1, $i), pos y) - pos y);
+				if !playerIDexist(map(ai_p2fireball_ID))
+				|| abs(p2, helper(-1, $i), pos x - pos x) < abs(map(ai_p2fireball_distx)) {
+					map(ai_p2fireball_ID) := p2, helper(-1, $i), ID;
+					map(ai_p2fireball_super) := (p2, helper(-1, $i), hitdefattr = SCA, HP);
+					map(ai_p2fireball_distx) := ((p2, helper(-1, $i), pos x) - pos x) * facing;
+					map(ai_p2fireball_disty) := ((p2, helper(-1, $i), pos y) - pos y);
 					if p2, helper(-1, $i), vel x != 0 {
-						fvar(23) := (fvar(21) - 20) / p2, helper(-1, $i), vel x; # Good enough estimate
+						map(ai_p2fireball_eta) := (map(ai_p2fireball_distx) - 20) / p2, helper(-1, $i), vel x; # Good enough estimate
 					}
 				}
 			}
@@ -32,13 +32,13 @@ if p2, numhelper > 0 {
 # Check projectiles
 if p2, numproj {
 	for i = 0; p2, numproj - 1; 1 {
-		if abs(p2, projvar(-1, $i, pos x) - pos x) < abs(fvar(21)) {
-			fvar(39) := -1;
-			var(60) := 0; # Temporary until more Ikemen features are added
-			fvar(21) := (p2, projvar(-1, $i, pos x) - pos x) * facing;
-			fvar(22) := (p2, projvar(-1, $i, pos y) - pos y);
+		if abs(p2, projvar(-1, $i, pos x) - pos x) < abs(map(ai_p2fireball_distx)) {
+			map(ai_p2fireball_ID) := -1;
+			map(ai_p2fireball_super) := 0; # Temporary until more Ikemen features are added
+			map(ai_p2fireball_distx) := (p2, projvar(-1, $i, pos x) - pos x) * facing;
+			map(ai_p2fireball_disty) := (p2, projvar(-1, $i, pos y) - pos y);
 			if p2, projvar(-1, $i, vel x) != 0 {
-				fvar(23) := (fvar(21) - 20) / p2, projvar(-1, $i, vel x); # Good enough estimate
+				map(ai_p2fireball_eta) := (map(ai_p2fireball_distx) - 20) / p2, projvar(-1, $i, vel x); # Good enough estimate
 			}
 		}
 	}
@@ -112,9 +112,9 @@ ignorehitpause {
 	# Check if custom or screenpack blood should be used
 	let custom = 1;
 	if !ishelper {
-		let custom = var(22) != 0;
+		let custom = map(cfg_sparks) != 0;
 	} else {
-		let custom = root, var(22) != 0;
+		let custom = root, map(cfg_sparks) != 0;
 	}
 
 	# Custom blood
@@ -179,9 +179,9 @@ ignorehitpause {
 	# Check if custom or screenpack sparks should be used
 	let custom = 1;
 	if !ishelper {
-		let custom = ifelse(var(22) = 2, 2, ifelse(var(22) = 0, 0, 1));
+		let custom = ifelse(map(cfg_sparks) = 2, 2, ifelse(map(cfg_sparks) = 0, 0, 1));
 	} else {
-		let custom = ifelse(root, var(22) = 2, 2, ifelse(root, var(22) = 0, 0, 1));
+		let custom = ifelse(root, map(cfg_sparks) = 2, 2, ifelse(root, map(cfg_sparks) = 0, 0, 1));
 	}
 
 	# Custom sparks
@@ -525,7 +525,7 @@ ignorehitpause {
 
 	# Blood
 	if $spark_no = [8020, 8024]
-	&& cond(!ishelper, fvar(6), root, fvar(6)) {
+	&& cond(!ishelper, map(cfg_blood), root, map(cfg_blood)) {
 		call BloodSparks($spark_no, $spark_x, $spark_y);
 	}
 
@@ -582,8 +582,8 @@ if stateno = 4110 && numhelper(4190) && animelemtime(3) >= 0 {
 # +1, Juggle System
 ignorehitpause {
 	# Disable Juggling
-	if cond(ishelper, root, var(18), var(18)) >= var(15)
-	&& cond(ishelper, root, var(44) = 0, var(44) = 0) { # Dark Force has infinite limit (TODO: keep or not?)
+	if cond(ishelper, root, map(juggle_count), map(juggle_count)) >= map(juggle_limit)
+	&& cond(ishelper, root, map(darkforce) = 0, map(darkforce) = 0) { # Dark Force has infinite limit (TODO: keep or not?)
 		assertspecial{flag: nofallhitflag}
 	}
 }
@@ -607,7 +607,7 @@ ignorehitpause if !ishelper && !incustomstate {
 		}
 		if p2statetype = L {
 			if p2dist y > -($vh_box_bottom - $vh_average_down) {
-				if fvar(30) = [0, vel x] || fvar(30) = [vel x, 0] {
+				if map(truebodydistx) = [0, vel x] || map(truebodydistx) = [vel x, 0] {
 					playerpush{value : 0}
 				}
 			}
@@ -616,12 +616,12 @@ ignorehitpause if !ishelper && !incustomstate {
 }
 
 # EX Yellow Flash
-ignorehitpause if fvar(15) > 0 && pausetime = 0 { # PalFX does not update while char is paused
+ignorehitpause if map(exflash) > 0 && pausetime = 0 { # PalFX does not update while char is paused
 	if movetype = H || stateno != [1000, 2999] {
 		mapset{map: "exflash"; value: 0}
 	} else {
 		mapadd{map: "exflash"; value: -1}
-		if (fvar(15) % 2) {
+		if (map(exflash) % 2) {
 			palfx{time: 1; color: 0; mul: 256, 224, 0; add: 96, 96, 96}
 		}
 	}
@@ -644,12 +644,12 @@ ignorehitpause if !ishelper {
 	if !AIlevel {
 		displaytoclipboard{
 			text: "Damage = %.1f%% Juggle = %d Unthrowable = %d";
-			params: attack, ceil(var(18)), ceil(var(58));
+			params: attack, ceil(map(juggle_count)), ceil(map(unthrowable));
 		}
 	} else {
 		displaytoclipboard{
 			text: "AI Combo %d Punish %d Attack %d";
-			params: floor(fvar(17)), floor(fvar(19)), floor(fvar(18));
+			params: floor(map(ai_combowindow)), floor(map(ai_punishwindow)), floor(map(ai_attackwindow));
 		}
 	}
 	appendtoclipboard {
@@ -724,7 +724,7 @@ ignorehitpause if p2movetype = H {
 	&& p2, gethitvar(down.recover) = 0
 	&& p2, gethitvar(fall.recover) = 0 {
 		if p2, gethitvar(fallcount) <= 1 {
-			if !fvar(35) {
+			if !map(message_hkd) {
 				if p2statetype = L
 				&& p2stateno != 5080
 				&& p2, gethitvar(isbound) = 0
@@ -737,7 +737,7 @@ ignorehitpause if p2movetype = H {
 			gethitvarset{down.recover: 1; redirectID: p2, ID} # Just in case
 		}
 	}
-} else if fvar(35) {
+} else if map(message_hkd) {
 	mapset{map: "message_hkd"; value: 0}
 }
 
@@ -789,13 +789,13 @@ ignorehitpause if AIlevel {
 	}
 
 	# AI Learning Safety Check
-	if var(64) = [0, 199] {
+	if map(ai_p2throw) = [0, 199] {
 		mapset{map: "ai_p2throw"; value: -1}
 	}
-	if var(63) = [0, 199] {
+	if map(ai_p2overhead) = [0, 199] {
 		mapset{map: "ai_p2overhead"; value: -1}
 	}
-	if var(62) = [0, 199] {
+	if map(ai_p2standinglow) = [0, 199] {
 		mapset{map: "ai_p2standinglow"; value: -1}
 	}
 
@@ -822,7 +822,7 @@ ignorehitpause if p2movetype = H {
 	&& p2statetype != A
 	&& (p2, gethitvar(hitcount) >= 50 || combocount >= 100)
 	&& stateno != [3000, 4999]
-	&& !var(44) {
+	&& !map(darkforce) {
 		hitfallset{value: 1; redirectID: p2, ID}
 	}
 }
@@ -875,7 +875,7 @@ ignorehitpause {
 # Corner Priority
 ignorehitpause if movetype != H && abs(p2dist x) < 80
 && (frontedgedist < vel x || backedgedist < -vel x) {
-	if statetype = A && var(57) = 3 {
+	if statetype = A && map(jumptype) = 3 {
 		width{edge: -1, -1}
 		if statetype = A && p2, backedgedist = 0 {
 			assertspecial{flag: noturntarget}
@@ -893,14 +893,14 @@ ignorehitpause if movecontact = 1 {
 }
 
 # Corner Push Reset
-if fvar(13) {
+if map(cornerpush) {
 	if !numtarget {
 		mapset{map: "cornerpush"; value: 0}
 	} else {
 		if target, movetype != H
 		|| target, gethitvar(ID) != ID
 		|| target, gethitvar(slidetime) = 0
-		|| (target, statetype = S && abs(fvar(13)) < 1.0)
+		|| (target, statetype = S && abs(map(cornerpush)) < 1.0)
 		|| target, hitfall = 1
 		|| target, vel y != 0 {
 			mapset{map: "cornerpush"; value: 0}
@@ -909,15 +909,15 @@ if fvar(13) {
 }
 
 # Corner Push Apply
-if fvar(13) && numtarget {
+if map(cornerpush) && numtarget {
 	if target, pausetime = 0 &&	target, gethitvar(hitshaketime) <= 0 {
 		if (target, statetype = S || target, statetype = C) &&
 		((target, backedgedist <= 0 && (target, gethitvar(xvel) * target, facing) < 0) ||
 		(target, frontedgedist <= 0 && (target, gethitvar(xvel) * target, facing) > 0)) {
-			posadd{x: fvar(13) * facing}
+			posadd{x: map(cornerpush) * facing}
 		}
 		# Friction
-		mapset{map: "cornerpush"; value: fvar(13) * ifelse(target, statetype = C, target, const(movement.crouch.friction), target, const(movement.stand.friction))}
+		mapset{map: "cornerpush"; value: map(cornerpush) * ifelse(target, statetype = C, target, const(movement.crouch.friction), target, const(movement.stand.friction))}
 	}
 }
 
@@ -952,8 +952,8 @@ ignorehitpause if p2movetype = H {
 		if p2, gethitvar(playerno) = playerno
 		&& (p2stateno = 5035 || p2stateno = 5050)
 		&& p2, incustomstate = 0 {
-			if p2, vel y = [(fvar(31) + 1.9 * p2, gethitvar(yaccel)), (fvar(31) + 3.1 * p2, gethitvar(yaccel))] {
-				velset{y: fvar(31) + p2, gethitvar(yaccel); redirectID: p2, ID}
+			if p2, vel y = [(map(p2_yaccelfix) + 1.9 * p2, gethitvar(yaccel)), (map(p2_yaccelfix) + 3.1 * p2, gethitvar(yaccel))] {
+				velset{y: map(p2_yaccelfix) + p2, gethitvar(yaccel); redirectID: p2, ID}
 			}
 		}
 	}
@@ -1056,8 +1056,8 @@ ignorehitpause if AIlevel && alive && !standby && roundstate = 2 {
 
 	# AI confirmation
 	# This reduces the number of missed opportunities without making the AI too hard
-	if fvar(18) > 0 {
-		if fvar(20) < 3 {
+	if map(ai_attackwindow) > 0 {
+		if map(ai_confirm) < 3 {
 			mapadd{map: "ai_confirm"; value: 0.1}
 		}
 	} else {
@@ -1076,12 +1076,12 @@ ignorehitpause if AIlevel && alive && !standby && roundstate = 2 {
 	# A HitBy trigger can replace this in the future
 	if p2stateno = 5120 {
 		mapset{map: "ai_p2wakeupnhb"; value: 12}
-	} else if var(61) > 0 {
+	} else if map(ai_p2wakeupnhb) > 0 {
 		mapadd{map: "ai_p2wakeupnhb"; value: -1}
 	}
 
 	# P2 can be thrown
-	mapset{map: "ai_canthrow"; value: !(var(58) || var(61) > 0)}
+	mapset{map: "ai_canthrow"; value: !(map(unthrowable) || map(ai_p2wakeupnhb) > 0)}
 
 	# P2 cannot act
 	mapset{map: "ai_p2cannotmove"; value: !(p2, ctrl || p2stateno = [40, 52] || p2stateno = 100 || p2stateno = [5201, 5210])}
@@ -1090,10 +1090,10 @@ ignorehitpause if AIlevel && alive && !standby && roundstate = 2 {
 	if ctrl && (p2, numhelper || p2, numproj) {
 		call P2ClosestFireball();
 	} else {
-		fvar(39) := -1;
-		var(60) := 0;
-		fvar(21) := 9999;
-		fvar(23) := 9999;
+		map(ai_p2fireball_ID) := -1;
+		map(ai_p2fireball_super) := 0;
+		map(ai_p2fireball_distx) := 9999;
+		map(ai_p2fireball_eta) := 9999;
 	}
 
 	# AI Spacing
@@ -1101,14 +1101,14 @@ ignorehitpause if AIlevel && alive && !standby && roundstate = 2 {
 		# Set spacing
 		# Unique to each char
 		if p2MoveType = H || p2, dizzy {
-			fvar(16) := 10;
+			map(ai_spacing) := 10;
 		} else {
-			fvar(16) := 150;
+			map(ai_spacing) := 150;
 		}
 		if command != "holddown" && command != "holdup" {
 			# Walk forward
-			if inputtime(B) != [1, 10] && p2bodydist x > fvar(16) + 20 {
-				if vel x > 0 || p2, vel x < 0 || p2bodydist x > fvar(16) {
+			if inputtime(B) != [1, 10] && p2bodydist x > map(ai_spacing) + 20 {
+				if vel x > 0 || p2, vel x < 0 || p2bodydist x > map(ai_spacing) {
 					if facing = 1 {assertInput{flag: R}} else {assertInput{flag: L}}
 					assertcommand{name: "holdfwd"; buffer.time: 2}
 					assertcommand{name: "holdback"; buffer.time: 0}
@@ -1116,8 +1116,8 @@ ignorehitpause if AIlevel && alive && !standby && roundstate = 2 {
 			}
 			# Walk back
 			if backedgedist > 0 {
-				if inputtime(F) != [1, 10] && p2bodydist x < fvar(16) - 20 {
-					if vel x < 0 || p2, vel x > 0 || p2bodydist x < fvar(16) {
+				if inputtime(F) != [1, 10] && p2bodydist x < map(ai_spacing) - 20 {
+					if vel x < 0 || p2, vel x > 0 || p2bodydist x < map(ai_spacing) {
 						if facing = 1 {assertInput{flag: L}} else {assertInput{flag: R}}
 						assertcommand{name: "holdback"; buffer.time: 2}
 						assertcommand{name: "holdfwd"; buffer.time: 0}
@@ -1140,7 +1140,7 @@ ignorehitpause if AIlevel && alive && !standby && roundstate = 2 {
 
 	# AI jump less
 	if inguarddist
-	|| p2, ctrl && !fvar(32)
+	|| p2, ctrl && !map(projflag)
 	|| p2stateno = 5120 && p2, animtime > -30
 	|| p2movetype = H && p2statetype != L
 	|| p2stateno = [5101, 5119] && p2, vel y >= 0 {
@@ -1172,7 +1172,7 @@ ignorehitpause if AIlevel && alive && !standby && roundstate = 2 {
 # -4, Juggle System
 ignorehitpause {
 	# Reset Juggle Count
-	if var(18) > 0
+	if map(juggle_count) > 0
 	&& p2, gethitvar(frame) = 0 { # Allow time for P2 to go from type S to type A
 		if p2movetype != H
 		|| p2, ctrl
@@ -1194,10 +1194,10 @@ ignorehitpause {
 	&& p2movetype = H
 	&& p2, gethitvar(frame)
 	&& (p2, gethitvar(ID) = ID || movehitvar(ID) = p2, ID) {
-		if var(19) <= 0 {
-			mapAdd{map: "juggle_count"; value: var(16); redirectID: cond(ishelper, root, ID, ID)}
+		if map(juggle_timer) <= 0 {
+			mapAdd{map: "juggle_count"; value: map(juggle_start); redirectID: cond(ishelper, root, ID, ID)}
 		} else {
-			mapAdd{map: "juggle_count"; value: var(17); redirectID: cond(ishelper, root, ID, ID)}
+			mapAdd{map: "juggle_count"; value: map(juggle_increase); redirectID: cond(ishelper, root, ID, ID)}
 		}
 	}
 	# Juggle Timer
@@ -1219,7 +1219,7 @@ ignorehitpause {
 # -4, Counter Hit bonus
 ignorehitpause if pausetime = 0
 && movehitvar(frame) && movehit = 1
-&& (movecountered = 1 || var(6)) # MoveCountered has limits against multiple enemies
+&& (movecountered = 1 || map(counterhit_buffer)) # MoveCountered has limits against multiple enemies
 && cond(ishelper, root, movetype != H, movetype != H) {
 	for i = 0; numPlayer - 1; 1 {
 		if playerIndexExist($i)
@@ -1260,7 +1260,7 @@ ignorehitpause if movehitvar(frame)
 && incustomstate = 0 && pausetime = 0
 && reversaldefattr != SCA, AA, AP, AT && hitdefattr != SCA, AT {
 	if movecontact = 1
-	&& (map(guard.sparkno) = [8000, 8009] || var(47) = [8010, 8099]) {
+	&& (map(guard.sparkno) = [8000, 8009] || map(sparkno) = [8010, 8099]) {
 		if !ishelper {
 			let spark_scaleoffset_x = const(size.xscale);
 			let spark_scaleoffset_y = const(size.yscale);
@@ -1268,13 +1268,13 @@ ignorehitpause if movehitvar(frame)
 			let spark_scaleoffset_x = 1;
 			let spark_scaleoffset_y = 1;
 		}
-		let spark_y = var(48) * $spark_scaleoffset_y;
+		let spark_y = map(sparky) * $spark_scaleoffset_y;
 		# Find the appropriate enemies
 		for i = 0; numPlayer - 1; 1 {
 			if playerIndexExist($i)
 			&& playerIndex($i), gethitvar(frame)
 			&& (playerIndex($i), gethitvar(ID) = ID || playerIndex($i), ID = movehitvar(ID)) { # Latter in case partner hits them as well
-				let spark_no = ifelse(playerIndex($i), gethitvar(guarded), map(guard.sparkno), var(47));
+				let spark_no = ifelse(playerIndex($i), gethitvar(guarded), map(guard.sparkno), map(sparkno));
 				let getterdist = (playerIndex($i), pos x - pos x) * facing;
 				let spark_x = cond($getterdist > (map(sparkx.max) * $spark_scaleoffset_x), (map(sparkx.max) * $spark_scaleoffset_x), cond($getterdist > (map(sparkx.min) * $spark_scaleoffset_x), $getterdist, (map(sparkx.min) * $spark_scaleoffset_x)));
 				if !ishelper || playerIndex($i), hitoverridden = 0 {
@@ -1282,13 +1282,13 @@ ignorehitpause if movehitvar(frame)
 				}
 				# Counter hit spark
 				if movehit = 1
-				&& (movecountered = 1 || var(6)) # MoveCountered has limits against multiple enemies
+				&& (movecountered = 1 || map(counterhit_buffer)) # MoveCountered has limits against multiple enemies
 				&& cond(ishelper, root, movetype != H, movetype != H)
 				&& (!ishelper || playerIndex($i), hitoverridden = 0)
 				&& playerIndex($i), movetype = H
 				&& (playerIndex($i), prevmovetype = A || playerIndex($i), receivedhits > 1) # Just countered or counter buffer active
 				&& playerIndex($i), gethitvar(guarded) = 0
-				&& var(47) = [8010, 8099] {
+				&& map(sparkno) = [8010, 8099] {
 					explod{
 						ID: 8000;
 						anim: 8290;
@@ -1313,7 +1313,7 @@ ignorehitpause if movehitvar(frame)
 }
 
 # Reset Spark Variables
-ignorehitpause if var(47) >= 0 || map(guard.sparkno) >= 0 {
+ignorehitpause if map(sparkno) >= 0 || map(guard.sparkno) >= 0 {
 	if !movehitvar(frame) && hitdefattr != SCA, AA, AP {
 		mapset{map: "sparkno"; value: -1}
 		mapset{map: "guard.sparkno"; value: -1}
@@ -1324,7 +1324,7 @@ ignorehitpause if var(47) >= 0 || map(guard.sparkno) >= 0 {
 }
 
 # Generate particle effects
-ignorehitpause if fvar(27) {
+ignorehitpause if map(hitparticles) {
 	if movehitvar(frame) {
 		if movehit = 1 && numtarget
 		&& target, gethitvar(frame)
@@ -1340,19 +1340,19 @@ ignorehitpause if fvar(27) {
 				}
 			}
 			if numhelper(8150) {
-				helper(8150), var(59) := target, ID;
-				helper(8150), var(9) := 60;
+				helper(8150), map(target) := target, ID;
+				helper(8150), map(timer) := 60;
 			}
 		}
 	} else {
-		fvar(27) := 0;
+		map(hitparticles) := 0;
 	}
 }
 
 # Set particle effects type
 ignorehitpause {
 	if ishelper(3005) || ishelper(3055) {
-		fvar(27) := 1;
+		map(hitparticles) := 1;
 	}
 }
 
@@ -1361,8 +1361,8 @@ ignorehitpause if AIlevel && !ishelper {
 
 	# AI block high
 	# Also stand up to parry fireballs
-	if p2stateno != var(62)
-	&& (p2statetype = A || p2, hitdefattr = A, AA, AP || p2stateno = var(63) || (p2, hitdefattr != SCA, AA, AT, AP && fvar(23) = [1, 20])) {
+	if p2stateno != map(ai_p2standinglow)
+	&& (p2statetype = A || p2, hitdefattr = A, AA, AP || p2stateno = map(ai_p2overhead) || (p2, hitdefattr != SCA, AA, AT, AP && map(ai_p2fireball_eta) = [1, 20])) {
 		if random < (100 * (AIlevelF / 8.0)) {
 			mapset{map: "ai_blockhigh"; value: 1}
 		}

@@ -23,7 +23,7 @@ ignorehitpause if !AIlevel && !ishelper {
 	let cmd_buffertime = ifelse(hitpausetime <= 4, 5, (hitpausetime + 1));
 
 	# Custom Combo Buffer Time
-	if fvar(29) > 0 {
+	if map(customcombo) > 0 {
 		let cmd_buffertime = (hitpausetime + 1);
 	}
 
@@ -105,7 +105,7 @@ ignorehitpause if !AIlevel && !ishelper {
 #=====================================================================< SINGLE BUTTON >========================================================================
 
 	# Erase inputs
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_a"; value: 0}
 		mapSet{map: "cmd_b"; value: 0}
 		mapSet{map: "cmd_c"; value: 0}
@@ -159,7 +159,7 @@ ignorehitpause if !AIlevel && !ishelper {
 # No negative edge
 
 	# Erase inputs
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_kk"; value: 0}
 		mapSet{map: "cmd_pp"; value: 0}
 		mapSet{map: "cmd_ax"; value: 0}
@@ -425,12 +425,12 @@ ignorehitpause if !AIlevel && !ishelper {
 #--------------------------------------------------------------------------- 236 ------------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_236_OK"; value: 0}
 		mapSet{map: "cmd_check_236_23"; value: 0}
 		mapSet{map: "cmd_check_236_2"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_236kkk"; value: 0}
 		mapSet{map: "cmd_236ppp"; value: 0}
 		mapSet{map: "cmd_236kk"; value: 0}
@@ -483,12 +483,12 @@ ignorehitpause if !AIlevel && !ishelper {
 # Directions don't flip
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_root236_OK"; value: 0}
 		mapSet{map: "cmd_check_root236_23"; value: 0}
 		mapSet{map: "cmd_check_root236_2"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_root236kkk"; value: 0}
 		mapSet{map: "cmd_root236ppp"; value: 0}
 		mapSet{map: "cmd_root236kk"; value: 0}
@@ -540,12 +540,12 @@ ignorehitpause if !AIlevel && !ishelper {
 #--------------------------------------------------------------------------- 214 ------------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_214_OK"; value: 0}
 		mapSet{map: "cmd_check_214_21"; value: 0}
 		mapSet{map: "cmd_check_214_2"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_214kkk"; value: 0}
 		mapSet{map: "cmd_214ppp"; value: 0}
 		mapSet{map: "cmd_214kk"; value: 0}
@@ -597,12 +597,12 @@ ignorehitpause if !AIlevel && !ishelper {
 #------------------------------------------------------------------------- ROOT 214 ---------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_root214_OK"; value: 0}
 		mapSet{map: "cmd_check_root214_21"; value: 0}
 		mapSet{map: "cmd_check_root214_2"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_root214kkk"; value: 0}
 		mapSet{map: "cmd_root214ppp"; value: 0}
 		mapSet{map: "cmd_root214kk"; value: 0}
@@ -654,12 +654,12 @@ ignorehitpause if !AIlevel && !ishelper {
 #--------------------------------------------------------------------------- 623 ------------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_623_OK"; value: 0}
 		mapSet{map: "cmd_check_623_62"; value: 0}
 		mapSet{map: "cmd_check_623_6"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_623kkk"; value: 0}
 		mapSet{map: "cmd_623ppp"; value: 0}
 		mapSet{map: "cmd_623kk"; value: 0}
@@ -711,12 +711,12 @@ ignorehitpause if !AIlevel && !ishelper {
 #--------------------------------------------------------------------------- 421 ------------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_421_OK"; value: 0}
 		mapSet{map: "cmd_check_421_42"; value: 0}
 		mapSet{map: "cmd_check_421_4"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_421kkk"; value: 0}
 		mapSet{map: "cmd_421ppp"; value: 0}
 		mapSet{map: "cmd_421kk"; value: 0}
@@ -768,12 +768,12 @@ ignorehitpause if !AIlevel && !ishelper {
 #-------------------------------------------------------------------------- 41236 -----------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_41236_OK"; value: 0}
 		mapSet{map: "cmd_check_41236_412"; value: 0}
 		mapSet{map: "cmd_check_41236_4"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_41236kkk"; value: 0}
 		mapSet{map: "cmd_41236ppp"; value: 0}
 		mapSet{map: "cmd_41236kk"; value: 0}
@@ -825,12 +825,12 @@ ignorehitpause if !AIlevel && !ishelper {
 #------------------------------------------------------------------------ ROOT 41236 --------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_root41236_OK"; value: 0}
 		mapSet{map: "cmd_check_root41236_412"; value: 0}
 		mapSet{map: "cmd_check_root41236_4"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_root41236kkk"; value: 0}
 		mapSet{map: "cmd_root41236ppp"; value: 0}
 		mapSet{map: "cmd_root41236kk"; value: 0}
@@ -882,12 +882,12 @@ ignorehitpause if !AIlevel && !ishelper {
 #-------------------------------------------------------------------------- 63214 -----------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_63214_OK"; value: 0}
 		mapSet{map: "cmd_check_63214_632"; value: 0}
 		mapSet{map: "cmd_check_63214_6"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_63214kkk"; value: 0}
 		mapSet{map: "cmd_63214ppp"; value: 0}
 		mapSet{map: "cmd_63214kk"; value: 0}
@@ -939,12 +939,12 @@ ignorehitpause if !AIlevel && !ishelper {
 #------------------------------------------------------------------------ ROOT 63214 --------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_root63214_OK"; value: 0}
 		mapSet{map: "cmd_check_root63214_632"; value: 0}
 		mapSet{map: "cmd_check_root63214_4"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_root63214kkk"; value: 0}
 		mapSet{map: "cmd_root63214ppp"; value: 0}
 		mapSet{map: "cmd_root63214kk"; value: 0}
@@ -996,13 +996,13 @@ ignorehitpause if !AIlevel && !ishelper {
 #---------------------------------------------------------------------------- 22 ------------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_22_OK"; value: 0}
 		mapSet{map: "cmd_check_22_525"; value: 0}
 		mapSet{map: "cmd_check_22_52"; value: 0}
 		mapSet{map: "cmd_check_22_5"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_22kkk"; value: 0}
 		mapSet{map: "cmd_22ppp"; value: 0}
 		mapSet{map: "cmd_22kk"; value: 0}
@@ -1078,12 +1078,12 @@ ignorehitpause if !AIlevel && !ishelper {
 #------------------------------------------------------------------------- ROOT 896 ---------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_root896_OK"; value: 0}
 		mapSet{map: "cmd_check_root896_89"; value: 0}
 		mapSet{map: "cmd_check_root896_8"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_root896kkk"; value: 0}
 		mapSet{map: "cmd_root896ppp"; value: 0}
 		mapSet{map: "cmd_root896kk"; value: 0}
@@ -1135,11 +1135,11 @@ ignorehitpause if !AIlevel && !ishelper {
 #---------------------------------------------------------------------------- 46 ------------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_46_OK"; value: 0}
 		mapSet{map: "cmd_check_46_4"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_46kkk"; value: 0}
 		mapSet{map: "cmd_46ppp"; value: 0}
 		mapSet{map: "cmd_46kk"; value: 0}
@@ -1187,11 +1187,11 @@ ignorehitpause if !AIlevel && !ishelper {
 #---------------------------------------------------------------------------- 28 ------------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_28_OK"; value: 0}
 		mapSet{map: "cmd_check_28_2"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_28kkk"; value: 0}
 		mapSet{map: "cmd_28ppp"; value: 0}
 		mapSet{map: "cmd_28kk"; value: 0}
@@ -1239,7 +1239,7 @@ ignorehitpause if !AIlevel && !ishelper {
 #--------------------------------------------------------------------------- 360 ------------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_360_OK"; value: 0}
 		mapSet{map: "cmd_check_360_248"; value: 0}
 		mapSet{map: "cmd_check_360_24"; value: 0}
@@ -1266,7 +1266,7 @@ ignorehitpause if !AIlevel && !ishelper {
 		mapSet{map: "cmd_check_360_42"; value: 0}
 		mapSet{map: "cmd_check_360_4"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_360kkk"; value: 0}
 		mapSet{map: "cmd_360ppp"; value: 0}
 		mapSet{map: "cmd_360kk"; value: 0}
@@ -1375,7 +1375,7 @@ ignorehitpause if !AIlevel && !ishelper {
 
 	# Erase inputs
 	# Unaffected by cmd_erase_completed
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_mashp_timer"; value: 0}
 		mapSet{map: "cmd_check_mashp_counter"; value: 0}
 		mapSet{map: "cmd_mashp"; value: 0}
@@ -1422,12 +1422,12 @@ ignorehitpause if !AIlevel && !ishelper {
 # Nakoruru
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_412_OK"; value: 0}
 		mapSet{map: "cmd_check_412_41"; value: 0}
 		mapSet{map: "cmd_check_412_4"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_412kkk"; value: 0}
 		mapSet{map: "cmd_412ppp"; value: 0}
 		mapSet{map: "cmd_412kk"; value: 0}
@@ -1480,12 +1480,12 @@ ignorehitpause if !AIlevel && !ishelper {
 # Nakoruru suicide
 
 	# Erase inputs
-	if var(5) || var(4) {
+	if map(cmd_erase_motion_special) || map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_4632_OK"; value: 0}
 		mapSet{map: "cmd_check_4632_46"; value: 0}
 		mapSet{map: "cmd_check_4632_4"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_4632kkk"; value: 0}
 		mapSet{map: "cmd_4632ppp"; value: 0}
 		mapSet{map: "cmd_4632kk"; value: 0}
@@ -1533,13 +1533,13 @@ ignorehitpause if !AIlevel && !ishelper {
 #-------------------------------------------------------------------------- 236236 -----------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_236236_OK"; value: 0}
 		mapSet{map: "cmd_check_236236_2362"; value: 0}
 		mapSet{map: "cmd_check_236236_236"; value: 0}
 		mapSet{map: "cmd_check_236236_2"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_236236kkk"; value: 0}
 		mapSet{map: "cmd_236236ppp"; value: 0}
 		mapSet{map: "cmd_236236kk"; value: 0}
@@ -1604,13 +1604,13 @@ ignorehitpause if !AIlevel && !ishelper {
 #------------------------------------------------------------------------ ROOT 236236 -------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_root236236_OK"; value: 0}
 		mapSet{map: "cmd_check_root236236_2362"; value: 0}
 		mapSet{map: "cmd_check_root236236_236"; value: 0}
 		mapSet{map: "cmd_check_root236236_2"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_root236236kkk"; value: 0}
 		mapSet{map: "cmd_root236236ppp"; value: 0}
 		mapSet{map: "cmd_root236236kk"; value: 0}
@@ -1675,13 +1675,13 @@ ignorehitpause if !AIlevel && !ishelper {
 #-------------------------------------------------------------------------- 214214 ----------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_214214_OK"; value: 0}
 		mapSet{map: "cmd_check_214214_2142"; value: 0}
 		mapSet{map: "cmd_check_214214_214"; value: 0}
 		mapSet{map: "cmd_check_214214_2"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_214214kkk"; value: 0}
 		mapSet{map: "cmd_214214ppp"; value: 0}
 		mapSet{map: "cmd_214214kk"; value: 0}
@@ -1746,13 +1746,13 @@ ignorehitpause if !AIlevel && !ishelper {
 #------------------------------------------------------------------------ ROOT 214214 -------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_root214214_OK"; value: 0}
 		mapSet{map: "cmd_check_root214214_2142"; value: 0}
 		mapSet{map: "cmd_check_root214214_214"; value: 0}
 		mapSet{map: "cmd_check_root214214_2"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_root214214kkk"; value: 0}
 		mapSet{map: "cmd_root214214ppp"; value: 0}
 		mapSet{map: "cmd_root214214kk"; value: 0}
@@ -1817,7 +1817,7 @@ ignorehitpause if !AIlevel && !ishelper {
 #-------------------------------------------------------------------------- 624624 ----------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_624624_OK"; value: 0}
 		mapSet{map: "cmd_check_624624_62462"; value: 0}
 		mapSet{map: "cmd_check_624624_6246"; value: 0}
@@ -1825,7 +1825,7 @@ ignorehitpause if !AIlevel && !ishelper {
 		mapSet{map: "cmd_check_624624_62"; value: 0}
 		mapSet{map: "cmd_check_624624_6"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_624624kkk"; value: 0}
 		mapSet{map: "cmd_624624ppp"; value: 0}
 		mapSet{map: "cmd_624624kk"; value: 0}
@@ -1902,13 +1902,13 @@ ignorehitpause if !AIlevel && !ishelper {
 #-------------------------------------------------------------------------- 2141236 ---------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_2141236_OK"; value: 0}
 		mapSet{map: "cmd_check_2141236_21412"; value: 0}
 		mapSet{map: "cmd_check_2141236_214"; value: 0}
 		mapSet{map: "cmd_check_2141236_2"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_2141236kkk"; value: 0}
 		mapSet{map: "cmd_2141236ppp"; value: 0}
 		mapSet{map: "cmd_2141236kk"; value: 0}
@@ -1973,13 +1973,13 @@ ignorehitpause if !AIlevel && !ishelper {
 #-------------------------------------------------------------------------- 2363214 ---------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_2363214_OK"; value: 0}
 		mapSet{map: "cmd_check_2363214_23632"; value: 0}
 		mapSet{map: "cmd_check_2363214_236"; value: 0}
 		mapSet{map: "cmd_check_2363214_2"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_2363214kkk"; value: 0}
 		mapSet{map: "cmd_2363214ppp"; value: 0}
 		mapSet{map: "cmd_2363214kk"; value: 0}
@@ -2045,13 +2045,13 @@ ignorehitpause if !AIlevel && !ishelper {
 # Haou Shoukouken
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_641236_OK"; value: 0}
 		mapSet{map: "cmd_check_641236_6412"; value: 0}
 		mapSet{map: "cmd_check_641236_64"; value: 0}
 		mapSet{map: "cmd_check_641236_6"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_641236kkk"; value: 0}
 		mapSet{map: "cmd_641236ppp"; value: 0}
 		mapSet{map: "cmd_641236kk"; value: 0}
@@ -2117,13 +2117,13 @@ ignorehitpause if !AIlevel && !ishelper {
 # Deadly Rave
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_632146_OK"; value: 0}
 		mapSet{map: "cmd_check_632146_63214"; value: 0}
 		mapSet{map: "cmd_check_632146_632"; value: 0}
 		mapSet{map: "cmd_check_632146_6"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_632146kkk"; value: 0}
 		mapSet{map: "cmd_632146ppp"; value: 0}
 		mapSet{map: "cmd_632146kk"; value: 0}
@@ -2188,13 +2188,13 @@ ignorehitpause if !AIlevel && !ishelper {
 #--------------------------------------------------------------------------- 4646 -----------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_4646_OK"; value: 0}
 		mapSet{map: "cmd_check_4646_464"; value: 0}
 		mapSet{map: "cmd_check_4646_46"; value: 0}
 		mapSet{map: "cmd_check_4646_4"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_4646kkk"; value: 0}
 		mapSet{map: "cmd_4646ppp"; value: 0}
 		mapSet{map: "cmd_4646kk"; value: 0}
@@ -2261,13 +2261,13 @@ ignorehitpause if !AIlevel && !ishelper {
 #--------------------------------------------------------------------------- 1319 -----------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_1319_OK"; value: 0}
 		mapSet{map: "cmd_check_1319_131"; value: 0}
 		mapSet{map: "cmd_check_1319_13"; value: 0}
 		mapSet{map: "cmd_check_1319_1"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_1319kkk"; value: 0}
 		mapSet{map: "cmd_1319ppp"; value: 0}
 		mapSet{map: "cmd_1319kk"; value: 0}
@@ -2334,7 +2334,7 @@ ignorehitpause if !AIlevel && !ishelper {
 #--------------------------------------------------------------------------- 222 ------------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_222_OK"; value: 0}
 		mapSet{map: "cmd_check_222_52525"; value: 0}
 		mapSet{map: "cmd_check_222_5252"; value: 0}
@@ -2342,7 +2342,7 @@ ignorehitpause if !AIlevel && !ishelper {
 		mapSet{map: "cmd_check_222_52"; value: 0}
 		mapSet{map: "cmd_check_222_5"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_222kkk"; value: 0}
 		mapSet{map: "cmd_222ppp"; value: 0}
 		mapSet{map: "cmd_222kk"; value: 0}
@@ -2412,7 +2412,7 @@ ignorehitpause if !AIlevel && !ishelper {
 #--------------------------------------------------------------------------- 888 ------------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_888_OK"; value: 0}
 		mapSet{map: "cmd_check_888_58585"; value: 0}
 		mapSet{map: "cmd_check_888_5858"; value: 0}
@@ -2420,7 +2420,7 @@ ignorehitpause if !AIlevel && !ishelper {
 		mapSet{map: "cmd_check_888_58"; value: 0}
 		mapSet{map: "cmd_check_888_5"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_888kkk"; value: 0}
 		mapSet{map: "cmd_888ppp"; value: 0}
 		mapSet{map: "cmd_888kk"; value: 0}
@@ -2490,13 +2490,13 @@ ignorehitpause if !AIlevel && !ishelper {
 #----------------------------------------------------------------------- RAGING DEMON -----------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_demon_xx6a"; value: 0}
 		mapSet{map: "cmd_check_demon_xx6"; value: 0}
 		mapSet{map: "cmd_check_demon_xx"; value: 0}
 		mapSet{map: "cmd_check_demon_x"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_demon"; value: 0}
 	}
 
@@ -2537,13 +2537,13 @@ ignorehitpause if !AIlevel && !ishelper {
 #------------------------------------------------------------------------ OTOKO MICHI -------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_otoko_za4x"; value: 0}
 		mapSet{map: "cmd_check_otoko_za4"; value: 0}
 		mapSet{map: "cmd_check_otoko_za"; value: 0}
 		mapSet{map: "cmd_check_otoko_z"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_otoko"; value: 0}
 	}
 
@@ -2583,13 +2583,13 @@ ignorehitpause if !AIlevel && !ishelper {
 #------------------------------------------------------------------------- TENRAIHA ---------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_tenraiha_acyy"; value: 0}
 		mapSet{map: "cmd_check_tenraiha_acy"; value: 0}
 		mapSet{map: "cmd_check_tenraiha_ac"; value: 0}
 		mapSet{map: "cmd_check_tenraiha_a"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_tenraiha"; value: 0}
 	}
 
@@ -2630,13 +2630,13 @@ ignorehitpause if !AIlevel && !ishelper {
 #--------------------------------------------------------------------- ETERNAL SLUMBER ------------------------------------------------------------------------
 
 	# Erase inputs
-	if var(4) {
+	if map(cmd_erase_motion_super) {
 		mapSet{map: "cmd_check_slumber_xb4y"; value: 0}
 		mapSet{map: "cmd_check_slumber_xb4"; value: 0}
 		mapSet{map: "cmd_check_slumber_xb"; value: 0}
 		mapSet{map: "cmd_check_slumber_x"; value: 0}
 	}
-	if var(3) {
+	if map(cmd_erase_completed) {
 		mapSet{map: "cmd_slumber"; value: 0}
 	}
 
@@ -2917,7 +2917,7 @@ ignorehitpause if !AIlevel && !ishelper {
 	# Back Charge Increase
 	if map(cmd_charge4) < $charge_time {
 		if (!$check_reversed && $direction_any_B > 0 && $direction_any_F < 0) || ($check_reversed && $direction_any_B < 0 && $direction_any_F > 0) {
-			if fvar(29) {
+			if map(customcombo) {
 				mapSet{map: "cmd_charge4"; value: $charge_time}
 			} else {
 				mapAdd{map: "cmd_charge4"; value: 1}
@@ -2936,7 +2936,7 @@ ignorehitpause if !AIlevel && !ishelper {
 
 	# Down Charge Increase
 	if map(cmd_charge2) < $charge_time && $direction_any_D > 0 {
-		if fvar(29) {
+		if map(customcombo) {
 			mapSet{map: "cmd_charge2"; value: $charge_time}
 		} else {
 			mapAdd{map: "cmd_charge2"; value: 1}
@@ -2955,8 +2955,8 @@ ignorehitpause if !AIlevel && !ishelper {
 #=========================================================================< OTHER >============================================================================
 
 	# Disable input erasers
-	if var(4) {mapSet{map: "cmd_erase_motion_super"; value: 0}}
-	if var(5) {mapSet{map: "cmd_erase_motion_special"; value: 0}}
-	if var(3) {mapSet{map: "cmd_erase_completed"; value: 0}}
+	if map(cmd_erase_motion_super) {mapSet{map: "cmd_erase_motion_super"; value: 0}}
+	if map(cmd_erase_motion_special) {mapSet{map: "cmd_erase_motion_special"; value: 0}}
+	if map(cmd_erase_completed) {mapSet{map: "cmd_erase_completed"; value: 0}}
 
 }
