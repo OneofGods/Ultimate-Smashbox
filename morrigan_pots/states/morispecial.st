@@ -21,7 +21,8 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(46)
-trigger1 = 1 || var(46) := 0
+trigger1 = 1
+; TODO: Add varset var=46 value=0
 var = 65
 value = 1
 
@@ -46,8 +47,10 @@ ignorehitpause = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || var(5) := 1
-trigger1 = 1 || var(3) := 1
+trigger1 = 1
+; TODO: Add varset var=5 value=1
+trigger1 = 1
+; TODO: Add varset var=3 value=1
 ignorehitpause = 1
 persistent = 0
 
@@ -118,7 +121,8 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(46)
-trigger1 = 1 || var(46) := 0
+trigger1 = 1
+; TODO: Add varset var=46 value=0
 var = 65
 value = 1
 
@@ -126,8 +130,10 @@ value = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || var(5) := 1
-trigger1 = 1 || var(3) := 1
+trigger1 = 1
+; TODO: Add varset var=5 value=1
+trigger1 = 1
+; TODO: Add varset var=3 value=1
 ignorehitpause = 1
 persistent = 0
 
@@ -139,7 +145,8 @@ value = 0, 1000
 [State 1010, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || fvar(15) := 30
+trigger1 = 1
+; TODO: set fvar(15) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -215,7 +222,8 @@ facep2 = p2dist x <= -const(size.ground.back)
 type = varadd
 trigger1 = !time
 trigger1 = var(46)
-trigger1 = 1 || var(46) := 0
+trigger1 = 1
+; TODO: Add varset var=46 value=0
 var = 65
 value = 1
 
@@ -240,8 +248,10 @@ ignorehitpause = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || var(5) := 1
-trigger1 = 1 || var(3) := 1
+trigger1 = 1
+; TODO: Add varset var=5 value=1
+trigger1 = 1
+; TODO: Add varset var=3 value=1
 ignorehitpause = 1
 persistent = 0
 
@@ -375,7 +385,8 @@ facep2 = 0
 type = varadd
 trigger1 = !time
 trigger1 = var(46)
-trigger1 = 1 || var(46) := 0
+trigger1 = 1
+; TODO: Add varset var=46 value=0
 var = 65
 value = 1
 
@@ -383,8 +394,10 @@ value = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || var(5) := 1
-trigger1 = 1 || var(3) := 1
+trigger1 = 1
+; TODO: Add varset var=5 value=1
+trigger1 = 1
+; TODO: Add varset var=3 value=1
 ignorehitpause = 1
 persistent = 0
 
@@ -396,7 +409,8 @@ value = 0, 1000
 [State 1060, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || fvar(15) := 30
+trigger1 = 1
+; TODO: set fvar(15) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -495,7 +509,8 @@ sprpriority = 2
 type = varadd
 trigger1 = !time
 trigger1 = var(46)
-trigger1 = 1 || var(46) := 0
+trigger1 = 1
+; TODO: Add varset var=46 value=0
 var = 65
 value = 1
 
@@ -520,8 +535,10 @@ ignorehitpause = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || var(5) := 1
-trigger1 = 1 || var(3) := 1
+trigger1 = 1
+; TODO: Add varset var=5 value=1
+trigger1 = 1
+; TODO: Add varset var=3 value=1
 ignorehitpause = 1
 persistent = 0
 
@@ -625,7 +642,7 @@ type = hitdef
 trigger1 = anim = 1100
 trigger1 = animelem = 2 || animelem = 3
 trigger1 = !movecontact && !movereversed
-air.juggle = 0 * (var(16) := 1 || var(17) := 1 || var(15) := 1)
+air.juggle = 0
 attr = S, SA
 damage = ifelse(var(45) = 2, 120, ifelse(var(45) = 1, 110, 100)), ifelse(var(45) = 2, 30, ifelse(var(45) = 1, 28, 25))
 dizzypoints = 200 * !var(44)
@@ -634,9 +651,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 12, 12
-sparkno = -1 + 0 * (var(47) := 8023)
-guard.sparkno = -1 + 0 * (var(71) := 8001)
-sparkxy = -10 + 0 * (var(72) := 25) * (var(73) := 50), var(48) := ifelse((animelem = 2), -35, -60)
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -10, var(48) , -35, -60)
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -671,7 +688,7 @@ forcestand = 1
 type = hitdef
 trigger1 = animelem = 4 && anim = 1100
 trigger1 = !movecontact && !movereversed
-air.juggle = 0 * (var(16) := 1 || var(17) := 1 || var(15) := 1)
+air.juggle = 0
 attr = A, SA
 damage = 60, 15
 dizzypoints = 100 * !var(44)
@@ -680,9 +697,9 @@ hitflag = MAF
 guardflag = MA
 priority = 4, Hit
 pausetime = 12, 12
-sparkno = -1 + 0 * (var(47) := 8023)
-guard.sparkno = -1 + 0 * (var(71) := 8001)
-sparkxy = -10 + 0 * (var(72) := 0) * (var(73) := 25), var(48) := -100
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -10, -100
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -799,7 +816,8 @@ sprpriority = 2
 type = varadd
 trigger1 = !time
 trigger1 = var(46)
-trigger1 = 1 || var(46) := 0
+trigger1 = 1
+; TODO: Add varset var=46 value=0
 var = 65
 value = 1
 
@@ -807,8 +825,10 @@ value = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || var(5) := 1
-trigger1 = 1 || var(3) := 1
+trigger1 = 1
+; TODO: Add varset var=5 value=1
+trigger1 = 1
+; TODO: Add varset var=3 value=1
 ignorehitpause = 1
 persistent = 0
 
@@ -820,7 +840,8 @@ value = 0, 1000
 [State 1110, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || fvar(15) := 30
+trigger1 = 1
+; TODO: set fvar(15) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -909,7 +930,7 @@ channel = 0
 type = hitdef
 trigger1 = anim = 1110
 trigger1 = animelem = 2 || animelem = 3
-air.juggle = 0 * (var(16) := 1 || var(17) := 1 || var(15) := (2 + hitcount))
+air.juggle = 0)
 attr = S, SA
 damage = 40, 10
 dizzypoints = 67 * !var(44)
@@ -918,9 +939,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 8, 8
-sparkno = -1 + 0 * (var(47) := 8023)
-guard.sparkno = -1 + 0 * (var(71) := 8001)
-sparkxy = -10 + 0 * (var(72) := 25) * (var(73) := 50), var(48) := ifelse((animelem = 2), -35, -60)
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -10, var(48) , -35, -60)
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -954,7 +975,7 @@ forcestand = 1
 [State 1110, Hit 2]
 type = hitdef
 trigger1 = animelem = 4 && anim = 1110
-air.juggle = 0 * (var(16) := 1 || var(17) := 1 || var(15) := (2 + hitcount))
+air.juggle = 0)
 attr = A, SA
 damage = 60, 15
 dizzypoints = 67 * !var(44)
@@ -963,9 +984,9 @@ hitflag = MAF
 guardflag = MA
 priority = 4, Hit
 pausetime = 8, 8
-sparkno = -1 + 0 * (var(47) := 8023)
-guard.sparkno = -1 + 0 * (var(71) := 8001)
-sparkxy = -10 + 0 * (var(72) := 0) * (var(73) := 25), var(48) := -100
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -10, -100
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1040,7 +1061,8 @@ sprpriority = 2
 type = varadd
 trigger1 = !time
 trigger1 = var(46)
-trigger1 = 1 || var(46) := 0
+trigger1 = 1
+; TODO: Add varset var=46 value=0
 var = 65
 value = 1
 
@@ -1065,8 +1087,10 @@ ignorehitpause = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || var(5) := 1
-trigger1 = 1 || var(3) := 1
+trigger1 = 1
+; TODO: Add varset var=5 value=1
+trigger1 = 1
+; TODO: Add varset var=3 value=1
 ignorehitpause = 1
 persistent = 0
 
@@ -1132,7 +1156,7 @@ ownpal = 1
 [State 1205, Hit]
 type = hitdef
 trigger1 = animelem = 4 || animelem = 10 || animelem = 16
-air.juggle = 0 * (var(16) := 1 || var(17) := 1 || var(15) := 1)
+air.juggle = 0
 attr = S, SA
 damage = ifelse(var(45) = 2, 34, ifelse(var(45) = 1, 40, 60)), ifelse(var(45) = 2, 9, ifelse(var(45) = 1, 10, 15))
 dizzypoints = ifelse(var(45) = 2, 67, ifelse(var(45) = 1, 75, 100)) * !var(44)
@@ -1141,9 +1165,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (var(47) := 8023)
-guard.sparkno = -1 + 0 * (var(71) := 8001)
-sparkxy = -10 + 0 * (var(72) := 20) * (var(73) := 60), var(48) := -60
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -10, -60
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1223,7 +1247,8 @@ sprpriority = 2
 type = varadd
 trigger1 = !time
 trigger1 = var(46)
-trigger1 = 1 || var(46) := 0
+trigger1 = 1
+; TODO: Add varset var=46 value=0
 var = 65
 value = 1
 
@@ -1231,8 +1256,10 @@ value = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || var(5) := 1
-trigger1 = 1 || var(3) := 1
+trigger1 = 1
+; TODO: Add varset var=5 value=1
+trigger1 = 1
+; TODO: Add varset var=3 value=1
 ignorehitpause = 1
 persistent = 0
 
@@ -1244,7 +1271,8 @@ value = 0, 1000
 [State 1250, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || fvar(15) := 30
+trigger1 = 1
+; TODO: set fvar(15) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -1311,7 +1339,7 @@ ownpal = 1
 [State 1251, Hit]
 type = hitdef
 trigger1 = !((movecontact + movereversed) % 8)
-air.juggle = 0 * (var(16) := 1 || var(17) := 1 || var(15) := 1)
+air.juggle = 0
 attr = S, SA
 damage = 20, 5
 dizzypoints = 34 * !var(44)
@@ -1320,9 +1348,9 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (var(47) := 8023)
-guard.sparkno = -1 + 0 * (var(71) := 8001)
-sparkxy = -10 + 0 * (var(72) := 20) * (var(73) := 60), var(48) := -60
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -10, -60
 hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
@@ -1401,7 +1429,8 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(46)
-trigger1 = 1 || var(46) := 0
+trigger1 = 1
+; TODO: Add varset var=46 value=0
 var = 65
 value = 1
 
@@ -1426,8 +1455,10 @@ ignorehitpause = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || var(5) := 1
-trigger1 = 1 || var(3) := 1
+trigger1 = 1
+; TODO: Add varset var=5 value=1
+trigger1 = 1
+; TODO: Add varset var=3 value=1
 ignorehitpause = 1
 persistent = 0
 
@@ -1449,7 +1480,7 @@ trigger1 = fvar(30) <= (ifelse(var(45) = 2, 25, ifelse(var(45) = 1, 30, 35)) * c
 attr = S, ST
 hitflag = M
 priority = 7, Miss
-sparkno = -1 + 0 * (var(47) := 0)
+sparkno = -1
 hitsound = s2, 800
 hitsound.channel = 2
 p1facing = 1
@@ -1995,7 +2026,8 @@ facep2 = 1
 type = varadd
 trigger1 = !time
 trigger1 = var(46)
-trigger1 = 1 || var(46) := 0
+trigger1 = 1
+; TODO: Add varset var=46 value=0
 var = 65
 value = 1
 
@@ -2011,8 +2043,10 @@ persistent = 0
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || var(5) := 1
-trigger1 = 1 || var(3) := 1
+trigger1 = 1
+; TODO: Add varset var=5 value=1
+trigger1 = 1
+; TODO: Add varset var=3 value=1
 ignorehitpause = 1
 persistent = 0
 
@@ -2024,7 +2058,8 @@ value = 0, 1000
 [State 1330, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || fvar(15) := 30
+trigger1 = 1
+; TODO: set fvar(15) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -2052,7 +2087,7 @@ trigger1 = fvar(30) <= (30 * const(size.xscale))
 attr = S, ST
 hitflag = M
 priority = 7, Miss
-sparkno = -1 + 0 * (var(47) := 0)
+sparkno = -1
 hitsound = s2, 800
 hitsound.channel = 2
 p1facing = 1
@@ -2103,7 +2138,8 @@ juggle = 8 * (p2statetype = L)
 type = varadd
 trigger1 = !time
 trigger1 = var(46)
-trigger1 = 1 || var(46) := 0
+trigger1 = 1
+; TODO: Add varset var=46 value=0
 var = 65
 value = 1
 
@@ -2111,8 +2147,10 @@ value = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || var(5) := 1
-trigger1 = 1 || var(3) := 1
+trigger1 = 1
+; TODO: Add varset var=5 value=1
+trigger1 = 1
+; TODO: Add varset var=3 value=1
 ignorehitpause = 1
 persistent = 0
 
@@ -2206,7 +2244,7 @@ channel = 0
 [State 1900, Hit]
 type = hitdef
 trigger1 = animelemtime(12) >= 0
-air.juggle = 0 * (var(16) := 1 || var(17) := 1 || var(15) := 1)
+air.juggle = 0
 ID = 1900
 attr = A, SA
 hitflag = FD
@@ -2252,9 +2290,9 @@ hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (var(47) := 8023)
-guard.sparkno = -1 + 0 * (var(71) := 8001)
-sparkxy = -10 + 0 * (var(72) := -10) * (var(73) := 10), var(48) := 0
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -10, 0
 envshake.time = 12; special
 envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -2, 2)
@@ -2375,7 +2413,8 @@ juggle = 8 * (p2statetype = L)
 type = varadd
 trigger1 = !time
 trigger1 = var(46)
-trigger1 = 1 || var(46) := 0
+trigger1 = 1
+; TODO: Add varset var=46 value=0
 var = 65
 value = 1
 
@@ -2383,8 +2422,10 @@ value = 1
 type = null
 trigger1 = !AIlevel
 trigger1 = time <= 0
-trigger1 = 1 || var(5) := 1
-trigger1 = 1 || var(3) := 1
+trigger1 = 1
+; TODO: Add varset var=5 value=1
+trigger1 = 1
+; TODO: Add varset var=3 value=1
 ignorehitpause = 1
 persistent = 0
 
@@ -2396,7 +2437,8 @@ value = 0, 1000
 [State 1930, EX FX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || fvar(15) := 30
+trigger1 = 1
+; TODO: set fvar(15) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
@@ -2496,7 +2538,7 @@ channel = 0
 [State 1930, Hit]
 type = hitdef
 trigger1 = animelemtime(12) >= 0
-air.juggle = 0 * (var(16) := 1 || var(17) := 1 || var(15) := 1)
+air.juggle = 0
 ID = 1930
 attr = A, SA
 hitflag = FD
@@ -2542,9 +2584,9 @@ hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (var(47) := 8023)
-guard.sparkno = -1 + 0 * (var(71) := 8001)
-sparkxy = -10 + 0 * (var(72) := -10) * (var(73) := 10), var(48) := 0
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -10, 0
 envshake.time = 12; special
 envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -2, 2)
@@ -2614,7 +2656,7 @@ stopongethit = 1
 [State 2900, Hit]
 type = hitdef
 trigger1 = animelem = 3
-air.juggle = 0 * (var(16) := 1 || var(17) := 1 || var(15) := 1)
+air.juggle = 0
 attr = S, SA
 hitflag = MAF
 guardflag = M
@@ -2650,9 +2692,9 @@ forcestand = 1
 hitsound = s2, 9
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (var(47) := 8013)
-guard.sparkno = -1 + 0 * (var(71) := 8001)
-sparkxy = -10 + 0 * (var(72) := 60) * (var(73) := 110), var(48) := -62
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -10, -62
 envshake.time = 10
 envshake.ampl = ifelse((gametime % 2), -2, 2)
 envshake.freq = 180
@@ -2704,7 +2746,7 @@ stopongethit = 1
 [State 2910, Hit]
 type = hitdef
 trigger1 = animelem = 4
-air.juggle = 0 * (var(16) := 1 || var(17) := 1 || var(15) := 1)
+air.juggle = 0
 attr = C, SA
 hitflag = MAF
 guardflag = M
@@ -2740,9 +2782,9 @@ forcestand = 1
 hitsound = s2, 9
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (var(47) := 8013)
-guard.sparkno = -1 + 0 * (var(71) := 8001)
-sparkxy = -10 + 0 * (var(72) := 65) * (var(73) := 130), var(48) := -32
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -10, -32
 envshake.time = 10
 envshake.ampl = ifelse((gametime % 2), -2, 2)
 envshake.freq = 180

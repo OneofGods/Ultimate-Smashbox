@@ -181,18 +181,26 @@ ignorehitpause = 1
 
 [State 775, Juggle Properties]
 type = null
-trigger1 = 1 || var(16) := 0
-trigger1 = 1 || var(17) := 0
-trigger1 = 1 || var(15) := (root, var(15) + 1)
+trigger1 = 1
+; TODO: Add varset var=16 value=0
+trigger1 = 1
+; TODO: Add varset var=17 value=0
+trigger1 = 1
+; TODO: Add varset var=15 value=(root, var(15) + 1)
 ignorehitpause = 1
 
 [State 775, Spark Properties]
 type = null
-trigger1 = 1 || var(47) := root, var(47)
-trigger1 = 1 || var(71) := root, var(71)
-trigger1 = 1 || var(72) := root, var(72)
-trigger1 = 1 || var(73) := root, var(73)
-trigger1 = 1 || var(48) := root, var(48)
+trigger1 = 1
+; TODO: Add varset var=47 value=root, var(47)
+trigger1 = 1
+; TODO: Add varset var=71 value=root, var(71)
+trigger1 = 1
+; TODO: Add varset var=72 value=root, var(72)
+trigger1 = 1
+; TODO: Add varset var=73 value=root, var(73)
+trigger1 = 1
+; TODO: Add varset var=48 value=root, var(48)
 ignorehitpause = 1
 
 [State 775, Hit]
@@ -237,7 +245,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8011)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, -54
 hitsound = -1
@@ -392,7 +400,7 @@ priority = 4, Hit
 pausetime = 10, 10
 sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
-sparkxy = -10 + 0 * (var(72) := 30) * (var(73) := 90), var(48) := -32
+sparkxy = -10, -32
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -421,7 +429,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8011)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, -53
 hitsound = -1
@@ -482,7 +490,7 @@ guardflag = HA
 hitflag = HAF
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8012)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, ifelse((root, animelem = 3), -96, -72)
 hitsound = -1
@@ -512,7 +520,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8012)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, -48
 hitsound = -1
@@ -543,7 +551,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8012)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, -24
 hitsound = -1
@@ -731,7 +739,7 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8011)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, ifelse((root, anim = 440), -14, -31)
 hitsound = -1
@@ -763,9 +771,9 @@ hitflag = MAF
 guardflag = L
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8012)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
-sparkxy = -10 + 0 * (var(72) := 30) * (var(73) := 90), var(48) := -30
+sparkxy = -10, -30
 hitsound = -1
 guardsound = s2, 0
 guardsound.channel = 2
@@ -861,7 +869,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8012)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, -66
 hitsound = -1
@@ -921,7 +929,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8011)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, -47
 hitsound = -1
@@ -952,7 +960,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8012)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, -54
 hitsound = -1
@@ -983,7 +991,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8023)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, ifelse((root, animelem = 2), -35, -60)
 hitsound = -1
@@ -1025,7 +1033,7 @@ guardflag = HA
 hitflag = MAF
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8023)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, -100
 hitsound = -1
@@ -1151,7 +1159,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 10, 10
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8023)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, -60
 hitsound = -1
@@ -1279,9 +1287,9 @@ hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (var(47) := 8023)
-guard.sparkno = -1 + 0 * (var(71) := 8001)
-sparkxy = -10 + 0 * (var(72) := -10) * (var(73) := 10), var(48) := 0
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -10, 0
 envshake.time = 12; special
 envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -2, 2)
@@ -1336,9 +1344,9 @@ hitsound = s2, 9
 hitsound.channel = 2
 guardsound = s2, 0
 guardsound.channel = 2
-sparkno = -1 + 0 * (var(47) := 8023)
-guard.sparkno = -1 + 0 * (var(71) := 8001)
-sparkxy = -10 + 0 * (var(72) := -10) * (var(73) := 10), var(48) := 0
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -10, 0
 envshake.time = 12; special
 envshake.freq = 180
 envshake.ampl = ifelse((gametime % 2), -2, 2)
@@ -1355,7 +1363,7 @@ hitflag = MAFD
 guardflag = M
 priority = 4, Hit
 pausetime = 3, 4
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8024)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, ifelse((root, animelem = 2), -35, -60)
 hitsound = -1
@@ -1399,7 +1407,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = ifelse((root, animelem = 11), 12, 4), ifelse((root, animelem = 11), 12, 4)
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8024)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, -100
 hitsound = -1
@@ -1442,7 +1450,7 @@ hitflag = MAF
 guardflag = M
 priority = 4, Hit
 pausetime = 6, 6
-sparkno = ifelse(root, var(22), -1, 2) + 0 * (var(47) := 8024)
+sparkno = ifelse(root, var(22), -1, 2)
 guard.sparkno = ifelse(root, var(22), -1, 40)
 sparkxy = -10, -43
 hitsound = -1
