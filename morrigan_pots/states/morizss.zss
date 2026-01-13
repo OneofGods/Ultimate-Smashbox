@@ -1,6 +1,6 @@
 #  ___________________________________
 # | Morrigan by Phantom.of.the.Server |
-#  ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+#  ----------------------------------------------------------------------
 
 ###################################################################################################
 #                                            FUNCTIONS                                            #
@@ -146,7 +146,7 @@ ignorehitpause {
 
 	# Screenpack blood
 	if !$custom {
-		# Convert custom numbers to screenpack numbers
+		# -Convert custom numbers to screenpack numbers
 		switch $spark_no {
 			case 8010; 8020:
 				let spark_ffx_no = 10;
@@ -492,7 +492,7 @@ ignorehitpause {
 
 	# Screenpack sparks
 	if !$custom {
-		# Convert custom numbers to screenpack numbers
+		# -Convert custom numbers to screenpack numbers
 		switch $spark_no {
 			case 8000; 8001:
 				let spark_ffx_no = 40;
