@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; -----------------------------------
 ;===================<CONSTANTS>================
 
 [Data]
@@ -129,9 +129,9 @@ victory29 = "Relax. What's a moment of pain in exchange for eternal pleasure?"
 victory30 = "That's for mistaking me for some ugly vampire!"
 victory31 = "What's a succubus? Easier to show you than tell you..."
 victory32 = "Aww, did I break you already? I was just getting started."
-victory33 = "I’ll make you crave more... even if it destroys you."
+victory33 = "I'll make you crave more... even if it destroys you."
 victory34 = "You look so tired... Want me to tuck you in for eternity?"
 victory35 = "Oh, you poor thing. Did I take too much from you?"
-victory36 = "I’ll leave you with just enough strength to come crawling back to me."
+victory36 = "I'll leave you with just enough strength to come crawling back to me."
 victory37 = "Every encounter with me is a lesson in pleasure and pain."
 victory38 = "You should be proud. You entertained me longer than most."
