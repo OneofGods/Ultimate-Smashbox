@@ -58,12 +58,12 @@ removeongethit = 1
 removeonchangestate = 1
 [State 1000, Correct Projectile Trade]
 type = hitby
-trigger1 = animelem := 5
+trigger1 = animelem = 5
 value2 = SCA, AA, AT
 time = 1
 [State 1000, Soul Fist]
 type = helper
-trigger1 = animelem := 5
+trigger1 = animelem = 5
 helpertype = normal; projectile
 stateno = 1005
 ID = 1005
@@ -75,13 +75,13 @@ size.yscale = 0.5
 ownpal = 1
 [State 1000, Sound]
 type = playsnd
-trigger1 = animelem := 2
+trigger1 = animelem = 2
 value = 4, 13
 channel = 0
 freqmul = 0.98 + (random / 25000.0
 [State 1000, Sound]
 type = playsnd
-trigger1 = animelem := 5
+trigger1 = animelem = 5
 value = 5, 0
 [State 1000, End]
 type = changestate
@@ -144,12 +144,12 @@ removeongethit = 1
 removeonchangestate = 1
 [State 1010, Correct Projectile Trade]
 type = hitby
-trigger1 = animelem := 6
+trigger1 = animelem = 6
 value2 = SCA, AA, AT
 time = 1
 [State 1010, SoulFist]
 type = helper
-trigger1 = animelem := 6
+trigger1 = animelem = 6
 helpertype = normal; projectile
 stateno = 1015
 ID = 1015
@@ -166,7 +166,7 @@ value = 4, 13
 channel = 0
 [State 1010, Sound]
 type = playsnd
-trigger1 = animelem := 6
+trigger1 = animelem = 6
 value = 5, 0
 [State 1010, End]
 type = changestate
@@ -229,12 +229,12 @@ removeongethit = 1
 removeonchangestate = 1
 [State 1050, Correct Projectile Trade]
 type = hitby
-trigger1 = animelem := 6
+trigger1 = animelem = 6
 value2 = SCA, AA, AT
 time = 1
 [State 1050, SoulFist]
 type = helper
-trigger1 = animelem := 6
+trigger1 = animelem = 6
 helpertype = normal; projectile
 stateno = 1055
 ID = 1055
@@ -265,7 +265,7 @@ value = 4, 13
 channel = 0
 [State 1050, Sound]
 type = playsnd
-trigger1 = animelem := 6
+trigger1 = animelem = 6
 value = 5, 0
 [State Land]
 type = changestate
@@ -368,12 +368,12 @@ removeongethit = 1
 removeonchangestate = 1
 [State 1060, Correct Projectile Trade]
 type = hitby
-trigger1 = animelem := 6
+trigger1 = animelem = 6
 value2 = SCA, AA, AT
 time = 1
 [State 1060, SoulFist]
 type = helper
-trigger1 = animelem := 6
+trigger1 = animelem = 6
 helpertype = normal; projectile
 stateno = 1065
 ID = 1065
@@ -404,7 +404,7 @@ value = 4, 13
 channel = 0
 [State 1060, Sound]
 type = playsnd
-trigger1 = animelem := 6
+trigger1 = animelem = 6
 value = 5, 0
 [State Land]
 type = changestate
@@ -451,7 +451,7 @@ ignorehitpause = 1
 persistent = 0
 [State 1100, HB]
 type = hitby
-trigger1 = anim := 1100
+trigger1 = anim = 1100
 trigger1 = animelemtime(4) < 0
 trigger1 = var(1)2)3 = 0
 value = SC, AA
@@ -459,7 +459,7 @@ time = 1
 ignorehitpause = 1
 [State 1100, HB]
 type = hitby
-trigger1 = anim := 1100
+trigger1 = anim = 1100
 trigger1 = animelemtime(4) < 0
 trigger1 = var(1)2)3 = 1
 value = C, AA
@@ -467,7 +467,7 @@ time = 1
 ignorehitpause = 1
 [State 1100, NHB]
 type = nothitby
-trigger1 = anim := 1100
+trigger1 = anim = 1100
 trigger1 = animelemtime(4) < 0
 trigger1 = var(1)2)3 = 2
 value = SCA
@@ -475,7 +475,7 @@ time = 1
 ignorehitpause = 1
 [State 1100, Pos]
 type = posadd
-trigger1 = anim := 1100
+trigger1 = anim = 1100
 trigger1 = animelem = 1 || animelem = 2
 x = 0 * const(size.xscale)
 
@@ -485,19 +485,19 @@ trigger1 = vel y < 0
 x = 0.95
 [State 1100, Accel]
 type = veladd
-trigger1 = anim := 1100
+trigger1 = anim = 1100
 trigger1 = animelemtime(4) >= 1
 trigger2 = anim = 1101
 y = 0.50
 [State 1100, Vel]
 type = velset
-trigger1 = anim := 1100
+trigger1 = anim = 1100
 trigger1 = animelemtime(4) = [0, 1]
 x = 4.9
 y = -5.50
 [State 1100, Grounded Frame]
 type = posfreeze
-trigger1 = anim := 1100
+trigger1 = anim = 1100
 trigger1 = animelemtime(4) = 0
 value = 1
 [State 1100, Vel]
@@ -506,19 +506,19 @@ trigger1 = anim = 1101
 x = 0
 [State 1100, Sound]
 type = playsnd
-trigger1 = anim := 1100
-trigger1 = animelem := 2
+trigger1 = anim = 1100
+trigger1 = animelem = 2
 value = 1, 9
 ;channel = 1
 stopongethit = 1
 [State 1100, Sound]
 type = playsnd
-trigger1 = anim := 1100
+trigger1 = anim = 1100
 trigger1 = animelemtime(4) = 1
 value = 0, 41
 [State 1100, Dust]
 type = helper
-trigger1 = anim := 1100
+trigger1 = anim = 1100
 trigger1 = animelemtime(4) = 1
 helpertype = normal
 stateno = 7100
@@ -528,14 +528,14 @@ postype = p1
 ownpal = 1
 [State 1100, Sound]
 type = playsnd
-trigger1 = anim := 1100
-trigger1 = animelem := 2
+trigger1 = anim = 1100
+trigger1 = animelem = 2
 value = 4, 12
 channel = 0
 [State 1100, Hit]
 type = hitdef
-trigger1 = anim := 1100
-trigger1 = animelem := 2 || animelem = 3
+trigger1 = anim = 1100
+trigger1 = animelem = 2 || animelem = 3
 trigger1 = !movecontact && !movereversed
 air.juggle = 1
 attr = S, SA
@@ -625,14 +625,14 @@ forcestand = 1
 airguard.cornerpush.veloff = 0
 [State 1100, Type]
 type = statetypeset
-trigger1 = anim := 1100
+trigger1 = anim = 1100
 trigger1 = animelemtime(4) >= 0
 trigger2 = anim = 1101
 statetype = A
 physics = N
 [State 1100, Anim]
 type = changeanim
-trigger1 = anim := 1100
+trigger1 = anim = 1100
 trigger1 = animelemtime(4) > 0 && vel y > -1
 value = 1101
 [State 1100, Idle]
@@ -784,13 +784,13 @@ ownpal = 1
 [State 1110, Sound]
 type = playsnd
 trigger1 = anim = 1110
-trigger1 = animelem := 2
+trigger1 = animelem = 2
 value = 4, 12
 channel = 0
 [State 1110, Hit]
 type = hitdef
 trigger1 = anim = 1110
-trigger1 = animelem := 2 || animelem = 3
+trigger1 = animelem = 2 || animelem = 3
 air.juggle = 2 + hitcount
 attr = S, SA
 damage = 40, 10
@@ -1263,7 +1263,7 @@ trigger1 = 1
 value = 0
 [State 1300, Hit]
 type = hitdef
-trigger1 = animelem := 2
+trigger1 = animelem = 2
 trigger1 = !var(130) && !var(108)
 trigger1 = var(1)2)9) <= (35) * const(size.xscale);25 CvS2; 29 MvC; 35 VH
 attr = S, ST
@@ -1688,7 +1688,7 @@ trigger1 = !time
 value = 1323
 [State 1323, Anim]
 type = changeanim
-trigger1 = time := 16
+trigger1 = time = 16
 value = 5160
 [State 1323, Accel]
 type = veladd
@@ -1696,7 +1696,7 @@ trigger1 = time >= 16
 y = 0.4850; yaccel
 [State 1323, Vel]
 type = velset
-trigger1 = time := 16
+trigger1 = time = 16
 x = 3
 y = -6
 type = null
@@ -1708,7 +1708,7 @@ value = 1
 type = selfstate
 trigger1 = time >= 16
 trigger1 = 1
-trigger1 = command := "recovery"
+trigger1 = command = "recovery"
 trigger1 = vel y > 0
 trigger1 = pos y >= const(movement.air.gethit.groundrecover.ground.threshold)
 value = 5200
@@ -1776,7 +1776,7 @@ trigger1 = 1
 value = 0
 [State 1330, Hit]
 type = hitdef
-trigger1 = animelem := 2
+trigger1 = animelem = 2
 trigger1 = !var(130) && !var(108)
 trigger1 = var(12)9) <= (30 * const(size.xscale))
 attr = S, ST
@@ -1853,11 +1853,11 @@ size.yscale = 0.5 * const(size.yscale)
 ownpal = 1
 [State 1900, Sound]
 type = playsnd
-trigger1 = animelem := 2
+trigger1 = animelem = 2
 value = 0, 41
 [State 1900, Dust]
 type = helper
-trigger1 = animelem := 2
+trigger1 = animelem = 2
 helpertype = normal
 stateno = 7100
 ID = 7100
@@ -1868,7 +1868,7 @@ supermovetime = 255
 ownpal = 1
 [State 1900, Type]
 type = statetypeset
-trigger1 = animelem := 2
+trigger1 = animelem = 2
 statetype = A
 physics = N
 [State 1900, Turn]
@@ -1884,7 +1884,7 @@ y = -4.06
 type = veladd
 trigger1 = numenemy
 trigger1 = animelemtime(2) = 1
-trigger1 = p2movetype := H
+trigger1 = p2movetype = H
 trigger1 = p2statetype = A || p2statetype = L
 x = 0
 [State 1900, Vel]
@@ -2106,11 +2106,11 @@ size.yscale = 0.5 * const(size.yscale)
 ownpal = 1
 [State 1930, Sound]
 type = playsnd
-trigger1 = animelem := 2
+trigger1 = animelem = 2
 value = 0, 41
 [State 1930, Dust]
 type = helper
-trigger1 = animelem := 2
+trigger1 = animelem = 2
 helpertype = normal
 stateno = 7100
 ID = 7100
@@ -2121,7 +2121,7 @@ supermovetime = 255
 ownpal = 1
 [State 1930, Type]
 type = statetypeset
-trigger1 = animelem := 2
+trigger1 = animelem = 2
 statetype = A
 physics = N
 [State 1930, Turn]
@@ -2137,7 +2137,7 @@ y = -4.06
 type = veladd
 trigger1 = numenemy
 trigger1 = animelemtime(2) = 1
-trigger1 = p2movetype := H
+trigger1 = p2movetype = H
 trigger1 = p2statetype = A || p2statetype = L
 x = 0
 [State 1930, Vel]
@@ -2263,12 +2263,12 @@ time = 1
 ignorehitpause = 1
 [State 2900, Sound]
 type = playsnd
-trigger1 = animelem := 2
+trigger1 = animelem = 2
 value = 3, 2
 channel = 0
 [State 2900, Sound]
 type = playsnd
-trigger1 = animelem := 2
+trigger1 = animelem = 2
 value = 1, 3
 ;channel = 1
 stopongethit = 1
@@ -2319,7 +2319,7 @@ envshake.freq = 180
 kill = 0
 [State 2900, Type]
 type = statetypeset
-trigger1 = animelem := 5
+trigger1 = animelem = 5
 movetype = I
 [State 2900, End]
 type = changestate
@@ -2350,7 +2350,7 @@ value = 3, 2
 channel = 0
 [State 2910, Sound]
 type = playsnd
-trigger1 = animelem := 2
+trigger1 = animelem = 2
 value = 1, 3
 ;channel = 1
 stopongethit = 1
@@ -2401,7 +2401,7 @@ envshake.freq = 180
 kill = 0
 [State 2910, Type]
 type = statetypeset
-trigger1 = animelem := 5
+trigger1 = animelem = 5
 movetype = I
 [State 2910, End]
 type = changestate
