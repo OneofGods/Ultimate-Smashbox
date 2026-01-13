@@ -1,6 +1,6 @@
 #  ___________________________________
 # | Morrigan by Phantom.of.the.Server |
-#  ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+#  
 
 ###################################################################################################
 #                                            FUNCTIONS                                            #
@@ -553,9 +553,9 @@ if stateno = 4110 && numhelper(4190) && animelemtime(3) >= 0 {
 			&& player($i), stateno != 5150 {
 				palfx{add: 9000, 9000, 9000; mul: 256, 0, 256; time: 1; redirectID: player($i), ID}
 				palfx{add: 9000, 9000, 9000; mul: 256, 0, 256; time: 1; redirectID: player($i), ID}
-				sprpriority{value: helper(4190), sprpriority + 1; redirectID: player($i), ID}
+				sprpriority{value: 3; redirectID: player($i), ID}
 			}
-			sprpriority{value: helper(4190), sprpriority + 1} # For some reason redirection isn't working on herself
+			sprpriority{value: 3} # For some reason redirection isn't working on herself
 		}
 		bgpalfx{add: 255, 255, 255; time: 1}
 		palfx{add: 255, 255, 255; time: 1; redirectID: helper(4190), ID}
@@ -1011,7 +1011,7 @@ if stateno = const(StateTagEnteringScreen) {
 # P2 layering and hitshake during pause
 if pausetime = 0 && p2, pausetime > 0 {
 	if sprpriority >= 0
-	&& sprpriority = p2, sprpriority
+	&& sprpriority = p2.sprpriority
 	&& cond((p2, numtarget), (p2, target, gethitvar(isbound) = 0), 1) {
 	}
 	if p2, gethitvar(hitshaketime) > 0 {

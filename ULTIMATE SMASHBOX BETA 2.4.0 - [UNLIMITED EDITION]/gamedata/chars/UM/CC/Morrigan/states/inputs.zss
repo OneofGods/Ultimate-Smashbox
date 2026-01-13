@@ -1,6 +1,6 @@
 # _________________________________________
 #| Some character by Phantom.of.the.Server |
-# ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+# 
 #==============================================================================================================================================================
 #==================================================================< INPUT PARSING STATE >=====================================================================
 #==============================================================================================================================================================
@@ -19,7 +19,7 @@
 	# Default Buffer Time
 	# Capcom games seem to change states during hitpause rather than buffering the inputs for its duration
 	# However the benefit of doing it like that is minimal compared to the issues it can introduce
-	let cmd_buffertime = (hitpausetime + 1);
+	let cmd_buffertime =  (hitpausetime + 1);
 
 	# Custom Combo Buffer Time
 	if map(customcombo) > 0 {
@@ -453,12 +453,12 @@
 
 	# Check motion
 	if map(cmd_check_236_23) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_check_236_OK"; value: 10}
 		}
 	}
 	if map(cmd_check_236_2) > 0 {
-		if $direction_DF = 1 {
+		if  $direction_DF = 1 {
 			mapSet{map: "cmd_check_236_23"; value: 10}
 		}
 	}
@@ -568,12 +568,12 @@
 
 	# Check motion
 	if map(cmd_check_214_21) > 0 {
-		if $direction_B = 1 {
+		if  $direction_B = 1 {
 			mapSet{map: "cmd_check_214_OK"; value: 10}
 		}
 	}
 	if map(cmd_check_214_2) > 0 {
-		if $direction_DB = 1 {
+		if  $direction_DB = 1 {
 			mapSet{map: "cmd_check_214_21"; value: 10}
 		}
 	}
@@ -682,7 +682,7 @@
 
 	# Check motion
 	if map(cmd_check_623_62) > 0 {
-		if $direction_any_F = 1 {
+		if  $direction_any_F = 1 {
 			mapSet{map: "cmd_check_623_OK"; value: 10}
 		}
 	}
@@ -691,7 +691,7 @@
 			mapSet{map: "cmd_check_623_62"; value: 10}
 		}
 	}
-	if $direction_F > 0 {
+	if  $direction_F > 0 {
 		mapSet{map: "cmd_check_623_6"; value: 10}
 	}
 
@@ -739,7 +739,7 @@
 
 	# Check motion
 	if map(cmd_check_421_42) > 0 {
-		if $direction_any_B = 1 {
+		if  $direction_any_B = 1 {
 			mapSet{map: "cmd_check_421_OK"; value: 10}
 		}
 	}
@@ -748,7 +748,7 @@
 			mapSet{map: "cmd_check_421_42"; value: 10}
 		}
 	}
-	if $direction_B > 0 {
+	if  $direction_B > 0 {
 		mapSet{map: "cmd_check_421_4"; value: 10}
 	}
 
@@ -796,7 +796,7 @@
 
 	# Check motion
 	if map(cmd_check_41236_412) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_check_41236_OK"; value: 10}
 		}
 	}
@@ -805,7 +805,7 @@
 			mapSet{map: "cmd_check_41236_412"; value: 10}
 		}
 	}
-	if $direction_B > 0 {
+	if  $direction_B > 0 {
 		mapSet{map: "cmd_check_41236_4"; value: 10}
 	}
 
@@ -910,7 +910,7 @@
 
 	# Check motion
 	if map(cmd_check_63214_632) > 0 {
-		if $direction_B = 1 {
+		if  $direction_B = 1 {
 			mapSet{map: "cmd_check_63214_OK"; value: 10}
 		}
 	}
@@ -919,7 +919,7 @@
 			mapSet{map: "cmd_check_63214_632"; value: 10}
 		}
 	}
-	if $direction_F > 0 {
+	if  $direction_F > 0 {
 		mapSet{map: "cmd_check_63214_6"; value: 10}
 	}
 
@@ -1161,12 +1161,12 @@
 
 	# Check motion
 	if map(cmd_check_46_4) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_check_46_OK"; value: 10}
 		}
 	}
 	if map(cmd_charge4) >= 45 {
-		if $direction_any_B > 0 {
+		if  $direction_any_B > 0 {
 			mapSet{map: "cmd_check_46_4"; value: 10}
 		}
 	}
@@ -1330,7 +1330,7 @@
 		if map(cmd_check_360_84) > 0 {mapSet{map: "cmd_check_360_842"; value: 10}}
 		if map(cmd_check_360_4) > 0 {mapSet{map: "cmd_check_360_42"; value: 10}}
 	}
-	if $direction_any_B = 1 {
+	if  $direction_any_B = 1 {
 		mapSet{map: "cmd_check_360_4"; value: 10}
 		if map(cmd_check_360_2) > 0 {mapSet{map: "cmd_check_360_24"; value: 10}}
 		if map(cmd_check_360_862) > 0 {mapSet{map: "cmd_check_360_OK"; value: 10}}
@@ -1348,7 +1348,7 @@
 		if map(cmd_check_360_6) > 0 {mapSet{map: "cmd_check_360_68"; value: 10}}
 		if map(cmd_check_360_426) > 0 {mapSet{map: "cmd_check_360_OK"; value: 10}}
 	}
-	if $direction_any_F = 1 {
+	if  $direction_any_F = 1 {
 		mapSet{map: "cmd_check_360_6"; value: 10}
 		if map(cmd_check_360_248) > 0 {mapSet{map: "cmd_check_360_OK"; value: 10}}
 		if map(cmd_check_360_48) > 0 {mapSet{map: "cmd_check_360_486"; value: 10}}
@@ -1455,11 +1455,11 @@
 		}
 	}
 	if map(cmd_check_412_4) > 0 {
-		if $direction_DB = 1 {
+		if  $direction_DB = 1 {
 			mapSet{map: "cmd_check_412_41"; value: 10}
 		}
 	}
-	if $direction_B > 0 {
+	if  $direction_B > 0 {
 		mapSet{map: "cmd_check_412_4"; value: 10}
 	}
 
@@ -1513,11 +1513,11 @@
 		}
 	}
 	if map(cmd_check_4632_4) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_check_4632_46"; value: 10}
 		}
 	}
-	if $direction_B > 0 {
+	if  $direction_B > 0 {
 		mapSet{map: "cmd_check_4632_4"; value: 10}
 	}
 
@@ -1563,7 +1563,7 @@
 
 	# Check motion
 	if map(cmd_check_236236_2362) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_check_236236_OK"; value: 10}
 		}
 	}
@@ -1573,7 +1573,7 @@
 		}
 	}
 	if map(cmd_check_236236_2) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_check_236236_236"; value: 10}
 		}
 	}
@@ -1705,7 +1705,7 @@
 
 	# Check motion
 	if map(cmd_check_214214_2142) > 0 {
-		if $direction_B = 1 {
+		if  $direction_B = 1 {
 			mapSet{map: "cmd_check_214214_OK"; value: 10}
 		}
 	}
@@ -1715,7 +1715,7 @@
 		}
 	}
 	if map(cmd_check_214214_2) > 0 {
-		if $direction_B = 1 {
+		if  $direction_B = 1 {
 			mapSet{map: "cmd_check_214214_214"; value: 10}
 		}
 	}
@@ -1851,7 +1851,7 @@
 
 	# Check motion
 	if map(cmd_check_624624_62462) > 0 {
-		if $direction_B = 1 {
+		if  $direction_B = 1 {
 			mapSet{map: "cmd_check_624624_OK"; value: 10}
 		}
 	}
@@ -1861,12 +1861,12 @@
 		}
 	}
 	if map(cmd_check_624624_624) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_check_624624_6246"; value: 10}
 		}
 	}
 	if map(cmd_check_624624_62) > 0 {
-		if $direction_B = 1 {
+		if  $direction_B = 1 {
 			mapSet{map: "cmd_check_624624_624"; value: 10}
 		}
 	}
@@ -1875,7 +1875,7 @@
 			mapSet{map: "cmd_check_624624_62"; value: 10}
 		}
 	}
-	if $direction_F > 0 {
+	if  $direction_F > 0 {
 		mapSet{map: "cmd_check_624624_6"; value: 10}
 	}
 
@@ -1932,7 +1932,7 @@
 
 	# Check motion
 	if map(cmd_check_2141236_21412) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_check_2141236_OK"; value: 10}
 		}
 	}
@@ -1942,7 +1942,7 @@
 		}
 	}
 	if map(cmd_check_2141236_2) > 0 {
-		if $direction_B = 1 {
+		if  $direction_B = 1 {
 			mapSet{map: "cmd_check_2141236_214"; value: 10}
 		}
 	}
@@ -2003,7 +2003,7 @@
 
 	# Check motion
 	if map(cmd_check_2363214_23632) > 0 {
-		if $direction_B = 1 {
+		if  $direction_B = 1 {
 			mapSet{map: "cmd_check_2363214_OK"; value: 10}
 		}
 	}
@@ -2013,7 +2013,7 @@
 		}
 	}
 	if map(cmd_check_2363214_2) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_check_2363214_236"; value: 10}
 		}
 	}
@@ -2075,7 +2075,7 @@
 
 	# Check motion
 	if map(cmd_check_641236_6412) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_check_641236_OK"; value: 10}
 		}
 	}
@@ -2085,11 +2085,11 @@
 		}
 	}
 	if map(cmd_check_641236_6) > 0 {
-		if $direction_B = 1 {
+		if  $direction_B = 1 {
 			mapSet{map: "cmd_check_641236_64"; value: 10}
 		}
 	}
-	if $direction_F > 0 {
+	if  $direction_F > 0 {
 		mapSet{map: "cmd_check_641236_6"; value: 10}
 	}
 
@@ -2147,12 +2147,12 @@
 
 	# Check motion
 	if map(cmd_check_632146_63214) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_check_632146_OK"; value: 10}
 		}
 	}
 	if map(cmd_check_632146_632) > 0 {
-		if $direction_B = 1 {
+		if  $direction_B = 1 {
 			mapSet{map: "cmd_check_632146_63214"; value: 10}
 		}
 	}
@@ -2161,7 +2161,7 @@
 			mapSet{map: "cmd_check_632146_632"; value: 10}
 		}
 	}
-	if $direction_F > 0 {
+	if  $direction_F > 0 {
 		mapSet{map: "cmd_check_632146_6"; value: 10}
 	}
 
@@ -2218,22 +2218,22 @@
 
 	# Check motion
 	if map(cmd_check_4646_464) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_check_4646_OK"; value: 10}
 		}
 	}
 	if map(cmd_check_4646_46) > 0 {
-		if $direction_any_B = 1 {
+		if  $direction_any_B = 1 {
 			mapSet{map: "cmd_check_4646_464"; value: 10}
 		}
 	}
 	if map(cmd_check_4646_4) > 0 {
-		if $direction_any_F = 1 {
+		if  $direction_any_F = 1 {
 			mapSet{map: "cmd_check_4646_46"; value: 10}
 		}
 	}
 	if map(cmd_charge4) >= 45 {
-		if $direction_any_B > 0 {
+		if  $direction_any_B > 0 {
 			mapSet{map: "cmd_check_4646_4"; value: 10}
 		}
 	}
@@ -2296,17 +2296,17 @@
 		}
 	}
 	if map(cmd_check_1319_13) > 0 {
-		if $direction_any_B = 1 {
+		if  $direction_any_B = 1 {
 			mapSet{map: "cmd_check_1319_131"; value: 10}
 		}
 	}
 	if map(cmd_check_1319_1) > 0 {
-		if $direction_any_F = 1 {
+		if  $direction_any_F = 1 {
 			mapSet{map: "cmd_check_1319_13"; value: 10}
 		}
 	}
 	if map(cmd_charge2) >= 45 && map(cmd_charge4) >= 45 {
-		if $direction_DB > 0 {
+		if  $direction_DB > 0 {
 			mapSet{map: "cmd_check_1319_1"; value: 10}
 		}
 	}
@@ -2509,7 +2509,7 @@
 	# Check inputs
 	# Reversing order of last 3 inputs allows pressing them simultaneously
 	if map(cmd_check_demon_xx) > 0 {
-		if $direction_any_F = 1 {
+		if  $direction_any_F = 1 {
 			mapSet{map: "cmd_check_demon_xx6"; value: 15}
 		}
 	}
@@ -2565,7 +2565,7 @@
 		}
 	}
 	if map(cmd_check_otoko_za) > 0 {
-		if $direction_any_B = 1 {
+		if  $direction_any_B = 1 {
 			mapSet{map: "cmd_check_otoko_za4"; value: 15}
 		}
 	}
@@ -2649,7 +2649,7 @@
 	# Check inputs
 	# Reversing order of last 3 inputs allows pressing them simultaneously
 	if map(cmd_check_slumber_xb) > 0 {
-		if $direction_B = 1 {
+		if  $direction_B = 1 {
 			mapSet{map: "cmd_check_slumber_xb4"; value: 15}
 		}
 	}
@@ -2678,7 +2678,7 @@
 #----------------------------------------------------------------------- FORWARD DASH -------------------------------------------------------------------------
 
 	# Cancel  input if player intention is a different motion
-	if $direction_any_B > 0 {
+	if  $direction_any_B > 0 {
 		mapSet{map: "cmd_66"; value: 0}
 		mapSet{map: "cmd_check_66_565"; value: 0}
 		mapSet{map: "cmd_check_66_56"; value: 0}
@@ -2704,7 +2704,7 @@
 
 	# Check motion
 	if map(cmd_check_66_565) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_66"; value: 1}
 		}
 	}
@@ -2714,7 +2714,7 @@
 		}
 	}
 	if map(cmd_check_66_5) > 0 {
-		if $direction_F = 1 {
+		if  $direction_F = 1 {
 			mapSet{map: "cmd_check_66_56"; value: 15}
 		}
 	}
@@ -2726,7 +2726,7 @@
 #------------------------------------------------------------------------ BACK DASH ---------------------------------------------------------------------------
 
 	# Cancel  input if player intention is a different motion
-	if $direction_any_F > 0 {
+	if  $direction_any_F > 0 {
 		mapSet{map: "cmd_44"; value: 0}
 		mapSet{map: "cmd_check_44_545"; value: 0}
 		mapSet{map: "cmd_check_44_54"; value: 0}
@@ -2752,7 +2752,7 @@
 
 	# Check motion
 	if map(cmd_check_44_545) > 0 {
-		if $direction_B = 1 {
+		if  $direction_B = 1 {
 			mapSet{map: "cmd_44"; value: 1}
 		}
 	}
@@ -2762,7 +2762,7 @@
 		}
 	}
 	if map(cmd_check_44_5) > 0 {
-		if $direction_B = 1 {
+		if  $direction_B = 1 {
 			mapSet{map: "cmd_check_44_54"; value: 15}
 		}
 	}
@@ -2799,7 +2799,7 @@
 #--------------------------------------------------------------------- FORWARD AIR DASH -----------------------------------------------------------------------
 
 	# Cancel  input if player intention is a different motion
-	if $direction_any_B > 0 {
+	if  $direction_any_B > 0 {
 		mapSet{map: "cmd_air66"; value: 0}
 		mapSet{map: "cmd_check_air66_565"; value: 0}
 		mapSet{map: "cmd_check_air66_56"; value: 0}
@@ -2825,7 +2825,7 @@
 
 	# Check motion
 	if map(cmd_check_air66_565) > 0 {
-		if $direction_any_F = 1 {
+		if  $direction_any_F = 1 {
 			mapSet{map: "cmd_air66"; value: 1}
 		}
 	}
@@ -2835,7 +2835,7 @@
 		}
 	}
 	if map(cmd_check_air66_5) > 0 {
-		if $direction_any_F = 1 {
+		if  $direction_any_F = 1 {
 			mapSet{map: "cmd_check_air66_56"; value: 15}
 		}
 	}
@@ -2847,7 +2847,7 @@
 #---------------------------------------------------------------------- BACK AIR DASH -------------------------------------------------------------------------
 
 	# Cancel  input if player intention is a different motion
-	if $direction_any_F > 0 {
+	if  $direction_any_F > 0 {
 		mapSet{map: "cmd_air44"; value: 0}
 		mapSet{map: "cmd_check_air44_545"; value: 0}
 		mapSet{map: "cmd_check_air44_54"; value: 0}
@@ -2873,7 +2873,7 @@
 
 	# Check motion
 	if map(cmd_check_air44_545) > 0 {
-		if $direction_any_B = 1 {
+		if  $direction_any_B = 1 {
 			mapSet{map: "cmd_air44"; value: 1}
 		}
 	}
@@ -2883,7 +2883,7 @@
 		}
 	}
 	if map(cmd_check_air44_5) > 0 {
-		if $direction_any_B = 1 {
+		if  $direction_any_B = 1 {
 			mapSet{map: "cmd_check_air44_54"; value: 15}
 		}
 	}
