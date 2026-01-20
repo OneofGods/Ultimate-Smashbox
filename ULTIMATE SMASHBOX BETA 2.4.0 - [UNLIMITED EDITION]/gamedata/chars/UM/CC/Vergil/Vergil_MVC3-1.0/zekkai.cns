@@ -1,0 +1,593 @@
+ ;=========================================
+
+
+;-----------------------------------------------------------
+[statedef 3504]
+type    = S
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+sprpriority = -2
+
+[state 3503]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[state 3260]
+type = NotHitBy
+value = SCA,AA,AT,AP
+trigger1 = 1
+
+[state 50, 1];フォースエッジが戻ってきた時
+type = changeanim
+trigger1 = time = 0
+value = 412 + var(10)
+elem = 4
+
+[state 50, 1];フォースエッジが戻ってきた時
+type = changeanim
+trigger1 = anim = 10412
+trigger1 = var(10) = 0
+trigger1 = NumHelper(1401) = 0
+value = 412
+elem = animelemno(0)
+
+[State 412, セリフ]
+type = null;PlaySnd
+trigger1 = animelem = 8
+value = 0, 5
+channel = 0
+
+[State 412, 効果音]
+type = PlaySnd
+trigger1 = animelem = 8
+value = 5, 3
+
+[State 412, 移動]
+type = PosSet
+trigger1 = time = 0
+y = 0
+
+[State 412, エフェクト]
+type = Explod
+trigger1 = animelemtime(2) = 2 
+anim = 415
+scale = 0.5,0.5
+postype = p1
+pos = -15,-5
+sprpriority = 4
+ownpal = 1
+bindtime = -1
+removeongethit = 1
+
+[State 412, エフェクト]
+type = Explod
+trigger1 = animelemtime(2) = 4
+anim = 416
+scale = 0.5,0.5
+postype = p1
+pos = 40,0
+sprpriority = 5
+ownpal = 1
+bindtime = -1
+removeongethit = 1
+
+
+[State 412, エフェクト]
+type = Explod
+trigger1 = animelemtime(2) = 8
+anim = 417
+scale = 0.5-(time*0.01),0.5-(time*0.01)
+postype = p1
+pos = 40,0
+sprpriority = 7
+ownpal = 1
+bindtime = -1
+removeongethit = 1
+
+[State 210, エフェクト]
+type = Explod
+trigger1 = animelem = 8
+anim = 9300
+scale = 1,1
+postype = p2
+pos = -10,-85
+sprpriority = 5
+ownpal = 1
+bindtime = -1
+removeongethit = 1
+IgnoreHitPause = 1
+
+[State 210, 効果音]
+type = PlaySnd
+trigger1 = animelemtime(8) = 0
+value = 1, 12
+
+[State 1224, ヒットカウント]
+type = hitadd
+trigger1 = animelemtime(8) = 0
+value = 1
+
+[state 3500]
+type = TargetLifeAdd
+trigger1 = animelemtime(8) = 0
+value = -20
+kill = 0
+absolute = 1
+
+[state 3500]
+type = TargetLifeAdd
+trigger1 = animelemtime(8) = 0
+value = -10
+kill = 0
+absolute = 0
+
+
+
+[State 3503, ヘルパー]
+type = Helper
+triggerall = NumHelper(3510) = 1
+triggerall = NumHelper(3511) = 0
+trigger1 = animelem = 8
+helpertype = normal
+name = "kyusyu"
+ID = 3511
+pos = 50,0
+postype = p1
+facing= 1
+stateno = 3513
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.35
+size.yscale = 0.5
+
+
+[State 3503, ヘルパー]
+type = Helper
+triggerall = NumHelper(3512) = 1
+triggerall = NumHelper(3513) = 0
+trigger1 = animelem = 8
+helpertype = normal
+name = "kyusyu"
+ID = 3513
+pos = 50,0
+postype = p1
+facing= 1
+stateno = 3513
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.35
+size.yscale = 0.5
+
+[State 3503, ヘルパー]
+type = Helper
+triggerall = NumHelper(3514) = 1
+triggerall = NumHelper(3515) = 0
+trigger1 = animelem = 8
+helpertype = normal
+name = "kyusyu"
+ID = 3515
+pos = 50,0
+postype = p1
+facing= 1
+stateno = 3513
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.35
+size.yscale = 0.5
+
+[State 3503, ヘルパー]
+type = Helper
+triggerall = NumHelper(3516) = 1
+triggerall = NumHelper(3517) = 0
+trigger1 = animelem = 8
+helpertype = normal
+name = "kyusyu"
+ID = 3517
+pos = 50,0
+postype = p1
+facing= 1
+stateno = 3513
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.35
+size.yscale = 0.5
+
+
+[state 3505]
+type = targetstate
+trigger1 = animelem = 8
+value = 3560
+
+[state 3503]
+type = TargetBind
+trigger1 = 1
+time = 1
+pos = 60, 0
+
+[state 3503]
+type = changestate
+trigger1 = animelem = 9
+trigger1 = numhelper(3517) = 0
+value = 3503
+
+
+[state 3503]
+type = changestate
+trigger1 = animelem = 9
+trigger1 = numhelper(3517) = 1
+value = 3508
+
+
+ 
+
+;===========================================
+
+[Statedef 3506]
+type    = S
+movetype= I
+physics = S
+ctrl = 0
+anim = 3605
+velset = 0,0
+
+[state 25501]
+type = ScreenBound
+trigger1 = 1
+value = 0
+
+[state 3503]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[state 3260]
+type = NotHitBy
+value = SCA,AA,AT,AP
+trigger1 = 1
+
+[state 3505]
+type = targetstate
+trigger1 = animelemtime(34) = 0
+value = 3562
+
+[State 195]
+type = AngleDraw
+trigger1 = 1
+scale = 1.06,1.06
+
+[State 195]
+type = AngleDraw
+trigger1 = animtime = 0
+scale = 0.94,0.94
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 10
+value = 5,0
+
+[State 200, 1]
+type = PlaySnd
+triggerall = animelemtime(13) = 0
+trigger1 = target(3500),name !="dante"
+value = 181,2
+
+[State 200, 1]
+type = PlaySnd
+triggerall = time = 16
+trigger1 = target(3500),name = "dante"
+value = 180,3
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = animelemtime(21) = 0
+value = 190,2
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = animelemtime(34) = 0
+value = 5,1
+
+[State 3000, ステート変更]
+type = ChangeState
+trigger1 = animelemno(0) = 38
+trigger1 = winko
+value = 3509
+ctrl = 1
+
+[State 3000, ステート変更]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;--------------------------------------------------
+
+
+;---------------------------------------------------------------------------
+;疾走居合いヒット時ヘルパー
+
+;----------------------------------------------
+[Statedef 3509]
+type    = S
+movetype= I
+physics = S
+anim = 3609
+ctrl = 1
+
+[State 195]
+type = AngleDraw
+trigger1 = 1
+scale = 1.06,1.06
+
+[State 195]
+type = AngleDraw
+trigger1 = animtime = 0
+scale = 0.94,0.94
+
+[State 170, 1]
+type = NotHitBy
+trigger1 = 1
+value = SCA,AA,AT,AP
+time = 1
+
+[State 3810,5]
+type = Changestate
+trigger1 = p2movetype = A
+value = 0
+ctrl = 1
+;-------------------------------------------------
+;---------------------------------------------------------------------------
+;やられ
+[Statedef 3560]
+statetype = S
+movetype = H
+physics = S
+ctrl = 0
+anim = 5002
+velset = 0,0
+
+[state 3503]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[state 3560]
+type = changeanim
+trigger1 = animtime <= 1
+trigger1 = animtime >= -2
+trigger1 = anim = 5002
+trigger1 = !selfanimexist(5007)
+value = 5002
+elem = animelemno(0)
+
+[state 3560]
+type = changeanim
+trigger1 = animtime = 0
+trigger1 = anim = 5002
+trigger1 = selfanimexist(5007)
+value = 5007
+
+[state 3560]
+type = changeanim
+trigger1 = animtime <= 1
+trigger1 = animtime >= -2
+trigger1 = anim = 5007
+value = 5007
+elem = animelemno(0)
+
+
+[state 3560]
+type = posset
+trigger1 = 1
+y = 0
+
+[state 3560]
+type = velset
+trigger1 = 1
+x=0
+y=0
+
+[state 3560]
+type = Hitoverride
+trigger1 = 1
+value = SCA,AA,AT,AP
+stateno = 3560
+time = 1
+
+[state 3560]
+type = notHitBy
+trigger1 = 1
+value = SCA,AA,AT,AP
+time = 1
+
+[State 1223, 自分のステートへ]
+type = selfState
+trigger1 = time = 300
+value = 5050
+
+;-----------------------------
+;やられ
+[Statedef 3561]
+statetype = S
+movetype = H
+physics = S
+ctrl = 0
+anim = 5002
+velset = 0,0
+
+[state 3503]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[state 3561]
+type = changeanim
+trigger1 = time = 0
+trigger1 = selfanimexist(5950)
+value = 5950
+
+[state 3560]
+type = changeanim
+trigger1 = animtime <= 1
+trigger1 = animtime >= -2
+trigger1 = anim = 5002
+trigger1 = !selfanimexist(5007)
+value = 5002
+elem = animelemno(0)
+
+
+[state 3560]
+type = changeanim
+trigger1 = animtime = 0
+trigger1 = anim = 5002
+trigger1 = selfanimexist(5007)
+value = 5007
+
+[state 3560]
+type = changeanim
+trigger1 = animtime <= 1
+trigger1 = animtime >= -2
+trigger1 = anim = 5007
+value = 5007
+elem = animelemno(0)
+
+[state 3560]
+type = posset
+trigger1 = 1
+y = 0
+
+[state 3560]
+type = velset
+trigger1 = time = 0
+x=0
+y=0
+
+[state 3560]
+type = HitBy
+trigger1 = 1
+value = S,HA,HP
+time = 1
+
+[state 3560]
+type = Hitoverride
+trigger1 = 1
+value = SCA,AA,AT,AP
+stateno = 3561
+time = 1
+
+
+[State 1223, 自分のステートへ]
+type = changeState
+trigger1 = time >= 10
+trigger1 = anim != 5950
+trigger1 = anim != 5111
+trigger1 = anim != 5110
+trigger1 = animtime >= -1
+trigger2 = time >= 20
+value = 6080
+
+[state 1223]
+type = changeanim
+triggerall = anim = 5950
+triggerall = selfanimexist(5111)
+trigger1 = AnimElemTime(AnimElemNo(0)+1) >= 0
+value = 5111
+
+[state 1223]
+type = selfstate
+triggerall = anim = 5950
+triggerall = !selfanimexist(5111)
+trigger1 = !alive
+trigger1 = AnimElemTime(AnimElemNo(0)+1) >= 0
+value = 5150
+
+[state 1223]
+type = changestate
+triggerall = anim = 5950
+triggerall = !selfanimexist(5111)
+trigger1 = alive
+trigger1 = AnimElemTime(AnimElemNo(0)+1) >= 0
+value = 6110
+
+[State 1223, 自分のステートへ]
+type = selfState
+triggerall = anim = 5111
+trigger1 = !alive
+value = 5150
+
+
+[State 1223, 自分のステートへ]
+type = changeState
+triggerall = anim = 5111
+trigger1 = alive
+value = 6110
+
+;----------------------------------------
+[Statedef 3562]
+statetype = S
+movetype = H
+physics = S
+ctrl = 0
+anim = 5002
+velset = 0,0
+
+[state 3503]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[state 3560]
+type = changeanim
+trigger1 = animtime <= 1
+trigger1 = animtime >= -2
+trigger1 = anim = 5002
+trigger1 = !selfanimexist(5007)
+value = 5002
+elem = animelemno(0)
+
+[state 3560]
+type = changeanim
+trigger1 = animtime <= 1
+trigger1 = animtime >= -1
+trigger1 = anim = 5007
+value = 5007
+elem = animelemno(0)
+
+[state 3560]
+type = changeanim
+trigger1 = animtime = 0
+trigger1 = anim = 5002
+trigger1 = selfanimexist(5007)
+value = 5007
+
+
+[state 3560]
+type = posset
+trigger1 = 1
+y = 0
+
+[state 3560]
+type = velset
+trigger1 = 1
+x=0
+y=0
+
+
+[state 3560]
+type = HitBy
+trigger1 = 1
+value = S,HP
+time = 1
+
+[State 1223, 自分のステートへ]
+type = selfState
+trigger1 = time = 300
+value = 5050

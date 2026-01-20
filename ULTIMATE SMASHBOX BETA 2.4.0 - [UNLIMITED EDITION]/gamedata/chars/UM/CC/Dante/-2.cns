@@ -1,0 +1,1172 @@
+; ADD004 BASIC PIEs ReBuilded CNS (08/03/2023)
+;==============================================
+; This file is Made by PIE.
+; there is a backup of this file in the same folder, named "<samename>.a4bk".
+; to Restore, use assist tool, or delete this file, then remove ".a4bk" from the neme of backup.
+;==============================================
+
+[Statedef -2]
+
+;#ADD004BASIC PIEs#
+;##[a4b_-2_start.v20200523]##
+;//==========================
+;// add004-sctrls-start
+;//==========================
+;sys::-2::partners_standby ; ???????
+[state 0]
+	type=selfstate
+	value=190190
+	ctrl=0
+	;;---
+	triggerall=!ishelper && numpartner && roundstate=2 && alive && sysfvar(0)>0 && playeridexist(floor(sysfvar(0)))
+	triggerall=(stateno!=[190190,190199]) && playerid(floor(sysfvar(0))),var(0)=90900 && playerid(floor(sysfvar(0))),var(22)=4
+	;;---// switch / change ;(??)
+	trigger1=sysfvar(4)<1 && ( ctrl || (time<2 && stateno<600) ) && playerid(floor(sysfvar(0))),var(48)=11
+	trigger1=(pos y>=0) && movetype!=h && gethitvar(isbound)=0 && (stateno!=5120) && (stateno!=[5200,5210])
+	;;---// assist ;(??)
+	trigger2=sysfvar(4)=1 && ( ctrl || (stateno-playerid(floor(sysfvar(0))),var(53+id-playerid(floor(sysfvar(0))),sysvar(0))!=[0,999]) )
+	trigger2=(pos y>=0) && movetype!=h && gethitvar(isbound)=0 && (stateno!=5120) && (stateno!=[5200,5210])
+	;;---// switch-canceling ;(??????)
+	trigger3=sysfvar(4)=2 && ( ctrl || stateno<160 )
+	trigger3=(pos y>=0) && movetype!=h && gethitvar(isbound)=0 && (stateno!=5120) && (stateno!=[5200,5210])
+	;;---// player-priority ;(??)
+	trigger4=sysfvar(4)<1 && playerid(floor(sysfvar(0))),var(15)!=id
+	;;---
+	ignorehitpause=1
+
+;sys::-2::partners_change_interrupted ; ??????
+[state 0]
+	type=varset
+	trigger1=!ishelper && numpartner && roundstate=2 && alive && sysfvar(0)>0 && playeridexist(floor(sysfvar(0)))
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900 && playerid(floor(sysfvar(0))),var(48)=21 && sysfvar(4)<1
+	sysfvar(4)=2 ;; (0:main / 1:assist / 2:switch-canceling)
+
+;sys::-2::helper::bar004 ; ?????
+[state 0]
+	type=helper
+	triggerall=!ishelper && !numhelper(90900)
+	trigger1=numpartner
+	trigger1=id<(partner,id) && partner,numhelper(90900)=0
+	trigger2=!numpartner
+	id=90900
+	stateno=90900
+	helpertype=normal
+	ownpal=1
+;op;	size.ground.front=###
+;op;	size.ground.back=###
+	size.air.front=2108130 ;; <<-version
+;op;	size.air.back=###
+	size.height=0 ;; 1;; <<-powerbar off mode
+	ignorehitpause=1
+	supermovetime=88888
+	pausemovetime=88888
+	;---
+;op;	size.xscale=0
+;op;	size.yscale=0
+	;---
+	pos=0,88888
+
+;sys::-2::get_helper::bar004_id ; ID??
+[state 0]
+	type=varset
+	trigger1=!ishelper && numhelper(90900)
+	trigger1=(helper(90900),var(0)=90900) && (sysfvar(0)!=helper(90900),id)
+	sysfvar(0)=(helper(90900),id)
+
+;sys::-2::get_players_id2
+[state 0]
+	type=varset
+	trigger1=!ishelper && numpartner
+	trigger1=!numhelper(90900) && (partner,numhelper(90900)) && (sysfvar(0)!=(partner,sysfvar(0)))
+	sysfvar(0)=(partner,sysfvar(0))
+
+;sys::-2::bk/jd_system ; ?????/????D
+[state 0]
+	type=hitoverride
+	triggerall=!ishelper && roundstate=2 && alive && (ctrl || stateno=52)
+	trigger1=numprojid(195502)||numprojid(195503)
+	trigger2=numpartner
+	trigger2=partner,numprojid(195502)||partner,numprojid(195503)
+	attr=sca,na,sa,ha,np,sp,hp
+	stateno=195500
+	time=1
+	ignorehitpause=1
+
+
+;//==========================
+;//==========================
+;;>>@Config.Face>>
+;sys::-2::face_d_mod
+[state 0]
+	type=removeexplod
+	trigger1=roundstate!=2 || (stateno=5150 && time=5 && !alive)
+	trigger2=(sysfvar(0)>0) && playeridexist(floor(sysfvar(0)))
+	trigger2=(playerid(floor(sysfvar(0))),var(0)=90900)
+	trigger2=!(playerid(floor(sysfvar(0))),var(9)&4) || (playerid(floor(sysfvar(0))),var(9)&262144)
+	id=490600
+	ignorehitpause=1
+
+;sys::-2::face_d_main ; portrait (?)
+[state 0]
+	type=explod
+	trigger1=!ishelper && alive && !numexplod(490600) && selfanimexist(909002)
+	trigger1=(sysfvar(0)>0) && playeridexist(floor(sysfvar(0))) && roundstate=2
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900 && playerid(floor(sysfvar(0))),numexplod(490600)
+	trigger1=id=playerid(floor(sysfvar(0))),var(15)
+	trigger1=movetype!=h || (stateno=[120,159]) || (stateno=[5000,5199]) || (stateno=[190190,190196])
+	id=490600
+	anim=909002
+	space=screen
+	postype=left
+	facing=ifelse(teamside=1,1,-1)
+	ownpal=1
+	bindtime=-1
+	removetime=-1
+	pos=floor(const240p(playerid(floor(sysfvar(0))),fvar(20))), floor(const240p(playerid(floor(sysfvar(0))),fvar(22)))
+	scale=playerid(floor(sysfvar(0))),fvar(24), playerid(floor(sysfvar(0))),fvar(26)
+	sprpriority=floor(playerid(floor(sysfvar(0))),fvar(32))
+	trans=addalpha
+	alpha=floor(playerid(floor(sysfvar(0))),fvar(28))/1000, floor(playerid(floor(sysfvar(0))),fvar(28))%1000
+	ignorehitpause=1
+	supermovetime=-1
+	pausemovetime=-1
+
+;;sys::-2::face_d_partner_#+option
+[state 0]
+	type=explod
+	trigger1=numpartner
+	trigger1=!ishelper && alive && !numexplod(490600) && selfanimexist(909001)
+	trigger1=(sysfvar(0)>0) && playeridexist(floor(sysfvar(0))) && roundstate=2
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900 && playerid(floor(sysfvar(0))),numexplod(490601+(gametime%numpartner))
+	trigger1=(id+numpartner+1-playerid(floor(sysfvar(0))),var(15))%(numpartner+1)=(gametime%numpartner)+1
+	trigger1=movetype!=h || (stateno=[120,159]) || (stateno=[5000,5199]) || (stateno=[190190,190196])
+	id=490600
+	anim=909001
+	space=screen
+	postype=left
+	facing=ifelse(teamside=1,1,-1)
+	ownpal=1
+	bindtime=-1
+	removetime=-1
+	pos=floor(const240p(playerid(floor(sysfvar(0))),fvar(21) +playerid(floor(sysfvar(0))),fvar(34)*(gametime%numpartner) )), floor(const240p(playerid(floor(sysfvar(0))),fvar(23) +playerid(floor(sysfvar(0))),fvar(35)*(gametime%numpartner) ))
+	scale=playerid(floor(sysfvar(0))),fvar(25) +playerid(floor(sysfvar(0))),fvar(36)*(gametime%numpartner), playerid(floor(sysfvar(0))),fvar(27) +playerid(floor(sysfvar(0))),fvar(36)*(gametime%numpartner)
+	sprpriority=floor(playerid(floor(sysfvar(0))),fvar(33))+(gametime%numpartner)*10
+	trans=addalpha
+	alpha=floor(playerid(floor(sysfvar(0))),fvar(29))/1000, floor(playerid(floor(sysfvar(0))),fvar(29))%1000
+	ignorehitpause=1
+	supermovetime=-1
+	pausemovetime=-1
+
+;#Options_Char_Name
+;sys::-2::name_d_main_left&right
+[state 0]
+	type=explod
+	trigger1=numexplod(490600)=1 && selfanimexist(909010+teamside)
+	trigger1=(sysfvar(0)>0) && playeridexist(floor(sysfvar(0)))
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900 && id=playerid(floor(sysfvar(0))),var(15)
+	trigger1=movetype!=h || (stateno=[120,159]) || (stateno=[5000,5199]) || (stateno=[190190,190196])
+	id=490600
+	anim=909010+teamside
+	space=screen
+	postype=left
+	facing=1
+	ownpal=1
+	bindtime=-1
+	removetime=-1
+	pos=floor(const240p(playerid(floor(sysfvar(0))),fvar(10))), floor(const240p(playerid(floor(sysfvar(0))),fvar(12)))
+	scale=playerid(floor(sysfvar(0))),fvar(14), playerid(floor(sysfvar(0))),fvar(16)
+	sprpriority=floor(playerid(floor(sysfvar(0))),fvar(32))+2
+	trans=addalpha
+	alpha=floor(playerid(floor(sysfvar(0))),fvar(18))/1000, floor(playerid(floor(sysfvar(0))),fvar(18))%1000
+	ignorehitpause=1
+	supermovetime=-1
+	pausemovetime=-1
+
+;;sys::-2::name_d_partner_#left&right
+[state 0]
+	type=explod
+	trigger1=numpartner
+	trigger1=numexplod(490600)=1 && selfanimexist(909010+teamside)
+	trigger1=(sysfvar(0)>0) && playeridexist(floor(sysfvar(0)))
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900 && playerid(floor(sysfvar(0))),numexplod(490601+(gametime%numpartner))
+	trigger1=(id+numpartner+1-playerid(floor(sysfvar(0))),var(15))%(numpartner+1)=(gametime%numpartner)+1
+	trigger1=movetype!=h || (stateno=[120,159]) || (stateno=[5000,5199]) || (stateno=[190190,190196])
+	id=490600
+	anim=909010+teamside
+	space=screen
+	postype=left
+	facing=1
+	ownpal=1
+	bindtime=-1
+	removetime=-1
+	pos=floor(const240p(playerid(floor(sysfvar(0))),fvar(11) +playerid(floor(sysfvar(0))),fvar(34)*(gametime%numpartner) )), floor(const240p(playerid(floor(sysfvar(0))),fvar(13) +playerid(floor(sysfvar(0))),fvar(35)*(gametime%numpartner) ))
+	scale=playerid(floor(sysfvar(0))),fvar(15) +playerid(floor(sysfvar(0))),fvar(36)*(gametime%numpartner), playerid(floor(sysfvar(0))),fvar(17) +playerid(floor(sysfvar(0))),fvar(36)*(gametime%numpartner)
+	sprpriority=floor(playerid(floor(sysfvar(0))),fvar(33))+(gametime%numpartner)*10+3
+	trans=addalpha
+	alpha=floor(playerid(floor(sysfvar(0))),fvar(19))/1000, floor(playerid(floor(sysfvar(0))),fvar(19))%1000
+	ignorehitpause=1
+	supermovetime=-1
+	pausemovetime=-1
+
+;//==========================
+;;>>@Config.Camera>>
+;sys::-2::camera_nc ; ????
+[state 0]
+	type=screenbound
+	trigger1=!ishelper && (sysfvar(0)>0) && playeridexist(floor(sysfvar(0)))
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900 && numpartner && (sysfvar(4)>0 || stateno=5150)
+	value=0
+	movecamera=0,0
+	ignorehitpause=1
+;sys::-2::camera_np
+[state 0]
+	type=playerpush
+	trigger1=!ishelper && (sysfvar(0)>0) && playeridexist(floor(sysfvar(0)))
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900 && numpartner && (sysfvar(4)>0 || stateno=5150)
+	value=0
+	ignorehitpause=1
+;sys::-2::camera_nc2
+[state 0]
+	type=screenbound
+	trigger1=!ishelper && (sysfvar(0)>0) && playeridexist(floor(sysfvar(0)))
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900 && (playerid(floor(sysfvar(0))),var(7)&65536) ;; system_switch
+	value= ((numpartner && sysfvar(4)<1) || !numpartner) ;; [def=0]
+	movecamera=0,0 ;; [x,y]
+	ignorehitpause=1
+
+;//==========================
+;sys::-2::add.option2-noko
+[state 0] ;; opt-noko
+	type=assertspecial
+	trigger1=!ishelper && (sysfvar(0)>0) && playeridexist(floor(sysfvar(0)))
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900
+	trigger1=id=playerid(floor(sysfvar(0))),var(15) && (playerid(floor(sysfvar(0))),var(9)&65536) ;; opt-noko
+	flag=noko
+	ignorehitpause=1
+;sys::-2::add.option3-life-mod
+[state 0] ;; opt-life-mod
+	type=lifeadd
+	trigger1=!ishelper && (sysfvar(0)>0) && playeridexist(floor(sysfvar(0)))
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900
+	trigger1=id=playerid(floor(sysfvar(0))),var(15) && playerid(floor(sysfvar(0))),var(23)!=0 ;; opt-mod-life
+	value=playerid(floor(sysfvar(0))),var(23)
+	kill=0
+	ignorehitpause=1
+
+;//==========================
+;// optional settings
+;sys::-2::guard_crush_fx ; ????????
+[state 0]
+	type=palfx
+	trigger1=(stateno=150 || stateno=152) && alive && !ishelper && (gametime%5=0) && (sysfvar(0)>0) && playeridexist(floor(sysfvar(0)))
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900 && playerid(floor(sysfvar(0))),var(36)>=800
+	time=2
+	add=200,0,0
+;sys::-2::guard_crush_cs
+[state 0]
+	type=changestate
+	trigger1=(stateno=150 || stateno=152) && alive && !ishelper && (sysfvar(0)>0) && playeridexist(floor(sysfvar(0)))
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900 && playerid(floor(sysfvar(0))),var(36)>=1000
+	value=190010
+	ignorehitpause=1
+;;--- dizzy
+;sys::-2::goto-dizzy_s/c
+[state 0] ;[.03-2d1]
+	type=selfstate
+	trigger1=(stateno=5001 || stateno=5011) && hitover      && alive && !ishelper && roundstate=2 && (sysfvar(0)>0) && playeridexist(floor(sysfvar(0)))
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900 && playerid(floor(sysfvar(0))),var(50)>=1000
+	value=195201;; (goto-dizzy:190116)
+;sys::-2::goto-dizzy_a/l
+[state 0] ;[.03-2d2]
+	type=selfstate
+	trigger1=(stateno=5030 || stateno=5071) && hitshakeover && alive && !ishelper && roundstate=2 && (sysfvar(0)>0) && playeridexist(floor(sysfvar(0)))
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900 && playerid(floor(sysfvar(0))),var(50)>=1000
+	value=195050
+;sys::-2::goto-dizzy_fd
+[state 0] ;[.03-2e1]
+	type=selfstate
+	trigger1=(stateno=[5110,5111]) && alive && !ishelper && roundstate=2 && (sysfvar(0)>0) && playeridexist(floor(sysfvar(0)))
+	trigger1=playerid(floor(sysfvar(0))),var(0)=90900 && playerid(floor(sysfvar(0))),var(50)>=1000
+	value=195110
+;;--- fadeout when KOed ; KO????
+;sys::-2::st5150-1
+[state 0]
+	type=varset
+	trigger1=stateno=5150 && time=1 && alive=0 && !ishelper && numpartner
+	sysvar(1)=(roundstate<=2)
+;sys::-2::st5150-2
+[state 0]
+	type=assertspecial
+	trigger1=stateno=5150 && alive=0 && !ishelper && numpartner && sysvar(1) && (((time=[80,150]) && time%10<5) || time>150)
+	flag=invisible
+	flag2=noshadow
+;;--- intro-pos-reset
+;;--- <<IKEMEN????>>
+;sys::-2::st5900-f
+[state 0]
+	type=turn
+	trigger1=stateno=5900 && time=0
+	trigger1=!ishelper && numpartner>1 && facing=ifelse(teamside=1,-1,1)
+;sys::-2::st5900-pp3
+[state 0]
+	type=posset
+	trigger1=stateno=5900 && time=0
+	trigger1=!ishelper && numpartner>1 && playeridexist(id-2)
+	trigger1=playerid(id-2),ishelper=0 && playerid(id-2),teamside=teamside
+	x=const240p(120)*ifelse(teamside=1,-1,1)
+;sys::-2::st5900-pp4
+[state 0]
+	type=posset
+	trigger1=stateno=5900 && time=0
+	trigger1=!ishelper && numpartner>2 && playeridexist(id-3)
+	trigger1=playerid(id-3),ishelper=0 && playerid(id-3),teamside=teamside
+	x=const240p(145)*ifelse(teamside=1,-1,1)
+;//==========================
+;// add004-sctrls-end
+;//==========================
+;##[a4b_-2_end]##
+
+;===============================================================================
+;config
+;ダンテの各種設定ができます
+;===============================================================================
+
+
+[state -2 スタイルゲージ調整 縦]
+type = varset
+trigger1 = 1
+var(49) = 0 ;ここに数値を入れると枠が動きます
+
+[state -2 スタイルゲージ調整 縦]
+type = varset
+trigger1 = 1
+var(20) = 1
+
+
+[state -2 スタイルゲージ調整 横]
+type = varset
+trigger1 = 1
+var(50) = 0 ;ここに数値を入れると枠が動きます
+
+[state -2 スタイルランク調整 縦]
+type = varset
+trigger1 = 1
+var(51) = 0 ;ここに数値を入れると枠が動きます
+
+[state -2 スタイルランク調整 横]
+type = varset
+trigger1 = 1
+var(52) = 0 ;ここに数値を入れると枠が動きます
+
+[state -2 閻魔刀制限]
+type = varset
+trigger1 = 1
+var(55) = 0 ;ここを1にすると閻魔刀関連の技を封印出来ます
+
+[state -2 ギルガメス制限]
+type = varset
+trigger1 = 1
+var(56) = 0 ;ここを1にするとギルガメス関連の技を封印出来ます
+
+[state -2 ルシフェル制限]
+type = varset
+trigger1 = 1
+var(57) = 0 ;ここを1にするとルシフェル関連の技を封印出来ます
+
+[state -2 パンドラ制限]
+type = varset
+trigger1 = 1
+var(58) = 0 ;ここを1にするとパンドラ関連の技を封印出来ます
+
+;↓スタイリッシュポイントを削除したい方用 よくわからない人は弄らないこと☆
+;[state -2 STP制限]
+;type = varset
+;trigger1 = 1
+;fvar(39) = 0 
+;===============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;===========================================================================
+; 常時監視ステート（－２）
+;===========================================================================
+;---------------------------------------------------------------------------
+; 通常の食らい状態（Statedef 5000～5199間）でも、
+; 相手に（「P2StateNo」や「TargetState」等で）制御を奪われても、
+; 常に登録したステートコントローラが有効になります。
+; サブシステム等を制御する時に重宝するでしょう。
+;---------------------------------------------------------------------------
+;同技補正 スタイル補正 基底補正
+;スタイルランク補正
+
+;-B-
+[State -2, 変数]
+type =varset
+trigger1=fvar(39)>200
+trigger1=fvar(39)<=300
+var(54)=1
+
+;-A-
+[State -2, 変数]
+type =varset
+trigger1=fvar(39)>300
+trigger1=fvar(39)<=400
+var(54)=2
+
+;-S-
+[State -2, 変数]
+type =varset
+trigger1=fvar(39)>400
+trigger1=fvar(39)<=500
+var(54)=3
+
+;-SS-
+[State -2, 変数]
+type =varset
+trigger1=fvar(39)>500
+trigger1=fvar(39)<=600
+var(54)=3
+
+;-SSS-
+[State -2, 変数]
+type =varset
+trigger1=fvar(39)>600
+var(54)=4
+
+
+;補正セット
+[State -2, 変数]
+type =attackmulset
+trigger1=1
+value =ifelse(fvar(0)=.2,.60+(var(54)*.05)-(var(53)*.01),ifelse(fvar(0)=1,.01,.80+(var(54)*.05)-(var(53)*.01)))
+
+
+;基底補正リセット
+[State -2, 変数]
+type =varset
+trigger1= enemynear,movetype != H
+var(53)=0
+
+
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+fvar(0) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(25) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(26) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(27) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(28) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(29) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(30) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(31) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(32) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(33) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(34) = 0
+
+[State -2 ,同技補正用変数]
+type = Varadd
+trigger1 = ProjHitTime(1500) = 1
+v = 35
+value = 1
+
+[State -2 ,同技補正用変数]
+type = Varadd
+trigger1 = ProjHitTime(2000) = 1
+v = 30
+value = 1
+
+[State -2 ,同技補正用変数]
+type = Varadd
+trigger1 = ProjHitTime(4100) = 1
+v = 34
+value = 1
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(35) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(36) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(37) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(38) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(39) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(40) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = enemynear,movetype != H
+var(41) = 0
+
+
+;---------------------------------------------------------------------------
+;画面端検知　→
+[State -2]
+type = helper
+trigger1 = !NumHelper(8100)
+trigger1 = roundstate = 2
+ID = 8100
+stateno = 8100
+name = "umehara"
+pos = 0,0
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+facing = 1
+;---------------------------------------------------------------------------
+;画面端検知　←
+[State -2]
+type = helper
+trigger1 = !NumHelper(8105)
+trigger1 = roundstate = 2
+ID = 8105
+stateno = 8105
+name = "moriP"
+pos = 0,0
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+facing = 1
+
+
+;---------------------------------------------------------------------------
+;スタイルゲージ
+[State -2]
+type = helper
+trigger1 = !NumHelper(8000)
+trigger1 = roundstate = 2
+ID = 8000
+stateno = 8000
+name = "gauge"
+pos = 0,0
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+facing = facing*ifelse(teamside=1,1,-1)
+
+;スタイリッシュポイント
+[State -2]
+type = helper
+trigger1 = !NumHelper(8600)
+trigger1 = roundstate = 2
+trigger1 = fvar(39) >= 30
+ID = 8600
+stateno = 8600
+name = "STP"
+pos = 0,0
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+facing = facing*ifelse(teamside=1,1,-1)
+
+
+[State -2, 変数];STP用
+type = Varadd
+trigger1 = time%20 = 0
+trigger1 = fvar(39) >=0
+fvar(39) = -2
+
+[State -2, 変数];STP用
+type = Varadd
+trigger1 = movetype = H 
+trigger1 = fvar(39) > 0
+fvar(39) = ifelse(fvar(39)>20,-20,-fvar(39))
+
+[State 200 ,STP]
+type = Varadd
+Trigger1 = ProjHitTime(1500) = 1
+trigger1 = fvar(39) < 700
+fv = 39
+value = 25*(ifelse(fvar(39) >=200,ifelse(fvar(39) >=400,0.65,0.85),1))
+
+[State 200 ,STP]
+type = Varadd
+Trigger1 = ProjHitTime(4200) = 1
+trigger1 = fvar(39) < 700
+fv = 39
+value = 3*(ifelse(fvar(39) >=200,ifelse(fvar(39) >=400,0.65,0.85),1))
+
+[State 200 ,STP]
+type = Varadd
+Trigger1 = ProjHitTime(3525) = 1
+trigger2 = ProjHitTime(3525) = 11
+Trigger3 = ProjHitTime(3525) = 21
+fv = 39
+value = ifelse(fvar(39) < 600,100,(700-fvar(39)))
+
+[State -2, 変数];リアルインパクト用
+type = VarSet
+trigger1 = (StateNo != 2100)
+trigger1 = (StateNo != 2105)
+var(21) = 0
+
+[State -2, 変数];リアルインパクト用
+type = VarSet
+trigger1 = (StateNo != 2100)
+trigger1 = (StateNo != 2105)
+var(22) = 0
+
+[State -2, 変数];ドライブ用
+type = VarSet
+trigger1 = (StateNo != 2005)
+trigger1 = (StateNo != 2010)
+trigger1 = (StateNo != 2030)
+var(10) = 0
+
+[State -2, 変数];スタイルチェンジ TS
+type = VarSet
+trigger1 = var(20) != 1
+trigger1 = command = "imposible"
+var(20) = 1
+
+[State -2, 変数];スタイルチェンジ TS→DSフラグ
+type = VarSet
+trigger1 = var(20) = 1 && var(0) != 1
+trigger1 = command != "imposible"
+var(46) = 1
+
+[State -2, 変数];スタイルチェンジ TS→DSチェンジ
+type = VarSet
+trigger1 = var(20) = 1
+trigger1 = var(46) = 1
+trigger1 = var(55) = 0
+trigger1 = command = "imposible"
+var(20) = 1
+
+[State -2, 変数];スタイルチェンジ DSフラグ解除
+type = VarSet
+trigger1 = var(20) = 1
+trigger1 = command != "imposible"
+var(46) = 0
+
+[State -2, 変数];スタイルチェンジ SM
+type = VarSet
+trigger1 = var(20) != 2
+trigger1 = command  = "imposible" && command = "holdfwd"
+var(20) = 1
+
+[State -2, 変数];スタイルチェンジ SM→DSフラグ
+type = VarSet
+trigger1 = var(20) = 1 && var(0) != 1
+trigger1 = command != "imposible"
+var(46) = 2
+
+[State -2, 変数];スタイルチェンジ SM→DSチェンジ
+type = VarSet
+trigger1 = var(20) = 1
+trigger1 = var(46) = 2
+trigger1 = var(55) = 0
+trigger1 = command = "imposible"
+var(20) = 1
+
+[State -2, 変数];スタイルチェンジ RG
+type = VarSet
+trigger1 = command = "imposible" && command = "holddown"
+var(20) = 1
+
+[State -2, 変数];スタイルチェンジ RG→DSフラグ
+type = VarSet
+trigger1 = var(20) = 1 && var(0) != 1
+trigger1 = command != "imposible"
+var(46) = 3
+
+[State -2, 変数];スタイルチェンジ RG→DSチェンジ
+type = VarSet
+trigger1 = var(20) = 1
+trigger1 = var(46) = 3
+trigger1 = var(55) = 0
+trigger1 = command = "imposible"
+var(20) = 1
+
+[State -2, 変数];スタイルチェンジ GS
+type = VarSet
+trigger1 = command = "imposible" && command = "holdback"
+var(20) = 1
+
+[State -2, 変数];スタイルチェンジ GS→DSフラグ
+type = VarSet
+trigger1 = var(20) = 1 && var(0) != 1
+trigger1 = command != "imposible"
+var(46) = 4
+
+[State -2, 変数];スタイルチェンジ RG→DSチェンジ
+type = VarSet
+trigger1 = var(20) = 1
+trigger1 = var(46) = 4
+trigger1 = var(55) = 0
+trigger1 = command = "imposible"
+var(20) = 1
+
+
+;-----------------------------------
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(200) > 0
+trigger1 = StateNo != 200
+ID = 200
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(205) > 0
+trigger1 = StateNo != 205
+ID = 205
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(210) > 0
+trigger1 = StateNo != 210
+ID = 210
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(215) > 0
+trigger1 = StateNo != 215
+ID = 215
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(220) > 0
+trigger1 = StateNo != 220
+ID = 220
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(221) > 0
+trigger1 = StateNo != 221
+ID = 221
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(225) > 0
+trigger1 = StateNo != 225
+ID = 225
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(290) > 0
+trigger1 = StateNo != 290
+ID = 290
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(350) > 0
+trigger1 = StateNo != 350
+ID = 350
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(600) > 0
+trigger1 = StateNo != 600
+ID = 600
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(602) > 0
+trigger1 = StateNo != 602
+ID = 602
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(610) > 0
+trigger1 = StateNo != 610
+ID = 610
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(615) > 0
+trigger1 = StateNo != 615
+ID = 615
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(630) > 0
+trigger1 = StateNo != 630
+ID = 630
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(1000) > 0
+trigger1 = StateNo != 1000
+ID = 1000
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(1010) > 0
+trigger1 = StateNo != 1010
+ID = 1010
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(1105) > 0
+trigger1 = StateNo != 1105
+ID = 1105
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(1157) > 0
+trigger1 = StateNo != 1155
+ID = 1157
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(1160) > 0
+trigger1 = StateNo != 1160
+ID = 1160
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(1165) > 0
+trigger1 = StateNo != 1165
+ID = 1165
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(2006) > 0
+trigger1 = StateNo != 2005
+ID = 2006
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(2007) > 0
+trigger1 = StateNo != 2005
+ID = 2007
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(2008) > 0
+trigger1 = StateNo != 2005
+ID = 2008
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(2010) > 0
+trigger1 = StateNo != 2010
+ID = 2010
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(2040) > 0
+trigger1 = StateNo != 2040
+ID = 2040
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(2310) > 0
+trigger1 = StateNo != 2310
+ID = 2310
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(2500) > 0
+trigger1 = StateNo != 2500
+ID = 2500
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(2510) > 0
+trigger1 = StateNo != 2510
+ID = 2510
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(2520) > 0
+trigger1 = StateNo != 2520
+ID = 2520
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(2530) > 0
+trigger1 = StateNo != 2530
+ID = 2530
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(3010) > 0
+trigger1 = StateNo != 3010
+ID = 3010
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(3020) > 0
+trigger1 = StateNo != 3020
+ID = 3020
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(3030) > 0
+trigger1 = StateNo != 3030
+ID = 3030
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(2005) > 0
+trigger1 = StateNo != 2005
+ID = 2005
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(610) > 0
+trigger1 = StateNo != 610
+ID = 610
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(600) > 0
+trigger1 = StateNo != 600
+ID = 600
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(630) > 0
+trigger1 = StateNo != 630
+ID = 630
+
+[State -2, エフェクトを消す]
+type = RemoveExplod
+triggerall = NumExplod(4140) > 0
+trigger1 = StateNo != 4140
+ID = 4140
+
+[State -2, 音を消す]
+type = StopSnd
+triggerall = NumExplod(4140) > 0
+trigger1 = StateNo != 4140
+channel = 4
+
+[state 1500 ,判定発生用]
+type = Helper
+trigger1 = ProjHitTime(1500) = 30
+trigger1 = var(17) > 0
+id = 1500
+name = "ken"
+pos = 0, -10
+Postype = p2
+stateno = 1510
+helpertype = normal
+persistent = 0
+ignorehitpause = 1
+keyctrl = 0 
+ownpal = 1
+size.xscale = .5
+size.yscale = .5
+supermovetime = 99999
+pausemovetime = 99999
+
+[State 1500, 変数]
+type = VarSet
+trigger1 = var(17) > 0
+trigger1 = ProjHitTime(1500) = 32
+var(17) = 0
+
+[State 3050, 変数]
+type = VarSet
+trigger1 = statetype = S
+var(5) = 0
+
+[state -2 エアトリック回数リセット]
+type = varset
+trigger1 = stateno =40 || stateno = 52
+var(6) = 0
+
+[state -2 エアトリック回数リセット]
+type = varset
+trigger1 = stateno =40 || stateno = 52
+var(7) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = stateno != [4000,4499] 
+var(23) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = stateno != [4000,4499] 
+var(24) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = stateno != [400,405] 
+var(25) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = stateno != [3020,3030]
+var(8) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = stateno != [3020,3030]
+var(9) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = stateno != 221
+var(16) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = stateno != [1155,1165]
+var(42) = 0
+
+[state -2 ヒット回数リセット]
+type = varset
+trigger1 = stateno !=630
+var(13) = 0
+
+[State -2, 変数]
+type = VarSet
+trigger1 = statetype = S
+var(14) = 0
+
+[state -2 ヒット回数リセット]
+type = varset
+trigger1 = stateno !=4520
+var(19) = 0
+-------------------------------------------------------------------------------
+;やられボイス
+[State -2]
+type = playsnd
+triggerall = alive
+triggerall = time = 1
+trigger1 = stateno = 5000 || stateno = 5010
+trigger1 = anim = 5000 || anim = 5010 || anim = 5020
+trigger1 = random = [0,300]
+value = 5000, 2
+channel = 0
+ignorehitpause = 1
+
+
+[State -2]
+type = playsnd
+triggerall = alive
+triggerall = time = 1
+trigger1 = stateno = 5000 || stateno = 5010
+trigger1 = anim = 5000 || anim = 5010 || anim = 5020
+trigger1 = random = [301,999]
+value = 5000, 3
+channel = 0
+ignorehitpause = 1
+
+[State -2]
+type = playsnd
+triggerall = alive
+triggerall = time = 1
+trigger1 = stateno = 5000 || stateno = 5010
+trigger1 = anim = 5001 || anim = 5011 || anim = 5021
+trigger1 = random = [0,600]
+value = 5000, 1
+channel = 0
+ignorehitpause = 1
+
+[State -2]
+type = playsnd
+triggerall = alive
+triggerall = time = 1
+trigger1 = stateno = 5000 || stateno = 5010
+trigger1 = anim != [5000,5001]
+trigger1 = anim != [5010,5011]
+trigger1 = anim != [5020,5021]
+trigger1 = random = [601,999]
+value = 5000, 0
+channel = 0
+ignorehitpause = 1
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+[State -2, クリップボード]
+type = DisplayToClipboard
+trigger1 = 1
+text = "Cancel=%d, Throw=%d, Button=%d, Body-Distance X=%d,Y=%d \n"
+params = floor(pos x),var(32),var(41),floor(P2BodyDist X),floor(P2BodyDist Y)
+
+[State -2, クリップボード（追加専用）]
+type = AppendToClipboard
+trigger1 = 1
+text = "Position X=%d,Y=%d, Velocity X=%f,Y=%f, Hit=%d \n"
+params = floor(Pos X),floor(Pos Y),(Vel X),(Vel Y),(hitcount)
+

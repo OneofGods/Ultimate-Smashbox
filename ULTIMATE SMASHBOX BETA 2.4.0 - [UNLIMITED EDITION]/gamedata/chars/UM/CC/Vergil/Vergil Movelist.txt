@@ -1,0 +1,22 @@
+Movelist:
+Guard Push: 2 attack buttons during blockstun.
+Recovery Roll: Hold Forward or Backward during knocked down.
+A: Dash
+B: Throw
+C: Launcher (not special and hyper cancelable, can cancel into Upper Slash by pressing Z. Upper Slash can chain back into Launcher. Can loop for 7 hits.)
+Air C: Star Fall (causes groundbounce if opponents weren’t launched by Launcher)
+f.Z: Stinger (causes wallbounce to airborne opponents)
+d.Z: Helm Breaker (can OTG) (air-usable only, can cancel into Trick by pressing any attack buttons)
+df.Z: High Time (can OTG, can cancel into Trick by pressing Z)
+Hold X/Y/Z for 1.5 seconds and release: Round Trip
+D,DF,F + attack: Judgement Cut
+F,D,DF + X: Rising Sun (can cancel into Trick by pressing Z)
+F,D,DF + Y: Lunar Phase
+F,D,DF + Z: Rapid Slash
+D,DB,B + attack: Trick
+D,DF,F,D,DF,F + attack: Dimension Slash (1000 power)
+D,DB,B,D,DB,B + attack: Spiral Swords (1000 power)
+During Spiral Swords:
+- Sword Storm: D,DF,F,c
+- Blistering Sword: D,DB,B,c
+D,DB,B,D,DB,B + 2 attack: Dark Angel (3000 power)
