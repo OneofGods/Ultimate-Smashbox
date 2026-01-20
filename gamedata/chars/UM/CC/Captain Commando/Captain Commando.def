@@ -1,0 +1,32 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Captain Commando"
+displayname ="Captain Commando"
+versiondate =04,14,2001
+mugenversion =1.0
+author ="DL"
+pal.defaults =1,2,3,4,5,6
+
+[Files]
+sprite =capcom.sff
+anim =capcom.air
+sound =capcom.snd
+cmd =capcom.cmd
+cns =capcom.cns
+stcommon =common1.cns
+st =capcom.cns
+pal1=capcom.act
+pal2=alt1.act
+pal3=alt2.act
+pal4=alt3.act
+pal5=alt4.act
+pal6=alt5.act
+st1=States\Commando_Normal.cns
+st2=States\Commando_Super.cns
+st3=States\Commando_Hyper.cns
+st4=States\Commando_Helper.cns
+st5=States\Commando_Robot.cns

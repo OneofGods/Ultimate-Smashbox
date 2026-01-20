@@ -1,0 +1,41 @@
+Espacio de lanzamiento basico HG
+
+De pie X: disparo unico 6 3 8 13 + 2 Genera 4F cuando se quita de la posicion
+De pie Y: RQ Combo A2 9 5 13 15 - 3 A1 a animelem8-0
+Ñ§Y: A3 10 3 26 20 - 9 animelem8-2
+Ñ§Y: A4 18 5 32 25 -12 animelem7-2
+De pie A:
+De pie B: Buster 6 4 19 -- -- Lanzamiento al suelo
+
+6Y: RQ Combo A1 12 4 26 20 -10 Derivado de A2 y B1
+6B: Arranque 13 3 27 30 -12
+
+Agacharse X: Disparo unico 5 3 9 15 + 3
+Crouching Y: High Roller 18 3 32 25 -10 Cancelado de RQ combo 11F, 8F ~ Antes de que ocurra, deslizate a traves de ataques aereos no sobrenaturales
+Agacharse A: Piernas pequenas 4 4 9 15 + 2
+Agacharse B:
+
+Salto X: Disparo unico 7 3 9 10 - 4
+Saltar Y: RQ Vacio 1 8 3 -- 15 --
+Å@Ñ§Y: Cielo 2 8 4 -- 15 -- animelem6-0
+Å@Å@Ñ§Y: Cielo 3 11 4 -- 20 -- animelem6-0
+Ñ§4Y: Ruleta Spin 9 12 -- 20 -- animelem6-0
+Saltar A:
+Saltar B:
+
+Tecnica de calibre de comando
+
+236X: Disparo de carga DT 16 5 -- 25 --
+Ñ§Segunda fila 28 5 28 25 - 8
+Ñ§ Illusion Sword 16 -- -- 20 -- Buster golpe posible en golpe
+236Y: Shuffle 23 5 39 40 -23 Pasa golpes mientras retrocede, lanza mientras avanza
+214Y: racha 26 10 24 25 - 9 Lanzamiento no supercritico/deslizamiento de P mientras se avanza
+236B: Buster (Alto 6 4 14 -- -- lanzamiento al suelo
+214B: Buster (Cutlass 6 4 14 -- -- Lanzamiento antiaereo
+
+air6Y: Division 13 -- -- 30 --
+Ñ§ Aterrizaje 1 3 32 30 -14
+air214Y: Calibre 21 8 -- 20 -- Lanzamientos que no sean super-hit mientras avanza, P pasa a traves
+air214B: Buster (Cutlass 6 4 14 -- -- lanzamiento de aire
+
+correr S: Arco iris 19 8 45 40 -18

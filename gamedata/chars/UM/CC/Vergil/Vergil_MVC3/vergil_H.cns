@@ -1,0 +1,1485 @@
+;===========================================================================
+; 超必殺技
+;===========================================================================
+;===========================================================================
+[Statedef 2900]
+type = S
+movetype = I
+physics = S
+ctrl = 0
+anim = 181
+velset = 0,0
+sprpriority = 2
+
+[state 3260]
+type = NotHitBy
+value = SCA,AA,AT,AP
+trigger1 = time <= 5
+
+
+[State 3000, superchargehelper]
+type=helper
+trigger1= time = 3
+trigger1 = numhelper(9998) = 0
+helpertype=normal
+stateno=9998
+ID=9998
+name="Super Charge"
+postype=back
+pos=160,120
+supermovetime=9999
+
+[State 3300, 時間停止]
+type = SuperPause
+trigger1 = Time = 3
+time = 118
+movetime = 118
+anim = -1
+sound = -1
+pos = 0,0
+darken = 1
+p2defmul = 1
+poweradd = 0
+unhittable = 1
+
+
+[State 3000, superchargehelper]
+type=helper
+trigger1= animelemtime(1)=1
+helpertype=normal
+stateno=7500
+ID=7500
+name="Super Charge"
+postype=p1
+pos=-14,-77
+persistent=0
+size.xscale = 1
+size.yscale = 1
+supermovetime=9999
+
+          
+[State 2900, 効果音]
+type = PlaySnd
+trigger1 = time = 1
+value = 3500,0
+
+[State 2900, ヘルパー];トリガーバースト
+type = Helper
+trigger1 = time = 1
+helpertype = normal
+name = "TB"
+ID = 7100
+pos = 10, -15
+postype = p1
+facing = 1
+stateno = 7100
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.5
+size.yscale = 0.55
+
+[State -3, ヘルパー]
+type = Helper
+triggerall = var(56) = 0
+triggerall = NumHelper(8510) = 0
+trigger1 = time = 115
+helpertype = normal
+name = "Enjin"
+ID = 8500
+pos = 0, -50
+postype = p1
+stateno = 8500
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.5
+size.yscale = 0.5
+
+[State -3, ヘルパー]
+type = Helper
+triggerall = var(56) = 0
+triggerall = NumHelper(8510) = 0
+trigger1 = time = 115
+helpertype = normal
+name = "Enjin"
+ID = 8501
+pos = 0, -50
+postype = p1
+stateno = 8500
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.5
+size.yscale = 0.5
+
+[State -3, ヘルパー]
+type = Helper
+triggerall = var(56) = 0
+triggerall = NumHelper(8510) = 0
+trigger1 = time = 115
+helpertype = normal
+name = "Enjin"
+ID = 8502
+pos = 0, -50
+postype = p1
+stateno = 8500
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.5
+size.yscale = 0.5
+
+[State -3, ヘルパー]
+type = Helper
+triggerall = var(56) = 0
+triggerall = NumHelper(8510) = 0
+trigger1 = time = 115
+helpertype = normal
+name = "Enjin"
+ID = 8503
+pos = 0, -50
+postype = p1
+stateno = 8500
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.5
+size.yscale = 0.5
+
+[State -3, ヘルパー]
+type = Helper
+triggerall = var(56) = 0
+triggerall = NumHelper(8510) = 0
+trigger1 = time = 115
+helpertype = normal
+name = "Enjin"
+ID = 8504
+pos = 0, -50
+postype = p1
+stateno = 8500
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.5
+size.yscale = 0.5
+
+[State -3, ヘルパー]
+type = Helper
+triggerall = var(56) = 0
+triggerall = NumHelper(8510) = 0
+trigger1 = time = 115
+helpertype = normal
+name = "Enjin"
+ID = 8505
+pos = 0, -50
+postype = p1
+stateno = 8500
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.5
+size.yscale = 0.5
+
+[State 2900, ゲージ消費]
+type = poweradd
+trigger1 = time = 115
+value = -1000
+
+[State 2900, 効果音]
+type = PlaySnd
+trigger1 = AnimElem = 1
+value = 150,4
+channel = 0
+
+[State 2900, 効果音]
+type = PlaySnd
+trigger1 = AnimElem = 7
+value = 20,0
+
+[State 2900, 効果音]
+type = PlaySnd
+trigger1 = AnimElem = 12
+value = 5,4
+
+[State 2900, 効果音]
+type = PlaySnd
+trigger1 = AnimElem = 22
+value = 190,2
+
+[State 2900, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;===========================================================================
+;絶刀(1ゲージ)
+[Statedef 3000]
+movetype = A
+physics = S
+anim = 3000
+velset = 0,0
+juggle  = 15
+ctrl = 0
+sprpriority = 2
+
+
+
+[state 3260]
+type = NotHitBy
+value = SCA,AA,AT,AP
+trigger1 = time <= 5
+
+
+[State 1000, ゲージ消費]
+type = PowerAdd
+trigger1 = time = 0
+value = -1000
+
+[State 3300, 時間停止]
+type = SuperPause
+trigger1 = Time = 3
+time = 30
+movetime = 30
+anim = -1
+sound = -1
+pos = 0,0
+darken = 0
+p2defmul = 1
+poweradd = 0
+unhittable = 1
+
+[State 3300, 残像]
+type = AfterImage
+triggerall = numhelper(3803) = 0
+triggerall = prevstateno != [3000,3999]
+trigger1 = Time = 3
+time = 60
+TimeGap  = 3
+FrameGap = 4
+length = 10
+PalBright = 1,1,1
+PalContrast =  50,50,150
+PalAdd = 0,0,0
+PalMul = .5,.5,.5
+trans = add1
+
+[State 3000, superchargehelper]
+type=helper
+trigger1= animelemtime(1)=1
+helpertype=normal
+stateno=7500
+ID=7500
+name="Super Charge"
+postype=p1
+pos=-14,-77
+persistent=0
+size.xscale = 1
+size.yscale = 1
+supermovetime=9999
+
+[State 3000, superchargehelper]
+type=helper
+trigger1 = animelemtime(1) >= 2
+trigger1 = numhelper(9998) = 0
+trigger1 = numhelper(7500) = 0
+helpertype=normal
+stateno=9998
+ID=9998
+name="Super Charge"
+postype=back
+pos=160,120
+supermovetime=9999
+
+[State 3300, エフェクト]
+type = null;Explod
+trigger1 = time = 3
+anim = 3510
+ID = 3510
+scale = 0.5,0.5
+postype = p1
+pos = 0,0
+sprpriority = 4
+supermovetime = 99999
+ownpal = 1
+bindtime = -1
+removeongethit = 1
+
+[State 3300, エフェクト]
+type = null;ModifyExplod
+trigger1 = time >= 3
+ID = 3510
+scale = 0.5+(0.01*(time-3)), 0.5+(0.01*(time-3))
+
+[State 3300, エフェクト]
+type = null;ModifyExplod
+trigger1 = time >= 7
+ID = 3510
+scale = 0.5+(0.05*(time-7)), 0.5+(0.05*(time-7))
+
+[State 3300, エフェクト]
+type = null;ModifyExplod
+trigger1 = time >= 13
+ID = 3510
+scale = 0.5+(0.01*(time-13)), 0.5+(0.01*(time-13))
+
+[State 3300, エフェクト]
+type = null;ModifyExplod
+trigger1 = time >= 17
+ID = 3510
+scale = 0.5+0.05*(time-17), 0.5+0.05*(time-17)
+pos = 0, time*2
+postype = p1
+
+[State 3300, エフェクト]
+type = null;ModifyExplod
+trigger1 = time >= 22
+ID = 3510
+scale = 0.5+0.1*(time-22), 0.5+0.1*(time-22)
+pos = 0, time*2
+postype = p1
+
+[State 3300, 効果音]
+type = PlaySnd
+trigger1 = time = 3
+value = 3000,0
+
+[State 1200, 汎用変数]
+type = VarRandom
+trigger1 = time = 0
+v = 13
+range = 0,1
+
+[State 3000, 透過]
+type = Trans
+trigger1 = time >= 20
+trans = addalpha
+alpha = time-20, 128
+
+
+[State 1000, エフェクト]
+type = Explod
+trigger1 = animtime = -15
+anim = 2080
+scale = 0.6,0.6
+postype = p1
+pos = 0,0
+sprpriority = 4
+supermovetime = 99999
+ownpal = 1
+bindtime = -1
+removeongethit = 1
+
+[State 1200, VarRandom]
+type = VarRandom
+trigger1 = time = 0
+v = 13
+range = 0,1
+
+[State 1200, 速度]
+type = velset
+trigger1 = animelemTime(6) = 0
+x = 2
+
+[State 1200, 速度]
+type = velset
+trigger1 = animelemTime(7) = 0
+x = 4
+
+[State 1200, 速度]
+type = velset
+trigger1 = animelem = 11
+x = 0
+
+
+[State 3000, AfterImage]
+triggerall = numhelper(3803) = 0
+type = AfterImage
+trigger1 = animtime = -25
+time = 9
+TimeGap  = 2
+FrameGap = 1
+length = 5
+PalContrast =  150,50,150
+PalAdd = 0,0,0
+PalMul = .5,.5,.5
+trans = add1
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 2
+value = 3001,var(13)
+
+[State 3000, ステート変更]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 3003
+ctrl = 1
+
+;------------------------------------------------
+[Statedef 3003]
+type=A
+physics=N
+movetype=I
+ctrl = 0
+anim = 3001
+sprpriority = 3
+velset = 0,0
+
+
+[State 3000, superchargehelper]
+type=helper
+trigger1 = time >= 0
+trigger1 = numhelper(9998) = 0
+trigger1 = numhelper(7500) = 0
+helpertype=normal
+stateno=9998
+ID=9998
+name="Super Charge"
+postype=back
+pos=160,120
+supermovetime=9999
+
+[state 25501]
+type = ScreenBound
+trigger1 = 1
+value = 0
+
+[state 3003]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[state 3003]
+type = posadd
+triggerall = time = 0
+trigger1 = Screenpos y > 240
+trigger2 = Screenpos y < 0
+y = (120 ) - Screenpos y
+
+[state 3003]
+type = posadd
+triggerall = time = 0
+trigger1 = Screenpos x > 320
+trigger2 = Screenpos x < 0
+x = (160 ) - Screenpos x
+
+[State 1000, helper]
+type = Helper
+trigger1 = time = 0
+helpertype = player
+name = "zigen1"
+ID = 3002
+pos = 0,0
+postype = p1
+facing = 1
+stateno = 3002
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+
+[state 3003]
+type = posadd
+triggerall = time = 0
+trigger1 = Screenpos y > (240 )
+trigger2 = Screenpos y < 0
+y = (120 ) - Screenpos y
+
+[state 3003]
+type = posadd
+triggerall = time = 0
+trigger1 = Screenpos x > (320)
+trigger2 = Screenpos x < 0
+x = (160) - Screenpos x
+
+[State 7006, ヘルパー]
+type = Helper
+trigger1 = time%20 = 0
+trigger1 = time <= 150
+helpertype = normal
+name = "zigen2"
+ID = 3007
+pos = ceil(random%170 - 85), -ceil(random%80 - 40)
+postype = p1
+facing = 1
+stateno = 3007
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+persistent=0
+
+[State 7006, ヘルパー]
+type = Helper
+trigger1 = time%20 = 10
+trigger1 = time <= 150
+helpertype = normal
+name = "zigen2"
+ID = 7006
+pos = ceil(random%320), ceil(random%240)
+postype = left
+facing = 1
+stateno = 7006
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+persistent=0
+
+[State 1000, helper]
+type = Helper
+trigger1 = time%30 = 0
+trigger1 = time <= 150 
+helpertype = normal
+name = "zigen1"
+ID = 7006
+pos = -ceil(random%100 - 50), -ceil(random%60 - 30)
+postype = p1
+facing = 1
+stateno = 7006
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+
+[State 14001,]
+type = VelSet
+trigger1 = time = 1
+x = (90*((p2dist x)/(abs(p2dist x) + abs(p2dist y - 15) + 0.0000001)))
+y = (90*((p2dist y - 15)/(abs(p2dist x) + abs(p2dist y - 15) + 0.0000001)))
+
+[state 14001,varset1]
+type = varset
+trigger1 = time = 0
+var(5) = 0
+
+[state 14001,varset2]
+type = varset
+triggarall = var(5) = 13
+trigger1 = ScreenPos x < -(vel x * facing)
+trigger2 = Screenpos x  >= (320 ) - (vel x * facing)
+trigger3 = ScreenPos y <= -vel y
+trigger4 = ScreenPos y >= (240) -vel y
+var(5) = 0
+
+[state 14001]
+type = varadd
+triggarall = var(5) < 13
+trigger1 = ScreenPos x < -(vel x * facing)
+trigger2 = Screenpos x >=(320 ) -(vel x * facing)
+trigger3 = ScreenPos y <= -vel y
+trigger4 = ScreenPos y>= (240) -vel y
+var(5) = 1
+
+[State 14001,]
+type = VelSet
+trigger1 = ScreenPos x < -(vel x * facing)
+trigger2 = Screenpos x>= (320) -(vel x * facing)
+x = -vel x 
+
+[State 14001,]
+type = VelSet
+trigger1 = ScreenPos y <= -vel y
+trigger2 = ScreenPos y>= (240) -vel y
+y = -vel y
+
+[State 14001,]
+type = Veladd
+triggarall = var(5) = 13
+triggerall = abs(vel y) <= abs(vel x) /2
+triggerall = vel y >= 0 
+trigger1 = ScreenPos x < -(vel x * facing)
+trigger2 = Screenpos x >= ((320) -(vel x * facing))
+y = abs(vel x) /1.5
+
+[State 14001,]
+type = Veladd
+triggarall = var(5) = 13
+triggerall = vel y < 0
+triggerall = abs(vel y) <= abs(vel x) /2
+trigger1 = ScreenPos x  < -(vel x * facing)
+trigger2 = Screenpos x  >= ((320) -(vel x * facing))
+y = -abs(vel x) /1.5
+
+[State 14001,]
+type = Veladd
+triggarall = var(5) = 13
+triggerall = vel x < 0
+triggerall = abs(vel x) <= abs(vel y) /2
+trigger1 = ScreenPos y <= -vel y
+trigger2 = ScreenPos y >= (240) -vel y
+x = -abs(vel y) /1.5
+
+[State 14001,]
+type = Veladd
+triggarall = var(5) = 30
+triggerall = abs(vel x) <= abs(vel y) /2
+triggerall = vel x >= 0
+trigger1 = ScreenPos y <= -vel y
+trigger2 = ScreenPos y >= (240) -vel y
+x = abs(vel y) /1.5
+
+[State 3000, ステート変更]
+type = changestate
+trigger1 = time = 100
+value = 3005
+ctrl = 0
+
+;---------------------------------------------------------------------------
+[Statedef 3002]
+movetype= A
+physics = S
+juggle  = 0
+velset = 0,0
+anim = 3001
+ctrl = 0
+sprpriority = 2
+
+[State 3300, 移動]
+type = Posadd
+trigger1 = Time = 0
+x = 50
+
+[State 3300]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 30004, 1];殴られたり投げられたりしないように設定
+type = NotHitBy
+trigger1 = Time >= 0
+value = SCA, NA, SA, HA, NP, SP, HP, NT, ST, HT
+ignorehitpause=1
+
+
+[State 30004];相殺する場合、消滅ステートに移行
+type = HitOverRide
+trigger1 = Time = 0
+time = -1
+attr = SCA, AA,AT,AP
+slot = 0
+stateno = 3002
+ignorehitpause=1
+
+[State 1000, helper]
+type = Helper
+trigger1 = time = 0
+helpertype = normal
+name = "zigen1"
+ID = 7006
+pos = -ceil(random%50), -ceil(random%25)
+postype = p2
+facing = 1
+stateno = 7006
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+
+[State 1000, helper]
+type = Helper
+trigger1 = time%10 = 5
+helpertype = normal
+name = "zigen1"
+ID = 7006
+pos = ceil(random%170), -ceil(random%80)
+postype = p2
+facing = 1
+stateno = 7006
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+
+[State 1000, helper]
+type = Helper
+trigger1 = time = [1,99]
+trigger1 = time%10 = 0
+helpertype = normal
+name = "zigen1"
+ID = 7006
+pos = -ceil(random%100), -ceil(random%60)
+postype = p2
+facing = 1
+stateno = 7006
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+
+[State 14001]
+type = Destroyself
+trigger1 =root,stateno != 3003
+trigger1 =root,stateno != 3200
+
+;---------------------------------------------------------------------------
+[Statedef 3005]
+type    = S
+movetype= I
+physics = S
+ctrl = 0
+anim = 3005
+velset = 0,0
+
+[State 3300, 移動]
+type = PosSet
+trigger1 = Time = 0
+x = helper(3002),pos x
+y = 0
+
+[State 1000, 振り向く]
+type = turn
+trigger1 = time = 0
+trigger1 = P2BodyDist X < 0
+
+[State 195]
+type = AngleDraw
+trigger1 = 1
+scale = 1.06,1.06
+
+[State 195]
+type = AngleDraw
+trigger1 = animtime = 0
+scale = 0.94,0.94
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 10
+value = 5,0
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 60
+value = 190,2
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 110
+value = 5,1
+
+[State 3000, ステート変更]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;--------------------------------------------------------
+;--------------------------------------------------------
+
+[Statedef 3200]
+type    = S
+movetype= A
+physics = S
+juggle  = 4
+poweradd= -1000
+velset = 0,0
+anim = 41000+var(10)
+ctrl = 0
+sprpriority = 2
+
+
+[state 50, 1];フォースエッジが戻ってきた時
+type = changeanim
+trigger1 = anim = 51000
+trigger1 = var(10) = 0
+trigger1 = NumHelper(1401) = 0
+value = 41000
+elem = animelemno(0)
+
+[State 1000, セリフ]
+type = PlaySnd
+trigger1 = Time = 1
+value = 0, 3
+
+[State 1000, 効果音]
+type = PlaySnd
+trigger1 = Time = 15
+channel = 0
+value = 1000, 0
+
+[State 1000, 移動]
+type = velset
+trigger1 = AnimElem = 3
+x = -3
+
+[State 1000, 移動]
+type = velset
+trigger1 = AnimElem = 4
+x = -3
+
+[State 1010, 速度]
+type = velset
+trigger1 = AnimElem = 5
+x = -4.5
+
+[State 1010, 速度]
+type = velset
+trigger1 = AnimElem = 6
+x = -3
+
+[State 1010, 速度]
+type = velset
+trigger1 = AnimElem = 7
+x = -2.4
+
+[State 1010, 速度]
+type = velset
+trigger1 = AnimElem = 9
+x = -1.2
+
+[State 1010, 速度]
+type = velset
+trigger1 = AnimElem = 11
+x = 0
+
+[State 1010, 幅]
+type = Width
+trigger1 = 1
+value = 50,30
+
+[State 1000, エフェクト]
+type = Explod
+trigger1 = animelem = 14
+anim = 7000
+scale = 0.5,0.5
+postype = p1
+pos = -40,-50
+sprpriority = 4
+;supermove = 1
+ownpal = 1
+bindtime = -1
+removeongethit = 1
+
+[State 1000, エフェクト]
+type = Helper
+trigger1 = time = 13
+helpertype = normal
+name = "zigeneffect"
+ID = 7005
+pos = 10,-35
+postype = p1
+facing = 1
+stateno = 7005
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.1+var(7)*0.3
+size.yscale = 0.5+var(7)*0.1
+
+[State 1000, helper]
+type = Helper
+trigger1 = animelem = 14
+helpertype = player
+name = "zigen1"
+ID = 3202
+pos = 0,0
+postype = p1
+facing = 1
+stateno = 3202
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+
+[State 1000, 変数]
+type = VarSet
+triggerall = var(59) = 0
+trigger1 = Time = 0
+trigger1 = command = "x"
+v = 7                   
+value = 1
+
+[State 1000, 変数]
+type = VarSet
+triggerall = var(59) = 0
+trigger1 = Time = 0
+trigger1 = command = "y"
+v = 7                   
+value = 2
+
+[State 1000, 変数]
+type = VarSet
+triggerall = var(59) = 0
+trigger1 = Time = 0
+trigger1 = command = "z"
+v = 7                   
+value = 3
+
+[State 1000, 変数]
+type = VarSet
+triggerall = Time = 0
+triggerall = p2bodydist X = [0,110]
+trigger1 = var(7) <= 0
+trigger2 = var(7) >= 4
+v = 7                   
+value = 1
+
+[State 1000, 変数]
+type = VarSet
+triggerall = Time = 0
+triggerall = p2bodydist X = [111,180]
+trigger1 = var(7) <= 0
+trigger2 = var(7) >= 4
+v = 7                   
+value = 2
+
+[State 1000, 変数]
+type = VarSet
+triggerall = Time = 0
+triggerall = p2bodydist X = [181,260]
+trigger1 = var(7) <= 0
+trigger2 = var(7) >= 4
+v = 7                   
+value = 3
+
+[State 1000, 変数]
+type = VarSet
+triggerall = var(59)
+trigger1 = Time = 0
+trigger1 = var(7) !=[1,3]
+trigger1 = p2bodydist X = [0,110]
+v = 7                   
+value = 1
+
+[State 1000, 変数]
+type = VarSet
+triggerall = var(59)
+trigger1 = Time = 0
+trigger1 = var(7) !=[1,3]
+trigger1 = p2bodydist X = [111,180]
+v = 7                   
+value = 2
+
+[State 1000, 変数]
+type = VarSet
+triggerall = var(59)
+trigger1 = Time = 0
+trigger1 = var(7) !=[1,3]
+trigger1 = p2bodydist X = [181,260]
+v = 7                   
+value = 3
+
+[State 1000, ステート変更]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1002
+ctrl = 0
+
+;---------------------------------------------------------------------------
+[Statedef 3202]
+movetype= A
+physics = S
+juggle  = 0
+velset = 0,0
+anim = 3001
+ctrl = 0
+sprpriority = 2
+
+[State 3300, 移動]
+type = Posadd
+trigger1 = Time = 0
+x = 50
+
+[State 3300]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 30004, 1];殴られたり投げられたりしないように設定
+type = NotHitBy
+trigger1 = Time >= 0
+value = SCA, NA, SA, HA, NP, SP, HP, NT, ST, HT
+ignorehitpause=1
+
+
+[State 30004];相殺する場合、消滅ステートに移行
+type = HitOverRide
+trigger1 = Time = 0
+time = -1
+attr = SCA, AA,AT,AP
+slot = 0
+stateno = 3002
+ignorehitpause=1
+
+
+[State 7006, ヘルパー]
+type = Helper
+trigger1 = time%20 = 0
+trigger1 = time <= 150
+helpertype = normal
+name = "zigen2"
+ID = 3007
+pos = ceil(random%320), -ceil(random%200)
+postype = left
+facing = 1
+stateno = 3007
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+persistent=0
+
+[State 7006, ヘルパー]
+type = Helper
+trigger1 = time%20 = 10
+trigger1 = time <= 150
+helpertype = normal
+name = "zigen2"
+ID = 7006
+pos = ceil(random%320), -ceil(random%200)
+postype = left
+facing = 1
+stateno = 7006
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+persistent=0
+
+[State 1000, helper]
+type = Helper
+trigger1 = time%30 = 0
+trigger1 = time <= 150 
+helpertype = normal
+name = "zigen1"
+ID = 7006
+pos = ceil(random%320), -ceil(random%200)
+postype = left
+facing = 1
+stateno = 7006
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+
+[State 1000, helper]
+type = Helper
+trigger1 = time = 0
+helpertype = normal
+name = "zigen1"
+ID = 7006
+pos = -ceil(random%50), -ceil(random%25)
+postype = p2
+facing = 1
+stateno = 7006
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+
+[State 1000, helper]
+type = Helper
+trigger1 = time%10 = 5
+helpertype = normal
+name = "zigen1"
+ID = 7006
+pos = ceil(random%170), -ceil(random%80)
+postype = p2
+facing = 1
+stateno = 7006
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+
+[State 1000, helper]
+type = Helper
+trigger1 = time = [1,99]
+trigger1 = time%10 = 0
+helpertype = normal
+name = "zigen1"
+ID = 7006
+pos = -ceil(random%100), -ceil(random%60)
+postype = p2
+facing = 1
+stateno = 7006
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.45
+size.yscale = 0.45
+
+
+
+[State 14001]
+type = Destroyself
+trigger1 =root,stateno != 3003
+trigger1 =root,stateno != 3200
+
+
+;==================================================================
+;デビルトリガー
+;==============================================================
+;---------------------------------------------------------------------------
+[Statedef 3700]
+type    = S
+movetype= I
+physics = S
+juggle  = 4
+velset = 0,0
+anim = 181+var(10)
+ctrl = 0
+sprpriority = 2
+
+[State 3000, superchargehelper]
+type=helper
+trigger1 = animelemtime(1) >= 4
+trigger1 = numhelper(9998) = 0
+trigger1 = numhelper(7500) = 0
+helpertype=normal
+stateno=9998
+ID=9998
+name="Super Charge"
+postype=back
+pos=160,120
+supermovetime=9999
+
+[state 1100, 1];フォースエッジが戻ってきた時
+type = changeanim
+trigger1 = anim = 10181
+trigger1 = var(10) = 0
+trigger1 = NumHelper(1401) = 0
+value = 181
+elem = animelemno(0)
+
+
+[State 1000, helper]
+type = Helper
+trigger1 = time = 1
+helpertype = normal
+name = "TB"
+ID = 7100
+pos = 10, -15
+postype = p1
+facing = 1
+stateno = 7100
+keyctrl = 0
+ownpal = 1
+supermovetime = 99999
+pausemovetime = 99999
+size.xscale = 0.5
+size.yscale = 0.55
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+value = 3500,0
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+value = 150,4
+channel = 0
+
+[State 3000, ぶつかり]
+type = Width
+trigger1 = AnimElem = 2, >= 0
+value = 15,0
+
+[State 3000, superchargehelper]
+type=helper
+trigger1= time = 3
+helpertype=normal
+stateno=7500
+ID=7500
+name="Super Charge"
+postype=p1
+pos=-14,-77
+persistent=0
+supermovetime=9999
+
+[State 4100, superchargepause]
+type=superpause
+trigger1= time = 1
+time=217
+anim=-1
+p2defmul=1
+darken = 1
+unhittable = 1 
+movetime = 217  
+
+
+
+[State 3000, 残像]
+type = AfterImage
+triggerall = numhelper(3803) = 0
+trigger1 = AnimElem = 2, 1
+time = 2
+
+[State 3000, 残像表示時間]
+type = AfterImageTime
+triggerall = numhelper(3803) = 0
+trigger1 = AnimElemTime(2) >= 1 && Time < 60
+time = 2
+
+[State 3000, 相手の特定の攻撃属性無効]
+type = NotHitBy
+trigger1 = time = 0
+value = SCA
+time = 216
+
+[State 3000, ステート変更]
+type = ChangeState
+trigger1 = Animelem = 24
+value = 3701
+ctrl = 0
+;---------------------------------------------------------------------------
+[Statedef 3701]
+type    = S
+movetype= I
+physics = S
+juggle  = 4
+velset = 0,0
+anim = 23500
+ctrl = 0
+sprpriority = 2
+
+
+[State 1000, ゲージ消費]
+type = PowerAdd
+trigger1 = time = 0
+value = -1000
+
+[State 4100, superchargepause]
+type=superpause
+trigger1= time = 1
+time=82
+anim=-1
+p2defmul=1
+darken = 1
+unhittable = 1 
+movetime = 82 
+
+[State 3000, 相手の特定の攻撃属性無効]
+type = NotHitBy
+trigger1 = time = 0
+value = SCA
+time = 82
+
+[State 3000, superchargehelper]
+type=helper
+trigger1= time = 1
+helpertype=normal
+stateno=7500
+ID=7500
+name="Super Charge"
+postype=p1
+pos=-14,-77
+persistent=0
+supermovetime=9999
+
+[State 3000, superchargehelper]
+type=helper
+trigger1 = time = 1
+trigger1 = numhelper(9998) = 0
+trigger1 = numhelper(7500) = 0
+helpertype=normal
+stateno=9998
+ID=9998
+name="Super Charge"
+postype=back
+pos=160,120
+supermovetime=9999
+
+[state 25000,AURA]
+type = Helper
+triggerall = NumHelper(3800) = 0
+trigger1 = animelem = 1
+helpertype=normal
+stateno=3800
+ID=3800
+name="AURA"
+Size.Xscale = 1
+Size.yscale =1
+postype=p1
+pos = 0,0
+ownpal=1
+persistent=0
+sprpriority = -4
+supermovetime=9999
+pausemovetime = 9999
+
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+value = 3000,0
+
+
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+value = 3500,2
+channel = 0
+
+[State 1000, エフェクト]
+type = Explod
+trigger1 = time = 1
+anim = 3510
+ID = 3510
+scale = 0.5,0.5
+postype = p1
+pos = 0,0
+sprpriority = 4
+supermovetime = 99999
+ownpal = 1
+bindtime = -1
+removeongethit = 1
+
+[State 1000, エフェクト]
+type = ModifyExplod
+trigger1 = time >= 1
+ID = 3510
+scale = 0.5+(0.01*(time-1)), 0.5+(0.01*(time-1))
+
+[State 1000, エフェクト]
+type = ModifyExplod
+trigger1 = time >= 5
+ID = 3510
+scale = 0.5+(0.05*(time-5)), 0.5+(0.05*(time-5))
+
+[State 1000, エフェクト]
+type = ModifyExplod
+trigger1 = time >= 11
+ID = 3510
+scale = 0.5+(0.01*(time-11)), 0.5+(0.01*(time-11))
+
+[State 1000, エフェクト]
+type = ModifyExplod
+trigger1 = time >= 15
+ID = 3510
+scale = 0.5+0.05*(time-15), 0.5+0.05*(time-15)
+pos = 0, time*2
+postype = p1
+
+[State 1000, エフェクト]
+type = ModifyExplod
+trigger1 = time >= 20
+ID = 3510
+scale = 0.5+0.1*(time-20), 0.5+0.1*(time-20)
+pos = 0, time*2
+postype = p1
+
+
+
+[State 3000, ステート変更]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+[Statedef 3703]
+type    = S
+movetype= I
+physics = S
+juggle  = 4
+velset = 0,0
+anim = 13300
+ctrl = 0
+sprpriority = 2
+
+[state 3703]
+type = varset
+trigger1 = time = 0
+trigger1 = palno <= 10
+var(26) = 1
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+value = 150,6
+
+[State 3803]
+type = AfterImage
+trigger1 = time = 0
+time = -1
+trans = add
+timegap = 1
+framegap = 1
+length = 4
+ignorehitpause = 1
+palcolor = 128
+palbright = 30,30,30
+palcontrast = 230,0,0
+paladd = 10,10,10
+palmul = .65,.65,.65
+
+[State 3000, 相手の特定の攻撃属性無効]
+type = NotHitBy
+trigger1 = time = 0
+value = SCA
+time = 68
+
+[State 4100, superchargepause]
+type=superpause
+trigger1= time = 1
+time=37
+anim=-1
+p2defmul=1
+darken = 1
+unhittable = 1 
+movetime = 37 
+
+[state 25000,AURA]
+type = Helper
+triggerall = NumHelper(3803) = 0
+trigger1 = animelem = 1
+helpertype=normal
+stateno=3803
+ID=3803
+name="AURA"
+Size.Xscale = 1
+Size.yscale =1
+postype=p1
+pos = 0,0
+ownpal=1
+persistent=0
+sprpriority = -4
+supermovetime=9999
+pausemovetime = 9999
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+value = 150,5
+channel = 0
+
+
+[State 3000, ステート変更]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 0
+ctrl = 1

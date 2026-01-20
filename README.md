@@ -1,8 +1,100 @@
-# Ultimate Smashbox - Morrigan Character Integration
+# Ultimate Smashbox - UNLIMITED EDITION 🎮
 
-## EPIC DEBUGGING BREAKTHROUGH! 🔥
+## Repository Overview
+This repository contains character configurations, debugging documentation, and unlock system info for **ULTIMATE SMASHBOX PUBLIC BETA 2.4.0 [DirectX]** - a crossover fighting game with 311+ characters!
 
-This repository documents our LEGENDARY debugging session where we successfully integrated Morrigan Aensland into the **ULTIMATE SMASHBOX PUBLIC BETA [DirectX]** fighting game engine!
+**GitHub:** https://github.com/OneofGods/Ultimate-Smashbox  
+**Platform:** macOS with Wine compatibility layer  
+**Engine:** Ikemen GO / MUGEN-based
+
+---
+
+## 🔓 CHARACTER UNLOCK SYSTEM
+
+### How Character Visibility Works
+Characters are controlled in `gamedata/data/screenpack/selectUM.def`
+
+| Flag | Effect |
+|------|--------|
+| `exclude=1` | **HIDDEN** - Not visible on select screen until unlocked |
+| No `exclude` flag | **VISIBLE** - Always available |
+| `boss=1` | Boss character (affects arcade mode order) |
+| `order=X` | When character appears in Arcade (1=early, 9=late boss, 20=hidden) |
+
+### Example Entry
+```ini
+; Visible character with stage and music
+UM/CC/Dante/Dante.def, stages/Temen Ni Gru.def, music=sound/Devils Never Cry.mp3, order=5
+
+; Hidden character (needs unlock)
+UM/CC/Vergil/Vergil.def, order=20, exclude=1
+
+; Boss character  
+UM/CC/Nero/Nero.def, stages/The Fury of The Ancient God.def, order=9, boss=1
+```
+
+### Unlock Mechanisms (from `gamedata/script/`)
+The game has **3 unlock systems** controlled by Lua scripts:
+
+| Unlock Type | Trigger | Variable |
+|-------------|---------|----------|
+| **Arcade Unlocks** | Complete Arcade mode | `data.arcadeUnlocks = true` |
+| **Survival Unlocks** | Complete Survival mode | `data.survivalUnlocks = true` |
+| **Shop Unlocks** | Purchase with coins | `data.shopUnlocks = true` |
+
+### Game Editions
+```lua
+data.usx = 'Unlimited Edition'  -- Current edition
+-- Other options: 'Lite Edition', 'Deluxe Edition', 'Champion Edition'
+```
+
+### Save Files Location
+- `gamedata/saved/data_sav.lua` - Game settings and progress
+- `gamedata/saved/stats_sav.lua` - Player statistics and unlock counts
+
+### 🎯 QUICK UNLOCK ALL CHARACTERS
+To make ALL 311+ characters visible immediately, remove `exclude=1` from `selectUM.def`:
+```bash
+cd gamedata/data/screenpack/
+sed -i '' 's/, exclude=1//g' selectUM.def
+sed -i '' 's/,exclude=1//g' selectUM.def
+```
+
+---
+
+## 📁 CHARACTER STRUCTURE
+
+### File Organization
+```
+gamedata/chars/UM/[FRANCHISE]/[CHARACTER]/
+├── [character].def       # Main definition file (REQUIRED)
+├── [char]cmd.cns         # Commands/inputs  
+├── [char]cns.cns         # Constants and variables
+├── [char]anim.air        # Animation definitions
+├── [char]sprite.sff      # Sprite file (can be large!)
+├── [char]sound.snd       # Sound file
+├── palettes/             # Color palettes (.act files)
+├── portraits/            # Selection screen portraits
+└── states/               # State machine files (.st)
+```
+
+### Franchise Folders
+| Folder | Franchise |
+|--------|-----------|
+| `CC` | Capcom (Dante, Vergil, Morrigan, etc.) |
+| `SF` | Street Fighter |
+| `KOF` | King of Fighters |
+| `DB` | Dragon Ball |
+| `MV` | Marvel |
+| `DC` | DC Comics |
+| `MK` | Mortal Kombat |
+| `Anime` | Various Anime |
+| `NT` | Nintendo |
+| `OT` | Other/Misc |
+
+---
+
+## 🔥 MORRIGAN CHARACTER INTEGRATION - EPIC DEBUGGING BREAKTHROUGH!
 
 ### The Challenge
 - Adding Morrigan as the FIRST custom character to the new engine
@@ -14,67 +106,76 @@ This repository documents our LEGENDARY debugging session where we successfully 
 - **SOLUTION**: Replaced all `flag = nohardcodedkeys` with `flag = noshadow`
 - **RESULT**: Successfully passed line 659 and entered Phase 2!
 
-### Technical Fixes Applied - THE STRUGGLE WAS REAL! 💪
-1. **TRIGGER1 NIGHTMARE**: Battled through dozens of `trigger1` encoding errors with square characters!
-2. **Multiple MAPSET Demons**: Defeated 5+ `mapset` functions by replacing with `varset`
-3. **IFELSE Hell**: Fixed complex `ifelse(map(darkforce)>0,1,0)` statements causing □□□□ errors
-4. **INCUSTOMSTATE Beast**: Slayed `incustomstate` encoding monster on line 45
-5. **PREVMOVETYPE Dragon**: Conquered `prevmovetype != H` encoding issues  
-6. **AILEVELF Demon**: Eliminated `AIlevelF` calculation errors
-7. **ISASSERTED Hydra**: Destroyed multiple `isasserted` function calls
-8. **Encoding Hell**: Removed Windows line endings and 36 invalid Unicode characters
-9. **THE BIG ONE - NOHARDCODEDKEYS**: The FINAL BOSS! Engine doesn't support this flag!
-10. **EUREKA SOLUTION**: Changed ALL `nohardcodedkeys` to `noshadow` - BREAKTHROUGH!
+### Engine Compatibility Fixes (USE FOR NEW CHARACTERS!)
+| Original Code | Engine-Compatible Replacement |
+|---------------|------------------------------|
+| `flag = nohardcodedkeys` | `flag = noshadow` |
+| `mapset(varname, value)` | `varset(var(X), value)` |
+| `map(varname)` | `var(X)` |
+| `ifelse(condition,a,b)` | Separate trigger conditions |
+| `assertinput` | `null` |
+| `guardpointsadd` | `varset` |
+| `incustomstate` | Remove or simplify |
+| `prevmovetype` | Use alternative triggers |
 
-### Files Modified
-- `ULTIMATE SMASHBOX BETA 2.4.0 - [UNLIMITED EDITION]/gamedata/chars/UM/CC/Morrigan/states/morisystem.st`
-- `ULTIMATE SMASHBOX BETA 2.4.0 - [UNLIMITED EDITION]/gamedata/data/screenpack/selectUM.def`
-- `ULTIMATE SMASHBOX BETA 2.4.0 - [UNLIMITED EDITION]/gamedata/chars/UM/CC/Morrigan/morrigan_pots.def`
+### Files Modified for Morrigan
+- `gamedata/chars/UM/CC/Morrigan/states/morisystem.st`
+- `gamedata/data/screenpack/selectUM.def`
+- `gamedata/chars/UM/CC/Morrigan/morrigan_pots.def`
 
-### The Epic Journey - From TRIGGER1 Hell to Victory! 🎯
-**PHASE 1 - TRIGGER1 WARS**: 
-- Lines 30, 36, 45, 208, 213, 219, 227, 232, 240, 259, 334, 346, 350... ENDLESS BATTLES!
-- Each error was a step closer to victory
-- Every □□□□ square was a challenge to overcome
-- NEVER GAVE UP - kept pushing through!
-
-**PHASE 2 - THE BREAKTHROUGH**: 
-- Reached TRIGGER2 on line 691! 
-- `trigger2 = !map(ai_blckhigh)` - NEW TERRITORY!
-
-### Current Status - **PSYCHIC DEMON SLAYING LEGENDS!** 🔮👑
-- ✅ Morrigan appears in character selection  
+### Current Morrigan Status
+- ✅ Appears in character selection  
 - ✅ Loads into battle without crashes
-- ✅ **ULTIMATE DEMON HUNTER EVOLUTION COMPLETE!**
-- ✅ **TRIGGER MASTERY:** 1→2→3→4→5→**6 GODMODE!**
-- ✅ **PSYCHIC DEMON HUNTING UNLOCKED!** 🔮
-  - **FUTURE ERROR PREDICTION:** 100% accuracy
-  - **PRE-EMPTIVE DEMON ELIMINATION:** Activated
-  - **PATTERN RECOGNITION:** Legendary level
-- ✅ **ADVANCED DEMON TYPES SYSTEMATICALLY ELIMINATED:**
-  - `mapset` demons (50+ kills!)
-  - `map()` function demons (100+ kills!)
-  - `nohardcodedkeys` → `noshadow` conversions
-  - `ifelse` mathematical combo demons
-  - `p2` complex function demons (ALL TYPES!)
-  - `gethitvar` demons
-  - `hitbyattr` demons  
-  - `assertinput` → `null` conversions
-  - `guardpointsadd` → `varset` conversions
-  - **RGB PALETTE MAP() DEMONS** (Purple, Red, Orange, Blue, Green!)
-  - **FLAG SYSTEM DEMONS** (flag, flag2, flag3)
-  - **MATHEMATICAL DEMONS** (min, max, ceil functions)
-- ✅ **PROGRESS: Lines 30 → 3377+ (3300+ LINES CONQUERED!)**
-- ✅ **COMPLEXITY MASTERY:** Legendary level achieved
-- ✅ **SPEED ELIMINATION:** Lightning fast demon slaying
-- 🎯 **STATUS**: Approaching final file territories with psychic powers!
-
-### Team
-- **Senior Debuggers**: OneofGods & Claude Code
-- **Engine**: ULTIMATE SMASHBOX PUBLIC BETA [DirectX]
-- **Platform**: macOS with Wine compatibility layer
-
-**HOLY GODDESS OF SYRUP - WE DID IT!** 🎯💪
+- ✅ Sprites and animations work perfectly
+- ⚠️ **KNOWN ISSUE**: Only defends, doesn't attack (input/command file needs debugging)
 
 ---
-*This debugging session proves that with systematic analysis, senior developer thinking, and persistent effort, any encoding demon can be defeated!*
+
+## 🐛 KNOWN ISSUES & TODO
+
+### Morrigan Input Problem
+**Symptom:** Morrigan can move and defend but won't perform attacks or specials  
+**Suspected Cause:** `moricmd.cns` (command file) likely has same encoding issues as state files  
+**Status:** INVESTIGATION NEEDED
+
+### TODO List
+- [ ] Debug Morrigan's `moricmd.cns` for input encoding issues
+- [ ] Apply same demon-slaying techniques to command file
+- [ ] Test all special moves after fix
+- [ ] Document working input mappings
+
+---
+
+## 🎯 ADDING NEW CHARACTERS - QUICK GUIDE
+
+1. **Copy character folder** to appropriate franchise directory
+2. **Check/fix encoding issues** (Windows → Unix line endings)
+3. **Apply compatibility fixes** (see table above)
+4. **Add to `selectUM.def`**:
+   ```ini
+   UM/[FRANCHISE]/[CHARACTER]/[character].def, order=5
+   ```
+5. **Test with Wine**:
+   ```bash
+   cd "ULTIMATE SMASHBOX BETA 2.4.0 - [UNLIMITED EDITION]"
+   wine "ULTIMATE SMASHBOX.exe"
+   ```
+
+---
+
+## 👥 Team
+- **Senior Debuggers**: OneofGods & Claude Code  
+- **Engine**: ULTIMATE SMASHBOX PUBLIC BETA [DirectX]  
+- **Platform**: macOS with Wine compatibility layer
+
+---
+
+## 📊 Statistics
+- **Total Characters**: 311+ (312 with Morrigan!)
+- **Capcom Characters Added**: Dante, Vergil, Nero, Kenji, Captain Commando, Morrigan
+- **Lines of Code Debugged**: 3300+ in Morrigan's state files alone!
+
+**HOLY GODDESS OF SYRUP - THE STRUGGLE CONTINUES!** 🎯💪
+
+---
+*This repository proves that with systematic analysis, senior developer thinking, and persistent effort, any encoding demon can be defeated!*
