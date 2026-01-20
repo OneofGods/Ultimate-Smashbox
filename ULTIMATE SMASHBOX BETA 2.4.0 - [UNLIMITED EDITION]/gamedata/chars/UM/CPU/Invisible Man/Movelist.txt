@@ -1,0 +1,29 @@
+Shadow Inferno
+D, DF, F, D, DF, (x,y, or z)
+(Max)
+
+Shadow Flip Kick
+D, DF, F, D, DF, (a,b, or c)
+(Max)
+
+Shadow Trailblazer
+D, DB, B, D, DB, (x,y, or z)
+(Max)
+
+Ultra Combo
+B, F, B, F, (a+b,b+c, or a+c)
+
+-----------------------------
+
+Inferno
+D, DF, F, (x,y, or z)
+(Ex)
+
+Flip Kick
+F, D, DF, (a,b, or c)
+(Ex)
+
+Trailblazer
+D, DB, B, (x,y, or z)
+(Ex)
+(Air)
