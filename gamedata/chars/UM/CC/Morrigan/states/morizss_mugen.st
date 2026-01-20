@@ -31,16 +31,10 @@
 
 [Statedef -2]
 
-; -2, Juggle System - Disable Juggling when limit reached
-; NOTE: NoFallHitFlag is Ikemen-only, so we use a workaround with NotHitBy
-; This prevents further juggle hits when limit is reached
-[State -2, Juggle Limit Check]
-type = NotHitBy
-trigger1 = var(50) >= var(51)
-trigger1 = var(55) = 0
-value = SCA
-time = 1
-ignorehitpause = 1
+; -2, Juggle System - DISABLED
+; NOTE: MUGEN has built-in juggle system via HitDef juggle parameter
+; The Ikemen NoFallHitFlag workaround was causing invincibility issues
+; [State -2, Juggle Limit Check] - REMOVED
 
 ; EX Yellow Flash effect
 ; NOTE: pausetime is Ikemen-only, using HitPauseTime = 0 instead
