@@ -1,0 +1,122 @@
+;=================<         CUSTOM STATES         >======================
+
+;=================< Palette Selector ON/OFF >============================
+
+;Scroll Down for ON or OFF / OFF by default
+
+;=================< Ground Bounce >======================================
+
+;p2stateno = 242  ;===Ground bounce state
+
+;=================< Wall Bounce >========================================
+
+;p2stateno = 1125 ;===wall bounce state
+
+;=================<Deactivating Wall or Ground Bounce>===================
+
+;To activate Wall or Ground Bounce
+;Add this line, p2stateno = whatever state you want, 242 or 11225,
+;in the HitDef of the attack 
+
+;==================< INITIALIZE >========================================
+
+;Initialize Start Round
+[Statedef 5900]
+type = S
+
+;==========================================================================
+
+
+[state 5900, Reset Variables]
+type = varrangeset
+trigger1 = !roundsexisted && matchno = 1
+value = 0
+[state 5900, Reset Variables]
+type = varrangeset
+trigger1 = !roundsexisted && matchno = 1
+fvalue = 0
+
+
+;==========================================================================
+
+; Palette Selector
+[State 5900, Palette Selector]
+type = VarSet
+trigger1 = 1
+v = 41
+value = 1
+;VALUE
+;0= OFF
+;1= ON
+
+[State 5900, Pal Selector on]
+type = helper
+triggerall = var(41)&&!numhelper(256) && numenemy && !AILevel
+trigger1 = roundno = 1 && matchno = 1 && !(teammode = simul) && !(enemy, teammode = simul)
+trigger2 = !var(40)
+trigger3 = (teammode = turns)
+trigger3 = !roundsexisted && (enemy,roundsexisted)
+id = 256
+stateno = 256
+facing = facing
+ownpal = 1
+size.xScale = 0.5
+size.yScale = 0.5
+
+
+[state 5900, No Palette selector]
+type = remappal
+trigger1 = !var(41)
+trigger2 = AILevel && !var(40)
+source = 1, 1
+dest = 1, palno
+ignorehitpause = 1
+
+
+[State 5900, VarRandom]
+type = VarRandom
+trigger1 = time = 0
+v = 37
+range = 1,6
+
+[state 5900, explod_10]
+type = null;explod
+trigger1 = var(37) != 0
+trigger1 = numexplod(300) = 0
+trigger1 = teamside = 1
+postype =  left
+pos =  30, 220
+bindtime = -1
+anim = (30100 + ((var(37)-1)*10))
+removetime = -1
+id = 300
+ownpal = 1
+sprpriority = 5
+ontop = 1
+
+[state 5900, explod_10]
+type = null;explod
+trigger1 = var(37) != 0
+trigger1 = numexplod(400) = 0
+trigger1 = teamside = 2
+postype = right
+pos =  -110, 220
+bindtime = -1
+anim = (30100 + ((var(37)-1)*10))
+removetime = -1
+id = 400
+ownpal = 1
+sprpriority = 5
+ontop = 1
+;==============================================================================================
+;ONLY MODIFY STUFF ABOVE THIS LINE
+;==============================================================================================
+
+
+[State 5900, End]
+type = ChangeState
+trigger1 = roundno = 1
+value = 5901
+
+
+
