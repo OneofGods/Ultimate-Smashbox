@@ -171,7 +171,7 @@ type = VarSet
 trigger1 = var(50) > 0
 trigger1 = P2MoveType != H
 trigger2 = var(50) > 0
-trigger2 = (P2, Ctrl)
+trigger2 = P2StateNo = [0, 52]
 trigger3 = var(50) > 0
 trigger3 = P2StateType = S || P2StateType = C
 trigger4 = var(50) > 0
