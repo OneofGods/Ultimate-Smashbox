@@ -1,0 +1,39 @@
+; ADD004 BASIC PIEs ReBuilded DEF (08/03/2023)
+;==============================================
+; This file is Made by PIE.
+; there is a backup of this file in the same folder, named "<samename>.a4bk".
+; to Restore, use assist tool, or delete this file, then remove ".a4bk" from the neme of backup.
+;==============================================
+
+; ---- Created by Uno Tag Team Patcher ---- ;
+[Info]
+Name         ="Vergil"
+DisplayName  ="Vergil"
+VersionDate  =02,16,2009
+MugenVersion =1.1
+Author       ="Mr.Giang"; + Bugya, CR
+Pal.Defaults =1,1,1,1
+[Files]
+Cmd	=vergil1_unotag\vergil.cmd.cns
+cns=add004basic.reb1
+st=add004basic.reb1
+stcommon=common1.cns
+pal1 = vergil.act
+pal2 = Slash.act
+Sprite  =vergil.sff
+Anim    =vergil.air
+Sound   =vergil.snd
+movelist=movelist.dat
+[Palette Keymap]
+x = 1 ;Press button X to select palette 1, etc.
+y = 1
+z = 1
+a = 1
+b = 1
+c = 1
+a2 = 1 ;Hold Start and press button X for palette 7, etc.
+b2 = 1
+c2 = 1
+x2 = 1
+y2 = 1
+z2 = 1

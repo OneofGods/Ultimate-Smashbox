@@ -1,0 +1,36 @@
+; ADD004 BASIC PIEs ReBuilded DEF (08/03/2023)
+;==============================================
+; This file is Made by PIE.
+; there is a backup of this file in the same folder, named "<samename>.a4bk".
+; to Restore, use assist tool, or delete this file, then remove ".a4bk" from the neme of backup.
+;==============================================
+
+
+[Info]
+name = "Nero"
+displayname = "Nero"
+versiondate = 09,03,2011
+mugenversion = 04,14,2002
+author = "CaWO4"
+pal.defaults = 1,2,3,4,5,6,7,8,9,10
+[Files]
+sprite = N.sff
+anim = N.air
+sound = N.snd
+cmd = N.cmd.txt
+cns=add004basic.reb1
+st=add004basic.reb1
+stcommon=common1.cns
+movelist=movelist.dat
+pal1 = act/DMC4_N.act
+pal2 = act/green.act
+pal3 = act/mono.act
+pal4 = act/black.act
+pal5 = act/DMC5.act
+pal6 = act/blue.act
+pal7 = act/DMC4_D.act
+pal8 = act/DMC3_D.act
+pal9 = act/DMC3_V.act
+pal10 = act/GH.act
+;act/white.act
+;act/yellow.act
