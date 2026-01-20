@@ -31,11 +31,14 @@
 [Statedef -2]
 
 ; -2, Juggle System - Disable Juggling when limit reached
+; NOTE: NoFallHitFlag is Ikemen-only, so we use a workaround with NotHitBy
+; This prevents further juggle hits when limit is reached
 [State -2, Juggle Limit Check]
-type = AssertSpecial
+type = NotHitBy
 trigger1 = var(50) >= var(51)
 trigger1 = var(55) = 0
-flag = NoFallHitFlag
+value = SCA
+time = 1
 ignorehitpause = 1
 
 ; EX Yellow Flash effect
@@ -67,44 +70,27 @@ add = 96, 96, 96
 ignorehitpause = 1
 
 ; AI Fall Recovery and Throw Escape
-[State -2, AI Recovery Input X]
-type = AssertInput
+; NOTE: AssertInput is Ikemen-only, so AI recovery is handled via ChangeState
+; The AI will automatically try to recover when in fall states
+[State -2, AI Fall Recovery]
+type = ChangeState
 trigger1 = AILevel
-trigger1 = InCustomState || HitFall
-trigger1 = random < 250
-flag = x
-flag2 = y
-flag3 = z
+trigger1 = stateno = 5050
+trigger1 = pos y >= -20
+trigger1 = vel y > 0
+trigger1 = CanRecover
+trigger1 = random < 800
+value = 5200
 ignorehitpause = 1
 
-[State -2, AI Recovery Input A]
-type = AssertInput
+; AI tries to break throws
+[State -2, AI Throw Break Attempt]
+type = ChangeState
 trigger1 = AILevel
-trigger1 = InCustomState || HitFall
-trigger1 = random < 250
-trigger1 = random >= 500
-flag = a
-flag2 = b
-flag3 = c
-ignorehitpause = 1
-
-[State -2, AI Recovery Direction L]
-type = AssertInput
-trigger1 = AILevel
-trigger1 = InCustomState || HitFall
-trigger1 = random < 250
-trigger1 = random < 333
-flag = L
-ignorehitpause = 1
-
-[State -2, AI Recovery Direction R]
-type = AssertInput
-trigger1 = AILevel
-trigger1 = InCustomState || HitFall
-trigger1 = random < 250
-trigger1 = random >= 333
-trigger1 = random < 500
-flag = R
+trigger1 = stateno = [5000, 5019]
+trigger1 = time < 10
+trigger1 = random < 600
+value = 5200
 ignorehitpause = 1
 
 ;###################################################################################################
