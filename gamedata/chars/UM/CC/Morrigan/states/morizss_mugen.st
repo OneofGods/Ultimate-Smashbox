@@ -140,6 +140,70 @@ value = 5, 4
 
 [Statedef -4]
 
+;===========================================================================
+; MOVE ENABLE FLAGS - These vars enable all moves in moricmd.cns
+; Original Ikemen version used map() for these, MUGEN needs var()
+;===========================================================================
+
+; Initialize ALL move enable flags on round start (set to 1 = enabled)
+[State -4, Init Move Enables 1]
+type = VarSet
+trigger1 = RoundState = 0
+var(66) = 1
+var(67) = 1
+var(68) = 1
+var(69) = 1
+var(70) = 1
+var(71) = 1
+var(72) = 1
+var(73) = 1
+var(74) = 1
+var(75) = 1
+ignorehitpause = 1
+
+[State -4, Init Move Enables 2]
+type = VarSet
+trigger1 = RoundState = 0
+var(76) = 1
+var(77) = 1
+var(78) = 1
+var(79) = 1
+var(80) = 1
+var(81) = 1
+var(82) = 1
+var(83) = 1
+var(84) = 1
+var(85) = 1
+ignorehitpause = 1
+
+[State -4, Init Move Enables 3]
+type = VarSet
+trigger1 = RoundState = 0
+var(86) = 1
+var(90) = 1
+var(91) = 1
+var(92) = 1
+var(93) = 1
+var(94) = 1
+var(95) = 1
+var(96) = 1
+var(97) = 1
+var(102) = 1
+ignorehitpause = 1
+
+[State -4, Init Move Enables 4]
+type = VarSet
+trigger1 = RoundState = 0
+var(103) = 1
+var(104) = 1
+var(109) = 1
+var(118) = 1
+ignorehitpause = 1
+
+;===========================================================================
+; JUGGLE SYSTEM
+;===========================================================================
+
 ; Initialize juggle variables on round start
 [State -4, Init Juggle Limit]
 type = VarSet
