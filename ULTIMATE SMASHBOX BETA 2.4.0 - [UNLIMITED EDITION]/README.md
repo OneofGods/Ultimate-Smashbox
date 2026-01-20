@@ -36,7 +36,7 @@ Unlocked characters will automatically appear in the character select screen und
 
 ### Critical Bugs
 
-1. **Morrigan Input System** - Morrigan's special moves and supers are disabled due to uninitialized variables (var(67-97)). She can only defend and perform basic attacks.
+1. **Morrigan Input System** - ✅ **FIXED!** Variables (var 67, 68, 69, 70, 75, 77, 93, 94, 97) are now initialized. All special moves and supers work!
 
 2. **File Encoding Issues** - Some character files contain encoding corruption with random numbers and broken characters in comments.
 
