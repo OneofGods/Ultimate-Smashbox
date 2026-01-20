@@ -17,14 +17,18 @@ portraitscale = 1.0
 [Files]
 cmd     = moricmd.cns
 cns     = moricns.cns
-st1     = states/morizss.zss
+; MUGEN CONVERTED FILES (replaced Ikemen ZSS)
+st1     = states/morizss_mugen.st
 st2     = states/morisystem.st
 st3     = states/morinormal.st
 st4     = states/morispecial.st
 st5     = states/morisuper.st
 st6     = states/morihelper.st
 st7     = states/moridarkforce.st
-st8     = states/inputs.zss
+st8     = states/moriinputs_mugen.st
+; ORIGINAL IKEMEN FILES (disabled):
+; st_old1 = states/morizss.zss
+; st_old8 = states/inputs.zss
 ; st9     = CONFIG.txt
 stcommon= common1.cns
 sprite  = morisprite.sff
