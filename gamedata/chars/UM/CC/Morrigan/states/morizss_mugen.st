@@ -8,6 +8,7 @@
 ; Key changes:
 ; - map() -> var()
 ; - mapSet{} -> VarSet
+; - pausetime -> HitPauseTime (MUGEN doesn't have pausetime trigger)
 ; - Removed Ikemen-only functions (for loops, switch/case, let variables)
 ; - Simplified complex AI and spark systems
 ;
@@ -42,10 +43,11 @@ time = 1
 ignorehitpause = 1
 
 ; EX Yellow Flash effect
+; NOTE: pausetime is Ikemen-only, using HitPauseTime = 0 instead
 [State -2, EX Flash Decrease]
 type = VarAdd
 trigger1 = var(56) > 0
-trigger1 = pausetime = 0
+trigger1 = HitPauseTime = 0
 trigger1 = movetype != H
 trigger1 = stateno = [1000, 2999]
 var(56) = -1
@@ -61,7 +63,7 @@ ignorehitpause = 1
 [State -2, EX Flash PalFX]
 type = PalFX
 trigger1 = var(56) > 0
-trigger1 = pausetime = 0
+trigger1 = HitPauseTime = 0
 trigger1 = (var(56) % 2)
 time = 1
 color = 0
@@ -123,17 +125,18 @@ trigger1 = !NumTarget
 var(58) = 0
 ignorehitpause = 1
 
-; -3, Tag In Sounds
+; -3, Tag In Sounds (only trigger if tag system is active)
+; NOTE: Const(StateTagEnteringScreen) is Ikemen-only, using stateno = 5900 as fallback
 [State -3, Tag In Sound 1]
 type = PlaySnd
-trigger1 = stateno = Const(StateTagEnteringScreen)
+trigger1 = stateno = 5900
 trigger1 = time = 1
 value = 4, 20
 channel = 0
 
 [State -3, Tag In Sound 2]
 type = PlaySnd
-trigger1 = stateno = Const(StateTagEnteringScreen)
+trigger1 = stateno = 5900
 trigger1 = time = 1
 value = 5, 4
 
@@ -187,9 +190,10 @@ var(50) = 0
 ignorehitpause = 1
 
 ; -4, Juggle System - Increase Juggle Count
+; NOTE: pausetime -> HitPauseTime
 [State -4, Juggle Increase on Hit]
 type = VarAdd
-trigger1 = pausetime = 0
+trigger1 = HitPauseTime = 0
 trigger1 = MoveHit = 1
 trigger1 = NumTarget
 trigger1 = P2MoveType = H
@@ -199,7 +203,7 @@ ignorehitpause = 1
 
 [State -4, Juggle Increase Continued]
 type = VarAdd
-trigger1 = pausetime = 0
+trigger1 = HitPauseTime = 0
 trigger1 = MoveHit = 1
 trigger1 = NumTarget
 trigger1 = P2MoveType = H
@@ -208,10 +212,11 @@ var(50) = var(54)
 ignorehitpause = 1
 
 ; -4, Juggle Timer
+; NOTE: P2, pausetime -> P2, HitPauseTime
 [State -4, Juggle Timer Increase]
 type = VarAdd
 trigger1 = P2MoveType = H
-trigger1 = P2, pausetime = 0
+trigger1 = P2, HitPauseTime = 0
 var(52) = 1
 ignorehitpause = 1
 
