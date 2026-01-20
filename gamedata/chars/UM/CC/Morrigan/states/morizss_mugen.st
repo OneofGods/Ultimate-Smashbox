@@ -176,8 +176,7 @@ trigger3 = var(50) > 0
 trigger3 = P2StateType = S || P2StateType = C
 trigger4 = var(50) > 0
 trigger4 = P2StateType = L
-trigger4 = P2, Pos Y = 0
-trigger4 = P2, Vel Y = 0
+trigger4 = P2BodyDist Y = 0
 trigger5 = var(50) > 0
 trigger5 = P2StateNo = [120, 155]
 trigger6 = var(50) > 0
@@ -212,11 +211,10 @@ var(50) = var(54)
 ignorehitpause = 1
 
 ; -4, Juggle Timer
-; NOTE: P2, pausetime -> P2, HitPauseTime
+; NOTE: P2 HitPauseTime redirect not supported, using P2MoveType check
 [State -4, Juggle Timer Increase]
 type = VarAdd
 trigger1 = P2MoveType = H
-trigger1 = P2, HitPauseTime = 0
 var(52) = 1
 ignorehitpause = 1
 
@@ -230,7 +228,7 @@ ignorehitpause = 1
 [State -4, AI Block High Set]
 type = VarSet
 trigger1 = AILevel
-trigger1 = P2StateType = A || P2, HitDefAttr = A, AA, AP
+trigger1 = P2StateType = A
 trigger1 = random < 100
 var(59) = 1
 ignorehitpause = 1
@@ -239,7 +237,6 @@ ignorehitpause = 1
 type = VarSet
 trigger1 = AILevel
 trigger1 = P2StateType != A
-trigger1 = !(P2, HitDefAttr = A, AA, AP)
 trigger1 = random < 200
 var(59) = 0
 ignorehitpause = 1
