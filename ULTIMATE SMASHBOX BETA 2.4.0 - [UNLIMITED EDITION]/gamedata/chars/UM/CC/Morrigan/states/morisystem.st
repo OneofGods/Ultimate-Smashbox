@@ -11020,6 +11020,25 @@ ignorehitpause = 1
 ;===========================================================================
 [Statedef -3]
 
+; AI ATTACK FIX - Enable attacks when AI is active
+[State -3, AI Enable Attacks]
+type = VarSet
+trigger1 = AILevel > 0
+var(54) = 1
+ignorehitpause = 1
+
+[State -3, AI Attack Frequency]
+type = VarSet
+trigger1 = AILevel > 0 && var(53) < 8
+var(53) = 8
+ignorehitpause = 1
+
+[State -3, Player Attack Enabled]
+type = VarSet
+trigger1 = AILevel = 0
+var(54) = 1
+ignorehitpause = 1
+
 [State -3, Gametime Var]
 type = varset
 trigger1 = 1
