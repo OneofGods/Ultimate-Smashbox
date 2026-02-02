@@ -616,7 +616,7 @@ triggerall = power<3000
 triggerall = statetype = S
 triggerall = ctrl
 trigger1 = command = "s"
-trigger2 = command = "holdb" && command = "holdy"
+trigger2 = command = "hold_b" && command = "hold_y"
 
 ; Run Fwd
 [State -1, Run Fwd]
