@@ -1,0 +1,156 @@
+# 🔥💀🔥 ULTIMATE SMASH BOX .GITIGNORE - SAVE THE STRUGGLE, NOT THE BLOAT! 💀🔥💀
+
+# =================== OVERSIZED SFF FILES (>100MB GitHub limit) ===================
+# These 4 SFF sprite files exceed GitHub's 100MB per-file limit
+# They stay LOCAL for the game but must NOT be pushed to GitHub
+gamedata/chars/UM/MV/Thanos/USX/thanos.sff
+gamedata/chars/UM/KOF/Kyo Kusanagi/USX/Kyo-XI.sff
+gamedata/chars/UM/MUGEN/Kung Fu Man/USX/Sprites/kfm-ultra.sff
+gamedata/chars/UM/SF/Akuma/USX/Sprite.sff
+
+# =================== MASSIVE GAME FILES (DON'T PUSH!) ===================
+# Game binaries and executables
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+
+# ROM files and game data
+*.rom
+*.iso
+*.img
+*.bin
+*.dat
+
+# Audio/Video files (usually huge)
+*.wav
+*.mp3
+*.ogg
+*.flac
+*.mp4
+*.avi
+*.mkv
+*.mov
+
+# Image files (sprites can be huge)
+*.bmp
+*.tga
+*.dds
+*.psd
+# Keep small PNGs and JPGs for documentation
+# *.png
+# *.jpg
+
+# Compressed archives
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.tar.bz2
+
+# =================== GAME ENGINE BLOAT ===================
+# SDL and game engine files
+SDL2*
+*.a
+*.lib
+
+# Game engine directories
+/engine/
+/libs/
+/binaries/
+/build/
+/dist/
+/release/
+
+# Save states and game saves
+*.sav
+*.save
+*.dat
+/saves/
+/savestates/
+
+# =================== OPERATING SYSTEM BLOAT ===================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+desktop.ini
+*.lnk
+
+# Linux
+*~
+.directory
+
+# =================== DEVELOPMENT BLOAT ===================
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+debug.log
+error.log
+
+# Cache and temp
+cache/
+temp/
+tmp/
+*.tmp
+*.cache
+
+# =================== KEEP THE VALUABLE STUFF! =================== 
+# ✅ Character configs and mods
+# ✅ Custom scripts and tools  
+# ✅ Configuration files
+# ✅ Documentation and guides
+# ✅ Custom stages/movesets
+# ✅ Installation guides
+# ✅ Troubleshooting docs
+# ✅ Code for character additions
+
+# Force include important config files even if they match patterns above
+!character_configs/
+!mods/
+!tools/
+!scripts/
+!*.cfg
+!*.ini
+!*.conf
+!config.txt
+!README*
+!INSTALL*
+!GUIDE*
+!*.md
+!*.py
+!*.sh
+!*.bat
+
+# =================== CHARACTER SPECIFIC ===================
+# Keep Morrigan and demon work!
+!morrigan*/
+!demon*/
+!character*/
+!movesets/
+!stages/
+
+# =================== DEVELOPMENT TOOLS ===================
+# Keep custom tools and scripts
+!automation/
+!installers/
+!patches/
+!fixes/
+
+# 🔥💀🔥 THIS .GITIGNORE SAVES THE STRUGGLE, NOT THE BLOAT! 💀🔥💀
+# Push the CODE, CONFIG, TOOLS, and LEGENDARY DISCOVERY PROCESS!
+# Ignore the massive binaries that would break GitHub!
