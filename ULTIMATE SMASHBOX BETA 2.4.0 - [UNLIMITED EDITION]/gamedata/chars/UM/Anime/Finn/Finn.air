@@ -1874,6 +1874,22 @@ Clsn1Default: 1
 8150,0, 0,0, 20
 
 
+; Throw hit state placeholder (Statedef 2099 - immediately replaced by anim 5000)
+[Begin Action 325]
+Clsn2Default: 1
+  Clsn2[0] = -10, -41, 13, 1
+320,0, 0,0, 1
+
+
+; Explod visual effect (used in super flash states)
+[Begin Action 6700]
+6650,0, 0,0, 3,, AS100D200
+6650,0, 0,0, 3,, AS200D200
+6650,0, 0,0, 3,, AS150D200
+6650,0, 0,0, 3,, AS100D200
+6650,0, 0,0, 3,, AS50D200
+
+
 ;0
 [Begin Action 8910]
 -1,-1, 0,0, 9999

@@ -128,9 +128,11 @@ This document tracks special moves, command inputs, and button mappings for all 
 
 ## ⚔️ FINN & JAKE (Adventure Time)
 
-**Status:** ✅ PORTED (February 2026)
+**Status:** ✅ PORTED v5 (February 2026)
 **Folder:** `UM/Anime/Finn/`
 **Author:** Soulfire Diogo (original), ported by OneofGods & Claude Code
+**Roster Position:** Next to Morrigan (CC section in selectUM.def)
+**Known Issues:** Anim 325 (placeholder), Anim 6700 (VFX) use borrowed sprites
 
 ### Normal Attacks
 
@@ -253,7 +255,7 @@ This document tracks special moves, command inputs, and button mappings for all 
 | Character | Folder | Normals | Specials | Supers | AI | Notes |
 |-----------|--------|---------|----------|--------|----|----|
 | **Morrigan** | CC/Morrigan | ✅ | ✅ | ✅ | ✅ | Fully fixed! |
-| **Finn & Jake** | Anime/Finn | ✅ | ✅ | ✅ | ✅ | Ported from Ikemen GO! |
+| **Finn & Jake** | Anime/Finn | ✅ | ✅ | ✅ | ✅ | v5: charAnim, var fix, sound fix, missing anims |
 | **Dante** | CC/Dante | ❓ | ❓ | ❓ | ❓ | Needs testing |
 | **Vergil** | CC/Vergil | ❓ | ❓ | ❓ | ❓ | Needs testing |
 | **Nero** | CC/Nero | ❓ | ❓ | ❓ | ❓ | Needs testing |
@@ -325,4 +327,4 @@ trigger1 = ctrl
 
 ---
 *Maintained by OneofGods & Claude Code*
-*Last major update: Finn & Jake ported - February 2026*
+*Last major update: Finn & Jake v5 - charAnim fix, var(50) conflict, missing anims/sounds - February 2026*

@@ -2743,7 +2743,7 @@ trans = add
 [State 45]
 type = PlaySnd
 trigger1 = time=0
-value = S0,1
+value = S200,0
 
 [State 40]
 type = Explod
@@ -3317,7 +3317,7 @@ trans = add
 [State 45]
 type = PlaySnd
 trigger1 = time=0
-value = S0,1
+value = S200,0
 
 [State 40]
 type = Explod

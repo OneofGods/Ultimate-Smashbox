@@ -168,7 +168,7 @@
 - **Total .def files**: 427
 
 ## Recent Updates
-- 🆕 **Finn & Jake ADDED** - Ported from Ikemen GO with full senior dev audit (February 2026)
+- 🆕 **Finn & Jake v5** - Ported from Ikemen GO: charAnim select screen fix, var(50) conflict resolved, 2 missing anims added, 2 broken sounds fixed, command name typos fixed (February 2026)
 - ✨ **Morrigan FIXED** - All special moves now working!
 - 🆕 Added Dante, Vergil, Nero, Kenji, Captain Commando
 - 📝 Complete roster documentation
