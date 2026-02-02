@@ -648,10 +648,10 @@ value = 300
 trigger1 = command = "a"
 trigger2 = command = "b"
 trigger3 = command = "c"
-trigger4 = var(50) = 1
+trigger4 = var(45) = 1
 Trigger4 = AIlevel >= 6
 trigger4 = P2bodydist X <= 30
-trigger5 = var(50) = 1
+trigger5 = var(45) = 1
 Trigger5 = AIlevel >= 8
 trigger5 = P2bodydist X <= 60
 triggerall = command != "holddown"

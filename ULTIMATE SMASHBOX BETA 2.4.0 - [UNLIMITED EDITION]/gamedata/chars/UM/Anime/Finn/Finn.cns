@@ -434,7 +434,7 @@ value = S200,0
 
 [State 0, 1]
 type = HitDef
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 trigger1 = time =0
 attr = S, NA
 damage = 20
@@ -471,7 +471,7 @@ sprpriority = 10
 
 [State 0, 1]
 type = HitDef
-triggerall = var(50) = 0
+triggerall = var(45) = 0
 trigger1 = time =0
 attr = S, NA
 damage = 20
@@ -554,14 +554,14 @@ ctrl = 1
 type = ChangeState
 trigger1 = movehit
 Triggerall = AIlevel >= 6
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 value = 240
 ctrl = 1
 [State 231, end]
 type = ChangeState
 triggerall = movehit
 Triggerall = AIlevel <= 6
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 trigger1 = time = 11
 value = 240
 ctrl = 1
@@ -589,7 +589,7 @@ ctrl = 1
 [State 231, end]
 type = ChangeState
 triggerall = moveguarded
-trigger1 = var(50) = 1
+trigger1 = var(45) = 1
 trigger1 = random<=500 && animtime=0
 value = 232
 ctrl = 1
@@ -597,7 +597,7 @@ ctrl = 1
 
 [State 200, 6]
 type = ChangeState
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 trigger1 = random<=500 && animtime=0
 value = 105
 ctrl = 1
@@ -699,7 +699,7 @@ type = ChangeState
 trigger1 = movehit
 triggerall = random <200
 Triggerall = AIlevel > 6
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 value = 250
 ctrl = 1
 
@@ -707,14 +707,14 @@ ctrl = 1
 type = ChangeState
 trigger1 = movehit
 Triggerall = AIlevel > 6
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 value = 260
 ctrl = 1
 [State 231, end]
 type = ChangeState
 triggerall = movehit
 Triggerall = AIlevel <= 6
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 trigger1 = time = 11
 value = 260
 ctrl = 1
@@ -907,7 +907,7 @@ value = 4000
 ctrl = 1
 [State 271, end]
 type = ChangeState
-triggerall = var(50) = 0
+triggerall = var(45) = 0
 trigger1 = command = "D,B,b"
 triggerall = power >= 2000
 triggerall = movehit
@@ -915,7 +915,7 @@ value = 2500
 ctrl = 1
 [State 271, end]
 type = ChangeState
-triggerall = var(50) = 0
+triggerall = var(45) = 0
 trigger1 = command = "D,B,c"
 triggerall = power >= 2000
 triggerall = movehit
@@ -924,7 +924,7 @@ ctrl = 1
 
 [State 271, end]
 type = ChangeState
-triggerall = var(50) = 0
+triggerall = var(45) = 0
 trigger1 = command = "D,D,a"
 trigger1 = command = "D,D,b"
 trigger1 = command = "D,D,c"
@@ -951,7 +951,7 @@ ctrl = 1
 type = ChangeState
 trigger1 = movehit
 Triggerall = AIlevel > 6
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 value = 255
 ctrl = 1
 
@@ -1118,7 +1118,7 @@ trigger3 = time = 14
 trigger4 = AIlevel = 8
 trigger4 = time = 10
 triggerall = movehit
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = random <=300
 value = 290
 ctrl = 1
@@ -1133,7 +1133,7 @@ trigger3 = time = 14
 trigger4 = AIlevel = 8
 trigger4 = time = 10
 triggerall = movehit
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = random=[301,601]
 value = 270
 ctrl = 1
@@ -1149,7 +1149,7 @@ trigger3 = time = 14
 trigger4 = AIlevel = 8
 trigger4 = time = 10
 triggerall = movehit
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 value = 280
 ctrl = 1
 
@@ -1193,7 +1193,7 @@ value = 2500
 ctrl = 1
 [State 271, end]
 type = ChangeState
-triggerall = var(50) = 0
+triggerall = var(45) = 0
 trigger1 = command = "D,B,c"
 triggerall = power >= 2000
 triggerall = movehit
@@ -1367,7 +1367,7 @@ trigger3 = time = 20
 trigger4 = AIlevel = 8
 trigger4 = time = 17
 triggerall = movehit
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = random <=300
 value = 320
 ctrl = 1
@@ -1383,7 +1383,7 @@ trigger3 = time = 20
 trigger4 = AIlevel = 8
 trigger4 = time = 17
 triggerall = movehit
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 value = 280
 ctrl = 1
 
@@ -1640,7 +1640,7 @@ trigger3 = time = 19
 trigger4 = AIlevel = 8
 trigger4 = time = 15
 triggerall = movehit
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = random <=300
 value = 280
 ctrl = 1
@@ -1656,7 +1656,7 @@ trigger3 = time = 19
 trigger4 = AIlevel = 8
 trigger4 = time = 15
 triggerall = movehit
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 value = 320
 ctrl = 1
 
@@ -1700,7 +1700,7 @@ value = 2500
 ctrl = 1
 [State 271, end]
 type = ChangeState
-triggerall = var(50) = 0
+triggerall = var(45) = 0
 trigger1 = command = "D,B,c"
 triggerall = power >= 2000
 triggerall = movehit
@@ -1793,14 +1793,14 @@ value = S200,4
 
 [State 250, end]
 type = ChangeState
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = movehit
 trigger1 = time = 21 && random>=500
 value = 270
 ctrl = 1
 [State 250, end]
 type = ChangeState
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = movehit
 trigger1 = time = 21 && random<=500
 value = 280
@@ -1808,7 +1808,7 @@ ctrl = 1
 
 [State 250, end]
 type = ChangeState
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 trigger1 = time = 22
 value = 320
 ctrl = 1
@@ -1904,14 +1904,14 @@ sprpriority = 10
 type = ChangeState
 trigger1 = movehit
 Triggerall = AIlevel >= 6
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 value = 240
 ctrl = 1
 [State 231, end]
 type = ChangeState
 triggerall = movehit
 Triggerall = AIlevel <= 6
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 trigger1 = time = 11
 value = 230
 ctrl = 1
@@ -1940,7 +1940,7 @@ ctrl = 1
 [State 231, end]
 type = ChangeState
 triggerall = moveguarded
-trigger1 = var(50) = 1
+trigger1 = var(45) = 1
 trigger1 = random<=500 && animtime=0
 value = 232
 ctrl = 1
@@ -1948,7 +1948,7 @@ ctrl = 1
 
 [State 200, 6]
 type = ChangeState
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 trigger1 = random<=500 && animtime=0
 value = 105
 ctrl = 1
@@ -2031,7 +2031,7 @@ trigger3 = time = 19
 trigger4 = AIlevel = 8
 trigger4 = time = 16
 triggerall = movehit
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = random <=300
 value = 270
 ctrl = 1
@@ -2046,7 +2046,7 @@ trigger3 = time = 19
 trigger4 = AIlevel = 8
 trigger4 = time = 16
 triggerall = movehit
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = random=[301,601]
 value = 320
 ctrl = 1
@@ -2062,7 +2062,7 @@ trigger3 = time = 19
 trigger4 = AIlevel = 8
 trigger4 = time = 16
 triggerall = movehit
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 value = 290
 ctrl = 1
 
@@ -2173,7 +2173,7 @@ trigger1 = animelem = 2
 value = S200,3
 [State 310, 1]
 type = HitDef
-triggerall = var(50) = 0
+triggerall = var(45) = 0
 trigger1 = time = 0
 attr = S, NA
 damage = 25
@@ -2196,7 +2196,7 @@ air.velocity = -4,-0
 air.hittime = 12
 [State 310, 1]
 type = HitDef
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 trigger1 = time = 0
 attr = S, NA
 damage = 25
@@ -2238,7 +2238,7 @@ ctrl = 1
 [State 310, end]
 type = ChangeState
 triggerall = movehit
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 trigger1 = Time = 30
 value = 100
 ctrl = 1
@@ -2648,7 +2648,7 @@ triggerall = power >= 1000
 triggerall = random <=200
 trigger1 = movehit && time = 55
 Triggerall = AIlevel = 8
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = P2bodydist X <= 80
 value = 335
 ctrl = 1
@@ -2657,7 +2657,7 @@ ctrl = 1
 type = ChangeState
 trigger1 = movehit && time = 55
 Triggerall = AIlevel = 8
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 value = 340
 ctrl = 1
 
@@ -2866,7 +2866,7 @@ channel = 1
 
 [State 400, end]
 type = ChangeState
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 trigger2 = power = 3000
 trigger1 = p2bodydist x  <100
 value = 0
@@ -2874,20 +2874,20 @@ ctrl = 1
 
 [State 0, RemoveExplod]
 type = RemoveExplod
-triggerall = var(50) = 0
+triggerall = var(45) = 0
 trigger2 = power = 3000
 trigger1 = p2bodydist x  <100
 id = 7400
 
 [State 0, RemoveExplod]
 type = RemoveExplod
-triggerall = var(50) = 0
+triggerall = var(45) = 0
 trigger1 = command != "hold_s"
 id = 7400
 
 [State 400, end]
 type = ChangeState
-triggerall = var(50) = 0
+triggerall = var(45) = 0
 trigger2 = power = 3000
 trigger1 = command != "hold_s"
 ;trigger1 = animTime = 0
@@ -2968,7 +2968,7 @@ sprpriority = 10
 type = ChangeState
 trigger1 = movehit
 Triggerall = AIlevel >= 3
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 value = 440
 ctrl = 1
 
@@ -3064,7 +3064,7 @@ sprpriority = 10
 type = ChangeState
 triggerall = movehit
 Triggerall = AIlevel >= 3
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 trigger1 = time >= 14
 value = 450
 ctrl = 1
@@ -3260,7 +3260,7 @@ sprpriority = 10
 [State 450, 5]
 type = ChangeState
 triggerall = movehit
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 trigger1 = P2bodydist X <= 20
 trigger1 = time = 10
 value = 640
@@ -3408,7 +3408,7 @@ sprpriority = 10
 [State 450, 5]
 type = ChangeState
 triggerall = movehit
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 trigger1 = P2bodydist X <= 20
 trigger1 = time = 15
 value = 650
@@ -4395,7 +4395,7 @@ envshake.phase = 80
 type = Turn
 trigger1 = command = "back"
 trigger2 = p2bodydist x < -50
-trigger2 = var(50) = 1
+trigger2 = var(45) = 1
 triggerall = time = [36,128]
 
 [State 0, VelAdd]
@@ -6107,7 +6107,7 @@ trigger1 = time = 80
 [State -3, AI ON]
 type = VarSet
 triggerall = roundstate = 2
-triggerall = var(50) != 1
+triggerall = var(45) != 1
 trigger1 = command = "ia1"
 trigger2 = command = "ia2"
 trigger3 = command = "ia3"
@@ -6129,13 +6129,13 @@ trigger18 = command = "ia18"
 trigger19 = command = "ia19"
 trigger20 = command = "ia20"
 trigger26 = ailevel >0
-var(50) = 1
+var(45) = 1
 
 [State -3,AI]
 type = VarSet
 trigger1 = P2life <= 0
 trigger2 = life <= 0
-var(50) = 0
+var(45) = 0
 
 [State 0, LifeAdd]
 type = LifeAdd
@@ -6145,16 +6145,16 @@ value = 1
 
 [State -3,COSTOM]
 type = VarSet
-trigger1 = var(50) = 1
+trigger1 = var(45) = 1
 trigger1 = time = 0
-var(50) = 1;
+var(45) = 1;
 
 ;-------------------------------------------------
 ;-------------------------------------------------
 
 [State -3]
 type = ChangeState
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = StateType != A
 triggerall = Movetype != H
 triggerall = P2Life > 0
@@ -6165,7 +6165,7 @@ value = 400
 
 [State -3]
 type = ChangeState
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = random<100
 triggerall = numhelper(4050) = 0
 triggerall = StateType != A
@@ -6179,7 +6179,7 @@ value = 4000
 
 [State -3]
 type = ChangeState
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = StateType != A
 triggerall = Movetype != H
 triggerall = P2Life > 0
@@ -6193,7 +6193,7 @@ triggerall = ctrl = 1
 value = 311
 [State -3]
 type = ChangeState
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = StateType != A
 triggerall = Movetype != H
 triggerall = P2Life > 0
@@ -6207,7 +6207,7 @@ value = 100
 type = ChangeState
 triggerall = Stateno = 100
 triggerall = time >= 5
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = StateType != A
 Trigger1 = AIlevel = 6
 Trigger2 = AIlevel >= 7
@@ -6219,7 +6219,7 @@ value = 300
 
 [State -3]
 type = ChangeState
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = random<600
 triggerall = StateType != A
 triggerall = Movetype != H
@@ -6232,7 +6232,7 @@ value = 230
 
 [State -3]
 type = ChangeState
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = StateType != A
 triggerall = Movetype != H
 triggerall = P2Life > 0
@@ -6244,7 +6244,7 @@ value = 320
 
 [State -3]
 type = ChangeState
-triggerall = var(50) = 1
+triggerall = var(45) = 1
 triggerall = StateType != A
 triggerall = Movetype != H
 triggerall = random<600
