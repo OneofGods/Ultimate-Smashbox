@@ -82,6 +82,7 @@
 - Kousaka Kirino 👹 (Boss - Oreimo)
 - Kuroko Shirai 🔒 (A Certain Scientific Railgun)
 - Yang Xiao Long 🔒 (RWBY)
+- **Finn & Jake ✅ NEW!** (Adventure Time)
 
 #### 🔵 BlazBlue (BB)
 - Ragna The Bloodedge 🔒
@@ -167,6 +168,7 @@
 - **Total .def files**: 427
 
 ## Recent Updates
+- 🆕 **Finn & Jake ADDED** - Ported from Ikemen GO with full senior dev audit (February 2026)
 - ✨ **Morrigan FIXED** - All special moves now working!
 - 🆕 Added Dante, Vergil, Nero, Kenji, Captain Commando
 - 📝 Complete roster documentation
