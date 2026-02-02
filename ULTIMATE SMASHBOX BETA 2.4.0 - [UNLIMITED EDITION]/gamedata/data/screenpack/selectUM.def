@@ -40,6 +40,7 @@ UM/MV/Captain America/Captain America.def, order=7
 UM/MV/Wolverine/Wolverine.def, order=7
 UM/CC/Dante/Dante.def, stages/Temen Ni Gru.def, music=sound/Devils Never Cry.mp3, order=5
 UM/CC/Morrigan/morrigan_pots.def, order=5
+UM/Anime/Finn/Finn.def, order=5
 UM/CC/Vergil/Vergil.def, order=20, exclude=1
 UM/CC/Nero/Nero.def, stages/The Fury of The Ancient God.def, order=9, boss=1																			;unlock boss
 UM/CC/Kenji/Kenji.def, order=20, exclude=1
@@ -64,7 +65,6 @@ UM/Anime/Taiga Aisaka/Taiga Aisaka.def, order=20, exclude=1
 UM/Anime/Kousaka Kirino/Kousaka Kirino.def, stages/Beach.def, music=sound/Diamond.mp3, order=9, boss=1													;unlock boss
 UM/Anime/Kuroko Shirai/Kuroko Shirai.def, order=20, exclude=1
 UM/Anime/Yang Xiao Long/Yang Xiao Long.def, order=20, exclude=1
-UM/Anime/Finn/Finn.def, order=5
 UM/BB/Ragna The Bloodedge/Ragna The Bloodedge.def, order=20, exclude=1
 UM/BB/Jin Kisaragi/Jin Kisaragi.def, order=20, exclude=1
 UM/BB/Hazama/Hazama.def, order=20, exclude=1																											;unlock boss
