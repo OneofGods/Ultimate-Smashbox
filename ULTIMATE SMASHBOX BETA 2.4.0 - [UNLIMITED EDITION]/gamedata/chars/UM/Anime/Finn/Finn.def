@@ -1,0 +1,22 @@
+[Info]
+name="Finn & Jake"
+displayname="Finn & Jake"
+versiondate=05/05/2015
+mugenversion=1.0
+author="Soulfire Diogo"
+pal.defaults=1,4,3,2
+[Files]
+sprite=Finn.sff
+sound=Finn.snd
+anim=Finn.air
+cmd=Finn.cmd
+cns=Finn.cns
+st=Finn.cns
+stcommon=common1.cns
+pal1=1.act
+pal2=2.act
+pal3=3.act
+pal4=4.act
+[Arcade]
+intro.storyboard=
+ending.storyboard=

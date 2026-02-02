@@ -1,0 +1,638 @@
+[Characters]
+;charname, stages/.def, music=sound/.mp3, zoom=0, boss=1, bonus=1, ai=5, vsscreen=0, victoryscreen=0, includestage=0, exclude=1, order=1, 1=charname, 4=charname
+;===================================================================================
+; PLAYABLE CHARACTERS
+;===================================================================================
+UM/MUGEN/Kung Fu Man/Kung Fu Man.def, stages/Mountainside Temple 2.def, music=sound/Kung Fu Fighting.mp3, order=7
+UM/MUGEN/Kung Fu Girl/Kung Fu Girl.def, order=20, exclude=1
+UM/MUGEN/Dragon Claw/Dragon Claw.def, order=9, boss=1																									;unlock boss
+UM/MUGEN/Ohosi Nagisa/Ohosi Nagisa.def, order=20, exclude=1
+UM/MUGEN/Ronald McDonald/Ronald McDonald.def, order=20, exclude=1
+UM/SF/Ryu/Ryu.def, stages/Suzaku Castle.def, order=7
+UM/SF/Ken Masters/Ken Masters.def, stages/Boat.def, order=7
+UM/SF/Akuma/Akuma.def, stages/Natural Waterfalls.def, order=9, boss=1																					;unlock boss
+UM/SF/Chun-Li/Chun-Li.def, order=20, exclude=1
+UM/SF/Sakura Kasugano/Sakura Kasugano.def, order=7
+UM/KOF/Kyo Kusanagi/Kyo Kusanagi.def, stages/Way Out.def, music=sound/Esaka.mp3, music=sound/Tears.mp3, music=sound/Esaka Continues.mp3, order=5
+UM/KOF/Iori Yagami/Iori Yagami.def, stages/Way Out.def, music=sound/Cool Jam.mp3, music=sound/Stormy Saxophone.mp3, music=sound/Tranquilizer.mp3, music=sound/Saxophone Under The Moon.mp3, order=7
+UM/KOF/Rugal Bernstein/Rugal Bernstein.def, stages/Arena.def, music=sound/R.mp3, order=6, boss=1														;unlock boss
+UM/KOF/K/K.def, music=sound/KDD-0063.mp3, music=sound/KDD-0075.mp3, music=sound/KD-0084.mp3, order=5
+UM/KOF/Ash Crimson/Ash Crimson.def, music=sound/Dark Crimson.mp3, order=7
+UM/FF/Terry Bogard/Terry Bogard.def, stages/Clock Tower.def, order=7
+UM/FF/Kim Kaphwan/Kim Kaphwan.def, stages/Dojo.def, music=sound/The Way To Rebirth.mp3, music=sound/Tame a Bad Boy.mp3, order=5
+UM/FF/Geese Howard/Geese Howard.def																														;unlock boss
+UM/FF/Joe Higashi/Joe Higashi.def, order=5
+UM/FF/Mai Shiranui/Mai Shiranui.def, order=5
+UM/MK/Scorpion/Scorpion.def, order=20, exclude=1
+UM/MK/Sub-Zero/Sub-Zero.def, stages/Fortuna Castle Mountains.def, order=7
+UM/MK/Shao Kahn/Shao Kahn.def																															;unlock boss
+UM/MK/Liu Kang/Liu Kang.def, order=20, exclude=1
+UM/MK/NAME/NAME.def
+UM/DC/Batman/Batman.def, stages/Streets 2.def, order=7
+UM/DC/Joker/Joker.def, order=7
+UM/DC/Shazam/Shazam.def, order=9, boss=1																												;unlock boss
+UM/DC/Superman/Superman.def, order=7
+UM/DC/Supergirl/Supergirl.def, order=7
+UM/MV/Iron Man/Iron Man.def, stages/Solaris Reactor.def, order=5
+UM/MV/Spider-Man/Spider-Man.def, order=7
+UM/MV/Thanos/Thanos.def, stages/Ragnarok Hangar.def, order=9, boss=1																					;unlock boss
+UM/MV/Captain America/Captain America.def, order=7
+UM/MV/Wolverine/Wolverine.def, order=7
+UM/CC/Dante/Dante.def, stages/Temen Ni Gru.def, music=sound/Devils Never Cry.mp3, order=5
+UM/CC/Morrigan/morrigan_pots.def, order=5
+UM/CC/Vergil/Vergil.def, order=20, exclude=1
+UM/CC/Nero/Nero.def, stages/The Fury of The Ancient God.def, order=9, boss=1																			;unlock boss
+UM/CC/Kenji/Kenji.def, order=20, exclude=1
+UM/CC/Captain Commando/Captain Commando.def, order=20, exclude=1
+UM/DB/Goku/Goku.def, stages/Desert Mountain.def, order=7
+UM/DB/Vegeta/Vegeta.def, order=20, exclude=1
+UM/DB/Freezer/Freezer.def, order=9, boss=1																												;unlock boss
+UM/DB/Gohan/Gohan.def, order=7
+UM/DB/Jiren/Jiren.def, stages/Tournament Ultimate.def, order=5
+UM/Anime/Jotaro Kujo/Jotaro Kujo.def, order=20, exclude=1
+UM/Anime/Dio Brando/Dio Brando.def, order=20, exclude=1
+UM/Anime/Alucard/Alucard.def, stages/Diavolo Dimension.def, order=9, boss=1																				;unlock boss
+UM/Anime/Ichigo Kurosaki/Ichigo Kurosaki.def, order=20, exclude=1
+UM/Anime/Naruto Uzumaki/Naruto Uzumaki.def, order=20, exclude=1
+UM/Anime/Monkey D. Luffy/Monkey D. Luffy.def, stages/Dressrosa.def, order=7
+UM/Anime/Roronoa Zoro/Roronoa Zoro.def, order=7
+UM/Anime/Sanji/Sanji.def, order=6, boss=1																												;unlock boss
+UM/Anime/Kirito/Kirito.def, order=20, exclude=1
+UM/Anime/Koneko Toujou/Koneko Toujou.def, order=20, exclude=1
+UM/Anime/Shana/Shana.def, order=20, exclude=1
+UM/Anime/Taiga Aisaka/Taiga Aisaka.def, order=20, exclude=1
+UM/Anime/Kousaka Kirino/Kousaka Kirino.def, stages/Beach.def, music=sound/Diamond.mp3, order=9, boss=1													;unlock boss
+UM/Anime/Kuroko Shirai/Kuroko Shirai.def, order=20, exclude=1
+UM/Anime/Yang Xiao Long/Yang Xiao Long.def, order=20, exclude=1
+UM/Anime/Finn/Finn.def, order=5
+UM/BB/Ragna The Bloodedge/Ragna The Bloodedge.def, order=20, exclude=1
+UM/BB/Jin Kisaragi/Jin Kisaragi.def, order=20, exclude=1
+UM/BB/Hazama/Hazama.def, order=20, exclude=1																											;unlock boss
+UM/BB/Naoto Kurogane/Naoto Kurogane.def, order=20, exclude=1
+UM/BB/Kokonoe/Kokonoe.def, order=20, exclude=1
+UM/P4A/Yu Narukami/Yu Narukami.def, order=20, exclude=1
+UM/P4A/Rise Kujikawa/Rise Kujikawa.def, stages/The City Buildings.def, music=sound/Air Gear.mp3, order=7
+UM/P4A/Sho Minazuki/Sho Minazuki.def, order=9, boss=1																									;unlock boss
+UM/P4A/Tohru Adachi/Tohru Adachi.def, order=20, exclude=1
+UM/P4A/Chie Satonaka/Chie Satonaka.def, order=20, exclude=1
+UM/TM/Akiha Tohno/Akiha Tohno.def, order=20, exclude=1
+UM/TM/Shiki Tohno/Shiki Tohno.def, order=20, exclude=1
+UM/TM/Arcueid Brunestud/Arcueid Brunestud.def, order=20, exclude=1																						;unlock boss
+UM/TM/Hisui/Hisui.def, order=20, exclude=1
+UM/TM/Ciel/Ciel.def, order=20, exclude=1
+UM/TM/Aoko Aozaki/Aoko Aozaki.def, order=20, exclude=1
+UM/TM/Kohaku/Kohaku.def, order=20, exclude=1
+UM/TM/Vlov Arkhangel/Vlov Arkhangel.def, order=20, exclude=1																							;unlock boss
+UM/TM/Dead Apostle Noel/Dead Apostle Noel.def, order=20, exclude=1
+UM/TM/NAME/NAME.def
+UM/SMB/Mario/Mario.def, order=20, exclude=1
+UM/SMB/Luigi/Luigi.def, order=7
+UM/SMB/Bowser/Bowser.def, order=20, exclude=1																											;unlock boss
+UM/SMB/Piranha Plant/Piranha Plant.def, order=20, exclude=1
+UM/SMB/Wario/Wario.def, stages/WarioWare.def, order=7
+UM/MM/Mega Man/Mega Man.def, stages/High Voltage.def, order=7
+UM/MM/Proto Man/Proto Man.def, order=7
+UM/MM/Bass/Bass.def, order=9, boss=1																													;unlock boss
+UM/MM/X/X.def, order=20, exclude=1
+UM/MM/Zero/Zero.def, stages/Zero Maverick Virus.def, order=7
+UM/NT/Pac-Man/Pac-Man.def, order=7
+UM/NT/R.O.B/R.O.B.def, order=5
+UM/NT/Mr. Game & Watch/Mr. Game & Watch.def, order=9, boss=1																							;unlock boss
+UM/NT/Link/Link.def, stages/Gran Puente de Eldin.def, order=5
+UM/NT/Pyra/Pyra.def, order=20, exclude=1
+UM/NT/Kirby/Kirby.def, order=20, exclude=1
+UM/NT/Meta Knight/Meta Knight.def, order=20, exclude=1
+UM/NT/Donkey Kong/Donkey Kong.def, order=9, boss=1																										;unlock boss
+UM/NT/King K. Rool/King K. Rool.def, order=20, exclude=1
+UM/NT/King Dedede/King Dedede.def, order=20, exclude=1
+UM/NT/Lucario/Lucario.def, order=20, exclude=1
+UM/NT/Falco Lombardi/Falco Lombardi.def, stages/Hakuba Base.def, order=5
+UM/NT/Accurate Fox/Accurate Fox.def, order=9, boss=1																									;unlock boss
+UM/NT/Samus Aran/Samus Aran.def, order=20, exclude=1
+UM/NT/Captain Falcon/Captain Falcon.def, order=20, exclude=1
+UM/KM/Bomberman/Bomberman.def, order=20, exclude=1
+UM/KM/NAME/NAME.def
+UM/KM/Sparkster/Sparkster.def, order=9, boss=1																											;unlock boss
+UM/KM/Solid Snake/Solid Snake.def, order=20, exclude=1
+UM/KM/Simon Belmont/Simon Belmont.def, order=5
+UM/SE/White Mage/White Mage.def, order=3
+UM/SE/Lara Croft/Lara Croft.def, order=20, exclude=1
+UM/SE/Cloud Strife/Cloud Strife.def, order=9, boss=1																									;unlock boss
+UM/SE/Thief Arthur/Thief Arthur.def, order=20, exclude=1
+UM/SE/Bisclavret/Bisclavret.def, order=20, exclude=1
+UM/GTA/Carl Johnson/Carl Johnson.def, order=20, exclude=1
+UM/GTA/Claude Speed/Claude Speed.def, order=20, exclude=1
+UM/GTA/Tommy Vercetti/Tommy Vercetti.def, order=9, boss=1																								;unlock boss
+UM/GTA/Niko Bellic/Niko Bellic.def, order=20, exclude=1
+UM/GTA/Big Smoke/Big Smoke.def, order=7
+UM/AH/Heart Aino/Heart Aino.def, order=20, exclude=1
+UM/AH/Kamui Tokinomiya/Kamui Tokinomiya.def, order=7
+UM/AH/Scharlachrot/Scharlachrot.def, order=20, exclude=1
+UM/AH/NAME.def/NAME.def
+UM/AH/NAME.def/NAME.def
+UM/OT/Akira Yuki/Akira Yuki.def, order=20, exclude=1
+UM/OT/Sol Badguy/Sol Badguy.def, stages/Streets.def, order=7
+UM/OT/Darth Vader/Darth Vader.def, stages/Cloud.def, order=9, boss=1																					;unlock boss
+UM/OT/Neo/Neo.def, stages/The Matrix.def, order=3
+UM/OT/Kratos/Kratos.def, stages/Hall of Dead Women.def, order=5
+UM/OT/Mickey Mouse/Mickey Mouse.def, order=20, exclude=1
+UM/OT/Popeye/Popeye.def, order=20, exclude=1
+UM/OT/Homero Simpson/Homero Simpson.def, stages/Dominos Pizza.def, order=5
+UM/OT/Kid Rat/Kid Rat.def, order=20, exclude=1
+UM/OT/Derp/Derp.def, order=20, exclude=1
+UM/OT/Boyfriend/Boyfriend.def, order=20, exclude=1
+UM/OT/Gumball Watterson/Gumball Watterson.def, order=5
+UM/OT/El Chavo Del 8/El Chavo Del 8.def, stages/La Vecindad.def, order=9, boss=1																		;unlock boss
+UM/OT/Don Ramon/Don Ramon.def, music=sound/El Zancudo Loco.mp3, order=7
+UM/OT/MissaSinfonia/MissaSinfonia.def, order=7
+UM/OT/Toriel/Toriel.def, order=7
+UM/OT/Foxy/Foxy.def, order=20, exclude=1
+UM/OT/Slenderman/Slenderman.def, stages/Mecha City.def, music=sound/Faceless.mp3, order=9, boss=1														;unlock boss
+UM/OT/Sonic The Hedgehog/Sonic The Hedgehog.def, stages/Seaside Hill.def, music=sound/The Blue Blur.mp3, order=7
+UM/OT/Silver The Hedgehog/Silver The Hedgehog.def, stages/Crisis City.def, order=3
+UM/OT/Astroboy/Astroboy.def, order=7
+UM/OT/Reimu Hakurei/Reimu Hakurei.def, stages/Hakurei Shrine Threshold.def, music=sound/Bad Apple.mp3, order=7
+UM/OT/Sakuya Izayoi/Sakuya Izayoi.def, stages/Magic Altar.def, order=9, boss=1																			;unlock boss
+UM/OT/Optimus Prime/Optimus Prime.def, order=20, exclude=1
+UM/OT/Akatsuki/Akatsuki.def, order=20, exclude=1
+UM/OT/Ranger/Ranger.def, order=7
+UM/OT/Shovel Knight/Shovel Knight.def, order=5
+UM/OT/Rayman/Rayman.def, order=9, boss=1																												;unlock boss
+UM/OT/Marco Rossi/Marco Rossi.def, order=5
+UM/OT/Steve/Steve.def, stages/Minecraft Overworld.def, order=7
+UM/OT/Shantae/Shantae.def, order=20, exclude=1
+UM/OT/Cygnus Hyoga/Cygnus Hyoga.def, order=7
+UM/OT/Pingu/Pingu.def, order=9, boss=1																													;unlock boss
+UM/OT/Clippy/Clippy.def, order=20, exclude=1
+UM/OT/8-Ball/8-Ball.def, order=20, exclude=1
+;===========================================================
+; SECRET/HIDDEN CHARACTERS
+;===========================================================
+UM/MUGEN/Kung Fu Man/USX/USX Kung Fu Man.def, order=20, exclude=1
+UM/MUGEN/Kung Fu Girl/USX/USX Kung Fu Girl.def, order=20, exclude=1
+UM/MUGEN/Colonel Sanders/Colonel Sanders.def, order=20, exclude=1
+UM/SF/Ryu/Kage/Kage.def, order=20, exclude=1
+UM/SF/Gouken/Gouken.def, order=7
+UM/SF/Akuma/Oni/Oni.def, order=20, exclude=1
+UM/SF/Akuma/USX/USX Akuma.def, order=20, exclude=1
+UM/SF/Dudley/Dudley.def, order=7
+UM/SF/Dan Hibiki/Dan Hibiki.def, order=7
+UM/KOF/Kyo Kusanagi/EX/EX Kyo.def, order=5
+UM/KOF/Kyo Kusanagi/Clone-0/Kyo Clone-0.def, order=20, exclude=1
+UM/KOF/Kyo Kusanagi/Clone-10/Kyo Clone-10.def, order=20, exclude=1
+UM/KOF/Kyo Kusanagi/USX/USX Kyo.def, order=20, exclude=1
+UM/KOF/Iori Yagami/USX/USX Iori.def, order=20, exclude=1
+UM/KOF/Rugal Bernstein/USX/USX Rugal.def, order=20, exclude=1
+UM/KOF/K/EX/EX K.def, order=20, exclude=1
+UM/KOF/K/USX/USX K.def, stages/Realm Of Meriths.def, music=sound/USX Powered.mp3, order=5
+UM/KOF/Kula Diamond/Kula Diamond.def, order=20, exclude=1
+UM/KOF/K9999/K9999.def, order=5
+UM/KOF/Goeniko/Goeniko.def, stages/Magaki.def, music=sound/Dimensional Fracture.mp3, order=5
+UM/KOF/Goeniko/EX/EX Goeniko.def, order=20, exclude=1
+UM/FF/Terry Bogard/EX/EX Terry.def, order=7
+UM/DC/Flash/Flash.def, order=20, exclude=1
+UM/MV/Iron Man/USX/USX Iron Man.def, order=20, exclude=1
+UM/MV/Venom/Venom.def, order=20, exclude=1
+UM/MV/Venom/EX/EX Venom.def, order=20, exclude=1
+UM/MV/Spider-Man/USX/USX Spider-Man.def, order=20, exclude=1
+UM/MV/Thanos/USX/USX Thanos.def, order=20, exclude=1
+UM/MV/Wolverine/EX/EX Wolverine.def, order=20, exclude=1
+UM/DB/Goku/SSJ/SSJ Goku.def, order=7
+UM/DB/Vegeta/SSJ/SSJ Vegeta.def, order=7
+UM/DB/Vegeta/Majin Vegeta.def, order=9
+UM/DB/Piccolo/Piccolo.def, order=7
+UM/Anime/Alucard/USX/USX Alucard.def, order=20, exclude=1
+UM/Anime/Yang Xiao Long/EX/EX Yang.def, music=sound/Trashy Innocence.mp3, order=7
+UM/Anime/Yang Xiao Long/USX/USX Yang.def, order=20, exclude=1
+UM/BB/Hazama/Yuuki/Yuuki Terumi.def, order=20, exclude=1
+UM/P4A/Yu Narukami/Shadow/Shadow Yu.def, order=20, exclude=1
+UM/TM/Arcueid Brunestud/Red/Red Arcueid.def, order=20, exclude=1
+UM/TM/Ciel/Powered/Powered Ciel.def, order=20, exclude=1
+UM/NT/Link/Young/Young Link.def, order=7
+UM/SE/Black Mage/Black Mage.def, order=3
+UM/GTA/Carl Johnson/EX/EX CJ.def, stages/Metro City Downtown.def, music=sound/Right Back Up.mp3, order=3
+UM/OT/Sol Badguy/Order/Order-Sol.def, order=3
+UM/OT/Sonic The Hedgehog/EX/EX Sonic.def, order=3
+UM/OT/Sash Lilac/Sash Lilac.def, order=7
+UM/OT/Sakuya Izayoi/USX/USX Sakuya.def, order=20, exclude=1
+UM/OT/Kamen Rider/Kamen Rider.def, order=20, exclude=1
+UM/OT/Rayman/EX/EX Rayman.def, order=5
+;===========================================================
+; CPU RIVAL CHARACTERS
+;===========================================================
+UM/CPU/Ralph/Ralph.def, stages/Fix It Felix Jr. Building.def, order=5
+UM/CPU/Indiana Jones/Indiana Jones.def, stages/Rancor Pit.def, order=5
+UM/CPU/Usagi Tsukino/Usagi Tsukino.def, order=7
+UM/CPU/T-Bone Mendez/T-Bone Mendez.def, order=7
+UM/CPU/Ganondorf/Ganondorf.def, order=7
+UM/SF/Ryu/Evil Ryu.def, stages/Suzaku Castle - Night.def, order=7
+UM/SF/Ken Masters/Violent Ken.def, stages/Inferno Harbor.def, order=7
+UM/SF/Ryu/Master Ryu.def, stages/Suzaku Castle 2.def, order=7
+;UM/SF/Ken Masters/Master Ken.def, stages/Boat.def, order=7
+;UM/SF/Ken Masters/Daigo Ken.def, stages/New York.def, order=7
+;===========================================================
+; WARM-UP CHARACTERS
+;===========================================================
+UM/CPU/James Sullivan/James Sullivan.def, order=1
+UM/CPU/Gordon Freeman/Gordon Freeman.def, order=1
+UM/CPU/Heavy Weapons Guy/Heavy Weapons Guy.def, stages/Gran Puente de Eldin.def, order=1
+UM/CPU/Master Chief/Master Chief.def, order=1
+UM/CPU/COVID-19/COVID-19.def, order=1
+UM/CPU/Zombie/Zombie.def, order=1
+UM/CPU/Waluigi/Waluigi.def, order=1
+UM/CPU/Moro/Moro.def, stages/Infinite Air.def, music=sound/Planet Eater.mp3, order=1
+;===========================================================
+; BOSS CHARACTERS
+;===========================================================
+UM/CPU/Tinky Winky/Tinky Winky.def, order=2, boss=1
+UM/CPU/Cinder/Cinder.def, order=2, boss=1
+UM/CPU/Ken Hayabusa/Ken Hayabusa.def, order=2, boss=1
+UM/CPU/Pocoyo/Pocoyo.def, order=2, boss=1
+UM/CPU/Kermit The Frog/Kermit The Frog.def, order=2, boss=1
+UM/CPU/Clown/Clown.def, stages/The Circus.def, order=2, boss=1
+UM/CPU/Vector The Crocodile/Vector The Crocodile.def, order=2, boss=1
+UM/CPU/Petey Piranha/Petey Piranha.def, order=2, boss=1
+UM/CPU/Elektrosoldat/Elektrosoldat.def, order=2, boss=1
+UM/CPU/Agent Smith/Agent Smith.def, stages/The Matrix.def, music=sound/404.mp3, order=2, boss=1
+;===========================================================
+; MIDDLE BOSS CHARACTERS
+;===========================================================
+UM/CPU/Rootmars Zombie/Rootmars Zombie.def, order=6, boss=1
+UM/CPU/Harley Quinn/Harley Quinn.def, order=6, boss=1
+UM/CPU/Hatsune Miku/Hatsune Miku.def, stages/Aincrad.def, music=sound/Hatsune.mp3, order=6, boss=1
+UM/CPU/Billy Lee/Billy Lee.def, order=6, boss=1
+UM/CPU/Suave Dude/Minion/Minion.def, order=6, boss=1
+UM/CPU/Suave Dude/Suave Dude.def, stages/Mountainside Temple.def, order=6, boss=1
+UM/CPU/Ghostface/Ghostface.def, stages/Darktree.def, order=6, boss=1
+UM/CPU/Master Hand/Master Hand.def, stages/Debug Test.def, order=6, boss=1
+UM/CPU/Shaggy/Shaggy.def, stages/Abandoned Ship.def, order=6, boss=1
+UM/CPU/Dark Kahn/Dark Kahn.def, stages/Nether.def, order=6, boss=1
+UM/CPU/General Grievous/General Grievous.def, order=6, boss=1
+UM/CPU/Frankenstein/Frankenstein.def, stages/Frankenstein Laboratory.def, order=6, boss=1
+UM/CPU/SCP-049/SCP-049.def, order=6, boss=1
+UM/CPU/SCP-096/SCP-096.def, stages/Sarada.def, order=6, boss=1
+UM/CPU/SCP-3812/SCP-3812.def, order=6, boss=1
+;===========================================================
+; SMASHBOX ARMY CHARACTERS
+;===========================================================
+UM/CPU/Maseca/Maseca.def, order=9, boss=1
+UM/CPU/2B/2B.def, order=9, boss=1
+UM/CPU/Ultron/Ultron.def, stages/VR Room.def, order=9, boss=1
+UM/CPU/Apocalypse/Apocalypse.def, stages/Cursed Tower Battle.def, music=sound/Doom.mp3, order=9, boss=1
+UM/CPU/Dr. Robotnik/Dr. Robotnik.def, order=9, boss=1
+UM/CPU/Death Egg Robot/Death Egg Robot.def, stages/Death Egg.def, music=sound/Death Egg Robot.mp3, order=9, boss=1
+UM/CPU/Mega Tigerzord/Mega Tigerzord.def, order=9, boss=1
+UM/CPU/Tomura Shigaraki/Tomura Shigaraki.def, stages/Crisis City.def, music=sound/Symbol Of Fear.mp3, order=9, boss=1
+UM/CPU/Lance Ryder Wilson/Lance Ryder Wilson.def, order=9, boss=1
+UM/CPU/Munch/Munch.def, music=sound/The Devil.mp3, order=9, boss=1
+UM/CPU/Evil Kung Fu Man/Evil Kung Fu Man.def, stages/Mountainside Temple 2 - Night.def, order=9, boss=1
+UM/CPU/Omega Rugal/Omega Rugal.def, stages/Control Center.def, order=9, boss=1
+UM/CPU/Orochi/Orochi.def, stages/Zodiac Place.def, order=9, boss=1
+UM/CPU/M. Bison/M. Bison.def, stages/Power Generation Room.def, music=sound/The Dictator.mp3, order=9, boss=1
+UM/CPU/M. Bison/Final Bison.def, stages/Secret Base.def, order=9, boss=1
+UM/CPU/Twelve/Twelve.def, stages/Web Woods.def, order=9, boss=1
+UM/CPU/Gill/Gill.def, stages/Illuminati Observatory.def, order=9, boss=1
+UM/CPU/Seth/Seth.def, stages/Impulse Prime.def, music=sound/Tanden Engine.mp3, order=9, boss=1
+UM/CPU/JnXC/JnXC.def, stages/Psy-Drive.def, music=sound/Unknown Element.mp3, order=9, boss=1
+UM/CPU/Blockhead/Blockhead.def, stages/Blockhead Stage.def, order=9, boss=1
+UM/CPU/Rotten Banana/Rotten Banana.def, music=sound/Mono.mp3, order=9, boss=1
+UM/CPU/DudeReal/DudeReal.def, stages/Training Room 2.def, music=sound/Dude.mp3, order=9, boss=1
+UM/CPU/Diablo Skeleton/Diablo Skeleton.def, stages/Chamber of Time.def, music=sound/Time Machine.mp3, order=9, boss=1
+UM/CPU/Marathon-Man/Marathon-Man.def, stages/Crimson Dimension.def, order=9, boss=1
+;===========================================================
+; BAD ENDING FINAL BOSS
+;===========================================================
+UM/CPU/Smashbox/Smashbox.def, stages/Realm Of Meriths.def, music=sound/Smashbox.mp3, order=11, boss=1
+;===========================================================
+; SMASHBOX GUARDIANS CHARACTERS
+;===========================================================
+UM/CPU/Turf/Turf.def, order=10, boss=1, victoryscreen=0
+UM/CPU/Yellow Devil/Yellow Devil.def, order=10, boss=1, victoryscreen=0
+UM/CPU/Godzilla/Godzilla.def, music=sound/Calamity.mp3, order=10, boss=1, victoryscreen=0
+UM/CPU/Dracula/Dracula.def, stages/Hidden Castle.def, order=10, boss=1, victoryscreen=0
+UM/CPU/Abyss/Abyss.def, stages/Infernal Demise.def, music=sound/Nothing.mp3, order=10, boss=1, victoryscreen=0
+UM/CPU/Metal Gear REX/Metal Gear REX.def, stages/Lost Island.def, music=sound/Calamity.mp3, order=10, boss=1, victoryscreen=0
+UM/CPU/Sigma/Sigma.def, stages/Final Weapon.def, order=10, boss=1, victoryscreen=0
+UM/CPU/SCP-2317/SCP-2317.def, stages/Infernal Demise.def, order=10, boss=1, victoryscreen=0
+UM/CPU/Galactus/Galactus.def, stages/The Fury of The Ancient God.def, order=10, boss=1, victoryscreen=0
+UM/CPU/Quattro Manus/Quattro Manus.def, stages/King Library.def, includestage=0, order=10, boss=1, victoryscreen=0
+UM/CPU/Lotus/Lotus.def, stages/Lotus Nest.def, includestage=0, order=10, boss=1, victoryscreen=0
+UM/CPU/Steven Armstrong/Steven Armstrong.def, stages/Train 2.def, music=sound/It Has To Be This Way.mp3, order=20, boss=1, exclude=1
+;===========================================================
+; GOOD ENDING FINAL BOSS
+;===========================================================
+UM/CPU/Smashbox/Unlimited-Smashbox.def, stages/Realm Of Meriths.def, music=sound/Unlimited Smashbox.mp3, order=12
+UM/CPU/Smashbox/Unlimited-Smashbox-Phase2.def, stages/Realm Of Meriths.def, music=sound/Smashbox Phase 2.mp3, order=13
+;===========================================================
+; BONUS CHARACTERS
+;===========================================================
+UM/CPU/Catwalk/Catwalk.def, stages/Neo-Geo Land.def, music=sound/To The Sky.mp3, music=sound/Fly Epik High.mp3, music=sound/Demo 3.mp3, zoom=0, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=4
+UM/CPU/Bonus Stage A/Bonus Stage A.def, stages/Morning.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=4
+UM/CPU/Bonus Stage B/Bonus Stage B.def, chars/UM/CPU/Bonus Stage B/The Test.def, bonus=1, vsscreen=0, victoryscreen=0, includestage=0, exclude=1, order=4
+UM/CPU/Bonus Stage C/Bonus Stage C.def, stages/Dojo.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=4
+UM/CPU/Break The Car/Break The Car.def, stages/Wheelers Garage.def, zoom=0, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=4
+UM/CPU/Break The Ice/Break The Ice.def, stages/Blizzard.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=4
+UM/CPU/Break The Pilar/Break The Pilar.def, stages/Ancient Monuments.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=4
+UM/CPU/Break The Targets/Break The Targets.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=4
+UM/CPU/Train/Train.def, stages/Subway.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=4
+UM/CPU/Bonus Barrel/Bonus Barrel.def, stages/Dojo 2.def, zoom=0, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=4
+UM/CPU/The Race/The Race.def, chars/UM/CPU/The Race/Race.def, bonus=1, vsscreen=0, victoryscreen=0, includestage=0, exclude=1, order=4
+UM/CPU/Sky Chase Zone/Sky Chase Zone.def, chars/UM/CPU/Sky Chase Zone/Sky Chase.def, bonus=1, vsscreen=0, victoryscreen=0, includestage=0, exclude=1, order=4
+UM/CPU/Tic-Tac-Toe/Tic-Tac-Toe.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=4
+UM/CPU/Simulator/Simulator.def, stages/Training Room.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=4
+UM/CPU/Duck Hunt/Duck Hunt.def, stages/Arena Castle.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=4
+UM/CPU/Bionic Cage/Bionic Cage.def, stages/Space Base.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=20
+UM/CPU/Symbiotes Smash/Symbiotes Smash.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=8
+UM/CPU/Mortal Smash/Mortal Smash.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=8
+UM/CPU/Resident Smash/Resident Smash.def, stages/Lane.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=8
+UM/CPU/Street Smash/Street Smash.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=8
+UM/CPU/Fighter Smash/Fighter Smash.def, stages/Sunday Afternoon.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=8
+UM/CPU/Phoenix Shadows/Phoenix Shadows.def, bonus=1, vsscreen=0, victoryscreen=0, exclude=1, order=8
+;===========================================================
+; MISSION CHARACTERS
+;===========================================================
+UM/CPU/Poltergeist/Poltergeist.def, chars/UM/CPU/Poltergeist/stage/Custom_Splatterhouse1_Poltergeist.def, zoom=0, includestage=0, exclude=1, order=20
+UM/CPU/Tower Of Bloodyfight/Tower Of Bloodyfight.def, stages/The Soul Chamber.def, exclude=1, order=20
+UM/CPU/FNS/FNS.def, stages/Training Room.def, zoom=0, exclude=1, order=20
+;===========================================================
+; EVENTS CHARACTERS
+;===========================================================
+UM/CPU/Invisible Man/Invisible Man.def, exclude=1, order=20
+UM/CPU/Unknown Zone/Unknown Zone.def, stages/Training Room.def, zoom=0, exclude=1, order=20
+UM/CPU/Call of Zombies/Call of Zombies.def, stages/Training Room.def, zoom=0, exclude=1, order=20
+;===========================================================
+; TOOLS CHARACTERS
+;===========================================================
+Training, victoryscreen=0, exclude=1, order=20
+UM/CPU/Stage Viewer/Stage Viewer.def, vsscreen=0, victoryscreen=0, exclude=1, order=20
+;===========================================================
+; STAGES
+;===========================================================
+[ExtraStages]
+stages/Training Room.def, music=sound/Training Room 1.mp3, music=sound/Training Room 2.mp3, music=sound/Training Room 3.mp3
+stages/Training Room 2.def, music=sound/Training Room 1.mp3, music=sound/Training Room 2.mp3, music=sound/Training Room 3.mp3
+stages/Training Room 3.def, music=sound/Training Room 1.mp3, music=sound/Training Room 2.mp3, music=sound/Training Room 3.mp3
+stages/Abandoned Beach.def
+stages/Abandoned Ship.def
+stages/Aincrad.def
+stages/Air Base.def
+stages/Airplane.def
+stages/Altar Of Archimode.def
+stages/Altar of Flaming Flakes.def
+stages/Ancient Monuments.def
+stages/Angel Island.def
+stages/Angel Island 2.def
+stages/Arctic Plataeu.def
+stages/Arena Castle.def
+stages/Arena Tenkaichi Budokai.def
+stages/Arena.def
+stages/Army Base.def
+stages/Awaken.def
+stages/Ayutaya.def
+stages/Bamboo.def
+stages/Bar.def
+stages/Bay.def
+stages/Beach Entrance.def
+stages/Beach.def
+stages/Blast Furnace.def
+stages/Blizzard.def
+stages/Blockhead Stage.def
+stages/Boat.def
+stages/Bogavati.def
+stages/Burn House.def
+stages/Burned Temple.def
+stages/Camp Crystal Lake.def
+stages/Camp Crystal Lake - Dock.def
+stages/Cave.def
+stages/Cell Games.def
+stages/Chamber of Time.def
+stages/Chemical Plant.def
+stages/Chess Master Table.def
+stages/China.def
+stages/Citadel.def
+stages/City Escape.def
+stages/Clock Tower.def
+stages/Cloud.def
+stages/Coliseo Galactico.def
+stages/Colony.def
+stages/Colosseum Silent.def
+stages/Containment Chamber.def
+stages/Control Box.def
+stages/Control Center.def
+stages/Cool Mountains.def
+stages/Corrida Colisseum.def
+stages/Cosmic Elevator.def
+stages/Crimson Dimension.def
+stages/Crisis City.def
+stages/Cursed Tower Battle.def
+stages/Cyberworld.def
+stages/Dark Awake Ruins.def
+stages/Dark Beast.def
+stages/Dark Palace Donjon.def
+stages/Darkest Dungeon.def
+stages/Darktree.def
+stages/Death Egg.def
+stages/Death Stadium.def
+stages/Death Star.def
+stages/Debug Test.def
+stages/Desert Mountain.def
+stages/Diavolo Dimension.def
+stages/Dojo.def
+stages/Dojo 2.def
+stages/Dojo Garden.def
+stages/Dominos Pizza.def
+stages/Dragon Valley.def
+stages/Dressrosa.def
+stages/Elevator.def
+stages/Elm Street.def
+stages/End of Days.def
+stages/Etherion Night.def
+stages/Fight Arena.def
+stages/Final Weapon.def
+stages/Fix It Felix Jr. Building.def
+stages/Flame Cave.def
+stages/Forest of Desolation.def
+stages/Forest Temple.def
+stages/Fortuna Castle Mountains.def
+stages/Fortuna City.def
+stages/Frankenstein Laboratory.def
+stages/Fusion Facility.def
+stages/Galaxy.def
+stages/Gang-Plank Galleon.def
+stages/Gaur Plains.def
+stages/Geese Tower.def
+stages/Ghost Ship Cove.def
+stages/Giygas.def
+stages/God Tournament Arena.def
+stages/Gold Dust.def
+stages/Gran Puente de Eldin.def
+stages/GreatWall Sunset.def
+stages/Green Hill.def
+stages/Haddonfield.def
+stages/Hakuba Base.def
+stages/Hakurei Shrine Threshold.def
+stages/Hall of Dead Women.def
+stages/Halloween.def
+stages/Hawk.def
+stages/Heliport Bridge.def
+stages/Hidden Castle.def
+stages/High Voltage.def
+stages/Home.def
+stages/Ibuki Storm.def
+stages/Ibuki Sun.def
+stages/Ice Cavern.def
+stages/Igniz.def
+stages/Illuminati Basement.def
+stages/Illuminati Observatory.def
+stages/Ilu Overlord Castle.def
+stages/Impulse Prime.def
+stages/Infernal Demise.def
+stages/Inferno Harbor.def
+stages/Infinite Air.def
+stages/Inverness.def
+stages/Iron Basement.def
+stages/Jet.def
+stages/Jungle.def
+stages/Jungle 2.def
+stages/Junkyard.def
+stages/Kim Wus.def
+stages/Kiri.def
+stages/Knautilus.def
+stages/Konoha Destroyed.def
+stages/Krocodile Kore.def
+stages/La Vecindad.def
+stages/Lane.def
+stages/Light House.def
+stages/Liner.def
+stages/Loopy Lights.def
+stages/Lost Island.def
+stages/Lost Village.def
+stages/Lotus.def
+stages/Magaki.def
+stages/Magic Altar.def
+stages/Maho Gakuen no Severan.def
+stages/Maverick Virus.def
+stages/Mecha City.def
+stages/Meta Crystal.def
+stages/Metro City Bulding.def
+stages/Metro City Downtown.def
+stages/Minecraft Overworld.def
+stages/Mistery in the Darkness.def
+stages/Modern Age.def
+stages/Moonlit Battlefield.def
+stages/Moonwalker Woods.def
+stages/Morning.def
+stages/Moszna.def
+stages/Mountain Valley.def
+stages/Mountainside Temple.def
+stages/Mountainside Temple 2.def
+stages/Mountainside Temple 2 - Night.def
+stages/Nanatsu Village.def
+stages/Natural Waterfalls.def
+stages/Neo-Geo Land.def
+stages/Nether.def
+stages/New York.def
+stages/New Planet Vegeta.def
+stages/No Internet Dessert.def
+stages/Old Gate.def
+stages/Old Temple.def
+stages/Peach Castle.def
+stages/Planet Wisp.def
+stages/Pokemon Stadium.def
+stages/Polar Lights.def
+stages/Power Generation Room.def
+stages/Power Plant.def
+stages/Prade of Birds.def
+stages/Press Garden.def
+stages/Prison.def
+stages/Psy-Drive.def
+stages/Ragnarok Hangar.def
+stages/Rainy Town.def
+stages/Rancor Pit.def
+stages/Realm Of Meriths.def
+stages/Ring.def
+stages/Rocket Barrel Ride.def
+stages/Rubik Cube.def
+stages/Rush Hour.def
+stages/Sakura.def
+stages/Sanatorio.def
+stages/Saquenme de Latinoamerica.def
+stages/Sarada.def
+stages/Sealed Space.def
+stages/Seaside Hill.def
+stages/Secret Base.def
+stages/Secret Laboratory.def
+stages/Secret Room.def
+stages/Shadow Moses Island.def
+stages/Silent Swamp.def
+stages/Sky Fortress.def
+stages/Sky Noah.def
+stages/Sky Noah 2.def
+stages/Snowtown.def
+stages/Solaris Reactor.def
+stages/Space Base.def
+stages/Special Forces Base.def
+stages/Stardust Speedway Bad Future.def
+stages/Start Day.def
+stages/Stormy Tower.def
+stages/Street Brawl.def
+stages/Street Of Souls.def
+stages/Streets.def
+stages/Streets 2.def
+stages/Studiopolis.def
+stages/Subway.def
+stages/Subway 2.def
+stages/Sunday Afternoon.def
+stages/Suzaku Castle.def
+stages/Suzaku Castle - Night.def
+stages/Suzaku Castle 2.def
+stages/Temen Ni Gru.def
+stages/Temple Leo.def
+stages/The Armory.def
+stages/The Chains Of Power.def
+stages/The Circus.def
+stages/The City Buildings.def
+stages/The Fury of The Ancient God.def
+stages/The Gate Not Possible.def
+stages/The Hopes Gone.def
+stages/The Matrix.def
+stages/The Night of The Clones.def
+stages/The Old Robot Factory.def
+stages/The Soul Chamber.def
+stages/The Warrior Shrine.def
+stages/Tokyo Tower View.def
+stages/Tournament Arena.def, music=sound/Techno Syndrome.mp3
+stages/Tournament Ultimate.def
+stages/Train.def
+stages/Train 2.def
+stages/Twilight Town.def
+stages/Unbreakable.def
+stages/Valley of End - Low Level.def
+stages/Valley of End - High Level.def
+stages/VR Room.def
+stages/WarioWare.def
+stages/Way Out.def
+stages/Web Woods.def
+stages/West.def
+stages/Wheelers Garage.def
+stages/Windy Valley.def
+stages/Winter Forest.def
+stages/Wispy Woods.def
+stages/Zen.def
+stages/Zero Maverick Virus.def, music=sound/Ultimate Armor VS Absolute Zero.mp3
+stages/Zodiac Place.def
+
+;---------------------------------------------------------------------
+[Options]
+arcade.maxmatches = 1,1,1,1,1,1,1,1,1,0,1,0
+
+team.maxmatches = 1,1,1,1,1,1,1,1,1,1,0,1
+
+arcade.AIramp.start = 2, 0
+arcade.AIramp.end   = 4, 2
+
+team.AIramp.start = 1, 0
+team.AIramp.end   = 3, 2
+
+survival.AIramp.start = 0, -3
+survival.AIramp.end   = 16, 4
