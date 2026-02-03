@@ -335,6 +335,16 @@ command = /$D
 time = 1
 
 [Command]
+name = "holdy"
+command = /$y
+time = 1
+
+[Command]
+name = "holdb"
+command = /$b
+time = 1
+
+[Command]
 name = "FF"
 command = F, F
 time = 10
