@@ -27,7 +27,7 @@ value = -750
 type = varset
 trigger1 = !time && !AIlevel
 ignorehitpause = 1
-var(10) = ifelse((command = "Counter_P"), 1, 2)
+var(10) = ifelse((command = "counter_x" || command = "counter_y" || command = "counter_z"), 1, 2)
 [State 750, Strength AI]
 type = varset
 trigger1 = !time && AIlevel
