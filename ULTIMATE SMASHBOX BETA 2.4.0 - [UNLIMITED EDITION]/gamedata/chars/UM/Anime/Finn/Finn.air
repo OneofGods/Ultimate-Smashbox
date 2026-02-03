@@ -1890,6 +1890,18 @@ Clsn2Default: 1
 6650,0, 0,0, 3,, AS50D200
 
 
+; Continue screen animation (shows 9000,1 big portrait)
+[Begin Action 5500]
+9000,1, 0,0, -1
+
+; Continue screen stun/dazed animation (uses idle anim 0)
+[Begin Action 5300]
+0,0, 0,0, 8
+0,1, 0,0, 8
+0,2, 0,0, 8
+0,3, 0,0, 8
+0,4, 0,0, 8
+
 ;0
 [Begin Action 8910]
 -1,-1, 0,0, 9999
