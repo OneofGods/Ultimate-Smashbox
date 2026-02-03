@@ -6,6 +6,7 @@ mugenversion=1.0
 author="Soulfire Diogo"
 pal.defaults=1,4,3,2
 localcoord = 320, 240
+portraitscale = 1.0
 [Files]
 sprite=Finn.sff
 sound=Finn.snd
