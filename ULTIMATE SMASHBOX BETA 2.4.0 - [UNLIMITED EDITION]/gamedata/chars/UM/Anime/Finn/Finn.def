@@ -5,6 +5,7 @@ versiondate=05/05/2015
 mugenversion=1.0
 author="Soulfire Diogo"
 pal.defaults=1,4,3,2
+localcoord = 320, 240
 [Files]
 sprite=Finn.sff
 sound=Finn.snd
