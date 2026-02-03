@@ -243,7 +243,7 @@ anim = 40
 ctrl = 0
 sprpriority = 1
 
-[State 217, ‰¹‚ð–Â‚ç‚·]
+[State 217, ï¿½ï¿½ï¿½ï¿½Â‚ç‚·]
 type = PlaySnd
 trigger1 = animtime = 0
 value = S40,0
@@ -328,7 +328,7 @@ timegap = 1
 framegap =4
 trans = add
 
-[State 217, ‰¹‚ð–Â‚ç‚·]
+[State 217, ï¿½ï¿½ï¿½ï¿½Â‚ç‚·]
 type = PlaySnd
 trigger1 = time = 0
 value = F0,1
@@ -493,7 +493,7 @@ scale = .3,.3
 sprpriority = 0
 
 
-[State 217, ‰¹‚ð–Â‚ç‚·]
+[State 217, ï¿½ï¿½ï¿½ï¿½Â‚ç‚·]
 type = PlaySnd
 trigger1 = time = 0
 value = S52,0
@@ -757,7 +757,7 @@ postype = p1  ;p2,front,back,left,right
 scale = .5,.5
 sprpriority = 6
 
-[State 217, ‰¹‚ð–Â‚ç‚·]
+[State 217, ï¿½ï¿½ï¿½ï¿½Â‚ç‚·]
 type = PlaySnd
 trigger1 = time = 0
 value = S40,1
@@ -830,7 +830,7 @@ ctrl = 0
 anim = 105
 sprpriority = 1
 
-[State 217, ‰¹‚ð–Â‚ç‚·]
+[State 217, ï¿½ï¿½ï¿½ï¿½Â‚ç‚·]
 type = PlaySnd
 trigger1 = time = 0
 value = S40,0
@@ -2140,7 +2140,7 @@ physics = N
 sprpriority = 1
 
 
-[State 217, ‰¹‚ð–Â‚ç‚·]
+[State 217, ï¿½ï¿½ï¿½ï¿½Â‚ç‚·]
 type = PlaySnd
 trigger1 = time = 0
 value = F7,0
@@ -2315,7 +2315,7 @@ physics = N
 sprpriority = 1
 
 
-[State 217, ‰¹‚ð–Â‚ç‚·]
+[State 217, ï¿½ï¿½ï¿½ï¿½Â‚ç‚·]
 type = PlaySnd
 trigger1 = time = 0
 value = F7,0
@@ -2722,16 +2722,16 @@ value = 52
 ctrl = 1
 
 ;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+; Continue Screen State (USB compatibility)
 [Statedef 5500]
 type = S
 ctrl = 0
-anim = 5300
+anim = 5500
 velset = 0,0
 
-[State 5500]
+[State 5500, Anim]
 type = ChangeAnim
-trigger1 = time = 0
-trigger1 = SelfAnimExist(5500)
+trigger1 = !time
 value = 5500
 
 ;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
