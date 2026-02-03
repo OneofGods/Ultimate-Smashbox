@@ -234,6 +234,11 @@ time = 1
 [Command]
 name = "a+b"
 command = a+b
+time = 10
+
+[Command]
+name = "a+b"
+command = /a+/b
 time = 1
 
 ;-| Double Tap |-----------------------------------------------------------
@@ -604,6 +609,7 @@ time = 1
 ;---------------------------------------------------------------------------
 ; DODGE (a+b tap) - spot dodge with invincibility
 ; Finn is a 2-button character (a and b only), so dodge uses a+b instead of standard a+x
+; Also triggers on back + a (like a traditional evade/backstep)
 [State -1, Dodge]
 type = ChangeState
 value = 710
@@ -611,6 +617,7 @@ triggerall = !AIlevel
 triggerall = roundstate = 2 && statetype != A
 triggerall = ctrl
 trigger1 = command = "a+b"
+trigger2 = command = "back_a"
 
 ; POWER CHARGE (Start button OR hold a+b)
 ; Start button = original Finn design (state 400)
