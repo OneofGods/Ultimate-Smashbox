@@ -1902,6 +1902,22 @@ Clsn2Default: 1
 0,3, 0,0, 8
 0,4, 0,0, 8
 
+;---------------------------------------------------------------------------
+; Ikemen GO/SSZ Portrait Animations (using standing sprite since Finn lacks 9000,x)
+; These are required for character select screen and continue screen portraits
+;---------------------------------------------------------------------------
+; Small portrait / face_small
+[Begin Action 909001]
+0,0, 0,0, -1
+
+; Face portrait
+[Begin Action 909002]
+0,0, 0,0, -1
+
+; VS screen portrait
+[Begin Action 909003]
+0,0, 0,0, -1
+
 ;0
 [Begin Action 8910]
 -1,-1, 0,0, 9999
