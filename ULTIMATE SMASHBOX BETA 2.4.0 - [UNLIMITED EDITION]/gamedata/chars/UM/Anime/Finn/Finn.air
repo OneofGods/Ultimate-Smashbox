@@ -1890,9 +1890,9 @@ Clsn2Default: 1
 6650,0, 0,0, 3,, AS50D200
 
 
-; Continue screen animation (shows 9000,1 big portrait)
+; Continue screen animation (uses standing idle sprite since Finn lacks 9000,x portraits)
 [Begin Action 5500]
-9000,1, 0,0, -1
+0,0, 0,0, -1
 
 ; Continue screen stun/dazed animation (uses idle anim 0)
 [Begin Action 5300]
