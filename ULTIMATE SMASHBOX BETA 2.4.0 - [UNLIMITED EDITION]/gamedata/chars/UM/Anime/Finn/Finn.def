@@ -1,24 +1,39 @@
 [Info]
-name="Finn & Jake"
-displayname="Finn & Jake"
-versiondate=05/05/2015
-mugenversion=1.0
-author="Soulfire Diogo"
-pal.defaults=1,4,3,2
+name = "Finn and Jake"
+displayname = "Finn & Jake"
+versiondate = 12,06,2014
+mugenversion = 1.0
+author = "JStudios2k"
+pal.defaults = 4,1,2,3,5,6,7,8,9,10,11,12
 localcoord = 320, 240
 portraitscale = 1.0
+
 [Files]
-sprite=Finn.sff
-sound=Finn.snd
-anim=Finn.air
-cmd=Finn.cmd
-cns=Finn.cns
-st=Finn.cns
-stcommon=common1.cns
-pal1=1.act
-pal2=2.act
-pal3=3.act
-pal4=4.act
+sprite = Sff.sff
+anim = Anim.air
+sound = Sound.snd
+cmd = Cmd.cmd
+cns = Constants.cns
+stcommon = common1.cns
+st = States/System.st
+st1 = States/Normal.st
+st2 = States/Special.st
+st3 = States/Super.st
+st4 = States/Helpers.st
+st5 = Custom.txt
+pal1 = Palettes/p_1-1.act
+pal2 = Palettes/p_1-2.act
+pal3 = Palettes/p_1-3.act
+pal4 = Palettes/p_1-4.act
+pal5 = Palettes/p_1-5.act
+pal6 = Palettes/p_1-6.act
+pal7 = Palettes/p_1-7.act
+pal8 = Palettes/p_1-8.act
+pal9 = Palettes/p_1-9.act
+pal10 = Palettes/p_1-10.act
+pal11 = Palettes/p_1-11.act
+pal12 = Palettes/p_1-12.act
+
 [Arcade]
-intro.storyboard=
-ending.storyboard=
+intro.storyboard =
+ending.storyboard =

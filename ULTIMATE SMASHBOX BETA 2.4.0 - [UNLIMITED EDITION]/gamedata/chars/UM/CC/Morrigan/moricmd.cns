@@ -32,6 +32,11 @@ command = D
 time = 1
 
 [Command]
+name = "down"
+command = D
+time = 1
+
+[Command]
 name = "DF"
 command = DF
 time = 1
@@ -52,6 +57,11 @@ command = U
 time = 1
 
 [Command]
+name = "up"
+command = U
+time = 1
+
+[Command]
 name = "UB"
 command = UB
 time = 1
@@ -65,6 +75,11 @@ time = 1
 name = "DB"
 command = DB
 time = 1
+
+[Command]
+name = "highjump"
+command = $D, $U
+time = 15
 
 [Command]
 name = "$D"
@@ -1041,7 +1056,7 @@ ignorehitpause = 1
 type = changestate
 value = 105
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2
 triggerall = statetype = S || statetype = A
 triggerall = ctrl && (stateno != [100, 106])
@@ -1053,7 +1068,7 @@ trigger1 = p2movetype = A
 type = changestate
 value = 40
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ctrl
 trigger1 = p2movetype = A
@@ -1062,7 +1077,7 @@ trigger1 = p2movetype = A
 type = changestate
 value = 720
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2 && statetype != A
 triggerall = !var(118)
 trigger1 = ctrl
@@ -1073,7 +1088,7 @@ trigger1 = random < 50
 type = changestate
 value = 710
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2 && statetype != A
 triggerall = !var(118)
 trigger1 = ctrl
@@ -1084,7 +1099,7 @@ trigger1 = random < 50
 type = changestate
 value = ifelse(random < 500 && var(62) >= 20, 720, 710)
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ctrl || stateno = [100, 101]
 trigger1 = inguarddist
@@ -1097,7 +1112,7 @@ trigger1 = random < 100
 type = changestate
 value = 120
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2
 triggerall = inguarddist
 trigger1 = ctrl
@@ -1105,16 +1120,16 @@ trigger1 = stateno != [120, 155]
 trigger1 = statetype != A || p2statetype = A || p2movetype != A
 trigger1 = life > 10 || p2stateno = [200, 799]
 trigger1 = 1 || random < 30
-trigger1 = isasserted(nostandguard) = 0 || statetype != S
-trigger1 = isasserted(nocrouchguard) = 0 || statetype != C
-trigger1 = isasserted(noairguard) = 0 || statetype != A
+trigger1 = 1 || statetype != S
+trigger1 = 1 || statetype != C
+trigger1 = 1 || statetype != A
 trigger1 = stateno != [100, 105]
 
 [State -1, Guard Cancel]
 type = changestate
 value = 750
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 1000 && !var(50)
 trigger1 = random < 25
@@ -1125,7 +1140,7 @@ trigger1 = (p2bodydist x = [-5, 50]) && life < 250
 type = changestate
 value = 5200
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2 && alive
 trigger1 = stateno = 5050
 trigger1 = gethitvar(fall.recover)
@@ -1137,7 +1152,7 @@ trigger1 = random < 200
 type = changestate
 value = 5210
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2 && alive
 trigger1 = stateno = 5050
 trigger1 = canrecover
@@ -1148,7 +1163,7 @@ trigger1 = random < 100
 type = changestate
 value = 5230
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2 && alive
 trigger1 = stateno = 5110
 trigger1 = gethitvar(fall.recover)
@@ -1158,7 +1173,7 @@ trigger1 = random < 250
 type = changestate
 value = 1900
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = A
 triggerall = p2dist y >= -120
@@ -1169,7 +1184,7 @@ trigger1 = random < var(53) * 200
 type = changestate
 value = 1930
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = statetype != A && roundstate = 2
 triggerall = power >= 500
 triggerall = power != [3000, 3499] && (power >= 1500 || random < 500)
@@ -1182,7 +1197,7 @@ trigger1 = random < var(53) * 50
 type = changestate
 value = 1300
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype = S
 triggerall = var(51)
@@ -1200,7 +1215,7 @@ trigger2 = random < var(53) * 250
 type = changestate
 value = 800
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2 && statetype = S
 triggerall = var(51)
 triggerall = p2statetype = S || p2statetype = C
@@ -1216,7 +1231,7 @@ trigger2 = random < var(53) * 100
 type = changestate
 value = ifelse(abs(var(129)) <= (const(size.xscale) * 20), 201, 200)
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = A
@@ -1228,7 +1243,7 @@ trigger1 = random < var(53) * 50
 type = changestate
 value = ifelse(abs(var(129)) <= (const(size.xscale) * 20), 211, 210)
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
@@ -1243,7 +1258,7 @@ trigger2 = stateno = [200, 201] || stateno = 230 || stateno = 400 || stateno = 4
 type = changestate
 value = ifelse((abs(var(129)) <= (const(size.xscale) * 16)) && stateno != [200, 499], 221, 220)
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
@@ -1258,7 +1273,7 @@ trigger1 = random < var(53) * 50
 type = changestate
 value = 230
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
@@ -1273,7 +1288,7 @@ trigger2 = stateno = [200, 201] || stateno = 400
 type = changestate
 value = 240
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
@@ -1288,7 +1303,7 @@ trigger2 = stateno = [210, 211] || stateno = 230 || stateno = 410 || stateno = 4
 type = changestate
 value = 255
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = C
@@ -1306,7 +1321,7 @@ trigger2 = stateno = [210, 211] || stateno = [220, 221] || stateno = 240 || stat
 type = changestate
 value = 250
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
@@ -1318,7 +1333,7 @@ trigger1 = random < var(53) * 50
 type = changestate
 value = 400
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
@@ -1333,7 +1348,7 @@ trigger2 = stateno = [200, 201] || stateno = 230
 type = changestate
 value = 410
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
@@ -1348,7 +1363,7 @@ trigger2 = stateno = [200, 201] || stateno = 230 || stateno = 400 || stateno = 4
 type = changestate
 value = 425
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C || p2statetype = A
@@ -1366,7 +1381,7 @@ trigger2 = stateno = [210, 211] || stateno = 240 || stateno = 410 || stateno = [
 type = changestate
 value = 420
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
@@ -1381,7 +1396,7 @@ trigger2 = stateno = [210, 211] || stateno = 240 || stateno = 410 || stateno = [
 type = changestate
 value = 430
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
@@ -1396,7 +1411,7 @@ trigger2 = stateno = [200, 201] || stateno = 230 || stateno = 400
 type = changestate
 value = 445
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
@@ -1408,7 +1423,7 @@ trigger1 = random < var(53) * 50
 type = changestate
 value = 440
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
@@ -1423,7 +1438,7 @@ trigger2 = stateno = [200, 201] || stateno = 230 || stateno = 400 || stateno = 4
 type = changestate
 value = 450
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype != A && roundstate = 2
 triggerall = p2statetype = S || p2statetype = C
@@ -1443,7 +1458,7 @@ trigger3 = p2bodydist x <= 30
 type = changestate
 value = 600
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
@@ -1455,7 +1470,7 @@ trigger1 = random < var(53) * 50
 type = changestate
 value = 610
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
@@ -1470,7 +1485,7 @@ trigger2 = stateno = 600 || stateno = [630, 631]
 type = changestate
 value = 620
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
@@ -1485,7 +1500,7 @@ trigger2 = stateno = 610 || stateno = 640
 type = changestate
 value = ifelse(vel x, 630, 631)
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
@@ -1500,7 +1515,7 @@ trigger2 = stateno = 600
 type = changestate
 value = 640
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
@@ -1515,7 +1530,7 @@ trigger2 = stateno = 610 || stateno = [630, 631]
 type = changestate
 value = 650
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = statetype = A && roundstate = 2
 triggerall = vel y > 0 || p2statetype = A
@@ -1530,7 +1545,7 @@ trigger2 = stateno = 610 || stateno = 620 || stateno = 640
 type = changestate
 value = 1100
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype != A
 triggerall = p2movetype = H || p2movetype = A
@@ -1542,7 +1557,7 @@ trigger1 = random < var(53) * 200
 type = changestate
 value = 1200
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2 && statetype != A
 triggerall = var(109) < 1 || var(50)
 triggerall = p2statetype = S || p2statetype = C
@@ -1556,7 +1571,7 @@ trigger1 = random < var(53) * 100
 type = changestate
 value = 1050
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype = A
 triggerall = !var(120) || var(50) > 0
@@ -1575,7 +1590,7 @@ trigger2 = random < var(53) * 50
 type = changestate
 value = 1000
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype != A
 triggerall = !var(120)
@@ -1588,7 +1603,7 @@ trigger1 = random < var(53) * ifelse(prevstateno = 1000, 100, 50)
 type = changestate
 value = 1330
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2 && statetype = S
 triggerall = power >= 500
 triggerall = !var(60)
@@ -1607,7 +1622,7 @@ trigger2 = random < var(53) * 250
 type = changestate
 value = 1110
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 500
@@ -1628,7 +1643,7 @@ trigger2 = random < var(53) * 150
 type = changestate
 value = 1250
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 500
 triggerall = power >= 1500
@@ -1647,7 +1662,7 @@ trigger1 = random < var(53) * 100
 type = changestate
 value = 1060
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype = A
 triggerall = power >= 500
@@ -1664,7 +1679,7 @@ trigger2 = random < var(53) * 25
 type = changestate
 value = 1010
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 500
@@ -1680,7 +1695,7 @@ trigger1 = prevstateno = 1000
 type = changestate
 value = 3100
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 1000
@@ -1700,7 +1715,7 @@ trigger2 = random < var(53) * 200
 type = changestate
 value = 3400
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2
 triggerall = power >= 1000
 triggerall = var(109) < 2 || stateno = [1000, 4999]
@@ -1738,7 +1753,7 @@ trigger5 = random < var(53) * 200
 type = changestate
 value = 3050
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype = A
 triggerall = power >= 1000
@@ -1775,7 +1790,7 @@ trigger6 = random < var(53) * 200
 type = changestate
 value = 3000
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 1000
@@ -1801,7 +1816,7 @@ trigger4 = random < var(53) * 100
 type = changestate
 value = 3300
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 2000 && !var(50)
@@ -1825,7 +1840,7 @@ trigger2 = random < var(53) * 100
 type = changestate
 value = 4000
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 3000 && !var(50)
@@ -1844,7 +1859,7 @@ trigger2 = random < var(53) * ifelse((movehit = [1, 16]), 100, 50)
 type = changestate
 value = 4100
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = !var(60)
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 3000 && !var(50)
@@ -1860,7 +1875,7 @@ trigger1 = random < var(53) * 100
 type = changestate
 value = 100
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2
 triggerall = statetype = S || statetype = A
 triggerall = p2movetype != A && !inguarddist
@@ -1876,7 +1891,7 @@ trigger2 = random < var(53) * 100
 type = changestate
 value = 740
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = roundstate = 2 && statetype != A
 triggerall = power < const(data.power) && power < powermax
 triggerall = !var(50)
@@ -1890,7 +1905,7 @@ trigger1 = random < ifelse(power < 1000, 150, ifelse(power < 2000, 100, 50))
 type = changestate
 value = 195
 triggerall = var(63)
-triggerall = numenemy && !isasserted(noinput)
+triggerall = numenemy
 triggerall = statetype != A
 triggerall = life >= 0.5 * lifemax
 triggerall = prevstateno != [170, 199]
