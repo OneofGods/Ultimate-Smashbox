@@ -230,6 +230,12 @@ name = "a+x"
 command = a+x
 time = 1
 
+;-| Dodge for 2-button characters (a+b simultaneous) |----------------------
+[Command]
+name = "a+b"
+command = a+b
+time = 1
+
 ;-| Double Tap |-----------------------------------------------------------
 [Command]
 name = "FF"     ;Required (do not remove)
@@ -596,19 +602,19 @@ time = 1
 
 ;===========================================================================
 ;---------------------------------------------------------------------------
-; DODGE (LP+LK tap) - spot dodge with invincibility, uses guard anim as placeholder
-; Matches game-wide standard: Ryu, Ken, Morrigan all use LP+LK / a+x for dodge
+; DODGE (a+b tap) - spot dodge with invincibility
+; Finn is a 2-button character (a and b only), so dodge uses a+b instead of standard a+x
 [State -1, Dodge]
 type = ChangeState
 value = 710
 triggerall = !AIlevel
 triggerall = roundstate = 2 && statetype != A
 triggerall = ctrl
-trigger1 = command = "a+x"
+trigger1 = command = "a+b"
 
-; POWER CHARGE (Start button OR hold MP+MK)
+; POWER CHARGE (Start button OR hold a+b)
 ; Start button = original Finn design (state 400)
-; MP+MK hold = game-wide standard (also triggers state 400)
+; hold a+b = Finn-specific since he's a 2-button character (no y button)
 [State -1, Power Charge]
 type = ChangeState
 value = 400
@@ -616,7 +622,7 @@ triggerall = power<3000
 triggerall = statetype = S
 triggerall = ctrl
 trigger1 = command = "s"
-trigger2 = command = "hold_b" && command = "hold_y"
+trigger2 = command = "hold_a" && command = "hold_b"
 
 ; Run Fwd
 [State -1, Run Fwd]

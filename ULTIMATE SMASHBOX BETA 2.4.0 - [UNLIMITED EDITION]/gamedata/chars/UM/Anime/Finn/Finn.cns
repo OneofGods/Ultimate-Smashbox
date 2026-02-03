@@ -24,8 +24,8 @@ FloatPersistIndex = 40  ;reset to 0 between rounds or matches. There are 60 int 
 
 
 [Size]
-xscale = .9			;Horizontal scaling factor.
-yscale = 1.15			;Vertical scaling factor.
+xscale = 1.8			;Horizontal scaling factor. (was 0.9, doubled for USB)
+yscale = 2.3			;Vertical scaling factor. (was 1.15, doubled for USB)
 ground.back = 15		;Player width (back, ground)
 ground.front = 16		;Player width (front, ground)
 air.back = 12		;Player width (back, air)
