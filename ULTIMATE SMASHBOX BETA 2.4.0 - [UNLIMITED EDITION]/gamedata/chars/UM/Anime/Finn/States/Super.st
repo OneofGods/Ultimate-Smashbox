@@ -3040,17 +3040,7 @@ sprpriority=1
 poweradd=ifelse(var(53),0,-1000)
 facep2=1
 
-[State 3200, Spawn Jake]
-type = Helper
-trigger1 = !time
-trigger1 = numhelper(7000) = 0
-helpertype = normal
-ID = 7000
-stateno = 7000
-pos = -63,-10
-postype = p1
-ownpal = 0
-size.shadowoffset = -10
+;[State 3200, Spawn Jake] - REMOVED - SOURCE doesn't use persistent Jake helper
 
 [state 3000,Posset]
 type=posset
