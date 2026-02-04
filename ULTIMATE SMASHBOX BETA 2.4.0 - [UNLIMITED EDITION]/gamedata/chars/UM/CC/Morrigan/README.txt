@@ -1,42 +1,47 @@
                           ____________________________________________
 =========================| Morrigan Aensland by Phantom.of.the.Server |========================
-                          ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯       [13.09.2025]
+                          ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯        [24.04.2022]
 
  - Contact: potsmugen@gmail.com
  - Website: https://network.mugenguild.com/pots/
- - If you downloaded this character from anywhere else, it's probably outdated
 
- - Customized version of Capcom's Morrigan Aensland character from the Darkstalkers series
- - Playable in the Ikemen GO engine, February 2025 build and above
- - For older versions for older engines, try searching my Mediafire folder
+ - Customized version of Capcom's Morrigan from the Darkstalkers series
+ - For Mugen 1.0 and above
 
 
 
-==========< FEATURES >==========
+=====<Features>=====
 
- - Custom gameplay inspired by both classic and modern games
+ - All the essential stuff
+ - Gameplay mix between CvS, Darkstalkers and other Capcom games
+ - CvS-like movement
+ - Zero Counter, from SFZ3
+ - Dark Force and Chain Combos, from Darkstalkers
+ - Dodge, Roll, and Power Charge, from CvS2
+ - SF3 Parry and EX moves
+ - Cancels and Super Cancels
  - Original and edited effects from various games
  - Sounds from various games, including DS and CvS2
  - CvS2 voice samples
- - Custom blood effects
+ - MK blood effects
  - Various intros, win poses and special animations
- - Special intro versus Ananzi (Viuda Negra) by Borghi
- - Custom input parser
+ - Special intro versus Viuda Negra by Borghi
+ - 7 big portraits for you to choose from
  - A.I.
 
 
 
-==========< MOVELIST >==========
+=====<Movelist>=====
 
-NOTE: The movelist can be accessed from the ingame menu.
+NOTE: Movelist can be accessed ingame by pressing Start twice.
 
-U - up          x - light punch        a - light kick
+U - up          x - weak punch         a - weak kick
 D - down        y - medium punch       b - medium kick
-F - forward     z - hard punch         c - hard kick
+F - forward     z - strong punch       c - strong kick
 B - back        p - any punch          k - any kick
-s - start       pp - two punches       kk - two kicks
+s - start       pp - two punches        kk - two kicks
 
-(air) - Move must be performed in the air.
+(Air) - Move must be performed in the air.
 
 (EX) - Move with an EX version. EX moves are performed by pressing two punch/kick buttons.
 e.g.: Soul Fist - D, DF, F, p
@@ -48,192 +53,81 @@ EX moves are more powerful than regular Special moves, but consume half of a pow
 
 <THROWS>
 
-.Breast Anguish         F/B + pp (near opponent)
-.Moon Tracer            F/B + kk (near opponent)
+.Moon Tracer:           F/B + pp (near opponent)
+.Breast Anguish:        F/B + kk (near opponent)
 
 
 <UNIQUE ATTACKS>
 
-.Necro Desire           F + c
-.Sensual Insert         DF + b
-.Ecstatic Climb         DF + z
+.Necro Desire:          F + c
+.Ecstatic Climb:        DF + z
 
 
 <SPECIAL MOVES>
 
-.Soul Fist (EX)            D, DF, F, p (air also)
-.Shadow Blade (EX)         F, D, DF, p
-.Parasite Roll (EX)        D, DB, B, k
-.Vector Drain (EX)         F, DF, D, DB, B, p
-.Shell Pierce (EX)         U + p/k (while opponent is lying down)
+.Soul Fist:                D, DF, F, p (Air also)(EX)
+.Shadow Blade:             F, D, DF, p (EX)
+.Parasite Spin:            D, DB, B, k (EX)
+.Vector Drain:             F, DF, D, DB, B, p (EX)
 
 
 <LEVEL 1 SUPER COMBOS>
 
-.Soul Phoenix              D, DF, F, D, DF, F, p
-.Air Soul Phoenix          D, DF, F, D, DF, F, p
-.Cardinal Blade            D, DF, F, D, DF, F, k
-.Valkyrie Turn             D, DB, B, D, DB, B, k (air also)
+.Soul Phoenix:             D, DF, F, D, DF, F, p
+.Air Soul Phoenix:         D, DF, F, D, DF, F, p
+.Cardinal Blade:           D, DF, F, D, DF, F, k
+.Valkyrie Turn:            D, DB, B, D, DB, B, k (Air also)
 
 
 <LEVEL 2 SUPER COMBOS>
 
-.Finishing Shower          D, DF, F, D, DF, F, pp
-.Twilight Illusion         D, DF, F, D, DF, F, k (air)
+.Finishing Shower:         D, DF, F, D, DF, F, pp
+.Air Darkness Illusion:    D, DF, F, D, DF, F, k (air)
 
 
 <LEVEL 3 SUPER COMBOS>
 
-.Darkness Illusion         x, x, F, a, z
-.Eternal Slumber           x, b, B, y, c
+.Darkness Illusion:        x, x, F, a, z
+.Eternal Slumber:          x, b, B, y, c
 
 
 <SYSTEM>
 
-.Fly Forward               F, F (hold)
-.Fly Backward              B, B (hold)
-.Fly Upward                U (Hold during Fly Forward or Fly Backward)
-.Fly Downward              D (Hold during Fly Forward)
-.High Jump                 D, U
-.Sidestep                  a + x
-   .Sidestep Attack        p / k
-.Forward Roll              F + a + x
-.Back Roll                 B + a + x
-.Parry High                (tap) F
-.Parry Low                 (tap) D
-.Air Parry                 (tap) F (air)
-.Power Charge              b + y (hold)
-.Dark Force                c + z (2 power bars)
-.Guard Cancel High         F + pp (during guard) (1 power bar)
-.Guard Cancel Low          F + kk (during guard) (1 power bar)
-.Fall Recovery             p (while falling from a hit)
-.Retreat                   F/B + k (while down)
-.Taunt                     s (hold to delay)
+.Fly Forward:              F, F (hold)
+.Fly Backward:             B, B (hold)
+.Fly Upward:               U (Hold during Fly Forward or Fly Backward)
+.Fly Downward:             D (Hold during Fly Forward)
+.Dodge:                    a + x
+.Dodge Attack:             p/k (during Dodge)
+.Forward Roll:             F + a + x
+.Backward Roll:            B + a + x
+.Parry High:               (tap) F
+.Parry Low:                (tap) D
+.Air Parry:                (tap) F (Air)
+.Power Charge:             b + y (hold)
+.Dark Force:               c + z (2 power bars)
+.Zero Counter High:        F + pp (while guarding) (1 power bar)
+.Zero Counter Low:         F + kk (while guarding) (1 power bar)
+.Fall Recovery:            p / k (while falling from a hit)
+.Retreat:                  F/B + p/k (when down)
+.High Jump:                D, U
+.Taunt:                    s (hold to delay)
 
 
 
-==========< MOVE DETAILS >==========
+=====<Move Details>=====
 
  - Necro Desire is an overhead
 
- - Ecstatic Climb can be cancelled into a jump
+ - Ecstatic Climb can be cancelled with a jump
+
+ - Eternal Slumber is unblockable
 
  - Finishing Shower can be aimed up or down with the respective direction
 
- - Eternal Slumber is unblockable. It causes a little damage but a lot of stun
 
 
-
-==========< GAMEPLAY NOTES >==========
-
-COMBO SYSTEM
- - Some Normal attacks can be canceled into any Special and Super moves
- - Some Special moves can be canceled into any Super moves
- - Some Super moves can be canceled into different Super moves
- - Cancelling a Special or Super move into a Super move resets the juggle points
-
-
-DAMAGE SCALING
- - The damage your attacks inflict goes down with each attack in a combo
- - The first attack deals 100% damage
- - Successive attacks deal 10% less damage
- - Super cancelling a special advances 2 steps in the damage scaling
- - Super cancelling a super advances 3 steps in the damage scaling
- - Super Combo damage will not fall below 30% for Level 1, 40% for Level 2 and 50% for Level 3
- - Damage during Dark Force works the same, but multiplied by 133%
- - The amount of power gained during a combo is also affected by damage scaling
-
-
-THROWS
- - Throws cannot be blocked but can be jumped out of
- - The opponent can escape a normal throw by inputting a throw of their own just as they are grabbed
- - Normally throws can only be escaped if the opponent was in a position where they could also attempt to throw
-
-
-COUNTER HITS
- - If the opponent is in the middle of attacking, your attacks deal 20% extra damage
- - Most attacks cause extra hit stun as well, allowing links that are normally not possible
- - You'll know a counter hit happened when a round shockwave effect appears at the point of impact
-
-
-KNOCKDOWNS
- - This character uses 3 types of knockdowns: Soft, Medium and Hard
- - Soft knockdowns allow the enemy to use fall recovery or fast recovery (mash buttons to get up)
- - Medium knockdowns allow only fast recovery
- - Hard knockdowns allow neither. The enemy will always get up with the same timing
- - Hard knockdowns are signalled by a lifebar message (if the lifebars allow it)
-
-
-FLIGHT
- - Morrigan is special in that she can fly instead of dashing or running
- - Holding up or down changes flight trajectory
- - Can be interrupted with any attack
-
-
-HIGH JUMP
- - Useful for quickly closing distance
- - If the opponent is in the corner, this allows you to cross them up
-
-
-SIDESTEP
- - Avoids all attacks and fireballs
- - Vulnerable to throws
- - Instant recovery
-
-
-SIDESTEP ATTACK
- - Allows you to counterattack after dodging
- - Between the punch and kick options, one can be cancelled into special and super moves, and the other knocks down
-
-
-ROLL
- - Avoids all attacks and fireballs while moving
- - Vulnerable to throws
- - Can be hit by anything at the end of the animation
- - Forward version is a bit faster than the back version
-
-
-PARRY
- - Allows you to bypass block stun, leaving the opponent open for a counterattack
- - To parry high attacks tap forward just before being hit. To parry low attacks tap down. While jumping only forward works
-
-
-POWER CHARGE
- - Manually charges the power meter
- - Rate of charge is slow at first, but increases the longer you hold it
-
-
-GUARD CANCEL
- - While guarding, this cancels out of the guarding pose with a counterattack
- - Subtracts 300 points from the guard bar (if guard break is enabled)
- - Cannot be used to finish off the opponent
- - Useful to relieve pressure
-
-
-DARK FORCE (ASTRAL VISION)
- - Morrigan creates a double that copies every attack of hers
- - Projectile limit is lifted
- - Soul Fist becomes better at juggling
- - Can still use EX and Super moves if meter is available
-
-
-FALL RECOVERY
- - Allows you to land on your feet after being knocked down
-
-
-ROLL RECOVERY
- - Allows you to sneak up behind the opponent after being knocked down
- - Completely vulnerable to throws and low attacks
- - Holding forward makes you travel farther
-
-
-RETREAT
- - Allows you to reposition after being knocked down, thus avoiding the opponent's pressure
- - Cannot be used during a hard knockdown
-
-
-
-==========< OTHER INFO >==========
+=====<Other Info>=====
 
 <Selecting the win pose>
 (Speech translations by Kibagami)
@@ -252,189 +146,7 @@ C or Z -> Morrigan flips back and changes to a random outfit. Says one of three 
 
 
 
-==========< VERSION HISTORY >==========
-
-<13.09.2025>
- - Jet colors now vary with palette chosen
- - Cosmetic updates
- - Adjusted Dark Force damage scaling. It is higher at first but scales twice as fast
- - Ikemen GO compatibility update
-
-<22.02.2025>
- - Minor fixes
- - Compatibility update for latest Ikemen version
- - Ground and air Soul Phoenix now have different velocities according to button used
- - Changed Soul Phoenix skull effect
-
-<23.11.2024>
- - Compatibility update for latest Ikemen version
- - Parasite Roll cancel window extended
- - Eternal Slumber now makes all players visible as curtain shadows
-
-<27.09.2024>
- - Minor bug fixes and adjustments for latest Ikemen version
- - Counter hit bonus system is now more accurate, but does not happen when trading hits
- - Implemented "medium" knockdowns where the enemy cannot safe fall but can vary their wakeup timing
- - Light hits will now also cause the collapse KO animation
-
-<22.04.2024>
- - Bug fixing
- - Adjusted Soul Phoenix effects
- - Power Charge now has a significant recovery time
- - Adjusted Power Charge charging rate
- - Adjusted throws so that punch throws the opponent forward and kick throws them back
- - Special moves now also give +2 frame advantage on a counter hit
- - Hard knockdowns are now signaled with lifebar messages
- - Added a victory portrait
- - Changed the Dark Force bat background
- - Soul Fist can stay active longer during Dark Force
- - The AI should now guard more like a human player
- - Hitsparks no longer rely on helpers, for better performance
- - Can now also select "Nakoruru type" hit sparks in the config file
-
-<05.10.2023>
- - Meter gain is now affected by damage scaling
- - Fixed up Vector Drain a bit
- - Vector Drain now has different throw range and damage according to the button used
- - The timing to cancel fireballs is now more specific
- - Implemented maximum damage scaling for supers
- - Increased the chances that an AI enemy will tech out of throws
- - Crouching friction constant reverted to Mugen standard
-
-<30.07.2023>
- - Bug fixing
- - Minor updates to keep up with the engine
- - Air resets don't hit the opponent as far back as before
- - Reworked the dashes a bit to be more like Vampire Savior, while still keeping the custom properties
- - Air dashes now last a shorter time than ground dashes
- - Finishing Shower startup increased a bit
- - The opponent must now be standing to be allowed to tech throws
- - The zoom during win poses can be disabled in the configuration file
- - The PalFX now match each palette's effect colors
- - Adjusted diagonal get hit animation
- - Revised super pause times
- - The AI acts a bit more like Morrigan should
- - Negative edge is now disabled by default
-
-<19.03.2023>
- - Bug fixing
- - Updated some codes with new engine features
- - Increased input leniency for tiger knee motions
- - Updated the parry code so that it can parry fireballs (helper type) without pausing the other players
- - Guard Cancel now deducts 300 guard points
- - The default palette is now based on Toni's edit of this character
- - The AI will now mostly halt if the inputs are disabled by AssertSpecial (Ikemen compatibility update)
- - Rewrote the input parser code in the new ZSS language for improved performance
- - Partner attacks no longer increase your own juggle points, for consistency with other characters
- - Can no longer tag out during Dark Force
- - Can no longer use Retreat after a hard knockdown
- - Fall recovery is now performed with punch buttons only
- - Retreat is now performed with kick buttons only
- - Taunting now builds the opponent's meter
- - Increased leniency on double tap inputs, such as dashes
- - Added Pursuit and EX Pursuit
- - Guard cancel pauses the opponent a shorter time, so that it is easier to bait
- - The hurt voices can now play during custom states as well
- - Improved behavior of kick throw in zooming stages
- - The AI can now adapt to blocking some standing low attacks
- - The character now says something when tagging in
- - Block stun reduced by 2 frames for most attacks
- - Hard knockdowns now force the opponent to stay down for a specific length of time
- - Fixed the diagonal get hit animation so that the going up and coming down parts are separate animations
- - Lowered the maximum stun points
- - The special intro trigger against Viuda Negra now also accounts for her new name, Ananzi
- - The hitsound channel is now mostly handled by a new engine feature instead of workarounds
- - Most intros now respect the lifebar's waiting time
- - Adjusted corner crossups so that they're less ambiguous
- - Missed normal throws have more recovery
-<04.11.2022>
- - Bug fixing
- - A.I. adjustments
- - The A.I. now also uses the new moves
- - Adjusted Ecstatic Climb hit velocity
- - Close normal attacks and neutral jumping attacks now have their own state numbers
- - Victory music can now be switched on or off in the configuration file
- - Air Soul Fist input now reverses if the opponent is behind Morrigan
- - EX Air Soul Fist no longer faces the opponent automatically
- - Eternal Slumber now has throw properties to prevent some inescapable setups
- - Finishing Shower has a bit more startup but more frame advantage
- - Remade Finishing Shower trail effects
- - Added a transition frame between the walking and standing animations that was added in MvC
- - Recoded the walking effects and bats so they look smoother and use only one helper instead of several
- - Optimized the bat effects code during Power Charge. Also changed their movement pattern
- - Removed Lilith's crouching light kick
- - The normal crouching medium kick animation is now the Darkstalkers version
- - MvC crouching medium kick (Lilith's) is now a command normal
- - The bat effect inside EX Soul Fist now changes angle according to the fireball trajectory
-
-<11.09.2022>
- - Bug fixing
- - Dark Force now ends if Morrigan is tagged out
- - Adjusted distances from which proximity normals are activated
- - Added an experimental victory BGM
- - Adjusted super combo startup invulnerability
- - The camera now follows the character for the win poses
- - Disabling the custom sparks and enabling blood now activates the screenpack's blood effects
- - Added a new fire hit sound
- - The character now flashes white to signal a super cancel
-
-<03.07.2022>
- - Bug fixing
-
-<25.06.2022>
- - Bug fixing
- - Eternal Slumber now does less damage but adds a lot of stun
- - Fixed pushback on some rapid chains
- - The win pose where Morrigan changes clothes was divided in half: hold Z for her own clothes, or C for cosplays
- - Removed minimum damage threshold. Attacks can now do less than 7 points of damage
- - Changed chip damage calculation. It is now 25% of regular damage
- - Reduced the damage supers do to the opponent's guard bar
-
-<12.06.2022>
- - Now exclusively compatible with Ikemen GO
- - Added Ikemen DEF and CNS parameters
- - Replaced the old movelist with Ikemen GO's movelist
- - Removed the custom dizzy system and improved compatibility with Ikemen GO's dizzy system
- - Disabled redizzy combos (until Ikemen fixes this)
- - Adjusted tag in and tag out animations
- - Added a temporary fix to Explod position randomization
- - Hit sparks and super pause effects can be configured separately
- - Several pieces of code adapted to Ikemen's features
- - Disabled stun damage during Dark Force
- - Added a new, custom input buffer to better accomodate Ikemen's inputs
- - Changed tag in and tag out animations
- - Can no longer perform Darkness Illusion from the recovery frames of Necro Desire
- - Added Midnight Bliss animation, thanks to Toni
- - Damage scaling is now similar to modern Street Fighter games
-
-<11.06.2022>
- - Bug fixing
- - Cardinal Blade trajectory changes according to the button used
- - Chain combos can be executed even if the first attack is parried
- - Adjusted throw escape behaviour
- - Removed the override to lying down states. Character still wakes up faster than normal, however
- - Reintroduced some input shortcuts
-
-<14.05.2022>
- - Bug fixing
- - Added attack names to the super finish screen
- - Improved a few collision boxes
- - Parry window and cooldown increased slightly
- - Consecutive standing parries now move the player slightly back
- - Adjusted the way Parry pauses work
- - Parrying no longer builds extra meter
- - Trading fireballs no longer buils meter
- - Updated ground impact effect
- - Maximum damage scaling level corrected to 500. It is also more sensitive to increasing damage
-
-<30.04.2022>
- - Bug fixing
- - Both Darkness Illusions now behave the same for parries as they do for being blocked
- - Detection of double quarter circle motions is more lenient
- - Improved "variable height" code. Crossups should be a bit more consistent
- - Adjusted input for high jumps. Should no longer happen on accident and also work better in Ikemen
- - Removed some input shortcuts for better Ikemen compatibility
- - Removed fireball invulnerability from the jumping part of Shadow Blade
+=====<Version History>=====
 
 <24.04.2022>
  - Retired what was left of the "tick fix" code
@@ -581,20 +293,18 @@ doing more chip and still giving you a huge frame advantage
 
 
 
-==========< WHAT'S MISSING >==========
+=====<What's Missing>=====
 
  - Bug fixing
 
 
 
-==========< SPECIAL THANKS >==========
+=====<Special Thanks>=====
 
- - VirtuallTek, for the various versions of Fighter Factory
- - Toni, for the win poses cosplaying Chun-Li, Dan and Sakura as well as the Midnight Bliss animation
- - Toni again, for the palette on which I based the default one, and for fixing the pursuit sprites
  - JustNoPoint, for ripping Morrigan's sprites, among other stuff from CvS2 and MvC2
  - JustNoPoint, again, for making the Dark Force stance, Parasite Roll, "V" win pose, Eternal Slumber miss and Vector Drain miss animations
- - BBH, Black_Dahlia_Isis, Calypso, Cloudius, Crystalized Sun, Jango, Jesuszilla, Kung Fu Man, Macaulyn97, psycore, RagingRowen, Snake and Toni for feedback
+ - Toni, for the win poses cosplaying Chun-Li, Dan and Sakura
+ - To the testers: BBH, Black_Dahlia_Isis, Calypso, Cloudius, Jango, Jesuszilla, Kung Fu Man, Macaulyn97, psycore, RagingRowen, Snake and Toni
  - H" and Warusaki3 for their CvS2 effects
  - Drowin, for letting me use the drill effect from his G-Akiha
  - Iced, for support
@@ -604,8 +314,7 @@ doing more chip and still giving you a huge frame advantage
 
 
 
-==========< DISCLAIMER >==========
+=====<Disclaimer>=====
 
  - Morrigan, Darkstalkers and Capcom vs Snk are property of Capcom
- - This character is a non-profit fan work. It cannot be sold or used for any commercial purposes
- - No part of this work may be used for personal profit, be it commissions, paywalls and the likes of it
+ - This Mugen character is a non-profit fan work. It cannot be used for any commercial purposes

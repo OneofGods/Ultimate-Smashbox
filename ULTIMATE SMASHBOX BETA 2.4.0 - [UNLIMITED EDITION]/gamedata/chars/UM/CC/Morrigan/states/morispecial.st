@@ -1,6 +1,6 @@
 ; ___________________________________
 ;| Morrigan by Phantom.of.the.Server |
-; 
+; ___________________________________
 ;============================================================================================
 ;=====================================<SPECIAL STATES>=======================================
 ;============================================================================================
@@ -13,37 +13,21 @@ movetype = A
 anim = 1000
 ctrl = 0
 velset = 0, 0
-poweradd = 50 * !var(50)
-sprpriority = 2
+poweradd = 50 * !var(20)
+sprpriority = 1
 facep2 = 1
-
-[State Damage Scaling - Add]
-type = varadd
-trigger1 = !time
-trigger1 = var(65)
-trigger1 = 1 || var(65) = 0
-value = 1
 
 [State 1000, Strength]
 type = varset
-trigger1 = time <= 0
-value =   0
+trigger1 = var(10) != [1, 3]
+var(10) = 2
 ignorehitpause = 1
-persistent = 0
 
 [State 1000, Strength AI]
 type = varset
-trigger1 = time <= 0
-value =   0
+trigger1 = time <= 0 && AIlevel
+var(10) = ifelse((p2movetype = H || random < 500), 3, ifelse(random < 500, 2, 1))
 ignorehitpause = 1
-
-[State 1000, Erase Inputs]
-type = null
-trigger1 = time <= 0
-trigger1 = 1 || var(88) = 1
-trigger1 = 1 || var(87) = 1
-ignorehitpause = 1
-persistent = 0
 
 [State 1000, FX]
 type = explod
@@ -52,39 +36,38 @@ anim = 1004
 ID = 1004
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
-ownpal = 1
+pos = 5,-30
+scale = const(size.xscale), const(size.yscale)
 bindtime = -1
 removeongethit = 1
-removeonchangestate = 1
+ownpal = 1
 
 [State 1000, Correct Projectile Trade]
 type = hitby
 trigger1 = animelem = 5
-value2 = SCA, AA, AT
+value = SCA, AA, AT
 time = 1
 
 [State 1000, Soul Fist]
 type = helper
 trigger1 = animelem = 5
-helpertype = normal; projectile
+helpertype = normal
 stateno = 1005
 ID = 1005
 name = "Soul Fist"
 postype = p1
-pos = 6 * const(size.xscale), -50
+pos = ceil(12 * const(size.xscale)), -50
 size.xscale = 0.5
 size.yscale = 0.5
 ownpal = 1
 
-[State 1000, Sound]
+[State 1000, Snd]
 type = playsnd
 trigger1 = animelem = 2
 value = 4, 13
 channel = 0
-freqmul = 0.98 + (random / 25000.0)
 
-[State 1000, Sound]
+[State 1000, Snd]
 type = playsnd
 trigger1 = animelem = 5
 value = 5, 0
@@ -105,37 +88,22 @@ anim = 1000
 ctrl = 0
 velset = 0, 0
 poweradd = -500
-sprpriority = 2
+sprpriority = 1
 facep2 = 1
 
-[State Damage Scaling - Add]
-type = varadd
-trigger1 = !time
-trigger1 = var(65)
-trigger1 = 1 || var(65) = 0
-value = 1
-
-[State 1010, Erase Inputs]
-type = null
-trigger1 = time <= 0
-trigger1 = 1 || var(88) = 1
-trigger1 = 1 || var(87) = 1
+[State 1010, Strength]
+type = varset
+trigger1 = var(10) != 4
+var(10) = 4
 ignorehitpause = 1
-persistent = 0
 
-[State 1010, EX FX]
-type = playsnd
-trigger1 = !time
-value = 0, 1000
-
-[State 1010, EX FX]
+[State 1010, ExFX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(107) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
-pos = 5 * const(size.xscale), -51 * const(size.yscale)
+pos = ceil(10 * const(size.xscale)), ceil(-51 * const(size.yscale))
 scale = 0.5, 0.5
 pausemovetime = -1
 supermovetime = -1
@@ -148,38 +116,37 @@ anim = 1004
 ID = 1004
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
-ownpal = 1
+pos = 5,-30
+scale = const(size.xscale), const(size.yscale)
 bindtime = -1
 removeongethit = 1
-removeonchangestate = 1
+ownpal = 1
 
 [State 1010, Correct Projectile Trade]
 type = hitby
 trigger1 = animelem = 6
-value2 = SCA, AA, AT
+value = SCA, AA, AT
 time = 1
 
 [State 1010, SoulFist]
 type = helper
 trigger1 = animelem = 6
-helpertype = normal; projectile
+helpertype = normal
 stateno = 1015
 ID = 1015
 name = "EX Soul Fist"
 postype = p1
-pos = 6 * const(size.xscale), -50
+pos = ceil(12 * const(size.xscale)), -50
 size.xscale = 0.5
 size.yscale = 0.5
 ownpal = 1
 
-[State 1010, Sound]
+[State 1010, Snd]
 type = playsnd
 trigger1 = animelem = 3
 value = 4, 13
 channel = 0
-
-[State 1010, Sound]
+[State 1010, Snd]
 type = playsnd
 trigger1 = animelem = 6
 value = 5, 0
@@ -199,42 +166,26 @@ movetype = A
 anim = 1050
 ctrl = 0
 velset = 0, 0
-poweradd = 50 * !var(50)
-sprpriority = 2
+poweradd = 50 * !var(20)
+sprpriority = 1
 facep2 = p2dist x <= -const(size.ground.back)
-
-[State Damage Scaling - Add]
-type = varadd
-trigger1 = !time
-trigger1 = var(65)
-trigger1 = 1 || var(65) = 0
-value = 1
 
 [State 1050, Strength]
 type = varset
-trigger1 = time <= 0
-value =   0
+trigger1 = var(10) != [1, 3]
+var(10) = 2
 ignorehitpause = 1
-persistent = 0
 
 [State 1050, Strength AI]
 type = varset
-trigger1 = time <= 0
-value =   0
+trigger1 = time <= 0 && AIlevel
+var(10) = ifelse((p2movetype = H || random < 500), 3, ifelse(random < 500, 2, 1))
 ignorehitpause = 1
-
-[State 1050, Erase Inputs]
-type = null
-trigger1 = time <= 0
-trigger1 = 1 || var(88) = 1
-trigger1 = 1 || var(87) = 1
-ignorehitpause = 1
-persistent = 0
 
 [State 1050, Width]
 type = width
-trigger1 = animelemtime(4) >= 0 && animelemtime(9) < 0
-player = 16 * const(size.xscale), 0
+trigger1 = (animelemtime(4) >= 0 && animelemtime(9) < 0)
+player = ceil(32 * const(size.xscale)), 0
 
 [State 1050, FX]
 type = explod
@@ -243,27 +194,26 @@ anim = 1054
 ID = 1054
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
-ownpal = 1
+scale = const(size.xscale), const(size.yscale)
 bindtime = -1
 removeongethit = 1
-removeonchangestate = 1
+ownpal = 1
 
 [State 1050, Correct Projectile Trade]
 type = hitby
 trigger1 = animelem = 6
-value2 = SCA, AA, AT
+value = SCA, AA, AT
 time = 1
 
 [State 1050, SoulFist]
 type = helper
 trigger1 = animelem = 6
-helpertype = normal; projectile
+helpertype = normal
 stateno = 1055
 ID = 1055
-name = "Air Soul Fist"
+name = "Soul Fist"
 postype = p1
-pos = 60 * const(size.xscale), -48
+pos = ceil(60 * const(size.xscale)), -48
 size.xscale = 0.5
 size.yscale = 0.5
 ownpal = 1
@@ -285,13 +235,12 @@ trigger1 = animelemtime(6) = 1
 x = -1
 y = -6
 
-[State 1050, Sound]
+[State 1050, Snd]
 type = playsnd
 trigger1 = animelem = 4
 value = 4, 13
 channel = 0
-
-[State 1050, Sound]
+[State 1050, Snd]
 type = playsnd
 trigger1 = animelem = 6
 value = 5, 0
@@ -299,34 +248,32 @@ value = 5, 0
 [State Land]
 type = changestate
 trigger1 = statetype = A
-trigger1 = vel y > 0
-trigger1 = pos y > -vel y
-value = 1053
+trigger1 = vel y > 0 && (pos y > -vel y)
+value = 1059
 
 
 ;---Land---
-[Statedef 1053]
+[Statedef 1059]
 type = S
 physics = S
 movetype = I
-anim = 1053
+anim = 48
 ctrl = 0
 velset = 0, 0
-sprpriority = 2
+sprpriority = 1
 movehitpersist = 1
 hitcountpersist = 1
 
-[State 1053, Pos]
+[State 1059, Pos]
 type = posset
 trigger1 = 1
 y = 0
 
-[State 1053, Sound]
+[State 1059, Snd]
 type = playsnd
 trigger1 = !time
 value = 0, 52
-
-[State 1053, Dust]
+[State 1059, Dust]
 type = explod
 trigger1 = !time
 anim = 7102
@@ -338,11 +285,12 @@ ownpal = 1
 pausemovetime = -1
 supermovetime = -1
 
-[State 1053, End]
+[State 1059, End]
 type = changestate
 trigger1 = !animtime
 value = 0
 ctrl = 1
+
 
 
 ;======================<EX AIR SOUL FIST>=============================
@@ -354,37 +302,22 @@ anim = 1050
 ctrl = 0
 velset = 0, 0
 poweradd = -500
-sprpriority = 2
-facep2 = 0
+sprpriority = 1
+facep2 = p2dist x <= -const(size.ground.back)
 
-[State Damage Scaling - Add]
-type = varadd
-trigger1 = !time
-trigger1 = var(65)
-trigger1 = 1 || var(65) = 0
-value = 1
-
-[State 1060, Erase Inputs]
-type = null
-trigger1 = time <= 0
-trigger1 = 1 || var(88) = 1
-trigger1 = 1 || var(87) = 1
+[State 1060, Strength]
+type = varset
+trigger1 = var(10) != 4
+var(10) = 4
 ignorehitpause = 1
-persistent = 0
 
-[State 1060, EX FX]
-type = playsnd
-trigger1 = !time
-value = 0, 1000
-
-[State 1060, EX FX]
+[State 1060, ExFX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(107) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
-pos = -6 * const(size.xscale), -77 * const(size.yscale)
+pos = ceil(-12 * const(size.xscale)), ceil(-77 * const(size.yscale))
 scale = 0.5, 0.5
 pausemovetime = -1
 supermovetime = -1
@@ -392,8 +325,8 @@ ownpal = 1
 
 [State 1060, Width]
 type = width
-trigger1 = animelemtime(4) >= 0 && animelemtime(9) < 0
-player = 16 * const(size.xscale), 0
+trigger1 = (animelemtime(4) >= 0 && animelemtime(9) < 0)
+player = ceil(32 * const(size.xscale)), 0
 
 [State 1060, FX]
 type = explod
@@ -402,27 +335,26 @@ anim = 1054
 ID = 1054
 sprpriority = 3
 postype = p1
-scale = 0.5 * const(size.xscale), 0.5 * const(size.yscale)
-ownpal = 1
+scale = const(size.xscale), const(size.yscale)
 bindtime = -1
 removeongethit = 1
-removeonchangestate = 1
+ownpal = 1
 
 [State 1060, Correct Projectile Trade]
 type = hitby
 trigger1 = animelem = 6
-value2 = SCA, AA, AT
+value = SCA, AA, AT
 time = 1
 
 [State 1060, SoulFist]
 type = helper
 trigger1 = animelem = 6
-helpertype = normal; projectile
+helpertype = normal
 stateno = 1065
 ID = 1065
 name = "EX Air Soul Fist"
 postype = p1
-pos = 60 * const(size.xscale), -48
+pos = ceil(60 * const(size.xscale)), -48
 size.xscale = 0.5
 size.yscale = 0.5
 ownpal = 1
@@ -444,13 +376,12 @@ trigger1 = animelemtime(6) = 1
 x = -1
 y = -6
 
-[State 1060, Sound]
+[State 1060, Snd]
 type = playsnd
 trigger1 = animelem = 4
 value = 4, 13
 channel = 0
-
-[State 1060, Sound]
+[State 1060, Snd]
 type = playsnd
 trigger1 = animelem = 6
 value = 5, 0
@@ -458,9 +389,8 @@ value = 5, 0
 [State Land]
 type = changestate
 trigger1 = statetype = A
-trigger1 = vel y > 0
-trigger1 = pos y > -vel y
-value = 1053
+trigger1 = vel y > 0 && (pos y > -vel y)
+value = 1059
 
 
 ;======================<SHADOW BLADE>=============================
@@ -471,62 +401,50 @@ movetype = A
 anim = 1100
 ctrl = 0
 velset = 0, 0
-poweradd = 100 * !var(50)
+poweradd = 100 * !var(20)
 facep2 = 1
-sprpriority = 2
-
-[State Damage Scaling - Add]
-type = varadd
-trigger1 = !time
-trigger1 = var(65)
-trigger1 = 1 || var(65) = 0
-value = 1
+sprpriority = 1
 
 [State 1100, Strength]
 type = varset
-trigger1 = time <= 0
-value =   0
+trigger1 = var(10) != [1, 3]
+var(10) = 2
 ignorehitpause = 1
-persistent = 0
 
 [State 1100, Strength AI]
 type = varset
-trigger1 = time <= 0
-value =   0
+trigger1 = time <= 0 && AIlevel
+var(10) = ifelse(random < 500, 3, ifelse(random < 666, 2, 1))
 ignorehitpause = 1
-
-[State 1100, Erase Inputs]
-type = null
-trigger1 = time <= 0
-trigger1 = 1 || var(88) = 1
-trigger1 = 1 || var(87) = 1
-ignorehitpause = 1
-persistent = 0
 
 [State 1100, HB]
 type = hitby
-trigger1 = anim = 1100
-trigger1 = animelemtime(4) < 0
-trigger1 = var(123) = 0
+trigger1 = anim = 1100 && animelemtime(4) < 0
+trigger1 = var(10) = 1
 value = SC, AA
 time = 1
 ignorehitpause = 1
 
 [State 1100, HB]
 type = hitby
-trigger1 = anim = 1100
-trigger1 = animelemtime(4) < 0
-trigger1 = var(123) = 1
+trigger1 = anim = 1100 && animelemtime(4) < 0
+trigger1 = var(10) = 2
 value = C, AA
 time = 1
 ignorehitpause = 1
 
-[State 1100, NHB]
-type = null
-trigger1 = anim = 1100
-trigger1 = animelemtime(4) < 0
-trigger1 = var(123) = 2
+[State 1100, HB]
+type = nothitby
+trigger1 = anim = 1100 && animelemtime(4) < 0
+trigger1 = var(10) = 3
 value = SCA
+time = 1
+ignorehitpause = 1
+
+[State 1100, HB]
+type = hitby
+trigger1 = anim = 1100 && animelemtime(4) >= 0
+value = SCA, AA, AT
 time = 1
 ignorehitpause = 1
 
@@ -534,7 +452,7 @@ ignorehitpause = 1
 type = posadd
 trigger1 = anim = 1100
 trigger1 = animelem = 1 || animelem = 2
-x =   0 * const(size.xscale)
+x = ifelse(var(10) = 3, 8, ifelse(var(10) = 2, 4, 0))
 
 [State 1100, Vel]
 type = velmul
@@ -543,47 +461,28 @@ x = 0.95
 
 [State 1100, Accel]
 type = veladd
-trigger1 = anim = 1100
-trigger1 = animelemtime(4) >= 1
+trigger1 = anim = 1100 && animelemtime(4) >= 1
 trigger2 = anim = 1101
-y =   0.50
+y = ifelse(var(10) = 3, 0.67, ifelse(var(10) = 2, 0.63, 0.50))
 
 [State 1100, Vel]
 type = velset
-trigger1 = anim = 1100
-trigger1 = animelemtime(4) = [0, 1]
-x =   4.9
-y =   -5.50
-
-[State 1100, Grounded Frame]
-type = posfreeze
-trigger1 = anim = 1100
-trigger1 = animelemtime(4) = 0
-value = 1
+trigger1 = anim = 1100 && animelemtime(4) = 1
+x = ifelse(var(10) = 3, 10.2, ifelse(var(10) = 2, 8.1, 4.9))
+y = ifelse(var(10) = 3, -11.76, ifelse(var(10) = 2, -9.15, -5.50))
 
 [State 1100, Vel]
 type = velset
 trigger1 = anim = 1101
 x = 0
 
-[State 1100, Sound]
+[State 1100, Snd]
 type = playsnd
-trigger1 = anim = 1100
-trigger1 = animelem = 2
-value = 1, 9
-;channel = 1
-stopongethit = 1
-
-[State 1100, Sound]
-type = playsnd
-trigger1 = anim = 1100
-trigger1 = animelemtime(4) = 1
-value = 0,  41
-
+trigger1 = anim = 1100 && animelem = 4
+value = 0, 41
 [State 1100, Dust]
 type = helper
-trigger1 = anim = 1100
-trigger1 = animelemtime(4) = 1
+trigger1 = anim = 1100 && animelem = 4
 helpertype = normal
 stateno = 7100
 ID = 7100
@@ -591,51 +490,45 @@ name = "Dust"
 postype = p1
 ownpal = 1
 
-[State 1100, Sound]
+[State 1100, Snd]
 type = playsnd
-trigger1 = anim = 1100
-trigger1 = animelem = 2
+trigger1 = anim = 1100 && animelem = 2
 value = 4, 12
 channel = 0
+ignorehitpause = 1
+persistent = 0
 
 [State 1100, Hit]
 type = hitdef
-trigger1 = anim = 1100
-trigger1 = animelem = 2 || animelem = 3
+trigger1 = (animelem = 2 || animelem = 3) && anim = 1100
 trigger1 = !movecontact && !movereversed
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+trigger1 = var(15) < 1
 attr = S, SA
-damage =   100,   25
+damage = 90 + (10 * var(10)), 12 + (1 * var(10))
 animtype = Back
-hitflag = MAF
 guardflag = M
+hitflag = MAF
 priority = 4, Hit
 pausetime = 12, 12
-sparkno = -1 + 0 * (var(121) = 8023)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 25) * (var(133) = 50), var(122) =  -60
-hitsound = s2, 9
-hitsound.channel = 2
-guardsound = s2, 0
-guardsound.channel = 2
+sparkno = -1 + 0 * (var(33) := 8013)
+guard.sparkno = -1 + 0 * (var(34) := 8001)
+sparkxy = -10 + 0 * (var(35) := 30) * (var(36) := 90), var(37) := ifelse((animelem = 2), -35, -60)
+hitsound = -1 + 0 * (var(31) := 9)
+guardsound = -1
 ground.type = Low
-ground.hittime = 1 + 18; + 2 * var(105)
 ground.slidetime = 18
-ground.velocity =   -3.0 * !numhelper(775),   -6.0
+ground.hittime = 18
+ground.velocity = -4.0 * !numhelper(775), ifelse(var(10) = 3, -10.5, ifelse(var(10) = 2, -9.0, -7.0))
 air.type = Low
-air.velocity =   -3.0 * !numhelper(775),   -6.0
+air.velocity = -4.0 * !numhelper(775), ifelse(var(10) = 3, -10.5, ifelse(var(10) = 2, -9.0, -7.0))
 ground.cornerpush.veloff = 0
-guard.hittime = 1 + 16
-guard.ctrltime = 1 + 16
-guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
+guard.velocity = -12.97
 guard.cornerpush.veloff = 0
-getpower =  100 * !var(50),  50 * !var(50)
+getpower = ifelse(movehit, 25, 100) * !var(20), ifelse(moveguarded, 25, 50) * !var(20)
 givepower = 40, 40
-envshake.time = 12; special
+envshake.time = 10
+envshake.ampl = 1
 envshake.freq = 180
-envshake.ampl =  2
-envshake.mul = 0.667
 fall = 1
 fall.recover = 1
 fall.recovertime = 120
@@ -647,63 +540,55 @@ forcestand = 1
 type = hitdef
 trigger1 = animelem = 4 && anim = 1100
 trigger1 = !movecontact && !movereversed
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+trigger1 = var(15) < 1
 attr = A, SA
-damage = 60, 15
+damage = 60, 7
 animtype = Back
-hitflag = MAF
 guardflag = MA
+hitflag = MAF
 priority = 4, Hit
 pausetime = 12, 12
-sparkno = -1 + 0 * (var(121) = 8023)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 0) * (var(133) = 25), var(122) = -100
-hitsound = s2, 9
-hitsound.channel = 2
-guardsound = s2, 0
-guardsound.channel = 2
+sparkno = -1 + 0 * (var(33) := 8013)
+guard.sparkno = -1 + 0 * (var(34) := 8001)
+sparkxy = -10 + 0 * (var(35) := 30) * (var(36) := 90), var(37) := -100
+hitsound = -1 + 0 * (var(31) := 9)
+guardsound = -1
 ground.type = High
-ground.hittime = 1 + 18; + 2 * var(105)
 ground.slidetime = 18
-ground.velocity =   -3.0 * !numhelper(775),   -6.0
+ground.hittime = 18
+ground.velocity = -4.0 * !numhelper(775), ifelse(var(10) = 3, -10.5, ifelse(var(10) = 2, -9.0, -7.0))
 air.type = Low
-air.velocity =   -3.0 * !numhelper(775),   -6.0
+air.velocity = -4.0 * !numhelper(775), ifelse(var(10) = 3, -10.5, ifelse(var(10) = 2, -9.0, -7.0))
 ground.cornerpush.veloff = 0
-guard.hittime = 1 + 16
-guard.ctrltime = 1 + 16
-guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
+guard.velocity = -12.97
 guard.cornerpush.veloff = 0
-getpower =  100 * !var(50),  50 * !var(50)
+getpower = ifelse(movehit, 25, 100) * !var(20), ifelse(moveguarded, 25, 50) * !var(20)
 givepower = 40, 40
-envshake.time = 12; special
+envshake.time = 10
+envshake.ampl = 1
 envshake.freq = 180
-envshake.ampl =  2
-envshake.mul = 0.667
 fall = 1
 fall.recover = 1
 fall.recovertime = 120
 yaccel = 0.4850
-airguard.ctrltime = 1 + 16
+airguard.ctrltime = 16
 airguard.velocity = -6.00 * !numhelper(775), -1.00
 forcestand = 1
 airguard.cornerpush.veloff = 0
 
 [State 1100, Type]
 type = statetypeset
-trigger1 = anim = 1100
-trigger1 = animelemtime(4) >= 0
+trigger1 = anim = 1100 && animelemtime(4) >= 0
 trigger2 = anim = 1101
 statetype = A
 physics = N
 
 [State 1100, Anim]
 type = changeanim
-trigger1 = anim = 1100
-trigger1 = animelemtime(4) > 0 && vel y > -1
+trigger1 = anim = 1100 && animelemtime(4) > 0 && vel y > -1
 value = 1101
 
-[State 1100, Idle]
+[State Idle]
 type = statetypeset
 trigger1 = anim = 1101
 movetype = I
@@ -711,8 +596,7 @@ movetype = I
 [State Land]
 type = changestate
 trigger1 = statetype = A
-trigger1 = vel y > 0
-trigger1 = pos y > -vel y
+trigger1 = vel y > 0 && (pos y > -vel y)
 value = 1109
 
 
@@ -724,7 +608,7 @@ movetype = I
 anim = 1109
 ctrl = 0
 velset = 0, 0
-sprpriority = 2
+sprpriority = 1
 movehitpersist = 1
 hitcountpersist = 1
 
@@ -733,11 +617,10 @@ type = posset
 trigger1 = 1
 y = 0
 
-[State 1109, Sound]
+[State 1109, Snd]
 type = playsnd
 trigger1 = !time
 value = 0, 52
-
 [State 1109, Dust]
 type = explod
 trigger1 = !time
@@ -757,6 +640,7 @@ value = 0
 ctrl = 1
 
 
+
 ;======================<EX SHADOW BLADE>=============================
 [Statedef 1110]
 type = S
@@ -767,45 +651,29 @@ ctrl = 0
 velset = 0, 0
 poweradd = -500
 facep2 = 1
-sprpriority = 2
+sprpriority = 1
 
-[State Damage Scaling - Add]
-type = varadd
-trigger1 = !time
-trigger1 = var(65)
-trigger1 = 1 || var(65) = 0
-value = 1
-
-[State 1110, Erase Inputs]
-type = null
-trigger1 = time <= 0
-trigger1 = 1 || var(88) = 1
-trigger1 = 1 || var(87) = 1
+[State 1110, Strength]
+type = varset
+trigger1 = var(10) != 4
+var(10) = 4
 ignorehitpause = 1
-persistent = 0
 
-[State 1110, EX FX]
-type = playsnd
-trigger1 = !time
-value = 0, 1000
-
-[State 1110, EX FX]
+[State 1110, ExFX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(107) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
-pos = 18 * const(size.xscale), -38 * const(size.yscale)
+pos = ceil(36 * const(size.xscale)), ceil(-76 * const(size.yscale))
 scale = 0.5, 0.5
 pausemovetime = -1
 supermovetime = -1
 ownpal = 1
 
 [State 1110, NHB]
-type = null
-trigger1 = anim = 1110
-trigger1 = animelemtime(4) < 1
+type = nothitby
+trigger1 = anim = 1110 && animelemtime(4) < 1
 value = SCA
 time = 1
 ignorehitpause = 1
@@ -814,7 +682,7 @@ ignorehitpause = 1
 type = posadd
 trigger1 = anim = 1110
 trigger1 = animelem = 1 || animelem = 2
-x = 10 * const(size.xscale)
+x = 8
 
 [State 1110, Vel]
 type = velmul
@@ -823,46 +691,29 @@ x = 0.95
 
 [State 1110, Accel]
 type = veladd
-trigger1 = anim = 1110
-trigger1 = animelemtime(4) >= 1
+trigger1 = anim = 1110 && animelemtime(4) >= 1
 trigger2 = anim = 1101
 y = 0.67
 
 [State 1110, Vel]
 type = velset
-trigger1 = anim = 1110
-trigger1 = animelemtime(4) = [0, 1]
+trigger1 = anim = 1110 && animelemtime(4) = 1
 x = 10.2
 y = -11.76
-
-[State 1110, Grounded Frame]
-type = posfreeze
-trigger1 = anim = 1110
-trigger1 = animelemtime(4) = 0
-value = 1
 
 [State 1110, Vel]
 type = velset
 trigger1 = anim = 1101
 x = 0
 
-[State 1110, Sound]
+[State 1110, Snd]
 type = playsnd
-trigger1 = anim = 1110 && animelem = 2
-value = 1, 9
-;channel = 1
-stopongethit = 1
-
-[State 1110, Sound]
-type = playsnd
-trigger1 = anim = 1110
-trigger1 = animelemtime(4) = 1
+trigger1 = anim = 1110 && animelem = 4
 value = 0, 41
 
 [State 1110, Dust]
 type = helper
-trigger1 = anim = 1110
-trigger1 = animelemtime(4) = 1
+trigger1 = anim = 1110 && animelem = 4
 helpertype = normal
 stateno = 7100
 ID = 7100
@@ -870,50 +721,44 @@ name = "Dust"
 postype = p1
 ownpal = 1
 
-[State 1110, Sound]
+[State 1110, Snd]
 type = playsnd
-trigger1 = anim = 1110
-trigger1 = animelem = 2
+trigger1 = anim = 1110 && animelem = 2
 value = 4, 12
 channel = 0
+ignorehitpause = 1
+persistent = 0
 
 [State 1110, Hit]
 type = hitdef
-trigger1 = anim = 1110
-trigger1 = animelem = 2 || animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (2 + hitcount))
+trigger1 = (animelem = 2 || animelem = 3) && anim = 1110
+trigger1 = var(15) < (2 + hitcount)
 attr = S, SA
-damage = 40, 10
+damage = 40, 5
 animtype = Back
-hitflag = MAF
 guardflag = M
+hitflag = MAF
 priority = 4, Hit
 pausetime = 8, 8
-sparkno = -1 + 0 * (var(121) = 8023)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 25) * (var(133) = 50), var(122) =  -60
-hitsound = s2, 9
-hitsound.channel = 2
-guardsound = s2, 0
-guardsound.channel = 2
+sparkno = -1 + 0 * (var(33) := 8013)
+guard.sparkno = -1 + 0 * (var(34) := 8001)
+sparkxy = -10 + 0 * (var(35) := 30) * (var(36) := 90), var(37) := ifelse((animelem = 2), -35, -60)
+hitsound = -1 + 0 * (var(31) := 9)
+guardsound = -1
 ground.type = Low
-ground.hittime = 1 + 18; + 2 * var(105)
 ground.slidetime = 18
-ground.velocity = 0, -8.5
+ground.hittime = 18
+ground.velocity = 0, -9.0
 air.type = Low
-air.velocity = 0, -8.5
+air.velocity = 0, -9.0
 ground.cornerpush.veloff = 0
-guard.hittime = 1 + 16
-guard.ctrltime = 1 + 16
-guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
+guard.velocity = -12.97
 guard.cornerpush.veloff = 0
-getpower = 0, 0
+getpower = 0
 givepower = 40, 40
-envshake.time = 12; special
+envshake.time = 10
+envshake.ampl = 1
 envshake.freq = 180
-envshake.ampl =  2
-envshake.mul = 0.667
 fall = 1
 fall.recover = 1
 fall.recovertime = 120
@@ -924,44 +769,38 @@ forcestand = 1
 [State 1110, Hit 2]
 type = hitdef
 trigger1 = animelem = 4 && anim = 1110
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = (2 + hitcount))
+trigger1 = var(15) < (2 + hitcount)
 attr = A, SA
-damage = 60, 15
+damage = 60, 7
 animtype = Up
-hitflag = MAF
 guardflag = MA
+hitflag = MAF
 priority = 4, Hit
 pausetime = 8, 8
-sparkno = -1 + 0 * (var(121) = 8023)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 0) * (var(133) = 25), var(122) = -100
-hitsound = s2, 9
-hitsound.channel = 2
-guardsound = s2, 0
-guardsound.channel = 2
+sparkno = -1 + 0 * (var(33) := 8013)
+guard.sparkno = -1 + 0 * (var(34) := 8001)
+sparkxy = -10 + 0 * (var(35) := 30) * (var(36) := 90), var(37) := -100
+hitsound = -1 + 0 * (var(31) := 9)
+guardsound = -1
 ground.type = High
-ground.hittime = 1 + 18; + 2 * var(105)
 ground.slidetime = 18
-ground.velocity = -4.0 * !numhelper(775), -8.5
+ground.hittime = 18
+ground.velocity = -4.0 * !numhelper(775), -9.0
 air.type = Low
-air.velocity = -4.0 * !numhelper(775), -8.5
+air.velocity = -4.0 * !numhelper(775), -9.0
 ground.cornerpush.veloff = 0
-guard.hittime = 1 + 16
-guard.ctrltime = 1 + 16
-guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
+guard.velocity = -12.97
 guard.cornerpush.veloff = 0
-getpower = 0, 0
+getpower = 0
 givepower = 40, 40
-envshake.time = 12; special
+envshake.time = 10
+envshake.ampl = 1
 envshake.freq = 180
-envshake.ampl =  2
-envshake.mul = 0.667
 fall = 1
 fall.recover = 1
 fall.recovertime = 120
 yaccel = 0.4850
-airguard.ctrltime = 1 + 16
+airguard.ctrltime = 16
 airguard.cornerpush.veloff = 0
 airguard.velocity = -6.00 * !numhelper(775), -1.00
 forcestand = 1
@@ -986,8 +825,7 @@ movetype = I
 [State Land]
 type = changestate
 trigger1 = statetype = A
-trigger1 = vel y > 0
-trigger1 = pos y > -vel y
+trigger1 = vel y > 0 && (pos y > -vel y)
 value = 1109
 
 
@@ -1000,44 +838,28 @@ movetype = A
 anim = 1200
 ctrl = 0
 velset = 0, 0
-poweradd = 100 * !var(50)
+poweradd = 100 * !var(20)
 facep2 = 1
-sprpriority = 2
-
-[State Damage Scaling - Add]
-type = varadd
-trigger1 = !time
-trigger1 = var(65)
-trigger1 = 1 || var(65) = 0
-value = 1
+sprpriority = 1
 
 [State 1200, Strength]
 type = varset
-trigger1 = time <= 0
-value =   0
+trigger1 = var(10) != [1, 3]
+var(10) = 2
 ignorehitpause = 1
-persistent = 0
 
 [State 1200, Strength AI]
 type = varset
-trigger1 = time <= 0
-value =   0
+trigger1 = time <= 0 && AIlevel
+var(10) = ifelse(random < 500, 3, ifelse(random < 666, 2, 1))
 ignorehitpause = 1
-
-[State 1200, Erase Inputs]
-type = null
-trigger1 = time <= 0
-trigger1 = 1 || var(88) = 1
-trigger1 = 1 || var(87) = 1
-ignorehitpause = 1
-persistent = 0
 
 [State 1200, End]
 type = changeanim
 trigger1 = !time
-value =   1200
+value = ifelse(var(10) = 3, 1202, ifelse(var(10) = 2, 1201, 1200))
 
-[State 1200, Sound]
+[State 1200, Snd]
 type = playsnd
 trigger1 = animelem = 4
 value = 4, 20
@@ -1054,10 +876,10 @@ value = 1205
 type = S
 physics = N
 movetype = A
-anim =   1205
+anim = ifelse(var(10) = 3, 1207, ifelse(var(10) = 2, 1206, 1205))
 ctrl = 0
 velset = 0, 0
-sprpriority = 2
+sprpriority = 1
 
 [State 1205, Vel]
 type = velmul
@@ -1067,26 +889,23 @@ x = 0.95
 [State 1205, Vel]
 type = velset
 trigger1 = !time
-x =   6
+x = ifelse(var(10) = 3, 9, ifelse(var(10) = 2, 8, 7))
 
-[State 1205, Sound]
+[State 1205, Snd]
 type = playsnd
 trigger1 = animelem = 1 || animelem = 7 || animelem = 13
 value = 1, 9
-freqmul =   1.00
-;channel = 1
-stopongethit = 1
+channel = 1
 
 [State 1205, Dust]
 type = explod
-trigger1 = !(time % 3) && vel x >= 1
+trigger1 = !(time % 6) && abs(vel x) >= 1
 anim = 7103
 sprpriority = 3
 postype = p1
-pos = -8 * const(size.xscale), 0
+pos = ceil(-16 * const(size.xscale)), 0
+vel = 0, 0
 scale = 0.5, 0.5
-trans = addalpha
-alpha = 96, 256
 pausemovetime = -1
 supermovetime = -1
 ownpal = 1
@@ -1094,54 +913,58 @@ ownpal = 1
 [State 1205, Hit]
 type = hitdef
 trigger1 = animelem = 4 || animelem = 10 || animelem = 16
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+trigger1 = var(15) < 1
 attr = S, SA
-damage =   60,   15
+damage = ifelse(var(10) = 3, 34, ifelse(var(10) = 2, 40, 60)), 7;hitcount >= 1, ceil(60.0 / (hitcount + 1)), 60), 7
 animtype = Hard
-hitflag = MAF
 guardflag = M
+hitflag = MAF
 priority = 4, Hit
-pausetime = 4, 4
-sparkno = -1 + 0 * (var(121) = 8023)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 20) * (var(133) = 60), var(122) = -60
-hitsound = s2, 9
-hitsound.channel = 2
-guardsound = s2, 0
-guardsound.channel = 2
+pausetime = 8, 8
+sparkno = -1 + 0 * (var(33) := 8013)
+guard.sparkno = -1 + 0 * (var(34) := 8001)
+sparkxy = -10 + 0 * (var(35) := 30) * (var(36) := 90), var(37) := -60
+hitsound = -1 + 0 * (var(31) := 9)
+guardsound = -1
 ground.type = Low
-ground.hittime = 1 + 18; + 2 * var(105)
 ground.slidetime = 18
-ground.velocity = -4.49, 0
+ground.hittime = 18
+p2facing = 1
+ground.velocity = -5.62, 0
 air.type = Low
 air.velocity = -3.5, -7
 ground.cornerpush.veloff = 0
-guard.hittime = 1 + 16
-guard.ctrltime = 1 + 16
-guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
+guard.velocity = -12.97
 guard.cornerpush.veloff = 0
-getpower =  100 * !var(50),  50 * !var(50)
+getpower = ifelse(movehit, 25, 100) * !var(20), ifelse(moveguarded, 25, 50) * !var(20)
 givepower = 40, 40
-envshake.time = 12; special
+envshake.time = 10
+envshake.ampl = 1
 envshake.freq = 180
-envshake.ampl =  2
-envshake.mul = 0.667
 fall = 0
 air.fall = 1
 fall.recover = 1
 fall.recovertime = 120
 yaccel = 0.4850
-airguard.ctrltime = 1 + 16
+airguard.ctrltime = 16
 airguard.velocity = -6.00 * !numhelper(775), -1.00
 forcestand = 1
 airguard.cornerpush.veloff = 0
 
-[State 1205, Hit High]
-type = null
-trigger1 = animelem = 4 || animelem = 10 || animelem = 16
-trigger1 = 1
-ground.type = High
+[State 1205, Sparkles]
+type = explod
+trigger1 = !(gametime % 3) && numexplod(6000) < 32
+anim = 6000 + (random % 3)
+ID = 6000
+sprpriority = ifelse(random < 333, -1, 3)
+postype = p1
+pos = ceil(-8 * const(size.xscale)), 0
+random = 16, 16
+vel = 0, -1
+removetime = -2
+scale = 0.5, 0.5
+ownpal = 1
+ignorehitpause = 1
 
 [State 1205, End]
 type = changestate
@@ -1154,16 +977,17 @@ value = 1210
 type = S
 physics = S
 movetype = I
-anim = 1210
+anim = ifelse(var(10) = 3, 1212, ifelse(var(10) = 3, 1211, 1210))
 ctrl = 0
 velset = 0, 0
-sprpriority = 2
+sprpriority = 1
 
 [State 1210, End]
 type = changestate
 trigger1 = !animtime
 value = 0
 ctrl = 1
+
 
 
 ;======================<EX PARASITE ROLL>=============================
@@ -1177,42 +1001,27 @@ ctrl = 0
 velset = 0, 0
 poweradd = -500
 facep2 = 1
-sprpriority = 2
+sprpriority = 1
 
-[State Damage Scaling - Add]
-type = varadd
-trigger1 = !time
-trigger1 = var(65)
-trigger1 = 1 || var(65) = 0
-value = 1
-
-[State 1250, Erase Inputs]
-type = null
-trigger1 = time <= 0
-trigger1 = 1 || var(88) = 1
-trigger1 = 1 || var(87) = 1
+[State 1250, Strength]
+type = varset
+trigger1 = var(10) != 4
+var(10) = 4
 ignorehitpause = 1
-persistent = 0
 
-[State 1250, EX FX]
-type = playsnd
-trigger1 = !time
-value = 0, 1000
-
-[State 1250, EX FX]
+[State 1250, ExFX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(107) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
-pos = 19 * const(size.xscale), -51 * const(size.yscale)
+pos = ceil(38 * const(size.xscale)), ceil(-102 * const(size.yscale))
 scale = 0.5, 0.5
 pausemovetime = -1
 supermovetime = -1
 ownpal = 1
 
-[State 1250, Sound]
+[State 1250, Snd]
 type = playsnd
 trigger1 = animelem = 4
 value = 4, 20
@@ -1232,7 +1041,7 @@ movetype = A
 anim = 1251
 ctrl = 0
 velset = 0, 0
-sprpriority = 2
+sprpriority = 1
 
 [State 1251, Vel]
 type = velmul
@@ -1242,26 +1051,23 @@ x = 0.95
 [State 1251, Vel]
 type = velset
 trigger1 = !time
-x = 10
+x = 12
 
-[State 1251, Sound]
+[State 1251, Snd]
 type = playsnd
 trigger1 = animelem = 1 || animelem = 7 || animelem = 13 || animelem = 19
 value = 1, 9
-freqmul = 1.10
-;channel = 1
-stopongethit = 1
+channel = 1
 
 [State 1251, Dust]
 type = explod
-trigger1 = !(time % 3) && vel x >= 1
+trigger1 = !(time % 6) && abs(vel x) >= 1
 anim = 7103
 sprpriority = 3
 postype = p1
-pos = -8 * const(size.xscale), 0
+pos = ceil(-16 * const(size.xscale)), 0
+vel = 0, 0
 scale = 0.5, 0.5
-trans = addalpha
-alpha = 96, 256
 pausemovetime = -1
 supermovetime = -1
 ownpal = 1
@@ -1269,54 +1075,58 @@ ownpal = 1
 [State 1251, Hit]
 type = hitdef
 trigger1 = !((movecontact + movereversed) % 8)
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
+trigger1 = var(15) < 1
 attr = S, SA
-damage = 20, 5
+damage = 20, 4;ifelse(hitcount >= 1, ceil(56.0 / (hitcount + 1)), 56), 7
 animtype = Hard
-hitflag = MAF
 guardflag = M
+hitflag = MAF
 priority = 4, Hit
 pausetime = 4, 4
-sparkno = -1 + 0 * (var(121) = 8023)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 20) * (var(133) = 60), var(122) = -60
-hitsound = s2, 9
-hitsound.channel = 2
-guardsound = s2, 0
-guardsound.channel = 2
+sparkno = -1 + 0 * (var(33) := 8023)
+guard.sparkno = -1 + 0 * (var(34) := 8001)
+sparkxy = -10 + 0 * (var(35) := 30) * (var(36) := 90), var(37) := -60
+hitsound = -1 + 0 * (var(31) := 9)
+guardsound = -1
 ground.type = Low
-ground.hittime = 1 + 18; + 2 * var(105)
 ground.slidetime = 18
-ground.velocity =  0, 0
+ground.hittime = 18
+p2facing = 1
+ground.velocity = ifelse(animelemtime(21) > 0, -5.62, 0), 0
 air.type = Low
 air.velocity = -3.5, -7
 ground.cornerpush.veloff = 0
-guard.hittime = 1 + 16
-guard.ctrltime = 1 + 16
-guard.slidetime = 16
-guard.velocity =  0
+guard.velocity = ifelse(animelemtime(21) > 0, -5.62, 0)
 guard.cornerpush.veloff = 0
 getpower = 0, 0
 givepower = 40, 40
-envshake.time = 12; special
+envshake.time = 10
+envshake.ampl = 1
 envshake.freq = 180
-envshake.ampl =  2
-envshake.mul = 0.667
 fall = 0
 air.fall = 1
 fall.recover = 1
 fall.recovertime = 120
 yaccel = 0.4850
-airguard.ctrltime = 1 + 16
+airguard.ctrltime = 16
 airguard.velocity = -6.00 * !numhelper(775), -1.00
 forcestand = 1
 airguard.cornerpush.veloff = 0
 
-[State 1251, Hit High]
-type = null
-trigger1 = !((movecontact + movereversed) % 8)
-trigger1 = 1
-ground.type = High
+[State 1251, Sparkles]
+type = explod
+trigger1 = !(gametime % 3) && numexplod(6000) < 32
+anim = 6000 + (random % 3)
+ID = 6000
+sprpriority = ifelse(random < 333, -1, 3)
+postype = p1
+pos = ceil(-16 * const(size.xscale)), 0
+random = 16, 16
+vel = 0, -1
+removetime = -2
+scale = 0.5, 0.5
+ownpal = 1
+ignorehitpause = 1
 
 [State 1251, End]
 type = changestate
@@ -1332,7 +1142,7 @@ movetype = I
 anim = 1252
 ctrl = 0
 velset = 0, 0
-sprpriority = 2
+sprpriority = 1
 
 [State 1252, End]
 type = changestate
@@ -1349,81 +1159,60 @@ physics = S
 velset = 0, 0
 ctrl = 0
 anim = 1300
-sprpriority = 2
-poweradd = 50 * var(114)
+sprpriority = 1
 facep2 = 1
-
-[State Damage Scaling - Add]
-type = varadd
-trigger1 = !time
-trigger1 = var(65)
-trigger1 = 1 || var(65) = 0
-value = 1
 
 [State 1300, Strength]
 type = varset
-trigger1 = time <= 0
-value =   0
+trigger1 = var(10) != [1, 3]
+var(10) = 2
 ignorehitpause = 1
-persistent = 0
 
 [State 1300, Strength AI]
 type = varset
-trigger1 = time <= 0
-value = 0
+trigger1 = time <= 0 && AIlevel
+var(10) = 3
 ignorehitpause = 1
-
-[State 1300, Erase Inputs]
-type = null
-trigger1 = time <= 0
-trigger1 = 1 || var(88) = 1
-trigger1 = 1 || var(87) = 1
-ignorehitpause = 1
-persistent = 0
 
 [State 1300, Pos]
 type = posadd
 trigger1 = animelem = 3 || animelem = 4
-x =  15 * const(size.xscale)
+x = ceil(ifelse((animelem = 3), 25, 15) * const(size.xscale))
 
-[State 1300, No proximity block]
+[State 1300, Do not guard]
 type = attackdist
 trigger1 = 1
 value = 0
 
 [State 1300, Hit]
 type = hitdef
-trigger1 = animelem = 2
-trigger1 = !var(130) && !var(108)
-trigger1 = var(129) <= (  35 * const(size.xscale));25 CvS2; 29 MvC; 35 VH
+triggerall = animelem = 2
+triggerall = !var(29)
+trigger1 = p2dist x >= 0 && p2bodydist x <= (25 * const(size.xscale));CvS2; 29 MvC
 attr = S, ST
 hitflag = M
 priority = 7, Miss
-sparkno = -1 + 0 * (var(121) = 0)
-hitsound = s2, 800
-hitsound.channel = 2
+sparkno = -1 + 0 * (var(33) := 0)
+hitsound = -1 + 0 * (var(31) := 800)
 p1facing = 1
 p2facing = 1
-p1stateno = 1310
-p2stateno = 1320
+p1stateno = 1301
 fall = 1
 fall.recover = 0
-down.recover = 1
 ID = 1300
 yaccel = 0.4850
 numhits = 0
 
-[State 1300, Sound]
+[State 1300, misssnd]
 type = playsnd
 trigger1 = animelem = 4
-value = 5000, 0
+value = 5000, 1
 channel = 0
 
 [State Idle]
 type = statetypeset
 trigger1 = animelemtime(3) >= 0
 movetype = I
-persistent = 0
 
 [State 1300, End]
 type = changestate
@@ -1432,502 +1221,428 @@ value = 0
 ctrl = 1
 
 
-;----- PLAYER -----
-[Statedef 1310]
+;--- PLAYER ---
+[Statedef 1301]
 type = A
 physics = N
 movetype = A
-anim = 1310
+anim = 1301
 ctrl = 0
 velset = 0, 0
-sprpriority = 2
+sprpriority = 1
 
 [State Throw]
 type = targetstate
 trigger1 = !time
-value = 1320
+value = 1306
 
-[State 1310, Throw]
-type = targetstate
-trigger1 = animelem = 4
-value = 1321
+[State 1301, Assert]
+type = assertspecial
+trigger1 = 1
+flag = noautoturn
 
-[State 1310, Throw]
-type = targetstate
-trigger1 = animelem = 8
-value = 1322
-
-[State 1310, Width]
+[State 1301, Width]
 type = width
 trigger1 = 1
-edge = 40 * const(size.xscale), 40 * const(size.xscale)
+edge = ceil(60 * const(size.xscale)), 0
 
-[State 1310, Vel]
+[State 1301, Vel]
 type = velmul
 trigger1 = vel x
 x = 0.97
 
-[State 1310, Jet]
+[State 1301, jet]
 type = helper
-trigger1 = animelemtime(4) >= 0
-trigger1 = animelemtime(8) < 0
-trigger1 = !numhelper(6020)
+trigger1 = (anim = [1302, 1303]) && !numhelper(6020)
 helpertype = normal
 stateno = 6026
 ID = 6020
 name = "Jets"
 postype = p1
-size.xscale = 0.5 * const(size.xscale)
-size.yscale = 0.5 * const(size.yscale)
 ownpal = 1
 
-[State 1310, Dust]
+[State 1301, Dust]
 type = explod
-trigger1 = animelem = 4
+trigger1 = anim = 1302
 anim = 7102
 ID = 7102
 sprpriority = -2
 postype = p1
-pos = -54 * const(size.xscale), -pos y
+pos = ceil(-108 * const(size.xscale)), -ceil(pos y)
 scale = 0.33, 0.33
 ownpal = 1
 persistent = 0
 pausemovetime = -1
 supermovetime = -1
 
-[State 1310, Vel]
-type = velset
-trigger1 = animelemtime(4) = 1
-x =    2.0
-y =    -4.5
-
-[State 1310, Vel]
-type = velmul
-trigger1 = animelemtime(8) < 0
-y = 0.95
-
-[State 1310, Accel]
-type = veladd
-trigger1 = animelemtime(12) >= 0
-y = 0.75
-
-[State 1310, Vel Circle]
-type = velset
-trigger1 = animelemtime(7) >= 0
-trigger1 = animelemtime(12) < 0
-x =    4.5
-y =    0
-
-[State 1310, Vel]
-type = velset
-trigger1 = animelem = 12
-x = 0
-
-[State 1310, Sound]
-type = playsnd
-trigger1 = animelem = 4
-trigger1 = var(123) = 3
-value = 4, 3
-channel = 0
+[State 1301, Anim]
+type = changeanim
+trigger1 = anim = 1301 && !animtime
+value = 1302
+[State 1301, Throw]
+type = targetstate
+trigger1 = anim = 1302
+value = 1307
 persistent = 0
 
-[State 1310, Sound]
+[State 1301, Vel]
+type = velset
+trigger1 = anim = 1302 && animelem = 1
+x = 4
+y = -6
+[State 1301, Vel]
+type = velmul
+trigger1 = anim = 1302
+y = 0.97
+
+[State 1301, Anim]
+type = changeanim
+trigger1 = anim = 1302 && vel y >= -1
+value = 1303
+[State 1301, Throw]
+type = targetstate
+trigger1 = anim = 1303
+value = 1308
+persistent = 0
+[State 1301, Snd]
 type = playsnd
-trigger1 = var(123) != 3
-trigger1 = animelem = 8
-trigger2 = var(123) = 3
-trigger2 = animelem = 10
+trigger1 = anim = 1303
 value = 4, 11
 channel = 0
 persistent = 0
-
-[State 1310, Sound]
+[State 1301, Snd]
 type = playsnd
-trigger1 = animelemtime(13) >= 0
-trigger1 = !(time % 9)
+trigger1 = anim = 1303 && (animelem = 4 || animelem = 6 || animelem = 8)
 value = 1, 6
-;channel = 1
-stopongethit = 1
+channel = 1
 
-[State 1310, Spiral]
+[State 1301, Spiral]
 type = explod
-trigger1 = vel y > 0
-trigger1 = pos y >= -160; stay visible
-trigger1 = animelemtime(12) >= 0
+trigger1 = anim = 1303 && animelem = 5
 anim = 1315
 ID = 1315
-sprpriority = 4
+sprpriority = 3
 postype = p1
 facing = -1
-vel = 0, vel y
-friction = 0.66, 0.66
-scale = 0.5, 0.5
+bindtime = -1
 ownpal = 1
-persistent = 0
 
-[State 1310, Loop Anim]
-type = changeanim
-trigger1 = !animtime
-value = anim
-elem = 12
+[State 1301, Vel]
+type = velset
+trigger1 = anim = 1303 && animelem = 1
+x = -5
+y = -10
+[State 1301, Accel]
+type = veladd
+trigger1 = anim = 1303
+y = 0.7
 
-[State 1310, Bind 1]
+[State 1301, Bind 1]
 type = targetbind
-trigger1 = animelemtime(2) < 0
-pos = 59 * const(size.xscale), -71
+trigger1 = anim = 1301 && animelemtime(1) >= 0 && animelemtime(2) < 0
+pos = ceil(118 * const(size.xscale)), -71
 
-[State 1310, Bind 2]
+[State 1301, Bind 2]
 type = targetbind
-trigger1 = animelemtime(2) >= 0 && animelemtime(3) < 0
-pos = 64 * const(size.xscale), -76
+trigger1 = anim = 1301 && animelemtime(2) >= 0 && animelemtime(3) < 0
+pos = ceil(128 * const(size.xscale)), -76
 
-[State 1310, Bind 3]
+[State 1301, Bind 3]
 type = targetbind
-trigger1 = animelemtime(3) >= 0 && animelemtime(4) < 0
-pos = 60 * const(size.xscale), -76
+trigger1 = anim = 1301 && animelemtime(3) >= 0 && animelemtime(4) < 0
+pos = ceil(120 * const(size.xscale)), -76
 
-[State 1310, Bind 4]
+[State 1301, Bind 1302]
 type = targetbind
-trigger1 = animelemtime(4) >= 0 && animelemtime(8) < 0
-pos = 42 * const(size.xscale), -81
+trigger1 = anim = 1302
+pos = ceil(84 * const(size.xscale)), -81
 
-[State 1310, Bind 8]
+[State 1301, Bind 1]
 type = targetbind
-trigger1 = animelemtime(8) >= 0 && animelemtime(9) < 0
-pos = 25 * const(size.xscale), -95
+trigger1 = anim = 1303 && animelemtime(1) >= 0 && animelemtime(2) < 0
+pos = ceil(84 * const(size.xscale)), -81
 
-[State 1310, Bind 9]
+[State 1301, Bind 2]
 type = targetbind
-trigger1 = animelemtime(9) >= 0 && animelemtime(10) < 0
-pos = 2 * const(size.xscale), -98
+trigger1 = anim = 1303 && animelemtime(2) >= 0 && animelemtime(3) < 0
+pos = ceil(50 * const(size.xscale)), -95
 
-[State 1310, Bind 10]
+[State 1301, Bind 3]
 type = targetbind
-trigger1 = animelemtime(10) >= 0 && animelemtime(11) < 0
-pos = -23 * const(size.xscale), -90
+trigger1 = anim = 1303 && animelemtime(3) >= 0 && animelemtime(4) < 0
+pos = ceil(4 * const(size.xscale)), -98
 
-[State 1310, Bind 11]
+[State 1301, Bind 4]
 type = targetbind
-trigger1 = animelemtime(11) >= 0 && animelemtime(12) < 0
-pos = -37 * const(size.xscale), -74
+trigger1 = anim = 1303 && animelemtime(4) >= 0 && animelemtime(5) < 0
+pos = ceil(-46 * const(size.xscale)), -90
 
-[State 1310, Bind 12]
+[State 1301, Bind 5]
 type = targetbind
-trigger1 = animelemtime(12) >= 0 && animelemtime(13) < 0
-trigger2 = !animtime
-pos = -46 * const(size.xscale), -41
+trigger1 = anim = 1303 && animelemtime(5) >= 0 && animelemtime(6) < 0
+pos = ceil(-74 * const(size.xscale)), -74
 
-[State 1310, Bind 13]
+[State 1301, Bind 6]
 type = targetbind
-trigger1 = animelemtime(13) >= 0 && animelemtime(14) < 0
-pos = 2 * const(size.xscale), -38
+trigger1 = anim = 1303 && animelemtime(6) >= 0 && animelemtime(7) < 0
+trigger2 = anim = 1303 && animelemtime(9) >= 4
+pos = ceil(4 * const(size.xscale)), -38
 
-[State 1310, Bind 14]
+[State 1301, Bind 7]
 type = targetbind
-trigger1 = animelemtime(14) >= 0 && animelemtime(15) < 0
-pos = 48 * const(size.xscale), -41
+trigger1 = anim = 1303 && animelemtime(7) >= 0 && animelemtime(8) < 0
+pos = ceil(96 * const(size.xscale)), -41
 
-[State 1310, Bind 15]
+[State 1301, Bind 8]
 type = targetbind
-trigger1 = animelemtime(15) >= 0
-pos = 2 * const(size.xscale), -44
+trigger1 = anim = 1303 && animelemtime(8) >= 0 && animelemtime(9) < 0
+pos = ceil(4 * const(size.xscale)), -44
 
-[State 1310, End]
+[State 1301, Bind 9]
+type = targetbind
+trigger1 = anim = 1303 && animelemtime(9) >= 0 && animelemtime(9) < 4
+pos = ceil(-92 * const(size.xscale)), -41
+
+[State 1301, End]
 type = changestate
-trigger1 = animelemtime(8) >= 0
-trigger1 = vel y > 0 && (pos y > -vel y)
-value = 1311
+trigger1 = anim = 1303 && vel y > 0 && vel y > 0 && (pos y > -vel y)
+value = 1305
 
 
-;----- HIT FLOOR -----
-[Statedef 1311]
-type = A
-physics = N
+;--- HIT FLOOR ---
+[Statedef 1305]
+type = C
+physics = C
 movetype = A
-anim = 1311
+anim = 1305
 ctrl = 0
 velset = 0, 0
-sprpriority = 2
-
-[State 1311, Pos]
+sprpriority = 1
+[State 1305, Pos]
 type = posset
-trigger1 = !time
+trigger1 = animelemtime(2) < 0
+y = 0
+[State 1305, Vel]
+type = velset
+trigger1 = animelemtime(2) < 0
+x = 0
 y = 0
 
-[State 1311, Throw]
+[State 1305, Assert]
+type = assertspecial
+trigger1 = 1
+flag = noautoturn
+
+[State 1305, Throw]
 type = targetstate
 trigger1 = !time
-value = 1323
+value = 1310
 
-[State 1311, Damage]
+[State 1305, Stun]
+type = targetstate
+trigger1 = numtarget(1300)
+trigger1 = target(1300), stateno = 1310 && target(1300), time = 17
+trigger1 = numenemy = 1 && numpartner = 0
+trigger1 = var(42) >= (target, const(data.life))
+value = 1115312
+
+[State 1305, Damage]
 type = hitadd
 trigger1 = !time
 value = 1
 
-[State 1311, Damage]
+[State 1305, Juggle]
+type = varadd
+trigger1 = !time
+var(15) = 1
+
+[State 1305, Damage]
 type = targetlifeadd
 trigger1 = !time
-value = -130 * var(67)
+value = -ceil(140 * fvar(11))
 
-[State 1311, Stun Damage]
-type = null
-trigger1 = !time
-trigger1 = numtarget
-value = -100 * var(67) * !var(50)
+[State 1305, Stun System - Add]
+type = varadd
+trigger1 = animelem = 1
+trigger1 = var(20) <= 0
+trigger1 = var(42) >= 0
+var(42) = ceil(150 * fvar(11))
 
-[State 1311, Give Power]
+[State 1305, Damage]
 type = targetpoweradd
 trigger1 = !time
-value = 40; givepower
+value = 40;givepower
 
-[State 1311, Get Power]
+[State 1305, Damage]
 type = poweradd
-trigger1 = !time
-trigger1 = !var(50)
-trigger1 = var(123) != 3
-value = 200 * var(114); getpower
+trigger1 = !time && !var(20)
+value = 100;getpower
 
-[State 1311, Bind]
-type = targetfacing
-trigger1 = !time
-value = 1
-
-[State 1311, Bind]
+[State 1305, Bind 1]
 type = targetbind
-trigger1 = animelemtime(2) < 0
-pos = 40 * const(size.xscale), 0
+trigger1 = animelemtime(1) >= 0 && animelemtime(2) < 0
+pos = ceil(96 * const(size.xscale)), 0
 
-[State 1311, Shake]
+[State 1305, Shake]
 type = envshake
 trigger1 = !time
-time = 24
-freq = 180
-ampl = -4
-mul = 0.85
-
-[State 1311, Sound]
+time = 18
+freq = 120
+ampl = 6
+[State 1305, Snd]
 type = playsnd
 trigger1 = !time
 value = 5, 2
-
-[State 1311, Dust]
-type = helper
-trigger1 = var(64)
-trigger1 = !time
-helpertype = normal
-stateno = 8110
-ID = 8100
-name = "Impact Dust"
-postype = p1
-pos = 48 * const(size.xscale), 0
-ownpal = 1
-
-[State 1311, Dust]
-type = explod
-trigger1 = !var(64)
-trigger1 = !time
-anim = F 62
-postype = p1
-pos = 48 * const(size.xscale), 0
-sprpriority = -10
-ownpal = 1
-
-[State 1311, Vel]
-type = veladd
-trigger1 = animelemtime(2) >= 1
-y = 0.55
-
-[State 1311, Vel]
-type = velset
-trigger1 = animelemtime(2) = 1
-x = -2.5
-y = -8.0
-
-[State 1311, End]
-type = changestate
-trigger1 = animelemtime(2) > 0
-trigger1 = vel y > 0
-trigger1 = pos y > -vel y
-value = 1312
-
-
-;----- Land -----
-[Statedef 1312]
-type = S
-physics = N
-movetype = I
-ctrl = 0
-anim = 1312
-velset = 0, 0
-sprpriority = 2
-movehitpersist = 1
-
-[State 1312, Pos]
-type = posset
-trigger1 = 1
-y = 0
-
-[State 1312, Sound]
-type = playsnd
-trigger1 = !time
-value = 0, 52
-
-[State 1312, Dust]
+[State 1305, Dust]
 type = explod
 trigger1 = !time
-anim = 7102
-ID = 7100
-sprpriority = -3
-postype = p1
+anim = 7120
+ID = 7120
+sprpriority = -5
+postype = p2
+ownpal = 1
 scale = 0.5, 0.5
-pausemovetime = -1
-supermovetime = -1
-ownpal = 1
 
-[State 1312, End]
-type = changestate
-trigger1 = !animtime
-value = 0
-ctrl = 1
-
-
-;----- TARGET -----
-[Statedef 1320]
-type = A
-physics = N
-movetype = H
-ctrl = 0
-sprpriority = 0
-
-[State 1320, Anim]
-type = changeanim2
-trigger1 = !time
-value = 1320
-
-[State 1320, Camera]
-type = screenbound
-trigger1 = 1
-value = 0
-movecamera = 0, 0
-
-[State 1320, Safety]
-type = selfstate
-trigger1 = time >= 180
-value = 5040
-
-
-[Statedef 1321]
-type = A
-physics = N
-movetype = H
-ctrl = 0
-sprpriority = 0
-
-[State 1321, Anim]
-type = changeanim2
-trigger1 = !time
-value = 1321
-
-[State 1321, Camera]
-type = screenbound
-trigger1 = 1
-value = 0
-movecamera = 0, 0
-
-[State 1321, Safety]
-type = selfstate
-trigger1 = time >= 180
-value = 5040
-
-
-[Statedef 1322]
-type = A
-physics = N
-movetype = H
-ctrl = 0
-sprpriority = 0
-
-[State 1322, Anim]
-type = changeanim2
-trigger1 = !time
-value = 1322
-
-[State 1322, Camera]
-type = screenbound
-trigger1 = 1
-value = 1
-movecamera = 0, 0
-
-[State 1322, Sprite Priority]
-type = sprpriority
-trigger1 = 1
-value = 1
-
-[State 1322, Sprite Priority]
-type = sprpriority
-trigger1 = animelemtime(6) >= 0 && animelemtime(7) < 0
-value = 3
-
-[State 1322, Safety]
-type = selfstate
-trigger1 = time >= 180
-value = 5040
-
-
-;----- TARGET HIT FLOOR -----
-[Statedef 1323]
-type = A
-physics = N
-movetype = H
-ctrl = 0
-sprpriority = 0
-
-[State 1323, Anim]
-type = changeanim2
-trigger1 = !time
-value = 1323
-
-[State 1323, Anim]
-type = changeanim
-trigger1 = time = 16
-value = 5160
-
-[State 1323, Accel]
-type = veladd
-trigger1 = time >= 16
-y = 0.4850; yaccel
-
-[State 1323, Vel]
+[State 1305, Vel]
 type = velset
-trigger1 = time = 16
-x = 3
+trigger1 = animelem = 2
+x = -4
+y = -6
+[State 1305, Type]
+type = statetypeset
+trigger1 = animelemtime(2) >= 0
+statetype = A
+physics = A
+
+
+;--- TARGET ---
+[Statedef 1306]
+type = A
+physics = N
+movetype = H
+ctrl = 0
+sprpriority = 0
+
+[State 1306, Anim]
+type = changeanim2
+trigger1 = !time
+value = 1306
+
+[State 1306, Camera]
+type = screenbound
+trigger1 = 1
+value = 0
+movecamera = 0, 0
+
+[State 1306, Safety]
+type = selfstate
+trigger1 = time >= 180
+value = 5040
+
+
+[Statedef 1307]
+type = A
+physics = N
+movetype = H
+ctrl = 0
+sprpriority = 0
+
+[State 1307, Anim]
+type = changeanim2
+trigger1 = !time
+value = 1307
+
+[State 1307, Camera]
+type = screenbound
+trigger1 = 1
+value = 0
+movecamera = 0, 0
+
+[State 1307, Safety]
+type = selfstate
+trigger1 = time >= 180
+value = 5040
+
+
+[Statedef 1308]
+type = A
+physics = N
+movetype = H
+ctrl = 0
+sprpriority = 0
+
+[State 1308, Anim]
+type = changeanim2
+trigger1 = !time
+value = 1308
+
+[State 1308, Camera]
+type = screenbound
+trigger1 = 1
+value = 1
+movecamera = 0, 0
+
+[State 1308, spr]
+type = sprpriority
+trigger1 = (animelemtime(6) >= 0 && animelemtime(7) < 0) || animelemtime(8) >= 8
+value = 2
+
+[State 1308, spr]
+type = sprpriority
+trigger1 = (animelemtime(6) < 0 || animelemtime(7) >= 0) && animelemtime(8) < 8
+value = 0
+
+[State 1308, Safety]
+type = selfstate
+trigger1 = time >= 180
+value = 5040
+
+
+;--- TARGET HIT FLOOR ---
+[Statedef 1310]
+type = A
+physics = N
+movetype = H
+ctrl = 0
+sprpriority = 0
+
+[State 1310, Anim]
+type = changeanim2
+trigger1 = !time
+value = 1310
+
+[State 1310, Vel]
+type = velset
+trigger1 = animelem = 2
+x = -4
 y = -6
 
-[State 1323, Dizzy Start]
-type = null
-trigger1 = alive
-trigger1 = life > 0
-trigger1 = !gethitvar(isbound)
-value = 1
+[State 1310, Accel]
+type = veladd
+trigger1 = animelemtime(2) >= 0
+y = 0.5
 
-[State 1323, Fall Recovery]
+[State Safe Fall]
 type = selfstate
-trigger1 = time >= 16
-trigger1 = gethitvar(fall.recover)
+trigger1 = alive
 trigger1 = command = "recovery"
-trigger1 = vel y > 0
-trigger1 = pos y >= const(movement.air.gethit.groundrecover.ground.threshold)
+trigger1 = vel y > 0 && pos y >= const(movement.air.gethit.groundrecover.ground.threshold)
 value = 5200
 
-[State 1323, End]
+[State 1310, Turn]
+type = turn
+trigger1 = animelemtime(2) >= 0 && vel y > 0 && pos y >= -10
+persistent = 0
+[State 1310, End]
 type = selfstate
-trigger1 = time >= 16
-trigger1 = vel y > 0 && pos y > 0
-value = 5110
+trigger1 = animelemtime(2) >= 0 && vel y > 0 && pos y >= -10
+value = 5100
+
+
 
 
 ;======================<EX VECTOR DRAIN>=============================
-[Statedef 1330]
+[Statedef 1320]
 type = S
 movetype = A
 physics = S
@@ -1935,760 +1650,359 @@ velset = 0, 0
 ctrl = 0
 anim = 1300
 poweradd = -500
-sprpriority = 2
+sprpriority = 1
 facep2 = 1
 
-[State Damage Scaling - Add]
-type = varadd
-trigger1 = !time
-trigger1 = var(65)
-trigger1 = 1 || var(65) = 0
-value = 1
-
-[State 1330, Strength]
+[State 1320, Strength]
 type = varset
-trigger1 = time <= 0
-value = 3; ex
+trigger1 = var(10) != 4
+var(10) = 4
 ignorehitpause = 1
-persistent = 0
 
-[State 1330, Erase Inputs]
-type = null
-trigger1 = time <= 0
-trigger1 = 1 || var(88) = 1
-trigger1 = 1 || var(87) = 1
-ignorehitpause = 1
-persistent = 0
-
-[State 1330, EX FX]
-type = playsnd
-trigger1 = !time
-value = 0, 1000
-
-[State 1330, EX FX]
+[State 1320, ExFX]
 type = explod
 trigger1 = !time
-trigger1 = 1 || var(107) = 30
 anim = 7210
 sprpriority = 3
 postype = p1
-pos = 33 * const(size.xscale), -69 * const(size.yscale)
+pos = ceil(66 * const(size.xscale)), ceil(-138 * const(size.yscale))
 scale = 0.5, 0.5
 pausemovetime = -1
 supermovetime = -1
 ownpal = 1
 
-[State 1330, Pos]
+[State 1320, Pos]
 type = posadd
 trigger1 = animelem = 3 || animelem = 4
-x =  15 * const(size.xscale)
+x = ceil(ifelse((animelem = 3), 25, 15) * const(size.xscale))
 
-[State 1330, No proximity block]
+[State 1320, Do not guard]
 type = attackdist
 trigger1 = 1
 value = 0
 
-[State 1330, Hit]
+[State 1320, Hit]
 type = hitdef
 trigger1 = animelem = 2
-trigger1 = !var(130) && !var(108)
-trigger1 = var(129) <= (30 * const(size.xscale))
+trigger1 = !var(29)
+trigger1 = p2dist x >= 0 && p2bodydist x <= (58 * const(size.xscale))
 attr = S, ST
 hitflag = M
 priority = 7, Miss
-sparkno = -1 + 0 * (var(121) = 0)
-hitsound = s2, 800
-hitsound.channel = 2
+sparkno = -1 + 0 * (var(33) := 0)
+hitsound = -1 + 0 * (var(31) := 800)
 p1facing = 1
 p2facing = 1
-p1stateno = 1310
-p2stateno = 1320
+p1stateno = 1321
 fall = 1
 fall.recover = 0
-down.recover = 0; cannot mash
-down.recovertime = 30
-ID = 1330
+ID = 1320
 yaccel = 0.4850
 numhits = 0
 
-[State 1330, Sound]
+[State 1320, misssnd]
 type = playsnd
 trigger1 = animelem = 4
-value = 5000, 0
+value = 5000, 1
 channel = 0
 
 [State Idle]
 type = statetypeset
 trigger1 = animelemtime(3) >= 0
 movetype = I
-persistent = 0
 
-[State 1330, End]
+[State 1320, End]
 type = changestate
 trigger1 = !animtime
 value = 0
 ctrl = 1
 
 
-;========================<PURSUIT>=============================
-[Statedef 1900]
-type = S
-physics = N
-movetype = A
-anim = 1900
-ctrl = 0
-velset = 0, 0
-sprpriority = 2
-poweradd = 50 * !var(50)
-facep2 = 1
-juggle = 8 * (p2statetype = L)
-
-[State Damage Scaling - Add]
-type = varadd
-trigger1 = !time
-trigger1 = var(65)
-trigger1 = 1 || var(65) = 0
-value = 1
-
-[State 1900, Erase Inputs]
-type = null
-trigger1 = time <= 0
-trigger1 = 1 || var(88) = 1
-trigger1 = 1 || var(87) = 1
-ignorehitpause = 1
-persistent = 0
-
-[State 1900, Jet]
-type = helper
-trigger1 = animelemtime(2) >= 1
-trigger1 = animelemtime(9) < 0
-trigger1 = !numhelper(6020)
-helpertype = normal
-stateno = 6020
-ID = 6020
-name = "Jets"
-postype = p1
-size.xscale = 0.5 * const(size.xscale)
-size.yscale = 0.5 * const(size.yscale)
-ownpal = 1
-
-[State 1900, Sound]
-type = playsnd
-trigger1 = animelem = 2
-value = 0, 41
-
-[State 1900, Dust]
-type = helper
-trigger1 = animelem = 2
-helpertype = normal
-stateno = 7100
-ID = 7100
-name = "Jump Dust"
-postype = p1
-pausemovetime = 255
-supermovetime = 255
-ownpal = 1
-
-[State 1900, Type]
-type = statetypeset
-trigger1 = animelem = 2
-statetype = A
-physics = N
-
-[State 1900, Turn]
-type = turn
-trigger1 = animelemtime(2) = 1
-trigger1 = p2dist x < 0
-
-[State 1900, Vel]
-type = velset
-trigger1 = animelemtime(2) = 1
-x = 290 / (-animelemtime(9)); where 290 is the maximum p2dist x without zoom
-y = -4.06
-
-[State 1900, Vel Correction]
-type = veladd
-trigger1 = numenemy
-trigger1 = animelemtime(2) = 1
-trigger1 = p2movetype = H
-trigger1 = p2statetype = A || p2statetype = L
-x = 0
-
-[State 1900, Vel]
-type = velset
-trigger1 = animelemtime(9) >= 0
-trigger1 = animelemtime(12) < 0
-x = 0
-y = 0
-
-[State 1900, Vel]
-type = velset
-trigger1 = animelemtime(12) >= 0
-y = 15.31
-
-[State 1900, Push]
-type = playerpush
-trigger1 = p2statetype = L
-value = 0
-ignorehitpause = 1
-
-[State 1900, Sound]
-type = playsnd
-trigger1 = animelem = 12
-value = 1, 9
-;channel = 1
-stopongethit = 1
-
-[State 1900, Sound]
-type = playsnd
-trigger1 = animelem = 12
-value = 3, 5
-channel = 0
-
-[State 1900, Hit]
-type = hitdef
-trigger1 = animelemtime(12) >= 0
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
-ID = 1900
-attr = A, SA
-hitflag = FD
-guardflag = HA
-priority = 4, Hit
-damage = 20, 5
-redlife = 20, 5
-getpower =  100 * !var(50),  50 * !var(50)
-givepower = 40, 40
-pausetime = 10, 10
-guard.pausetime = 10, 10
-animtype = Hard
-air.animtype = Back
-fall.animtype = Back
-ground.type = High
-air.type = Low
-ground.hittime = 1 + 18; + 2 * var(105)
-ground.slidetime = 18
-air.hittime = 120
-airguard.ctrltime = 1 + 16
-ground.velocity = 0, 0
-ground.cornerpush.veloff = 0
-guard.hittime = 1 + 16
-guard.ctrltime = 1 + 16
-guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
-guard.cornerpush.veloff = 0
-air.velocity = 0, 0
-air.cornerpush.veloff = 0
-airguard.velocity = -6.00, -1.00
-airguard.cornerpush.veloff = 0
-down.velocity = 0, 0
-down.hittime = 18
-yaccel = 0.4850
-fall = 0
-air.fall = 1
-fall.recover = 1
-fall.recovertime = 120
-forcestand = 1
-hitsound = s2, 9
-hitsound.channel = 2
-guardsound = s2, 0
-guardsound.channel = 2
-sparkno = -1 + 0 * (var(121) = 8023)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = -10) * (var(133) = 10), var(122) = 0
-envshake.time = 12; special
-envshake.freq = 180
-envshake.ampl =  2
-envshake.mul = 0.667
-
-[State 1900, Lock On]
-type = posfreeze
-trigger1 = movehit = [1, 2]
-value = 1
-
-[State 1900, Lock On]
-type = posset
-trigger1 = movehit = 1
-trigger1 = hitcount = 1
-trigger1 = numtarget(1900) = 1
-trigger1 = target(1900), statetype = L
-x = target(1900), pos x
-y = -(target(1900), const(size.ground.front))
-ignorehitpause = 1
-
-[State 1900, Jump Back]
-type = changestate
-trigger1 = time >= 48
-trigger2 = hitcount >= 3
-value = 1910
-
-[State 1900, Land]
-type = changestate
-trigger1 = movehit != [1, 2]
-trigger1 = animelemtime(12) >= 0
-trigger1 = vel y > 0
-trigger1 = pos y > -vel y
-value = 52
-
-
-;----- Recover -----
-[Statedef 1910]
+;--- PLAYER ---
+[Statedef 1321]
 type = A
 physics = N
-movetype = I
-ctrl = 0
-anim = 43
-sprpriority = 2
-movehitpersist = 1
-
-[State 1910, Accel]
-type = veladd
-trigger1 = 1
-y = 0.97
-
-[State 1910, Accel]
-type = velset
-trigger1 = !time
-x = -6.40
-y = -12.13
-
-[State 1910, End]
-type = changestate
-trigger1 = vel y > 0
-trigger1 = pos y > -vel y
-value = 1911
-
-
-;----- Land -----
-[Statedef 1911]
-type = S
-physics = N
-movetype = I
-ctrl = 0
-anim = 1911
-velset = 0, 0
-sprpriority = 2
-movehitpersist = 1
-
-[State 1911, Pos]
-type = posset
-trigger1 = 1
-y = 0
-
-[State 1911, Sound]
-type = playsnd
-trigger1 = !time
-value = 0, 52
-
-[State 1911, Dust]
-type = explod
-trigger1 = !time
-anim = 7102
-ID = 7100
-sprpriority = -3
-postype = p1
-scale = 0.5, 0.5
-pausemovetime = -1
-supermovetime = -1
-ownpal = 1
-
-[State 1911, End]
-type = changestate
-trigger1 = !animtime
-value = 0
-ctrl = 1
-
-
-;========================<EX PURSUIT>=============================
-[Statedef 1930]
-type = S
-physics = N
 movetype = A
-anim = 1900
+anim = 1301
 ctrl = 0
 velset = 0, 0
-sprpriority = 2
-poweradd = -500
-facep2 = 1
-juggle = 8 * (p2statetype = L)
+sprpriority = 1
 
-[State Damage Scaling - Add]
-type = varadd
+[State Throw]
+type = targetstate
 trigger1 = !time
-trigger1 = var(65)
-trigger1 = 1 || var(65) = 0
-value = 1
+value = 1306
 
-[State 1930, Erase Inputs]
-type = null
-trigger1 = time <= 0
-trigger1 = 1 || var(88) = 1
-trigger1 = 1 || var(87) = 1
-ignorehitpause = 1
-persistent = 0
+[State 1321, assert]
+type = assertspecial
+trigger1 = 1
+flag = noautoturn
 
-[State 1930, EX FX]
-type = playsnd
-trigger1 = !time
-value = 0, 1000
+[State 1321, Width]
+type = width
+trigger1 = 1
+edge = ceil(60 * const(size.xscale)), 0
 
-[State 1930, EX FX]
-type = explod
-trigger1 = !time
-trigger1 = 1 || var(107) = 30
-anim = 7210
-sprpriority = 3
-postype = p1
-pos = 5 * const(size.xscale), -55 * const(size.yscale)
-scale = 0.5, 0.5
-pausemovetime = -1
-supermovetime = -1
-ownpal = 1
+[State 1321, Vel]
+type = velmul
+trigger1 = vel x
+x = 0.97
 
-[State 1930, Jet]
+[State 1321, jet]
 type = helper
-trigger1 = animelemtime(2) >= 1
-trigger1 = animelemtime(9) < 0
-trigger1 = !numhelper(6020)
+trigger1 = (anim = [1302, 1303]) && !numhelper(6020)
 helpertype = normal
-stateno = 6020
+stateno = 6026
 ID = 6020
 name = "Jets"
 postype = p1
-size.xscale = 0.5 * const(size.xscale)
-size.yscale = 0.5 * const(size.yscale)
 ownpal = 1
 
-[State 1930, Sound]
-type = playsnd
-trigger1 = animelem = 2
-value = 0, 41
-
-[State 1930, Dust]
-type = helper
-trigger1 = animelem = 2
-helpertype = normal
-stateno = 7100
-ID = 7100
-name = "Jump Dust"
+[State 1321, Dust]
+type = explod
+trigger1 = anim = 1302
+anim = 7104
+ID = 7104
+sprpriority = -2
 postype = p1
-pausemovetime = 255
-supermovetime = 255
+pos = ceil(-108 * const(size.xscale)), -ceil(pos y)
+scale = 0.33, 0.33
+ownpal = 1
+persistent = 0
+pausemovetime = -1
+supermovetime = -1
+
+[State 1321, Anim]
+type = changeanim
+trigger1 = anim = 1301 && !animtime
+value = 1302
+[State 1321, Throw]
+type = targetstate
+trigger1 = anim = 1302
+value = 1307
+persistent = 0
+
+[State 1321, Vel]
+type = velset
+trigger1 = anim = 1302 && animelem = 1
+x = 5.5
+y = -8
+[State 1321, Vel]
+type = velmul
+trigger1 = anim = 1302
+y = 0.97
+[State 1321, Snd]
+type = playsnd
+trigger1 = anim = 1302
+value = 4, 3
+channel = 0
+persistent = 0
+
+[State 1321, Anim]
+type = changeanim
+trigger1 = anim = 1302 && vel y >= -1
+value = 1303
+[State 1321, Throw]
+type = targetstate
+trigger1 = anim = 1303
+value = 1308
+persistent = 0
+[State 1321, Snd]
+type = playsnd
+trigger1 = anim = 1303
+value = 4, 11
+channel = 0
+persistent = 0
+[State 1321, Snd]
+type = playsnd
+trigger1 = anim = 1303 && (animelem = 4 || animelem = 6 || animelem = 8)
+value = 1, 6
+channel = 1
+
+[State 1321, Spiral]
+type = explod
+trigger1 = anim = 1303 && animelem = 5
+anim = 1315
+ID = 1315
+sprpriority = 3
+postype = p1
+facing = -1
+bindtime = -1
 ownpal = 1
 
-[State 1930, Type]
-type = statetypeset
-trigger1 = animelem = 2
-statetype = A
-physics = N
-
-[State 1930, Turn]
+[State 1321, Vel]
 type = velset
-trigger1 = animelemtime(2) = 1
-trigger1 = p2dist x < 0
-
-[State 1930, Vel]
-type = velset
-trigger1 = animelemtime(2) = 1
-x = 290 / (-animelemtime(9)); where 290 is the maximum p2dist x without zoom
-y = -4.06
-
-[State 1930, Vel Correction]
+trigger1 = anim = 1303 && animelem = 1
+x = -7
+y = -14
+[State 1321, Accel]
 type = veladd
-trigger1 = numenemy
-trigger1 = animelemtime(2) = 1
-trigger1 = p2movetype = H
-trigger1 = p2statetype = A || p2statetype = L
-x = 0
+trigger1 = anim = 1303
+y = 0.75
 
-[State 1930, Vel]
+[State 1321, bind 1]
+type = targetbind
+trigger1 = anim = 1301 && animelemtime(1) >= 0 && animelemtime(2) < 0
+pos = ceil(118 * const(size.xscale)), -71
+
+[State 1321, bind 2]
+type = targetbind
+trigger1 = anim = 1301 && animelemtime(2) >= 0 && animelemtime(3) < 0
+pos = ceil(128 * const(size.xscale)), -76
+
+[State 1321, bind 3]
+type = targetbind
+trigger1 = anim = 1301 && animelemtime(3) >= 0 && animelemtime(4) < 0
+pos = ceil(120 * const(size.xscale)), -76
+
+[State 1321, bind 1322]
+type = targetbind
+trigger1 = anim = 1302
+pos = ceil(84 * const(size.xscale)), -81
+
+[State 1321, bind 1]
+type = targetbind
+trigger1 = anim = 1303 && animelemtime(1) >= 0 && animelemtime(2) < 0
+pos = ceil(84 * const(size.xscale)), -81
+
+[State 1321, bind 2]
+type = targetbind
+trigger1 = anim = 1303 && animelemtime(2) >= 0 && animelemtime(3) < 0
+pos = ceil(50 * const(size.xscale)), -95
+
+[State 1321, bind 3]
+type = targetbind
+trigger1 = anim = 1303 && animelemtime(3) >= 0 && animelemtime(4) < 0
+pos = ceil(4 * const(size.xscale)), -98
+
+[State 1321, bind 4]
+type = targetbind
+trigger1 = anim = 1303 && animelemtime(4) >= 0 && animelemtime(5) < 0
+pos = ceil(-46 * const(size.xscale)), -90
+
+[State 1321, bind 5]
+type = targetbind
+trigger1 = anim = 1303 && animelemtime(5) >= 0 && animelemtime(6) < 0
+pos = ceil(-74 * const(size.xscale)), -74
+
+[State 1321, bind 6]
+type = targetbind
+trigger1 = anim = 1303 && animelemtime(6) >= 0 && animelemtime(7) < 0
+trigger2 = anim = 1303 && animelemtime(9) >= 4
+pos = ceil(4 * const(size.xscale)), -38
+
+[State 1321, bind 7]
+type = targetbind
+trigger1 = anim = 1303 && animelemtime(7) >= 0 && animelemtime(8) < 0
+pos = ceil(96 * const(size.xscale)), -41
+
+[State 1321, bind 8]
+type = targetbind
+trigger1 = anim = 1303 && animelemtime(8) >= 0 && animelemtime(9) < 0
+pos = ceil(4 * const(size.xscale)), -44
+
+[State 1321, bind 9]
+type = targetbind
+trigger1 = anim = 1303 && animelemtime(9) >= 0 && animelemtime(9) < 4
+pos = ceil(-92 * const(size.xscale)), -41
+
+[State 1321, End]
+type = changestate
+trigger1 = anim = 1303 && vel y > 0 && vel y > 0 && (pos y > -vel y)
+value = 1325
+
+
+;--- HIT FLOOR ---
+[Statedef 1325]
+type = A
+physics = N
+movetype = A
+anim = 1305
+ctrl = 0
+velset = 0, 0
+sprpriority = 1
+[State 1325, Pos]
+type = posset
+trigger1 = animelemtime(2) < 0
+y = 0
+[State 1325, Vel]
 type = velset
-trigger1 = animelemtime(9) >= 0
-trigger1 = animelemtime(12) < 0
+trigger1 = animelemtime(2) < 0
 x = 0
 y = 0
 
-[State 1930, Vel]
-type = velset
-trigger1 = animelemtime(12) >= 0
-y = 15.31
+[State 1325, assert]
+type = assertspecial
+trigger1 = 1
+flag = noautoturn
 
-[State 1930, Push]
-type = playerpush
-trigger1 = p2statetype = L
-value = 0
-ignorehitpause = 1
+[State 1325, Throw]
+type = targetstate
+trigger1 = !time
+value = 1310
 
-[State 1930, Sound]
-type = playsnd
-trigger1 = animelem = 12
-value = 1, 9
-;channel = 1
-stopongethit = 1
+[State 1325, Stun]
+type = targetstate
+trigger1 = numtarget(1320)
+trigger1 = target(1320), stateno = 1310 && target(1320), time = 17
+trigger1 = numenemy = 1 && numpartner = 0
+trigger1 = var(42) >= (target, const(data.life))
+value = 1115312
 
-[State 1930, Sound]
-type = playsnd
-trigger1 = animelem = 12
-value = 4, 3
-channel = 0
-
-[State 1930, Hit]
-type = hitdef
-trigger1 = animelemtime(12) >= 0
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
-ID = 1930
-attr = A, SA
-hitflag = FD
-guardflag = HA
-priority = 4, Hit
-damage = 13, 3
-redlife = 13, 3
-getpower = 0, 0
-givepower = 40, 40
-pausetime = 8, 8
-guard.pausetime = 8, 8
-animtype = Hard
-air.animtype = Back
-fall.animtype = Back
-ground.type = High
-air.type = Low
-ground.hittime = 1 + 18; + 2 * var(105)
-ground.slidetime = 18
-air.hittime = 120
-airguard.ctrltime = 1 + 16
-ground.velocity = 0, 0
-ground.cornerpush.veloff = 0
-guard.hittime = 1 + 16
-guard.ctrltime = 1 + 16
-guard.slidetime = 16
-guard.velocity = -10.52 * !numhelper(775)
-guard.cornerpush.veloff = 0
-air.velocity = 0, 0
-air.cornerpush.veloff = 0
-airguard.velocity = -6.00, -1.00
-airguard.cornerpush.veloff = 0
-down.velocity = 0, 0
-down.hittime = 18
-yaccel = 0.4850
-fall = 0
-air.fall = 1
-fall.recover = 1
-fall.recovertime = 120
-forcestand = 1
-hitsound = s2, 9
-hitsound.channel = 2
-guardsound = s2, 0
-guardsound.channel = 2
-sparkno = -1 + 0 * (var(121) = 8023)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = -10) * (var(133) = 10), var(122) = 0
-envshake.time = 12; special
-envshake.freq = 180
-envshake.ampl =  2
-envshake.mul = 0.667
-
-[State 1930, Lock On]
-type = posfreeze
-trigger1 = movehit = [1, 2]
+[State 1325, Damage]
+type = hitadd
+trigger1 = !time
 value = 1
 
-[State 1930, Lock On]
-type = posset
-trigger1 = movehit = 1
-trigger1 = hitcount = 1
-trigger1 = numtarget(1930) = 1
-trigger1 = target(1930), statetype = L
-x = target(1930), pos x
-y = -(target(1930), const(size.ground.front))
-ignorehitpause = 1
+[State 1325, Juggle]
+type = varadd
+trigger1 = !time
+var(15) = 1
 
-[State 1930, Jump Back]
-type = changestate
-trigger1 = time >= 66
-trigger2 = hitcount >= 6
-value = 1910
+[State 1325, Damage]
+type = targetlifeadd
+trigger1 = !time
+value = -ceil(160 * fvar(11))
 
-[State 1930, Land]
-type = changestate
-trigger1 = movehit != [1, 2]
-trigger1 = animelemtime(12) >= 0
-trigger1 = vel y > 0
-trigger1 = pos y > -vel y
-value = 52
+[State 1325, Stun System - Add]
+type = varadd
+trigger1 = animelem = 1
+trigger1 = var(20) <= 0
+trigger1 = var(42) >= 0
+var(42) = ceil(200 * fvar(11))
 
+[State 1325, bind 1]
+type = targetbind
+trigger1 = animelemtime(1) >= 0 && animelemtime(2) < 0
+pos = ceil(96 * const(size.xscale)), 0
 
-;========================<PUNCH ZERO COUNTER>=============================
-[Statedef 2900]
-type = S
-physics = N
-movetype = A
-anim = 2900
-ctrl = 0
-velset = 0, 0
-sprpriority = 2
-poweradd = 0
-
-[State 2900, NHB]
-type = null
-trigger1 = animelemtime(3) < 0
-value = SCA
-time = 1
-ignorehitpause = 1
-
-[State 2900, Sound]
+[State 1325, Shake]
+type = envshake
+trigger1 = !time
+time = 18
+freq = 60
+ampl = 6
+[State 1325, Snd]
 type = playsnd
+trigger1 = !time
+value = 5, 2
+
+[State 1325, Dust]
+type = explod
+trigger1 = !time
+anim = 7120
+ID = 7120
+sprpriority = -5
+postype = p2
+ownpal = 1
+scale = 0.5, 0.5
+
+[State 1325, Vel]
+type = velset
 trigger1 = animelem = 2
-value = 3,  2
-channel = 0
-
-[State 2900, Sound]
-type = playsnd
-trigger1 = animelem = 2
-value = 1, 3
-;channel = 1
-stopongethit = 1
-
-[State 2900, Hit]
-type = hitdef
-trigger1 = animelem = 3
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
-attr = S, SA
-hitflag = MAF
-guardflag = M
-priority = 4, Hit
-damage = 50, 13
-getpower = 0, 0
-givepower = 40, 40
-pausetime = 12, 12
-guard.pausetime = 12, 12
-animtype = Diagup
-air.animtype = Diagup
-fall.animtype = Diagup
-ground.type = Low
-air.type = Low
-ground.hittime = 1 + 18; + 2 * var(105)
-ground.slidetime = 18
-air.hittime = 120
-ground.velocity = -5.54, -5.25
-ground.cornerpush.veloff = 0
-guard.hittime = 1 + 16
-guard.ctrltime = 1 + 16
-guard.slidetime = 16
-guard.velocity = -10.52
-guard.cornerpush.veloff = 0
-air.velocity = -5.54, -5.25
-air.cornerpush.veloff = 0
-yaccel = 0.4850
-fall = 1
-fall.recover = 1
-fall.recovertime = 120
-forcestand = 1
-hitsound = s2, 9
-guardsound = s2, 0
-guardsound.channel = 2
-sparkno = -1 + 0 * (var(121) = 8013)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 60) * (var(133) = 110), var(122) = -62
-envshake.time = 10
-envshake.ampl =  2
-envshake.freq = 180
-kill = 0
-
-[State 2900, Type]
+x = -4
+y = -6
+[State 1325, Type]
 type = statetypeset
-trigger1 = animelem = 5
-movetype = I
-
-[State 2900, End]
-type = changestate
-trigger1 = !animtime
-value = 0
-ctrl = 1
-
-
-;========================<KICK ZERO COUNTER>=============================
-[Statedef 2910]
-type = S
-physics = N
-movetype = A
-anim = 2910
-ctrl = 0
-velset = 0, 0
-sprpriority = 2
-poweradd = 0
-
-[State 2910, NHB]
-type = null
-trigger1 = animelemtime(4) < 0
-value = SCA
-time = 1
-ignorehitpause = 1
-
-[State 2910, Sound]
-type = playsnd
-trigger1 = animelem = 3
-value = 3,  2
-channel = 0
-
-[State 2910, Sound]
-type = playsnd
-trigger1 = animelem = 2
-value = 1, 3
-;channel = 1
-stopongethit = 1
-
-[State 2910, Hit]
-type = hitdef
-trigger1 = animelem = 4
-air.juggle = 0 * (var(112) = 1 || var(110) = 1 || var(111) = 1)
-attr = C, SA
-hitflag = MAF
-guardflag = M
-priority = 4, Hit
-damage = 50, 13
-getpower = 0, 0
-givepower = 40, 40
-pausetime = 12, 12
-guard.pausetime = 12, 12
-animtype = Diagup
-air.animtype = Diagup
-fall.animtype = Diagup
-ground.type = Low
-air.type = Low
-ground.hittime = 1 + 18; + 2 * var(105)
-ground.slidetime = 18
-air.hittime = 120
-ground.velocity = -5.54, -5.25
-ground.cornerpush.veloff = 0
-guard.hittime = 1 + 16
-guard.ctrltime = 1 + 16
-guard.slidetime = 16
-guard.velocity = -10.52
-guard.cornerpush.veloff = 0
-air.velocity = -5.54, -5.25
-air.cornerpush.veloff = 0
-yaccel = 0.4850
-fall = 1
-fall.recover = 1
-fall.recovertime = 120
-forcestand = 1
-hitsound = s2, 9
-guardsound = s2, 0
-guardsound.channel = 2
-sparkno = -1 + 0 * (var(121) = 8013)
-guard.sparkno = -1 + 0 * (var(131) = 8001)
-sparkxy = -10 + 0 * (var(132) = 65) * (var(133) = 130), var(122) = -32
-envshake.time = 10
-envshake.ampl =  2
-envshake.freq = 180
-kill = 0
-
-[State 2910, Type]
-type = statetypeset
-trigger1 = animelem = 5
-movetype = I
-
-[State 2910, End]
-type = changestate
-trigger1 = !animtime
-value = 11
-ctrl = 1
+trigger1 = animelemtime(2) >= 0
+physics = A

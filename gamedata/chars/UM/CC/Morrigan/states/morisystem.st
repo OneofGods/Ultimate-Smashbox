@@ -11023,60 +11023,211 @@ ignorehitpause = 1
 ;===========================================================================
 ; MOVE ENABLE FLAGS - Initialize on round start
 ; MUGEN doesn't support Statedef -4, so this goes in Statedef -3
-; These vars enable all moves in moricmd.cns (map()  var() conversion)
+; These vars enable all moves in moricmd.cns (map() -> var() conversion)
+; FIXED: MUGEN VarSet only supports ONE var per state controller!
 ;===========================================================================
 
-[State -3, Init Move Enables]
+[State -3, Init var(66)]
 type = VarSet
 trigger1 = RoundState = 0
 var(66) = 1
+ignorehitpause = 1
+
+[State -3, Init var(67)]
+type = VarSet
+trigger1 = RoundState = 0
 var(67) = 1
+ignorehitpause = 1
+
+[State -3, Init var(68)]
+type = VarSet
+trigger1 = RoundState = 0
 var(68) = 1
+ignorehitpause = 1
+
+[State -3, Init var(69)]
+type = VarSet
+trigger1 = RoundState = 0
 var(69) = 1
+ignorehitpause = 1
+
+[State -3, Init var(70)]
+type = VarSet
+trigger1 = RoundState = 0
 var(70) = 1
+ignorehitpause = 1
+
+[State -3, Init var(71)]
+type = VarSet
+trigger1 = RoundState = 0
 var(71) = 1
+ignorehitpause = 1
+
+[State -3, Init var(72)]
+type = VarSet
+trigger1 = RoundState = 0
 var(72) = 1
+ignorehitpause = 1
+
+[State -3, Init var(73)]
+type = VarSet
+trigger1 = RoundState = 0
 var(73) = 1
+ignorehitpause = 1
+
+[State -3, Init var(74)]
+type = VarSet
+trigger1 = RoundState = 0
 var(74) = 1
+ignorehitpause = 1
+
+[State -3, Init var(75)]
+type = VarSet
+trigger1 = RoundState = 0
 var(75) = 1
 ignorehitpause = 1
 
-[State -3, Init Move Enables 2]
+[State -3, Init var(76)]
 type = VarSet
 trigger1 = RoundState = 0
 var(76) = 1
+ignorehitpause = 1
+
+[State -3, Init var(77)]
+type = VarSet
+trigger1 = RoundState = 0
 var(77) = 1
+ignorehitpause = 1
+
+[State -3, Init var(78)]
+type = VarSet
+trigger1 = RoundState = 0
 var(78) = 1
+ignorehitpause = 1
+
+[State -3, Init var(79)]
+type = VarSet
+trigger1 = RoundState = 0
 var(79) = 1
+ignorehitpause = 1
+
+[State -3, Init var(80)]
+type = VarSet
+trigger1 = RoundState = 0
 var(80) = 1
+ignorehitpause = 1
+
+[State -3, Init var(81)]
+type = VarSet
+trigger1 = RoundState = 0
 var(81) = 1
+ignorehitpause = 1
+
+[State -3, Init var(82)]
+type = VarSet
+trigger1 = RoundState = 0
 var(82) = 1
+ignorehitpause = 1
+
+[State -3, Init var(83)]
+type = VarSet
+trigger1 = RoundState = 0
 var(83) = 1
+ignorehitpause = 1
+
+[State -3, Init var(84)]
+type = VarSet
+trigger1 = RoundState = 0
 var(84) = 1
+ignorehitpause = 1
+
+[State -3, Init var(85)]
+type = VarSet
+trigger1 = RoundState = 0
 var(85) = 1
 ignorehitpause = 1
 
-[State -3, Init Move Enables 3]
+[State -3, Init var(86)]
 type = VarSet
 trigger1 = RoundState = 0
 var(86) = 1
+ignorehitpause = 1
+
+[State -3, Init var(90)]
+type = VarSet
+trigger1 = RoundState = 0
 var(90) = 1
+ignorehitpause = 1
+
+[State -3, Init var(91)]
+type = VarSet
+trigger1 = RoundState = 0
 var(91) = 1
+ignorehitpause = 1
+
+[State -3, Init var(92)]
+type = VarSet
+trigger1 = RoundState = 0
 var(92) = 1
+ignorehitpause = 1
+
+[State -3, Init var(93)]
+type = VarSet
+trigger1 = RoundState = 0
 var(93) = 1
+ignorehitpause = 1
+
+[State -3, Init var(94)]
+type = VarSet
+trigger1 = RoundState = 0
 var(94) = 1
+ignorehitpause = 1
+
+[State -3, Init var(95)]
+type = VarSet
+trigger1 = RoundState = 0
 var(95) = 1
+ignorehitpause = 1
+
+[State -3, Init var(96)]
+type = VarSet
+trigger1 = RoundState = 0
 var(96) = 1
+ignorehitpause = 1
+
+[State -3, Init var(97)]
+type = VarSet
+trigger1 = RoundState = 0
 var(97) = 1
+ignorehitpause = 1
+
+[State -3, Init var(102)]
+type = VarSet
+trigger1 = RoundState = 0
 var(102) = 1
 ignorehitpause = 1
 
-[State -3, Init Move Enables 4]
+[State -3, Init var(103)]
 type = VarSet
 trigger1 = RoundState = 0
 var(103) = 1
+ignorehitpause = 1
+
+[State -3, Init var(104)]
+type = VarSet
+trigger1 = RoundState = 0
 var(104) = 1
+ignorehitpause = 1
+
+[State -3, Init var(109)]
+type = VarSet
+trigger1 = RoundState = 0
 var(109) = 1
+ignorehitpause = 1
+
+[State -3, Init var(118)]
+type = VarSet
+trigger1 = RoundState = 0
 var(118) = 1
 ignorehitpause = 1
 
