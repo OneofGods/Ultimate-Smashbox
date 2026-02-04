@@ -1,6 +1,6 @@
 ; _________________________________________
 ;| Character by JStudios2k/John Anonymous, Edited from Doug1105                |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; 
 ;==============================================================================================
 ;=======================================<SYSTEM STATES>========================================
 ;==============================================================================================
@@ -4132,7 +4132,7 @@ trigger1 = numpartner
 trigger1 = ID>partner,ID
 trigger1 = !partner,authorname = "warusaki3"
 trigger1 = !(partner,authorname = "mouser" && partner,name = "Hibiki Takane")
-trigger1 = !partner,authorname = "H”"
+trigger1 = !partner,authorname = "H"
 trigger1 = !partner,authorname = "Jesuszilla"
 trigger1 = !partner,authorname = "JStudios2k"
 trigger2 = numpartner

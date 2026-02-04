@@ -1,6 +1,6 @@
 ; _________________________________________
 ;| Character by JStudios2k/John Anonymous, Edited from Doug1105                |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; 
 ;==============================================================================================
 ;=======================================< HELPER STATES >========================================
 ;==============================================================================================
@@ -2284,7 +2284,7 @@ type = null
 trigger1 = ((root,var(0)&2**0)/2**0)
 value = 6501
 
-;configŒÄ‚Ño‚µ
+;configo
 [State 6500, Helper]
 type = null
 trigger1 = time = 0
@@ -2298,15 +2298,15 @@ ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
 
-;KOŽž
-;roundstate=3iKO`WinjƒtƒŒ[ƒ€Œo‰ß”
+;KO
+;roundstate=3iKO`Winjt[o
 [State 6500, VarAdd]
 type = VarAdd
 trigger1 = roundstate = 3
 var(1) = 1
 ignorehitpause = 1
 
-;roundstate=4iWinjƒtƒŒ[ƒ€Œo‰ß”
+;roundstate=4iWinjt[o
 [State 6500, VarAdd]
 type = VarAdd
 trigger1 = roundstate = 4
@@ -2351,7 +2351,7 @@ var(27)=30000
 ignorehitpause = 1
 
 ;GP counter graphics
-[State 6500, Explod];”wŒi1P
+[State 6500, Explod];wi1P
 type = Explod
 trigger1 = !NumExplod(6501)
 trigger1 = teamside = 1
@@ -2368,7 +2368,7 @@ pausemovetime = -1
 supermovetime = -1
 scale = .5,.5
 
-[State 6500, Explod];”wŒi2P
+[State 6500, Explod];wi2P
 type = Explod
 trigger1 = !NumExplod(6501)
 trigger1 = teamside = 2
@@ -2385,7 +2385,7 @@ pausemovetime = -1
 supermovetime = -1
 scale = .5,.5
 
-[State 6500, Explod];˜g1P
+[State 6500, Explod];g1P
 type = Explod
 trigger1 = !NumExplod(6500)
 trigger1 = teamside = 1
@@ -2402,7 +2402,7 @@ pausemovetime = -1
 supermovetime = -1
 scale = .5,.5
 
-[State 6500, Explod];˜g2P
+[State 6500, Explod];g2P
 type = Explod
 trigger1 = !NumExplod(6500)
 trigger1 = teamside = 2

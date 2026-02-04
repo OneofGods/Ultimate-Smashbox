@@ -1,6 +1,6 @@
 ; _________________________________________
 ;| Character by JStudios2k/John Anonymous, Edited from Doug1105                |
-; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+; 
 ;====================<CONSTANTS>====================
 [Data]
 life = 1000
@@ -18,8 +18,8 @@ IntPersistIndex = 0
 FloatPersistIndex = 0
 
 [Size]
-xScale = 0.5
-yScale = 0.5
+xScale = 1.0
+yScale = 1.0
 ground.back = 15
 ground.front = 15
 air.back = 15
