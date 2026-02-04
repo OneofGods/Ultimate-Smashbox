@@ -1,6 +1,6 @@
 ; ________________________
 ;| Akuma by Mr.Ansatsuken |
-; ________________________
+; 
 ;==============================================================================================
 ;=======================================< COMMON STATES >========================================
 ;==============================================================================================
@@ -26,8 +26,8 @@ value = -750
 [State 750, Strength]
 type = varset
 trigger1 = !time && !AIlevel
-var(10) = 2 ; Fixed: Counter_P command not defined, defaulting to 2
 ignorehitpause = 1
+var(10) = ifelse((command = "counter_x" || command = "counter_y" || command = "counter_z"), 1, 2)
 [State 750, Strength AI]
 type = varset
 trigger1 = !time && AIlevel
@@ -498,7 +498,7 @@ velset = 0, 0
 [State 740, Power]
 type = poweradd
 triggerall = anim = 740 && power < powermax
-trigger1 = !AIlevel && (command = "holdup" && command = "holdback")
+trigger1 = !AIlevel && (command = "holdy" && command = "holdb")
 trigger2 = AIlevel
 value = 2 + (time / 10)
 
@@ -584,7 +584,7 @@ ownpal = 1
 [State 740, Anim]
 type = changeanim
 triggerall = anim != 741
-trigger1 = !AIlevel && (command != "holdup" || command != "holdback")
+trigger1 = !AIlevel && (command != "holdy" || command != "holdb")
 trigger2 = power >= const(data.power) || power >= powermax || roundstate != 2
 trigger3 = AIlevel && (inguarddist || p2bodydist x < 160)
 value = 741
@@ -771,21 +771,21 @@ fvar(30)=-1
 [State 256, Countdown]
 type = Varset
 trigger1 = numhelper(8990)
-trigger1=command="holdfwd" || command="holdback"
+trigger1=command="fwd" || command="back"
 fvar(30)=3
 
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,32,11)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,11,32)
 
@@ -793,14 +793,14 @@ fvar(3) =100 + ifelse(facing=1,11,32)
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 32
 fvar(3) =100 + ifelse(facing=1,11,37)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 32
 fvar(3) =100 + ifelse(facing=1,37,11)
 
@@ -808,14 +808,14 @@ fvar(3) =100 + ifelse(facing=1,37,11)
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 11
 fvar(3) =100 + ifelse(facing=1,37,32)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 11
 fvar(3) =100 + ifelse(facing=1,32,37)
 
@@ -823,14 +823,14 @@ fvar(3) =100 + ifelse(facing=1,32,37)
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,35,28)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,28,35)
 
@@ -838,14 +838,14 @@ fvar(3) =100 + ifelse(facing=1,28,35)
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,34,37)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,37,34)
 
@@ -853,14 +853,14 @@ fvar(3) =100 + ifelse(facing=1,37,34)
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 34
 fvar(3) =100 + ifelse(facing=1,28,35)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 34
 fvar(3) =100 + ifelse(facing=1,35,28)
 
@@ -868,14 +868,14 @@ fvar(3) =100 + ifelse(facing=1,35,28)
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 28
 fvar(3) =100 + ifelse(facing=1,37,34)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 28
 fvar(3) =100 + ifelse(facing=1,34,37)
 
@@ -883,14 +883,14 @@ fvar(3) =100 + ifelse(facing=1,34,37)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 0
 fvar(3) =100 + ifelse(facing=1,37,1)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 0
 fvar(3) =100 + ifelse(facing=1,1,37)
 
@@ -898,14 +898,14 @@ fvar(3) =100 + ifelse(facing=1,1,37)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 2
 fvar(3) =100 + ifelse(facing=1,1,9)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 2
 fvar(3) =100 + ifelse(facing=1,9,1)
 
@@ -913,14 +913,14 @@ fvar(3) =100 + ifelse(facing=1,9,1)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 9
 fvar(3) =100 + ifelse(facing=1,2,14)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 9
 fvar(3) =100 + ifelse(facing=1,14,2)
 
@@ -928,14 +928,14 @@ fvar(3) =100 + ifelse(facing=1,14,2)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 14
 fvar(3) =100 + ifelse(facing=1,9,15)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 14
 fvar(3) =100 + ifelse(facing=1,15,9)
 
@@ -943,14 +943,14 @@ fvar(3) =100 + ifelse(facing=1,15,9)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 15
 fvar(3) =100 + ifelse(facing=1,14,17)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 15
 fvar(3) =100 + ifelse(facing=1,17,14)
 
@@ -958,14 +958,14 @@ fvar(3) =100 + ifelse(facing=1,17,14)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 17
 fvar(3) =100 + ifelse(facing=1,15,22)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 17
 fvar(3) =100 + ifelse(facing=1,22,15)
 
@@ -973,14 +973,14 @@ fvar(3) =100 + ifelse(facing=1,22,15)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 22
 fvar(3) =100 + ifelse(facing=1,17,23)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 22
 fvar(3) =100 + ifelse(facing=1,23,17)
 
@@ -988,14 +988,14 @@ fvar(3) =100 + ifelse(facing=1,23,17)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 23
 fvar(3) =100 + ifelse(facing=1,22,26)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 23
 fvar(3) =100 + ifelse(facing=1,26,22)
 
@@ -1003,14 +1003,14 @@ fvar(3) =100 + ifelse(facing=1,26,22)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 26
 fvar(3) =100 + ifelse(facing=1,23,33)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 26
 fvar(3) =100 + ifelse(facing=1,33,23)
 
@@ -1018,14 +1018,14 @@ fvar(3) =100 + ifelse(facing=1,33,23)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 33
 fvar(3) =100 + ifelse(facing=1,26,34)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 33
 fvar(3) =100 + ifelse(facing=1,34,26)
 
@@ -1033,14 +1033,14 @@ fvar(3) =100 + ifelse(facing=1,34,26)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,36,0)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,0,36)
 
@@ -1048,14 +1048,14 @@ fvar(3) =100 + ifelse(facing=1,0,36)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 0
 fvar(3) =100 + ifelse(facing=1,37,2)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 0
 fvar(3) =100 + ifelse(facing=1,2,37)
 
@@ -1063,14 +1063,14 @@ fvar(3) =100 + ifelse(facing=1,2,37)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 2
 fvar(3) =100 + ifelse(facing=1,0,4)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 2
 fvar(3) =100 + ifelse(facing=1,4,0)
 
@@ -1078,14 +1078,14 @@ fvar(3) =100 + ifelse(facing=1,4,0)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 4
 fvar(3) =100 + ifelse(facing=1,2,5)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 4
 fvar(3) =100 + ifelse(facing=1,5,2)
 
@@ -1093,14 +1093,14 @@ fvar(3) =100 + ifelse(facing=1,5,2)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 5
 fvar(3) =100 + ifelse(facing=1,4,8)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 5
 fvar(3) =100 + ifelse(facing=1,8,4)
 
@@ -1108,14 +1108,14 @@ fvar(3) =100 + ifelse(facing=1,8,4)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 8
 fvar(3) =100 + ifelse(facing=1,5,9)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 8
 fvar(3) =100 + ifelse(facing=1,9,5)
 
@@ -1123,14 +1123,14 @@ fvar(3) =100 + ifelse(facing=1,9,5)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 9
 fvar(3) =100 + ifelse(facing=1,8,11)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 9
 fvar(3) =100 + ifelse(facing=1,11,8)
 
@@ -1138,14 +1138,14 @@ fvar(3) =100 + ifelse(facing=1,11,8)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 11
 fvar(3) =100 + ifelse(facing=1,9,13)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 11
 fvar(3) =100 + ifelse(facing=1,13,9)
 
@@ -1153,14 +1153,14 @@ fvar(3) =100 + ifelse(facing=1,13,9)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 13
 fvar(3) =100 + ifelse(facing=1,11,14)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 13
 fvar(3) =100 + ifelse(facing=1,14,11)
 
@@ -1168,14 +1168,14 @@ fvar(3) =100 + ifelse(facing=1,14,11)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 15
 fvar(3) =100 + ifelse(facing=1,14,17)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 15
 fvar(3) =100 + ifelse(facing=1,17,14)
 
@@ -1183,14 +1183,14 @@ fvar(3) =100 + ifelse(facing=1,17,14)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 17
 fvar(3) =100 + ifelse(facing=1,15,18)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 17
 fvar(3) =100 + ifelse(facing=1,18,15)
 
@@ -1198,14 +1198,14 @@ fvar(3) =100 + ifelse(facing=1,18,15)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 20
 fvar(3) =100 + ifelse(facing=1,19,22)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 20
 fvar(3) =100 + ifelse(facing=1,22,19)
 
@@ -1213,14 +1213,14 @@ fvar(3) =100 + ifelse(facing=1,22,19)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 22
 fvar(3) =100 + ifelse(facing=1,20,23)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 22
 fvar(3) =100 + ifelse(facing=1,23,20)
 
@@ -1228,14 +1228,14 @@ fvar(3) =100 + ifelse(facing=1,23,20)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 24
 fvar(3) =100 + ifelse(facing=1,23,26)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 24
 fvar(3) =100 + ifelse(facing=1,26,23)
 
@@ -1243,14 +1243,14 @@ fvar(3) =100 + ifelse(facing=1,26,23)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 26
 fvar(3) =100 + ifelse(facing=1,24,27)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 26
 fvar(3) =100 + ifelse(facing=1,27,24)
 
@@ -1258,14 +1258,14 @@ fvar(3) =100 + ifelse(facing=1,27,24)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 27
 fvar(3) =100 + ifelse(facing=1,26,29)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 27
 fvar(3) =100 + ifelse(facing=1,29,26)
 
@@ -1273,14 +1273,14 @@ fvar(3) =100 + ifelse(facing=1,29,26)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 29
 fvar(3) =100 + ifelse(facing=1,27,30)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 29
 fvar(3) =100 + ifelse(facing=1,30,27)
 
@@ -1288,14 +1288,14 @@ fvar(3) =100 + ifelse(facing=1,30,27)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 30
 fvar(3) =100 + ifelse(facing=1,29,34)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 30
 fvar(3) =100 + ifelse(facing=1,34,29)
 
@@ -1303,14 +1303,14 @@ fvar(3) =100 + ifelse(facing=1,34,29)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 34
 fvar(3) =100 + ifelse(facing=1,30,35)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 34
 fvar(3) =100 + ifelse(facing=1,35,30)
 
@@ -1318,14 +1318,14 @@ fvar(3) =100 + ifelse(facing=1,35,30)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,34,37)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,37,34)
 
@@ -1333,14 +1333,14 @@ fvar(3) =100 + ifelse(facing=1,37,34)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,35,0)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,0,35)
 
@@ -1348,13 +1348,13 @@ fvar(3) =100 + ifelse(facing=1,0,35)
 type = Varadd
 triggerall = numhelper(8990)
 triggerall = fvar(3) = [0,37]
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 fvar(3) = 100+ifelse(facing=1,1,-1)
 [State 0, VarSet]
 type = Varadd
 triggerall = numhelper(8990)
 triggerall = fvar(3) = [0,37]
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 fvar(3) = 100 + ifelse(facing=1,-1,1)
 
 [State 0, VarSet]
@@ -1554,7 +1554,7 @@ sysvar(1) = ifelse((enemynear, movetype != A || backedgebodydist <= 10), 1, ifel
 [State 40, Var]
 type = varset
 trigger1 = !time && !AIlevel
-var(9) = 1 ; Fixed: highjump command not defined, defaulting to 1
+var(9) = ifelse(command = "highjump", 3, 1)
 [State 40, Var]
 type = varset
 trigger1 = !AIlevel
@@ -1769,14 +1769,14 @@ type = ctrlset
 trigger1 = animelemtime(5) = 2
 value = 1
 
-;---------------------[Sound]
+;---------------------[]
 [State 191, Snd 1]
 type = PlaySnd
 trigger1 = AnimElem = 2
 value = 40,0
 
 
-;---------------------[Effects]
+;---------------------[GtFNg]
 [State explod];
 type = removeExplod
 trigger1 = time = 0
@@ -1805,7 +1805,7 @@ scale = 0.35,0.35
 
 
 
-;---------------------[Velocity]
+;---------------------[x]
 [State 100, 1]
 type = VelSet
 trigger1 = animelem = 2
@@ -1826,7 +1826,7 @@ type = ctrlset
 trigger1 = time = 8
 value = 1
 
-;---------------------[Variables]
+;---------------------[]
 [State 100, 4]
 type = ChangeState
 trigger1 = animtime = 0
@@ -1856,14 +1856,14 @@ type = ctrlset
 trigger1 = animelemtime(5) = 2
 value = 1
 
-;---------------------[Sound]
+;---------------------[]
 [State 191, Snd 1]
 type = PlaySnd
 trigger1 = AnimElem = 2
 value = 40,0
 
 
-;---------------------[Effects]
+;---------------------[GtFNg]
 [State explod];
 type = removeExplod
 trigger1 = time = 0
@@ -1892,7 +1892,7 @@ scale = 0.35,0.35
 
 
 
-;---------------------[Velocity]
+;---------------------[x]
 [State 100, 1]
 type = VelSet
 trigger1 = animelem = 2
@@ -1913,7 +1913,7 @@ type = ctrlset
 trigger1 = time = 8
 value = 1
 
-;---------------------[Variables]
+;---------------------[]
 [State 100, 4]
 type = ChangeState
 trigger1 = animtime = 0
@@ -1951,14 +1951,14 @@ type = ctrlset
 trigger1 = animelemtime(5) = 2
 value = 1
 
-;---------------------[Sound]
+;---------------------[]
 [State 191, Snd 1]
 type = PlaySnd
 trigger1 = AnimElem = 2
 value = 40,0
 
 
-;---------------------[Effects]
+;---------------------[GtFNg]
 [State explod];
 type = removeExplod
 trigger1 = time = 0
@@ -1987,7 +1987,7 @@ scale = 0.35,0.35
 
 
 
-;---------------------[Velocity]
+;---------------------[x]
 [State 100, 1]
 type = VelSet
 trigger1 = animelem = 2
@@ -2007,7 +2007,7 @@ type = ctrlset
 trigger1 = time = 8
 value = 1
 
-;---------------------[Variables]
+;---------------------[]
 [State 100, 4]
 type = ChangeState
 trigger1 = animtime = 0
@@ -2046,14 +2046,14 @@ type = ctrlset
 trigger1 = animelemtime(5) = 2
 value = 1
 
-;---------------------[Sound]
+;---------------------[]
 [State 191, Snd 1]
 type = PlaySnd
 trigger1 = AnimElem = 2
 value = 40,0
 
 
-;---------------------[Effects]
+;---------------------[GtFNg]
 [State explod];
 type = removeExplod
 trigger1 = time = 0
@@ -2082,7 +2082,7 @@ scale = 0.35,0.35
 
 
 
-;---------------------[Velocity]
+;---------------------[x]
 [State 100, 1]
 type = VelSet
 trigger1 = animelem = 2
@@ -2103,7 +2103,7 @@ type = ctrlset
 trigger1 = time = 8
 value = 1
 
-;---------------------[Variables]
+;---------------------[]
 [State 100, 4]
 type = ChangeState
 trigger1 = animtime = 0
@@ -3907,21 +3907,21 @@ fvar(30)=-1
 [State 256, Countdown]
 type = Varset
 trigger1 = numhelper(8990)
-trigger1=command="holdfwd" || command="holdback"
+trigger1=command="fwd" || command="back"
 fvar(30)=3
 
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,32,11)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,11,32)
 
@@ -3929,14 +3929,14 @@ fvar(3) =100 + ifelse(facing=1,11,32)
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 32
 fvar(3) =100 + ifelse(facing=1,11,37)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 32
 fvar(3) =100 + ifelse(facing=1,37,11)
 
@@ -3944,14 +3944,14 @@ fvar(3) =100 + ifelse(facing=1,37,11)
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 11
 fvar(3) =100 + ifelse(facing=1,37,32)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 11
 fvar(3) =100 + ifelse(facing=1,32,37)
 
@@ -3959,14 +3959,14 @@ fvar(3) =100 + ifelse(facing=1,32,37)
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,35,28)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,28,35)
 
@@ -3974,14 +3974,14 @@ fvar(3) =100 + ifelse(facing=1,28,35)
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,34,37)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,37,34)
 
@@ -3989,14 +3989,14 @@ fvar(3) =100 + ifelse(facing=1,37,34)
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 34
 fvar(3) =100 + ifelse(facing=1,28,35)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 34
 fvar(3) =100 + ifelse(facing=1,35,28)
 
@@ -4004,14 +4004,14 @@ fvar(3) =100 + ifelse(facing=1,35,28)
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 28
 fvar(3) =100 + ifelse(facing=1,37,34)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 28
 fvar(3) =100 + ifelse(facing=1,34,37)
 
@@ -4019,14 +4019,14 @@ fvar(3) =100 + ifelse(facing=1,34,37)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 0
 fvar(3) =100 + ifelse(facing=1,37,1)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 0
 fvar(3) =100 + ifelse(facing=1,1,37)
 
@@ -4034,14 +4034,14 @@ fvar(3) =100 + ifelse(facing=1,1,37)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 2
 fvar(3) =100 + ifelse(facing=1,1,9)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 2
 fvar(3) =100 + ifelse(facing=1,9,1)
 
@@ -4049,14 +4049,14 @@ fvar(3) =100 + ifelse(facing=1,9,1)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 9
 fvar(3) =100 + ifelse(facing=1,2,14)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 9
 fvar(3) =100 + ifelse(facing=1,14,2)
 
@@ -4064,14 +4064,14 @@ fvar(3) =100 + ifelse(facing=1,14,2)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 14
 fvar(3) =100 + ifelse(facing=1,9,15)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 14
 fvar(3) =100 + ifelse(facing=1,15,9)
 
@@ -4079,14 +4079,14 @@ fvar(3) =100 + ifelse(facing=1,15,9)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 15
 fvar(3) =100 + ifelse(facing=1,14,17)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 15
 fvar(3) =100 + ifelse(facing=1,17,14)
 
@@ -4094,14 +4094,14 @@ fvar(3) =100 + ifelse(facing=1,17,14)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 17
 fvar(3) =100 + ifelse(facing=1,15,22)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 17
 fvar(3) =100 + ifelse(facing=1,22,15)
 
@@ -4109,14 +4109,14 @@ fvar(3) =100 + ifelse(facing=1,22,15)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 22
 fvar(3) =100 + ifelse(facing=1,17,23)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 22
 fvar(3) =100 + ifelse(facing=1,23,17)
 
@@ -4124,14 +4124,14 @@ fvar(3) =100 + ifelse(facing=1,23,17)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 23
 fvar(3) =100 + ifelse(facing=1,22,26)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 23
 fvar(3) =100 + ifelse(facing=1,26,22)
 
@@ -4139,14 +4139,14 @@ fvar(3) =100 + ifelse(facing=1,26,22)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 26
 fvar(3) =100 + ifelse(facing=1,23,33)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 26
 fvar(3) =100 + ifelse(facing=1,33,23)
 
@@ -4154,14 +4154,14 @@ fvar(3) =100 + ifelse(facing=1,33,23)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 33
 fvar(3) =100 + ifelse(facing=1,26,34)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 33
 fvar(3) =100 + ifelse(facing=1,34,26)
 
@@ -4169,14 +4169,14 @@ fvar(3) =100 + ifelse(facing=1,34,26)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,36,0)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,0,36)
 
@@ -4184,14 +4184,14 @@ fvar(3) =100 + ifelse(facing=1,0,36)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 0
 fvar(3) =100 + ifelse(facing=1,37,2)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 0
 fvar(3) =100 + ifelse(facing=1,2,37)
 
@@ -4199,14 +4199,14 @@ fvar(3) =100 + ifelse(facing=1,2,37)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 2
 fvar(3) =100 + ifelse(facing=1,0,4)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 2
 fvar(3) =100 + ifelse(facing=1,4,0)
 
@@ -4214,14 +4214,14 @@ fvar(3) =100 + ifelse(facing=1,4,0)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 4
 fvar(3) =100 + ifelse(facing=1,2,5)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 4
 fvar(3) =100 + ifelse(facing=1,5,2)
 
@@ -4229,14 +4229,14 @@ fvar(3) =100 + ifelse(facing=1,5,2)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 5
 fvar(3) =100 + ifelse(facing=1,4,8)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 5
 fvar(3) =100 + ifelse(facing=1,8,4)
 
@@ -4244,14 +4244,14 @@ fvar(3) =100 + ifelse(facing=1,8,4)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 8
 fvar(3) =100 + ifelse(facing=1,5,9)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 8
 fvar(3) =100 + ifelse(facing=1,9,5)
 
@@ -4259,14 +4259,14 @@ fvar(3) =100 + ifelse(facing=1,9,5)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 9
 fvar(3) =100 + ifelse(facing=1,8,11)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 9
 fvar(3) =100 + ifelse(facing=1,11,8)
 
@@ -4274,14 +4274,14 @@ fvar(3) =100 + ifelse(facing=1,11,8)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 11
 fvar(3) =100 + ifelse(facing=1,9,13)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 11
 fvar(3) =100 + ifelse(facing=1,13,9)
 
@@ -4289,14 +4289,14 @@ fvar(3) =100 + ifelse(facing=1,13,9)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 13
 fvar(3) =100 + ifelse(facing=1,11,14)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 13
 fvar(3) =100 + ifelse(facing=1,14,11)
 
@@ -4304,14 +4304,14 @@ fvar(3) =100 + ifelse(facing=1,14,11)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 15
 fvar(3) =100 + ifelse(facing=1,14,17)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 15
 fvar(3) =100 + ifelse(facing=1,17,14)
 
@@ -4319,14 +4319,14 @@ fvar(3) =100 + ifelse(facing=1,17,14)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 17
 fvar(3) =100 + ifelse(facing=1,15,18)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 17
 fvar(3) =100 + ifelse(facing=1,18,15)
 
@@ -4334,14 +4334,14 @@ fvar(3) =100 + ifelse(facing=1,18,15)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 20
 fvar(3) =100 + ifelse(facing=1,19,22)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 20
 fvar(3) =100 + ifelse(facing=1,22,19)
 
@@ -4349,14 +4349,14 @@ fvar(3) =100 + ifelse(facing=1,22,19)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 22
 fvar(3) =100 + ifelse(facing=1,20,23)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 22
 fvar(3) =100 + ifelse(facing=1,23,20)
 
@@ -4364,14 +4364,14 @@ fvar(3) =100 + ifelse(facing=1,23,20)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 24
 fvar(3) =100 + ifelse(facing=1,23,26)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 24
 fvar(3) =100 + ifelse(facing=1,26,23)
 
@@ -4379,14 +4379,14 @@ fvar(3) =100 + ifelse(facing=1,26,23)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 26
 fvar(3) =100 + ifelse(facing=1,24,27)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 26
 fvar(3) =100 + ifelse(facing=1,27,24)
 
@@ -4394,14 +4394,14 @@ fvar(3) =100 + ifelse(facing=1,27,24)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 27
 fvar(3) =100 + ifelse(facing=1,26,29)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 27
 fvar(3) =100 + ifelse(facing=1,29,26)
 
@@ -4409,14 +4409,14 @@ fvar(3) =100 + ifelse(facing=1,29,26)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 29
 fvar(3) =100 + ifelse(facing=1,27,30)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 29
 fvar(3) =100 + ifelse(facing=1,30,27)
 
@@ -4424,14 +4424,14 @@ fvar(3) =100 + ifelse(facing=1,30,27)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 30
 fvar(3) =100 + ifelse(facing=1,29,34)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 30
 fvar(3) =100 + ifelse(facing=1,34,29)
 
@@ -4439,14 +4439,14 @@ fvar(3) =100 + ifelse(facing=1,34,29)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 34
 fvar(3) =100 + ifelse(facing=1,30,35)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 34
 fvar(3) =100 + ifelse(facing=1,35,30)
 
@@ -4454,14 +4454,14 @@ fvar(3) =100 + ifelse(facing=1,35,30)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,34,37)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,37,34)
 
@@ -4469,14 +4469,14 @@ fvar(3) =100 + ifelse(facing=1,37,34)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,35,0)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,0,35)
 
@@ -4484,13 +4484,13 @@ fvar(3) =100 + ifelse(facing=1,0,35)
 type = Varadd
 triggerall = numhelper(8990)
 triggerall = fvar(3) = [0,37]
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 fvar(3) = 100+ifelse(facing=1,1,-1)
 [State 0, VarSet]
 type = Varadd
 triggerall = numhelper(8990)
 triggerall = fvar(3) = [0,37]
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 fvar(3) = 100 + ifelse(facing=1,-1,1)
 
 [State 0, VarSet]
@@ -4551,6 +4551,52 @@ ignorehitpause = 1
 type = Varset
 trigger1 = time = 9
 var(10) = 0
+
+; Initialize Morrigan's move variables - CRITICAL FIX
+[State -2, Enable EX Parasite Roll]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(67) = 1
+
+[State -2, Enable Cardinal Blade]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(68) = 1
+
+[State -2, Enable Soul Phoenix]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(69) = 1
+
+[State -2, Enable Finishing Shower]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(70) = 1
+
+[State -2, Enable EX Shadow Blade]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(75) = 1
+
+[State -2, Enable EX Vector Drain]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(77) = 1
+
+[State -2, Enable Valkyrie Turn]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(93) = 1
+
+[State -2, Enable Air Darkness Illusion]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(94) = 1
+
+[State -2, Enable Eternal Slumber]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(97) = 1
 
 [State -2, Enemy = Akuma]
 type = Varset
@@ -5744,6 +5790,52 @@ ignorehitpause = 1
 type = Varset
 trigger1 = time = 9
 var(10) = 0
+
+; Initialize Morrigan's move variables - CRITICAL FIX
+[State -2, Enable EX Parasite Roll]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(67) = 1
+
+[State -2, Enable Cardinal Blade]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(68) = 1
+
+[State -2, Enable Soul Phoenix]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(69) = 1
+
+[State -2, Enable Finishing Shower]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(70) = 1
+
+[State -2, Enable EX Shadow Blade]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(75) = 1
+
+[State -2, Enable EX Vector Drain]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(77) = 1
+
+[State -2, Enable Valkyrie Turn]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(93) = 1
+
+[State -2, Enable Air Darkness Illusion]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(94) = 1
+
+[State -2, Enable Eternal Slumber]
+type = VarSet
+trigger1 = roundno = 1 && time = 0
+var(97) = 1
 
 [State -2, Enemy = Akuma]
 type = Varset
@@ -7727,21 +7819,21 @@ fvar(30)=-1
 [State 256, Countdown]
 type = Varset
 trigger1 = numhelper(8990)
-trigger1=command="holdfwd" || command="holdback"
+trigger1=command="fwd" || command="back"
 fvar(30)=3
 
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,32,11)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,11,32)
 
@@ -7749,14 +7841,14 @@ fvar(3) =100 + ifelse(facing=1,11,32)
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 32
 fvar(3) =100 + ifelse(facing=1,11,37)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 32
 fvar(3) =100 + ifelse(facing=1,37,11)
 
@@ -7764,14 +7856,14 @@ fvar(3) =100 + ifelse(facing=1,37,11)
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 11
 fvar(3) =100 + ifelse(facing=1,37,32)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 5
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 11
 fvar(3) =100 + ifelse(facing=1,32,37)
 
@@ -7779,14 +7871,14 @@ fvar(3) =100 + ifelse(facing=1,32,37)
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,35,28)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,28,35)
 
@@ -7794,14 +7886,14 @@ fvar(3) =100 + ifelse(facing=1,28,35)
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,34,37)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,37,34)
 
@@ -7809,14 +7901,14 @@ fvar(3) =100 + ifelse(facing=1,37,34)
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 34
 fvar(3) =100 + ifelse(facing=1,28,35)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 34
 fvar(3) =100 + ifelse(facing=1,35,28)
 
@@ -7824,14 +7916,14 @@ fvar(3) =100 + ifelse(facing=1,35,28)
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 28
 fvar(3) =100 + ifelse(facing=1,37,34)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 2
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 28
 fvar(3) =100 + ifelse(facing=1,34,37)
 
@@ -7839,14 +7931,14 @@ fvar(3) =100 + ifelse(facing=1,34,37)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 0
 fvar(3) =100 + ifelse(facing=1,37,1)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 0
 fvar(3) =100 + ifelse(facing=1,1,37)
 
@@ -7854,14 +7946,14 @@ fvar(3) =100 + ifelse(facing=1,1,37)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 2
 fvar(3) =100 + ifelse(facing=1,1,9)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 2
 fvar(3) =100 + ifelse(facing=1,9,1)
 
@@ -7869,14 +7961,14 @@ fvar(3) =100 + ifelse(facing=1,9,1)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 9
 fvar(3) =100 + ifelse(facing=1,2,14)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 9
 fvar(3) =100 + ifelse(facing=1,14,2)
 
@@ -7884,14 +7976,14 @@ fvar(3) =100 + ifelse(facing=1,14,2)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 14
 fvar(3) =100 + ifelse(facing=1,9,15)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 14
 fvar(3) =100 + ifelse(facing=1,15,9)
 
@@ -7899,14 +7991,14 @@ fvar(3) =100 + ifelse(facing=1,15,9)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 15
 fvar(3) =100 + ifelse(facing=1,14,17)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 15
 fvar(3) =100 + ifelse(facing=1,17,14)
 
@@ -7914,14 +8006,14 @@ fvar(3) =100 + ifelse(facing=1,17,14)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 17
 fvar(3) =100 + ifelse(facing=1,15,22)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 17
 fvar(3) =100 + ifelse(facing=1,22,15)
 
@@ -7929,14 +8021,14 @@ fvar(3) =100 + ifelse(facing=1,22,15)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 22
 fvar(3) =100 + ifelse(facing=1,17,23)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 22
 fvar(3) =100 + ifelse(facing=1,23,17)
 
@@ -7944,14 +8036,14 @@ fvar(3) =100 + ifelse(facing=1,23,17)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 23
 fvar(3) =100 + ifelse(facing=1,22,26)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 23
 fvar(3) =100 + ifelse(facing=1,26,22)
 
@@ -7959,14 +8051,14 @@ fvar(3) =100 + ifelse(facing=1,26,22)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 26
 fvar(3) =100 + ifelse(facing=1,23,33)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 26
 fvar(3) =100 + ifelse(facing=1,33,23)
 
@@ -7974,14 +8066,14 @@ fvar(3) =100 + ifelse(facing=1,33,23)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 33
 fvar(3) =100 + ifelse(facing=1,26,35)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 33
 fvar(3) =100 + ifelse(facing=1,35,26)
 
@@ -7989,14 +8081,14 @@ fvar(3) =100 + ifelse(facing=1,35,26)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,33,36)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,36,33)
 
@@ -8004,14 +8096,14 @@ fvar(3) =100 + ifelse(facing=1,36,33)
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,36,0)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 3
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,0,36)
 
@@ -8019,14 +8111,14 @@ fvar(3) =100 + ifelse(facing=1,0,36)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 0
 fvar(3) =100 + ifelse(facing=1,37,2)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 0
 fvar(3) =100 + ifelse(facing=1,2,37)
 
@@ -8034,14 +8126,14 @@ fvar(3) =100 + ifelse(facing=1,2,37)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 2
 fvar(3) =100 + ifelse(facing=1,0,4)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 2
 fvar(3) =100 + ifelse(facing=1,4,0)
 
@@ -8049,14 +8141,14 @@ fvar(3) =100 + ifelse(facing=1,4,0)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 4
 fvar(3) =100 + ifelse(facing=1,2,5)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 4
 fvar(3) =100 + ifelse(facing=1,5,2)
 
@@ -8064,14 +8156,14 @@ fvar(3) =100 + ifelse(facing=1,5,2)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 5
 fvar(3) =100 + ifelse(facing=1,4,8)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 5
 fvar(3) =100 + ifelse(facing=1,8,4)
 
@@ -8079,14 +8171,14 @@ fvar(3) =100 + ifelse(facing=1,8,4)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 8
 fvar(3) =100 + ifelse(facing=1,5,9)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 8
 fvar(3) =100 + ifelse(facing=1,9,5)
 
@@ -8094,14 +8186,14 @@ fvar(3) =100 + ifelse(facing=1,9,5)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 9
 fvar(3) =100 + ifelse(facing=1,8,11)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 9
 fvar(3) =100 + ifelse(facing=1,11,8)
 
@@ -8109,14 +8201,14 @@ fvar(3) =100 + ifelse(facing=1,11,8)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 11
 fvar(3) =100 + ifelse(facing=1,9,13)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 11
 fvar(3) =100 + ifelse(facing=1,13,9)
 
@@ -8124,14 +8216,14 @@ fvar(3) =100 + ifelse(facing=1,13,9)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 13
 fvar(3) =100 + ifelse(facing=1,11,14)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 13
 fvar(3) =100 + ifelse(facing=1,14,11)
 
@@ -8139,14 +8231,14 @@ fvar(3) =100 + ifelse(facing=1,14,11)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 15
 fvar(3) =100 + ifelse(facing=1,14,17)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 15
 fvar(3) =100 + ifelse(facing=1,17,14)
 
@@ -8154,14 +8246,14 @@ fvar(3) =100 + ifelse(facing=1,17,14)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 17
 fvar(3) =100 + ifelse(facing=1,15,18)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 17
 fvar(3) =100 + ifelse(facing=1,18,15)
 
@@ -8169,14 +8261,14 @@ fvar(3) =100 + ifelse(facing=1,18,15)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 20
 fvar(3) =100 + ifelse(facing=1,19,22)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 20
 fvar(3) =100 + ifelse(facing=1,22,19)
 
@@ -8184,14 +8276,14 @@ fvar(3) =100 + ifelse(facing=1,22,19)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 22
 fvar(3) =100 + ifelse(facing=1,20,23)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 22
 fvar(3) =100 + ifelse(facing=1,23,20)
 
@@ -8199,14 +8291,14 @@ fvar(3) =100 + ifelse(facing=1,23,20)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 24
 fvar(3) =100 + ifelse(facing=1,23,26)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 24
 fvar(3) =100 + ifelse(facing=1,26,23)
 
@@ -8214,14 +8306,14 @@ fvar(3) =100 + ifelse(facing=1,26,23)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 26
 fvar(3) =100 + ifelse(facing=1,24,27)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 26
 fvar(3) =100 + ifelse(facing=1,27,24)
 
@@ -8229,14 +8321,14 @@ fvar(3) =100 + ifelse(facing=1,27,24)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 27
 fvar(3) =100 + ifelse(facing=1,26,29)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 27
 fvar(3) =100 + ifelse(facing=1,29,26)
 
@@ -8244,14 +8336,14 @@ fvar(3) =100 + ifelse(facing=1,29,26)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 29
 fvar(3) =100 + ifelse(facing=1,27,30)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 29
 fvar(3) =100 + ifelse(facing=1,30,27)
 
@@ -8259,14 +8351,14 @@ fvar(3) =100 + ifelse(facing=1,30,27)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 30
 fvar(3) =100 + ifelse(facing=1,29,35)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 30
 fvar(3) =100 + ifelse(facing=1,35,29)
 
@@ -8274,14 +8366,14 @@ fvar(3) =100 + ifelse(facing=1,35,29)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,30,37)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 35
 fvar(3) =100 + ifelse(facing=1,37,30)
 
@@ -8289,14 +8381,14 @@ fvar(3) =100 + ifelse(facing=1,37,30)
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,35,0)
 [State 0, VarSet]
 type = Varset
 triggerall = var(1) = 1
 trigger1 = numhelper(8990)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 trigger1 = fvar(3) = 37
 fvar(3) =100 + ifelse(facing=1,0,35)
 
@@ -8304,13 +8396,13 @@ fvar(3) =100 + ifelse(facing=1,0,35)
 type = Varadd
 triggerall = numhelper(8990)
 triggerall = fvar(3) = [0,37]
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 fvar(3) = 100+ifelse(facing=1,1,-1)
 [State 0, VarSet]
 type = Varadd
 triggerall = numhelper(8990)
 triggerall = fvar(3) = [0,37]
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 fvar(3) = 100 + ifelse(facing=1,-1,1)
 
 [State 0, VarSet]
@@ -9676,7 +9768,7 @@ value = 5221
 type = C
 movetype = I
 physics = N
-anim = 5220
+anim = 5210 ; Changed from 5220 (missing) to 5210 (exists)
 facep2 = 1
 
 [State 5221, Pos]
@@ -10308,22 +10400,22 @@ dest = 4050, 49
 [State -2, varset]
 type = varadd
 triggerall = numhelper(8991)
-trigger1 = command = "holdfwd"
+trigger1 = command = "fwd"
 var(0) = ifelse(var(0)=70, -69, 1)
 [State -2, varset]
 type = varadd
 triggerall = numhelper(8991)
-trigger1 = command = "holdback"
+trigger1 = command = "back"
 var(0) = ifelse(var(0)=1, 69, -1)
 [State -2, varset]
 type = varadd
 triggerall = numhelper(8991)
-trigger1 = command = "holdup"
+trigger1 = command = "up"
 fvar(1) = ifelse(fvar(1)=49, -48, 1)
 [State -2, varset]
 type = varadd
 triggerall = numhelper(8991)
-trigger1 = command = "holddown"
+trigger1 = command = "down"
 fvar(1) = ifelse(fvar(1)=1, 48, -1)
 
 [State 6000, Kanji]
@@ -10928,6 +11020,66 @@ ignorehitpause = 1
 ;===========================================================================
 [Statedef -3]
 
+;===========================================================================
+; MOVE ENABLE FLAGS - Initialize on round start
+; MUGEN doesn't support Statedef -4, so this goes in Statedef -3
+; These vars enable all moves in moricmd.cns (map()  var() conversion)
+;===========================================================================
+
+[State -3, Init Move Enables]
+type = VarSet
+trigger1 = RoundState = 0
+var(66) = 1
+var(67) = 1
+var(68) = 1
+var(69) = 1
+var(70) = 1
+var(71) = 1
+var(72) = 1
+var(73) = 1
+var(74) = 1
+var(75) = 1
+ignorehitpause = 1
+
+[State -3, Init Move Enables 2]
+type = VarSet
+trigger1 = RoundState = 0
+var(76) = 1
+var(77) = 1
+var(78) = 1
+var(79) = 1
+var(80) = 1
+var(81) = 1
+var(82) = 1
+var(83) = 1
+var(84) = 1
+var(85) = 1
+ignorehitpause = 1
+
+[State -3, Init Move Enables 3]
+type = VarSet
+trigger1 = RoundState = 0
+var(86) = 1
+var(90) = 1
+var(91) = 1
+var(92) = 1
+var(93) = 1
+var(94) = 1
+var(95) = 1
+var(96) = 1
+var(97) = 1
+var(102) = 1
+ignorehitpause = 1
+
+[State -3, Init Move Enables 4]
+type = VarSet
+trigger1 = RoundState = 0
+var(103) = 1
+var(104) = 1
+var(109) = 1
+var(118) = 1
+ignorehitpause = 1
+
 [State -3, Gametime Var]
 type = varset
 trigger1 = 1
@@ -11223,3 +11375,4 @@ ownpal = 1
 ignorehitpause = 1
 pausemovetime = 999
 supermovetime = 999
+

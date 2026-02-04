@@ -340,16 +340,6 @@ command = /$B
 time = 1
 
 [Command]
-name = "fwd"
-command = F
-time = 1
-
-[Command]
-name = "back"
-command = B
-time = 1
-
-[Command]
 name = "holdup"
 command = /$U
 time = 1
@@ -367,6 +357,16 @@ time = 1
 [Command]
 name = "holdb"
 command = /$b
+time = 1
+
+[Command]
+name = "fwd"
+command = F
+time = 1
+
+[Command]
+name = "back"
+command = B
 time = 1
 
 [Command]
@@ -394,6 +394,142 @@ name = "recovery"
 command = z
 time = 1
 
+
+;=======================< SPECIAL MOVE MOTIONS >========================
+
+; Soul Fist - QCF + Punch (D, DF, F + P)
+[Command]
+name = "QCF_x"
+command = ~D, DF, F, x
+time = 15
+
+[Command]
+name = "QCF_y"
+command = ~D, DF, F, y
+time = 15
+
+[Command]
+name = "QCF_z"
+command = ~D, DF, F, z
+time = 15
+
+; Air Soul Fist - Same but in air
+[Command]
+name = "QCF_x"
+command = ~D, F, x
+time = 12
+
+[Command]
+name = "QCF_y"
+command = ~D, F, y
+time = 12
+
+[Command]
+name = "QCF_z"
+command = ~D, F, z
+time = 12
+
+; Shadow Blade - DP + Punch (F, D, DF + P)
+[Command]
+name = "DP_x"
+command = ~F, D, DF, x
+time = 15
+
+[Command]
+name = "DP_y"
+command = ~F, D, DF, y
+time = 15
+
+[Command]
+name = "DP_z"
+command = ~F, D, DF, z
+time = 15
+
+; Vector Drain - HCB + Kick (F, DF, D, DB, B + K)
+[Command]
+name = "HCB_a"
+command = ~F, DF, D, DB, B, a
+time = 20
+
+[Command]
+name = "HCB_b"
+command = ~F, DF, D, DB, B, b
+time = 20
+
+[Command]
+name = "HCB_c"
+command = ~F, DF, D, DB, B, c
+time = 20
+
+; Shorter HCB input (more lenient)
+[Command]
+name = "HCB_a"
+command = ~F, D, B, a
+time = 15
+
+[Command]
+name = "HCB_b"
+command = ~F, D, B, b
+time = 15
+
+[Command]
+name = "HCB_c"
+command = ~F, D, B, c
+time = 15
+
+; Darkness Illusion Super - LP, LP, F, LK, HP
+[Command]
+name = "DarknessIllusion"
+command = x, x, F, a, z
+time = 30
+
+; Alternate super input - QCF, QCF + PP
+[Command]
+name = "QCFx2_PP"
+command = ~D, DF, F, D, DF, F, x+y
+time = 25
+
+[Command]
+name = "QCFx2_PP"
+command = ~D, DF, F, D, DF, F, y+z
+time = 25
+
+[Command]
+name = "QCFx2_PP"
+command = ~D, F, D, F, x+y
+time = 20
+
+; Valkyrie Turn - QCB + Kick
+[Command]
+name = "QCB_a"
+command = ~D, DB, B, a
+time = 15
+
+[Command]
+name = "QCB_b"
+command = ~D, DB, B, b
+time = 15
+
+[Command]
+name = "QCB_c"
+command = ~D, DB, B, c
+time = 15
+
+; Finishing Shower Super - QCF, QCF + KK
+[Command]
+name = "QCFx2_KK"
+command = ~D, DF, F, D, DF, F, a+b
+time = 25
+
+[Command]
+name = "QCFx2_KK"
+command = ~D, DF, F, D, DF, F, b+c
+time = 25
+
+[Command]
+name = "QCFx2_KK"
+command = ~D, F, D, F, a+b
+time = 20
 
 ;=======================< CHECKS >========================
 
@@ -462,6 +598,17 @@ command = z
 time = 1
 buffer.time = 2
 
+; LP+LK for Dodge (both buttons pressed together)
+[Command]
+name = "dodge"
+command = x+a
+time = 1
+
+; HP+HK for specific moves
+[Command]
+name = "recovery"
+command = z+c
+time = 1
 
 ;==================================================================================================
 ;==========================================< STATE -1 >============================================
@@ -504,6 +651,7 @@ trigger1 = gethitvar(fall.recover)
 type = changestate
 value = 720
 triggerall = var(82)
+triggerall = command = "dodge"
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ifelse(var(92), command = "/$B", command = "/$F")
 trigger1 = ctrl || stateno = [100, 101]
@@ -512,6 +660,7 @@ trigger1 = ctrl || stateno = [100, 101]
 type = changestate
 value = 725
 triggerall = var(82)
+triggerall = command = "dodge"
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ifelse(var(92), command = "/$F", command = "/$B")
 trigger1 = ctrl || stateno = [100, 101]
@@ -520,6 +669,7 @@ trigger1 = ctrl || stateno = [100, 101]
 type = changestate
 value = 710
 triggerall = var(82)
+triggerall = command = "dodge"
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ctrl || stateno = [100, 101]
 
@@ -527,6 +677,7 @@ trigger1 = ctrl || stateno = [100, 101]
 type = changestate
 value = 4000
 triggerall = var(86)
+triggerall = command = "DarknessIllusion" || command = "QCFx2_PP"
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 3000 && !var(50)
 trigger1 = ctrl || stateno = 40 || stateno = 52
@@ -558,6 +709,7 @@ trigger2 = var(55) || (var(56) && (stateno != [4000, 4099]))
 type = changestate
 value = 3300
 triggerall = var(70)
+triggerall = command = "QCFx2_KK"
 triggerall = roundstate = 2 && statetype != A
 triggerall = power >= 2000 && !var(50)
 triggerall = !var(120)
@@ -568,6 +720,7 @@ trigger2 = var(55) || (var(56) && stateno != 3300)
 type = changestate
 value = 3400
 triggerall = var(93)
+triggerall = command = "QCB_a" || command = "QCB_b" || command = "QCB_c"
 triggerall = roundstate = 2
 triggerall = power >= 1000
 trigger1 = ctrl || stateno = 40 || stateno = 52
@@ -664,6 +817,7 @@ trigger1 = prevstateno != 425;jump cancel
 type = changestate
 value = 1100
 triggerall = var(74)
+triggerall = command = "DP_x" || command = "DP_y" || command = "DP_z"
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ctrl || stateno = 40 || stateno = 52
 trigger2 = var(54)
@@ -672,6 +826,7 @@ trigger2 = var(54)
 type = changestate
 value = 1300
 triggerall = var(76)
+triggerall = command = "HCB_a" || command = "HCB_b" || command = "HCB_c"
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ctrl || stateno = 40 || stateno = 52
 trigger2 = var(54)
@@ -680,6 +835,7 @@ trigger2 = var(54)
 type = changestate
 value = 1200
 triggerall = var(66)
+triggerall = command = "QCB_a" || command = "QCB_b" || command = "QCB_c"
 triggerall = roundstate = 2 && statetype != A
 trigger1 = ctrl || stateno = 40 || stateno = 52
 trigger2 = var(54)
@@ -688,6 +844,7 @@ trigger2 = var(54)
 type = changestate
 value = 1050
 triggerall = var(71)
+triggerall = command = "QCF_x" || command = "QCF_y" || command = "QCF_z"
 triggerall = roundstate = 2 && statetype = A
 triggerall = !var(120) || var(50) > 0
 trigger1 = ctrl
@@ -697,6 +854,7 @@ trigger2 = var(54)
 type = changestate
 value = 1000
 triggerall = var(71)
+triggerall = command = "QCF_x" || command = "QCF_y" || command = "QCF_z"
 triggerall = roundstate = 2 && statetype != A
 triggerall = !var(120) || var(50) > 0
 trigger1 = ctrl || stateno = 40 || stateno = 52
@@ -715,6 +873,7 @@ trigger1 = prevstateno != 425;jump cancel
 [State -1, Throw]
 type = changestate
 value = 800
+triggerall = (command = "z" || command = "c")
 triggerall = command = "holdfwd" || command = "holdback"
 triggerall = var(91) || var(90)
 triggerall = roundstate = 2 && statetype = S
@@ -742,6 +901,7 @@ trigger1 = ctrl
 type = changestate
 value = 255
 triggerall = var(84)
+triggerall = command = "c"
 triggerall = command = "holdfwd"
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
@@ -754,6 +914,7 @@ trigger3 = (stateno = [400, 420]) || (stateno = [430, 445])
 type = changestate
 value = 425
 triggerall = var(104)
+triggerall = command = "z"
 triggerall = command = "holddown" && command = "holdfwd"
 triggerall = statetype != A
 trigger1 = ctrl
@@ -766,6 +927,7 @@ trigger3 = (stateno = [400, 410]) || (stateno = [430, 445])
 type = changestate
 value = 450
 triggerall = var(84)
+triggerall = command = "c"
 triggerall = statetype != A && command = "holddown"
 trigger1 = ctrl
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -777,6 +939,7 @@ trigger3 = (stateno = [400, 420]) || (stateno = [430, 445])
 type = changestate
 value = 420
 triggerall = var(104)
+triggerall = command = "z"
 triggerall = statetype != A && command = "holddown"
 trigger1 = ctrl
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -788,6 +951,7 @@ trigger3 = (stateno = [400, 410]) || (stateno = [430, 445])
 type = changestate
 value = 250
 triggerall = var(84)
+triggerall = command = "c"
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -799,6 +963,7 @@ trigger3 = (stateno = [400, 420]) || (stateno = [430, 445])
 type = changestate
 value = ifelse((abs(var(129)) <= (const(size.xscale) * 16)), 221, 220); 14 Hunter
 triggerall = var(104)
+triggerall = command = "z"
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -810,6 +975,7 @@ trigger3 = (stateno = [400, 410]) || (stateno = [430, 445])
 type = changestate
 value = 445
 triggerall = var(83)
+triggerall = command = "b"
 triggerall = command = "holddown" && command = "holdfwd"
 triggerall = statetype != A
 trigger1 = ctrl
@@ -822,6 +988,7 @@ trigger3 = (stateno = [400, 410]) || stateno = 430
 type = changestate
 value = 440
 triggerall = var(83)
+triggerall = command = "b"
 triggerall = statetype != A && command = "holddown"
 trigger1 = ctrl
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -833,6 +1000,7 @@ trigger3 = (stateno = [400, 410]) || stateno = 430
 type = changestate
 value = 410
 triggerall = var(103)
+triggerall = command = "y"
 triggerall = statetype != A && command = "holddown"
 trigger1 = ctrl
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -842,6 +1010,7 @@ trigger2 = stateno = [200, 201] || stateno = 400 || stateno = 230 || stateno = 4
 type = changestate
 value = 240
 triggerall = var(83)
+triggerall = command = "b"
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -853,6 +1022,7 @@ trigger3 = (stateno = [400, 410]) || stateno = 430
 type = changestate
 value = ifelse(abs(var(129)) <= (const(size.xscale) * 20), 211, 210);18 Hunter
 triggerall = var(103)
+triggerall = command = "y"
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -864,6 +1034,7 @@ trigger3 = stateno = 400 || stateno = 430
 type = changestate
 value = 430
 triggerall = var(79)
+triggerall = command = "a"
 triggerall = statetype != A && command = "holddown"
 trigger1 = ctrl
 trigger2 = (stateno = [200, 201] || stateno = 230 || stateno = 400) && time >= 5
@@ -874,6 +1045,7 @@ trigger3 = stateno = [200, 201] || stateno = 400
 type = changestate
 value = 400
 triggerall = var(102)
+triggerall = command = "x"
 triggerall = statetype != A && command = "holddown"
 trigger1 = ctrl
 trigger2 = (stateno = [200, 201] || stateno = 230 || stateno = 400) && time >= 5
@@ -882,6 +1054,7 @@ trigger2 = (stateno = [200, 201] || stateno = 230 || stateno = 400) && time >= 5
 type = changestate
 value = 230
 triggerall = var(79)
+triggerall = command = "a"
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
 trigger2 = (movecontact + movereversed) = [1, 4]
@@ -892,6 +1065,7 @@ trigger3 = (stateno = [200, 201] || stateno = 230 || stateno = 400) && time >= 5
 type = changestate
 value = ifelse(abs(var(129)) <= (const(size.xscale) * 20), 201, 200);18 Hunter
 triggerall = var(102)
+triggerall = command = "x"
 triggerall = statetype != A && command != "holddown"
 trigger1 = ctrl
 trigger2 = (stateno = [200, 201] || stateno = 230 || stateno = 400) && time >= 5
@@ -900,6 +1074,7 @@ trigger2 = (stateno = [200, 201] || stateno = 230 || stateno = 400) && time >= 5
 type = changestate
 value = 650
 triggerall = var(84)
+triggerall = command = "c"
 triggerall = statetype = A
 trigger1 = ctrl
 trigger2 = (stateno = [600, 620]) || stateno = [630, 640]
@@ -909,6 +1084,7 @@ trigger2 = ((movecontact + movereversed) = [1, 4]) && (prevstateno != [100, 105]
 type = changestate
 value = 620
 triggerall = var(104)
+triggerall = command = "z"
 triggerall = statetype = A
 trigger1 = ctrl
 trigger2 = stateno = [600, 610] || stateno = [630, 640]
@@ -918,6 +1094,7 @@ trigger2 = ((movecontact + movereversed) = [1, 4]) && (prevstateno != [100, 105]
 type = changestate
 value = 640
 triggerall = var(83)
+triggerall = command = "b"
 triggerall = statetype = A
 trigger1 = ctrl
 trigger2 = stateno = 600 || stateno = 610 || stateno = [630, 631]
@@ -927,6 +1104,7 @@ trigger2 = ((movecontact + movereversed) = [1, 4]) && (prevstateno != [100, 105]
 type = changestate
 value = 610
 triggerall = var(103)
+triggerall = command = "y"
 triggerall = statetype = A
 trigger1 = ctrl
 trigger2 = stateno = 600 || stateno = [630, 631]
@@ -936,6 +1114,7 @@ trigger2 = ((movecontact + movereversed) = [1, 4]) && (prevstateno != [100, 105]
 type = changestate
 value = ifelse(vel x, 630, 631)
 triggerall = var(79)
+triggerall = command = "a"
 triggerall = statetype = A
 trigger1 = ctrl
 trigger2 = stateno = 600
@@ -945,6 +1124,7 @@ trigger2 = ((movecontact + movereversed) = [1, 4]) && (prevstateno != [100, 105]
 type = changestate
 value = 600
 triggerall = var(102)
+triggerall = command = "x"
 triggerall = statetype = A
 trigger1 = ctrl
 
@@ -1120,9 +1300,6 @@ trigger1 = stateno != [120, 155]
 trigger1 = statetype != A || p2statetype = A || p2movetype != A
 trigger1 = life > 10 || p2stateno = [200, 799]
 trigger1 = 1 || random < 30
-trigger1 = 1 || statetype != S
-trigger1 = 1 || statetype != C
-trigger1 = 1 || statetype != A
 trigger1 = stateno != [100, 105]
 
 [State -1, Guard Cancel]

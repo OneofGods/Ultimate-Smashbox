@@ -1,6 +1,6 @@
 ; ________________________
 ;| Akuma by Mr.Ansatsuken |
-; ������������������������
+; 
 ;==============================================================================================
 ;=======================================< COMMON STATES >========================================
 ;==============================================================================================
@@ -1769,14 +1769,14 @@ type = ctrlset
 trigger1 = animelemtime(5) = 2
 value = 1
 
-;---------------------[���ʉ�]
+;---------------------[]
 [State 191, Snd 1]
 type = PlaySnd
 trigger1 = AnimElem = 2
 value = 40,0
 
 
-;---------------------[�G�t�F�N�g]
+;---------------------[GtFNg]
 [State explod];
 type = removeExplod
 trigger1 = time = 0
@@ -1805,7 +1805,7 @@ scale = 0.35,0.35
 
 
 
-;---------------------[���x]
+;---------------------[x]
 [State 100, 1]
 type = VelSet
 trigger1 = animelem = 2
@@ -1826,7 +1826,7 @@ type = ctrlset
 trigger1 = time = 8
 value = 1
 
-;---------------------[�ϐ�]
+;---------------------[]
 [State 100, 4]
 type = ChangeState
 trigger1 = animtime = 0
@@ -1856,14 +1856,14 @@ type = ctrlset
 trigger1 = animelemtime(5) = 2
 value = 1
 
-;---------------------[���ʉ�]
+;---------------------[]
 [State 191, Snd 1]
 type = PlaySnd
 trigger1 = AnimElem = 2
 value = 40,0
 
 
-;---------------------[�G�t�F�N�g]
+;---------------------[GtFNg]
 [State explod];
 type = removeExplod
 trigger1 = time = 0
@@ -1892,7 +1892,7 @@ scale = 0.35,0.35
 
 
 
-;---------------------[���x]
+;---------------------[x]
 [State 100, 1]
 type = VelSet
 trigger1 = animelem = 2
@@ -1913,7 +1913,7 @@ type = ctrlset
 trigger1 = time = 8
 value = 1
 
-;---------------------[�ϐ�]
+;---------------------[]
 [State 100, 4]
 type = ChangeState
 trigger1 = animtime = 0
@@ -1951,14 +1951,14 @@ type = ctrlset
 trigger1 = animelemtime(5) = 2
 value = 1
 
-;---------------------[���ʉ�]
+;---------------------[]
 [State 191, Snd 1]
 type = PlaySnd
 trigger1 = AnimElem = 2
 value = 40,0
 
 
-;---------------------[�G�t�F�N�g]
+;---------------------[GtFNg]
 [State explod];
 type = removeExplod
 trigger1 = time = 0
@@ -1987,7 +1987,7 @@ scale = 0.35,0.35
 
 
 
-;---------------------[���x]
+;---------------------[x]
 [State 100, 1]
 type = VelSet
 trigger1 = animelem = 2
@@ -2007,7 +2007,7 @@ type = ctrlset
 trigger1 = time = 8
 value = 1
 
-;---------------------[�ϐ�]
+;---------------------[]
 [State 100, 4]
 type = ChangeState
 trigger1 = animtime = 0
@@ -2046,14 +2046,14 @@ type = ctrlset
 trigger1 = animelemtime(5) = 2
 value = 1
 
-;---------------------[���ʉ�]
+;---------------------[]
 [State 191, Snd 1]
 type = PlaySnd
 trigger1 = AnimElem = 2
 value = 40,0
 
 
-;---------------------[�G�t�F�N�g]
+;---------------------[GtFNg]
 [State explod];
 type = removeExplod
 trigger1 = time = 0
@@ -2082,7 +2082,7 @@ scale = 0.35,0.35
 
 
 
-;---------------------[���x]
+;---------------------[x]
 [State 100, 1]
 type = VelSet
 trigger1 = animelem = 2
@@ -2103,7 +2103,7 @@ type = ctrlset
 trigger1 = time = 8
 value = 1
 
-;---------------------[�ϐ�]
+;---------------------[]
 [State 100, 4]
 type = ChangeState
 trigger1 = animtime = 0
@@ -9768,7 +9768,7 @@ value = 5221
 type = C
 movetype = I
 physics = N
-anim = 5220
+anim = 5210 ; Changed from 5220 (missing) to 5210 (exists)
 facep2 = 1
 
 [State 5221, Pos]
@@ -11020,23 +11020,64 @@ ignorehitpause = 1
 ;===========================================================================
 [Statedef -3]
 
-; AI ATTACK FIX - Enable attacks when AI is active
-[State -3, AI Enable Attacks]
+;===========================================================================
+; MOVE ENABLE FLAGS - Initialize on round start
+; MUGEN doesn't support Statedef -4, so this goes in Statedef -3
+; These vars enable all moves in moricmd.cns (map()  var() conversion)
+;===========================================================================
+
+[State -3, Init Move Enables]
 type = VarSet
-trigger1 = AILevel > 0
-var(54) = 1
+trigger1 = RoundState = 0
+var(66) = 1
+var(67) = 1
+var(68) = 1
+var(69) = 1
+var(70) = 1
+var(71) = 1
+var(72) = 1
+var(73) = 1
+var(74) = 1
+var(75) = 1
 ignorehitpause = 1
 
-[State -3, AI Attack Frequency]
+[State -3, Init Move Enables 2]
 type = VarSet
-trigger1 = AILevel > 0 && var(53) < 8
-var(53) = 8
+trigger1 = RoundState = 0
+var(76) = 1
+var(77) = 1
+var(78) = 1
+var(79) = 1
+var(80) = 1
+var(81) = 1
+var(82) = 1
+var(83) = 1
+var(84) = 1
+var(85) = 1
 ignorehitpause = 1
 
-[State -3, Player Attack Enabled]
+[State -3, Init Move Enables 3]
 type = VarSet
-trigger1 = AILevel = 0
-var(54) = 1
+trigger1 = RoundState = 0
+var(86) = 1
+var(90) = 1
+var(91) = 1
+var(92) = 1
+var(93) = 1
+var(94) = 1
+var(95) = 1
+var(96) = 1
+var(97) = 1
+var(102) = 1
+ignorehitpause = 1
+
+[State -3, Init Move Enables 4]
+type = VarSet
+trigger1 = RoundState = 0
+var(103) = 1
+var(104) = 1
+var(109) = 1
+var(118) = 1
 ignorehitpause = 1
 
 [State -3, Gametime Var]
@@ -11334,3 +11375,4 @@ ownpal = 1
 ignorehitpause = 1
 pausemovetime = 999
 supermovetime = 999
+
