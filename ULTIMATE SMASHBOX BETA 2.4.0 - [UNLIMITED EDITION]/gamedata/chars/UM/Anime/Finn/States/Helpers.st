@@ -3105,6 +3105,12 @@ sprpriority = -2
 anim = 7000
 velset = 0,0
 
+[State 7000, Destroy when Finn returns to normal]
+type = DestroySelf
+trigger1 = parent, stateno = 0
+trigger1 = parent, ctrl = 1
+trigger1 = time > 30
+
 [State 7000, 0]
 type = ChangeState
 trigger1 = parentdist x >= 65

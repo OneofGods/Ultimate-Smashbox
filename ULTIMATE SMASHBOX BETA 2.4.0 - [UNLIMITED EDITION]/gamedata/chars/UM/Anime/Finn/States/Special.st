@@ -2468,6 +2468,18 @@ ctrl = 1
 poweradd=72*!var(20)
 sprpriority = 2
 
+[State 1500, Spawn Jake]
+type = Helper
+trigger1 = !time
+trigger1 = numhelper(7000) = 0
+helpertype = normal
+ID = 7000
+stateno = 7000
+pos = -63,-10
+postype = p1
+ownpal = 0
+size.shadowoffset = -10
+
 [state 1000,Posset]
 type=posset
 trigger1=!time

@@ -4110,18 +4110,19 @@ trigger1 = time >= 28;<---make the time match the time in the pause code above
 ;===========================================================================
 [Statedef -2]
 
-[State -2, Jake the Dog]
-type = Helper
-trigger1 = numhelper(7000) = 0
-trigger1 = p3name != "Jake The Dog"
-trigger1 = timemod = 2,1
-helpertype = normal
-ID = 7000
-stateno = 7000
-pos = -63,-10
-postype = p1
-ownpal = 0
-size.shadowoffset = -10
+;[State -2, Jake the Dog]
+;DISABLED - Jake now only appears during special moves (1500, 3200)
+;type = Helper
+;trigger1 = numhelper(7000) = 0
+;trigger1 = p3name != "Jake The Dog"
+;trigger1 = timemod = 2,1
+;helpertype = normal
+;ID = 7000
+;stateno = 7000
+;pos = -63,-10
+;postype = p1
+;ownpal = 0
+;size.shadowoffset = -10
 
 ;Groove Helper (your wallet) - by warusaki3, modified
 [State 3001, Super]
